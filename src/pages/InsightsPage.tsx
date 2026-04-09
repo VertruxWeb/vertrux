@@ -13,13 +13,6 @@ const featured = articles[0];
 // Grid articles are the rest
 const gridArticles = articles.slice(1);
 
-const stats = [
-  { label: 'Purity Benchmark', value: '99.5%', sub: 'Isolate Grade' },
-  { label: 'Facility Scale', value: '15,000 m²', sub: 'Lab & Production' },
-  { label: 'ISO Certification', value: '9001 / 14001', sub: 'Active' },
-  { label: 'Global Export', value: '45+ Countries', sub: 'Active Partners' },
-];
-
 export default function InsightsPage() {
   return (
     <div className="bg-surface">

@@ -2,10 +2,7 @@
 // Page 2: Campus Gallery — "Vertical Integration. From Seed to Solution."
 // Sections: Hero, 4 Sectors (Masonry-style grids)
 
-import Badge from '../components/atoms/Badge';
 import SectionLabel from '../components/atoms/SectionLabel';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 // Gallery image data per sector
 const sectors = [

@@ -2,10 +2,9 @@
 // Page 4: Factory Equipment — Industrial Grade Precision Extraction
 // Sections: Hero, cGMP Standards, Equipment Showcase, Specs Table, CTA
 
-import { CheckCircle, Download, ArrowRight } from 'lucide-react';
+import { CheckCircle, Download } from 'lucide-react';
 import Badge from '../components/atoms/Badge';
 import SectionLabel from '../components/atoms/SectionLabel';
-import { Link } from 'react-router-dom';
 
 const equipment = [
   {
