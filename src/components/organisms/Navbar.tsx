@@ -1,0 +1,107 @@
+// src/components/organisms/Navbar.tsx
+// Fixed top navigation bar with mobile hamburger menu
+// Design: minimal, 48px tall, surface-container-lowest background, no heavy borders
+
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Products', href: '/products/cbd-isolate' },
+  { label: 'Equipment', href: '/equipment' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Insights', href: '/insights' },
+];
+
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-lg border-b border-outline-variant/20">
+      <nav className="max-w-container mx-auto px-6 lg:px-12 h-12 flex items-center justify-between">
+        {/* Brand */}
+        <Link
+          to="/"
+          className="font-bold text-sm tracking-wider text-on-background uppercase hover:text-primary transition-colors duration-200"
+        >
+          Yunnan Vertrux
+        </Link>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.href;
+            return (
+              <li key={link.href}>
+                <Link
+                  to={link.href}
+                  className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${
+                    isActive
+                      ? 'text-primary'
+                      : 'text-on-surface-variant hover:text-on-surface'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Desktop CTA */}
+        <Link
+          to="/inquiry"
+          className="hidden md:inline-flex items-center px-4 py-2 bg-primary text-white text-xs font-semibold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300"
+        >
+          Contact Us
+        </Link>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden p-2 text-on-surface"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="md:hidden bg-surface-container-lowest border-t border-outline-variant/20 px-6 py-6">
+          <ul className="flex flex-col gap-4">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <Link
+                    to={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={`block text-xs font-semibold tracking-widest uppercase py-2 transition-colors duration-200 ${
+                      isActive
+                        ? 'text-primary'
+                        : 'text-on-surface-variant hover:text-on-surface'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+            <li>
+              <Link
+                to="/inquiry"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex items-center px-4 py-2 bg-primary text-white text-xs font-semibold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300 mt-2"
+              >
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
+    </header>
+  );
+}

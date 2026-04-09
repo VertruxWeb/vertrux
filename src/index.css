@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Manrope', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: #f8f9ff;
+    color: #0b1c30;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Container utility */
+  .container-wide {
+    @apply max-w-container mx-auto px-6 lg:px-12;
+  }
+
+  /* Section label - uppercase tracking chip */
+  .section-label {
+    @apply text-xs font-semibold tracking-widest uppercase text-on-surface-variant;
+  }
+
+  /* Glass card effect */
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20;
+  }
+
+  /* Input field - minimal bottom-border style */
+  .input-minimal {
+    @apply w-full bg-transparent border-0 border-b border-outline/30 pb-3 pt-1
+           text-on-surface placeholder-on-surface-variant/50
+           focus:outline-none focus:border-primary focus:border-b-2
+           transition-all duration-200;
+  }
+
+  /* Select field */
+  .select-minimal {
+    @apply w-full bg-transparent border-0 border-b border-outline/30 pb-3 pt-1
+           text-on-surface appearance-none
+           focus:outline-none focus:border-primary focus:border-b-2
+           transition-all duration-200;
+  }
+
+  /* Textarea field */
+  .textarea-minimal {
+    @apply w-full bg-transparent border-0 border-b border-outline/30 pb-3 pt-1
+           text-on-surface placeholder-on-surface-variant/50 resize-none
+           focus:outline-none focus:border-primary focus:border-b-2
+           transition-all duration-200;
+  }
+}
