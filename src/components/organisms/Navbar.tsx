@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products/cbd-isolate' },
   { label: 'Equipment', href: '/equipment' },
-  { label: 'Gallery', href: '/gallery' },
+  { label: 'Planting', href: '/planting' },
   { label: 'Insights', href: '/insights' },
 ];
 
@@ -22,11 +22,12 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-lg border-b border-outline-variant/20">
       <nav className="max-w-container mx-auto px-6 lg:px-12 h-12 flex items-center justify-between">
         {/* Brand */}
-        <Link
-          to="/"
-          className="font-bold text-sm tracking-wider text-on-background uppercase hover:text-primary transition-colors duration-200"
-        >
-          Yunnan Vertrux
+        <Link to="/" className="flex items-center overflow-hidden h-10">
+          <img
+            src="/logo.svg"
+            alt="Yunnan Vertrux"
+            className="h-32 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -37,11 +38,10 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   to={link.href}
-                  className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${
-                    isActive
-                      ? 'text-primary'
-                      : 'text-on-surface-variant hover:text-on-surface'
-                  }`}
+                  className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-200 ${isActive
+                    ? 'text-primary'
+                    : 'text-on-surface-variant hover:text-on-surface'
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -79,11 +79,10 @@ export default function Navbar() {
                   <Link
                     to={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block text-xs font-semibold tracking-widest uppercase py-2 transition-colors duration-200 ${
-                      isActive
-                        ? 'text-primary'
-                        : 'text-on-surface-variant hover:text-on-surface'
-                    }`}
+                    className={`block text-xs font-semibold tracking-widest uppercase py-2 transition-colors duration-200 ${isActive
+                      ? 'text-primary'
+                      : 'text-on-surface-variant hover:text-on-surface'
+                      }`}
                   >
                     {link.label}
                   </Link>

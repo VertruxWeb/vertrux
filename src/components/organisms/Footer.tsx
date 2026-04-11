@@ -35,9 +35,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand block */}
           <div className="md:col-span-1">
-            <p className="font-bold text-sm tracking-wider uppercase text-white mb-4">
-              Yunnan Vertrux
-            </p>
+            <div className="overflow-hidden h-10 mb-4">
+              <img
+                src="/logo.svg"
+                alt="Yunnan Vertrux"
+                className="h-32 w-auto"
+                style={{ marginTop: '-52px' }}
+              />
+            </div>
             <p className="text-xs text-inverse-on-surface/60 leading-relaxed">
               Premium botanical CBD extract manufacturer. ISO 9001:2015 certified.
               Global B2B wholesale supplier.
