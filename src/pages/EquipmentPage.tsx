@@ -2,9 +2,15 @@
 // Page 4: Factory Equipment — Industrial Grade Precision Extraction
 // Sections: Hero, cGMP Standards, Equipment Showcase, Specs Table, CTA
 
+import { useRef } from 'react';
 import { CheckCircle, Download } from 'lucide-react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Badge from '../components/atoms/Badge';
 import SectionLabel from '../components/atoms/SectionLabel';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const equipment = [
   {
@@ -73,6 +79,37 @@ const specsTable = [
 ];
 
 export default function EquipmentPage() {
+  const cgmpRef = useRef<HTMLDivElement>(null);
+  const showcaseRef = useRef<HTMLDivElement>(null);
+  const tableRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!cgmpRef.current) return;
+    const items = cgmpRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: cgmpRef.current, start: 'top 80%' },
+    });
+  }, { scope: cgmpRef });
+
+  useGSAP(() => {
+    if (!showcaseRef.current) return;
+    const items = showcaseRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: showcaseRef.current, start: 'top 80%' },
+    });
+  }, { scope: showcaseRef });
+
+  useGSAP(() => {
+    if (!tableRef.current) return;
+    const items = tableRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: tableRef.current, start: 'top 80%' },
+    });
+  }, { scope: tableRef });
+
   return (
     <div className="bg-surface">
 
@@ -101,10 +138,10 @@ export default function EquipmentPage() {
 
       {/* ── cGMP STANDARDS SECTION ─────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={cgmpRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             {/* Left specs block (8/12) */}
-            <div className="lg:col-span-8 bg-surface-container-lowest p-10">
+            <div className="reveal-card lg:col-span-8 bg-surface-container-lowest p-10">
               <SectionLabel>Manufacturing Standards</SectionLabel>
               <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">
                 cGMP Compliant at Every Stage
@@ -131,7 +168,7 @@ export default function EquipmentPage() {
             </div>
 
             {/* Right certification card (4/12) */}
-            <div className="lg:col-span-4 bg-primary p-10 flex flex-col justify-between">
+            <div className="reveal-card lg:col-span-4 bg-primary p-10 flex flex-col justify-between">
               <div>
                 <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">
                   Certification
@@ -155,18 +192,19 @@ export default function EquipmentPage() {
 
       {/* ── EQUIPMENT SHOWCASE ─────────────────────────────────────────── */}
       <section className="py-24 bg-surface">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <SectionLabel>Equipment Showcase</SectionLabel>
-          <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">
-            Precision-Engineered at Every Stage
-          </h2>
+        <div ref={showcaseRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card">
+            <SectionLabel>Equipment Showcase</SectionLabel>
+            <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">
+              Precision-Engineered at Every Stage
+            </h2>
+          </div>
 
           <div className="space-y-24">
             {equipment.map((equip, idx) => (
               <div
                 key={equip.id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                  }`}
+                className={`reveal-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Image */}
                 <div className={`relative ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
@@ -199,8 +237,7 @@ export default function EquipmentPage() {
                     {equip.specs.map((spec, i) => (
                       <div
                         key={spec.label}
-                        className={`flex justify-between items-center py-3 ${i < equip.specs.length - 1 ? 'border-b border-outline-variant/30' : ''
-                          }`}
+                        className={`flex justify-between items-center py-3 ${i < equip.specs.length - 1 ? 'border-b border-outline-variant/30' : ''}`}
                       >
                         <span className="text-xs font-semibold tracking-wider uppercase text-on-surface-variant">
                           {spec.label}
@@ -218,13 +255,15 @@ export default function EquipmentPage() {
 
       {/* ── SPECS TABLE ────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <SectionLabel>Full Specifications</SectionLabel>
-          <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-12">
-            Equipment Overview Table
-          </h2>
+        <div ref={tableRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card">
+            <SectionLabel>Full Specifications</SectionLabel>
+            <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-12">
+              Equipment Overview Table
+            </h2>
+          </div>
 
-          <div className="overflow-x-auto">
+          <div className="reveal-card overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b-2 border-primary/30">

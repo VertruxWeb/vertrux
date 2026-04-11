@@ -2,10 +2,16 @@
 // Page 6: CBD Isolate Product Page — "CBD Isolate 99.5% Purity"
 // Sections: Product Hero, Technical Analysis Grid, Quality Assurance Bento, Wholesale Form
 
+import { useRef } from 'react';
 import { ArrowRight, Download, CheckCircle, Microscope, TestTube, TrendingUp } from 'lucide-react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Badge from '../components/atoms/Badge';
 import SectionLabel from '../components/atoms/SectionLabel';
 import SpecRow from '../components/molecules/SpecRow';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const technicalMetrics = [
   { label: 'Purity (HPLC)', value: '≥ 99.5%', status: 'Verified' },
@@ -43,15 +49,56 @@ const qualityCards = [
 ];
 
 export default function ProductPage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const metricsRef = useRef<HTMLDivElement>(null);
+  const specsRef = useRef<HTMLDivElement>(null);
+  const qualityRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!heroRef.current) return;
+    const items = heroRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: heroRef.current, start: 'top 80%' },
+    });
+  }, { scope: heroRef });
+
+  useGSAP(() => {
+    if (!metricsRef.current) return;
+    const items = metricsRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: metricsRef.current, start: 'top 80%' },
+    });
+  }, { scope: metricsRef });
+
+  useGSAP(() => {
+    if (!specsRef.current) return;
+    const items = specsRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: specsRef.current, start: 'top 80%' },
+    });
+  }, { scope: specsRef });
+
+  useGSAP(() => {
+    if (!qualityRef.current) return;
+    const items = qualityRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: qualityRef.current, start: 'top 80%' },
+    });
+  }, { scope: qualityRef });
+
   return (
     <div className="bg-surface">
 
       {/* ── PRODUCT HERO ────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: product info */}
-            <div>
+            <div className="reveal-card">
               <Badge variant="default" className="mb-6">Botanical Precision</Badge>
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
                 CBD Isolate
@@ -96,7 +143,7 @@ export default function ProductPage() {
             </div>
 
             {/* Right: product image */}
-            <div className="relative">
+            <div className="reveal-card relative">
               <img
                 src="/images/products/product2.jpg"
                 alt="CBD Isolate 99.5% purity crystals"
@@ -114,20 +161,22 @@ export default function ProductPage() {
 
       {/* ── TECHNICAL ANALYSIS GRID ─────────────────────────────────────── */}
       <section className="py-24 bg-surface">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <SectionLabel>Technical Analysis</SectionLabel>
-          <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-            Certificate of Analysis — Batch YN-CBD-0042
-          </h2>
-          <p className="text-sm text-on-surface-variant mb-12 max-w-xl">
-            All values represent typical batch results. Full COA with accredited third-party
-            laboratory signature available for download.
-          </p>
+        <div ref={metricsRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card">
+            <SectionLabel>Technical Analysis</SectionLabel>
+            <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
+              Certificate of Analysis — Batch YN-CBD-0042
+            </h2>
+            <p className="text-sm text-on-surface-variant mb-12 max-w-xl">
+              All values represent typical batch results. Full COA with accredited third-party
+              laboratory signature available for download.
+            </p>
+          </div>
 
           {/* 4-column metric grid on large, 2-col on medium, 1-col mobile */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {technicalMetrics.map((metric) => (
-              <div key={metric.label} className="bg-surface-container-lowest p-6">
+              <div key={metric.label} className="reveal-card bg-surface-container-lowest p-6">
                 <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-1">
                   {metric.label}
                 </p>
@@ -139,18 +188,20 @@ export default function ProductPage() {
             ))}
           </div>
 
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-xs font-bold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300">
-            <Download size={14} />
-            Download Full Technical Specification (PDF)
-          </button>
+          <div className="reveal-card">
+            <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-xs font-bold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300">
+              <Download size={14} />
+              Download Full Technical Specification (PDF)
+            </button>
+          </div>
         </div>
       </section>
 
       {/* ── PRODUCT SPECIFICATIONS ─────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={specsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
+            <div className="reveal-card">
               <SectionLabel>Product Specifications</SectionLabel>
               <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">
                 Full Product Spec Sheet
@@ -171,7 +222,7 @@ export default function ProductPage() {
               </div>
             </div>
 
-            <div>
+            <div className="reveal-card">
               <SectionLabel>Compliance & Testing</SectionLabel>
               <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">
                 Quality Assurance Standards
@@ -202,9 +253,9 @@ export default function ProductPage() {
 
       {/* ── QUALITY ASSURANCE BENTO ─────────────────────────────────────── */}
       <section className="py-24 bg-surface">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={qualityRef} className="max-w-container mx-auto px-6 lg:px-12">
           {/* Certifications */}
-          <div className="flex flex-wrap items-center gap-4 mb-12">
+          <div className="reveal-card flex flex-wrap items-center gap-4 mb-12">
             <SectionLabel className="mb-0">Certified Clinical Excellence</SectionLabel>
             <div className="flex gap-3">
               {['ISO 9001:2015', 'GMP Certified', 'HACCP'].map((cert) => (
@@ -218,14 +269,14 @@ export default function ProductPage() {
             </div>
           </div>
 
-          <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-12 max-w-xl">
+          <h2 className="reveal-card text-3xl font-extrabold text-on-background tracking-tighter mb-12 max-w-xl">
             Every Batch Meets Clinical-Grade Quality Benchmarks
           </h2>
 
           {/* 3-column quality bento */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {qualityCards.map((card) => (
-              <div key={card.title} className={`${card.bg} p-8`}>
+              <div key={card.title} className={`reveal-card ${card.bg} p-8`}>
                 {card.image && (
                   <img
                     src={card.image}

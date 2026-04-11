@@ -2,37 +2,66 @@
 // Page 3: B2B Strategic Partnership Inquiry
 // Sections: Hero header, Two-column (form left, info sidebar right)
 
+import { useRef } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Badge from '../components/atoms/Badge';
 import SectionLabel from '../components/atoms/SectionLabel';
 import InquiryForm from '../components/molecules/InquiryForm';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function InquiryPage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!heroRef.current) return;
+    const items = heroRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: heroRef.current, start: 'top 80%' },
+    });
+  }, { scope: heroRef });
+
+  useGSAP(() => {
+    if (!contentRef.current) return;
+    const items = contentRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: contentRef.current, start: 'top 80%' },
+    });
+  }, { scope: contentRef });
+
   return (
     <div className="bg-surface">
       {/* ── HERO ───────────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <Badge variant="default" className="mb-6">Direct B2B Channels</Badge>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] max-w-3xl mb-6">
-            Strategic Partnership
-            <br />
-            <span className="text-primary">Inquiry</span>
-          </h1>
-          <p className="text-sm text-on-surface-variant leading-relaxed max-w-xl">
-            Connect with our global distribution network. Whether you require bulk isolate,
-            custom formulations, or private-label solutions — our B2B team is ready.
-          </p>
+        <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card">
+            <Badge variant="default" className="mb-6">Direct B2B Channels</Badge>
+            <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] max-w-3xl mb-6">
+              Strategic Partnership
+              <br />
+              <span className="text-primary">Inquiry</span>
+            </h1>
+            <p className="text-sm text-on-surface-variant leading-relaxed max-w-xl">
+              Connect with our global distribution network. Whether you require bulk isolate,
+              custom formulations, or private-label solutions — our B2B team is ready.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ── MAIN CONTENT ───────────────────────────────────────────────── */}
       <section className="py-24 bg-surface">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={contentRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
             {/* LEFT: Inquiry Form (8/12) */}
-            <div className="lg:col-span-8">
+            <div className="reveal-card lg:col-span-8">
               <SectionLabel>Wholesale Request</SectionLabel>
               <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-10">
                 Submit Your Inquiry
@@ -44,7 +73,7 @@ export default function InquiryPage() {
             <div className="lg:col-span-4 space-y-8">
 
               {/* B2B Support */}
-              <div className="bg-surface-container-low p-8">
+              <div className="reveal-card bg-surface-container-low p-8">
                 <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-6">
                   B2B Support
                 </p>
@@ -82,7 +111,7 @@ export default function InquiryPage() {
               </div>
 
               {/* Map */}
-              <div className="overflow-hidden">
+              <div className="reveal-card overflow-hidden">
                 <iframe
                   title="Yunnan Province location"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=100.5%2C24.0%2C104.5%2C27.0&layer=mapnik&marker=25.0%2C102.7"
@@ -94,7 +123,7 @@ export default function InquiryPage() {
               </div>
 
               {/* Trust badges */}
-              <div className="bg-primary p-8">
+              <div className="reveal-card bg-primary p-8">
                 <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">
                   Certified Standards
                 </p>

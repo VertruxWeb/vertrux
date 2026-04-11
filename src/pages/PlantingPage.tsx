@@ -2,9 +2,15 @@
 // Planting Base — "From the Source. Quality You Can Trace."
 // Sections: Hero, Stats, Growing Zones, Photo Gallery Grid, Traceability, CTA
 
+import { useRef } from 'react';
 import { Leaf, Thermometer, Droplets, Sun, Shield, CheckCircle } from 'lucide-react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Badge from '../components/atoms/Badge';
 import SectionLabel from '../components/atoms/SectionLabel';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   { value: '12,000 m²', label: 'Greenhouse Area' },
@@ -87,6 +93,67 @@ const traceabilityItems = [
 ];
 
 export default function PlantingPage() {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const introRef = useRef<HTMLDivElement>(null);
+  const zonesRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const traceabilityRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!statsRef.current) return;
+    const items = statsRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: statsRef.current, start: 'top 80%' },
+    });
+  }, { scope: statsRef });
+
+  useGSAP(() => {
+    if (!introRef.current) return;
+    const items = introRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: introRef.current, start: 'top 80%' },
+    });
+  }, { scope: introRef });
+
+  useGSAP(() => {
+    if (!zonesRef.current) return;
+    const items = zonesRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: zonesRef.current, start: 'top 80%' },
+    });
+  }, { scope: zonesRef });
+
+  useGSAP(() => {
+    if (!galleryRef.current) return;
+    const items = galleryRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: galleryRef.current, start: 'top 80%' },
+    });
+  }, { scope: galleryRef });
+
+  useGSAP(() => {
+    if (!traceabilityRef.current) return;
+    const items = traceabilityRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: traceabilityRef.current, start: 'top 80%' },
+    });
+  }, { scope: traceabilityRef });
+
+  useGSAP(() => {
+    if (!ctaRef.current) return;
+    const items = ctaRef.current.querySelectorAll('.reveal-card');
+    gsap.from(items, {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: ctaRef.current, start: 'top 80%' },
+    });
+  }, { scope: ctaRef });
+
   return (
     <div className="bg-surface">
 
@@ -116,10 +183,10 @@ export default function PlantingPage() {
 
       {/* ── STATS STRIP ─────────────────────────────────────────────────── */}
       <section className="bg-primary py-10">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={statsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((s) => (
-              <div key={s.label} className="text-center lg:text-left">
+              <div key={s.label} className="reveal-card text-center lg:text-left">
                 <p className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">{s.value}</p>
                 <p className="text-xs font-semibold tracking-widest uppercase text-white/50 mt-1">{s.label}</p>
               </div>
@@ -130,16 +197,16 @@ export default function PlantingPage() {
 
       {/* ── INTRO BLOCK ─────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={introRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5">
+            <div className="reveal-card lg:col-span-5">
               <SectionLabel>Why Vertical Integration Matters</SectionLabel>
               <h2 className="text-4xl font-extrabold text-on-background tracking-tighter leading-tight mt-4">
                 The Best Extracts Begin
                 <br />Long Before the Lab.
               </h2>
             </div>
-            <div className="lg:col-span-7 space-y-5 pt-2">
+            <div className="reveal-card lg:col-span-7 space-y-5 pt-2">
               <p className="text-sm text-on-surface-variant leading-relaxed">
                 Most CBD processors purchase biomass from third-party farms, inheriting variability in phytochemical profiles, pesticide histories, and moisture content. At Vertrux, we eliminated that dependency entirely.
               </p>
@@ -156,11 +223,13 @@ export default function PlantingPage() {
 
       {/* ── GROWING ZONES ───────────────────────────────────────────────── */}
       <section className="py-24 bg-surface">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <SectionLabel>Growing Zones</SectionLabel>
-          <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">
-            Three Zones. One Controlled Process.
-          </h2>
+        <div ref={zonesRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card">
+            <SectionLabel>Growing Zones</SectionLabel>
+            <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">
+              Three Zones. One Controlled Process.
+            </h2>
+          </div>
 
           <div className="space-y-28">
             {zones.map((zone, idx) => {
@@ -169,7 +238,7 @@ export default function PlantingPage() {
               return (
                 <div
                   key={zone.id}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
+                  className={`reveal-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
                 >
                   {/* Images side */}
                   <div className={`grid grid-cols-2 gap-3 ${isReversed ? 'lg:order-2' : ''}`}>
@@ -230,8 +299,8 @@ export default function PlantingPage() {
 
       {/* ── PHOTO GALLERY GRID ─────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
+        <div ref={galleryRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
             <div>
               <SectionLabel>Field Documentation</SectionLabel>
               <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mt-3">
@@ -247,7 +316,7 @@ export default function PlantingPage() {
             {galleryImages.map((img, i) => (
               <div
                 key={i}
-                className={`overflow-hidden group ${i === 0 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''}`}
+                className={`reveal-card overflow-hidden group ${i === 0 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''}`}
               >
                 <img
                   src={img.src}
@@ -262,9 +331,9 @@ export default function PlantingPage() {
 
       {/* ── TRACEABILITY BLOCK ─────────────────────────────────────────── */}
       <section className="py-24 bg-on-background">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={traceabilityRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-4">
+            <div className="reveal-card lg:col-span-4">
               <SectionLabel light>Full Traceability</SectionLabel>
               <h2 className="text-4xl font-extrabold text-white tracking-tighter leading-tight mt-4">
                 Seed-to-COA
@@ -279,7 +348,7 @@ export default function PlantingPage() {
               {traceabilityItems.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.label} className="bg-white/5 p-6 hover:bg-white/10 transition-colors duration-300">
+                  <div key={item.label} className="reveal-card bg-white/5 p-6 hover:bg-white/10 transition-colors duration-300">
                     <div className="flex items-center gap-3 mb-3">
                       <Icon size={16} className="text-primary-fixed" />
                       <p className="text-xs font-semibold tracking-widest uppercase text-white/60">{item.label}</p>
@@ -295,9 +364,9 @@ export default function PlantingPage() {
 
       {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={ctaRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8">
+            <div className="reveal-card lg:col-span-8">
               <SectionLabel>Wholesale Inquiry</SectionLabel>
               <h2 className="text-4xl font-extrabold text-on-background tracking-tighter leading-tight mt-3">
                 Source Directly From
@@ -307,7 +376,7 @@ export default function PlantingPage() {
                 Skip the commodity middlemen. Talk to our team about bulk biomass supply, white-label isolate, or custom extraction contracts — all backed by our vertically integrated supply chain.
               </p>
             </div>
-            <div className="lg:col-span-4 flex flex-col gap-3">
+            <div className="reveal-card lg:col-span-4 flex flex-col gap-3">
               <a
                 href="/inquiry"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-xs font-bold tracking-widest uppercase hover:bg-primary-container transition-all duration-300"
