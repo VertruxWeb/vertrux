@@ -4,7 +4,7 @@ import {
   createMemoryRateLimiter,
   handleInquirySubmission,
   type InquiryPayload,
-} from '../src/lib/inquiry';
+} from '../src/lib/inquiry.ts';
 
 interface RequestLike extends IncomingMessage {
   body?: unknown;

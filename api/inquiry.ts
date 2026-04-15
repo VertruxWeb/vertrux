@@ -5,7 +5,7 @@ import {
   handleInquirySubmission,
   type HumanVerificationResult,
   type InquiryPayload,
-} from '../src/lib/inquiry';
+} from '../src/lib/inquiry.ts';
 
 interface RequestLike extends IncomingMessage {
   body?: unknown;
@@ -226,111 +226,128 @@ async function verifyTurnstile(args: { token: string; ip: string }): Promise<Hum
 }
 
 export default async function handler(req: RequestLike, res: ServerResponse): Promise<void> {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    json(res, 405, {
-      ok: false,
-      message: 'Method not allowed.',
-      error: {
-        code: 'invalid_payload',
-        message: 'Method not allowed.',
-      },
-    });
-    return;
-  }
-
-  if (!process.env.SMTP_PASS) {
-    json(res, 500, {
-      ok: false,
-      message: 'SMTP credentials are not configured.',
-      error: {
-        code: 'mail_configuration_error',
-        message: 'SMTP credentials are not configured.',
-      },
-    });
-    return;
-  }
-
-  let payload: InquiryPayload;
   try {
-    payload = (await readBody(req)) as InquiryPayload;
-  } catch (error) {
-    const message = error instanceof Error && error.message === 'body_too_large'
-      ? 'Payload too large.'
-      : 'Invalid request body.';
-    json(res, 400, {
-      ok: false,
-      message,
-      error: {
-        code: 'invalid_payload',
+    if (req.method !== 'POST') {
+      res.setHeader('Allow', 'POST');
+      json(res, 405, {
+        ok: false,
+        message: 'Method not allowed.',
+        error: {
+          code: 'invalid_payload',
+          message: 'Method not allowed.',
+        },
+      });
+      return;
+    }
+
+    if (!process.env.SMTP_PASS) {
+      json(res, 500, {
+        ok: false,
+        message: 'SMTP credentials are not configured.',
+        error: {
+          code: 'mail_configuration_error',
+          message: 'SMTP credentials are not configured.',
+        },
+      });
+      return;
+    }
+
+    let payload: InquiryPayload;
+    try {
+      payload = (await readBody(req)) as InquiryPayload;
+    } catch (error) {
+      const message = error instanceof Error && error.message === 'body_too_large'
+        ? 'Payload too large.'
+        : 'Invalid request body.';
+      json(res, 400, {
+        ok: false,
         message,
+        error: {
+          code: 'invalid_payload',
+          message,
+        },
+      });
+      return;
+    }
+
+    const transporter = createTransporter();
+    const mailProviderConfig = getMailProviderConfig();
+
+    const effectiveMailFrom = process.env.INQUIRY_MAIL_FROM ?? mailProviderConfig.defaultMailFrom;
+    const effectiveMailTo = process.env.INQUIRY_MAIL_TO ?? mailProviderConfig.defaultMailTo;
+    const provider = getMailProvider();
+
+    const response = await handleInquirySubmission({
+      payload,
+      ip: getClientIp(req),
+      origin: getOrigin(req),
+      now: new Date(),
+      limiter,
+      sendMail: async (mail) => {
+        try {
+          const result = await transporter.sendMail(mail);
+          console.info('[inquiry.smtp.sent]', {
+            provider,
+            host: mailProviderConfig.host,
+            port: mailProviderConfig.port,
+            secure: mailProviderConfig.secure,
+            authUser: process.env.SMTP_USER ?? '',
+            mailFrom: effectiveMailFrom,
+            mailTo: effectiveMailTo,
+            messageId: result.messageId,
+            accepted: result.accepted,
+            rejected: result.rejected,
+            response: result.response,
+          });
+          return result;
+        } catch (error) {
+          console.error('[inquiry.smtp.error]', {
+            provider,
+            host: mailProviderConfig.host,
+            port: mailProviderConfig.port,
+            secure: mailProviderConfig.secure,
+            authUser: process.env.SMTP_USER ?? '',
+            mailFrom: effectiveMailFrom,
+            mailTo: effectiveMailTo,
+            error: error instanceof Error ? error.message : String(error),
+          });
+          throw error;
+        }
+      },
+      verifyTurnstile,
+      config: {
+        allowedOrigins: getAllowedOrigins(),
+        mailFrom: effectiveMailFrom,
+        mailTo: effectiveMailTo,
       },
     });
-    return;
-  }
 
-  const transporter = createTransporter();
-  const mailProviderConfig = getMailProviderConfig();
+    if (response.status === 200) {
+      console.info('[inquiry.accepted]', {
+        provider,
+        host: mailProviderConfig.host,
+        authUser: process.env.SMTP_USER ?? '',
+        mailFrom: effectiveMailFrom,
+        mailTo: effectiveMailTo,
+        referenceId: response.body.referenceId,
+      });
+    }
 
-  const effectiveMailFrom = process.env.INQUIRY_MAIL_FROM ?? mailProviderConfig.defaultMailFrom;
-  const effectiveMailTo = process.env.INQUIRY_MAIL_TO ?? mailProviderConfig.defaultMailTo;
-  const provider = getMailProvider();
-
-  const response = await handleInquirySubmission({
-    payload,
-    ip: getClientIp(req),
-    origin: getOrigin(req),
-    now: new Date(),
-    limiter,
-    sendMail: async (mail) => {
-      try {
-        const result = await transporter.sendMail(mail);
-        console.info('[inquiry.smtp.sent]', {
-          provider,
-          host: mailProviderConfig.host,
-          port: mailProviderConfig.port,
-          secure: mailProviderConfig.secure,
-          authUser: process.env.SMTP_USER ?? '',
-          mailFrom: effectiveMailFrom,
-          mailTo: effectiveMailTo,
-          messageId: result.messageId,
-          accepted: result.accepted,
-          rejected: result.rejected,
-          response: result.response,
-        });
-        return result;
-      } catch (error) {
-        console.error('[inquiry.smtp.error]', {
-          provider,
-          host: mailProviderConfig.host,
-          port: mailProviderConfig.port,
-          secure: mailProviderConfig.secure,
-          authUser: process.env.SMTP_USER ?? '',
-          mailFrom: effectiveMailFrom,
-          mailTo: effectiveMailTo,
-          error: error instanceof Error ? error.message : String(error),
-        });
-        throw error;
-      }
-    },
-    verifyTurnstile,
-    config: {
-      allowedOrigins: getAllowedOrigins(),
-      mailFrom: effectiveMailFrom,
-      mailTo: effectiveMailTo,
-    },
-  });
-
-  if (response.status === 200) {
-    console.info('[inquiry.accepted]', {
-      provider,
-      host: mailProviderConfig.host,
-      authUser: process.env.SMTP_USER ?? '',
-      mailFrom: effectiveMailFrom,
-      mailTo: effectiveMailTo,
-      referenceId: response.body.referenceId,
+    json(res, response.status, response.body);
+  } catch (error) {
+    console.error('[inquiry.unhandled]', {
+      error: error instanceof Error ? error.stack ?? error.message : String(error),
     });
-  }
 
-  json(res, response.status, response.body);
+    if (!res.headersSent) {
+      json(res, 500, {
+        ok: false,
+        message: 'Internal server error.',
+        error: {
+          code: 'invalid_payload',
+          message: 'Internal server error.',
+        },
+      });
+    }
+  }
 }
