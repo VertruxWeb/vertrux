@@ -12,7 +12,7 @@ interface RequestLike extends IncomingMessage {
 
 const limiter = createMemoryRateLimiter();
 
-type MailProvider = 'gmail' | 'aliyun' | 'custom';
+type MailProvider = 'aliyun' | 'gmail' | 'custom';
 
 interface MailProviderConfig {
   host: string;
@@ -23,11 +23,11 @@ interface MailProviderConfig {
 }
 
 function getMailProvider(): MailProvider {
-  const provider = (process.env.INQUIRY_MAIL_PROVIDER ?? 'gmail').trim().toLowerCase();
-  if (provider === 'aliyun' || provider === 'custom') {
+  const provider = (process.env.INQUIRY_MAIL_PROVIDER ?? 'aliyun').trim().toLowerCase();
+  if (provider === 'aliyun' || provider === 'gmail' || provider === 'custom') {
     return provider;
   }
-  return 'gmail';
+  return 'aliyun';
 }
 
 function getMailProviderConfig(): MailProviderConfig {
@@ -208,19 +208,64 @@ export default async function handler(req: RequestLike, res: ServerResponse): Pr
   const transporter = createTransporter();
   const mailProviderConfig = getMailProviderConfig();
 
+  const effectiveMailFrom = process.env.INQUIRY_MAIL_FROM ?? mailProviderConfig.defaultMailFrom;
+  const effectiveMailTo = process.env.INQUIRY_MAIL_TO ?? mailProviderConfig.defaultMailTo;
+  const provider = getMailProvider();
+
   const response = await handleInquirySubmission({
     payload,
     ip: getClientIp(req),
     origin: getOrigin(req),
     now: new Date(),
     limiter,
-    sendMail: (mail) => transporter.sendMail(mail),
+    sendMail: async (mail) => {
+      try {
+        const result = await transporter.sendMail(mail);
+        console.info('[inquiry.smtp.sent]', {
+          provider,
+          host: mailProviderConfig.host,
+          port: mailProviderConfig.port,
+          secure: mailProviderConfig.secure,
+          authUser: process.env.SMTP_USER ?? '',
+          mailFrom: effectiveMailFrom,
+          mailTo: effectiveMailTo,
+          messageId: result.messageId,
+          accepted: result.accepted,
+          rejected: result.rejected,
+          response: result.response,
+        });
+        return result;
+      } catch (error) {
+        console.error('[inquiry.smtp.error]', {
+          provider,
+          host: mailProviderConfig.host,
+          port: mailProviderConfig.port,
+          secure: mailProviderConfig.secure,
+          authUser: process.env.SMTP_USER ?? '',
+          mailFrom: effectiveMailFrom,
+          mailTo: effectiveMailTo,
+          error: error instanceof Error ? error.message : String(error),
+        });
+        throw error;
+      }
+    },
     config: {
       allowedOrigins: getAllowedOrigins(),
-      mailFrom: process.env.INQUIRY_MAIL_FROM ?? mailProviderConfig.defaultMailFrom,
-      mailTo: process.env.INQUIRY_MAIL_TO ?? mailProviderConfig.defaultMailTo,
+      mailFrom: effectiveMailFrom,
+      mailTo: effectiveMailTo,
     },
   });
+
+  if (response.status === 200) {
+    console.info('[inquiry.accepted]', {
+      provider,
+      host: mailProviderConfig.host,
+      authUser: process.env.SMTP_USER ?? '',
+      mailFrom: effectiveMailFrom,
+      mailTo: effectiveMailTo,
+      referenceId: response.body.referenceId,
+    });
+  }
 
   json(res, response.status, response.body);
 }

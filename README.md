@@ -46,11 +46,37 @@ Open the local dev server URL shown by Vite.
 The inquiry API supports provider switching through `INQUIRY_MAIL_PROVIDER`.
 
 Supported values:
-- `gmail` — recommended for local testing
-- `aliyun` — recommended for production with Aliyun enterprise mailbox
+- `aliyun` — recommended default for Vetrux using Aliyun enterprise mailbox
+- `gmail` — optional for temporary local testing only
 - `custom` — use another SMTP service
 
-Gmail local testing example:
+Aliyun enterprise mailbox example:
+
+```bash
+INQUIRY_MAIL_PROVIDER=aliyun
+SMTP_HOST=smtp.qiye.aliyun.com
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=postmaster@vetrux.tech
+SMTP_PASS=your-postmaster-password-or-security-password
+INQUIRY_MAIL_FROM=postmaster@vetrux.tech
+INQUIRY_MAIL_TO=postmaster@vetrux.tech
+INQUIRY_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,https://vetrux.tech,https://www.vetrux.tech
+```
+
+How to get `SMTP_PASS` for Aliyun enterprise mailbox:
+
+1. Log in to the mailbox web console as `postmaster@vetrux.tech`.
+2. Open settings or security settings and find the SMTP / IMAP / POP service area.
+3. If third-party client security password is not enabled, use the mailbox login password.
+4. If third-party client security password is enabled, generate or reset that security password and use it for `SMTP_PASS`.
+
+Important:
+- by default, Aliyun enterprise mailbox SMTP uses the mailbox login password
+- if third-party client security password is enabled, SMTP uses that generated security password instead
+- if the console only shows “reset” instead of “view”, create a new one and save it immediately
+
+Optional Gmail local testing example:
 
 ```bash
 INQUIRY_MAIL_PROVIDER=gmail
@@ -62,20 +88,6 @@ SMTP_PASS=your-gmail-app-password
 INQUIRY_MAIL_FROM=your-gmail-address@gmail.com
 INQUIRY_MAIL_TO=your-gmail-address@gmail.com
 INQUIRY_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,https://vetrux.tech,https://www.vetrux.tech
-```
-
-Aliyun production example:
-
-```bash
-INQUIRY_MAIL_PROVIDER=aliyun
-SMTP_HOST=smtp.qiye.aliyun.com
-SMTP_PORT=465
-SMTP_SECURE=true
-SMTP_USER=postmaster@vetrux.tech
-SMTP_PASS=your-aliyun-smtp-password
-INQUIRY_MAIL_FROM=postmaster@vetrux.tech
-INQUIRY_MAIL_TO=postmaster@vetrux.tech
-INQUIRY_ALLOWED_ORIGINS=https://vetrux.tech,https://www.vetrux.tech
 ```
 
 Local development origins `http://localhost:5173` and `http://127.0.0.1:5173` are allowed by default.
