@@ -6,6 +6,7 @@ export interface InquiryPayload {
   requirements: string;
   website?: string;
   formStartedAt?: string;
+  turnstileToken?: string;
 }
 
 export interface SanitizedInquiryPayload {
@@ -16,6 +17,12 @@ export interface SanitizedInquiryPayload {
   requirements: string;
   website: string;
   formStartedAt: string;
+  turnstileToken: string;
+}
+
+export interface HumanVerificationResult {
+  ok: boolean;
+  message?: string;
 }
 
 export interface InquiryError {
@@ -79,6 +86,7 @@ export interface HandleInquirySubmissionArgs {
   now?: Date;
   limiter: RateLimiter;
   sendMail: (mail: MailRequest) => Promise<MailResponse>;
+  verifyTurnstile: (args: { token: string; ip: string }) => Promise<HumanVerificationResult>;
   config: SubmissionConfig;
 }
 
@@ -155,12 +163,13 @@ export function validateInquiryPayload(payload: InquiryPayload, options: Validat
   const requirements = trimText(payload.requirements);
   const website = trimText(payload.website);
   const formStartedAt = trimText(payload.formStartedAt);
+  const turnstileToken = trimText(payload.turnstileToken);
 
   if (website) {
     return buildError('honeypot_triggered', 'Submission blocked.');
   }
 
-  if (!companyName || !contactPerson || !email || !monthlyVolume || !requirements) {
+  if (!companyName || !contactPerson || !email || !monthlyVolume || !requirements || !turnstileToken) {
     return buildError('missing_field', 'Please complete all required fields.');
   }
 
@@ -217,6 +226,7 @@ export function validateInquiryPayload(payload: InquiryPayload, options: Validat
       requirements,
       website,
       formStartedAt: new Date(parsedStartedAt).toISOString(),
+      turnstileToken,
     },
   };
 }
@@ -339,6 +349,25 @@ export async function handleInquirySubmission(args: HandleInquirySubmissionArgs)
         ok: false,
         message: validated.error.message,
         error: validated.error,
+      },
+    };
+  }
+
+  const humanVerification = await args.verifyTurnstile({
+    token: validated.value.turnstileToken,
+    ip: args.ip,
+  });
+  if (!humanVerification.ok) {
+    const message = humanVerification.message ?? 'Human verification failed. Please try again.';
+    return {
+      status: 400,
+      body: {
+        ok: false,
+        message,
+        error: {
+          code: 'invalid_payload',
+          message,
+        },
       },
     };
   }

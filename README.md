@@ -63,6 +63,8 @@ SMTP_PASS=your-postmaster-password-or-security-password
 INQUIRY_MAIL_FROM=postmaster@vetrux.tech
 INQUIRY_MAIL_TO=postmaster@vetrux.tech
 INQUIRY_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,https://vetrux.tech,https://www.vetrux.tech
+VITE_TURNSTILE_SITE_KEY=your-cloudflare-turnstile-site-key
+TURNSTILE_SECRET_KEY=your-cloudflare-turnstile-secret-key
 ```
 
 How to get `SMTP_PASS` for Aliyun enterprise mailbox:
@@ -89,6 +91,8 @@ SMTP_PASS=your-gmail-app-password
 INQUIRY_MAIL_FROM=your-gmail-address@gmail.com
 INQUIRY_MAIL_TO=your-gmail-address@gmail.com
 INQUIRY_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,https://vetrux.tech,https://www.vetrux.tech
+VITE_TURNSTILE_SITE_KEY=your-cloudflare-turnstile-site-key
+TURNSTILE_SECRET_KEY=your-cloudflare-turnstile-secret-key
 ```
 
 Local development origins `http://localhost:5173` and `http://127.0.0.1:5173` are allowed by default.
@@ -97,6 +101,7 @@ Detailed environment templates and switching guidance live in `docs/inquiry-env-
 ### Abuse Protection
 
 The inquiry pipeline currently defends against common form abuse by combining:
+- Cloudflare Turnstile widget on the frontend with server-side token verification
 - server-side field validation and payload length limits
 - origin / referer allow-list enforcement
 - honeypot bot detection

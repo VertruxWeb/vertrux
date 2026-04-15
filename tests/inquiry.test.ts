@@ -14,6 +14,7 @@ const validPayload: InquiryPayload = {
   requirements: 'We need CBD isolate with GMP documentation and quarterly supply pricing.',
   website: '',
   formStartedAt: new Date('2026-04-14T19:00:00.000Z').toISOString(),
+  turnstileToken: 'turnstile-test-token',
 };
 
 describe('validateInquiryPayload', () => {
@@ -54,11 +55,27 @@ describe('validateInquiryPayload', () => {
     expect(result.ok).toBe(false);
     expect(result.error.code).toBe('submission_too_fast');
   });
+
+  it('requires a turnstile token for valid submissions', () => {
+    const result = validateInquiryPayload(
+      {
+        ...validPayload,
+        turnstileToken: '',
+      },
+      {
+        now: new Date('2026-04-14T19:00:10.000Z'),
+      },
+    );
+
+    expect(result.ok).toBe(false);
+    expect(result.error.code).toBe('missing_field');
+  });
 });
 
 describe('handleInquirySubmission', () => {
   it('sends a structured inquiry email for valid requests', async () => {
     const sendMail = vi.fn().mockResolvedValue({ messageId: 'test-message-id' });
+    const verifyTurnstile = vi.fn().mockResolvedValue({ ok: true });
     const limiter = createMemoryRateLimiter();
 
     const response = await handleInquirySubmission({
@@ -68,6 +85,7 @@ describe('handleInquirySubmission', () => {
       now: new Date('2026-04-14T19:00:10.000Z'),
       limiter,
       sendMail,
+      verifyTurnstile,
       config: {
         mailFrom: 'postmaster@vetrux.tech',
         mailTo: 'postmaster@vetrux.tech',
@@ -77,6 +95,10 @@ describe('handleInquirySubmission', () => {
 
     expect(response.status).toBe(200);
     expect(response.body.ok).toBe(true);
+    expect(verifyTurnstile).toHaveBeenCalledWith({
+      token: 'turnstile-test-token',
+      ip: '203.0.113.10',
+    });
     expect(sendMail).toHaveBeenCalledTimes(1);
     expect(sendMail.mock.calls[0]?.[0]).toMatchObject({
       from: 'postmaster@vetrux.tech',
@@ -88,6 +110,7 @@ describe('handleInquirySubmission', () => {
 
   it('blocks repeated submissions from the same IP when the limit is exceeded', async () => {
     const sendMail = vi.fn().mockResolvedValue({ messageId: 'test-message-id' });
+    const verifyTurnstile = vi.fn().mockResolvedValue({ ok: true });
     const limiter = createMemoryRateLimiter();
     const config = {
       mailFrom: 'postmaster@vetrux.tech',
@@ -107,6 +130,7 @@ describe('handleInquirySubmission', () => {
         now: new Date(`2026-04-14T19:0${attempt}:10.000Z`),
         limiter,
         sendMail,
+        verifyTurnstile,
         config,
       });
 
@@ -124,6 +148,7 @@ describe('handleInquirySubmission', () => {
       now: new Date('2026-04-14T19:03:10.000Z'),
       limiter,
       sendMail,
+      verifyTurnstile,
       config,
     });
 
@@ -134,6 +159,7 @@ describe('handleInquirySubmission', () => {
 
   it('rejects requests from disallowed origins', async () => {
     const sendMail = vi.fn().mockResolvedValue({ messageId: 'test-message-id' });
+    const verifyTurnstile = vi.fn().mockResolvedValue({ ok: true });
 
     const response = await handleInquirySubmission({
       payload: validPayload,
@@ -142,6 +168,7 @@ describe('handleInquirySubmission', () => {
       now: new Date('2026-04-14T19:00:10.000Z'),
       limiter: createMemoryRateLimiter(),
       sendMail,
+      verifyTurnstile,
       config: {
         mailFrom: 'postmaster@vetrux.tech',
         mailTo: 'postmaster@vetrux.tech',
@@ -151,6 +178,34 @@ describe('handleInquirySubmission', () => {
 
     expect(response.status).toBe(403);
     expect(response.body.error.code).toBe('origin_not_allowed');
+    expect(sendMail).not.toHaveBeenCalled();
+  });
+
+  it('rejects requests when turnstile verification fails', async () => {
+    const sendMail = vi.fn().mockResolvedValue({ messageId: 'test-message-id' });
+    const verifyTurnstile = vi.fn().mockResolvedValue({
+      ok: false,
+      message: 'Human verification failed. Please try again.',
+    });
+
+    const response = await handleInquirySubmission({
+      payload: validPayload,
+      ip: '203.0.113.10',
+      origin: 'https://vetrux.tech',
+      now: new Date('2026-04-14T19:00:10.000Z'),
+      limiter: createMemoryRateLimiter(),
+      sendMail,
+      verifyTurnstile,
+      config: {
+        mailFrom: 'postmaster@vetrux.tech',
+        mailTo: 'postmaster@vetrux.tech',
+        allowedOrigins: ['https://vetrux.tech'],
+      },
+    });
+
+    expect(response.status).toBe(400);
+    expect(response.body.error.code).toBe('invalid_payload');
+    expect(response.body.message).toBe('Human verification failed. Please try again.');
     expect(sendMail).not.toHaveBeenCalled();
   });
 });

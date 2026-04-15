@@ -3,11 +3,17 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import {
   createMemoryRateLimiter,
   handleInquirySubmission,
+  type HumanVerificationResult,
   type InquiryPayload,
 } from '../src/lib/inquiry';
 
 interface RequestLike extends IncomingMessage {
   body?: unknown;
+}
+
+interface TurnstileSiteVerifyResponse {
+  success?: boolean;
+  'error-codes'?: string[];
 }
 
 const limiter = createMemoryRateLimiter();
@@ -161,6 +167,64 @@ function json(res: ServerResponse, status: number, body: unknown): void {
   res.end(JSON.stringify(body));
 }
 
+async function verifyTurnstile(args: { token: string; ip: string }): Promise<HumanVerificationResult> {
+  const secret = (process.env.TURNSTILE_SECRET_KEY ?? '').trim();
+  if (!secret) {
+    return {
+      ok: false,
+      message: 'Human verification is not configured.',
+    };
+  }
+
+  try {
+    const body = new URLSearchParams({
+      secret,
+      response: args.token,
+    });
+
+    if (args.ip && args.ip !== 'unknown') {
+      body.set('remoteip', args.ip);
+    }
+
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body,
+    });
+
+    if (!response.ok) {
+      return {
+        ok: false,
+        message: 'Human verification failed. Please try again.',
+      };
+    }
+
+    const result = (await response.json()) as TurnstileSiteVerifyResponse;
+    if (!result.success) {
+      console.warn('[inquiry.turnstile.failed]', {
+        errorCodes: result['error-codes'] ?? [],
+      });
+      return {
+        ok: false,
+        message: 'Human verification failed. Please try again.',
+      };
+    }
+
+    return { ok: true };
+  } catch (error) {
+    console.error('[inquiry.turnstile.error]', {
+      error: error instanceof Error ? error.message : String(error),
+    });
+
+    return {
+      ok: false,
+      message: 'Human verification failed. Please try again.',
+    };
+  }
+}
+
 export default async function handler(req: RequestLike, res: ServerResponse): Promise<void> {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -249,6 +313,7 @@ export default async function handler(req: RequestLike, res: ServerResponse): Pr
         throw error;
       }
     },
+    verifyTurnstile,
     config: {
       allowedOrigins: getAllowedOrigins(),
       mailFrom: effectiveMailFrom,

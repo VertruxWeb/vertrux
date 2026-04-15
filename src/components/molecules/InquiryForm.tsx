@@ -2,12 +2,30 @@
 // Reusable B2B inquiry / wholesale form molecule
 // Used on multiple pages; minimal bottom-border input style
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import Button from '../atoms/Button';
 import { submitInquiry } from '../../lib/inquiryClient';
 import type { InquiryPayload } from '../../lib/inquiry';
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: HTMLElement,
+        options: {
+          sitekey: string;
+          callback?: (token: string) => void;
+          'expired-callback'?: () => void;
+          'error-callback'?: () => void;
+          theme?: 'light' | 'dark' | 'auto';
+        },
+      ) => string;
+      reset: (widgetId?: string) => void;
+    };
+  }
+}
 
 interface InquiryFormProps {
   darkBg?: boolean;
@@ -21,14 +39,19 @@ const initialForm = (): InquiryPayload => ({
   requirements: '',
   website: '',
   formStartedAt: new Date().toISOString(),
+  turnstileToken: '',
 });
 
 export default function InquiryForm({ darkBg = false }: InquiryFormProps) {
+  const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY?.trim() ?? '';
+  const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
   const [form, setForm] = useState<InquiryPayload>(initialForm);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [referenceId, setReferenceId] = useState('');
+  const [isTurnstileReady, setIsTurnstileReady] = useState(false);
 
   const inputClass = darkBg
     ? 'w-full bg-transparent border-0 border-b border-white/20 pb-3 pt-1 text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-all duration-200'
@@ -43,9 +66,89 @@ export default function InquiryForm({ darkBg = false }: InquiryFormProps) {
     [darkBg],
   );
 
+  const resetTurnstile = () => {
+    setForm((currentForm) => ({ ...currentForm, turnstileToken: '', formStartedAt: new Date().toISOString() }));
+
+    if (window.turnstile && turnstileWidgetIdRef.current) {
+      window.turnstile.reset(turnstileWidgetIdRef.current);
+    }
+  };
+
+  useEffect(() => {
+    if (!turnstileSiteKey || !turnstileContainerRef.current) {
+      return;
+    }
+
+    let isCancelled = false;
+
+    const renderWidget = () => {
+      if (
+        isCancelled
+        || !window.turnstile
+        || !turnstileContainerRef.current
+        || turnstileWidgetIdRef.current
+      ) {
+        return;
+      }
+
+      turnstileWidgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
+        sitekey: turnstileSiteKey,
+        theme: darkBg ? 'dark' : 'light',
+        callback: (token) => {
+          setForm((currentForm) => ({ ...currentForm, turnstileToken: token }));
+          setErrorMessage('');
+        },
+        'expired-callback': () => {
+          setForm((currentForm) => ({ ...currentForm, turnstileToken: '' }));
+        },
+        'error-callback': () => {
+          setForm((currentForm) => ({ ...currentForm, turnstileToken: '' }));
+          setErrorMessage('Cloudflare Turnstile verification failed. Please try again.');
+        },
+      });
+      setIsTurnstileReady(true);
+    };
+
+    const existingScript = document.getElementById('cf-turnstile-script') as HTMLScriptElement | null;
+    if (existingScript) {
+      if (window.turnstile) {
+        renderWidget();
+      } else {
+        existingScript.addEventListener('load', renderWidget, { once: true });
+      }
+
+      return () => {
+        isCancelled = true;
+      };
+    }
+
+    const script = document.createElement('script');
+    script.id = 'cf-turnstile-script';
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    script.defer = true;
+    script.addEventListener('load', renderWidget, { once: true });
+    document.head.appendChild(script);
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [darkBg, turnstileSiteKey]);
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+
+    if (!turnstileSiteKey) {
+      setErrorMessage('Cloudflare Turnstile site key is not configured.');
+      return;
+    }
+
+    if (!form.turnstileToken) {
+      setErrorMessage('Please complete the human verification challenge before submitting.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -55,6 +158,7 @@ export default function InquiryForm({ darkBg = false }: InquiryFormProps) {
       setForm(initialForm());
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : 'Unable to submit your inquiry right now.');
+      resetTurnstile();
     } finally {
       setIsSubmitting(false);
     }
@@ -164,11 +268,22 @@ export default function InquiryForm({ darkBg = false }: InquiryFormProps) {
         />
       </div>
 
+      <div className="space-y-3">
+        <div ref={turnstileContainerRef} className="min-h-[65px]" />
+        <p className={`text-xs leading-relaxed ${helperTextClass}`}>
+          {turnstileSiteKey
+            ? isTurnstileReady
+              ? 'Cloudflare Turnstile is active. Complete the verification challenge before submitting.'
+              : 'Loading Cloudflare Turnstile verification…'
+            : 'Set VITE_TURNSTILE_SITE_KEY to enable Cloudflare Turnstile verification.'}
+        </p>
+      </div>
+
       <div className={`flex items-start gap-3 text-xs leading-relaxed ${helperTextClass}`}>
         <ShieldCheck size={14} className="mt-0.5 shrink-0" />
         <p>
-          This form is protected with server-side validation, origin checks, honeypot filtering,
-          and rate limiting to reduce spam and abuse.
+          This form is protected with Cloudflare Turnstile, server-side validation, origin checks,
+          honeypot filtering, and rate limiting to reduce spam and abuse.
         </p>
       </div>
 
@@ -178,7 +293,13 @@ export default function InquiryForm({ darkBg = false }: InquiryFormProps) {
         </div>
       ) : null}
 
-      <Button type="submit" variant={darkBg ? 'glass' : 'primary'} size="lg" icon={ArrowRight} disabled={isSubmitting}>
+      <Button
+        type="submit"
+        variant={darkBg ? 'glass' : 'primary'}
+        size="lg"
+        icon={ArrowRight}
+        disabled={isSubmitting || !turnstileSiteKey}
+      >
         {isSubmitting ? 'Submitting…' : 'Submit Technical Inquiry'}
       </Button>
     </form>

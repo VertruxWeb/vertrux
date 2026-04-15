@@ -19,7 +19,20 @@ export async function submitInquiry(payload: InquiryPayload): Promise<InquiryApi
     body: JSON.stringify(payload),
   });
 
-  const data = (await response.json()) as InquiryApiResponse;
+  const raw = await response.text();
+  let data: InquiryApiResponse = { ok: false, message: 'Empty response from inquiry API.' };
+
+  if (raw) {
+    try {
+      data = JSON.parse(raw) as InquiryApiResponse;
+    } catch {
+      data = {
+        ok: false,
+        message: 'Unable to submit inquiry right now. Please try again later.',
+      };
+    }
+  }
+
   if (!response.ok) {
     throw new Error(data.error?.message ?? data.message ?? 'Unable to submit inquiry.');
   }
