@@ -3,8 +3,8 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import {
   createMemoryRateLimiter,
   handleInquirySubmission,
-  type InquiryPayload,
-} from '../src/lib/inquiry.ts';
+} from './_lib/inquiry.js';
+import type { InquiryPayload } from '../src/lib/inquiry.ts';
 
 interface RequestLike extends IncomingMessage {
   body?: unknown;
