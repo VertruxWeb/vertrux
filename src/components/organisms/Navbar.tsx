@@ -31,7 +31,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.href;
             return (
@@ -53,14 +53,14 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           to="/inquiry"
-          className="hidden md:inline-flex items-center px-4 py-2 bg-primary text-white text-xs font-semibold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300"
+          className="hidden lg:inline-flex items-center px-4 py-2 bg-primary text-white text-xs font-semibold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300 whitespace-nowrap"
         >
           Contact Us
         </Link>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 text-on-surface"
+          className="lg:hidden p-2 text-on-surface"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -70,7 +70,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-surface-container-lowest border-t border-outline-variant/20 px-6 py-6">
+        <div className="lg:hidden bg-surface-container-lowest border-t border-outline-variant/20 px-6 py-6">
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.href;
