@@ -66,10 +66,15 @@ export const articles: Article[] = rawFiles.map(({ raw, size }) => {
   };
 });
 
+// ── Strip frontmatter from raw markdown ──────────────────────────────────────
+function stripFrontmatter(raw: string): string {
+  return raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '');
+}
+
 // ── Raw content map (for ArticlePage renderer) ────────────────────────────────
 export const articleContent: Record<string, string> = Object.fromEntries(
   rawFiles.map(({ raw }) => {
     const fm = parseFrontmatter(raw);
-    return [fm.slug, raw];
+    return [fm.slug, stripFrontmatter(raw)];
   })
 );
