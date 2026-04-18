@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { articles } from '../content/articles';
 
 export interface SeoMetadata {
@@ -316,4 +317,29 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
       type: 'website',
     }
   );
+}
+
+export function buildMetadata(pathname: string): Metadata {
+  const seo = getSeoMetadata(pathname);
+  const baseUrl = getBaseUrl();
+  const imageUrl = seo.image ? `${baseUrl}${seo.image}` : undefined;
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    alternates: { canonical: `${baseUrl}${seo.canonicalPath}` },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      url: `${baseUrl}${seo.canonicalPath}`,
+      images: imageUrl ? [{ url: imageUrl }] : undefined,
+      type: seo.type === 'article' ? 'article' : 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo.title,
+      description: seo.description,
+      images: imageUrl ? [imageUrl] : undefined,
+    },
+  };
 }

@@ -28,6 +28,11 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: 'fr_FR',
       type: 'website',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Isolat de CBD en Gros | Qualité Pharmaceutique — Yunnan Vetrux',
+      description: 'Isolat de CBD pharmaceutique ≥99,5% de pureté, sans THC. Livraison DDP en Europe.',
+    },
   };
 }
 

@@ -1,23 +1,9 @@
 import type { Metadata } from 'next';
-import { getSeoMetadata, getBaseUrl } from '@/lib/seo';
+import { buildMetadata, getSeoMetadata } from '@/lib/seo';
 import HomePageClient from '@/components/pages/HomePageClient';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seo = getSeoMetadata('/');
-  const baseUrl = getBaseUrl();
-  return {
-    title: seo.title,
-    description: seo.description,
-    keywords: seo.keywords,
-    alternates: { canonical: `${baseUrl}${seo.canonicalPath}` },
-    openGraph: {
-      title: seo.title,
-      description: seo.description,
-      url: `${baseUrl}${seo.canonicalPath}`,
-      images: seo.image ? [{ url: `${baseUrl}${seo.image}` }] : undefined,
-      type: 'website',
-    },
-  };
+  return buildMetadata('/');
 }
 
 export default function HomePage() {
