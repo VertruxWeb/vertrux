@@ -115,6 +115,19 @@ export default function HomePageClient() {
         </div>
       </section>
 
+      {/* ── TL;DR SUMMARY ──────────────────────────────────────────────── */}
+      <section className="py-8 bg-primary-fixed border-b border-outline-variant/20">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">TL;DR</p>
+          <p className="text-sm text-on-background leading-relaxed max-w-3xl">
+            Yunnan Vetrux is a vertically integrated CBD isolate manufacturer in Yunnan, China.
+            We produce pharmaceutical-grade CBD isolate (≥99.5% purity, THC non-detect) via supercritical CO₂ extraction
+            in a cGMP-certified facility. ISO 9001, GMP, HACCP certified. Supplying European B2B buyers
+            with 1 kg to ton-scale orders, FOB/CIF/DDP delivery, and full COA documentation per batch.
+          </p>
+        </div>
+      </section>
+
       {/* ── INDUSTRY CONTEXT ────────────────────────────────────────────── */}
       <section className="py-12 bg-surface-container-low border-b border-outline-variant/20">
         <div className="max-w-container mx-auto px-6 lg:px-12">
