@@ -1,7 +1,9 @@
 // src/content/articles/index.ts
 // Parses YAML frontmatter from each markdown file to build the Article[] list.
-// To add a new article: create the .md file with frontmatter, import it below,
-// and add it to the rawFiles array — no other changes needed.
+// Uses fs.readFileSync for Next.js server-side rendering (no Vite ?raw imports).
+
+import fs from 'node:fs'
+import path from 'node:path'
 
 export interface Article {
   slug: string;
@@ -14,46 +16,45 @@ export interface Article {
   size?: 'normal' | 'large';
 }
 
-// ── Raw markdown imports (Vite ?raw) ──────────────────────────────────────────
-import whitepaperMd    from './botanical-biotechnology-innovation-whitepaper.md?raw';
-import regulatoryMd   from './global-cbd-extraction-standards-2024.md?raw';
-import esgMd          from './esg-decarbonizing-cannabis-supply-chain.md?raw';
-import techMd         from './co2-vs-ethanol-extraction-comparison.md?raw';
-import marketMd       from './apac-cbd-market-outlook-2025.md?raw';
-import sourcingMd     from './final_article.md?raw';
-
-// ── Frontmatter parser ────────────────────────────────────────────────────────
-// Extracts the YAML block between the opening and closing `---` delimiters.
-// Supports: unquoted values, single-quoted, and double-quoted values.
-function parseFrontmatter(raw: string): Record<string, string> {
-  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!match) return {};
-  const result: Record<string, string> = {};
-  for (const line of match[1].split(/\r?\n/)) {
-    const colonIdx = line.indexOf(':');
-    if (colonIdx === -1) continue;
-    const key = line.slice(0, colonIdx).trim();
-    const val = line.slice(colonIdx + 1).trim().replace(/^["']|["']$/g, '');
-    if (key) result[key] = val;
-  }
-  return result;
-}
+const articlesDir = path.join(process.cwd(), 'src/content/articles')
 
 // ── Article order + size overrides ───────────────────────────────────────────
-// Declare files in the order you want them displayed on InsightsPage.
-// The first entry becomes the featured hero article.
-const rawFiles: Array<{ raw: string; size?: 'normal' | 'large' }> = [
-  { raw: whitepaperMd,  size: 'large'  },
-  { raw: regulatoryMd,  size: 'normal' },
-  { raw: esgMd,         size: 'normal' },
-  { raw: techMd,        size: 'normal' },
-  { raw: marketMd,      size: 'normal' },
-  { raw: sourcingMd,    size: 'normal' },
-];
+const fileOrder: Array<{ filename: string; size?: 'normal' | 'large' }> = [
+  { filename: 'botanical-biotechnology-innovation-whitepaper.md', size: 'large' },
+  { filename: 'global-cbd-extraction-standards-2024.md',          size: 'normal' },
+  { filename: 'esg-decarbonizing-cannabis-supply-chain.md',       size: 'normal' },
+  { filename: 'co2-vs-ethanol-extraction-comparison.md',          size: 'normal' },
+  { filename: 'apac-cbd-market-outlook-2025.md',                  size: 'normal' },
+  { filename: 'final_article.md',                                 size: 'normal' },
+]
+
+// ── Frontmatter parser ────────────────────────────────────────────────────────
+function parseFrontmatter(raw: string): Record<string, string> {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  if (!match) return {}
+  const result: Record<string, string> = {}
+  for (const line of match[1].split(/\r?\n/)) {
+    const colonIdx = line.indexOf(':')
+    if (colonIdx === -1) continue
+    const key = line.slice(0, colonIdx).trim()
+    const val = line.slice(colonIdx + 1).trim().replace(/^["']|["']$/g, '')
+    if (key) result[key] = val
+  }
+  return result
+}
+
+function stripFrontmatter(raw: string): string {
+  return raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
+}
+
+function readArticleFile(filename: string): string {
+  return fs.readFileSync(path.join(articlesDir, filename), 'utf8')
+}
 
 // ── Build Article[] from parsed frontmatter ───────────────────────────────────
-export const articles: Article[] = rawFiles.map(({ raw, size }) => {
-  const fm = parseFrontmatter(raw);
+export const articles: Article[] = fileOrder.map(({ filename, size }) => {
+  const raw = readArticleFile(filename)
+  const fm = parseFrontmatter(raw)
   return {
     slug:     fm.slug     ?? '',
     category: fm.category ?? 'Insight',
@@ -63,18 +64,21 @@ export const articles: Article[] = rawFiles.map(({ raw, size }) => {
     readTime: fm.readTime ? `${fm.readTime} Read` : '',
     image:    fm.image    ?? '',
     size,
-  };
-});
-
-// ── Strip frontmatter from raw markdown ──────────────────────────────────────
-function stripFrontmatter(raw: string): string {
-  return raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '');
-}
+  }
+})
 
 // ── Raw content map (for ArticlePage renderer) ────────────────────────────────
 export const articleContent: Record<string, string> = Object.fromEntries(
-  rawFiles.map(({ raw }) => {
-    const fm = parseFrontmatter(raw);
-    return [fm.slug, stripFrontmatter(raw)];
+  fileOrder.map(({ filename }) => {
+    const raw = readArticleFile(filename)
+    const fm = parseFrontmatter(raw)
+    return [fm.slug, stripFrontmatter(raw)]
   })
-);
+)
+
+// ── Helper for dynamic route pages ────────────────────────────────────────────
+export function getArticleBySlug(slug: string): { meta: Article; content: string } | null {
+  const meta = articles.find((a) => a.slug === slug)
+  if (!meta) return null
+  return { meta, content: articleContent[slug] ?? '' }
+}

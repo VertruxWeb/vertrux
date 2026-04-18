@@ -1,14 +1,12 @@
-// src/pages/PlantingPage.tsx
-// Planting Base — "From the Source. Quality You Can Trace."
-// Sections: Hero, Stats, Growing Zones, Photo Gallery Grid, Traceability, CTA
+'use client'
 
 import { useRef } from 'react';
 import { Leaf, Thermometer, Droplets, Sun, Shield, CheckCircle } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Badge from '../components/atoms/Badge';
-import SectionLabel from '../components/atoms/SectionLabel';
+import Badge from '@/components/atoms/Badge';
+import SectionLabel from '@/components/atoms/SectionLabel';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,7 +90,7 @@ const traceabilityItems = [
   { icon: CheckCircle, label: 'Batch Documentation', desc: 'Product and origin documentation requests can be directed through the inquiry workflow' },
 ];
 
-export default function PlantingPage() {
+export default function PlantingPageClient() {
   const statsRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const zonesRef = useRef<HTMLDivElement>(null);
@@ -161,7 +159,6 @@ export default function PlantingPage() {
       <section className="py-24 bg-surface-container-low">
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left: info */}
             <div>
               <Badge variant="default" className="mb-6">Cultivation Base · Yunnan Province</Badge>
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
@@ -175,23 +172,15 @@ export default function PlantingPage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 {['Cultivation Overview', 'Origin Tracking', 'Source Control', 'B2B Inquiry Path'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase"
-                  >
+                  <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
 
-            {/* Right: planting image */}
             <div className="relative">
-              <img
-                src="/images/planting/plant3.jpg"
-                alt="Vetrux planting base greenhouse"
-                className="w-full h-[500px] object-cover"
-              />
+              <img src="/images/planting/plant3.jpg" alt="Vetrux planting base greenhouse" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Cultivation Base</p>
                 <p className="text-sm font-bold text-white">Yunnan Province, China</p>
@@ -249,9 +238,7 @@ export default function PlantingPage() {
         <div ref={zonesRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
             <SectionLabel>Growing Zones</SectionLabel>
-            <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">
-              Three Zones. One Controlled Process.
-            </h2>
+            <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">Three Zones. One Controlled Process.</h2>
           </div>
 
           <div className="space-y-28">
@@ -259,55 +246,33 @@ export default function PlantingPage() {
               const Icon = zone.icon;
               const isReversed = idx % 2 === 1;
               return (
-                <div
-                  key={zone.id}
-                  className={`reveal-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
-                >
-                  {/* Images side */}
+                <div key={zone.id} className="reveal-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className={`grid grid-cols-2 gap-3 ${isReversed ? 'lg:order-2' : ''}`}>
                     {zone.images.map((img, i) => (
-                      <div key={i} className={`overflow-hidden ${i === 0 ? 'row-span-1' : ''}`}>
-                        <img
-                          src={img.src}
-                          alt={img.alt}
-                          className="w-full h-52 object-cover hover:scale-[1.03] transition-transform duration-500"
-                        />
+                      <div key={i} className="overflow-hidden">
+                        <img src={img.src} alt={img.alt} className="w-full h-52 object-cover hover:scale-[1.03] transition-transform duration-500" />
                       </div>
                     ))}
-                    {/* Zone number accent */}
                     <div className="col-span-2 flex items-center gap-3 mt-1">
                       <span className="text-xs font-mono tracking-widest text-on-surface-variant">#{zone.id}</span>
                       <div className="flex-1 h-px bg-outline-variant/30" />
                     </div>
                   </div>
 
-                  {/* Text side */}
                   <div className={isReversed ? 'lg:order-1' : ''}>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-2 bg-primary/10 rounded">
                         <Icon size={16} className="text-primary" />
                       </div>
-                      <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant">
-                        {zone.tag}
-                      </p>
+                      <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant">{zone.tag}</p>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-                      {zone.title}
-                    </h3>
-                    <p className="text-sm text-on-surface-variant leading-relaxed mb-8">
-                      {zone.description}
-                    </p>
+                    <h3 className="text-2xl md:text-3xl font-extrabold text-on-background tracking-tighter mb-4">{zone.title}</h3>
+                    <p className="text-sm text-on-surface-variant leading-relaxed mb-8">{zone.description}</p>
 
-                    {/* Spec rows */}
                     <div className="space-y-0">
                       {zone.specs.map((spec, i) => (
-                        <div
-                          key={spec.label}
-                          className={`flex justify-between items-center py-3 ${i < zone.specs.length - 1 ? 'border-b border-outline-variant/30' : ''}`}
-                        >
-                          <span className="text-xs font-semibold tracking-wider uppercase text-on-surface-variant">
-                            {spec.label}
-                          </span>
+                        <div key={spec.label} className={`flex justify-between items-center py-3 ${i < zone.specs.length - 1 ? 'border-b border-outline-variant/30' : ''}`}>
+                          <span className="text-xs font-semibold tracking-wider uppercase text-on-surface-variant">{spec.label}</span>
                           <span className="text-sm font-bold text-on-surface">{spec.value}</span>
                         </div>
                       ))}
@@ -326,9 +291,7 @@ export default function PlantingPage() {
           <div className="reveal-card flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
             <div>
               <SectionLabel>Field Documentation</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mt-3">
-                Inside the Planting Base
-              </h2>
+              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mt-3">Inside the Planting Base</h2>
             </div>
             <p className="text-sm text-on-surface-variant max-w-sm leading-relaxed">
               Raw footage from our cultivation teams, captured across different growth stages and seasonal conditions.
@@ -337,15 +300,8 @@ export default function PlantingPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {galleryImages.map((img, i) => (
-              <div
-                key={i}
-                className={`reveal-card overflow-hidden group ${i === 0 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''}`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className={`w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03] ${i === 0 ? 'h-full min-h-[320px]' : 'h-48'}`}
-                />
+              <div key={i} className={`reveal-card overflow-hidden group ${i === 0 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''}`}>
+                <img src={img.src} alt={img.alt} className={`w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03] ${i === 0 ? 'h-full min-h-[320px]' : 'h-48'}`} />
               </div>
             ))}
           </div>
@@ -401,16 +357,10 @@ export default function PlantingPage() {
               </p>
             </div>
             <div className="reveal-card lg:col-span-4 flex flex-col gap-3">
-              <a
-                href="/inquiry"
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-xs font-bold tracking-widest uppercase hover:bg-primary-container transition-all duration-300"
-              >
+              <a href="/inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-xs font-bold tracking-widest uppercase hover:bg-primary-container transition-all duration-300">
                 Request a Quote
               </a>
-              <a
-                href="/products/cbd-isolate"
-                className="inline-flex items-center justify-center px-8 py-4 border border-outline-variant/40 text-on-surface text-xs font-bold tracking-widest uppercase hover:bg-surface-container transition-all duration-300"
-              >
+              <a href="/products/cbd-isolate" className="inline-flex items-center justify-center px-8 py-4 border border-outline-variant/40 text-on-surface text-xs font-bold tracking-widest uppercase hover:bg-surface-container transition-all duration-300">
                 View Product Specs
               </a>
             </div>

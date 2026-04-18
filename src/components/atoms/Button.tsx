@@ -1,3 +1,5 @@
+'use client'
+
 // src/components/atoms/Button.tsx
 // Reusable button atom following the design system rules:
 // Primary: deep forest green, square-ish corners (rounded-md max)

@@ -193,13 +193,9 @@ function normalizeBaseUrl(origin: string): string {
 }
 
 export function getBaseUrl(): string {
-  const configured = import.meta.env.VITE_SITE_URL?.trim();
+  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (configured) {
     return normalizeBaseUrl(configured);
-  }
-
-  if (typeof window !== 'undefined' && window.location.origin) {
-    return normalizeBaseUrl(window.location.origin);
   }
 
   return 'https://www.vetrux.tech';

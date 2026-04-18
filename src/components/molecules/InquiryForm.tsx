@@ -1,3 +1,5 @@
+'use client'
+
 // src/components/molecules/InquiryForm.tsx
 // Reusable B2B inquiry / wholesale form molecule
 // Used on multiple pages; minimal bottom-border input style
@@ -43,7 +45,7 @@ const initialForm = (): InquiryPayload => ({
 });
 
 export default function InquiryForm({ darkBg = false }: InquiryFormProps) {
-  const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY?.trim() ?? '';
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() ?? '';
   const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
   const turnstileWidgetIdRef = useRef<string | null>(null);
   const [form, setForm] = useState<InquiryPayload>(initialForm);
@@ -275,7 +277,7 @@ export default function InquiryForm({ darkBg = false }: InquiryFormProps) {
             ? isTurnstileReady
               ? 'Cloudflare Turnstile is active. Complete the verification challenge before submitting.'
               : 'Loading Cloudflare Turnstile verification…'
-            : 'Set VITE_TURNSTILE_SITE_KEY to enable Cloudflare Turnstile verification.'}
+            : 'Turnstile site key is not configured.'}
         </p>
       </div>
 

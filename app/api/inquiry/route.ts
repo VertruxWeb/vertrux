@@ -1,14 +1,12 @@
+import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import type { IncomingMessage, ServerResponse } from 'node:http';
 import {
   createMemoryRateLimiter,
   handleInquirySubmission,
-} from './_lib/inquiry.js';
-import type { HumanVerificationResult, InquiryPayload } from '../src/lib/inquiry.ts';
+} from '@/lib/inquiry';
+import type { HumanVerificationResult, InquiryPayload } from '@/lib/inquiry';
 
-interface RequestLike extends IncomingMessage {
-  body?: unknown;
-}
+export const runtime = 'nodejs';
 
 interface TurnstileSiteVerifyResponse {
   success?: boolean;
@@ -69,16 +67,12 @@ function getMailProviderConfig(): MailProviderConfig {
 
 function createTransporter() {
   const providerConfig = getMailProviderConfig();
-
   return nodemailer.createTransport({
     host: providerConfig.host,
     port: providerConfig.port,
     secure: providerConfig.secure,
     auth: process.env.SMTP_USER && process.env.SMTP_PASS
-      ? {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        }
+      ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
       : undefined,
   });
 }
@@ -87,8 +81,8 @@ function getAllowedOrigins(): string[] {
   const defaults = [
     'https://vetrux.tech',
     'https://www.vetrux.tech',
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
   ];
 
   const envOrigins = (process.env.INQUIRY_ALLOWED_ORIGINS ?? '')
@@ -100,28 +94,26 @@ function getAllowedOrigins(): string[] {
   return Array.from(new Set([...defaults, ...envOrigins, vercelUrl].filter(Boolean)));
 }
 
-function getClientIp(req: IncomingMessage): string {
-  const forwardedFor = req.headers['x-forwarded-for'];
-  if (typeof forwardedFor === 'string' && forwardedFor.trim()) {
+function getClientIp(req: NextRequest): string {
+  const forwardedFor = req.headers.get('x-forwarded-for');
+  if (forwardedFor) {
     return forwardedFor.split(',')[0]?.trim() ?? 'unknown';
   }
 
-  const realIp = req.headers['x-real-ip'];
-  if (typeof realIp === 'string' && realIp.trim()) {
+  const realIp = req.headers.get('x-real-ip');
+  if (realIp) {
     return realIp.trim();
   }
 
-  return req.socket.remoteAddress ?? 'unknown';
+  return 'unknown';
 }
 
-function getOrigin(req: IncomingMessage): string | null {
-  const origin = req.headers.origin;
-  if (typeof origin === 'string' && origin.trim()) {
-    return origin.trim();
-  }
+function getOrigin(req: NextRequest): string | null {
+  const origin = req.headers.get('origin');
+  if (origin) return origin.trim();
 
-  const referer = req.headers.referer;
-  if (typeof referer === 'string' && referer.trim()) {
+  const referer = req.headers.get('referer');
+  if (referer) {
     try {
       return new URL(referer).origin;
     } catch {
@@ -132,83 +124,32 @@ function getOrigin(req: IncomingMessage): string | null {
   return null;
 }
 
-async function readBody(req: RequestLike): Promise<unknown> {
-  if (req.body !== undefined) {
-    return req.body;
-  }
-
-  const chunks: Buffer[] = [];
-  let totalBytes = 0;
-
-  for await (const chunk of req) {
-    const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
-    totalBytes += buffer.length;
-
-    if (totalBytes > 20_000) {
-      throw new Error('body_too_large');
-    }
-
-    chunks.push(buffer);
-  }
-
-  if (chunks.length === 0) {
-    return {};
-  }
-
-  const raw = Buffer.concat(chunks).toString('utf8');
-  return raw ? JSON.parse(raw) : {};
-}
-
-function json(res: ServerResponse, status: number, body: unknown): void {
-  res.statusCode = status;
-  res.setHeader('Content-Type', 'application/json; charset=utf-8');
-  res.setHeader('Cache-Control', 'no-store');
-  res.end(JSON.stringify(body));
-}
-
 async function verifyTurnstile(args: { token: string; ip: string }): Promise<HumanVerificationResult> {
   const secret = (process.env.TURNSTILE_SECRET_KEY ?? '').trim();
   if (!secret) {
-    return {
-      ok: false,
-      message: 'Human verification is not configured.',
-    };
+    return { ok: false, message: 'Human verification is not configured.' };
   }
 
   try {
-    const body = new URLSearchParams({
-      secret,
-      response: args.token,
-    });
-
+    const body = new URLSearchParams({ secret, response: args.token });
     if (args.ip && args.ip !== 'unknown') {
       body.set('remoteip', args.ip);
     }
 
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body,
     });
 
     if (!response.ok) {
-      return {
-        ok: false,
-        message: 'Human verification failed. Please try again.',
-      };
+      return { ok: false, message: 'Human verification failed. Please try again.' };
     }
 
     const result = (await response.json()) as TurnstileSiteVerifyResponse;
     if (!result.success) {
-      console.warn('[inquiry.turnstile.failed]', {
-        errorCodes: result['error-codes'] ?? [],
-      });
-      return {
-        ok: false,
-        message: 'Human verification failed. Please try again.',
-      };
+      console.warn('[inquiry.turnstile.failed]', { errorCodes: result['error-codes'] ?? [] });
+      return { ok: false, message: 'Human verification failed. Please try again.' };
     }
 
     return { ok: true };
@@ -216,62 +157,31 @@ async function verifyTurnstile(args: { token: string; ip: string }): Promise<Hum
     console.error('[inquiry.turnstile.error]', {
       error: error instanceof Error ? error.message : String(error),
     });
-
-    return {
-      ok: false,
-      message: 'Human verification failed. Please try again.',
-    };
+    return { ok: false, message: 'Human verification failed. Please try again.' };
   }
 }
 
-export default async function handler(req: RequestLike, res: ServerResponse): Promise<void> {
+export async function POST(req: NextRequest) {
   try {
-    if (req.method !== 'POST') {
-      res.setHeader('Allow', 'POST');
-      json(res, 405, {
-        ok: false,
-        message: 'Method not allowed.',
-        error: {
-          code: 'invalid_payload',
-          message: 'Method not allowed.',
-        },
-      });
-      return;
-    }
-
     if (!process.env.SMTP_PASS) {
-      json(res, 500, {
-        ok: false,
-        message: 'SMTP credentials are not configured.',
-        error: {
-          code: 'mail_configuration_error',
-          message: 'SMTP credentials are not configured.',
-        },
-      });
-      return;
+      return NextResponse.json(
+        { ok: false, message: 'SMTP credentials are not configured.', error: { code: 'mail_configuration_error', message: 'SMTP credentials are not configured.' } },
+        { status: 500 },
+      );
     }
 
     let payload: InquiryPayload;
     try {
-      payload = (await readBody(req)) as InquiryPayload;
-    } catch (error) {
-      const message = error instanceof Error && error.message === 'body_too_large'
-        ? 'Payload too large.'
-        : 'Invalid request body.';
-      json(res, 400, {
-        ok: false,
-        message,
-        error: {
-          code: 'invalid_payload',
-          message,
-        },
-      });
-      return;
+      payload = (await req.json()) as InquiryPayload;
+    } catch {
+      return NextResponse.json(
+        { ok: false, message: 'Invalid request body.', error: { code: 'invalid_payload', message: 'Invalid request body.' } },
+        { status: 400 },
+      );
     }
 
     const transporter = createTransporter();
     const mailProviderConfig = getMailProviderConfig();
-
     const effectiveMailFrom = process.env.INQUIRY_MAIL_FROM ?? mailProviderConfig.defaultMailFrom;
     const effectiveMailTo = process.env.INQUIRY_MAIL_TO ?? mailProviderConfig.defaultMailTo;
     const provider = getMailProvider();
@@ -286,28 +196,18 @@ export default async function handler(req: RequestLike, res: ServerResponse): Pr
         try {
           const result = await transporter.sendMail(mail);
           console.info('[inquiry.smtp.sent]', {
-            provider,
-            host: mailProviderConfig.host,
-            port: mailProviderConfig.port,
-            secure: mailProviderConfig.secure,
-            authUser: process.env.SMTP_USER ?? '',
-            mailFrom: effectiveMailFrom,
-            mailTo: effectiveMailTo,
-            messageId: result.messageId,
-            accepted: result.accepted,
-            rejected: result.rejected,
-            response: result.response,
+            provider, host: mailProviderConfig.host, port: mailProviderConfig.port,
+            secure: mailProviderConfig.secure, authUser: process.env.SMTP_USER ?? '',
+            mailFrom: effectiveMailFrom, mailTo: effectiveMailTo,
+            messageId: result.messageId, accepted: result.accepted,
+            rejected: result.rejected, response: result.response,
           });
           return result;
         } catch (error) {
           console.error('[inquiry.smtp.error]', {
-            provider,
-            host: mailProviderConfig.host,
-            port: mailProviderConfig.port,
-            secure: mailProviderConfig.secure,
-            authUser: process.env.SMTP_USER ?? '',
-            mailFrom: effectiveMailFrom,
-            mailTo: effectiveMailTo,
+            provider, host: mailProviderConfig.host, port: mailProviderConfig.port,
+            secure: mailProviderConfig.secure, authUser: process.env.SMTP_USER ?? '',
+            mailFrom: effectiveMailFrom, mailTo: effectiveMailTo,
             error: error instanceof Error ? error.message : String(error),
           });
           throw error;
@@ -323,30 +223,21 @@ export default async function handler(req: RequestLike, res: ServerResponse): Pr
 
     if (response.status === 200) {
       console.info('[inquiry.accepted]', {
-        provider,
-        host: mailProviderConfig.host,
-        authUser: process.env.SMTP_USER ?? '',
-        mailFrom: effectiveMailFrom,
-        mailTo: effectiveMailTo,
+        provider, host: mailProviderConfig.host, authUser: process.env.SMTP_USER ?? '',
+        mailFrom: effectiveMailFrom, mailTo: effectiveMailTo,
         referenceId: response.body.referenceId,
       });
     }
 
-    json(res, response.status, response.body);
+    return NextResponse.json(response.body, { status: response.status });
   } catch (error) {
     console.error('[inquiry.unhandled]', {
       error: error instanceof Error ? error.stack ?? error.message : String(error),
     });
 
-    if (!res.headersSent) {
-      json(res, 500, {
-        ok: false,
-        message: 'Internal server error.',
-        error: {
-          code: 'invalid_payload',
-          message: 'Internal server error.',
-        },
-      });
-    }
+    return NextResponse.json(
+      { ok: false, message: 'Internal server error.', error: { code: 'invalid_payload', message: 'Internal server error.' } },
+      { status: 500 },
+    );
   }
 }

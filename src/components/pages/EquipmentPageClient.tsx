@@ -1,15 +1,13 @@
-// src/pages/EquipmentPage.tsx
-// Page 4: Factory Equipment — Industrial Grade Precision Extraction
-// Sections: Hero, cGMP Standards, Equipment Showcase, Specs Table, CTA
+'use client'
 
 import { useRef } from 'react';
 import { CheckCircle, Download } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Badge from '../components/atoms/Badge';
-import SectionLabel from '../components/atoms/SectionLabel';
+import Badge from '@/components/atoms/Badge';
+import SectionLabel from '@/components/atoms/SectionLabel';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,7 +77,7 @@ const specsTable = [
   { name: 'Chromatography System', model: 'YV-CHRO-HiPure', function: 'Final Purity Isolation', cgmp: 'USP <621>' },
 ];
 
-export default function EquipmentPage() {
+export default function EquipmentPageClient() {
   const cgmpRef = useRef<HTMLDivElement>(null);
   const showcaseRef = useRef<HTMLDivElement>(null);
   const tableRef = useRef<HTMLDivElement>(null);
@@ -118,7 +116,6 @@ export default function EquipmentPage() {
       <section className="py-24 bg-surface-container-low">
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left: info */}
             <div>
               <Badge variant="default" className="mb-6">Production Excellence</Badge>
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
@@ -132,23 +129,15 @@ export default function EquipmentPage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 {['Equipment Overview', 'Process Visibility', 'Documentation Path', 'Facility Narrative'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase"
-                  >
+                  <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
 
-            {/* Right: equipment image */}
             <div className="relative">
-              <img
-                src="/images/equipment/chromatography-column-700L.webp"
-                alt="Industrial extraction facility"
-                className="w-full h-[500px] object-cover"
-              />
+              <img src="/images/equipment/chromatography-column-700L.webp" alt="Industrial extraction facility" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Facility Scale</p>
                 <p className="text-sm font-bold text-white">Current Facility View</p>
@@ -162,13 +151,9 @@ export default function EquipmentPage() {
       <section className="py-24 bg-surface-container-low">
         <div ref={cgmpRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            {/* Left specs block (8/12) */}
             <div className="reveal-card lg:col-span-8 bg-surface-container-lowest p-10">
               <SectionLabel>Manufacturing Standards</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">
-                Process and Equipment Overview
-              </h2>
-
+              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">Process and Equipment Overview</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { label: 'Equipment Scope', value: 'Extraction to Packaging' },
@@ -189,22 +174,17 @@ export default function EquipmentPage() {
               </div>
             </div>
 
-            {/* Right certification card (4/12) */}
             <div className="reveal-card lg:col-span-4 bg-primary p-10 flex flex-col justify-between">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">
-                  Certification
-                </p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Certification</p>
                 <p className="text-3xl font-extrabold text-white tracking-tighter leading-tight mb-4">
-                  Quality Documentation
-                  <br />Discussion Path
+                  Quality Documentation<br />Discussion Path
                 </p>
                 <p className="text-xs text-white/60 leading-relaxed">
-                  Documentation requests and facility information can be reviewed directly during
-                  qualified B2B conversations.
+                  Documentation requests and facility information can be reviewed directly during qualified B2B conversations.
                 </p>
               </div>
-              <Link to="/inquiry" className="mt-8 inline-flex items-center gap-2 px-5 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
+              <Link href="/inquiry" className="mt-8 inline-flex items-center gap-2 px-5 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
                 <Download size={14} />
                 Request Facility Documentation
               </Link>
@@ -218,53 +198,27 @@ export default function EquipmentPage() {
         <div ref={showcaseRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
             <SectionLabel>Equipment Showcase</SectionLabel>
-            <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">
-              Precision-Engineered at Every Stage
-            </h2>
+            <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">Precision-Engineered at Every Stage</h2>
           </div>
 
           <div className="space-y-24">
             {equipment.map((equip, idx) => (
-              <div
-                key={equip.id}
-                className={`reveal-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                {/* Image */}
+              <div key={equip.id} className={`reveal-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 <div className={`relative ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <img
-                    src={equip.image}
-                    alt={equip.name}
-                    className="w-full object-cover"
-                  />
+                  <img src={equip.image} alt={equip.name} className="w-full object-cover" />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-on-background/80 text-white text-xs font-mono tracking-wider">
-                      #{equip.id}
-                    </span>
+                    <span className="px-3 py-1 bg-on-background/80 text-white text-xs font-mono tracking-wider">#{equip.id}</span>
                   </div>
                 </div>
 
-                {/* Text */}
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-3">
-                    Model: {equip.model}
-                  </p>
-                  <h3 className="text-2xl md:text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-                    {equip.name}
-                  </h3>
-                  <p className="text-sm text-on-surface-variant leading-relaxed mb-8">
-                    {equip.desc}
-                  </p>
-
-                  {/* Spec list */}
+                  <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-3">Model: {equip.model}</p>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-on-background tracking-tighter mb-4">{equip.name}</h3>
+                  <p className="text-sm text-on-surface-variant leading-relaxed mb-8">{equip.desc}</p>
                   <div className="space-y-0">
                     {equip.specs.map((spec, i) => (
-                      <div
-                        key={spec.label}
-                        className={`flex justify-between items-center py-3 ${i < equip.specs.length - 1 ? 'border-b border-outline-variant/30' : ''}`}
-                      >
-                        <span className="text-xs font-semibold tracking-wider uppercase text-on-surface-variant">
-                          {spec.label}
-                        </span>
+                      <div key={spec.label} className={`flex justify-between items-center py-3 ${i < equip.specs.length - 1 ? 'border-b border-outline-variant/30' : ''}`}>
+                        <span className="text-xs font-semibold tracking-wider uppercase text-on-surface-variant">{spec.label}</span>
                         <span className="text-sm font-bold text-on-surface">{spec.value}</span>
                       </div>
                     ))}
@@ -281,9 +235,7 @@ export default function EquipmentPage() {
         <div ref={tableRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
             <SectionLabel>Full Specifications</SectionLabel>
-            <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-12">
-              Equipment Overview Table
-            </h2>
+            <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-12">Equipment Overview Table</h2>
           </div>
 
           <div className="reveal-card overflow-x-auto">
@@ -291,21 +243,13 @@ export default function EquipmentPage() {
               <thead>
                 <tr className="border-b-2 border-primary/30">
                   {['Equipment Name', 'Model Range', 'Process Function', 'cGMP Standard'].map((col) => (
-                    <th
-                      key={col}
-                      className="text-left text-xs font-semibold tracking-widest uppercase text-on-surface-variant pb-4 pr-8"
-                    >
-                      {col}
-                    </th>
+                    <th key={col} className="text-left text-xs font-semibold tracking-widest uppercase text-on-surface-variant pb-4 pr-8">{col}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {specsTable.map((row, i) => (
-                  <tr
-                    key={row.name}
-                    className={`border-b border-outline-variant/20 ${i % 2 === 0 ? 'bg-surface-container-lowest/50' : ''}`}
-                  >
+                  <tr key={row.name} className={`border-b border-outline-variant/20 ${i % 2 === 0 ? 'bg-surface-container-lowest/50' : ''}`}>
                     <td className="py-5 pr-8 font-semibold text-on-surface">{row.name}</td>
                     <td className="py-5 pr-8 font-mono text-xs text-on-surface-variant">{row.model}</td>
                     <td className="py-5 pr-8 text-on-surface-variant">{row.function}</td>

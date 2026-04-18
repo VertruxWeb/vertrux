@@ -1,19 +1,17 @@
-// src/pages/InquiryPage.tsx
-// Page 3: B2B Strategic Partnership Inquiry
-// Sections: Hero header, Two-column (form left, info sidebar right)
+'use client'
 
 import { useRef } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Badge from '../components/atoms/Badge';
-import SectionLabel from '../components/atoms/SectionLabel';
-import InquiryForm from '../components/molecules/InquiryForm';
+import Badge from '@/components/atoms/Badge';
+import SectionLabel from '@/components/atoms/SectionLabel';
+import InquiryForm from '@/components/molecules/InquiryForm';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function InquiryPage() {
+export default function InquiryPageClient() {
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -37,7 +35,6 @@ export default function InquiryPage() {
 
   return (
     <div className="bg-surface">
-      {/* ── HERO ───────────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
         <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
@@ -55,28 +52,18 @@ export default function InquiryPage() {
         </div>
       </section>
 
-      {/* ── MAIN CONTENT ───────────────────────────────────────────────── */}
       <section className="py-24 bg-surface">
         <div ref={contentRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
-            {/* LEFT: Inquiry Form (8/12) */}
             <div className="reveal-card lg:col-span-8">
               <SectionLabel>Wholesale Request</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-10">
-                Submit Your Inquiry
-              </h2>
+              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-10">Submit Your Inquiry</h2>
               <InquiryForm />
             </div>
 
-            {/* RIGHT: Information Sidebar (4/12) */}
             <div className="lg:col-span-4 space-y-8">
-
-              {/* B2B Support */}
               <div className="reveal-card bg-surface-container-low p-8">
-                <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-6">
-                  B2B Support
-                </p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-6">B2B Support</p>
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-fixed flex items-center justify-center mt-0.5">
@@ -110,7 +97,6 @@ export default function InquiryPage() {
                 </div>
               </div>
 
-              {/* Map */}
               <div className="reveal-card overflow-hidden">
                 <iframe
                   title="Yunnan Province location"
@@ -122,11 +108,8 @@ export default function InquiryPage() {
                 />
               </div>
 
-              {/* Trust badges */}
               <div className="reveal-card bg-primary p-8">
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">
-                  Certified Standards
-                </p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">Certified Standards</p>
                 <div className="space-y-4">
                   {[
                     { cert: 'Documentation Requests', desc: 'Handled through direct B2B follow-up' },
@@ -142,7 +125,6 @@ export default function InquiryPage() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>

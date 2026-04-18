@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -52,8 +52,8 @@ export default {
         'inverse-on-surface': '#eaf1ff',
       },
       fontFamily: {
-        sans: ['Manrope', 'sans-serif'],
-        display: ['Manrope', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'Manrope', 'sans-serif'],
+        display: ['var(--font-manrope)', 'Manrope', 'sans-serif'],
       },
       borderRadius: {
         DEFAULT: '0.125rem',

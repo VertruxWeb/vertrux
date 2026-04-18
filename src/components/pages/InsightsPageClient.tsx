@@ -1,27 +1,27 @@
-// src/pages/InsightsPage.tsx
-// Page 5: Industry Insights / Blog
-// Sections: Featured Insight Hero, Article Grid, Newsletter CTA, Stats Strip
+'use client'
 
 import { useRef } from 'react';
 import { ArrowRight, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Badge from '../components/atoms/Badge';
-import SectionLabel from '../components/atoms/SectionLabel';
-import { articles } from '../content/articles/index';
+import Badge from '@/components/atoms/Badge';
+import SectionLabel from '@/components/atoms/SectionLabel';
+import type { Article } from '@/content/articles';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Featured article is always the first in the list
-const featured = articles[0];
-// Grid articles are the rest
-const gridArticles = articles.slice(1);
+interface InsightsPageClientProps {
+  articles: Article[];
+}
 
-export default function InsightsPage() {
+export default function InsightsPageClient({ articles }: InsightsPageClientProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
+  const featured = articles[0];
+  const gridArticles = articles.slice(1);
 
   useGSAP(() => {
     if (!heroRef.current) return;
@@ -41,6 +41,8 @@ export default function InsightsPage() {
     });
   }, { scope: gridRef });
 
+  if (!featured) return null;
+
   return (
     <div className="bg-surface">
 
@@ -48,7 +50,6 @@ export default function InsightsPage() {
       <section className="py-24 bg-surface-container-low">
         <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: text */}
             <div className="reveal-card">
               <div className="flex items-center gap-3 mb-6">
                 <Badge variant="default">{featured.category}</Badge>
@@ -64,7 +65,7 @@ export default function InsightsPage() {
               </p>
               <div className="flex flex-wrap gap-4 items-center">
                 <Link
-                  to={`/blog/${featured.slug}`}
+                  href={`/blog/${featured.slug}`}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-xs font-bold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300"
                 >
                   Read Whitepaper
@@ -77,8 +78,7 @@ export default function InsightsPage() {
               </div>
             </div>
 
-            {/* Right: image */}
-            <Link to={`/blog/${featured.slug}`} className="reveal-card relative overflow-hidden block group">
+            <Link href={`/blog/${featured.slug}`} className="reveal-card relative overflow-hidden block group">
               <img
                 src={featured.image}
                 alt={featured.title}
@@ -104,12 +104,11 @@ export default function InsightsPage() {
             </h2>
           </div>
 
-          {/* Bento grid: first card large (2/3), rest normal (1/3) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {gridArticles.map((article, i) => (
               <Link
                 key={article.slug}
-                to={`/blog/${article.slug}`}
+                href={`/blog/${article.slug}`}
                 className={`reveal-card group cursor-pointer ${i === 0 ? 'md:col-span-2' : 'md:col-span-1'}`}
               >
                 <article>

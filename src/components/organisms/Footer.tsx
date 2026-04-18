@@ -1,7 +1,9 @@
+'use client'
+
 // src/components/organisms/Footer.tsx
 // Site footer with brand, nav links, and copyright
 
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 
 const footerLinks = [
   {
@@ -26,7 +28,7 @@ const footerLinks = [
       { label: 'Technical Specs', href: '/products/cbd-isolate' },
     ],
   },
-];
+]
 
 export default function Footer() {
   return (
@@ -68,9 +70,9 @@ export default function Footer() {
               </p>
               <ul className="flex flex-col gap-3">
                 {col.links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.href + link.label}>
                     <Link
-                      to={link.href}
+                      href={link.href}
                       className="text-xs text-inverse-on-surface/70 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
@@ -93,5 +95,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
