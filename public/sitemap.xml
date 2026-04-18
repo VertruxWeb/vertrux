@@ -2,41 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.vetrux.tech/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.vetrux.tech/products/cbd-isolate</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.vetrux.tech/equipment</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.vetrux.tech/planting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.vetrux.tech/gallery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.vetrux.tech/inquiry</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.vetrux.tech/insights</loc>
+    <loc>https://www.vetrux.tech/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.vetrux.tech/insights/botanical-biotechnology-innovation-whitepaper</loc>
+    <loc>https://www.vetrux.tech/blog/botanical-biotechnology-innovation-whitepaper</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.vetrux.tech/insights/global-cbd-extraction-standards-2024</loc>
+    <loc>https://www.vetrux.tech/blog/global-cbd-extraction-standards-2024</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.vetrux.tech/insights/esg-decarbonizing-cannabis-supply-chain</loc>
+    <loc>https://www.vetrux.tech/blog/esg-decarbonizing-cannabis-supply-chain</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.vetrux.tech/insights/co2-vs-ethanol-extraction-comparison</loc>
+    <loc>https://www.vetrux.tech/blog/co2-vs-ethanol-extraction-comparison</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.vetrux.tech/insights/apac-cbd-market-outlook-2025</loc>
+    <loc>https://www.vetrux.tech/blog/apac-cbd-market-outlook-2025</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.vetrux.tech/insights/how-to-source-cbd-raw-materials-2026</loc>
+    <loc>https://www.vetrux.tech/blog/how-to-source-cbd-raw-materials-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
