@@ -89,7 +89,7 @@ export default function CbdIsolateManufacturerClient() {
                 <span className="text-primary">Manufacturer</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Yunnan Vetrux is a vertically integrated CBD isolate manufacturer — from hemp
+                Vetrux CBD is a vertically integrated CBD isolate manufacturer — from hemp
                 cultivation through supercritical CO₂ extraction, chromatographic purification,
                 and pharmaceutical-grade quality control. Supplying B2B buyers globally with
                 ≥99.5% purity, THC-free CBD isolate.

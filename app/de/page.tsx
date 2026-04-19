@@ -7,9 +7,9 @@ import { ArrowRight } from 'lucide-react';
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = getBaseUrl();
   return {
-    title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität ≥99,5% — Yunnan Vetrux',
+    title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität ≥99,5% — Vetrux CBD',
     description:
-      'Yunnan Vetrux ist ein vertikal integrierter CBD-Isolat-Hersteller in China. Pharmazeutische Qualität ≥99,5% Reinheit, THC-frei. Großhandelspreise mit DDP-Lieferung nach Europa. ISO 9001, GMP, HACCP zertifiziert.',
+      'Vetrux CBD ist die Handelsmarke von Yunnan Vetrux Co., Ltd. für vertikal integrierte CBD-Isolat-Herstellung in China. Pharmazeutische Qualität ≥99,5% Reinheit, THC-frei. Großhandelspreise mit DDP-Lieferung nach Europa.',
     keywords:
       'CBD Isolat Großhandel, CBD Isolat kaufen, CBD Isolat Hersteller, pharmazeutisches CBD Isolat, THC-freies CBD Isolat, CBD Isolat Europa, CBD Isolat Lieferant',
     alternates: {
@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität — Yunnan Vetrux',
+      title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität — Vetrux CBD',
       description: 'Pharmazeutisches CBD-Isolat ≥99,5% Reinheit, THC-frei. DDP-Lieferung nach Europa.',
       url: `${baseUrl}/de`,
       locale: 'de_DE',
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität — Yunnan Vetrux',
+      title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität — Vetrux CBD',
       description: 'Pharmazeutisches CBD-Isolat ≥99,5% Reinheit, THC-frei. DDP-Lieferung nach Europa.',
     },
   };
@@ -52,7 +52,7 @@ export default function DeLandingPage() {
                 <span className="text-primary">Pharmazeutische Qualität</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Yunnan Vetrux ist ein vertikal integrierter CBD-Isolat-Hersteller mit eigener
+                Vetrux CBD ist ein vertikal integrierter CBD-Isolat-Hersteller mit eigener
                 Hanfanbaubasis, überkritischer CO₂-Extraktion und pharmazeutischer Qualitätskontrolle.
                 Wir liefern ≥99,5% reines, THC-freies CBD-Isolat an B2B-Kunden in Europa — mit
                 DDP-Lieferung direkt zu Ihrem Standort.

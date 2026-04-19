@@ -46,7 +46,7 @@ export default function Footer() {
             <div className="overflow-hidden h-10 mb-4">
               <img
                 src="/logo.svg"
-                alt="Yunnan Vetrux"
+                alt="Vetrux CBD"
                 className="h-32 w-auto"
                 style={{ marginTop: '-52px' }}
               />
@@ -94,7 +94,8 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="text-xs text-inverse-on-surface/60 leading-relaxed">
-              <p className="font-semibold text-inverse-on-surface/80 mb-1">Yunnan Vetrux Co., Ltd.</p>
+              <p className="font-semibold text-inverse-on-surface/80 mb-1">Vetrux CBD</p>
+              <p className="text-inverse-on-surface/50">Operated by Yunnan Vetrux Co., Ltd.</p>
               <p>Yunnan Province, China</p>
               <p>
                 Email:{' '}
@@ -105,7 +106,7 @@ export default function Footer() {
               <p>Phone: +86-871-8800-0000</p>
             </div>
             <p className="text-xs text-inverse-on-surface/40">
-              © {new Date().getFullYear()} Yunnan Vetrux Co., Ltd. All rights reserved.
+              © {new Date().getFullYear()} Vetrux CBD. All rights reserved.
             </p>
           </div>
         </div>

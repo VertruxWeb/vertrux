@@ -16,7 +16,7 @@ const defaultImage = '/images/hero/facility-hero.webp';
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Yunnan Vetrux',
+  name: 'Vetrux CBD',
   url: 'https://www.vetrux.tech',
   logo: 'https://www.vetrux.tech/favicon.svg',
   description:
@@ -49,10 +49,10 @@ const productJsonLd = {
   name: 'CBD Isolate (≥99.5% Purity)',
   description:
     'Pharmaceutical-grade CBD isolate powder, ≥99.5% purity, THC-free (non-detect), white crystalline powder. Produced via supercritical CO₂ extraction in a cGMP-certified facility. Available in 1kg, 5kg, and 25kg packaging. CAS 13956-29-1.',
-  brand: { '@type': 'Brand', name: 'Yunnan Vetrux' },
+  brand: { '@type': 'Brand', name: 'Vetrux CBD' },
   manufacturer: {
     '@type': 'Organization',
-    name: 'Yunnan Vetrux',
+    name: 'Vetrux CBD',
     url: 'https://www.vetrux.tech',
   },
   category: 'CBD Isolate',
@@ -74,7 +74,7 @@ const productJsonLd = {
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     eligibleRegion: { '@type': 'Continent', name: 'Europe' },
-    seller: { '@type': 'Organization', name: 'Yunnan Vetrux' },
+    seller: { '@type': 'Organization', name: 'Vetrux CBD' },
     url: 'https://www.vetrux.tech/inquiry',
     priceValidUntil: '2026-12-31',
   },
@@ -84,9 +84,9 @@ const productJsonLd = {
 
 const staticPageSeo: Record<string, SeoMetadata> = {
   '/': {
-    title: 'Wholesale CBD Isolate Supplier | Bulk CBD Isolate Manufacturer — Yunnan Vetrux',
+    title: 'Wholesale CBD Isolate Supplier | Bulk CBD Isolate Manufacturer — Vetrux CBD',
     description:
-      'Yunnan Vetrux is a vertically integrated CBD isolate manufacturer in China supplying bulk pharmaceutical-grade CBD isolate (≥99.5% purity, THC-free) to European B2B buyers. Ton-scale capacity, cGMP facility, supercritical CO₂ extraction.',
+      'Vetrux CBD is a vertically integrated CBD isolate manufacturer in China supplying bulk pharmaceutical-grade CBD isolate (≥99.5% purity, THC-free) to European B2B buyers. Ton-scale capacity, cGMP facility, supercritical CO₂ extraction.',
     canonicalPath: '/',
     image: defaultImage,
     type: 'website',
@@ -106,7 +106,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
         },
         {
           '@type': 'Question',
-          name: 'What certifications does Yunnan Vetrux hold?',
+          name: 'What certifications does Vetrux CBD hold?',
           acceptedAnswer: {
             '@type': 'Answer',
             text: 'Vetrux operates under ISO 9001:2015, GMP, and HACCP certifications. Our facility follows FDA 21 CFR Part 211 and EU GMP Annex 1 standards. All testing is performed by ISO/IEC 17025-accredited laboratories, and every batch ships with a full Certificate of Analysis (COA).',
@@ -140,7 +140,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     }],
   },
   '/products/cbd-isolate': {
-    title: 'CBD Isolate ≥99.5% Purity — Pharmaceutical Grade | Wholesale Pricing — Yunnan Vetrux',
+    title: 'CBD Isolate ≥99.5% Purity — Pharmaceutical Grade | Wholesale Pricing — Vetrux CBD',
     description:
       'Pharmaceutical-grade CBD isolate with ≥99.5% purity, THC-free (non-detect). Full COA available, HPLC tested, ISO 9001 & GMP certified. Bulk packaging 1–25 kg. Request wholesale pricing for European delivery.',
     canonicalPath: '/products/cbd-isolate',
@@ -191,9 +191,9 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     ],
   },
   '/equipment': {
-    title: 'cGMP Supercritical CO₂ Extraction Facility | CBD Manufacturing Equipment — Yunnan Vetrux',
+    title: 'cGMP Supercritical CO₂ Extraction Facility | CBD Manufacturing Equipment — Vetrux CBD',
     description:
-      'Tour Yunnan Vetrux\'s cGMP-certified extraction facility featuring 6m³ supercritical CO₂ extraction vessels, chromatography columns, and pharmaceutical-grade refinement equipment. FDA 21 CFR Part 211 & EU GMP Annex 1 compliant.',
+      'Tour Vetrux CBD\'s cGMP-certified extraction facility featuring 6m³ supercritical CO₂ extraction vessels, chromatography columns, and pharmaceutical-grade refinement equipment. FDA 21 CFR Part 211 & EU GMP Annex 1 compliant.',
     canonicalPath: '/equipment',
     image: '/images/equipment/chromatography-column-700L.webp',
     type: 'website',
@@ -204,7 +204,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
       {
         '@context': 'https://schema.org',
         '@type': 'Place',
-        name: 'Yunnan Vetrux Extraction Facility',
+        name: 'Vetrux CBD Extraction Facility',
         description:
           'cGMP-certified supercritical CO₂ extraction facility for pharmaceutical-grade CBD isolate manufacturing. Equipped with 6m³ extraction vessels, chromatography columns, and multi-stage crystallization systems.',
         address: {
@@ -246,7 +246,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     ],
   },
   '/planting': {
-    title: 'Vertically Integrated Hemp Cultivation | Seed-to-Isolate Traceability — Yunnan Vetrux',
+    title: 'Vertically Integrated Hemp Cultivation | Seed-to-Isolate Traceability — Vetrux CBD',
     description:
       'Vetrux operates a vertically integrated hemp cultivation base in Yunnan Province, China. Controlled-environment agriculture with full seed-to-isolate traceability, zero synthetic pesticides, and ≥97% germination rate.',
     canonicalPath: '/planting',
@@ -259,7 +259,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
       {
         '@context': 'https://schema.org',
         '@type': 'Place',
-        name: 'Yunnan Vetrux Hemp Cultivation Base',
+        name: 'Vetrux CBD Hemp Cultivation Base',
         description:
           'Vertically integrated hemp cultivation base in Yunnan Province with controlled-environment agriculture, zero synthetic pesticides, full seed-to-isolate traceability, and ≥97% germination rate.',
         address: {
@@ -301,9 +301,9 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     ],
   },
   '/gallery': {
-    title: 'CBD Manufacturing Facility Gallery | Production & Laboratory — Yunnan Vetrux',
+    title: 'CBD Manufacturing Facility Gallery | Production & Laboratory — Vetrux CBD',
     description:
-      'Visual tour of Yunnan Vetrux\'s CBD isolate manufacturing campus — extraction facility, planting base, refinement laboratory, and quality control operations.',
+      'Visual tour of Vetrux CBD\'s CBD isolate manufacturing campus — extraction facility, planting base, refinement laboratory, and quality control operations.',
     canonicalPath: '/gallery',
     image: '/images/hero/facility-hero.webp',
     type: 'website',
@@ -311,20 +311,20 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'ImageGallery',
-      name: 'Yunnan Vetrux Manufacturing Facility Gallery',
+      name: 'Vetrux CBD Manufacturing Facility Gallery',
       description:
-        'Visual tour of Yunnan Vetrux\'s CBD isolate manufacturing campus — extraction facility, planting base, refinement laboratory, and quality control operations.',
+        'Visual tour of Vetrux CBD\'s CBD isolate manufacturing campus — extraction facility, planting base, refinement laboratory, and quality control operations.',
       publisher: {
         '@type': 'Organization',
-        name: 'Yunnan Vetrux',
+        name: 'Vetrux CBD',
         url: 'https://www.vetrux.tech',
       },
     },
   },
   '/inquiry': {
-    title: 'Request Wholesale CBD Isolate Quote | B2B Inquiry — Yunnan Vetrux',
+    title: 'Request Wholesale CBD Isolate Quote | B2B Inquiry — Vetrux CBD',
     description:
-      'Contact Yunnan Vetrux for bulk CBD isolate wholesale pricing, COA documentation, product specifications, and custom logistics (DDP/CIF/FOB) to Europe. Ton-scale supply available.',
+      'Contact Vetrux CBD for bulk CBD isolate wholesale pricing, COA documentation, product specifications, and custom logistics (DDP/CIF/FOB) to Europe. Ton-scale supply available.',
     canonicalPath: '/inquiry',
     image: defaultImage,
     type: 'website',
@@ -335,12 +335,12 @@ const staticPageSeo: Record<string, SeoMetadata> = {
       '@type': 'ContactPage',
       name: 'Wholesale CBD Isolate Inquiry',
       description:
-        'Contact Yunnan Vetrux for bulk CBD isolate wholesale pricing, COA documentation, and custom logistics to Europe.',
+        'Contact Vetrux CBD for bulk CBD isolate wholesale pricing, COA documentation, and custom logistics to Europe.',
       publisher: organizationJsonLd,
     },
   },
   '/blog': {
-    title: 'CBD Industry Insights | Extraction Technology & Compliance — Yunnan Vetrux Blog',
+    title: 'CBD Industry Insights | Extraction Technology & Compliance — Vetrux CBD Blog',
     description:
       'Expert articles on CBD extraction technology, global compliance standards, supply chain optimization, and market analysis for B2B CBD isolate buyers and formulators.',
     canonicalPath: '/blog',
@@ -351,7 +351,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      name: 'Yunnan Vetrux Blog — CBD Industry Insights',
+      name: 'Vetrux CBD Blog — CBD Industry Insights',
       description:
         'Expert articles on CBD extraction technology, global compliance standards, supply chain optimization, and market analysis for B2B CBD isolate buyers.',
       publisher: organizationJsonLd,
@@ -359,7 +359,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     },
   },
   '/wholesale-cbd-isolate': {
-    title: 'Wholesale CBD Isolate | Bulk Pricing & Volume Discounts — Yunnan Vetrux',
+    title: 'Wholesale CBD Isolate | Bulk Pricing & Volume Discounts — Vetrux CBD',
     description:
       'Buy wholesale CBD isolate at volume-tiered pricing. Pharmaceutical-grade ≥99.5% purity, THC-free. FOB, CIF, and DDP shipping to Europe. 1 kg to ton-scale supply from a cGMP-certified manufacturer.',
     canonicalPath: '/wholesale-cbd-isolate',
@@ -402,7 +402,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     ],
   },
   '/quality-assurance': {
-    title: 'CBD Isolate Quality Assurance | cGMP Testing & Certifications — Yunnan Vetrux',
+    title: 'CBD Isolate Quality Assurance | cGMP Testing & Certifications — Vetrux CBD',
     description:
       'Vetrux quality assurance program for CBD isolate: ISO 9001, GMP, HACCP certifications. Full analytical testing panel (HPLC, GC-MS, ICP-MS) on every batch. Third-party COA from ISO/IEC 17025 labs.',
     canonicalPath: '/quality-assurance',
@@ -446,9 +446,9 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     ],
   },
   '/cbd-isolate-manufacturer': {
-    title: 'CBD Isolate Manufacturer | Seed-to-Isolate Vertical Integration — Yunnan Vetrux',
+    title: 'CBD Isolate Manufacturer | Seed-to-Isolate Vertical Integration — Vetrux CBD',
     description:
-      'Yunnan Vetrux is a vertically integrated CBD isolate manufacturer with in-house hemp cultivation, supercritical CO₂ extraction, chromatographic purification, and pharmaceutical-grade QC. Supplying ≥99.5% purity, THC-free CBD isolate to B2B buyers globally.',
+      'Vetrux CBD is a vertically integrated CBD isolate manufacturer with in-house hemp cultivation, supercritical CO₂ extraction, chromatographic purification, and pharmaceutical-grade QC. Supplying ≥99.5% purity, THC-free CBD isolate to B2B buyers globally.',
     canonicalPath: '/cbd-isolate-manufacturer',
     image: '/images/hero/facility-hero.webp',
     type: 'website',
@@ -490,28 +490,28 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     ],
   },
   '/about': {
-    title: 'About Yunnan Vetrux | Vertically Integrated CBD Isolate Manufacturer',
+    title: 'About Vetrux CBD | Vertically Integrated CBD Isolate Manufacturer',
     description:
-      'Learn about Yunnan Vetrux — a vertically integrated CBD isolate manufacturer in Yunnan, China. ISO 9001, GMP, HACCP certified. Supplying pharmaceutical-grade CBD isolate (≥99.5% purity) to European B2B buyers.',
+      'Learn about Vetrux CBD — a vertically integrated CBD isolate manufacturer in Yunnan, China. ISO 9001, GMP, HACCP certified. Supplying pharmaceutical-grade CBD isolate (≥99.5% purity) to European B2B buyers.',
     canonicalPath: '/about',
     image: '/images/hero/facility-hero.webp',
     type: 'website',
     keywords:
-      'about Yunnan Vetrux, CBD isolate manufacturer China, vertically integrated CBD, Yunnan hemp manufacturer',
+      'about Vetrux CBD, CBD isolate manufacturer China, vertically integrated CBD, Yunnan hemp manufacturer',
     jsonLd: organizationJsonLd,
   },
   '/privacy-policy': {
-    title: 'Privacy Policy — Yunnan Vetrux',
+    title: 'Privacy Policy — Vetrux CBD',
     description:
-      'Privacy Policy for Yunnan Vetrux website. Learn how we collect, use, and protect your personal data when you visit our site or submit a B2B inquiry.',
+      'Privacy Policy for Vetrux CBD website. Learn how we collect, use, and protect your personal data when you visit our site or submit a B2B inquiry.',
     canonicalPath: '/privacy-policy',
     image: '/images/hero/facility-hero.webp',
     type: 'website',
   },
   '/terms-of-service': {
-    title: 'Terms of Service — Yunnan Vetrux',
+    title: 'Terms of Service — Vetrux CBD',
     description:
-      'Terms of Service for the Yunnan Vetrux website. Read our terms governing the use of our B2B wholesale CBD isolate platform.',
+      'Terms of Service for the Vetrux CBD website. Read our terms governing the use of our B2B wholesale CBD isolate platform.',
     canonicalPath: '/terms-of-service',
     image: '/images/hero/facility-hero.webp',
     type: 'website',
@@ -537,7 +537,7 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
     const article = articles.find((entry) => entry.slug === slug);
     if (article) {
       return {
-        title: `${article.title} | Yunnan Vetrux Blog`,
+        title: `${article.title} | Vetrux CBD Blog`,
         description: article.excerpt,
         canonicalPath: `/blog/${article.slug}`,
         image: article.image || defaultImage,
@@ -552,14 +552,14 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
           dateModified: article.date,
           author: {
             '@type': 'Organization',
-            name: 'Yunnan Vetrux',
+            name: 'Vetrux CBD',
             url: 'https://www.vetrux.tech',
             description: 'Vertically integrated CBD isolate manufacturer in Yunnan, China. ISO 9001, GMP, HACCP certified. Specializing in pharmaceutical-grade CBD isolate (≥99.5% purity) for B2B buyers.',
             sameAs: ['https://www.vetrux.tech/about'],
           },
           publisher: {
             '@type': 'Organization',
-            name: 'Yunnan Vetrux',
+            name: 'Vetrux CBD',
             url: 'https://www.vetrux.tech',
             logo: 'https://www.vetrux.tech/favicon.svg',
           },
@@ -574,9 +574,9 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
 
   return (
     staticPageSeo[pathname] ?? {
-      title: 'Yunnan Vetrux — Wholesale CBD Isolate Manufacturer',
+      title: 'Vetrux CBD — Wholesale CBD Isolate Manufacturer',
       description:
-        'Yunnan Vetrux is a vertically integrated CBD isolate manufacturer supplying bulk pharmaceutical-grade CBD isolate to B2B buyers worldwide.',
+        'Vetrux CBD is a vertically integrated CBD isolate manufacturer supplying bulk pharmaceutical-grade CBD isolate to B2B buyers worldwide.',
       canonicalPath: pathname || '/',
       image: defaultImage,
       type: 'website',

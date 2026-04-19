@@ -85,4 +85,4 @@ APAC markets are not price-sensitive in the way that mature Western bulk markets
 
 ---
 
-*Yunnan Vetrux maintains active distribution partnerships across Japan, Australia, and Southeast Asia. Contact our business development team to discuss APAC market entry strategies and documentation requirements.*
+*Vetrux CBD maintains active distribution partnerships across Japan, Australia, and Southeast Asia. Contact our business development team to discuss APAC market entry strategies and documentation requirements.*

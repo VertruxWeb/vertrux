@@ -177,7 +177,7 @@ Regardless of which form is selected, B2B buyers should apply consistent qualifi
 4. **Traceability:** Full supply chain documentation from hemp biomass source through finished ingredient, including country of origin, cultivar, and harvest documentation.
 5. **Regulatory support:** Suppliers should be able to provide documentation supporting novel food applications, drug master file submissions, or cosmetic ingredient dossiers as relevant to the buyer's target markets.
 
-Yunnan Vetrux supplies pharmaceutical-grade CBD isolate with full batch documentation, ISO-accredited third-party COAs, and regulatory support documentation for EU, US, and APAC market applications. Technical specifications are available upon request for qualified B2B partners.
+Vetrux CBD supplies pharmaceutical-grade CBD isolate with full batch documentation, ISO-accredited third-party COAs, and regulatory support documentation for EU, US, and APAC market applications. Technical specifications are available upon request for qualified B2B partners.
 
 ---
 
@@ -216,7 +216,7 @@ Both CBD isolate and CBD distillate derived from hemp are subject to EU Novel Fo
 
 **Q: What purity specification should pharmaceutical buyers require for CBD isolate?**
 
-The industry standard for pharmaceutical-grade CBD isolate is ≥99.5% CBD by HPLC, with THC at non-detect levels (typically defined as <0.01% or below the limit of quantification of the analytical method). Residual solvents should meet ICH Q3C Class 3 limits at minimum, with many pharmaceutical buyers specifying tighter internal limits (e.g., ≤500 ppm ethanol if ethanol is used in processing). Heavy metals should meet USP <232> limits for oral drug products or EU Pharmacopoeia equivalent. Suppliers like Yunnan Vetrux provide isolate meeting these specifications with batch-level third-party COA documentation from ISO/IEC 17025-accredited laboratories.
+The industry standard for pharmaceutical-grade CBD isolate is ≥99.5% CBD by HPLC, with THC at non-detect levels (typically defined as <0.01% or below the limit of quantification of the analytical method). Residual solvents should meet ICH Q3C Class 3 limits at minimum, with many pharmaceutical buyers specifying tighter internal limits (e.g., ≤500 ppm ethanol if ethanol is used in processing). Heavy metals should meet USP <232> limits for oral drug products or EU Pharmacopoeia equivalent. Suppliers like Vetrux CBD provide isolate meeting these specifications with batch-level third-party COA documentation from ISO/IEC 17025-accredited laboratories.
 
 ---
 

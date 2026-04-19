@@ -28,7 +28,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center overflow-hidden h-10">
           <img
             src="/logo.svg"
-            alt="Yunnan Vetrux"
+            alt="Vetrux CBD"
             className="h-32 w-auto"
           />
         </Link>

@@ -16,17 +16,17 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.vetrux.tech'),
   title: {
-    default: 'Wholesale CBD Isolate Supplier | Bulk CBD Isolate Manufacturer — Yunnan Vetrux',
-    template: '%s — Yunnan Vetrux',
+    default: 'Wholesale CBD Isolate Supplier | Bulk CBD Isolate Manufacturer — Vetrux CBD',
+    template: '%s — Vetrux CBD',
   },
   description:
-    'Yunnan Vetrux is a vertically integrated CBD isolate manufacturer in China supplying bulk pharmaceutical-grade CBD isolate (≥99.5% purity, THC-free) to European B2B buyers.',
+    'Vetrux CBD is the commercial brand of Yunnan Vetrux Co., Ltd., supplying bulk pharmaceutical-grade CBD isolate (≥99.5% purity, THC-free) to European B2B buyers.',
   keywords:
     'CBD isolate supplier, bulk CBD isolate, wholesale CBD isolate, CBD isolate manufacturer, pharmaceutical grade CBD, THC-free CBD isolate, CBD isolate Europe',
-  authors: [{ name: 'Yunnan Vetrux' }],
+  authors: [{ name: 'Vetrux CBD' }],
   robots: { index: true, follow: true },
   openGraph: {
-    siteName: 'Yunnan Vetrux',
+    siteName: 'Vetrux CBD',
     locale: 'en_US',
     type: 'website',
     images: [{ url: '/images/hero/facility-hero.webp' }],

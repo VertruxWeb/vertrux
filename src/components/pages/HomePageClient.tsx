@@ -62,7 +62,7 @@ export default function HomePageClient() {
       <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-on-background">
         <Image
           src="/images/hero/facility-hero.webp"
-          alt="Yunnan Vetrux extraction facility"
+          alt="Vetrux CBD extraction facility"
           fill
           priority
           sizes="100vw"
@@ -120,7 +120,7 @@ export default function HomePageClient() {
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">TL;DR</p>
           <p className="text-sm text-on-background leading-relaxed max-w-3xl">
-            Yunnan Vetrux is a vertically integrated CBD isolate manufacturer in Yunnan, China.
+            Vetrux CBD is a vertically integrated CBD isolate manufacturer in Yunnan, China.
             We produce pharmaceutical-grade CBD isolate (≥99.5% purity, THC non-detect) via supercritical CO₂ extraction
             in a cGMP-certified facility. ISO 9001, GMP, HACCP certified. Supplying European B2B buyers
             with 1 kg to ton-scale orders, FOB/CIF/DDP delivery, and full COA documentation per batch.
@@ -293,7 +293,7 @@ export default function HomePageClient() {
                 a: 'CBD isolate is the purest form of cannabidiol — a white crystalline powder containing ≥99.5% CBD with all other cannabinoids, terpenes, and plant compounds removed. Unlike full-spectrum CBD which retains THC and other cannabinoids, CBD isolate is THC non-detect (ND), making it ideal for pharmaceutical and nutraceutical formulations requiring precise dosing and regulatory compliance.',
               },
               {
-                q: 'What certifications does Yunnan Vetrux hold?',
+                q: 'What certifications does Vetrux CBD hold?',
                 a: 'Vetrux operates under ISO 9001:2015, GMP, and HACCP certifications. Our facility follows FDA 21 CFR Part 211 and EU GMP Annex 1 standards. All testing is performed by ISO/IEC 17025-accredited laboratories, and every batch ships with a full Certificate of Analysis (COA).',
               },
               {

@@ -22,10 +22,10 @@ export default function AboutPage() {
       <div className="bg-surface min-h-screen">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 py-20">
           <h1 className="text-4xl md:text-5xl font-extrabold text-on-background tracking-tighter leading-tight mb-6">
-            About Yunnan Vetrux
+            About Vetrux CBD
           </h1>
           <p className="text-sm text-on-surface-variant leading-relaxed max-w-2xl mb-16">
-            Yunnan Vetrux is a vertically integrated CBD isolate manufacturer headquartered in Yunnan Province,
+            Vetrux CBD is the commercial brand of Yunnan Vetrux Co., Ltd., a vertically integrated CBD isolate manufacturer headquartered in Yunnan Province,
             China — one of the world&apos;s premier regions for industrial hemp cultivation. We supply
             pharmaceutical-grade CBD isolate to B2B buyers across Europe and globally.
           </p>
@@ -104,6 +104,10 @@ export default function AboutPage() {
             <h2 className="text-2xl font-extrabold text-on-background tracking-tighter mb-4">Company Profile</h2>
             <div className="bg-surface-container-low p-6">
               <dl className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Brand</dt>
+                  <dd className="text-on-background">Vetrux CBD</dd>
+                </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Company Name</dt>
                   <dd className="text-on-background">Yunnan Vetrux Co., Ltd.</dd>

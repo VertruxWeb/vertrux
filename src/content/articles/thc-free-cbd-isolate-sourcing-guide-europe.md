@@ -138,7 +138,7 @@ CBD isolate for B2B import should be packaged in food-grade, hermetically sealed
 
 ## Working with Vetrux: What EU Buyers Should Know
 
-Yunnan Vetrux manufactures CBD isolate (CAS 13956-29-1) at ≥99.5% purity using supercritical CO₂ extraction from certified hemp biomass. All production batches are tested for THC by GC-MS (result: ND), with third-party COAs from ISO/IEC 17025-accredited laboratories provided as standard.
+Vetrux CBD manufactures CBD isolate (CAS 13956-29-1) at ≥99.5% purity using supercritical CO₂ extraction from certified hemp biomass. All production batches are tested for THC by GC-MS (result: ND), with third-party COAs from ISO/IEC 17025-accredited laboratories provided as standard.
 
 Our quality system operates under ISO 9001:2015 and HACCP frameworks, with GMP-aligned manufacturing practices. We maintain full batch traceability from biomass sourcing through final isolate packaging, and our technical team can provide compositional data and process documentation in formats compatible with EFSA Novel Food dossier requirements.
 
@@ -172,4 +172,4 @@ If you are ready to qualify a supplier or request samples and technical document
 
 ---
 
-*Yunnan Vetrux supplies pharmaceutical- and nutraceutical-grade CBD isolate (CAS 13956-29-1, ≥99.5% purity, THC ND by GC-MS) to B2B customers in Europe and globally. Technical documentation, sample requests, and pricing inquiries are handled directly by our export team.*
+*Vetrux CBD supplies pharmaceutical- and nutraceutical-grade CBD isolate (CAS 13956-29-1, ≥99.5% purity, THC ND by GC-MS) to B2B customers in Europe and globally. Technical documentation, sample requests, and pricing inquiries are handled directly by our export team.*
