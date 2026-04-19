@@ -1,14 +1,14 @@
 
-# Vetrux — B2B CBD Extract Website
+# Vetrux CBD — B2B CBD Extract Website
 
-Premium B2B frontend for Yunnan Vetrux, a pharmaceutical-grade CBD extract manufacturer. Built as a static marketing site with React, TypeScript, Vite, Tailwind CSS, and GSAP animations. Optimized for Vercel deployment.
+Premium B2B frontend for Vetrux CBD, the public-facing brand for 蔚萃生物科技（楚雄）有限公司. Built as a marketing site with React, TypeScript, Next.js, Tailwind CSS, and GSAP animations. Optimized for Vercel deployment.
 
 ---
 
 ## Overview
 
 This project is a brand and lead-generation website focused on:
-- presenting Yunnan Vetrux's extraction and cultivation capabilities
+- presenting Vetrux CBD's extraction and cultivation capabilities
 - showcasing flagship CBD isolate product information
 - publishing industry insight articles from local Markdown content
 - capturing wholesale / partnership inquiries through a reusable inquiry form UI
