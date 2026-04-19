@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität ≥99,5% — Vetrux CBD',
     description:
-      'Vetrux CBD ist die Handelsmarke von Yunnan Vetrux Co., Ltd. für vertikal integrierte CBD-Isolat-Herstellung in China. Pharmazeutische Qualität ≥99,5% Reinheit, THC-frei. Großhandelspreise mit DDP-Lieferung nach Europa.',
+      'Vetrux CBD ist die Handelsmarke von 蔚萃生物科技（楚雄）有限公司 für vertikal integrierte CBD-Isolat-Herstellung in China. Pharmazeutische Qualität ≥99,5% Reinheit, THC-frei. Großhandelspreise mit DDP-Lieferung nach Europa.',
     keywords:
       'CBD Isolat Großhandel, CBD Isolat kaufen, CBD Isolat Hersteller, pharmazeutisches CBD Isolat, THC-freies CBD Isolat, CBD Isolat Europa, CBD Isolat Lieferant',
     alternates: {

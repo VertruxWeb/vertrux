@@ -18,9 +18,10 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-lg font-bold text-on-background tracking-tight mb-3">1. Acceptance of Terms</h2>
             <p>
-              By accessing and using the website at www.vetrux.tech (the &quot;Website&quot;), operated by Yunnan Vetrux
-              Co., Ltd. (&quot;Vetrux&quot;, &quot;we&quot;, &quot;us&quot;), you agree to be bound by these Terms of Service. If you do
-              not agree to these terms, please do not use the Website.
+              By accessing and using the website at www.vetrux.tech (the &quot;Website&quot;), operated by
+              蔚萃生物科技（楚雄）有限公司 under the public-facing brand Vetrux CBD (&quot;Vetrux CBD&quot;, &quot;we&quot;, &quot;us&quot;),
+              you agree to be bound by these Terms of Service. If you do not agree to these terms, please do
+              not use the Website.
             </p>
           </section>
 
@@ -56,7 +57,7 @@ export default function TermsOfServicePage() {
             <h2 className="text-lg font-bold text-on-background tracking-tight mb-3">5. Intellectual Property</h2>
             <p>
               All content on this Website — including text, images, logos, graphics, and software — is the
-              property of Yunnan Vetrux Co., Ltd. or its licensors and is protected by applicable intellectual
+              property of 蔚萃生物科技（楚雄）有限公司 or its licensors and is protected by applicable intellectual
               property laws. You may not reproduce, distribute, or create derivative works from this content
               without our prior written consent.
             </p>
@@ -108,9 +109,9 @@ export default function TermsOfServicePage() {
               </a>
             </p>
             <p className="mt-2">
-              Yunnan Vetrux Co., Ltd.<br />
-              Yunnan Province, China<br />
-              Phone: +86-871-8800-0000
+              蔚萃生物科技（楚雄）有限公司<br />
+              云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室<br />
+              Phone: +86 13518730530
             </p>
           </section>
         </div>

@@ -25,7 +25,7 @@ export default function AboutPage() {
             About Vetrux CBD
           </h1>
           <p className="text-sm text-on-surface-variant leading-relaxed max-w-2xl mb-16">
-            Vetrux CBD is the commercial brand of Yunnan Vetrux Co., Ltd., a vertically integrated CBD isolate manufacturer headquartered in Yunnan Province,
+            Vetrux CBD is the commercial brand of 蔚萃生物科技（楚雄）有限公司, a vertically integrated CBD isolate manufacturer headquartered in Yunnan Province,
             China — one of the world&apos;s premier regions for industrial hemp cultivation. We supply
             pharmaceutical-grade CBD isolate to B2B buyers across Europe and globally.
           </p>
@@ -110,11 +110,11 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Company Name</dt>
-                  <dd className="text-on-background">Yunnan Vetrux Co., Ltd.</dd>
+                  <dd className="text-on-background">蔚萃生物科技（楚雄）有限公司</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Location</dt>
-                  <dd className="text-on-background">Yunnan Province, China</dd>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Registered Address</dt>
+                  <dd className="text-on-background break-words">云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室</dd>
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Industry</dt>
@@ -142,7 +142,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Phone</dt>
-                  <dd className="text-on-background">+86-871-8800-0000</dd>
+                  <dd className="text-on-background">+86 13518730530</dd>
                 </div>
               </dl>
             </div>

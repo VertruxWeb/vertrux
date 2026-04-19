@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-lg font-bold text-on-background tracking-tight mb-3">1. Introduction</h2>
             <p>
-              Yunnan Vetrux Co., Ltd. (&quot;Vetrux&quot;, &quot;we&quot;, &quot;us&quot;) respects your privacy and is committed to
+              蔚萃生物科技（楚雄）有限公司 (&quot;Vetrux CBD&quot;, &quot;we&quot;, &quot;us&quot;) respects your privacy and is committed to
               protecting the personal data of visitors to our website at www.vetrux.tech. This Privacy Policy
               explains how we collect, use, and safeguard your information when you visit our website or submit
               an inquiry.
@@ -28,8 +28,8 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-lg font-bold text-on-background tracking-tight mb-3">2. Data Controller</h2>
             <p>
-              The data controller responsible for your personal data is Yunnan Vetrux Co., Ltd., located in
-              Yunnan Province, China. For privacy-related inquiries, contact us at{' '}
+              The data controller responsible for your personal data is 蔚萃生物科技（楚雄）有限公司, located at
+              云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室. For privacy-related inquiries, contact us at{' '}
               <a href="mailto:postmaster@vetrux.tech" className="text-primary underline underline-offset-2">
                 postmaster@vetrux.tech
               </a>.
@@ -115,9 +115,9 @@ export default function PrivacyPolicyPage() {
               </a>
             </p>
             <p className="mt-2">
-              Yunnan Vetrux Co., Ltd.<br />
-              Yunnan Province, China<br />
-              Phone: +86-871-8800-0000
+              蔚萃生物科技（楚雄）有限公司<br />
+              云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室<br />
+              Phone: +86 13518730530
             </p>
           </section>
         </div>
