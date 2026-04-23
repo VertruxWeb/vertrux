@@ -1,58 +1,78 @@
-# Vetrux CBD — Wholesale CBD Isolate Manufacturer
+# Vetrux CBD — CBD Raw Materials & Botanical Extract Manufacturer
 
-> Vetrux CBD is the commercial brand of 蔚萃生物科技（楚雄）有限公司, a vertically integrated CBD isolate manufacturer based in Yunnan, China. We supply pharmaceutical-grade CBD isolate (≥99.5% purity, THC-free) to B2B buyers in Europe and globally via supercritical CO₂ extraction.
+> Vetrux CBD is the commercial brand of Vetrux Biotechnology (Chuxiong) Co., Ltd. (蔚萃生物科技（楚雄）有限公司), a vertically integrated CBD isolate manufacturer and botanical extract supplier based in Chuxiong, Yunnan Province, China.
 
 ## What We Do
-Vetrux CBD is the commercial brand of 蔚萃生物科技（楚雄）有限公司, a vertically integrated CBD isolate manufacturer based in Yunnan Province, China. We supply bulk pharmaceutical-grade CBD isolate (≥99.5% purity, THC-free) to B2B buyers in Europe and globally. Our facility operates at ton-scale capacity using supercritical CO₂ extraction technology.
+Vetrux provides CBD raw material sales, OEM/ODM services, technical consulting on cultivation and extraction, and other botanical extract products. We operate a seed-to-isolate production chain from our Chuxiong, Yunnan facility.
 
 ## Core Product: CBD Isolate
 - Purity: ≥99.5% (HPLC verified)
-- THC: Non-detect (ND), compliant with EU Novel Food regulations
+- THC: Non-detect (ND)
 - CAS Number: 13956-29-1
+- HS Code: 2907299020
 - Molecular Formula: C₂₁H₃₀O₂ (314.46 g/mol)
 - Appearance: White crystalline powder
-- Extraction: Supercritical CO₂ (zero residual solvents)
-- Packaging: 1 kg, 5 kg, 25 kg (custom ton-scale available)
-- Shelf Life: 24 months
-- Certifications: ISO 9001:2015, GMP, HACCP
+- Extraction: Ethanol extraction + chromatographic purification
+- Packaging: 5 kg PE bags (27×60cm, food grade), 5 kg aluminum foil bags (35×50cm, food grade), export cartons (465×285×295mm, 2 bags/carton)
+- Certifications: ISO 9001, GMP, HACCP
 
-## Quality & Compliance
-- cGMP-certified manufacturing facility
-- FDA 21 CFR Part 211 compliant processes
-- EU GMP Annex 1 standards
-- Full Certificate of Analysis (COA) with every batch
-- Testing: HPLC, GC-MS, ICP-MS, USP <232>/<233>, USP <61>
-- 400+ pesticide panel, mycotoxin ELISA screening
-- ICH Q3C residual solvent compliance
+## Other Botanical Extracts
+- Anthocyanins
+- Steviol Glycosides
+- Hemp Seed Globulin
+Applications: pharmaceutical R&D, nutrition & health, food & beverage, functional formulations, personal care
+
+## Core Business Lines
+1. CBD Raw Material Sales: Stable, traceable CBD isolate for brand clients, channel partners, and trading companies
+2. OEM/ODM Services: Raw material support, formulation development, production, packaging design, and finished product delivery
+3. Technical Consulting: Cultivation management, yield & content optimization, extraction process optimization, cost control, cannabinoid extraction consulting
+4. Botanical Extract Sales: Anthocyanins, steviol glycosides, hemp seed globulin
 
 ## Manufacturing Capabilities
-- 6m³ supercritical CO₂ extraction vessels (SUS316L, 45 MPa rated)
-- 1,000L single-effect concentrators (200 kg/hr evaporation)
-- High-purity chromatography columns (≥99.5% achievable purity)
-- Multi-stage crystallization and refinement
-- Ton-scale annual production capacity
+- 20 sets of 6m³ multi-function extraction tanks
+- 26 sets of 700L chromatography columns
+- 10 sets of 2000L/h single/double-effect concentrators
+- 2 sets of 1000-type solvent recovery towers
+- 10 sets of 5m³ ethanol recovery storage tanks
+- HPLC analytical system (Thermo Scientific Dionex UltiMate 3000)
+- Explosion-proof Siemens HMI automation control
+- Automatic residue discharge system
+
+## Quality & Compliance
+- ISO 9001, GMP, HACCP certified manufacturing
+- HPLC testing for CBD purity verification on every batch
+- COA, SDS, test reports, commercial invoices, and packing lists provided per batch
+- Export compliance support available; destination country import compliance is buyer/importer responsibility
+- Product labels, usage declarations, and customs descriptions should match actual batch, order purpose, and destination country requirements
 
 ## Vertical Integration
-- In-house hemp cultivation base in Yunnan Province
-- Controlled-environment agriculture (22°C ±0.5°C, 65–75% RH)
-- Zero synthetic pesticides
+- In-house hemp cultivation and breeding center in Chuxiong, Yunnan Province
+- High-altitude (1,800m+), UV-rich growing conditions
+- Seed selection, clonal propagation, greenhouse cultivation
 - Full seed-to-isolate traceability
-- ≥97% germination rate
 
-## Target Markets
-- Primary: European B2B buyers (pharmaceutical, nutraceutical, cosmetic formulators)
-- Delivery terms: DDP, CIF, FOB
-- Minimum order: 1 kg (ton-scale preferred)
+## Shipping & Logistics
+- FOB Kunming/Chuxiong, CIF, DDP available
+- Standard lead time: 10–14 business days
+- Packaging: 5 kg PE bags, 5 kg aluminum foil bags, export cartons on plastic pallets with shrink wrap
 
 ## Key Pages
-- Product Overview: https://www.vetrux.tech/products/cbd-isolate
-- Manufacturing Facility: https://www.vetrux.tech/equipment
+- Homepage: https://www.vetrux.tech/
+- CBD Isolate Product: https://www.vetrux.tech/products/cbd-isolate
+- Wholesale CBD Isolate: https://www.vetrux.tech/wholesale-cbd-isolate
+- Equipment & Facility: https://www.vetrux.tech/equipment
 - Cultivation Base: https://www.vetrux.tech/planting
-- Industry Blog: https://www.vetrux.tech/blog
-- Wholesale Inquiry: https://www.vetrux.tech/inquiry
+- Quality Assurance: https://www.vetrux.tech/quality-assurance
+- Manufacturer Profile: https://www.vetrux.tech/cbd-isolate-manufacturer
+- Gallery: https://www.vetrux.tech/gallery
+- About: https://www.vetrux.tech/about
+- B2B Inquiry: https://www.vetrux.tech/inquiry
+- Blog: https://www.vetrux.tech/blog
+- German Landing: https://www.vetrux.tech/de
+- French Landing: https://www.vetrux.tech/fr
 
 ## Contact
-- Email: postmaster@vetrux.tech
-- Phone: +86 871 8800 0000
-- Location: Yunnan Province, Southwest China
+- Inquiry Email: inquiry@vetrux.tech
+- Sales Email: sales@vetrux.tech
+- Address: Office in Seedling Base, Tapu Second Group, Chuxiong City, Chuxiong Yi Autonomous Prefecture, Yunnan Province, 675000, China
 - Website: https://www.vetrux.tech

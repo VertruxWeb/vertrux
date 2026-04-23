@@ -12,26 +12,26 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const volumeTiers = [
-  { range: '1–5 kg', label: 'Sample / Trial', discount: 'Spot pricing', note: 'COA + spec sheet included' },
-  { range: '5–25 kg', label: 'Small Commercial', discount: '5–10% off', note: 'Dedicated account manager' },
-  { range: '25–100 kg', label: 'Mid-Volume', discount: '10–18% off', note: 'Custom packaging available' },
-  { range: '100–500 kg', label: 'High-Volume', discount: '18–28% off', note: 'Quarterly contract pricing' },
-  { range: '500 kg+', label: 'Ton-Scale', discount: '28–40% off', note: 'Annual supply agreements' },
+  { range: '1–5 kg', label: 'Sample / Trial', discount: 'Contact for pricing', note: 'COA + spec sheet included' },
+  { range: '5–25 kg', label: 'Small Commercial', discount: 'Volume discount', note: 'Dedicated account manager' },
+  { range: '25–100 kg', label: 'Mid-Volume', discount: 'Contract pricing', note: 'Custom packaging available (PE bags, aluminum foil bags)' },
+  { range: '100–500 kg', label: 'High-Volume', discount: 'Quarterly contract pricing', note: 'Priority production scheduling' },
+  { range: '500 kg+', label: 'Ton-Scale', discount: 'Annual agreement pricing', note: 'Dedicated supply chain & annual contracts' },
 ];
 
 const shippingTerms = [
-  { term: 'FOB Kunming', desc: 'Buyer arranges freight from origin port. Lowest unit cost, maximum logistics control.', icon: Package },
-  { term: 'CIF Rotterdam', desc: 'Vetrux covers freight + insurance to EU port. Buyer handles customs clearance.', icon: Globe },
-  { term: 'DDP Europe', desc: 'Delivered duty paid — Vetrux handles all logistics, customs, and duties. Turnkey delivery.', icon: Shield },
+  { term: 'FOB Kunming/Chuxiong', desc: 'Buyer arranges freight from origin. Lowest unit cost, maximum logistics control. Standard export packaging: PE bags 5 kg, aluminum foil bags 5 kg, export cartons.', icon: Package },
+  { term: 'CIF Destination Port', desc: 'Vetrux covers freight + insurance to your designated port. Buyer handles customs clearance and destination-country compliance.', icon: Globe },
+  { term: 'DDP Destination', desc: 'Delivered duty paid — Vetrux handles logistics, customs, and duties to your door. Buyer/importer responsible for destination-country regulatory compliance.', icon: Shield },
 ];
 
 const whyWholesale = [
-  { title: '≥99.5% Purity', desc: 'Pharmaceutical-grade CBD isolate verified by third-party HPLC testing on every batch.' },
-  { title: 'THC Non-Detect', desc: 'Confirmed by GC-MS at ISO/IEC 17025-accredited laboratories. Compliant with EU, UK, and APAC thresholds.' },
-  { title: 'Vertically Integrated', desc: 'Seed-to-isolate traceability from our Yunnan hemp cultivation base through extraction and purification.' },
-  { title: 'cGMP Facility', desc: 'ISO 9001:2015, GMP, and HACCP certified manufacturing with full batch documentation.' },
-  { title: 'Flexible Logistics', desc: 'FOB, CIF, and DDP shipping terms with 10–14 day lead times for standard orders.' },
-  { title: 'Regulatory Support', desc: 'Documentation packages supporting EU Novel Food applications, EFSA dossiers, and market-specific compliance.' },
+  { title: '≥99.5% Purity', desc: 'Pharmaceutical-grade CBD isolate (CAS 13956-29-1) verified by in-house HPLC testing on every batch.' },
+  { title: 'THC Non-Detect', desc: 'Confirmed by GC-MS analysis. Batch-specific COA provided with every shipment.' },
+  { title: 'Industrial-Scale Production', desc: '20 extraction tanks (6 m³ each), 26 chromatography columns (700 L), and 10 concentrators — built for consistent, high-volume output.' },
+  { title: 'OEM/ODM Services', desc: 'Custom formulation, private-label packaging, and contract manufacturing for CBD and botanical extract products.' },
+  { title: 'Flexible Logistics', desc: 'FOB Kunming/Chuxiong, CIF, and DDP shipping terms. Standard packaging: 5 kg PE bags, 5 kg aluminum foil bags, export cartons.' },
+  { title: 'Beyond CBD', desc: 'Also supplying wholesale anthocyanins, steviol glycosides, hemp seed globulin, and other botanical extracts from our Yunnan facility.' },
 ];
 
 export default function WholesaleCbdIsolateClient() {
@@ -87,12 +87,10 @@ export default function WholesaleCbdIsolateClient() {
                 <span className="text-primary">CBD Isolate</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-6 max-w-md">
-                Bulk pharmaceutical-grade CBD isolate at competitive wholesale pricing. Volume-tiered
-                contracts from 1 kg samples to ton-scale annual supply agreements, with DDP delivery
-                to Europe and global markets.
+                Bulk pharmaceutical-grade CBD isolate and botanical raw materials from Vetrux Biotechnology (Chuxiong), Yunnan. Volume-tiered supply from 1 kg samples to ton-scale annual agreements, with OEM/ODM services and DDP delivery worldwide.
               </p>
               <p className="text-xs text-on-surface-variant/80 leading-relaxed mb-8 max-w-md">
-                European CBD isolate imports grew at a <span className="font-semibold text-on-surface-variant">CAGR of approximately 28%</span> between 2020 and 2024, with demand concentrated in Germany, the Netherlands, and Switzerland. <span className="text-on-surface-variant/50">(EIHA European Industrial Hemp Association)</span> All cross-border shipments are structured under <span className="font-semibold text-on-surface-variant">Incoterms 2020</span> (ICC publication), with full phytosanitary certificates, CITES-exempt documentation, and EU Novel Food Regulation (EU) 2015/2283 compliance records provided as standard.
+                Global demand for high-purity CBD isolate continues to grow across pharmaceutical, nutraceutical, and cosmetic applications. Vetrux also supplies wholesale <span className="font-semibold text-on-surface-variant">anthocyanins, steviol glycosides, hemp seed globulin</span>, and other botanical extracts. All cross-border shipments structured under <span className="font-semibold text-on-surface-variant">Incoterms 2020</span> with full export documentation. Buyer/importer is responsible for destination-country regulatory compliance.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {['≥99.5% Purity', 'THC Non-Detect', 'FOB / CIF / DDP', 'ISO 9001 + GMP'].map((tag) => (
@@ -111,7 +109,7 @@ export default function WholesaleCbdIsolateClient() {
               </div>
             </div>
             <div className="reveal-card">
-              <img src="/images/products/product2.jpg" alt="Wholesale CBD isolate bulk packaging" className="w-full h-[500px] object-cover" />
+              <img src="/images/products/cbd-packaging-foil.jpg" alt="Wholesale CBD isolate bulk packaging" className="w-full h-[500px] object-cover" />
             </div>
           </div>
         </div>

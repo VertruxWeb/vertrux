@@ -1,9 +1,19 @@
 'use client'
 
 // src/components/organisms/Footer.tsx
-// Site footer with brand, nav links, and copyright
+// Site footer with brand, nav links, and copyright — language-aware
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+const supportedLangPrefixes = ['/de', '/fr']
+
+function detectLangPrefix(pathname: string): string {
+  for (const prefix of supportedLangPrefixes) {
+    if (pathname === prefix || pathname.startsWith(prefix + '/')) return prefix
+  }
+  return ''
+}
 
 const footerLinks = [
   {
@@ -37,6 +47,9 @@ const footerLinks = [
 ]
 
 export default function Footer() {
+  const pathname = usePathname()
+  const langPrefix = detectLangPrefix(pathname)
+
   return (
     <footer className="bg-inverse-surface text-inverse-on-surface">
       <div className="max-w-container mx-auto px-6 lg:px-12 py-16">
@@ -52,18 +65,17 @@ export default function Footer() {
               />
             </div>
             <p className="text-xs text-inverse-on-surface/60 leading-relaxed">
-              Botanical extract manufacturing website for B2B visitors exploring products,
-              facility information, and documentation requests.
+              Vertically integrated CBD isolate manufacturer and botanical extract supplier. From seed selection to finished product delivery.
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
               <span className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full tracking-wider uppercase">
-                Product Info
+                CBD Isolate
               </span>
               <span className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full tracking-wider uppercase">
-                Facility View
+                OEM/ODM
               </span>
               <span className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full tracking-wider uppercase">
-                Inquiry Path
+                Botanical Extracts
               </span>
             </div>
           </div>
@@ -78,7 +90,7 @@ export default function Footer() {
                 {col.links.map((link) => (
                   <li key={link.href + link.label}>
                     <Link
-                      href={link.href}
+                      href={`${langPrefix}${link.href}`}
                       className="text-xs text-inverse-on-surface/70 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
@@ -101,8 +113,8 @@ export default function Footer() {
               <p>塔普二组育苗基地院内办公室</p>
               <p>
                 Email:{' '}
-                <a href="mailto:postmaster@vetrux.tech" className="text-inverse-on-surface/80 hover:text-white transition-colors">
-                  postmaster@vetrux.tech
+                <a href="mailto:inquiry@vetrux.tech" className="text-inverse-on-surface/80 hover:text-white transition-colors">
+                  inquiry@vetrux.tech
                 </a>
               </p>
               <p>Phone: +86 13518730530</p>

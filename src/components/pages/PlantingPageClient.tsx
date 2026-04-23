@@ -11,83 +11,88 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: 'Source', label: 'Controlled Cultivation' },
-  { value: 'Review', label: 'Process Visibility' },
-  { value: 'Trace', label: 'Origin Tracking' },
-  { value: 'B2B', label: 'Discussion Ready' },
+  { value: '[X] ha', label: 'Cultivation Base Area' },
+  { value: '26', label: 'Chromatography Columns' },
+  { value: '[X]M+', label: 'Annual Propagation Capacity' },
+  { value: '1,800m+', label: 'Yunnan Altitude Advantage' },
 ];
 
 const zones = [
   {
     id: '01',
-    tag: 'Zone 01 — Seedling Nursery',
-    title: 'Precision Germination & Propagation',
+    tag: 'Zone 01 — Seedling & Propagation',
+    title: 'Seed Selection & Cutting Propagation',
     description:
-      'Every plant begins in our climate-controlled nursery, where humidity, temperature, and light spectra are dialed in to sub-degree precision. Only seedlings meeting our phytochemical baseline are selected for transfer to the main grow zones.',
+      'Our breeding program begins with elite seed selection and clonal propagation at the Chuxiong nursery facility. High-CBD cultivars are propagated via stem cuttings in controlled greenhouse nurseries, ensuring genetic consistency and phytochemical uniformity across every production cycle.',
     images: [
-      { src: '/images/planting/plant1.jpg', alt: 'Seedling trays under grow lights' },
-      { src: '/images/planting/plant2.jpg', alt: 'Young hemp seedlings' },
+      { src: '/images/planting/seedling-nursery.jpg', alt: 'Young CBD hemp seedlings in nursery trays' },
+      { src: '/images/planting/cloning-propagation.jpg', alt: 'Hemp clones in propagation trays' },
+      { src: '/images/planting/rooted-cutting.jpg', alt: 'Hand holding a rooted hemp cutting' },
+      { src: '/images/planting/propagation-greenhouse.jpg', alt: 'Large-scale greenhouse propagation area' },
     ],
     specs: [
-      { label: 'Temperature Control', value: '22°C ± 0.5°C' },
-      { label: 'Humidity Range', value: '65–75% RH' },
-      { label: 'Light Cycle', value: '18h / 6h (VPD Optimised)' },
-      { label: 'Germination Rate', value: '≥ 97%' },
+      { label: 'Propagation Method', value: 'Clonal Cuttings + Seed' },
+      { label: 'Nursery Environment', value: 'Controlled Greenhouse' },
+      { label: 'Genetic Screening', value: 'High-CBD Cultivar Selection' },
+      { label: 'Rooting Success Rate', value: '≥ 95%' },
     ],
     icon: Leaf,
   },
   {
     id: '02',
     tag: 'Zone 02 — Vegetative Growth',
-    title: 'Controlled Environment Agriculture',
+    title: 'Greenhouse Cultivation & Controlled Growth',
     description:
-      'Our cultivation presentation highlights controlled growing conditions, documented handling steps, and source-management practices used to support downstream processing discussions.',
+      'Transplanted clones enter our large-scale greenhouse facilities in Chuxiong, where Yunnan\'s high-altitude sunlight and UV-rich conditions naturally promote vigorous vegetative growth. Controlled irrigation, nutrient delivery, and canopy management ensure uniform plant development before the flowering transition.',
     images: [
-      { src: '/images/planting/plant3.jpg', alt: 'Main greenhouse interior rows' },
-      { src: '/images/planting/plant4.jpg', alt: 'Hemp canopy in full vegetative stage' },
+      { src: '/images/planting/vegetative-growth.jpg', alt: 'Greenhouse rows of vegetative hemp plants' },
+      { src: '/images/planting/vegetative-canopy.jpg', alt: 'Dense green hemp canopy in vegetative stage' },
     ],
     specs: [
-      { label: 'Growing Method', value: 'Hydroponic + Substrate' },
-      { label: 'CO₂ Enrichment', value: '800–1200 ppm' },
-      { label: 'Water Source', value: 'Filtered Mountain Spring' },
-      { label: 'Pesticide Policy', value: 'Zero Synthetic Inputs' },
+      { label: 'Growing Method', value: 'Greenhouse + Natural Light' },
+      { label: 'Altitude', value: '1,800m+ (Yunnan Plateau)' },
+      { label: 'Water Source', value: 'Mountain Spring Irrigation' },
+      { label: 'Input Policy', value: 'Zero Synthetic Pesticides' },
     ],
     icon: Sun,
   },
   {
     id: '03',
     tag: 'Zone 03 — Flowering & Harvest',
-    title: 'Peak Cannabinoid Accumulation',
+    title: 'Mature Flowering & Trichome Development',
     description:
-      'Harvest and transfer steps are presented as part of the site\'s broader source-to-processing workflow overview for B2B visitors.',
+      'During the flowering stage, Yunnan\'s intense UV exposure drives exceptional trichome and cannabinoid development. Our agronomists monitor trichome maturity and CBD content to determine optimal harvest timing, maximizing cannabinoid yield while maintaining compliance with THC thresholds. Dense, resinous colas are hand-harvested and transferred to controlled drying and processing.',
     images: [
-      { src: '/images/planting/plant5.jpg', alt: 'Flowering hemp plants' },
-      { src: '/images/planting/plant6.jpg', alt: 'Harvest preparation' },
+      { src: '/images/planting/flowering-greenhouse.jpg', alt: 'Late-flowering hemp greenhouse' },
+      { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Close-up of CBD hemp bud with trichomes' },
+      { src: '/images/planting/mature-bud-trichomes.jpg', alt: 'Dense mature hemp bud with visible trichomes' },
+      { src: '/images/planting/flowering-dense-canopy.jpg', alt: 'Dense flowering hemp canopy' },
+      { src: '/images/planting/flowering-pistils.jpg', alt: 'Flowering hemp with white pistils' },
     ],
     specs: [
-      { label: 'Monitoring', value: 'Stage-Based Review' },
-      { label: 'Handling', value: 'Controlled Transfer' },
-      { label: 'Workflow', value: 'Source to Process' },
-      { label: 'Drying Method', value: 'Documented Procedures' },
+      { label: 'Trichome Monitoring', value: 'Daily Visual + Lab Analysis' },
+      { label: 'Harvest Method', value: 'Hand-Harvested at Peak CBD' },
+      { label: 'UV Advantage', value: 'High-Altitude UV Exposure' },
+      { label: 'Drying Process', value: 'Controlled Low-Temp Drying' },
     ],
     icon: Thermometer,
   },
 ];
 
 const galleryImages = [
-  { src: '/images/planting/plant7.jpg', alt: 'Greenhouse rows from above' },
-  { src: '/images/planting/plant8.jpg', alt: 'Irrigation system detail' },
-  { src: '/images/planting/plant9.jpg', alt: 'Hemp plant close-up' },
-  { src: '/images/planting/plant10.jpg', alt: 'Workers tending to plants' },
-  { src: '/images/planting/plant11.jpg', alt: 'Biomass post-harvest' },
-  { src: '/images/planting/plant12.jpg', alt: 'Aerial view of planting base' },
+  { src: '/images/planting/propagation-greenhouse.jpg', alt: 'Large-scale greenhouse propagation area' },
+  { src: '/images/planting/seedling-nursery.jpg', alt: 'Young CBD hemp seedlings in nursery trays' },
+  { src: '/images/planting/cloning-propagation.jpg', alt: 'Hemp clones in propagation trays' },
+  { src: '/images/planting/vegetative-canopy.jpg', alt: 'Dense green hemp canopy in vegetative stage' },
+  { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Close-up of CBD hemp bud with trichomes' },
+  { src: '/images/planting/flowering-dense-canopy.jpg', alt: 'Dense flowering hemp canopy from above' },
 ];
 
 const traceabilityItems = [
-  { icon: Shield, label: 'Origin Records', desc: 'Cultivation and handling records can be reviewed within qualified B2B discussions' },
-  { icon: Droplets, label: 'Water Review', desc: 'Water-management practices are part of the broader source-control narrative on this page' },
-  { icon: Leaf, label: 'Substrate Oversight', desc: 'Growing inputs and cultivation workflow are presented as part of source-management discussions' },
-  { icon: CheckCircle, label: 'Batch Documentation', desc: 'Product and origin documentation requests can be directed through the inquiry workflow' },
+  { icon: Shield, label: 'Seed-to-Isolate Integration', desc: 'Vetrux controls every step from seed selection and cultivation through extraction and isolation — full vertical integration under one supply chain.' },
+  { icon: Droplets, label: 'Standardized Cultivation System', desc: 'SOPs govern every stage of our growing process: propagation, transplanting, nutrient management, flowering, and harvest timing are all standardized across our Chuxiong base.' },
+  { icon: Leaf, label: 'Traceable Supply Chain', desc: 'Every batch of biomass is traceable from the specific greenhouse zone and harvest date through to the final CBD isolate lot number and COA.' },
+  { icon: CheckCircle, label: 'Batch Documentation & COA', desc: 'Full batch records, third-party lab reports, and Certificates of Analysis are available for every production run upon qualified B2B request.' },
 ];
 
 export default function PlantingPageClient() {
@@ -160,18 +165,19 @@ export default function PlantingPageClient() {
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <Badge variant="default" className="mb-6">Cultivation Base · Yunnan Province</Badge>
+              <Badge variant="default" className="mb-6">Cultivation & Breeding Center · Chuxiong, Yunnan</Badge>
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
-                From the Source.
+                Grown at Altitude.
                 <br />
-                <span className="text-primary">Quality You Can Trace.</span>
+                <span className="text-primary">Traced to the Source.</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                This page presents the current cultivation and source-control narrative used to
-                support broader B2B discussions around raw material handling and process visibility.
+                Vetrux operates its own cultivation and breeding center in Chuxiong, Yunnan Province —
+                where high-altitude terrain and intense UV exposure create ideal conditions for
+                high-CBD hemp with exceptional cannabinoid and terpene profiles.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Cultivation Overview', 'Origin Tracking', 'Source Control', 'B2B Inquiry Path'].map((tag) => (
+                {['Yunnan High-Altitude', 'UV-Rich Growing', 'Seed-to-Isolate', 'Vertically Integrated'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -180,10 +186,10 @@ export default function PlantingPageClient() {
             </div>
 
             <div className="relative">
-              <img src="/images/planting/plant3.jpg" alt="Vetrux planting base greenhouse" className="w-full h-[500px] object-cover" />
+              <img src="/images/planting/vegetative-growth.jpg" alt="Vetrux cultivation base greenhouse in Chuxiong, Yunnan" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
-                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Cultivation Base</p>
-                <p className="text-sm font-bold text-white">Yunnan Province, China</p>
+                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Cultivation & Breeding Center</p>
+                <p className="text-sm font-bold text-white">Chuxiong, Yunnan Province · 1,800m+</p>
               </div>
             </div>
           </div>
@@ -212,21 +218,23 @@ export default function PlantingPageClient() {
               <SectionLabel>Why Vertical Integration Matters</SectionLabel>
               <h2 className="text-4xl font-extrabold text-on-background tracking-tighter leading-tight mt-4">
                 The Best Extracts Begin
-                <br />Long Before the Lab.
+                <br />in the Field.
               </h2>
             </div>
             <div className="reveal-card lg:col-span-7 space-y-5 pt-2">
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Source control matters for B2B buyers because it shapes how raw material handling,
-                cultivation workflow, and downstream processing are discussed during qualification.
+                At Vetrux, vertical integration isn't a buzzword — it's our operating model. By controlling
+                cultivation, breeding, and extraction under one roof, we eliminate supply chain uncertainty
+                and deliver consistent cannabinoid profiles batch after batch.
               </p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                This section is intended as a cultivation and traceability overview rather than a
-                publication of final audited operating metrics.
+                Our Chuxiong base sits on the Yunnan Plateau at over 1,800 meters, where naturally intense
+                UV radiation and clean mountain air drive superior trichome development and cannabinoid
+                accumulation — advantages that no indoor facility can replicate.
               </p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Additional product and documentation questions can be reviewed directly with the
-                team as real operational materials are prepared for qualified discussions.
+                From proprietary high-CBD cultivar selection to 26-column chromatographic purification,
+                every link in our seed-to-isolate chain is optimized for purity, potency, and traceability.
               </p>
             </div>
           </div>
@@ -291,10 +299,10 @@ export default function PlantingPageClient() {
           <div className="reveal-card flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
             <div>
               <SectionLabel>Field Documentation</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mt-3">Inside the Planting Base</h2>
+              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mt-3">Inside the Chuxiong Cultivation Base</h2>
             </div>
             <p className="text-sm text-on-surface-variant max-w-sm leading-relaxed">
-              Raw footage from our cultivation teams, captured across different growth stages and seasonal conditions.
+              Real photos from our Yunnan cultivation and breeding center — from seedling propagation through flowering and harvest.
             </p>
           </div>
 
@@ -315,12 +323,13 @@ export default function PlantingPageClient() {
             <div className="reveal-card lg:col-span-4">
               <SectionLabel light>Full Traceability</SectionLabel>
               <h2 className="text-4xl font-extrabold text-white tracking-tighter leading-tight mt-4">
-                Seed-to-Documentation
-                <br />Documentation
+                Seed-to-Isolate
+                <br />Vertical Integration
               </h2>
               <p className="mt-5 text-sm text-white/50 leading-relaxed">
-                Origin and product documentation requests can be organized through the inquiry path
-                as supporting materials are prepared for qualified B2B conversations.
+                Vetrux's vertically integrated model means every gram of CBD isolate traces back to a specific
+                greenhouse zone, harvest batch, and extraction run at our Chuxiong facility. No middlemen,
+                no blind spots — just a fully traceable, standardized supply chain.
               </p>
             </div>
 

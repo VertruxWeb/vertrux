@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -67,11 +67,11 @@ export default function InquiryPageClient() {
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-fixed flex items-center justify-center mt-0.5">
-                      <Phone size={14} className="text-primary" />
+                      <Mail size={14} className="text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Phone</p>
-                      <p className="text-sm font-semibold text-on-surface">+86 871 8800 0000</p>
+                      <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Sales Email</p>
+                      <p className="text-sm font-semibold text-on-surface">sales@vetrux.tech</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -80,7 +80,7 @@ export default function InquiryPageClient() {
                     </div>
                     <div>
                       <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Email</p>
-                      <p className="text-sm font-semibold text-on-surface">postmaster@vetrux.tech</p>
+                      <p className="text-sm font-semibold text-on-surface">inquiry@vetrux.tech</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -90,7 +90,7 @@ export default function InquiryPageClient() {
                     <div>
                       <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Headquarters</p>
                       <p className="text-sm font-semibold text-on-surface leading-relaxed">
-                        Yunnan Province,<br />Southwest China
+                        Office in Seedling Base, Tapu Second Group,<br />Chuxiong City, Yunnan Province, 675000, China
                       </p>
                     </div>
                   </div>
@@ -99,8 +99,8 @@ export default function InquiryPageClient() {
 
               <div className="reveal-card overflow-hidden">
                 <iframe
-                  title="Yunnan Province location"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=100.5%2C24.0%2C104.5%2C27.0&layer=mapnik&marker=25.0%2C102.7"
+                  title="Chuxiong, Yunnan location"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=101.0%2C24.5%2C102.1%2C25.6&layer=mapnik&marker=25.03%2C101.55"
                   width="100%"
                   height="220"
                   style={{ border: 0, display: 'block' }}
@@ -109,13 +109,13 @@ export default function InquiryPageClient() {
               </div>
 
               <div className="reveal-card bg-primary p-8">
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">Certified Standards</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">Service Capabilities</p>
                 <div className="space-y-4">
                   {[
-                    { cert: 'Documentation Requests', desc: 'Handled through direct B2B follow-up' },
-                    { cert: 'Product Discussions', desc: 'Aligned to current website information' },
-                    { cert: 'Facility Overview', desc: 'Shared as part of qualification conversations' },
-                    { cert: 'Inquiry Workflow', desc: 'Built for direct buyer communication' },
+                    { cert: 'CBD Raw Materials', desc: 'Isolate ≥99.5% purity' },
+                    { cert: 'OEM/ODM Services', desc: 'Formulation to finished product' },
+                    { cert: 'Technical Consulting', desc: 'Cultivation & extraction expertise' },
+                    { cert: 'Botanical Extracts', desc: 'Anthocyanins, steviol glycosides, hemp seed globulin' },
                   ].map((item) => (
                     <div key={item.cert} className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">
                       <span className="text-xs font-bold text-white">{item.cert}</span>

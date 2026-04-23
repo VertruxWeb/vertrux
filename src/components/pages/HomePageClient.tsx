@@ -62,7 +62,7 @@ export default function HomePageClient() {
       <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-on-background">
         <Image
           src="/images/hero/facility-hero.webp"
-          alt="Vetrux CBD extraction facility"
+          alt="Vetrux Biotechnology CBD extraction facility in Chuxiong, Yunnan"
           fill
           priority
           sizes="100vw"
@@ -73,16 +73,17 @@ export default function HomePageClient() {
         <div ref={heroContentRef} className="relative z-10 max-w-container mx-auto px-6 lg:px-12 pb-20 pt-32">
           <div className="max-w-3xl">
             <div className="hero-animate">
-              <Badge variant="glass" className="mb-6">Technical Excellence</Badge>
+              <Badge variant="glass" className="mb-6">Vetrux Biotechnology · Est. Chuxiong, Yunnan</Badge>
             </div>
 
             <h1 className="hero-animate text-5xl md:text-7xl font-extrabold text-white tracking-tighter leading-[0.95] mb-6">
-              Botanical Purity<br />at Scale
+              CBD Raw Materials<br />& Botanical Extracts
             </h1>
 
             <p className="hero-animate text-base md:text-lg text-white/70 leading-relaxed max-w-xl mb-10">
-              Harnessing Yunnan's biodiversity through state-of-the-art supercritical CO₂
-              extraction technology. Pharmaceutical-grade CBD isolate for global B2B partners.
+              Vetrux — a brand under 蔚萃生物 — delivers pharmaceutical-grade CBD isolate via
+              ethanol extraction and chromatographic purification from our Chuxiong, Yunnan facility.
+              OEM/ODM services, technical consulting, and bulk supply for global B2B partners.
             </p>
 
             <div className="hero-animate flex flex-wrap gap-4">
@@ -101,10 +102,10 @@ export default function HomePageClient() {
 
           <div className="hero-animate flex flex-wrap gap-6 mt-16 pt-8 border-t border-white/10">
             {[
-              { value: 'B2B', label: 'Inquiry Focus' },
-              { value: 'Docs', label: 'Request Path' },
-              { value: 'Facility', label: 'Overview' },
-              { value: 'Current', label: 'Website Information' },
+              { value: '20+', label: 'Extraction Equipment Sets' },
+              { value: '26', label: 'Chromatography Columns' },
+              { value: '99.5%', label: 'CBD Purity' },
+              { value: '5+', label: 'Years Experience' },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-bold text-white tracking-tighter">{stat.value}</p>
@@ -112,19 +113,6 @@ export default function HomePageClient() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── TL;DR SUMMARY ──────────────────────────────────────────────── */}
-      <section className="py-8 bg-primary-fixed border-b border-outline-variant/20">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">TL;DR</p>
-          <p className="text-sm text-on-background leading-relaxed max-w-3xl">
-            Vetrux CBD is a vertically integrated CBD isolate manufacturer in Yunnan, China.
-            We produce pharmaceutical-grade CBD isolate (≥99.5% purity, THC non-detect) via supercritical CO₂ extraction
-            in a cGMP-certified facility. ISO 9001, GMP, HACCP certified. Supplying European B2B buyers
-            with 1 kg to ton-scale orders, FOB/CIF/DDP delivery, and full COA documentation per batch.
-          </p>
         </div>
       </section>
 
@@ -141,13 +129,13 @@ export default function HomePageClient() {
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Extraction Science</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Vetrux employs supercritical CO₂ extraction at <span className="text-on-surface font-semibold">31.1°C / 73.8 bar</span> — the critical point at which CO₂ acts as a selective, solvent-free extractant, preserving full cannabinoid molecular integrity without thermal degradation.
+                Vetrux employs <span className="text-on-surface font-semibold">ethanol extraction combined with chromatographic purification</span> using 26 industrial chromatography columns (700L each). This multi-stage process — extraction, chromatographic separation, concentration, and crystallization — achieves ≥99.5% CBD purity while maintaining full molecular integrity.
               </p>
             </div>
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Manufacturer Position</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                As a vertically integrated seed-to-isolate manufacturer operating from Yunnan Province, Vetrux controls every stage of the phytocannabinoid production chain — from cultivar selection and biomass quality to final API-grade crystallisation and batch release.
+                Operating from our production base in <span className="text-on-surface font-semibold">Chuxiong, Yunnan Province</span>, Vetrux Biotechnology controls the full production chain — from hemp biomass processing through ethanol extraction, chromatographic purification, and final crystallization to batch release and export packaging.
               </p>
             </div>
           </div>
@@ -160,8 +148,8 @@ export default function HomePageClient() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative reveal-card">
               <Image
-                src="/images/equipment/extraction-vessel-6m3.webp"
-                alt="Industrial extraction infrastructure"
+                src="/images/equipment/extraction-tanks.jpg"
+                alt="20 sets of 6m³ industrial extraction tanks at Vetrux facility"
                 width={800}
                 height={520}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -169,7 +157,7 @@ export default function HomePageClient() {
               />
               <div className="absolute bottom-6 left-6 bg-primary text-white px-5 py-3">
                 <p className="text-xs tracking-widest uppercase font-semibold text-white/70">Capacity</p>
-                <p className="text-2xl font-extrabold tracking-tighter">Facility Overview</p>
+                <p className="text-2xl font-extrabold tracking-tighter">20× 6m³ Extraction Tanks</p>
               </div>
             </div>
 
@@ -182,16 +170,17 @@ export default function HomePageClient() {
                   <span className="text-primary">Precision Controlled</span>
                 </h2>
                 <p className="text-sm text-on-surface-variant leading-relaxed mb-10 max-w-md">
-                  Explore the current facility presentation, equipment overview, and process
-                  narrative used to support B2B product discussions.
+                  Our Chuxiong facility houses 20 sets of 6m³ extraction tanks, 26 chromatography columns (700L),
+                  and 10 sets of concentrators — supported by solvent recovery towers, ethanol storage,
+                  and HPLC analytical systems with full automation control.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 gap-4">
                 {[
-                  { icon: FlaskConical, title: 'Supercritical CO₂ Process', desc: 'Solvent-free extraction preserving full molecular integrity of cannabinoids.' },
-                  { icon: Award, title: 'Documentation-First Discussions', desc: 'Product and facility information can be reviewed directly with the B2B team.' },
-                  { icon: Layers, title: 'Multi-Stage Refinement', desc: 'Chromatography, crystallization, and double-blind purity testing.' },
+                  { icon: FlaskConical, title: 'Ethanol Extraction & Purification', desc: 'Industrial ethanol extraction followed by 26-column chromatographic purification for ≥99.5% CBD purity.' },
+                  { icon: Award, title: 'OEM/ODM & Technical Consulting', desc: 'Custom manufacturing, formulation support, and technical consulting for CBD and botanical extract products.' },
+                  { icon: Layers, title: 'Multi-Stage Refinement', desc: 'Chromatographic separation, concentration, crystallization, and HPLC-verified batch testing.' },
                 ].map((feat) => (
                   <div key={feat.title} className="reveal-card flex gap-4 p-5 bg-surface-container-low hover:bg-surface-container transition-colors duration-200">
                     <div className="flex-shrink-0 w-10 h-10 bg-primary-fixed flex items-center justify-center">
@@ -215,7 +204,7 @@ export default function HomePageClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             <div className="reveal-card lg:col-span-8 relative overflow-hidden">
               <Image
-                src="/images/products/product1.jpg"
+                src="/images/products/cbd-crystal-closeup.jpg"
                 alt="CBD Isolate 99.5% Purity"
                 width={1200}
                 height={580}
@@ -265,10 +254,10 @@ export default function HomePageClient() {
         <div ref={trustRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
             {[
-              { label: 'Quality Focus', sub: 'Process Review', href: '/quality-assurance' },
-              { label: 'Wholesale Supply', sub: 'Volume Pricing', href: '/wholesale-cbd-isolate' },
-              { label: 'Manufacturer Profile', sub: 'Seed-to-Isolate', href: '/cbd-isolate-manufacturer' },
-              { label: 'Global Inquiry', sub: 'Export Discussions', href: '/inquiry' },
+              { label: 'Quality Focus', sub: 'HPLC Testing · ≥99.5% Purity', href: '/quality-assurance' },
+              { label: 'Wholesale Supply', sub: 'Bulk CBD & Botanical Extracts', href: '/wholesale-cbd-isolate' },
+              { label: 'Manufacturer Profile', sub: 'Chuxiong, Yunnan Production Base', href: '/cbd-isolate-manufacturer' },
+              { label: 'Global Inquiry', sub: 'inquiry@vetrux.tech', href: '/inquiry' },
             ].map((cert) => (
               <Link key={cert.label} href={cert.href} className="reveal-card py-6 border-t-2 border-primary-fixed hover:border-primary transition-colors duration-200 block">
                 <p className="text-lg font-extrabold text-on-background tracking-tighter">{cert.label}</p>
@@ -290,23 +279,23 @@ export default function HomePageClient() {
             {[
               {
                 q: 'What is CBD isolate and how is it different from full-spectrum CBD?',
-                a: 'CBD isolate is the purest form of cannabidiol — a white crystalline powder containing ≥99.5% CBD with all other cannabinoids, terpenes, and plant compounds removed. Unlike full-spectrum CBD which retains THC and other cannabinoids, CBD isolate is THC non-detect (ND), making it ideal for pharmaceutical and nutraceutical formulations requiring precise dosing and regulatory compliance.',
+                a: 'CBD isolate is the purest form of cannabidiol — a white crystalline powder containing ≥99.5% CBD (CAS: 13956-29-1, HS Code: 2907299020) with all other cannabinoids, terpenes, and plant compounds removed. Unlike full-spectrum CBD which retains THC and other cannabinoids, CBD isolate is THC non-detect (ND), making it ideal for pharmaceutical and nutraceutical formulations requiring precise dosing and regulatory compliance.',
               },
               {
-                q: 'What certifications does Vetrux CBD hold?',
-                a: 'Vetrux operates under ISO 9001:2015, GMP, and HACCP certifications. Our facility follows FDA 21 CFR Part 211 and EU GMP Annex 1 standards. All testing is performed by ISO/IEC 17025-accredited laboratories, and every batch ships with a full Certificate of Analysis (COA).',
+                q: 'What services does Vetrux offer beyond CBD isolate?',
+                a: 'Beyond CBD raw material sales, Vetrux provides OEM/ODM custom manufacturing services, technical consulting, and supplies other botanical extracts including anthocyanins, steviol glycosides, and hemp seed globulin. Contact sales@vetrux.tech for OEM/ODM inquiries or inquiry@vetrux.tech for general product information.',
               },
               {
-                q: 'What is the minimum order quantity for wholesale CBD isolate?',
-                a: 'Vetrux offers CBD isolate starting from 1 kg for sample and trial orders. Volume pricing begins at 5 kg, with significant discounts at 100 kg+ and ton-scale annual contracts. Available in 1 kg, 5 kg, and 25 kg packaging.',
+                q: 'What packaging options are available for CBD isolate?',
+                a: 'Vetrux offers CBD isolate in 5 kg PE bags (27×60 cm), 5 kg aluminum foil bags (35×50 cm), and export cartons (465×285×295 mm). Custom packaging is available through our OEM/ODM services. Volume pricing available for bulk orders — contact sales@vetrux.tech.',
               },
               {
-                q: 'How does Vetrux ensure THC-free compliance for European buyers?',
-                a: 'Every batch undergoes GC-MS testing at accredited laboratories to confirm THC non-detect (ND) status. Our supercritical CO₂ extraction and multi-stage chromatographic purification process ensures compliance with EU Novel Food THC limits. Full documentation including COA, Certificate of Origin, and SDS is provided with each shipment.',
+                q: 'How does Vetrux ensure CBD purity and THC-free compliance?',
+                a: 'Every batch undergoes HPLC testing to confirm ≥99.5% CBD purity and THC non-detect (ND) status. Our ethanol extraction and 26-column chromatographic purification process ensures consistent quality. Full documentation including COA, Certificate of Origin, and SDS is provided with each shipment.',
               },
               {
-                q: 'What shipping terms are available for European buyers?',
-                a: 'Vetrux offers FOB Kunming, CIF Rotterdam, and DDP delivery to European destinations. Standard lead time is 10–14 business days from order confirmation. All shipments include batch-specific COA, Certificate of Origin, and Safety Data Sheet.',
+                q: 'Where is Vetrux located and what shipping terms are available?',
+                a: 'Vetrux Biotechnology is based in Chuxiong, Yunnan Province, China. We offer FOB Kunming, CIF, and DDP delivery to global destinations. Standard lead time is 10–14 business days from order confirmation. All shipments include batch-specific COA, Certificate of Origin, and Safety Data Sheet. Contact inquiry@vetrux.tech for logistics details.',
               },
             ].map((faq) => (
               <div key={faq.q} className="bg-surface p-6">

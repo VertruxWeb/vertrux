@@ -12,28 +12,28 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const capabilities = [
-  { icon: Leaf, title: 'Vertically Integrated Cultivation', desc: 'Proprietary hemp cultivation base in Yunnan Province — high-altitude, UV-rich growing conditions producing biomass with consistently high CBD content and low THC expression.' },
-  { icon: Factory, title: 'Supercritical CO₂ Extraction', desc: '6m³ extraction vessels operating at industrial scale. Solvent-free process producing clean crude with minimal post-processing burden.' },
-  { icon: FlaskConical, title: 'Chromatographic Purification', desc: '700L preparative chromatography columns for precise cannabinoid separation. Multi-stage crystallization achieving ≥99.5% CBD purity.' },
-  { icon: CheckCircle, title: 'In-House QC Laboratory', desc: 'HPLC, GC-MS, ICP-MS instrumentation for full analytical panel testing. Every batch verified before release.' },
-  { icon: Globe, title: 'Global Export Infrastructure', desc: 'FOB, CIF, and DDP shipping terms. Export documentation, phytosanitary certificates, and customs support for EU, UK, APAC, and Americas.' },
-  { icon: Truck, title: 'Flexible Packaging & MOQ', desc: '1 kg, 5 kg, and 25 kg vacuum-sealed foil bags. Sample quantities available for qualification. Ton-scale annual contracts supported.' },
+  { icon: Leaf, title: 'Yunnan Hemp Cultivation Base', desc: 'Proprietary hemp cultivation in Yunnan Province — high-altitude, UV-rich growing conditions producing biomass with consistently high CBD content and low THC expression.' },
+  { icon: Factory, title: 'Industrial-Scale Extraction', desc: '20 extraction tanks at 6 m³ each — large-scale supercritical CO₂ extraction capacity. Solvent-free process producing clean crude with minimal post-processing burden.' },
+  { icon: FlaskConical, title: 'Chromatographic Purification', desc: '26 preparative chromatography columns (700 L each) plus 10 concentrators for precise cannabinoid separation. Multi-stage crystallization achieving ≥99.5% CBD purity.' },
+  { icon: CheckCircle, title: 'HPLC Quality Control Lab', desc: 'Dedicated in-house HPLC laboratory for full analytical panel testing. Siemens automation system ensures process consistency. Every batch verified before release.' },
+  { icon: Globe, title: 'Global Export Infrastructure', desc: 'FOB Kunming/Chuxiong, CIF, and DDP shipping terms. Full export documentation and customs support. Buyer/importer responsible for destination-country regulatory compliance.' },
+  { icon: Truck, title: 'Flexible Packaging & OEM/ODM', desc: '5 kg PE bags, 5 kg aluminum foil bags, export cartons (465×285×295 mm). OEM/ODM services, private-label packaging, and contract manufacturing available.' },
 ];
 
 const differentiators = [
   { metric: '≥99.5%', label: 'CBD Purity', detail: 'HPLC verified, batch-specific COA' },
   { metric: 'ND', label: 'THC Content', detail: 'Non-detect by GC-MS' },
-  { metric: '6m³', label: 'Extraction Vessels', detail: 'Industrial-scale CO₂ extraction' },
-  { metric: '700L', label: 'Chromatography', detail: 'Preparative purification columns' },
-  { metric: '24 mo', label: 'Shelf Life', detail: 'ICH Q1A stability validated' },
-  { metric: '10–14d', label: 'Lead Time', detail: 'Standard order fulfillment' },
+  { metric: '20×6m³', label: 'Extraction Tanks', detail: '20 tanks, industrial-scale CO₂' },
+  { metric: '26×700L', label: 'Chromatography', detail: '26 preparative columns' },
+  { metric: '10', label: 'Concentrators', detail: 'Post-extraction processing' },
+  { metric: 'Siemens', label: 'Automation', detail: 'Integrated process control' },
 ];
 
 const markets = [
-  { region: 'European Union', detail: 'DDP delivery to major EU ports. Novel Food dossier support documentation available.' },
-  { region: 'United Kingdom', detail: 'Post-Brexit FSA Novel Food compliance documentation. DDP to UK ports.' },
-  { region: 'North America', detail: 'FDA 21 CFR Part 211 aligned documentation. FOB and CIF terms.' },
-  { region: 'APAC', detail: 'Japan THC-free certification, Australia TGA documentation, South Korea compliance support.' },
+  { region: 'European Union', detail: 'FOB, CIF, and DDP delivery to major EU ports. General compliance documentation provided; buyer/importer responsible for Novel Food and destination-country regulatory requirements.' },
+  { region: 'United Kingdom', detail: 'FOB, CIF, and DDP to UK ports. Export documentation and COA provided; buyer/importer responsible for FSA Novel Food and UK-specific compliance.' },
+  { region: 'North America', detail: 'FOB and CIF terms available. Batch documentation and COA provided; buyer/importer responsible for FDA and destination-country regulatory compliance.' },
+  { region: 'APAC', detail: 'FOB and CIF shipping to Asia-Pacific markets. Full export documentation provided; buyer/importer responsible for all destination-country regulatory requirements and import permits.' },
 ];
 
 export default function CbdIsolateManufacturerClient() {
@@ -89,10 +89,7 @@ export default function CbdIsolateManufacturerClient() {
                 <span className="text-primary">Manufacturer</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Vetrux CBD is a vertically integrated CBD isolate manufacturer — from hemp
-                cultivation through supercritical CO₂ extraction, chromatographic purification,
-                and pharmaceutical-grade quality control. Supplying B2B buyers globally with
-                ≥99.5% purity, THC-free CBD isolate.
+                Vetrux Biotechnology (Chuxiong) is a CBD isolate manufacturer in Yunnan, China — operating 20 extraction tanks (6 m³), 26 chromatography columns (700 L), and a dedicated HPLC quality control lab with Siemens automation. Supplying B2B buyers globally with ≥99.5% purity CBD isolate, OEM/ODM services, and botanical extracts.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {['Seed-to-Isolate', 'CO₂ Extraction', 'cGMP Facility', 'Global Export'].map((tag) => (
@@ -111,7 +108,7 @@ export default function CbdIsolateManufacturerClient() {
               </div>
             </div>
             <div className="reveal-card">
-              <img src="/images/hero/facility-hero.webp" alt="Vetrux CBD isolate manufacturing facility" className="w-full h-[500px] object-cover" />
+              <img src="/images/gallery/campus-buildings.webp" alt="Vetrux CBD isolate manufacturing facility campus" className="w-full h-[500px] object-cover" />
             </div>
           </div>
         </div>

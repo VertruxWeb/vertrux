@@ -21,21 +21,27 @@ const routeLabels: Record<string, string> = {
 export default function Breadcrumb() {
   const pathname = usePathname()
 
-  if (pathname === '/') return null
+  if (pathname === '/' || pathname === '/de' || pathname === '/fr') return null
 
-  const segments = pathname.split('/').filter(Boolean)
-  const crumbs: Array<{ label: string; href: string }> = [{ label: 'Home', href: '/' }]
+  // Strip language prefix for breadcrumb generation
+  const langPrefix = pathname.startsWith('/de/') || pathname === '/de' ? '/de'
+    : pathname.startsWith('/fr/') || pathname === '/fr' ? '/fr'
+    : ''
+  const strippedPath = langPrefix ? pathname.slice(langPrefix.length) || '/' : pathname
+
+  const segments = strippedPath.split('/').filter(Boolean)
+  const crumbs: Array<{ label: string; href: string }> = [{ label: 'Home', href: langPrefix || '/' }]
 
   let currentPath = ''
   for (const segment of segments) {
     currentPath += `/${segment}`
     const label = routeLabels[currentPath] || segment.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
-    crumbs.push({ label, href: currentPath })
+    crumbs.push({ label, href: langPrefix + currentPath })
   }
 
   return (
-    <nav aria-label="Breadcrumb" className="max-w-container mx-auto px-6 lg:px-12 py-3">
-      <ol className="flex items-center gap-1 text-xs text-on-surface-variant" itemScope itemType="https://schema.org/BreadcrumbList">
+    <nav aria-label="Breadcrumb" className="relative z-10 max-w-container mx-auto px-6 lg:px-12 pt-2 pb-0 -mb-6">
+      <ol className="flex items-center gap-1 text-[11px] text-on-surface-variant/50" itemScope itemType="https://schema.org/BreadcrumbList">
         {crumbs.map((crumb, i) => {
           const isLast = i === crumbs.length - 1
           return (

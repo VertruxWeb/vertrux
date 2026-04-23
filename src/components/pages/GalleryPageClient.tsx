@@ -13,54 +13,59 @@ const sectors = [
     id: 'S01',
     label: 'Sector 01 — Architectural Excellence',
     title: 'Main Campus & Infrastructure',
-    description: 'A visual overview of the current campus and facility presentation used across the website.',
+    description: 'Our GMP-compliant industrial park in Yunnan houses extraction, refinement, and quality-control operations under one roof — purpose-built for full vertical integration.',
     images: [
-      { src: '/images/gallery/campus1.webp', alt: 'Campus aerial view', span: 'col-span-1 row-span-2' },
-      { src: '/images/gallery/campus2.webp', alt: 'Main hall', span: 'col-span-1' },
-      { src: '/images/gallery/campus3.webp', alt: 'Processing wing', span: 'col-span-1' },
-      { src: '/images/gallery/campus4.webp', alt: 'Campus exterior', span: 'col-span-2' },
+      { src: '/images/gallery/campus-aerial.png', alt: 'Aerial view of Vetrux industrial campus with surrounding mountains', span: 'col-span-1 row-span-2' },
+      { src: '/images/gallery/campus-buildings.webp', alt: 'Campus buildings with landscaped grounds', span: 'col-span-1' },
+      { src: '/images/gallery/processing-workshop.webp', alt: 'Modern processing workshop exterior', span: 'col-span-1' },
     ],
-    stat: { label: 'Visual Theme', value: 'Campus Overview' },
-    eco: 'Facility Presentation',
+    stat: { label: 'Facility Area', value: '30,000 m²' },
+    eco: '8 Production Buildings',
   },
   {
     id: 'S02',
     label: 'Sector 02 — Raw Material Purity',
     title: 'Planting Base & Cultivation',
-    description: 'A cultivation gallery focused on source-control storytelling, field imagery, and traceability themes.',
+    description: 'High-altitude hemp cultivation across Yunnan province — from seedling propagation through flowering — ensures consistent cannabinoid profiles and full traceability.',
     images: [
-      { src: '/images/planting/plant5.jpg', alt: 'Hemp cultivation fields', span: 'col-span-2 row-span-2' },
-      { src: '/images/planting/plant7.jpg', alt: 'Seedling lab', span: 'col-span-1' },
-      { src: '/images/planting/plant12.jpg', alt: 'Greenhouse', span: 'col-span-1' },
+      { src: '/images/gallery/cultivation-field.jpg', alt: 'Hemp field under hoop-house frame structures', span: 'col-span-2 row-span-2' },
+      { src: '/images/gallery/cultivation-base-wide.jpg', alt: 'Wide view of cultivation base with mountain backdrop', span: 'col-span-1' },
+      { src: '/images/gallery/cultivation-base-rows.jpg', alt: 'Rows of tall hemp plants in greenhouse frames', span: 'col-span-1' },
+      { src: '/images/planting/flowering-greenhouse.jpg', alt: 'Flowering hemp in controlled greenhouse environment', span: 'col-span-1' },
+      { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Close-up of flowering hemp cola', span: 'col-span-1' },
     ],
-    stat: { label: 'Cultivation Theme', value: 'Source Control' },
-    eco: 'Traceability Focus',
+    stat: { label: 'Cultivation Area', value: '5,000+ Acres' },
+    eco: 'Yunnan Altitude 1,800 m+',
   },
   {
     id: 'S03',
     label: 'Sector 03 — Technical Precision',
     title: 'Extraction & Refinement',
-    description: 'A process gallery showing extraction and refinement visuals used in the current facility narrative.',
+    description: 'Industrial-scale ethanol extraction paired with multi-stage chromatography and molecular distillation — delivering pharma-grade cannabinoid isolates at volume.',
     images: [
-      { src: '/images/equipment/extract-concentrator-zone.webp', alt: 'Extraction tanks', span: 'col-span-1' },
-      { src: '/images/equipment/refinement-concentrator-600L.webp', alt: 'Chromatography lab', span: 'col-span-1' },
-      { src: '/images/equipment/mixing-sedimentation-tank.webp', alt: 'Control room panorama', span: 'col-span-2' },
+      { src: '/images/equipment/extraction-tanks.jpg', alt: 'Stainless steel extraction tank array', span: 'col-span-1' },
+      { src: '/images/equipment/chromatography-upper.jpg', alt: 'Chromatography column upper section', span: 'col-span-1' },
+      { src: '/images/equipment/concentrator-system.jpg', alt: 'Industrial concentrator system', span: 'col-span-1' },
+      { src: '/images/equipment/hplc-system.jpg', alt: 'HPLC analytical system for quality control', span: 'col-span-1' },
+      { src: '/images/equipment/automation-control.jpg', alt: 'Automated process control panel', span: 'col-span-1' },
+      { src: '/images/equipment/solvent-recovery-tower.jpg', alt: 'Solvent recovery tower', span: 'col-span-1' },
     ],
-    stat: { label: 'Process Theme', value: 'Extraction Flow' },
-    eco: 'Equipment Overview',
+    stat: { label: 'Extraction Tanks', value: '20 Units' },
+    eco: '26 Chromatography Columns',
   },
   {
     id: 'S04',
-    label: 'Sector 04 — R&D Innovation',
-    title: 'Product Laboratory',
-    description: 'Laboratory and product imagery used to support quality, documentation, and inquiry-oriented discussions.',
+    label: 'Sector 04 — Product & Quality',
+    title: 'Product & Laboratory',
+    description: 'Every batch undergoes rigorous HPLC and GC-MS testing — from crystalline CBD isolate through final packaging — ensuring ≥99.5% purity with non-detectable THC.',
     images: [
-      { src: '/images/products/product1.jpg', alt: 'QA laboratory', span: 'col-span-1' },
-      { src: '/images/products/product2.jpg', alt: 'HPLC analysis', span: 'col-span-1' },
-      { src: '/images/products/product3.jpg', alt: 'Microscopy lab', span: 'col-span-1' },
+      { src: '/images/products/cbd-crystal-closeup.jpg', alt: 'Close-up of high-purity CBD crystalline isolate', span: 'col-span-1' },
+      { src: '/images/products/cbd-crystal-lab.jpg', alt: 'CBD crystal in laboratory setting', span: 'col-span-1' },
+      { src: '/images/products/cbd-packaging-foil.jpg', alt: 'CBD isolate in sealed foil packaging', span: 'col-span-1' },
+      { src: '/images/products/cbd-shipping-box.jpg', alt: 'Product shipping box ready for export', span: 'col-span-1' },
     ],
-    stat: { label: 'Lab Theme', value: 'Quality Review' },
-    eco: 'Documentation Path',
+    stat: { label: 'CBD Purity', value: '≥99.5%' },
+    eco: 'THC: ND (Non-Detectable)',
   },
 ];
 
@@ -128,8 +133,8 @@ export default function GalleryPageClient() {
               <span className="text-primary">From Seed to Solution.</span>
             </h1>
             <p className="mt-6 text-sm text-on-surface-variant leading-relaxed max-w-xl">
-              A visual overview of the current campus, cultivation, equipment, and laboratory
-              presentation used throughout the website.
+              Explore our fully integrated supply chain — from high-altitude Yunnan cultivation
+              bases through industrial extraction and chromatography to pharma-grade CBD isolate.
             </p>
           </div>
         </div>

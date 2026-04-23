@@ -57,8 +57,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen flex flex-col bg-surface font-sans">
         <Navbar />
-        <Breadcrumb />
-        <main className="flex-1 pt-12">{children}</main>
+        <main className="flex-1 pt-12">
+          <Breadcrumb />
+          {children}
+        </main>
         <Footer />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WSY6VLTBFL"

@@ -25,19 +25,14 @@ export default function AboutPage() {
             About Vetrux CBD
           </h1>
           <p className="text-sm text-on-surface-variant leading-relaxed max-w-2xl mb-16">
-            Vetrux CBD is the commercial brand of 蔚萃生物科技（楚雄）有限公司, a vertically integrated CBD isolate manufacturer headquartered in Yunnan Province,
-            China — one of the world&apos;s premier regions for industrial hemp cultivation. We supply
-            pharmaceutical-grade CBD isolate to B2B buyers across Europe and globally.
+            VETRUX is the international brand of 蔚萃生物科技（楚雄）有限公司 (Vetrux Biotechnology (Chuxiong) Co., Ltd.), a vertically integrated CBD isolate manufacturer and botanical extract supplier based in Chuxiong, Yunnan Province, China. We specialize in CBD raw material sales, OEM/ODM services, technical consulting, and other botanical extracts including anthocyanins, steviol glycosides, and hemp seed globulin.
           </p>
 
           {/* Company Overview */}
           <section className="mb-16">
             <h2 className="text-2xl font-extrabold text-on-background tracking-tighter mb-4">Our Mission</h2>
             <p className="text-sm text-on-surface-variant leading-relaxed mb-4">
-              We exist to provide the global pharmaceutical, nutraceutical, and cosmetic industries with a
-              reliable, transparent, and quality-assured source of CBD isolate. Our vertically integrated
-              model — from seed to finished isolate — gives us full control over purity, traceability, and
-              cost efficiency.
+              Through rigorous quality management, standardized hemp cultivation, and professional extraction processes, we deliver reliable CBD products and botanical extract solutions to partners worldwide. Our vertically integrated model — from seed selection to finished product — ensures full traceability, consistent quality, and competitive pricing. We also provide OEM/ODM services and technical consulting to help our clients develop and scale their own product lines.
             </p>
           </section>
 
@@ -48,32 +43,25 @@ export default function AboutPage() {
               <div className="bg-surface-container-low p-6">
                 <h3 className="text-sm font-bold text-on-background mb-2">Hemp Cultivation</h3>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  In-house cultivation base in Yunnan Province with controlled-environment agriculture,
-                  zero synthetic pesticides, and full seed-to-harvest traceability. Our proprietary cultivars
-                  achieve ≥97% germination rate.
+                  Standardized cultivation base in Chuxiong, Yunnan Province, with controlled growing conditions and full seed-to-harvest traceability. Yunnan is one of China&apos;s premier regions for industrial hemp cultivation.
                 </p>
               </div>
               <div className="bg-surface-container-low p-6">
                 <h3 className="text-sm font-bold text-on-background mb-2">Extraction &amp; Purification</h3>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  cGMP-certified facility equipped with 6m³ supercritical CO₂ extraction vessels, high-purity
-                  chromatography columns, and multi-stage crystallization systems. Achieving ≥99.5% CBD purity
-                  with zero residual solvents.
+                  Professional extraction facility equipped with 20 extraction tanks, 26 chromatography columns, 10 concentrators, and automated production systems. Capable of processing CBD isolate as well as other botanical extracts including anthocyanins, steviol glycosides, and hemp seed globulin.
                 </p>
               </div>
               <div className="bg-surface-container-low p-6">
                 <h3 className="text-sm font-bold text-on-background mb-2">Quality Control</h3>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  Every batch undergoes comprehensive analytical testing — HPLC for potency, GC-MS for THC
-                  verification, ICP-MS for heavy metals, and 400+ pesticide panel screening. Third-party COA
-                  from ISO/IEC 17025-accredited laboratories.
+                  In-house quality control laboratory with HPLC instrumentation for potency and purity analysis. Every batch undergoes comprehensive testing to ensure consistent product quality and regulatory compliance.
                 </p>
               </div>
               <div className="bg-surface-container-low p-6">
-                <h3 className="text-sm font-bold text-on-background mb-2">Global Logistics</h3>
+                <h3 className="text-sm font-bold text-on-background mb-2">OEM/ODM &amp; Technical Consulting</h3>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  Flexible delivery terms including FOB Kunming, CIF Rotterdam, and DDP to European
-                  destinations. Standard lead time of 10–14 business days with full export documentation.
+                  Full-service OEM/ODM capabilities for custom formulations and private-label products. Technical consulting services to support clients with product development, process optimization, and regulatory guidance.
                 </p>
               </div>
             </div>
@@ -84,12 +72,9 @@ export default function AboutPage() {
             <h2 className="text-2xl font-extrabold text-on-background tracking-tighter mb-4">Certifications &amp; Standards</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {[
-                'ISO 9001:2015 Quality Management System',
+                'ISO 9001 Quality Management System',
                 'GMP (Good Manufacturing Practice)',
                 'HACCP Food Safety Management',
-                'FDA 21 CFR Part 211 Compliant Processes',
-                'EU GMP Annex 1 Standards',
-                'ISO/IEC 17025 Accredited Testing Partners',
               ].map((cert) => (
                 <li key={cert} className="flex items-start gap-2 text-sm text-on-surface-variant">
                   <span className="text-primary mt-0.5">✓</span>
@@ -106,10 +91,14 @@ export default function AboutPage() {
               <dl className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div>
                   <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Brand</dt>
-                  <dd className="text-on-background">Vetrux CBD</dd>
+                  <dd className="text-on-background">VETRUX</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Company Name</dt>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">English Name</dt>
+                  <dd className="text-on-background">Vetrux Biotechnology (Chuxiong) Co., Ltd.</dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Chinese Name</dt>
                   <dd className="text-on-background">蔚萃生物科技（楚雄）有限公司</dd>
                 </div>
                 <div>
@@ -117,26 +106,30 @@ export default function AboutPage() {
                   <dd className="text-on-background break-words">云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Industry</dt>
-                  <dd className="text-on-background">Botanical Extract Manufacturing (CBD Isolate)</dd>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Core Business</dt>
+                  <dd className="text-on-background">CBD raw material sales, OEM/ODM, technical consulting, botanical extracts</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Primary Markets</dt>
-                  <dd className="text-on-background">Europe, Global B2B</dd>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Products</dt>
+                  <dd className="text-on-background">CBD Isolate, Anthocyanins, Steviol Glycosides, Hemp Seed Globulin</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Core Product</dt>
-                  <dd className="text-on-background">CBD Isolate ≥99.5% Purity, THC-Free</dd>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Equipment</dt>
+                  <dd className="text-on-background">20 extraction tanks, 26 chromatography columns, 10 concentrators, HPLC, automation</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Production Capacity</dt>
-                  <dd className="text-on-background">Ton-scale annual output</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Email</dt>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Inquiry Email</dt>
                   <dd>
-                    <a href="mailto:postmaster@vetrux.tech" className="text-primary underline underline-offset-2">
-                      postmaster@vetrux.tech
+                    <a href="mailto:inquiry@vetrux.tech" className="text-primary underline underline-offset-2">
+                      inquiry@vetrux.tech
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Sales Email</dt>
+                  <dd>
+                    <a href="mailto:sales@vetrux.tech" className="text-primary underline underline-offset-2">
+                      sales@vetrux.tech
                     </a>
                   </dd>
                 </div>

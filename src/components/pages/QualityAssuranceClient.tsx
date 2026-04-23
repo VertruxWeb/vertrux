@@ -12,27 +12,27 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const certifications = [
-  { name: 'ISO 9001:2015', desc: 'Quality management system — independently audited and certified.' },
-  { name: 'GMP Certified', desc: 'Good Manufacturing Practice aligned with ICH Q7 for pharmaceutical API production.' },
-  { name: 'HACCP', desc: 'Hazard Analysis and Critical Control Points — food safety management system.' },
-  { name: 'ISO/IEC 17025', desc: 'Third-party laboratory testing accreditation for all analytical results.' },
+  { name: 'ISO 9001', desc: 'Quality management system for consistent production and continuous improvement across all operations.' },
+  { name: 'GMP', desc: 'Good Manufacturing Practice standards applied to extraction, purification, and packaging processes.' },
+  { name: 'HACCP', desc: 'Hazard Analysis and Critical Control Points — food safety management principles integrated into production workflow.' },
+  { name: 'Third-Party Testing', desc: 'Independent laboratory testing for every production batch, with full Certificate of Analysis provided.' },
 ];
 
 const testingPanels = [
-  { icon: Microscope, title: 'Cannabinoid Profile', method: 'HPLC-UV', standard: 'USP reference standards', detail: 'CBD ≥99.5%, THC ND, full minor cannabinoid panel' },
-  { icon: FlaskConical, title: 'Residual Solvents', method: 'GC-MS', standard: 'ICH Q3C Class I/II/III', detail: 'Total residual solvents <10 PPM' },
-  { icon: Shield, title: 'Heavy Metals', method: 'ICP-MS', standard: 'USP <232> / <233>', detail: 'Pb, As, Cd, Hg — quantitative results per batch' },
-  { icon: FileCheck, title: 'Microbial Limits', method: 'USP <61> / <62>', standard: 'Pharmacopeial', detail: 'TAMC, TYMC, Salmonella, E. coli, S. aureus' },
-  { icon: Shield, title: 'Pesticide Residues', method: 'LC-MS/MS', standard: 'EU MRL panel', detail: '400+ pesticide screen — ND for all regulated compounds' },
-  { icon: FileCheck, title: 'Mycotoxins', method: 'ELISA / LC-MS', standard: 'EU limits', detail: 'Aflatoxins B1/B2/G1/G2, Ochratoxin A — ND' },
+  { icon: Microscope, title: 'CBD Purity & Cannabinoid Profile', method: 'HPLC (Thermo Dionex UltiMate 3000)', standard: 'In-house & third-party verified', detail: 'CBD content, THC content, and minor cannabinoid profiling using our Thermo Dionex UltiMate 3000 HPLC system.' },
+  { icon: FlaskConical, title: 'Residual Solvents', method: 'GC-MS', standard: 'Pharmacopeial methods', detail: 'Screening for residual extraction solvents to ensure product safety and regulatory compliance.' },
+  { icon: Shield, title: 'Heavy Metals', method: 'ICP-MS', standard: 'Applicable pharmacopeial limits', detail: 'Quantitative testing for Pb, As, Cd, Hg — results documented per batch in the COA.' },
+  { icon: FileCheck, title: 'Microbial Limits', method: 'Pharmacopeial methods', standard: 'Applicable limits', detail: 'Total aerobic microbial count, yeast & mold count, and absence testing for specified pathogens.' },
+  { icon: Shield, title: 'Moisture Content', method: 'Karl Fischer / LOD', standard: 'Product specification', detail: 'Moisture content testing to ensure product stability and shelf-life consistency.' },
+  { icon: FileCheck, title: 'THC Content Verification', method: 'HPLC', standard: 'Regulatory thresholds', detail: 'Dedicated THC content verification to confirm compliance with applicable legal limits for the destination market.' },
 ];
 
 const qaProcess = [
-  { step: '01', title: 'Incoming Biomass QC', desc: 'Every hemp biomass lot tested for cannabinoid content, moisture, pesticides, and mycotoxins before acceptance.' },
-  { step: '02', title: 'In-Process Controls', desc: 'Potency checks at extraction, winterization, and chromatography stages. Deviations trigger CAPA investigation.' },
-  { step: '03', title: 'Final Product Testing', desc: 'Full analytical panel on every finished batch — cannabinoid profile, residual solvents, heavy metals, microbial limits.' },
-  { step: '04', title: 'Third-Party Verification', desc: 'Independent COA from ISO/IEC 17025-accredited laboratory before batch release. No exceptions.' },
-  { step: '05', title: 'Stability Monitoring', desc: 'ICH Q1A-compliant stability program with testing at 0, 3, 6, 12, 18, and 24 months.' },
+  { step: '01', title: 'Seed & Cultivar Selection', desc: 'Quality begins at the source. Vetrux selects hemp cultivars suited to Yunnan\'s high-altitude growing conditions, optimized for CBD content and consistency.' },
+  { step: '02', title: 'Cultivation Monitoring', desc: 'Ongoing field monitoring tracks growth conditions, pest management, and pre-harvest cannabinoid development to ensure biomass quality before it enters the facility.' },
+  { step: '03', title: 'Extraction & Purification QC', desc: 'In-process quality checks at extraction, winterization, and chromatography stages using our 20 extraction tanks, 26 chromatography columns, and 10 concentrators with automated controls.' },
+  { step: '04', title: 'Analytical Testing & COA', desc: 'Every finished batch undergoes a full analytical panel — CBD purity, THC content, residual solvents, heavy metals, microbial limits, and moisture content — documented in a batch-specific Certificate of Analysis.' },
+  { step: '05', title: 'Packaging & Pre-shipment Inspection', desc: 'Final inspection covers packaging integrity, labeling accuracy, and documentation completeness. COA, SDS, and test reports are prepared and provided with each shipment.' },
 ];
 
 export default function QualityAssuranceClient() {
@@ -88,15 +88,13 @@ export default function QualityAssuranceClient() {
                 <span className="text-primary">Can Verify</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-6 max-w-md">
-                Every batch of Vetrux CBD isolate is produced under cGMP conditions, tested by
-                accredited third-party laboratories, and documented with full traceability from
-                hemp biomass to finished product.
+                At Vetrux Biotechnology, quality management spans the entire production chain — from seed selection and cultivation monitoring in Yunnan, through industrial-scale extraction and purification, to final product analytical testing and pre-shipment inspection.
               </p>
               <p className="text-xs text-on-surface-variant/80 leading-relaxed mb-8 max-w-md">
-                Manufacturing standards align with <span className="font-semibold text-on-surface-variant">ICH Q7</span> (Active Pharmaceutical Ingredient GMP), <span className="font-semibold text-on-surface-variant">EU GMP Annex 1</span> (sterile and controlled-environment manufacturing principles), and <span className="font-semibold text-on-surface-variant">FDA 21 CFR Part 211</span> current Good Manufacturing Practice regulations. Industry data indicates that inadequate supplier qualification contributes to over <span className="font-semibold text-on-surface-variant">60% of pharmaceutical quality failures</span> — Vetrux's 5-stage QA pipeline is designed to eliminate this risk at source. <span className="text-on-surface-variant/50">(ICH Q10 Pharmaceutical Quality System)</span>
+                Every production batch is accompanied by a <span className="font-semibold text-on-surface-variant">Certificate of Analysis (COA)</span>, <span className="font-semibold text-on-surface-variant">Safety Data Sheet (SDS)</span>, and relevant test reports. Our in-house <span className="font-semibold text-on-surface-variant">Thermo Dionex UltiMate 3000 HPLC</span> system enables precise cannabinoid profiling, while third-party laboratory verification provides independent confirmation. Vetrux's 5-stage QA pipeline is designed to give B2B buyers confidence in every shipment.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
-                {['ISO 9001:2015', 'GMP Certified', 'HACCP', 'ISO/IEC 17025 Testing'].map((tag) => (
+                {['ISO 9001', 'GMP', 'HACCP', 'COA Per Batch'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -124,11 +122,11 @@ export default function QualityAssuranceClient() {
           <div className="reveal-card mb-12">
             <SectionLabel>Certifications</SectionLabel>
             <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-              Independently Verified Standards
+              Quality Standards & Certifications
             </h2>
             <p className="text-sm text-on-surface-variant max-w-xl">
-              All certifications are current, verifiable through the issuing bodies, and available
-              for review as part of the supplier qualification process.
+              Vetrux operates in alignment with internationally recognized quality management standards.
+              Specific certification details and supporting documentation are available upon request during B2B qualification discussions.
             </p>
           </div>
 
@@ -143,11 +141,8 @@ export default function QualityAssuranceClient() {
           </div>
 
           <div className="reveal-card mt-8">
-            <p className="text-xs text-on-surface-variant">
-              Learn more about evaluating supplier certifications in our{' '}
-              <Link href="/blog/cbd-supplier-due-diligence-checklist" className="text-primary underline">
-                supplier due diligence checklist →
-              </Link>
+            <p className="text-xs text-on-surface-variant/70 italic">
+              Note: Specific certification numbers and accreditation details can be confirmed directly during supplier qualification. Contact <a href="mailto:inquiry@vetrux.tech" className="text-primary underline">inquiry@vetrux.tech</a> for documentation requests.
             </p>
           </div>
         </div>
@@ -159,11 +154,12 @@ export default function QualityAssuranceClient() {
           <div className="reveal-card mb-12">
             <SectionLabel>Analytical Testing</SectionLabel>
             <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-              Full Analytical Panel — Every Batch
+              Comprehensive Analytical Testing — Every Batch
             </h2>
             <p className="text-sm text-on-surface-variant max-w-xl">
-              No sampling shortcuts. Every production batch undergoes the complete testing panel
-              before release, with results documented in a batch-specific Certificate of Analysis.
+              Vetrux performs in-house testing using our Thermo Dionex UltiMate 3000 HPLC system for cannabinoid profiling,
+              complemented by third-party laboratory verification. Testing covers CBD purity, THC content, residual solvents,
+              heavy metals, microbial limits, and moisture content — all documented in a batch-specific COA.
             </p>
           </div>
 
@@ -180,10 +176,7 @@ export default function QualityAssuranceClient() {
 
           <div className="reveal-card mt-8">
             <p className="text-xs text-on-surface-variant">
-              Understand what each COA section means:{' '}
-              <Link href="/blog/how-to-read-cbd-certificate-of-analysis" className="text-primary underline">
-                How to read a CBD Certificate of Analysis →
-              </Link>
+              Need sample COA or test reports? Contact <a href="mailto:sales@vetrux.tech" className="text-primary underline">sales@vetrux.tech</a> to request documentation for any product.
             </p>
           </div>
         </div>
@@ -218,7 +211,7 @@ export default function QualityAssuranceClient() {
               Request Quality Documentation <ArrowRight size={16} />
             </Link>
             <p className="text-xs text-on-surface-variant mt-4">
-              COA samples, certification copies, and audit access available to qualified B2B buyers.
+              COA, SDS, and test reports provided per batch. Labels and declarations are prepared to match the actual batch, order purpose, and destination country requirements. Destination country regulatory compliance remains the buyer's responsibility.
             </p>
           </div>
         </div>

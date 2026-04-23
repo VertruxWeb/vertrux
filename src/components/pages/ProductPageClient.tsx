@@ -14,37 +14,37 @@ import SpecRow from '@/components/molecules/SpecRow';
 gsap.registerPlugin(ScrollTrigger);
 
 const technicalMetrics = [
-  { label: 'Purity (HPLC)', value: '≥ 99.5%', status: 'Verified' },
-  { label: 'THC Content', value: 'ND', status: 'Not Detected' },
-  { label: 'Appearance', value: 'White Crystalline', status: 'Powder / Crystal' },
-  { label: 'Solvent Residue', value: '< 10 PPM', status: 'ICH Q3C Class III' },
-  { label: 'Water Content', value: '< 0.5%', status: 'Karl Fischer' },
+  { label: 'CAS Number', value: '13956-29-1', status: 'Cannabidiol' },
+  { label: 'HS Code', value: '2907299020', status: 'Export Classification' },
+  { label: 'CBD Purity (HPLC)', value: '≥ 99.5%', status: 'Verified' },
+  { label: 'THC Content', value: 'ND', status: 'Non-Detect' },
+  { label: 'Appearance', value: 'White Crystalline', status: 'Powder' },
+  { label: 'Molecular Formula', value: 'C₂₁H₃₀O₂', status: 'MW 314.46 g/mol' },
   { label: 'Heavy Metals', value: 'Compliant', status: 'USP <232>' },
   { label: 'Microbial', value: 'Compliant', status: 'USP <61> / <62>' },
-  { label: 'Batch ID', value: 'YN-CBD-0042', status: 'Traceable' },
 ];
 
 const qualityCards = [
   {
     icon: Microscope,
     title: 'Molecular Integrity',
-    desc: 'Full spectrum HPLC analysis on every batch. Cannabinoid profile verified against reference standards.',
+    desc: 'Full spectrum HPLC analysis on every batch. Cannabinoid profile verified against reference standards. COA, SDS, and test reports provided per batch.',
     bg: 'bg-surface-container-low',
-    image: 'https://placehold.co/400x280/d3e4fe/154212?text=HPLC+Analysis',
+    image: '/images/products/cbd-crystal-lab.jpg',
   },
   {
     icon: TestTube,
-    title: 'Double-Blind Testing',
-    desc: 'Internal QA and accredited third-party laboratory cross-verification on each production run.',
+    title: 'Batch Documentation',
+    desc: 'Every shipment includes COA, SDS, test reports, commercial invoices, and packing lists. Export of controlled products may require international verification.',
     bg: 'bg-primary',
     image: null,
   },
   {
     icon: TrendingUp,
-    title: 'Industrial Scalability',
-    desc: 'Consistent purity maintained at volumes from 10 kg sample to 1,000+ kg bulk production orders.',
+    title: 'Export-Ready Packaging',
+    desc: 'PE bags 5kg (27×60cm) and aluminum foil bags 5kg (35×50cm), food-grade. Export cartons 465×285×295mm, 2 bags per carton. Plastic pallets with shrink wrap for secure transit.',
     bg: 'bg-surface-container-low',
-    image: 'https://placehold.co/400x280/dce9ff/154212?text=Bulk+Production',
+    image: '/images/products/cbd-packaging-foil.jpg',
   },
 ];
 
@@ -98,22 +98,23 @@ export default function ProductPageClient() {
         <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="reveal-card">
-              <Badge variant="default" className="mb-6">Botanical Precision</Badge>
+              <Badge variant="default" className="mb-6">Botanical Extracts</Badge>
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
                 CBD Isolate
                 <br />
                 <span className="text-primary">99.5% Purity</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Our benchmark-grade CBD isolate (CAS 13956-29-1, C₂₁H₃₀O₂, MW 314.46 g/mol), produced via multi-stage supercritical CO₂ extraction at 31.1°C / 73.8 bar and preparative chromatography. Pharmaceutical-compliant, THC non-detect by GC-MS, and globally exportable under Incoterms 2020 DDP, CIF, or FOB terms.
+                Pharmaceutical-grade CBD isolate (CAS 13956-29-1, HS 2907299020), white crystalline powder with THC non-detect. Produced from Yunnan industrial hemp via supercritical CO₂ extraction. We also supply anthocyanins, steviol glycosides, and hemp seed globulin for pharma R&D, nutrition, food & beverage, and personal care applications.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  'Industrial Grade / Pharma-Compliant',
-                  'Origin Control / Yunnan Hemp',
-                  'Zero THC',
-                  'ISO 9001:2015',
+                  'CBD Isolate ≥99.5%',
+                  'THC: Non-Detect',
+                  'Anthocyanins',
+                  'Steviol Glycosides',
+                  'Hemp Seed Globulin',
                 ].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
@@ -133,10 +134,10 @@ export default function ProductPageClient() {
             </div>
 
             <div className="reveal-card relative">
-              <Image src="/images/products/product2.jpg" alt="CBD Isolate 99.5% purity crystals" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
+              <Image src="/images/products/cbd-crystal-closeup.jpg" alt="CBD Isolate 99.5% purity white crystalline powder" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
-                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Laboratory Authentic</p>
-                <p className="text-sm font-bold text-white">Batch ID: YN-CBD-0042</p>
+                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">CAS 13956-29-1</p>
+                <p className="text-sm font-bold text-white">HS Code: 2907299020</p>
               </div>
             </div>
           </div>
@@ -198,29 +199,32 @@ export default function ProductPageClient() {
                 <SpecRow label="Solubility" value="Ethanol, Hexane, DMSO (insoluble in water)" />
                 <SpecRow label="Storage" value="Cool, Dark, Dry. &lt;25°C" />
                 <SpecRow label="Shelf Life" value="24 Months from Manufacture" />
-                <SpecRow label="Packaging" value="1 kg / 5 kg / 25 kg vacuum-sealed foil bags" isLast />
+                <SpecRow label="Packaging (Inner)" value="PE bags 5kg/bag (27×60cm, food grade) or Aluminum foil bags 5kg/bag (35×50cm, food grade)" />
+                <SpecRow label="Packaging (Outer)" value="Export cartons 465×285×295mm, 2 bags per carton" />
+                <SpecRow label="Palletization" value="Plastic pallets with shrink wrap" isLast />
               </div>
             </div>
 
             <div className="reveal-card">
-              <SectionLabel>Compliance & Testing</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-6">Quality Assurance Standards</h2>
+              <SectionLabel>Compliance & Documentation</SectionLabel>
+              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-6">Batch Documentation & Export Compliance</h2>
               <div className="mb-6 p-4 bg-surface-container border-l-2 border-primary">
-                <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-1">Regulatory Context</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-1">Export & Import Notice</p>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  CBD isolate intended for food, supplement, or cosmetic use in the EU is subject to{' '}
-                  <span className="font-semibold text-on-surface">EU Novel Food Regulation (EU) 2015/2283</span>, which requires pre-market authorisation via an EFSA safety dossier. Vetrux provides documentation packages to support Novel Food applications, including full traceability records, production process descriptions, and compositional data aligned with EFSA guidance.
+                  Export of controlled botanical products may require{' '}
+                  <span className="font-semibold text-on-surface">international verification</span>. Destination country import compliance — including permits, licenses, and regulatory approvals — is the{' '}
+                  <span className="font-semibold text-on-surface">buyer/importer&apos;s responsibility</span>. Vetrux provides full documentation packages to support your import process.
                 </p>
               </div>
               <div className="space-y-4">
                 {[
-                  { standard: 'HPLC Purity Analysis', detail: 'USP-verified reference standards' },
-                  { standard: 'THC Testing', detail: 'GC-MS / LC-MS dual confirmation' },
-                  { standard: 'Residual Solvents', detail: 'ICH Q3C Class I, II, III panel' },
-                  { standard: 'Heavy Metals', detail: 'ICP-MS — USP <232> / <233>' },
-                  { standard: 'Microbial Limits', detail: 'USP <61> total aerobic count' },
-                  { standard: 'Pesticide Screening', detail: '400+ pesticide panel (EU MRL)' },
-                  { standard: 'Mycotoxins', detail: 'Aflatoxin B1/B2/G1/G2 ELISA' },
+                  { standard: 'Certificate of Analysis (COA)', detail: 'Provided per batch with full cannabinoid profile' },
+                  { standard: 'Safety Data Sheet (SDS)', detail: 'GHS-compliant material safety documentation' },
+                  { standard: 'Third-Party Test Reports', detail: 'Independent lab verification per production run' },
+                  { standard: 'Commercial Invoice', detail: 'Detailed invoice provided per shipment' },
+                  { standard: 'Packing List', detail: 'Complete packing details per batch shipment' },
+                  { standard: 'Heavy Metals Testing', detail: 'ICP-MS — USP <232> / <233>' },
+                  { standard: 'Microbial & Pesticide Screening', detail: 'USP <61> aerobic count, 400+ pesticide panel' },
                 ].map((item) => (
                   <div key={item.standard} className="flex items-start gap-3 py-3 border-b border-outline-variant/20 last:border-0">
                     <CheckCircle size={16} className="text-primary flex-shrink-0 mt-0.5" />
@@ -240,9 +244,9 @@ export default function ProductPageClient() {
       <section className="py-24 bg-surface">
         <div ref={qualityRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card flex flex-wrap items-center gap-4 mb-12">
-            <SectionLabel className="mb-0">Certified Clinical Excellence</SectionLabel>
+            <SectionLabel className="mb-0">Quality & Product Lines</SectionLabel>
             <div className="flex gap-3">
-              {['ISO 9001:2015', 'GMP Certified', 'HACCP'].map((cert) => (
+              {['COA Per Batch', 'SDS Provided', 'Third-Party Tested'].map((cert) => (
                 <span key={cert} className="px-3 py-1 bg-primary-fixed text-primary text-xs font-bold tracking-wider uppercase rounded-full">
                   {cert}
                 </span>
@@ -251,7 +255,7 @@ export default function ProductPageClient() {
           </div>
 
           <h2 className="reveal-card text-3xl font-extrabold text-on-background tracking-tighter mb-12 max-w-xl">
-            Every Batch Meets Clinical-Grade Quality Benchmarks
+            CBD Isolate & Botanical Extracts for Global B2B Supply
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -273,19 +277,37 @@ export default function ProductPageClient() {
             ))}
           </div>
 
+          {/* Botanical Extract Product Lines */}
+          <div className="reveal-card mt-12 p-8 bg-surface-container-low">
+            <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-4">Additional Botanical Extract Products</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { name: 'Anthocyanins', use: 'Functional formulations, food & beverage, personal care' },
+                { name: 'Steviol Glycosides', use: 'Nutrition & health, food & beverage, functional sweeteners' },
+                { name: 'Hemp Seed Globulin', use: 'Pharma R&D, nutrition & health, functional formulations' },
+                { name: 'CBD Isolate', use: 'Pharma R&D, personal care, functional formulations' },
+              ].map((product) => (
+                <div key={product.name}>
+                  <p className="text-sm font-bold text-on-surface mb-1">{product.name}</p>
+                  <p className="text-xs text-on-surface-variant leading-relaxed">{product.use}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Internal links to related pages */}
-          <div className="reveal-card mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="reveal-card mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Link href="/quality-assurance" className="p-4 bg-surface-container-low hover:bg-surface-container transition-colors text-center">
               <p className="text-xs font-bold text-primary tracking-wider uppercase">Quality Assurance →</p>
-              <p className="text-xs text-on-surface-variant mt-1">Full QA program details</p>
+              <p className="text-xs text-on-surface-variant mt-1">Documentation & testing details</p>
             </Link>
             <Link href="/wholesale-cbd-isolate" className="p-4 bg-surface-container-low hover:bg-surface-container transition-colors text-center">
-              <p className="text-xs font-bold text-primary tracking-wider uppercase">Wholesale Pricing →</p>
-              <p className="text-xs text-on-surface-variant mt-1">Volume-tiered pricing</p>
+              <p className="text-xs font-bold text-primary tracking-wider uppercase">Wholesale Inquiry →</p>
+              <p className="text-xs text-on-surface-variant mt-1">Volume pricing & export terms</p>
             </Link>
-            <Link href="/blog/how-to-read-cbd-certificate-of-analysis" className="p-4 bg-surface-container-low hover:bg-surface-container transition-colors text-center">
-              <p className="text-xs font-bold text-primary tracking-wider uppercase">COA Guide →</p>
-              <p className="text-xs text-on-surface-variant mt-1">How to read a CBD COA</p>
+            <Link href="/inquiry" className="p-4 bg-surface-container-low hover:bg-surface-container transition-colors text-center">
+              <p className="text-xs font-bold text-primary tracking-wider uppercase">Contact Sales →</p>
+              <p className="text-xs text-on-surface-variant mt-1">inquiry@vetrux.tech</p>
             </Link>
           </div>
         </div>
