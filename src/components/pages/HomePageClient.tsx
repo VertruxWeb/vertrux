@@ -105,7 +105,7 @@ export default function HomePageClient() {
               { value: '20', label: 'Extraction Tanks' },
               { value: '26', label: 'Chromatography Columns' },
               { value: '10', label: 'Concentrators' },
-              { value: '4', label: 'Product Lines' },
+              { value: '3', label: 'Product Lines' },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-bold text-white tracking-tighter">{stat.value}</p>
@@ -129,7 +129,7 @@ export default function HomePageClient() {
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Equipment</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Vetrux operates a professional extraction facility equipped with <span className="text-on-surface font-semibold">20 extraction tanks, 26 chromatography columns, and 10 concentrators</span>, supported by HPLC analytical systems and Siemens automation control.
+                Vetrux operates a professional extraction facility equipped with <span className="text-on-surface font-semibold">20 extraction tanks, 26 chromatography columns, and 10 concentrators</span>, supported by HPLC analytical systems and automation control.
               </p>
             </div>
             <div>
@@ -205,7 +205,7 @@ export default function HomePageClient() {
             <div className="reveal-card lg:col-span-8 relative overflow-hidden">
               <Image
                 src="/images/products/cbd-crystal-closeup.jpg"
-                alt="CBD Isolate 99.5% Purity"
+                alt="CBD Isolate 99.9% Purity"
                 width={1200}
                 height={580}
                 sizes="(max-width: 1024px) 100vw, 66vw"
@@ -279,7 +279,7 @@ export default function HomePageClient() {
             {[
               {
                 q: 'What is CBD isolate and how is it different from full-spectrum CBD?',
-                a: 'CBD isolate is the purest form of cannabidiol — a white crystalline powder containing ≥99.5% CBD (CAS: 13956-29-1, HS Code: 2907299020) with all other cannabinoids, terpenes, and plant compounds removed. Unlike full-spectrum CBD which retains THC and other cannabinoids, CBD isolate is THC non-detect (ND), making it ideal for pharmaceutical and nutraceutical formulations requiring precise dosing and regulatory compliance.',
+                a: 'CBD isolate is the purest form of cannabidiol — a white crystalline powder containing ≥99.9% CBD (CAS: 13956-29-1, HS Code: 2907299020) with all other cannabinoids, terpenes, and plant compounds removed. Unlike full-spectrum CBD which retains THC and other cannabinoids, CBD isolate is THC non-detect (ND), making it ideal for pharmaceutical and nutraceutical formulations requiring precise dosing and regulatory compliance.',
               },
               {
                 q: 'What services does Vetrux offer beyond CBD isolate?',
@@ -291,11 +291,11 @@ export default function HomePageClient() {
               },
               {
                 q: 'How does Vetrux ensure CBD purity and THC-free compliance?',
-                a: 'Every batch undergoes HPLC testing to confirm ≥99.5% CBD purity and THC non-detect (ND) status. Our ethanol extraction and 26-column chromatographic purification process ensures consistent quality. Full documentation including COA, Certificate of Origin, and SDS is provided with each shipment.',
+                a: 'Every batch undergoes HPLC testing to confirm ≥99.9% CBD purity and THC non-detect (ND) status. Our ethanol extraction and 26-column chromatographic purification process ensures consistent quality. Full documentation including COA, Certificate of Origin, and SDS is provided with each shipment.',
               },
               {
                 q: 'Where is Vetrux located and what shipping terms are available?',
-                a: 'Vetrux Biotechnology is based in Chuxiong, Yunnan Province, China. We offer FOB Kunming, CIF, and DDP delivery to global destinations. Standard lead time is 10–14 business days from order confirmation. All shipments include batch-specific COA, Certificate of Origin, and Safety Data Sheet. Contact inquiry@vetrux.tech for logistics details.',
+                a: 'Vetrux Biotechnology is based in Chuxiong, Yunnan Province, China. Flexible shipping arrangements are available to global destinations. All shipments include batch-specific COA and Safety Data Sheet. Contact inquiry@vetrux.tech for logistics and shipping details.',
               },
             ].map((faq) => (
               <div key={faq.q} className="bg-surface p-6">
@@ -311,9 +311,6 @@ export default function HomePageClient() {
             <ul className="flex flex-col gap-1.5 text-xs text-on-surface-variant/60">
               <li><a href="https://www.who.int/docs/default-source/controlled-substances/whocbdreportmay2018-2.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">WHO Expert Committee on Drug Dependence — Cannabidiol (CBD) Critical Review Report (2018)</a></li>
               <li><a href="https://food.ec.europa.eu/safety/novel-food/legislation_en" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">EU Novel Food Regulation (EU) 2015/2283 — European Commission</a></li>
-              <li><a href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO 9001:2015 — Quality Management Systems</a></li>
-              <li><a href="https://www.iso.org/standard/39883.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO/IEC 17025 — General Requirements for Testing and Calibration Laboratories</a></li>
-              <li><a href="https://www.ich.org/page/quality-guidelines" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ICH Q3C — Impurities: Guideline for Residual Solvents</a></li>
             </ul>
           </div>
         </div>

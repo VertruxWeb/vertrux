@@ -129,7 +129,7 @@ export default function FrHomePageClient() {
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Équipements</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Vetrux exploite une installation d&apos;extraction professionnelle équipée de <span className="text-on-surface font-semibold">20 cuves d&apos;extraction, 26 colonnes de chromatographie et 10 concentrateurs</span>, complétée par des systèmes analytiques HPLC et un contrôle automatisé Siemens.
+                Vetrux exploite une installation d&apos;extraction professionnelle équipée de <span className="text-on-surface font-semibold">20 cuves d&apos;extraction, 26 colonnes de chromatographie et 10 concentrateurs</span>, complétée par des systèmes analytiques HPLC et un contrôle automatisé.
               </p>
             </div>
             <div>
@@ -170,7 +170,7 @@ export default function FrHomePageClient() {
                   <span className="text-primary">Contrôle de Précision</span>
                 </h2>
                 <p className="text-sm text-on-surface-variant leading-relaxed mb-10 max-w-md">
-                  Notre site de Chuxiong abrite 20 ensembles de cuves d&apos;extraction de 6m³, 26 colonnes de chromatographie (700L),
+                  Notre site de Chuxiong abrite 20 ensembles de cuves d&apos;extraction de 6m³, 26 colonnes de chromatographie,
                   et 10 ensembles de concentrateurs — complétés par des tours de récupération de solvants, un stockage d&apos;éthanol
                   et des systèmes analytiques HPLC avec contrôle entièrement automatisé.
                 </p>
@@ -311,9 +311,6 @@ export default function FrHomePageClient() {
             <ul className="flex flex-col gap-1.5 text-xs text-on-surface-variant/60">
               <li><a href="https://www.who.int/docs/default-source/controlled-substances/whocbdreportmay2018-2.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">Comité OMS d&apos;experts sur la pharmacodépendance — Rapport d&apos;examen critique du Cannabidiol (CBD) (2018)</a></li>
               <li><a href="https://food.ec.europa.eu/safety/novel-food/legislation_en" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">Règlement Novel Food de l&apos;UE (UE) 2015/2283 — Commission Européenne</a></li>
-              <li><a href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO 9001:2015 — Systèmes de management de la qualité (référence)</a></li>
-              <li><a href="https://www.iso.org/standard/39883.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO/IEC 17025 — Exigences Générales pour les Laboratoires d&apos;Essais et d&apos;Étalonnage</a></li>
-              <li><a href="https://www.ich.org/page/quality-guidelines" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ICH Q3C — Impuretés : Directive sur les Solvants Résiduels</a></li>
             </ul>
           </div>
         </div>

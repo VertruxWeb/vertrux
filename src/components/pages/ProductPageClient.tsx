@@ -24,7 +24,7 @@ const qualityCards = [
   {
     icon: Microscope,
     title: 'Quality Management',
-    desc: 'In-house HPLC analytical capability (Thermo UltiMate 3000). Documentation support available according to order requirements.',
+    desc: 'In-house HPLC analytical capability. Documentation support available according to order requirements.',
     bg: 'bg-surface-container-low',
     image: '/images/products/cbd-crystal-lab.jpg',
   },
@@ -98,7 +98,7 @@ export default function ProductPageClient() {
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
                 CBD Isolate
                 <br />
-                <span className="text-primary">99.5% Purity</span>
+                <span className="text-primary">99.9% Purity</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
                 CBD crystal (CAS 13956-29-1, HS 2907299020). We also supply anthocyanins, steviol glycosides, and hemp seed globulin for pharmaceutical R&D, nutrition, food & beverage, and personal care applications.
@@ -130,7 +130,7 @@ export default function ProductPageClient() {
             </div>
 
             <div className="reveal-card relative">
-              <Image src="/images/products/cbd-crystal-closeup.jpg" alt="CBD Isolate 99.5% purity white crystalline powder" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
+              <Image src="/images/products/cbd-crystal-closeup.jpg" alt="CBD Isolate 99.9% purity white crystalline powder" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">CAS 13956-29-1</p>
                 <p className="text-sm font-bold text-white">HS Code: 2907299020</p>

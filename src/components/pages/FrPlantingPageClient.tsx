@@ -188,7 +188,7 @@ export default function FrPlantingPageClient() {
               <img src="/images/planting/vegetative-growth.jpg" alt="Serre de la base de culture Vetrux à Chuxiong, Yunnan" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Centre de culture & sélection</p>
-                <p className="text-sm font-bold text-white">Chuxiong, Province du Yunnan · 1 800m+</p>
+                <p className="text-sm font-bold text-white">Chuxiong, Province du Yunnan</p>
               </div>
             </div>
           </div>

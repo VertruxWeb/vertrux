@@ -50,7 +50,7 @@ const zones = [
     ],
     specs: [
       { label: 'Anbaumethode', value: 'Gewächshaus + Natürliches Licht' },
-      { label: 'Höhenlage', value: '1.800m+ (Yunnan-Hochebene)' },
+      { label: 'Standort', value: 'Chuxiong, Yunnan-Hochebene' },
       { label: 'Wasserquelle', value: 'Bergquellbewässerung' },
       { label: 'Einsatzrichtlinie', value: 'Keine synthetischen Pestizide' },
     ],
@@ -189,7 +189,7 @@ export default function DePlantingPageClient() {
               <img src="/images/planting/vegetative-growth.jpg" alt="Vetrux Anbaubasis-Gewächshaus in Chuxiong, Yunnan" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Anbau- & Zuchtzentrum</p>
-                <p className="text-sm font-bold text-white">Chuxiong, Provinz Yunnan · 1.800m+</p>
+                <p className="text-sm font-bold text-white">Chuxiong, Provinz Yunnan</p>
               </div>
             </div>
           </div>
@@ -228,7 +228,7 @@ export default function DePlantingPageClient() {
                 und liefern konsistente Cannabinoidprofile Charge für Charge.
               </p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Unsere Basis in Chuxiong liegt auf der Yunnan-Hochebene auf über 1.800 Metern, wo natürlich intensive
+                Unsere Basis in Chuxiong liegt auf der Yunnan-Hochebene, wo natürlich intensive
                 UV-Strahlung und saubere Bergluft eine überlegene Trichom-Entwicklung und Cannabinoid-Akkumulation
                 fördern — Vorteile, die keine Indoor-Anlage replizieren kann.
               </p>

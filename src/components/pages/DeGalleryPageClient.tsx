@@ -35,7 +35,7 @@ const sectors = [
       { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Nahaufnahme einer blühenden Hanfblüte', span: 'col-span-1' },
     ],
     stat: { label: 'Anbauregion', value: 'Yunnan-Hochebene' },
-    eco: 'Yunnan-Höhe 1.800 m+',
+    eco: 'Provinz Yunnan',
   },
   {
     id: 'S03',

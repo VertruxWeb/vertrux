@@ -27,11 +27,10 @@ const equipment = [
   },
   {
     id: '02',
-    name: 'Colonnes de chromatographie 700L',
+    name: 'Colonnes de chromatographie',
     model: '×26 colonnes',
     image: '/images/equipment/chromatography-upper.jpg',
     specs: [
-      { label: 'Volume', value: '700 L' },
       { label: 'Quantité', value: '26 colonnes' },
       { label: 'Fonction', value: 'Séparation & purification des cannabinoïdes' },
     ],
@@ -76,26 +75,23 @@ const equipment = [
   {
     id: '06',
     name: 'Système analytique HPLC',
-    model: 'Thermo Dionex UltiMate 3000',
+    model: '—',
     image: '/images/equipment/hplc-system.jpg',
     specs: [
-      { label: 'Marque', value: 'Thermo Scientific' },
-      { label: 'Modèle', value: 'UltiMate 3000' },
       { label: 'Fonction', value: 'Analyse de contrôle qualité' },
     ],
-    desc: 'Le système HPLC Thermo Dionex UltiMate 3000 fournit un profilage précis des cannabinoïdes et une analyse de puissance, garantissant que chaque lot respecte les spécifications de qualité strictes avant libération.',
+    desc: 'Le système analytique HPLC interne fournit un profilage précis des cannabinoïdes et une analyse de puissance, garantissant que chaque lot respecte les spécifications de qualité strictes avant libération.',
   },
   {
     id: '07',
     name: 'Système de contrôle automatisé',
-    model: 'Siemens HMI',
+    model: '—',
     image: '/images/equipment/automation-control.jpg',
     specs: [
-      { label: 'Marque', value: 'Siemens HMI' },
       { label: 'Fonction', value: 'Surveillance & contrôle des processus' },
       { label: 'Sécurité', value: 'Classé pour environnement de production' },
     ],
-    desc: 'Un système de contrôle automatisé basé sur Siemens HMI surveille et gère l\'ensemble de la ligne de production en temps réel.',
+    desc: 'Un système de contrôle automatisé antidéflagrant surveille et gère l\'ensemble de la ligne de production en temps réel.',
   },
   {
     id: '08',
@@ -112,12 +108,12 @@ const equipment = [
 
 const specsTable = [
   { name: 'Cuves d\'extraction multifonctions 6m³', model: '×20 ensembles', function: 'Extraction multifonction', cgmp: '—' },
-  { name: 'Colonnes de chromatographie 700L', model: '×26 colonnes', function: 'Séparation & purification', cgmp: '—' },
+  { name: 'Colonnes de chromatographie', model: '×26 colonnes', function: 'Séparation & purification', cgmp: '—' },
   { name: 'Concentrateurs simple/double effet 2000L', model: '×10 ensembles', function: 'Concentration d\'extrait', cgmp: '—' },
   { name: 'Tour de récupération de solvant type 1000', model: '×2 ensembles', function: 'Récupération & recyclage de solvant', cgmp: '—' },
   { name: 'Cuves de stockage d\'éthanol 5m³', model: '×10 ensembles', function: 'Stockage de récupération d\'éthanol', cgmp: '—' },
-  { name: 'Système analytique HPLC', model: 'UltiMate 3000', function: 'Analyse de contrôle qualité', cgmp: 'Thermo Scientific' },
-  { name: 'Contrôle automatisé', model: 'Siemens HMI', function: 'Surveillance & contrôle des processus', cgmp: '—' },
+  { name: 'Système analytique HPLC', model: '—', function: 'Analyse de contrôle qualité', cgmp: '—' },
+  { name: 'Contrôle automatisé', model: '—', function: 'Surveillance & contrôle des processus', cgmp: '—' },
   { name: 'Système d\'évacuation automatique des résidus', model: 'Intégré', function: 'Élimination automatique des résidus', cgmp: '—' },
 ];
 
@@ -202,8 +198,8 @@ export default function FrEquipmentPageClient() {
                   { label: 'Extraction', value: '20 cuves d\'extraction' },
                   { label: 'Chromatographie', value: '26 colonnes de chromatographie' },
                   { label: 'Concentration', value: '10 concentrateurs' },
-                  { label: 'Analytique', value: 'HPLC (Thermo UltiMate 3000)' },
-                  { label: 'Automatisation', value: 'Système de contrôle Siemens HMI' },
+                  { label: 'Analytique', value: 'Système analytique HPLC interne' },
+                  { label: 'Automatisation', value: 'Système de contrôle automatisé antidéflagrant' },
                   { label: 'Récupération', value: 'Récupération & stockage de solvant' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">

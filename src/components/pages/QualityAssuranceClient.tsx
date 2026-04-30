@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react';
-import { ArrowRight, Shield, FileCheck, Microscope, FlaskConical } from 'lucide-react';
+import { ArrowRight, Shield, FileCheck, Microscope, FlaskConical, Download } from 'lucide-react';
 import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -12,7 +12,7 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const documentationItems = [
-  { icon: Microscope, title: 'HPLC Analytical Capability', detail: 'In-house Thermo Dionex UltiMate 3000 HPLC system for analytical testing support.' },
+  { icon: Microscope, title: 'HPLC Analytical Capability', detail: 'In-house HPLC system for analytical testing support.' },
   { icon: FlaskConical, title: 'Certificate of Analysis (COA)', detail: 'May be provided according to order requirements and actual batch availability.' },
   { icon: Shield, title: 'Safety Data Sheet (SDS)', detail: 'May be provided according to order requirements.' },
   { icon: FileCheck, title: 'Test Reports', detail: 'May be provided according to order requirements and actual batch availability.' },
@@ -23,15 +23,31 @@ const documentationItems = [
 const qaApproach = [
   { step: '01', title: 'Cultivation Management', desc: 'Quality-oriented seed selection and standardized cultivation processes at the Chuxiong, Yunnan base.' },
   { step: '02', title: 'Extraction & Processing', desc: 'Professional extraction facility equipped with 20 extraction tanks, 26 chromatography columns, and 10 concentrators with automation control.' },
-  { step: '03', title: 'Analytical Testing Capability', desc: 'In-house HPLC analytical system (Thermo Dionex UltiMate 3000) supporting quality management activities.' },
+  { step: '03', title: 'Analytical Testing Capability', desc: 'In-house HPLC analytical system supporting quality management activities.' },
   { step: '04', title: 'Documentation Support', desc: 'Supporting documents including COA, SDS, test reports, and other shipment documents may be provided according to order requirements.' },
   { step: '05', title: 'Packaging & Shipment', desc: 'Standardized packaging (5 kg PE bags, 5 kg aluminum foil bags, export cartons) with documentation arranged per order terms.' },
+];
+
+const downloadableDocuments = [
+  {
+    title: 'GHS Safety Data Sheet (SDS)',
+    desc: 'GHS SDS Report for CBD Isolate — hazard classification, handling, storage, and transport information.',
+    href: '/documents/vetrux-cbd-isolate-sds-report.pdf',
+    format: 'PDF',
+  },
+  {
+    title: 'CBD Isolate Test Report (COA)',
+    desc: 'Third-party laboratory analysis report for CBD content, purity, and compliance testing.',
+    href: '/documents/vetrux-cbd-test-report.pdf',
+    format: 'PDF',
+  },
 ];
 
 export default function QualityAssuranceClient() {
   const heroRef = useRef<HTMLDivElement>(null);
   const docsRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
+  const certsRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     if (!heroRef.current) return;
@@ -57,6 +73,14 @@ export default function QualityAssuranceClient() {
     });
   }, { scope: processRef });
 
+  useGSAP(() => {
+    if (!certsRef.current) return;
+    gsap.from(certsRef.current.querySelectorAll('.reveal-card'), {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: certsRef.current, start: 'top 80%' },
+    });
+  }, { scope: certsRef });
+
   return (
     <div className="bg-surface">
 
@@ -73,7 +97,7 @@ export default function QualityAssuranceClient() {
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-6 max-w-md">
                 Vetrux Biotechnology focuses on consistency in raw materials, process, and delivery.
-                Our Chuxiong facility is equipped with HPLC analytical capability (Thermo Dionex UltiMate 3000)
+                Our Chuxiong facility is equipped with HPLC analytical capability
                 to support quality management activities.
               </p>
               <p className="text-xs text-on-surface-variant/80 leading-relaxed mb-8 max-w-md">
@@ -166,6 +190,51 @@ export default function QualityAssuranceClient() {
             </Link>
             <p className="text-xs text-on-surface-variant mt-4">
               Product labels, usage declarations, and customs descriptions should match actual batch, order purpose, and destination country requirements. Destination country regulatory compliance is the buyer/importer&apos;s responsibility.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── DOWNLOADS ─────────────────────────────────────────────── */}
+      <section className="py-24 bg-surface">
+        <div ref={certsRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card mb-6">
+            <SectionLabel>Downloads</SectionLabel>
+            <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
+              Downloadable Documents
+            </h2>
+            <p className="text-sm text-on-surface-variant max-w-xl">
+              Product documentation for reference. Batch-specific documents are provided with each order.
+              Additional certifications and regulatory documents are available upon request.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {downloadableDocuments.map((doc) => (
+              <a
+                key={doc.title}
+                href={doc.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="reveal-card flex items-center justify-between gap-6 bg-surface-container-lowest p-6 group hover:bg-surface-container transition-colors duration-200"
+              >
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-extrabold text-on-surface tracking-tighter mb-1">{doc.title}</p>
+                  <p className="text-xs text-on-surface-variant leading-relaxed">{doc.desc}</p>
+                </div>
+                <div className="flex-shrink-0 flex items-center gap-3">
+                  <span className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant">{doc.format}</span>
+                  <div className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-md group-hover:bg-primary-container transition-colors duration-200">
+                    <Download size={16} />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="reveal-card mt-8">
+            <p className="text-xs text-on-surface-variant">
+              For additional documentation, certifications, or certified translations, contact <a href="mailto:inquiry@vetrux.tech" className="text-primary underline">inquiry@vetrux.tech</a>.
             </p>
           </div>
         </div>

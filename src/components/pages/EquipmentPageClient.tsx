@@ -27,11 +27,10 @@ const equipment = [
   },
   {
     id: '02',
-    name: '700L Chromatography Columns',
+    name: 'Chromatography Columns',
     model: '×26 Columns',
     image: '/images/equipment/chromatography-upper.jpg',
     specs: [
-      { label: 'Volume', value: '700 L' },
       { label: 'Quantity', value: '26 Columns' },
       { label: 'Function', value: 'Cannabinoid Separation & Purification' },
     ],
@@ -76,26 +75,24 @@ const equipment = [
   {
     id: '06',
     name: 'HPLC Analytical System',
-    model: 'Thermo Dionex UltiMate 3000',
+    model: '—',
     image: '/images/equipment/hplc-system.jpg',
     specs: [
-      { label: 'Brand', value: 'Thermo Scientific' },
-      { label: 'Model', value: 'UltiMate 3000' },
       { label: 'Function', value: 'Quality Control Analysis' },
+      { label: 'Capability', value: 'Cannabinoid Profiling & Potency Analysis' },
     ],
-    desc: 'The Thermo Dionex UltiMate 3000 HPLC system provides precise cannabinoid profiling and potency analysis, ensuring every batch meets strict quality specifications before release.',
+    desc: 'In-house HPLC analytical system provides precise cannabinoid profiling and potency analysis, ensuring every batch meets strict quality specifications before release.',
   },
   {
     id: '07',
     name: 'Explosion-Proof Automation Control System',
-    model: 'Siemens HMI',
+    model: '—',
     image: '/images/equipment/automation-control.jpg',
     specs: [
-      { label: 'Brand', value: 'Siemens HMI' },
       { label: 'Function', value: 'Process Monitoring & Control' },
       { label: 'Safety', value: 'Explosion-Proof Rated' },
     ],
-    desc: 'A Siemens HMI-based automation control system monitors and manages the entire production line in real time, with explosion-proof certification for safe operation in solvent-rich environments.',
+    desc: 'An explosion-proof automation control system monitors and manages the entire production line in real time, ensuring safe operation in solvent-rich environments.',
   },
   {
     id: '08',
@@ -112,12 +109,12 @@ const equipment = [
 
 const specsTable = [
   { name: '6m³ Multi-Function Extraction Tanks', model: '×20 Sets', function: 'Multi-Function Extraction', cgmp: '—' },
-  { name: '700L Chromatography Columns', model: '×26 Columns', function: 'Separation & Purification', cgmp: '—' },
+  { name: 'Chromatography Columns', model: '×26 Columns', function: 'Separation & Purification', cgmp: '—' },
   { name: '2000L Single/Double-Effect Concentrators', model: '×10 Sets', function: 'Extract Concentration', cgmp: '—' },
   { name: '1000-Type Solvent Recovery Tower', model: '×2 Sets', function: 'Solvent Recovery & Recycling', cgmp: '—' },
   { name: '5m³ Ethanol Recovery Storage Tanks', model: '×10 Sets', function: 'Ethanol Recovery Storage', cgmp: '—' },
-  { name: 'HPLC Analytical System', model: 'UltiMate 3000', function: 'Quality Control Analysis', cgmp: 'Thermo Scientific' },
-  { name: 'Automation Control', model: 'Siemens HMI', function: 'Process Monitoring & Control', cgmp: '—' },
+  { name: 'HPLC Analytical System', model: '—', function: 'Quality Control Analysis', cgmp: '—' },
+  { name: 'Automation Control', model: '—', function: 'Process Monitoring & Control', cgmp: '—' },
   { name: 'Automatic Residue Discharge System', model: 'Integrated', function: 'Automatic Slag Removal', cgmp: '—' },
 ];
 
@@ -202,8 +199,8 @@ export default function EquipmentPageClient() {
                   { label: 'Extraction', value: '20 Extraction Tanks' },
                   { label: 'Chromatography', value: '26 Chromatography Columns' },
                   { label: 'Concentration', value: '10 Concentrators' },
-                  { label: 'Analytical', value: 'HPLC (Thermo UltiMate 3000)' },
-                  { label: 'Automation', value: 'Siemens HMI Control System' },
+                  { label: 'Analytical', value: 'HPLC Analytical System' },
+                  { label: 'Automation', value: 'Explosion-Proof Control System' },
                   { label: 'Recovery', value: 'Solvent Recovery & Storage' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">

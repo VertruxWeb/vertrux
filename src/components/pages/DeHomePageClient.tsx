@@ -129,7 +129,7 @@ export default function DeHomePageClient() {
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Extraktionswissenschaft</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Vetrux setzt <span className="text-on-surface font-semibold">Ethanol-Extraktion in Kombination mit chromatographischer Reinigung</span> unter Verwendung von 26 industriellen Chromatographiesäulen (je 700L) ein. Dieser mehrstufige Prozess — Extraktion, chromatographische Trennung, Konzentration und Kristallisation — ist auf konsistente Produktqualität ausgelegt.
+                Vetrux setzt <span className="text-on-surface font-semibold">Ethanol-Extraktion in Kombination mit chromatographischer Reinigung</span> unter Verwendung von 26 industriellen Chromatographiesäulen ein. Dieser mehrstufige Prozess — Extraktion, chromatographische Trennung, Konzentration und Kristallisation — ist auf konsistente Produktqualität ausgelegt.
               </p>
             </div>
             <div>
@@ -170,7 +170,7 @@ export default function DeHomePageClient() {
                   <span className="text-primary">Präzisionsgesteuert</span>
                 </h2>
                 <p className="text-sm text-on-surface-variant leading-relaxed mb-10 max-w-md">
-                  Unsere Anlage in Chuxiong umfasst 20 Sätze 6m³-Extraktionstanks, 26 Chromatographiesäulen (700L)
+                  Unsere Anlage in Chuxiong umfasst 20 Sätze 6m³-Extraktionstanks, 26 Chromatographiesäulen
                   und 10 Konzentratoren — unterstützt durch Lösungsmittel-Rückgewinnungstürme, Ethanol-Lagerung
                   und HPLC-Analysesysteme mit vollständiger Automatisierungssteuerung.
                 </p>
@@ -311,9 +311,6 @@ export default function DeHomePageClient() {
             <ul className="flex flex-col gap-1.5 text-xs text-on-surface-variant/60">
               <li><a href="https://www.who.int/docs/default-source/controlled-substances/whocbdreportmay2018-2.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">WHO-Sachverständigenausschuss für Drogenabhängigkeit — Cannabidiol (CBD) Prüfbericht (2018)</a></li>
               <li><a href="https://food.ec.europa.eu/safety/novel-food/legislation_en" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">EU-Verordnung über neuartige Lebensmittel (EU) 2015/2283 — Europäische Kommission</a></li>
-              <li><a href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO 9001:2015 — Qualitätsmanagementsysteme (Branchenreferenz)</a></li>
-              <li><a href="https://www.iso.org/standard/39883.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO/IEC 17025 — Allgemeine Anforderungen an Prüf- und Kalibrierlaboratorien</a></li>
-              <li><a href="https://www.ich.org/page/quality-guidelines" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ICH Q3C — Verunreinigungen: Leitlinie für Restlösungsmittel</a></li>
             </ul>
           </div>
         </div>

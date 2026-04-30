@@ -26,7 +26,7 @@ const shippingTerms = [
 
 const whyWholesale = [
   { title: 'CBD Raw Materials', desc: 'CBD crystal (CAS 13956-29-1, HS 2907299020) from our Chuxiong, Yunnan facility.' },
-  { title: 'Equipment Configuration', desc: '20 extraction tanks, 26 chromatography columns, 10 concentrators, HPLC analytical system, and Siemens automation.' },
+  { title: 'Equipment Configuration', desc: '20 extraction tanks, 26 chromatography columns, 10 concentrators, HPLC analytical system, and automation control.' },
   { title: 'OEM/ODM Services', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
   { title: 'Technical Support', desc: 'Cultivation management, extraction process optimization, cost control, and cannabinoid extraction consulting.' },
   { title: 'Standardized Packaging', desc: '5 kg PE bags (27×60cm), 5 kg aluminum foil bags (35×50cm), export cartons (465×285×295mm), plastic pallets.' },

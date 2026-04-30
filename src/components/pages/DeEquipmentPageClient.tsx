@@ -27,11 +27,10 @@ const equipment = [
   },
   {
     id: '02',
-    name: '700L Chromatographiesäulen',
+    name: 'Chromatographiesäulen',
     model: '×26 Säulen',
     image: '/images/equipment/chromatography-upper.jpg',
     specs: [
-      { label: 'Volumen', value: '700 L' },
       { label: 'Anzahl', value: '26 Säulen' },
       { label: 'Funktion', value: 'Cannabinoid-Trennung & Reinigung' },
     ],
@@ -76,26 +75,24 @@ const equipment = [
   {
     id: '06',
     name: 'HPLC-Analysesystem',
-    model: 'Thermo Dionex UltiMate 3000',
+    model: '—',
     image: '/images/equipment/hplc-system.jpg',
     specs: [
-      { label: 'Marke', value: 'Thermo Scientific' },
-      { label: 'Modell', value: 'UltiMate 3000' },
       { label: 'Funktion', value: 'Qualitätskontrollanalyse' },
+      { label: 'Fähigkeit', value: 'Cannabinoid-Profilierung & Potenzanalyse' },
     ],
-    desc: 'Das Thermo Dionex UltiMate 3000 HPLC-System liefert präzise Cannabinoid-Profilierung und Potenzanalyse und stellt sicher, dass jede Charge strenge Qualitätsspezifikationen vor der Freigabe erfüllt.',
+    desc: 'Das hauseigene HPLC-Analysesystem liefert präzise Cannabinoid-Profilierung und Potenzanalyse und stellt sicher, dass jede Charge strenge Qualitätsspezifikationen vor der Freigabe erfüllt.',
   },
   {
     id: '07',
     name: 'Automatisierungssystem',
-    model: 'Siemens HMI',
+    model: '—',
     image: '/images/equipment/automation-control.jpg',
     specs: [
-      { label: 'Marke', value: 'Siemens HMI' },
       { label: 'Funktion', value: 'Prozessüberwachung & Steuerung' },
       { label: 'Konfiguration', value: 'Industrielle Automatisierung' },
     ],
-    desc: 'Ein Siemens HMI-basiertes Automatisierungssystem überwacht und steuert die gesamte Produktionslinie in Echtzeit, konfiguriert für den Betrieb in industriellen Extraktionsumgebungen.',
+    desc: 'Ein explosionsgeschütztes Automatisierungssystem überwacht und steuert die gesamte Produktionslinie in Echtzeit, konfiguriert für den Betrieb in industriellen Extraktionsumgebungen.',
   },
   {
     id: '08',
@@ -112,12 +109,12 @@ const equipment = [
 
 const specsTable = [
   { name: '6m³ Multifunktions-Extraktionstanks', model: '×20 Sätze', function: 'Multifunktions-Extraktion', cgmp: 'Edelstahl-Konstruktion' },
-  { name: '700L Chromatographiesäulen', model: '×26 Säulen', function: 'Cannabinoid-Trennung & Reinigung', cgmp: 'Industriestandard' },
+  { name: 'Chromatographiesäulen', model: '×26 Säulen', function: 'Cannabinoid-Trennung & Reinigung', cgmp: 'Industriestandard' },
   { name: '2000L Ein-/Doppeleffekt-Konzentratoren', model: '×10 Sätze', function: 'Extraktkonzentration', cgmp: 'Vakuumbetrieb' },
   { name: '1000-Typ Lösungsmittelrückgewinnungsturm', model: '×2 Sätze', function: 'Lösungsmittelrückgewinnung & Recycling', cgmp: 'Industriekonfiguration' },
   { name: '5m³ Ethanol-Rückgewinnungstanks', model: '×10 Sätze', function: 'Ethanol-Rückgewinnungslagerung', cgmp: 'Sichere Lagerung' },
-  { name: 'HPLC-Analysesystem', model: 'UltiMate 3000', function: 'Qualitätskontrollanalyse', cgmp: 'Thermo Scientific' },
-  { name: 'Automatisierungssteuerung', model: 'Siemens HMI', function: 'Prozessüberwachung & Steuerung', cgmp: 'Industrielle Automatisierung' },
+  { name: 'HPLC-Analysesystem', model: '—', function: 'Qualitätskontrollanalyse', cgmp: '—' },
+  { name: 'Automatisierungssteuerung', model: '—', function: 'Prozessüberwachung & Steuerung', cgmp: 'Industrielle Automatisierung' },
   { name: 'Automatisches Rückstandsaustragsystem', model: 'Integriert', function: 'Automatische Schlackenentfernung', cgmp: 'Vollautomatisiert' },
 ];
 
@@ -201,7 +198,7 @@ export default function DeEquipmentPageClient() {
                 {[
                   { label: 'Konstruktionsmaterial', value: 'Edelstahl-Konstruktion' },
                   { label: 'Reinigungsprotokoll', value: 'Integriertes Reinigungssystem' },
-                  { label: 'Sicherheitssteuerung', value: 'Industrielle Automatisierung (Siemens)' },
+                  { label: 'Sicherheitssteuerung', value: 'Industrielle Automatisierung' },
                   { label: 'Umgebung', value: 'Kontrollierte Produktionsanlage' },
                   { label: 'Chargenprotokolle', value: 'Vollständiges Chargenrückverfolgungssystem' },
                   { label: 'Prozesssteuerung', value: 'Echtzeit-HMI-Überwachung' },

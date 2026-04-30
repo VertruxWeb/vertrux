@@ -23,6 +23,7 @@ const navLinks: NavItem[] = [
     label: 'About',
     children: [
       { label: 'Company', href: '/about' },
+      { label: 'Quality Assurance', href: '/quality-assurance' },
       { label: 'Equipment', href: '/equipment' },
       { label: 'Planting Base', href: '/planting' },
     ],

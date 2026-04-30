@@ -188,7 +188,7 @@ export default function PlantingPageClient() {
               <img src="/images/planting/vegetative-growth.jpg" alt="Vetrux cultivation base greenhouse in Chuxiong, Yunnan" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Cultivation & Breeding Center</p>
-                <p className="text-sm font-bold text-white">Chuxiong, Yunnan Province · 1,800m+</p>
+                <p className="text-sm font-bold text-white">Chuxiong, Yunnan Province</p>
               </div>
             </div>
           </div>

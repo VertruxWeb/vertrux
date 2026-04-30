@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const capabilities = [
   { icon: Leaf, title: 'Cultivation & Breeding Center', desc: 'Cultivation and breeding center in Chuxiong, Yunnan Province. Standardized, traceable cultivation system focused on quality consistency.' },
   { icon: Factory, title: 'Extraction Facility', desc: '20 extraction tanks, 26 chromatography columns, and 10 concentrators — professional extraction and processing equipment for CBD and botanical extracts.' },
-  { icon: FlaskConical, title: 'Analytical Capability', desc: 'In-house HPLC analytical system (Thermo Dionex UltiMate 3000) with Siemens automation control supporting quality management.' },
+  { icon: FlaskConical, title: 'Analytical Capability', desc: 'In-house HPLC analytical system with automation control supporting quality management.' },
   { icon: CheckCircle, title: 'OEM/ODM Services', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
   { icon: Globe, title: 'Technical Support', desc: 'Cultivation management, extraction process optimization, cost control, and cannabinoid extraction consulting services.' },
   { icon: Truck, title: 'Packaging', desc: '5 kg PE bags (27×60cm), 5 kg aluminum foil bags (35×50cm), export cartons (465×285×295 mm), plastic pallets with shrink wrap.' },
@@ -24,9 +24,9 @@ const differentiators = [
   { metric: '20', label: 'Extraction Tanks', detail: 'Processing equipment' },
   { metric: '26', label: 'Chromatography Columns', detail: 'Separation & purification' },
   { metric: '10', label: 'Concentrators', detail: 'Extract concentration' },
-  { metric: 'HPLC', label: 'Analytical System', detail: 'Thermo UltiMate 3000' },
-  { metric: 'Siemens', label: 'Automation', detail: 'HMI process control' },
-  { metric: '4', label: 'Product Lines', detail: 'CBD + botanical extracts' },
+  { metric: 'HPLC', label: 'Analytical System', detail: 'Quality control analysis' },
+  { metric: '—', label: 'Automation', detail: 'Explosion-proof control' },
+  { metric: '3', label: 'Product Lines', detail: 'CBD + botanical extracts' },
 ];
 
 const markets = [
@@ -89,7 +89,7 @@ export default function CbdIsolateManufacturerClient() {
                 <span className="text-primary">Manufacturer</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Vetrux Biotechnology (Chuxiong) Co., Ltd. is based in Yunnan, China — equipped with 20 extraction tanks, 26 chromatography columns, 10 concentrators, and HPLC analytical capability with Siemens automation. Providing CBD raw materials, OEM/ODM services, technical support, and botanical extracts.
+                Vetrux Biotechnology (Chuxiong) Co., Ltd. is based in Yunnan, China — equipped with 20 extraction tanks, 26 chromatography columns, 10 concentrators, and HPLC analytical capability with automation control. Providing CBD raw materials, OEM/ODM services, technical support, and botanical extracts.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {['CBD Raw Materials', 'OEM/ODM', 'Technical Support', 'Botanical Extracts'].map((tag) => (
