@@ -112,9 +112,9 @@ export default function InquiryPageClient() {
                 <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">Service Capabilities</p>
                 <div className="space-y-4">
                   {[
-                    { cert: 'CBD Raw Materials', desc: 'Isolate ≥99.5% purity' },
+                    { cert: 'CBD Raw Materials', desc: 'CBD crystal (CAS 13956-29-1)' },
                     { cert: 'OEM/ODM Services', desc: 'Formulation to finished product' },
-                    { cert: 'Technical Consulting', desc: 'Cultivation & extraction expertise' },
+                    { cert: 'Technical Support', desc: 'Cultivation & extraction expertise' },
                     { cert: 'Botanical Extracts', desc: 'Anthocyanins, steviol glycosides, hemp seed globulin' },
                   ].map((item) => (
                     <div key={item.cert} className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">

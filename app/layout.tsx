@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     template: '%s — Vetrux CBD',
   },
   description:
-    'Vetrux CBD is the commercial brand of 蔚萃生物科技（楚雄）有限公司, supplying bulk pharmaceutical-grade CBD isolate (≥99.5% purity, THC-free) to European B2B buyers.',
+    'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd. CBD raw material sales, OEM/ODM services, technical support, and botanical extract solutions.',
   keywords:
-    'CBD isolate supplier, bulk CBD isolate, wholesale CBD isolate, CBD isolate manufacturer, pharmaceutical grade CBD, THC-free CBD isolate, CBD isolate Europe',
+    'CBD raw materials, CBD crystal, OEM ODM CBD, botanical extracts, CBD supplier, Vetrux CBD, Yunnan',
   authors: [{ name: 'Vetrux CBD' }],
   robots: { index: true, follow: true },
   openGraph: {

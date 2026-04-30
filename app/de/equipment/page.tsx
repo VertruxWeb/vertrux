@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import DeEquipmentPageClient from '@/components/pages/DeEquipmentPageClient';
 
 export const metadata: Metadata = {
-  title: 'Industrielle Extraktionsanlage | cGMP-Produktion | Vetrux CBD',
+  title: 'Geräteausstattung | Extraktionsanlage | Vetrux CBD',
   description: 'CBD-Extraktions- und Reinigungsanlage in Chuxiong, Yunnan. 20x6m3 Extraktionstanks, 26x700L Chromatographiesaulen, Siemens-Automatisierung.',
   keywords: 'CBD Extraktionsanlage, industrielle Extraktionsanlage, Chromatographie CBD Reinigung, Ethanol Extraktion CBD',
   alternates: {

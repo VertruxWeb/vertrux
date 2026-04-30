@@ -11,10 +11,10 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: '[X] ha', label: 'Cultivation Base Area' },
-  { value: '26', label: 'Chromatography Columns' },
-  { value: '[X]M+', label: 'Annual Propagation Capacity' },
-  { value: '1,800m+', label: 'Yunnan Altitude Advantage' },
+  { value: 'Yunnan', label: 'Cultivation Base Location' },
+  { value: 'Chuxiong', label: 'Breeding Center' },
+  { value: 'Standardized', label: 'Cultivation System' },
+  { value: 'Traceable', label: 'Supply Chain' },
 ];
 
 const zones = [
@@ -31,10 +31,10 @@ const zones = [
       { src: '/images/planting/propagation-greenhouse.jpg', alt: 'Large-scale greenhouse propagation area' },
     ],
     specs: [
-      { label: 'Propagation Method', value: 'Clonal Cuttings + Seed' },
-      { label: 'Nursery Environment', value: 'Controlled Greenhouse' },
-      { label: 'Genetic Screening', value: 'High-CBD Cultivar Selection' },
-      { label: 'Rooting Success Rate', value: '≥ 95%' },
+      { label: 'Focus', value: 'Seed Selection & Propagation' },
+      { label: 'Environment', value: 'Nursery Facility' },
+      { label: 'Approach', value: 'Quality-Oriented Cultivar Selection' },
+      { label: 'System', value: 'Standardized Process' },
     ],
     icon: Leaf,
   },
@@ -49,10 +49,10 @@ const zones = [
       { src: '/images/planting/vegetative-canopy.jpg', alt: 'Dense green hemp canopy in vegetative stage' },
     ],
     specs: [
-      { label: 'Growing Method', value: 'Greenhouse + Natural Light' },
-      { label: 'Altitude', value: '1,800m+ (Yunnan Plateau)' },
-      { label: 'Water Source', value: 'Mountain Spring Irrigation' },
-      { label: 'Input Policy', value: 'Zero Synthetic Pesticides' },
+      { label: 'Growing Method', value: 'Greenhouse Cultivation' },
+      { label: 'Location', value: 'Yunnan Province' },
+      { label: 'Management', value: 'Controlled Growing Conditions' },
+      { label: 'Approach', value: 'Standardized Cultivation' },
     ],
     icon: Sun,
   },
@@ -61,7 +61,7 @@ const zones = [
     tag: 'Zone 03 — Flowering & Harvest',
     title: 'Mature Flowering & Trichome Development',
     description:
-      'During the flowering stage, Yunnan\'s intense UV exposure drives exceptional trichome and cannabinoid development. Our agronomists monitor trichome maturity and CBD content to determine optimal harvest timing, maximizing cannabinoid yield while maintaining compliance with THC thresholds. Dense, resinous colas are hand-harvested and transferred to controlled drying and processing.',
+      'During the flowering stage, cultivation management focuses on monitoring plant development and determining appropriate harvest timing. Harvested material is transferred to controlled drying and processing to support downstream extraction.',
     images: [
       { src: '/images/planting/flowering-greenhouse.jpg', alt: 'Late-flowering hemp greenhouse' },
       { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Close-up of CBD hemp bud with trichomes' },
@@ -70,10 +70,10 @@ const zones = [
       { src: '/images/planting/flowering-pistils.jpg', alt: 'Flowering hemp with white pistils' },
     ],
     specs: [
-      { label: 'Trichome Monitoring', value: 'Daily Visual + Lab Analysis' },
-      { label: 'Harvest Method', value: 'Hand-Harvested at Peak CBD' },
-      { label: 'UV Advantage', value: 'High-Altitude UV Exposure' },
-      { label: 'Drying Process', value: 'Controlled Low-Temp Drying' },
+      { label: 'Monitoring', value: 'Growth Stage Tracking' },
+      { label: 'Harvest', value: 'Managed Harvest Timing' },
+      { label: 'Location Advantage', value: 'Yunnan Growing Conditions' },
+      { label: 'Post-Harvest', value: 'Controlled Drying Process' },
     ],
     icon: Thermometer,
   },
@@ -89,10 +89,10 @@ const galleryImages = [
 ];
 
 const traceabilityItems = [
-  { icon: Shield, label: 'Seed-to-Isolate Integration', desc: 'Vetrux controls every step from seed selection and cultivation through extraction and isolation — full vertical integration under one supply chain.' },
-  { icon: Droplets, label: 'Standardized Cultivation System', desc: 'SOPs govern every stage of our growing process: propagation, transplanting, nutrient management, flowering, and harvest timing are all standardized across our Chuxiong base.' },
-  { icon: Leaf, label: 'Traceable Supply Chain', desc: 'Every batch of biomass is traceable from the specific greenhouse zone and harvest date through to the final CBD isolate lot number and COA.' },
-  { icon: CheckCircle, label: 'Batch Documentation & COA', desc: 'Full batch records, third-party lab reports, and Certificates of Analysis are available for every production run upon qualified B2B request.' },
+  { icon: Shield, label: 'Cultivation & Processing Coordination', desc: 'Vetrux coordinates cultivation and extraction activities from its Chuxiong base, supporting consistency across the production process.' },
+  { icon: Droplets, label: 'Standardized Cultivation System', desc: 'Cultivation management follows standardized processes covering propagation, growing conditions, and harvest timing at the Chuxiong base.' },
+  { icon: Leaf, label: 'Traceable Cultivation System', desc: 'The cultivation system is designed to support traceability from planting through to material handoff for extraction processing.' },
+  { icon: CheckCircle, label: 'Documentation Support', desc: 'Supporting documentation including COA, SDS, and test reports may be provided according to order requirements and actual batch availability.' },
 ];
 
 export default function PlantingPageClient() {
@@ -172,12 +172,11 @@ export default function PlantingPageClient() {
                 <span className="text-primary">Traced to the Source.</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Vetrux operates its own cultivation and breeding center in Chuxiong, Yunnan Province —
-                where high-altitude terrain and intense UV exposure create ideal conditions for
-                high-CBD hemp with exceptional cannabinoid and terpene profiles.
+                Vetrux operates a cultivation and breeding center in Chuxiong, Yunnan Province,
+                focused on standardized, traceable cultivation to support consistent raw material quality.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Yunnan High-Altitude', 'UV-Rich Growing', 'Seed-to-Isolate', 'Vertically Integrated'].map((tag) => (
+                {['Yunnan Province', 'Standardized Cultivation', 'Quality-Oriented', 'Traceable System'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -223,18 +222,16 @@ export default function PlantingPageClient() {
             </div>
             <div className="reveal-card lg:col-span-7 space-y-5 pt-2">
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                At Vetrux, vertical integration isn't a buzzword — it's our operating model. By controlling
-                cultivation, breeding, and extraction under one roof, we eliminate supply chain uncertainty
-                and deliver consistent cannabinoid profiles batch after batch.
+                At Vetrux, cultivation management starts with quality-oriented seed selection and follows
+                standardized processes designed to support consistent raw material quality.
               </p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Our Chuxiong base sits on the Yunnan Plateau at over 1,800 meters, where naturally intense
-                UV radiation and clean mountain air drive superior trichome development and cannabinoid
-                accumulation — advantages that no indoor facility can replicate.
+                The Chuxiong base in Yunnan Province provides favorable growing conditions for hemp
+                cultivation, supporting the production of raw materials for downstream extraction.
               </p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                From proprietary high-CBD cultivar selection to 26-column chromatographic purification,
-                every link in our seed-to-isolate chain is optimized for purity, potency, and traceability.
+                From cultivar selection through cultivation management and material handoff to extraction,
+                the system is designed around standardization and traceability.
               </p>
             </div>
           </div>

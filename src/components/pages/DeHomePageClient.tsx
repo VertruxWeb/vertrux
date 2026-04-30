@@ -81,7 +81,7 @@ export default function DeHomePageClient() {
             </h1>
 
             <p className="hero-animate text-base md:text-lg text-white/70 leading-relaxed max-w-xl mb-10">
-              Vetrux — eine Marke der 蔚萃生物 — liefert pharmazeutisches CBD-Isolat durch
+              Vetrux — eine Marke der 蔚萃生物 — liefert CBD-Isolat durch
               Ethanol-Extraktion und chromatographische Reinigung aus unserer Produktionsstätte in Chuxiong, Yunnan.
               OEM/ODM-Dienstleistungen, technische Beratung und Großhandelsversorgung für globale B2B-Partner.
             </p>
@@ -104,7 +104,7 @@ export default function DeHomePageClient() {
             {[
               { value: '20+', label: 'Extraktionsanlagen' },
               { value: '26', label: 'Chromatographiesäulen' },
-              { value: '99,5%', label: 'CBD-Reinheit' },
+              { value: 'HPLC', label: 'Qualitätsprüfung' },
               { value: '5+', label: 'Jahre Erfahrung' },
             ].map((stat) => (
               <div key={stat.label}>
@@ -123,13 +123,13 @@ export default function DeHomePageClient() {
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Marktkontext</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Der europäische CBD-Markt wird voraussichtlich bis 2027 <span className="text-on-surface font-semibold">3,2 Milliarden Euro erreichen</span>, angetrieben durch pharmazeutische, nutrazeutische und kosmetische Anwendungen. <a href="https://prohibitionpartners.com" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant/60 text-xs underline underline-offset-2">(Prohibition Partners, European CBD Report)</a>
+                Der europäische CBD-Markt wird voraussichtlich bis 2027 <span className="text-on-surface font-semibold">3,2 Milliarden Euro erreichen</span>, angetrieben durch Gesundheits-, Ernährungs- und Kosmetikanwendungen. <a href="https://prohibitionpartners.com" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant/60 text-xs underline underline-offset-2">(Prohibition Partners, European CBD Report)</a>
               </p>
             </div>
             <div>
               <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Extraktionswissenschaft</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Vetrux setzt <span className="text-on-surface font-semibold">Ethanol-Extraktion in Kombination mit chromatographischer Reinigung</span> unter Verwendung von 26 industriellen Chromatographiesäulen (je 700L) ein. Dieser mehrstufige Prozess — Extraktion, chromatographische Trennung, Konzentration und Kristallisation — erreicht ≥99,5% CBD-Reinheit bei vollständiger Erhaltung der molekularen Integrität.
+                Vetrux setzt <span className="text-on-surface font-semibold">Ethanol-Extraktion in Kombination mit chromatographischer Reinigung</span> unter Verwendung von 26 industriellen Chromatographiesäulen (je 700L) ein. Dieser mehrstufige Prozess — Extraktion, chromatographische Trennung, Konzentration und Kristallisation — ist auf konsistente Produktqualität ausgelegt.
               </p>
             </div>
             <div>
@@ -178,7 +178,7 @@ export default function DeHomePageClient() {
 
               <div className="grid grid-cols-1 gap-4">
                 {[
-                  { icon: FlaskConical, title: 'Ethanol-Extraktion & Reinigung', desc: 'Industrielle Ethanol-Extraktion gefolgt von 26-Säulen-Chromatographie-Reinigung für ≥99,5% CBD-Reinheit.' },
+                  { icon: FlaskConical, title: 'Ethanol-Extraktion & Reinigung', desc: 'Industrielle Ethanol-Extraktion gefolgt von 26-Säulen-Chromatographie-Reinigung für hochreines CBD-Isolat.' },
                   { icon: Award, title: 'OEM/ODM & Technische Beratung', desc: 'Auftragsfertigung, Formulierungsunterstützung und technische Beratung für CBD- und Pflanzenextrakt-Produkte.' },
                   { icon: Layers, title: 'Mehrstufige Veredelung', desc: 'Chromatographische Trennung, Konzentration, Kristallisation und HPLC-verifizierte Chargenprüfung.' },
                 ].map((feat) => (
@@ -205,7 +205,7 @@ export default function DeHomePageClient() {
             <div className="reveal-card lg:col-span-8 relative overflow-hidden">
               <Image
                 src="/images/products/cbd-crystal-closeup.jpg"
-                alt="CBD-Isolat 99,5% Reinheit"
+                alt="CBD-Isolat Kristall Nahaufnahme"
                 width={1200}
                 height={580}
                 sizes="(max-width: 1024px) 100vw, 66vw"
@@ -236,8 +236,8 @@ export default function DeHomePageClient() {
 
               <div className="reveal-card bg-surface-container-lowest p-8 flex-1">
                 <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">Wichtige Spezifikationen</p>
-                <SpecRow label="CBD-Reinheit (HPLC)" value="≥ 99,5%" />
-                <SpecRow label="THC-Gehalt" value="ND (nicht nachweisbar)" />
+                <SpecRow label="Reinheitsprüfung" value="HPLC-verifiziert" />
+                <SpecRow label="Dokumentation" value="COA pro Charge verfügbar" />
                 <SpecRow label="Erscheinungsbild" value="Weißes Kristallin" />
                 <SpecRow label="Lösungsmittelrückstände" value="&lt; 10 PPM" isLast />
                 <Link href="/de/products/cbd-isolate" className="mt-6 inline-flex items-center gap-1 text-xs font-semibold tracking-wider uppercase text-primary hover:text-primary-container transition-colors duration-200">
@@ -254,7 +254,7 @@ export default function DeHomePageClient() {
         <div ref={trustRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
             {[
-              { label: 'Qualitätsfokus', sub: 'HPLC-Prüfung · ≥99,5% Reinheit', href: '/de/quality-assurance' },
+              { label: 'Qualitätsfokus', sub: 'HPLC-Prüfung · Chargendokumentation', href: '/de/quality-assurance' },
               { label: 'Großhandel', sub: 'CBD & Pflanzenextrakte im Großhandel', href: '/de/wholesale-cbd-isolate' },
               { label: 'Herstellerprofil', sub: 'Produktionsbasis Chuxiong, Yunnan', href: '/de/cbd-isolate-manufacturer' },
               { label: 'Globale Anfrage', sub: 'inquiry@vetrux.tech', href: '/de/inquiry' },
@@ -279,7 +279,7 @@ export default function DeHomePageClient() {
             {[
               {
                 q: 'Was ist CBD-Isolat und wie unterscheidet es sich von Vollspektrum-CBD?',
-                a: 'CBD-Isolat ist die reinste Form von Cannabidiol — ein weißes kristallines Pulver mit ≥99,5% CBD (CAS: 13956-29-1, HS-Code: 2907299020), bei dem alle anderen Cannabinoide, Terpene und Pflanzenverbindungen entfernt wurden. Im Gegensatz zu Vollspektrum-CBD, das THC und andere Cannabinoide enthält, ist CBD-Isolat THC-frei (ND — nicht nachweisbar), was es ideal für pharmazeutische und nutrazeutische Formulierungen mit präziser Dosierung und regulatorischer Konformität macht.',
+                a: 'CBD-Isolat ist eine hochreine Form von Cannabidiol — ein weißes kristallines Pulver (CAS: 13956-29-1, HS-Code: 2907299020), bei dem andere Cannabinoide, Terpene und Pflanzenverbindungen entfernt wurden. Im Gegensatz zu Vollspektrum-CBD, das mehrere Cannabinoide enthält, ist CBD-Isolat auf einen einzelnen Wirkstoff fokussiert, was es für Formulierungen mit präziser Dosierung geeignet macht. Reinheitsspezifikationen sind in der Chargendokumentation verfügbar.',
               },
               {
                 q: 'Welche Dienstleistungen bietet Vetrux über CBD-Isolat hinaus an?',
@@ -290,12 +290,12 @@ export default function DeHomePageClient() {
                 a: 'Vetrux bietet CBD-Isolat in 5 kg PE-Beuteln (27×60 cm), 5 kg Aluminiumfolienbeuteln (35×50 cm) und Exportkartons (465×285×295 mm) an. Individuelle Verpackungen sind über unsere OEM/ODM-Dienstleistungen verfügbar. Mengenrabatte für Großbestellungen — kontaktieren Sie sales@vetrux.tech.',
               },
               {
-                q: 'Wie gewährleistet Vetrux die CBD-Reinheit und THC-Freiheit?',
-                a: 'Jede Charge wird mittels HPLC getestet, um ≥99,5% CBD-Reinheit und THC-Freiheit (ND) zu bestätigen. Unser Ethanol-Extraktions- und 26-Säulen-Chromatographie-Reinigungsverfahren gewährleistet gleichbleibende Qualität. Vollständige Dokumentation einschließlich COA, Ursprungszeugnis und SDS wird mit jeder Lieferung bereitgestellt.',
+                q: 'Wie gewährleistet Vetrux die CBD-Qualität?',
+                a: 'Jede Charge wird mittels HPLC getestet und dokumentiert. Unser Ethanol-Extraktions- und 26-Säulen-Chromatographie-Reinigungsverfahren ist auf gleichbleibende Qualität ausgelegt. Vollständige Dokumentation einschließlich COA, Ursprungszeugnis und SDS wird mit jeder Lieferung bereitgestellt. Spezifische Reinheitswerte sind in der Chargendokumentation enthalten.',
               },
               {
                 q: 'Wo befindet sich Vetrux und welche Versandbedingungen sind verfügbar?',
-                a: 'Vetrux Biotechnology hat seinen Sitz in Chuxiong, Provinz Yunnan, China. Wir bieten FOB Kunming, CIF und DDP-Lieferung an weltweite Zielorte. Die Standardlieferzeit beträgt 10–14 Werktage ab Auftragsbestätigung. Alle Sendungen enthalten chargenspezifisches COA, Ursprungszeugnis und Sicherheitsdatenblatt. Kontaktieren Sie inquiry@vetrux.tech für Logistikdetails.',
+                a: 'Vetrux Biotechnology hat seinen Sitz in Chuxiong, Provinz Yunnan, China. Versandbedingungen und Lieferzeiten werden pro Auftrag besprochen. Alle Sendungen enthalten chargenspezifisches COA, Ursprungszeugnis und Sicherheitsdatenblatt. Kontaktieren Sie inquiry@vetrux.tech für Logistikdetails.',
               },
             ].map((faq) => (
               <div key={faq.q} className="bg-surface p-6">
@@ -311,7 +311,7 @@ export default function DeHomePageClient() {
             <ul className="flex flex-col gap-1.5 text-xs text-on-surface-variant/60">
               <li><a href="https://www.who.int/docs/default-source/controlled-substances/whocbdreportmay2018-2.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">WHO-Sachverständigenausschuss für Drogenabhängigkeit — Cannabidiol (CBD) Prüfbericht (2018)</a></li>
               <li><a href="https://food.ec.europa.eu/safety/novel-food/legislation_en" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">EU-Verordnung über neuartige Lebensmittel (EU) 2015/2283 — Europäische Kommission</a></li>
-              <li><a href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO 9001:2015 — Qualitätsmanagementsysteme</a></li>
+              <li><a href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO 9001:2015 — Qualitätsmanagementsysteme (Branchenreferenz)</a></li>
               <li><a href="https://www.iso.org/standard/39883.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO/IEC 17025 — Allgemeine Anforderungen an Prüf- und Kalibrierlaboratorien</a></li>
               <li><a href="https://www.ich.org/page/quality-guidelines" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ICH Q3C — Verunreinigungen: Leitlinie für Restlösungsmittel</a></li>
             </ul>

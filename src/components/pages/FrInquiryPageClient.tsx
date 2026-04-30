@@ -112,9 +112,9 @@ export default function FrInquiryPageClient() {
                 <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">Capacités de Service</p>
                 <div className="space-y-4">
                   {[
-                    { cert: 'Matières Premières CBD', desc: 'Isolat ≥99,5% de pureté' },
+                    { cert: 'Matières Premières CBD', desc: 'Cristal CBD (CAS 13956-29-1)' },
                     { cert: 'Services OEM/ODM', desc: 'De la formulation au produit fini' },
-                    { cert: 'Conseil Technique', desc: 'Expertise en culture & extraction' },
+                    { cert: 'Support Technique', desc: 'Expertise en culture & extraction' },
                     { cert: 'Extraits Botaniques', desc: 'Anthocyanes, glycosides de stéviol, globuline de chanvre' },
                   ].map((item) => (
                     <div key={item.cert} className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">

@@ -133,11 +133,9 @@ export default function ArticlePageClient({ meta, content }: ArticlePageClientPr
             <span className="text-primary font-bold text-sm">YV</span>
           </div>
           <div>
-            <p className="text-sm font-bold text-on-background">Vetrux CBD Technical Team</p>
+            <p className="text-sm font-bold text-on-background">Vetrux CBD</p>
             <p className="text-xs text-on-surface-variant leading-relaxed mt-1">
-              Vertically integrated CBD isolate manufacturer in Yunnan, China. ISO 9001, GMP, HACCP certified.
-              Our technical team combines expertise in supercritical CO₂ extraction, analytical chemistry,
-              and pharmaceutical-grade quality control.
+              VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd., focused on CBD raw materials, OEM/ODM services, technical support, and botanical extract solutions.
             </p>
             <a href="/about" className="text-xs text-primary underline underline-offset-2 mt-2 inline-block">
               Learn more about Vetrux

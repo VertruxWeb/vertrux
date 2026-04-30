@@ -3,7 +3,7 @@ import DeGalleryPageClient from '@/components/pages/DeGalleryPageClient';
 
 export const metadata: Metadata = {
   title: 'Galerie | Anlagen-Dokumentation | Vetrux CBD',
-  description: 'Visuelle Dokumentation der Vetrux-Lieferkette: Anbau in Yunnan, industrielle Extraktion, pharmazeutisches CBD-Isolat.',
+  description: 'Visuelle Übersicht der Vetrux-Produktionsstätte und Anbaubasis in Chuxiong, Yunnan.',
   keywords: 'CBD Herstellungsanlage, CBD Extraktionsanlage Fotos, CBD Labor, Hanfanbaubasis',
   alternates: {
     canonical: 'https://www.vetrux.tech/de/gallery',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Galerie',
-    description: 'Visuelle Dokumentation der Vetrux-Lieferkette: Anbau in Yunnan, industrielle Extraktion, pharmazeutisches CBD-Isolat.',
+    description: 'Visuelle Übersicht der Vetrux-Produktionsstätte und Anbaubasis in Chuxiong, Yunnan.',
     url: 'https://www.vetrux.tech/de/gallery',
     locale: 'de_DE',
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Galerie',
-    description: 'Visuelle Dokumentation der Vetrux-Lieferkette: Anbau in Yunnan, industrielle Extraktion, pharmazeutisches CBD-Isolat.',
+    description: 'Visuelle Übersicht der Vetrux-Produktionsstätte und Anbaubasis in Chuxiong, Yunnan.',
   },
 };
 

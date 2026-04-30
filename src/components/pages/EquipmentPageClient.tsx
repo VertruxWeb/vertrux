@@ -20,7 +20,7 @@ const equipment = [
     specs: [
       { label: 'Volume', value: '6,000 L' },
       { label: 'Quantity', value: '20 Sets' },
-      { label: 'Material', value: 'SUS316L Stainless Steel' },
+      { label: 'Type', value: 'Multi-Function' },
       { label: 'Function', value: 'Multi-Function Extraction' },
     ],
     desc: 'Twenty industrial-scale 6m³ multi-function extraction tanks form the core of our extraction line, enabling high-volume processing of hemp biomass with precise temperature and solvent control.',
@@ -111,14 +111,14 @@ const equipment = [
 ];
 
 const specsTable = [
-  { name: '6m³ Multi-Function Extraction Tanks', model: '×20 Sets', function: 'Multi-Function Extraction', cgmp: 'SUS316L / CIP/SIP' },
-  { name: '700L Chromatography Columns', model: '×26 Columns', function: 'Cannabinoid Separation & Purification', cgmp: 'GMP Compliant' },
-  { name: '2000L Single/Double-Effect Concentrators', model: '×10 Sets', function: 'Extract Concentration', cgmp: 'Vacuum Operation' },
-  { name: '1000-Type Solvent Recovery Tower', model: '×2 Sets', function: 'Solvent Recovery & Recycling', cgmp: 'Explosion-Proof' },
-  { name: '5m³ Ethanol Recovery Storage Tanks', model: '×10 Sets', function: 'Ethanol Recovery Storage', cgmp: 'Safety Certified' },
+  { name: '6m³ Multi-Function Extraction Tanks', model: '×20 Sets', function: 'Multi-Function Extraction', cgmp: '—' },
+  { name: '700L Chromatography Columns', model: '×26 Columns', function: 'Separation & Purification', cgmp: '—' },
+  { name: '2000L Single/Double-Effect Concentrators', model: '×10 Sets', function: 'Extract Concentration', cgmp: '—' },
+  { name: '1000-Type Solvent Recovery Tower', model: '×2 Sets', function: 'Solvent Recovery & Recycling', cgmp: '—' },
+  { name: '5m³ Ethanol Recovery Storage Tanks', model: '×10 Sets', function: 'Ethanol Recovery Storage', cgmp: '—' },
   { name: 'HPLC Analytical System', model: 'UltiMate 3000', function: 'Quality Control Analysis', cgmp: 'Thermo Scientific' },
-  { name: 'Explosion-Proof Automation Control', model: 'Siemens HMI', function: 'Process Monitoring & Control', cgmp: 'Ex-Proof Rated' },
-  { name: 'Automatic Residue Discharge System', model: 'Integrated', function: 'Automatic Slag Removal', cgmp: 'Fully Automated' },
+  { name: 'Automation Control', model: 'Siemens HMI', function: 'Process Monitoring & Control', cgmp: '—' },
+  { name: 'Automatic Residue Discharge System', model: 'Integrated', function: 'Automatic Slag Removal', cgmp: '—' },
 ];
 
 export default function EquipmentPageClient() {
@@ -168,10 +168,10 @@ export default function EquipmentPageClient() {
                 <span className="text-primary">Extraction Facility</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Our industrial-scale CBD extraction and purification facility in Chuxiong, Yunnan operates over 80 major equipment units across extraction, chromatography, concentration, and quality control — delivering seed-to-isolate capability under full GMP compliance.
+                Our Chuxiong, Yunnan facility is equipped with extraction tanks, chromatography columns, concentrators, and analytical systems — supporting CBD and botanical extract processing.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Industrial Scale', 'GMP Standard', 'Full Automation', 'Seed-to-Isolate'].map((tag) => (
+                {['Extraction', 'Chromatography', 'Concentration', 'Automation'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -183,7 +183,7 @@ export default function EquipmentPageClient() {
               <img src="/images/equipment/chromatography-column-700L.webp" alt="Industrial extraction facility" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Facility Scale</p>
-                <p className="text-sm font-bold text-white">Chuxiong, Yunnan · 80+ Equipment Units</p>
+                <p className="text-sm font-bold text-white">Chuxiong, Yunnan</p>
               </div>
             </div>
           </div>
@@ -195,16 +195,16 @@ export default function EquipmentPageClient() {
         <div ref={cgmpRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             <div className="reveal-card lg:col-span-8 bg-surface-container-lowest p-10">
-              <SectionLabel>Manufacturing Standards</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">cGMP Manufacturing Standards</h2>
+              <SectionLabel>Facility Overview</SectionLabel>
+              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">Equipment Configuration</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { label: 'Construction Material', value: 'SUS316L Stainless Steel Throughout' },
-                  { label: 'Cleaning Protocol', value: 'CIP/SIP Integrated Cleaning System' },
-                  { label: 'Safety Controls', value: 'Explosion-Proof Automation (Siemens)' },
-                  { label: 'Environment', value: 'Cleanroom Production Facility' },
-                  { label: 'Batch Records', value: 'Full Batch Traceability System' },
-                  { label: 'Process Control', value: 'Real-Time HMI Monitoring' },
+                  { label: 'Extraction', value: '20 Extraction Tanks' },
+                  { label: 'Chromatography', value: '26 Chromatography Columns' },
+                  { label: 'Concentration', value: '10 Concentrators' },
+                  { label: 'Analytical', value: 'HPLC (Thermo UltiMate 3000)' },
+                  { label: 'Automation', value: 'Siemens HMI Control System' },
+                  { label: 'Recovery', value: 'Solvent Recovery & Storage' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
                     <CheckCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
@@ -219,17 +219,17 @@ export default function EquipmentPageClient() {
 
             <div className="reveal-card lg:col-span-4 bg-primary p-10 flex flex-col justify-between">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Certification</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Location</p>
                 <p className="text-3xl font-extrabold text-white tracking-tighter leading-tight mb-4">
-                  cGMP Compliant<br />Production Facility
+                  Chuxiong, Yunnan<br />Production Facility
                 </p>
                 <p className="text-xs text-white/60 leading-relaxed">
-                  Our Chuxiong facility operates under cGMP standards with SUS316L construction, CIP/SIP cleaning, explosion-proof controls, and full batch traceability across all production stages.
+                  Professional extraction and processing facility supporting CBD raw material production and botanical extract processing.
                 </p>
               </div>
               <Link href="/inquiry" className="mt-8 inline-flex items-center gap-2 px-5 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
                 <Download size={14} />
-                Request Facility Documentation
+                Contact Us
               </Link>
             </div>
           </div>

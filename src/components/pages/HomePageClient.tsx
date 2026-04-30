@@ -81,9 +81,9 @@ export default function HomePageClient() {
             </h1>
 
             <p className="hero-animate text-base md:text-lg text-white/70 leading-relaxed max-w-xl mb-10">
-              Vetrux — a brand under 蔚萃生物 — delivers pharmaceutical-grade CBD isolate via
-              ethanol extraction and chromatographic purification from our Chuxiong, Yunnan facility.
-              OEM/ODM services, technical consulting, and bulk supply for global B2B partners.
+              VETRUX — a brand under 蔚萃生物 — provides CBD raw materials and botanical extract
+              solutions from our Chuxiong, Yunnan base. OEM/ODM services, technical support,
+              and flexible supply arrangements for B2B partners.
             </p>
 
             <div className="hero-animate flex flex-wrap gap-4">
@@ -102,10 +102,10 @@ export default function HomePageClient() {
 
           <div className="hero-animate flex flex-wrap gap-6 mt-16 pt-8 border-t border-white/10">
             {[
-              { value: '20+', label: 'Extraction Equipment Sets' },
+              { value: '20', label: 'Extraction Tanks' },
               { value: '26', label: 'Chromatography Columns' },
-              { value: '99.5%', label: 'CBD Purity' },
-              { value: '5+', label: 'Years Experience' },
+              { value: '10', label: 'Concentrators' },
+              { value: '4', label: 'Product Lines' },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-bold text-white tracking-tighter">{stat.value}</p>
@@ -121,21 +121,21 @@ export default function HomePageClient() {
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Market Context</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Brand</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                The European CBD market is projected to reach <span className="text-on-surface font-semibold">€3.2 billion by 2027</span>, driven by pharmaceutical, nutraceutical, and cosmetic applications. <a href="https://prohibitionpartners.com" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant/60 text-xs underline underline-offset-2">(Prohibition Partners, European CBD Report)</a>
+                VETRUX is the CBD product brand of <span className="text-on-surface font-semibold">蔚萃生物科技（楚雄）有限公司</span>, focused on quality management and development of plant-derived products from Yunnan, China.
               </p>
             </div>
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Extraction Science</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Equipment</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Vetrux employs <span className="text-on-surface font-semibold">ethanol extraction combined with chromatographic purification</span> using 26 industrial chromatography columns (700L each). This multi-stage process — extraction, chromatographic separation, concentration, and crystallization — achieves ≥99.5% CBD purity while maintaining full molecular integrity.
+                Vetrux operates a professional extraction facility equipped with <span className="text-on-surface font-semibold">20 extraction tanks, 26 chromatography columns, and 10 concentrators</span>, supported by HPLC analytical systems and Siemens automation control.
               </p>
             </div>
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Manufacturer Position</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Location</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Operating from our production base in <span className="text-on-surface font-semibold">Chuxiong, Yunnan Province</span>, Vetrux Biotechnology controls the full production chain — from hemp biomass processing through ethanol extraction, chromatographic purification, and final crystallization to batch release and export packaging.
+                Based in <span className="text-on-surface font-semibold">Chuxiong, Yunnan Province</span>, Vetrux Biotechnology operates a cultivation and breeding center alongside professional extraction and processing facilities, supporting standardized and traceable production.
               </p>
             </div>
           </div>
@@ -170,17 +170,17 @@ export default function HomePageClient() {
                   <span className="text-primary">Precision Controlled</span>
                 </h2>
                 <p className="text-sm text-on-surface-variant leading-relaxed mb-10 max-w-md">
-                  Our Chuxiong facility houses 20 sets of 6m³ extraction tanks, 26 chromatography columns (700L),
-                  and 10 sets of concentrators — supported by solvent recovery towers, ethanol storage,
-                  and HPLC analytical systems with full automation control.
+                  Our Chuxiong facility is equipped with 20 extraction tanks, 26 chromatography columns,
+                  and 10 concentrators — supported by solvent recovery towers, ethanol storage,
+                  and HPLC analytical systems with automation control.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 gap-4">
                 {[
-                  { icon: FlaskConical, title: 'Ethanol Extraction & Purification', desc: 'Industrial ethanol extraction followed by 26-column chromatographic purification for ≥99.5% CBD purity.' },
-                  { icon: Award, title: 'OEM/ODM & Technical Consulting', desc: 'Custom manufacturing, formulation support, and technical consulting for CBD and botanical extract products.' },
-                  { icon: Layers, title: 'Multi-Stage Refinement', desc: 'Chromatographic separation, concentration, crystallization, and HPLC-verified batch testing.' },
+                  { icon: FlaskConical, title: 'Extraction & Processing', desc: 'Professional extraction facility with 20 tanks, 26 chromatography columns, and 10 concentrators for CBD and botanical extract processing.' },
+                  { icon: Award, title: 'OEM/ODM & Technical Support', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
+                  { icon: Layers, title: 'Botanical Extracts', desc: 'CBD crystal, anthocyanins, steviol glycosides, and hemp seed globulin for diverse applications.' },
                 ].map((feat) => (
                   <div key={feat.title} className="reveal-card flex gap-4 p-5 bg-surface-container-low hover:bg-surface-container transition-colors duration-200">
                     <div className="flex-shrink-0 w-10 h-10 bg-primary-fixed flex items-center justify-center">
@@ -225,8 +225,8 @@ export default function HomePageClient() {
               <div className="reveal-card bg-primary p-8 flex-1 flex flex-col justify-between">
                 <div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Technical Data</p>
-                  <p className="text-2xl font-extrabold text-white tracking-tighter leading-tight mb-2">Certificate of Analysis Available</p>
-                  <p className="text-xs text-white/70 leading-relaxed">Batch documentation and product information can be reviewed during qualified B2B discussions.</p>
+                  <p className="text-2xl font-extrabold text-white tracking-tighter leading-tight mb-2">Documentation Support</p>
+                  <p className="text-xs text-white/70 leading-relaxed">Supporting documents including COA, SDS, and test reports may be provided according to order requirements.</p>
                 </div>
                 <Link href="/inquiry" className="mt-6 inline-flex items-center gap-2 px-4 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
                   <Download size={14} />
@@ -236,10 +236,10 @@ export default function HomePageClient() {
 
               <div className="reveal-card bg-surface-container-lowest p-8 flex-1">
                 <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">Key Specifications</p>
-                <SpecRow label="CBD Purity (HPLC)" value="≥ 99.5%" />
-                <SpecRow label="THC Content" value="ND (Not Detected)" />
-                <SpecRow label="Appearance" value="White Crystalline" />
-                <SpecRow label="Solvent Residue" value="&lt; 10 PPM" isLast />
+                <SpecRow label="Product" value="CBD Crystal" />
+                <SpecRow label="CAS Number" value="13956-29-1" />
+                <SpecRow label="HS Code" value="2907299020" />
+                <SpecRow label="Packaging" value="5 kg PE / Foil Bags" isLast />
                 <Link href="/products/cbd-isolate" className="mt-6 inline-flex items-center gap-1 text-xs font-semibold tracking-wider uppercase text-primary hover:text-primary-container transition-colors duration-200">
                   Full Specifications <ArrowRight size={14} />
                 </Link>
@@ -254,10 +254,10 @@ export default function HomePageClient() {
         <div ref={trustRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
             {[
-              { label: 'Quality Focus', sub: 'HPLC Testing · ≥99.5% Purity', href: '/quality-assurance' },
-              { label: 'Wholesale Supply', sub: 'Bulk CBD & Botanical Extracts', href: '/wholesale-cbd-isolate' },
-              { label: 'Manufacturer Profile', sub: 'Chuxiong, Yunnan Production Base', href: '/cbd-isolate-manufacturer' },
-              { label: 'Global Inquiry', sub: 'inquiry@vetrux.tech', href: '/inquiry' },
+              { label: 'Quality Management', sub: 'HPLC Testing Capability', href: '/quality-assurance' },
+              { label: 'B2B Supply', sub: 'CBD & Botanical Extracts', href: '/wholesale-cbd-isolate' },
+              { label: 'Company Profile', sub: 'Chuxiong, Yunnan', href: '/cbd-isolate-manufacturer' },
+              { label: 'Inquiry', sub: 'inquiry@vetrux.tech', href: '/inquiry' },
             ].map((cert) => (
               <Link key={cert.label} href={cert.href} className="reveal-card py-6 border-t-2 border-primary-fixed hover:border-primary transition-colors duration-200 block">
                 <p className="text-lg font-extrabold text-on-background tracking-tighter">{cert.label}</p>

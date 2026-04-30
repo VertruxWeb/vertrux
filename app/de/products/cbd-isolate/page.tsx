@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import DeProductPageClient from '@/components/pages/DeProductPageClient';
 
 export const metadata: Metadata = {
-  title: 'CBD-Isolat ≥99,5% Reinheit | Pharmazeutisches Cannabidiol | Vetrux CBD',
-  description: 'Pharmazeutisches CBD-Isolat mit ≥99,5% Reinheit (HPLC), THC nicht nachweisbar. CAS 13956-29-1, HS 2907299020. Hergestellt in Yunnan unter cGMP-Standards.',
-  keywords: 'CBD Isolat 99,5% Reinheit, pharmazeutisches CBD Isolat, THC-freies CBD Isolat, CBD Isolat Großhandel, CBD Isolat Europa',
+  title: 'CBD-Kristall | Produktübersicht | Vetrux CBD',
+  description: 'CBD-Kristall (CAS 13956-29-1, HS 2907299020). Verpackung: 5 kg PE-Beutel, 5 kg Aluminiumfolienbeutel, Exportkartons. Dokumentation nach Bestellanforderungen.',
+  keywords: 'CBD Kristall, CBD Rohstoff, CAS 13956-29-1, CBD Verpackung, CBD Lieferant',
   alternates: {
     canonical: 'https://www.vetrux.tech/de/products/cbd-isolate',
     languages: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'CBD-Isolat ≥99,5% Reinheit',
-    description: 'Pharmazeutisches CBD-Isolat mit ≥99,5% Reinheit (HPLC), THC nicht nachweisbar. CAS 13956-29-1, HS 2907299020. Hergestellt in Yunnan unter cGMP-Standards.',
+    title: 'CBD-Kristall | Vetrux CBD',
+    description: 'CBD-Kristall (CAS 13956-29-1, HS 2907299020). Dokumentation nach Bestellanforderungen.',
     url: 'https://www.vetrux.tech/de/products/cbd-isolate',
     locale: 'de_DE',
     type: 'website',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CBD-Isolat ≥99,5% Reinheit',
-    description: 'Pharmazeutisches CBD-Isolat mit ≥99,5% Reinheit (HPLC), THC nicht nachweisbar. CAS 13956-29-1, HS 2907299020. Hergestellt in Yunnan unter cGMP-Standards.',
+    title: 'CBD-Kristall | Vetrux CBD',
+    description: 'CBD-Kristall (CAS 13956-29-1, HS 2907299020). Dokumentation nach Bestellanforderungen.',
   },
 };
 

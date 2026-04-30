@@ -50,22 +50,7 @@ export default function FrAboutPageClient() {
           </div>
         </section>
 
-        {/* Certifications */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-extrabold text-on-background tracking-tighter mb-4">Certifications &amp; Normes</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {[
-              'ISO 9001 Système de management de la qualité',
-              'BPF (Bonnes Pratiques de Fabrication)',
-              'HACCP Gestion de la sécurité alimentaire',
-            ].map((cert) => (
-              <li key={cert} className="flex items-start gap-2 text-sm text-on-surface-variant">
-                <span className="text-primary mt-0.5">✓</span>
-                {cert}
-              </li>
-            ))}
-          </ul>
-        </section>
+
 
         {/* Company Facts */}
         <section className="mb-16">
@@ -116,10 +101,7 @@ export default function FrAboutPageClient() {
                   </a>
                 </dd>
               </div>
-              <div>
-                <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Téléphone</dt>
-                <dd className="text-on-background">+86 13518730530</dd>
-              </div>
+
             </dl>
           </div>
         </section>

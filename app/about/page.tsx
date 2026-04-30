@@ -67,22 +67,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Certifications */}
-          <section className="mb-16">
-            <h2 className="text-2xl font-extrabold text-on-background tracking-tighter mb-4">Certifications &amp; Standards</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {[
-                'ISO 9001 Quality Management System',
-                'GMP (Good Manufacturing Practice)',
-                'HACCP Food Safety Management',
-              ].map((cert) => (
-                <li key={cert} className="flex items-start gap-2 text-sm text-on-surface-variant">
-                  <span className="text-primary mt-0.5">✓</span>
-                  {cert}
-                </li>
-              ))}
-            </ul>
-          </section>
+
 
           {/* Company Facts */}
           <section className="mb-16">
@@ -133,10 +118,7 @@ export default function AboutPage() {
                     </a>
                   </dd>
                 </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Phone</dt>
-                  <dd className="text-on-background">+86 13518730530</dd>
-                </div>
+
               </dl>
             </div>
           </section>

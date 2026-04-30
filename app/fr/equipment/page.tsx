@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import FrEquipmentPageClient from '@/components/pages/FrEquipmentPageClient';
 
 export const metadata: Metadata = {
-  title: 'Installation d'Extraction Industrielle | Production cGMP | Vetrux CBD',
-  description: 'Installation industrielle d'extraction et de purification de CBD a Chuxiong, Yunnan. 20x6m3 cuves, 26x700L colonnes de chromatographie, automatisation Siemens.',
-  keywords: 'installation extraction CBD, extraction industrielle, chromatographie purification CBD, equipement fabrication CBD',
+  title: 'Configuration des equipements | Installation de traitement | Vetrux CBD',
+  description: 'Configuration des equipements Vetrux CBD: 20 cuves, 26 colonnes de chromatographie, 10 concentrateurs, systeme HPLC et automatisation Siemens. Chuxiong, Yunnan.',
+  keywords: 'equipement extraction CBD, colonnes chromatographie, cuves extraction, systeme HPLC, automatisation Siemens',
   alternates: {
     canonical: 'https://www.vetrux.tech/fr/equipment',
     languages: {
@@ -15,17 +15,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Installation d'Extraction Industrielle',
-    description: 'Installation industrielle d'extraction et de purification de CBD a Chuxiong, Yunnan. 20x6m3 cuves, 26x700L colonnes de chromatographie, automatisation Siemens.',
+    title: 'Configuration des equipements | Vetrux CBD',
+    description: 'Installation de traitement equipee de cuves, colonnes de chromatographie, concentrateurs et systemes analytiques.',
     url: 'https://www.vetrux.tech/fr/equipment',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/images/equipment/chromatography-column-700L.webp' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Installation d'Extraction Industrielle',
-    description: 'Installation industrielle d'extraction et de purification de CBD a Chuxiong, Yunnan. 20x6m3 cuves, 26x700L colonnes de chromatographie, automatisation Siemens.',
+    title: 'Configuration des equipements | Vetrux CBD',
+    description: 'Installation de traitement equipee de cuves, colonnes de chromatographie, concentrateurs et systemes analytiques.',
   },
 };
 

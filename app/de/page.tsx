@@ -5,11 +5,11 @@ import DeHomePageClient from '@/components/pages/DeHomePageClient';
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = getBaseUrl();
   return {
-    title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität ≥99,5% — Vetrux CBD',
+    title: 'CBD-Rohstoffe & Botanische Extrakte — Vetrux CBD',
     description:
-      'Vetrux CBD ist die Handelsmarke von 蔚萃生物科技（楚雄）有限公司 für vertikal integrierte CBD-Isolat-Herstellung in China. Pharmazeutische Qualität ≥99,5% Reinheit, THC-frei. Großhandelspreise mit DDP-Lieferung nach Europa.',
+      'VETRUX ist die CBD-Produktmarke von 蔚萃生物科技（楚雄）有限公司. CBD-Rohstoffverkauf, OEM/ODM-Dienstleistungen, technische Unterstützung und botanische Extraktlösungen aus Yunnan, China.',
     keywords:
-      'CBD Isolat Großhandel, CBD Isolat kaufen, CBD Isolat Hersteller, pharmazeutisches CBD Isolat, THC-freies CBD Isolat, CBD Isolat Europa, CBD Isolat Lieferant',
+      'CBD Rohstoffe, CBD Kristall, OEM ODM CBD, botanische Extrakte, CBD Lieferant, Vetrux CBD, Yunnan',
     alternates: {
       canonical: `${baseUrl}/de`,
       languages: {
@@ -20,16 +20,16 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität — Vetrux CBD',
-      description: 'Pharmazeutisches CBD-Isolat ≥99,5% Reinheit, THC-frei. DDP-Lieferung nach Europa.',
+      title: 'CBD-Rohstoffe & Botanische Extrakte — Vetrux CBD',
+      description: 'VETRUX — CBD-Rohstoffe, OEM/ODM, technische Unterstützung und botanische Extrakte aus Yunnan, China.',
       url: `${baseUrl}/de`,
       locale: 'de_DE',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'CBD-Isolat Großhandel | Pharmazeutische Qualität — Vetrux CBD',
-      description: 'Pharmazeutisches CBD-Isolat ≥99,5% Reinheit, THC-frei. DDP-Lieferung nach Europa.',
+      title: 'CBD-Rohstoffe & Botanische Extrakte — Vetrux CBD',
+      description: 'VETRUX — CBD-Rohstoffe, OEM/ODM, technische Unterstützung und botanische Extrakte aus Yunnan, China.',
     },
   };
 }

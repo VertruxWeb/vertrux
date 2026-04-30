@@ -5,11 +5,11 @@ import FrHomePageClient from '@/components/pages/FrHomePageClient';
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = getBaseUrl();
   return {
-    title: 'Isolat de CBD en Gros | Qualité Pharmaceutique ≥99,5% — Vetrux CBD',
+    title: 'Matières Premières CBD & Extraits Botaniques — Vetrux CBD',
     description:
-      'Vetrux CBD est la marque commerciale de 蔚萃生物科技（楚雄）有限公司, fabricant d’isolat de CBD verticalement intégré en Chine. Qualité pharmaceutique ≥99,5% de pureté, sans THC. Prix de gros avec livraison DDP en Europe.',
+      'VETRUX est la marque CBD de 蔚萃生物科技（楚雄）有限公司. Vente de matières premières CBD, services OEM/ODM, support technique et extraits botaniques depuis le Yunnan, Chine.',
     keywords:
-      'isolat CBD gros, acheter isolat CBD, fabricant isolat CBD, isolat CBD pharmaceutique, isolat CBD sans THC, isolat CBD Europe, fournisseur isolat CBD',
+      'matières premières CBD, cristal CBD, OEM ODM CBD, extraits botaniques, fournisseur CBD, Vetrux CBD, Yunnan',
     alternates: {
       canonical: `${baseUrl}/fr`,
       languages: {
@@ -20,16 +20,16 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: 'Isolat de CBD en Gros | Qualité Pharmaceutique — Vetrux CBD',
-      description: 'Isolat de CBD pharmaceutique ≥99,5% de pureté, sans THC. Livraison DDP en Europe.',
+      title: 'Matières Premières CBD & Extraits Botaniques — Vetrux CBD',
+      description: 'VETRUX — matières premières CBD, OEM/ODM, support technique et extraits botaniques depuis le Yunnan, Chine.',
       url: `${baseUrl}/fr`,
       locale: 'fr_FR',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Isolat de CBD en Gros | Qualité Pharmaceutique — Vetrux CBD',
-      description: 'Isolat de CBD pharmaceutique ≥99,5% de pureté, sans THC. Livraison DDP en Europe.',
+      title: 'Matières Premières CBD & Extraits Botaniques — Vetrux CBD',
+      description: 'VETRUX — matières premières CBD, OEM/ODM, support technique et extraits botaniques depuis le Yunnan, Chine.',
     },
   };
 }

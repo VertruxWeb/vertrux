@@ -16,8 +16,8 @@ gsap.registerPlugin(ScrollTrigger);
 const technicalMetrics = [
   { label: 'Numéro CAS', value: '13956-29-1', status: 'Cannabidiol' },
   { label: 'Code SH', value: '2907299020', status: 'Classification export' },
-  { label: 'Pureté CBD (HPLC)', value: '≥ 99,5%', status: 'Vérifié' },
-  { label: 'Teneur en THC', value: 'ND', status: 'Non détecté' },
+  { label: 'Produit', value: 'Cristal de CBD', status: 'Isolat' },
+  { label: 'Analyse', value: 'HPLC', status: 'Par lot' },
   { label: 'Apparence', value: 'Cristallin blanc', status: 'Poudre' },
   { label: 'Formule moléculaire', value: 'C₂₁H₃₀O₂', status: 'PM 314,46 g/mol' },
   { label: 'Métaux lourds', value: 'Conforme', status: 'USP <232>' },
@@ -102,16 +102,16 @@ export default function FrProductPageClient() {
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
                 Isolat de CBD
                 <br />
-                <span className="text-primary">Pureté 99,5%</span>
+                <span className="text-primary">Cristal de CBD</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Isolat de CBD de qualité pharmaceutique (CAS 13956-29-1, SH 2907299020), poudre cristalline blanche avec THC non détecté. Produit à partir de chanvre industriel du Yunnan par extraction au CO₂ supercritique. Nous fournissons également des anthocyanes, des glycosides de stéviol et de la globuline de graines de chanvre pour la R&D pharmaceutique, la nutrition, l&apos;alimentation et les boissons, et les soins personnels.
+                Isolat de CBD (CAS 13956-29-1, SH 2907299020), poudre cristalline blanche. Produit à partir de chanvre industriel du Yunnan. Nous fournissons également des anthocyanes, des glycosides de stéviol et de la globuline de graines de chanvre pour la R&D, la nutrition, l&apos;alimentation et les boissons, et les soins personnels.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  'Isolat CBD ≥99,5%',
-                  'THC : Non détecté',
+                  'Cristal de CBD',
+                  'CAS 13956-29-1',
                   'Anthocyanes',
                   'Glycosides de stéviol',
                   'Globuline de chanvre',
@@ -134,7 +134,7 @@ export default function FrProductPageClient() {
             </div>
 
             <div className="reveal-card relative">
-              <Image src="/images/products/cbd-crystal-closeup.jpg" alt="Isolat de CBD pureté 99,5% poudre cristalline blanche" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
+              <Image src="/images/products/cbd-crystal-closeup.jpg" alt="Isolat de CBD poudre cristalline blanche" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">CAS 13956-29-1</p>
                 <p className="text-sm font-bold text-white">Code SH : 2907299020</p>
@@ -193,7 +193,7 @@ export default function FrProductPageClient() {
                 <SpecRow label="Numéro CAS" value="13956-29-1" />
                 <SpecRow label="Formule moléculaire" value="C₂₁H₃₀O₂" />
                 <SpecRow label="Masse moléculaire" value="314,46 g/mol" />
-                <SpecRow label="Pureté (HPLC)" value="≥ 99,5%" />
+                <SpecRow label="Analyse" value="HPLC (par lot)" />
                 <SpecRow label="Apparence" value="Poudre cristalline blanche à blanc cassé" />
                 <SpecRow label="Point de fusion" value="67°C – 69°C" />
                 <SpecRow label="Solubilité" value="Éthanol, hexane, DMSO (insoluble dans l'eau)" />
@@ -284,8 +284,8 @@ export default function FrProductPageClient() {
               {[
                 { name: 'Anthocyanes', use: 'Formulations fonctionnelles, alimentation & boissons, soins personnels' },
                 { name: 'Glycosides de stéviol', use: 'Nutrition & santé, alimentation & boissons, édulcorants fonctionnels' },
-                { name: 'Globuline de chanvre', use: 'R&D pharmaceutique, nutrition & santé, formulations fonctionnelles' },
-                { name: 'Isolat de CBD', use: 'R&D pharmaceutique, soins personnels, formulations fonctionnelles' },
+                { name: 'Globuline de chanvre', use: 'R&D, nutrition & santé, formulations fonctionnelles' },
+                { name: 'Isolat de CBD', use: 'R&D, soins personnels, formulations fonctionnelles' },
               ].map((product) => (
                 <div key={product.name}>
                   <p className="text-sm font-bold text-on-surface mb-1">{product.name}</p>

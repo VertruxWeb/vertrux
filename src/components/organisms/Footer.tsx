@@ -118,6 +118,7 @@ export default function Footer() {
                 </a>
               </p>
               <p>Phone: +86 13518730530</p>
+
             </div>
             <p className="text-xs text-inverse-on-surface/40">
               © {new Date().getFullYear()} Vetrux CBD. All rights reserved.

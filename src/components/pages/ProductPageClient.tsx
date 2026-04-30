@@ -16,26 +16,22 @@ gsap.registerPlugin(ScrollTrigger);
 const technicalMetrics = [
   { label: 'CAS Number', value: '13956-29-1', status: 'Cannabidiol' },
   { label: 'HS Code', value: '2907299020', status: 'Export Classification' },
-  { label: 'CBD Purity (HPLC)', value: '≥ 99.5%', status: 'Verified' },
-  { label: 'THC Content', value: 'ND', status: 'Non-Detect' },
-  { label: 'Appearance', value: 'White Crystalline', status: 'Powder' },
-  { label: 'Molecular Formula', value: 'C₂₁H₃₀O₂', status: 'MW 314.46 g/mol' },
-  { label: 'Heavy Metals', value: 'Compliant', status: 'USP <232>' },
-  { label: 'Microbial', value: 'Compliant', status: 'USP <61> / <62>' },
+  { label: 'Inner Packaging', value: '5 kg/bag', status: 'PE or Aluminum Foil' },
+  { label: 'Outer Packaging', value: '465×285×295mm', status: 'Export Carton' },
 ];
 
 const qualityCards = [
   {
     icon: Microscope,
-    title: 'Molecular Integrity',
-    desc: 'Full spectrum HPLC analysis on every batch. Cannabinoid profile verified against reference standards. COA, SDS, and test reports provided per batch.',
+    title: 'Quality Management',
+    desc: 'In-house HPLC analytical capability (Thermo UltiMate 3000). Documentation support available according to order requirements.',
     bg: 'bg-surface-container-low',
     image: '/images/products/cbd-crystal-lab.jpg',
   },
   {
     icon: TestTube,
-    title: 'Batch Documentation',
-    desc: 'Every shipment includes COA, SDS, test reports, commercial invoices, and packing lists. Export of controlled products may require international verification.',
+    title: 'Documentation Support',
+    desc: 'Supporting documents including COA, SDS, test reports, commercial invoices, and packing lists may be arranged according to actual batch and order terms.',
     bg: 'bg-primary',
     image: null,
   },
@@ -105,16 +101,16 @@ export default function ProductPageClient() {
                 <span className="text-primary">99.5% Purity</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Pharmaceutical-grade CBD isolate (CAS 13956-29-1, HS 2907299020), white crystalline powder with THC non-detect. Produced from Yunnan industrial hemp via supercritical CO₂ extraction. We also supply anthocyanins, steviol glycosides, and hemp seed globulin for pharma R&D, nutrition, food & beverage, and personal care applications.
+                CBD crystal (CAS 13956-29-1, HS 2907299020). We also supply anthocyanins, steviol glycosides, and hemp seed globulin for pharmaceutical R&D, nutrition, food & beverage, and personal care applications.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  'CBD Isolate ≥99.5%',
-                  'THC: Non-Detect',
+                  'CBD Crystal',
                   'Anthocyanins',
                   'Steviol Glycosides',
                   'Hemp Seed Globulin',
+                  'CAS 13956-29-1',
                 ].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
@@ -150,14 +146,10 @@ export default function ProductPageClient() {
           <div className="reveal-card">
             <SectionLabel>Technical Analysis</SectionLabel>
             <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-              Certificate of Analysis — Batch YN-CBD-0042
+              Product Information
             </h2>
-            <p className="text-sm text-on-surface-variant mb-4 max-w-xl">
-              This section presents representative technical information. Product documentation can
-              be discussed directly with our B2B team based on current availability.
-            </p>
-            <p className="text-xs text-on-surface-variant/70 mb-12 max-w-xl">
-              Testing methodology follows <span className="font-semibold text-on-surface-variant">USP &lt;621&gt;</span> chromatographic procedures and <span className="font-semibold text-on-surface-variant">ICH Q2(R1)</span> analytical method validation guidelines. Heavy metals quantified per <span className="font-semibold text-on-surface-variant">USP &lt;232&gt;/&lt;233&gt;</span>; residual solvents assessed against <span className="font-semibold text-on-surface-variant">ICH Q3C</span> Class I/II/III limits.
+            <p className="text-sm text-on-surface-variant mb-12 max-w-xl">
+              Supporting documentation including COA, SDS, test reports, and other shipment documents may be provided according to order requirements. Specific documentation availability depends on actual batch, order terms, and verification results.
             </p>
           </div>
 
@@ -174,7 +166,7 @@ export default function ProductPageClient() {
           <div className="reveal-card">
             <Link href="/inquiry" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-xs font-bold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300">
               <Download size={14} />
-              Request Product Specification
+              Request Product Information
             </Link>
           </div>
         </div>
@@ -188,17 +180,9 @@ export default function ProductPageClient() {
               <SectionLabel>Product Specifications</SectionLabel>
               <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">Full Product Spec Sheet</h2>
               <div>
-                <SpecRow label="Product Name" value="CBD Isolate" />
-                <SpecRow label="Chemical Name" value="Cannabidiol (CBD)" />
+                <SpecRow label="Product Name" value="CBD Crystal" />
                 <SpecRow label="CAS Number" value="13956-29-1" />
-                <SpecRow label="Molecular Formula" value="C₂₁H₃₀O₂" />
-                <SpecRow label="Molecular Weight" value="314.46 g/mol" />
-                <SpecRow label="Purity (HPLC)" value="≥ 99.5%" />
-                <SpecRow label="Appearance" value="White to Off-White Crystalline Powder" />
-                <SpecRow label="Melting Point" value="67°C – 69°C" />
-                <SpecRow label="Solubility" value="Ethanol, Hexane, DMSO (insoluble in water)" />
-                <SpecRow label="Storage" value="Cool, Dark, Dry. &lt;25°C" />
-                <SpecRow label="Shelf Life" value="24 Months from Manufacture" />
+                <SpecRow label="HS Code" value="2907299020" />
                 <SpecRow label="Packaging (Inner)" value="PE bags 5kg/bag (27×60cm, food grade) or Aluminum foil bags 5kg/bag (35×50cm, food grade)" />
                 <SpecRow label="Packaging (Outer)" value="Export cartons 465×285×295mm, 2 bags per carton" />
                 <SpecRow label="Palletization" value="Plastic pallets with shrink wrap" isLast />
@@ -211,20 +195,17 @@ export default function ProductPageClient() {
               <div className="mb-6 p-4 bg-surface-container border-l-2 border-primary">
                 <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-1">Export & Import Notice</p>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  Export of controlled botanical products may require{' '}
-                  <span className="font-semibold text-on-surface">international verification</span>. Destination country import compliance — including permits, licenses, and regulatory approvals — is the{' '}
-                  <span className="font-semibold text-on-surface">buyer/importer&apos;s responsibility</span>. Vetrux provides full documentation packages to support your import process.
+                  For products requiring export permits or international verification, the export process may involve compliance confirmation from destination country authorities. Destination country import compliance — including permits, licenses, and regulatory approvals — is the{' '}
+                  <span className="font-semibold text-on-surface">buyer/importer&apos;s responsibility</span>. Documentation is arranged according to actual order requirements.
                 </p>
               </div>
               <div className="space-y-4">
                 {[
-                  { standard: 'Certificate of Analysis (COA)', detail: 'Provided per batch with full cannabinoid profile' },
-                  { standard: 'Safety Data Sheet (SDS)', detail: 'GHS-compliant material safety documentation' },
-                  { standard: 'Third-Party Test Reports', detail: 'Independent lab verification per production run' },
-                  { standard: 'Commercial Invoice', detail: 'Detailed invoice provided per shipment' },
-                  { standard: 'Packing List', detail: 'Complete packing details per batch shipment' },
-                  { standard: 'Heavy Metals Testing', detail: 'ICP-MS — USP <232> / <233>' },
-                  { standard: 'Microbial & Pesticide Screening', detail: 'USP <61> aerobic count, 400+ pesticide panel' },
+                  { standard: 'Certificate of Analysis (COA)', detail: 'May be provided according to order requirements' },
+                  { standard: 'Safety Data Sheet (SDS)', detail: 'May be provided according to order requirements' },
+                  { standard: 'Test Reports', detail: 'May be provided according to order requirements' },
+                  { standard: 'Commercial Invoice', detail: 'Provided per shipment' },
+                  { standard: 'Packing List', detail: 'Provided per shipment' },
                 ].map((item) => (
                   <div key={item.standard} className="flex items-start gap-3 py-3 border-b border-outline-variant/20 last:border-0">
                     <CheckCircle size={16} className="text-primary flex-shrink-0 mt-0.5" />
@@ -246,7 +227,7 @@ export default function ProductPageClient() {
           <div className="reveal-card flex flex-wrap items-center gap-4 mb-12">
             <SectionLabel className="mb-0">Quality & Product Lines</SectionLabel>
             <div className="flex gap-3">
-              {['COA Per Batch', 'SDS Provided', 'Third-Party Tested'].map((cert) => (
+              {['CBD Crystal', 'Botanical Extracts', 'OEM/ODM'].map((cert) => (
                 <span key={cert} className="px-3 py-1 bg-primary-fixed text-primary text-xs font-bold tracking-wider uppercase rounded-full">
                   {cert}
                 </span>

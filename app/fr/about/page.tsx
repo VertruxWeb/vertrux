@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import FrAboutPageClient from '@/components/pages/FrAboutPageClient';
 
 export const metadata: Metadata = {
-  title: 'A propos | Fabricant d'isolat de CBD Yunnan | Vetrux CBD',
-  description: 'VETRUX est la marque internationale de Vetrux Biotechnology (Chuxiong) Co., Ltd. Fabricant d'isolat de CBD verticalement integre au Yunnan, Chine.',
-  keywords: 'Vetrux CBD, fabricant CBD Chine, fabricant isolat CBD Yunnan, extraits botaniques fabricant',
+  title: 'A propos de Vetrux CBD | Profil entreprise',
+  description: 'VETRUX est la marque CBD de Vetrux Biotechnology (Chuxiong) Co., Ltd. Matieres premieres CBD, OEM/ODM, support technique et extraits botaniques depuis le Yunnan, Chine.',
+  keywords: 'Vetrux CBD, fabricant CBD Chine, matieres premieres CBD Yunnan, extraits botaniques',
   alternates: {
     canonical: 'https://www.vetrux.tech/fr/about',
     languages: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'A propos',
-    description: 'VETRUX est la marque internationale de Vetrux Biotechnology (Chuxiong) Co., Ltd. Fabricant d'isolat de CBD verticalement integre au Yunnan, Chine.',
+    title: 'A propos de Vetrux CBD',
+    description: 'VETRUX — matieres premieres CBD, OEM/ODM, support technique et extraits botaniques depuis le Yunnan, Chine.',
     url: 'https://www.vetrux.tech/fr/about',
     locale: 'fr_FR',
     type: 'website',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'A propos',
-    description: 'VETRUX est la marque internationale de Vetrux Biotechnology (Chuxiong) Co., Ltd. Fabricant d'isolat de CBD verticalement integre au Yunnan, Chine.',
+    title: 'A propos de Vetrux CBD',
+    description: 'VETRUX — matieres premieres CBD, OEM/ODM, support technique et extraits botaniques depuis le Yunnan, Chine.',
   },
 };
 

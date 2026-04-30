@@ -12,26 +12,25 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const volumeTiers = [
-  { range: '1–5 kg', label: 'Sample / Trial', discount: 'Contact for pricing', note: 'COA + spec sheet included' },
-  { range: '5–25 kg', label: 'Small Commercial', discount: 'Volume discount', note: 'Dedicated account manager' },
-  { range: '25–100 kg', label: 'Mid-Volume', discount: 'Contract pricing', note: 'Custom packaging available (PE bags, aluminum foil bags)' },
-  { range: '100–500 kg', label: 'High-Volume', discount: 'Quarterly contract pricing', note: 'Priority production scheduling' },
-  { range: '500 kg+', label: 'Ton-Scale', discount: 'Annual agreement pricing', note: 'Dedicated supply chain & annual contracts' },
+  { range: 'Standard Supply', label: 'Regular Orders', discount: 'Contact for details', note: 'CBD raw materials and botanical extracts' },
+  { range: 'Long-Term Supply', label: 'Ongoing Cooperation', discount: 'Contact for details', note: 'Stable supply arrangements for recurring needs' },
+  { range: 'Project-Based', label: 'Custom Cooperation', discount: 'Contact for details', note: 'Tailored to specific project requirements' },
+  { range: 'OEM/ODM', label: 'Full Service', discount: 'Contact for details', note: 'Formulation, production, packaging, and delivery' },
 ];
 
 const shippingTerms = [
-  { term: 'FOB Kunming/Chuxiong', desc: 'Buyer arranges freight from origin. Lowest unit cost, maximum logistics control. Standard export packaging: PE bags 5 kg, aluminum foil bags 5 kg, export cartons.', icon: Package },
-  { term: 'CIF Destination Port', desc: 'Vetrux covers freight + insurance to your designated port. Buyer handles customs clearance and destination-country compliance.', icon: Globe },
-  { term: 'DDP Destination', desc: 'Delivered duty paid — Vetrux handles logistics, customs, and duties to your door. Buyer/importer responsible for destination-country regulatory compliance.', icon: Shield },
+  { term: 'Packaging', desc: 'PE bags 5 kg/bag (27×60cm, food grade), aluminum foil bags 5 kg/bag (35×50cm, food grade), export cartons (465×285×295mm, 2 bags/carton), plastic pallets with shrink wrap.', icon: Package },
+  { term: 'Documentation', desc: 'Supporting documents including COA, SDS, test reports, commercial invoices, and packing lists may be provided according to order requirements.', icon: Globe },
+  { term: 'Compliance', desc: 'Destination country import compliance — including permits, licenses, and regulatory approvals — is the buyer/importer responsibility. Labels and declarations match actual batch and destination requirements.', icon: Shield },
 ];
 
 const whyWholesale = [
-  { title: '≥99.5% Purity', desc: 'Pharmaceutical-grade CBD isolate (CAS 13956-29-1) verified by in-house HPLC testing on every batch.' },
-  { title: 'THC Non-Detect', desc: 'Confirmed by GC-MS analysis. Batch-specific COA provided with every shipment.' },
-  { title: 'Industrial-Scale Production', desc: '20 extraction tanks (6 m³ each), 26 chromatography columns (700 L), and 10 concentrators — built for consistent, high-volume output.' },
-  { title: 'OEM/ODM Services', desc: 'Custom formulation, private-label packaging, and contract manufacturing for CBD and botanical extract products.' },
-  { title: 'Flexible Logistics', desc: 'FOB Kunming/Chuxiong, CIF, and DDP shipping terms. Standard packaging: 5 kg PE bags, 5 kg aluminum foil bags, export cartons.' },
-  { title: 'Beyond CBD', desc: 'Also supplying wholesale anthocyanins, steviol glycosides, hemp seed globulin, and other botanical extracts from our Yunnan facility.' },
+  { title: 'CBD Raw Materials', desc: 'CBD crystal (CAS 13956-29-1, HS 2907299020) from our Chuxiong, Yunnan facility.' },
+  { title: 'Equipment Configuration', desc: '20 extraction tanks, 26 chromatography columns, 10 concentrators, HPLC analytical system, and Siemens automation.' },
+  { title: 'OEM/ODM Services', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
+  { title: 'Technical Support', desc: 'Cultivation management, extraction process optimization, cost control, and cannabinoid extraction consulting.' },
+  { title: 'Standardized Packaging', desc: '5 kg PE bags (27×60cm), 5 kg aluminum foil bags (35×50cm), export cartons (465×285×295mm), plastic pallets.' },
+  { title: 'Botanical Extracts', desc: 'Anthocyanins, steviol glycosides, hemp seed globulin for pharmaceutical R&D, nutrition, food & beverage, and personal care.' },
 ];
 
 export default function WholesaleCbdIsolateClient() {
@@ -87,13 +86,13 @@ export default function WholesaleCbdIsolateClient() {
                 <span className="text-primary">CBD Isolate</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-6 max-w-md">
-                Bulk pharmaceutical-grade CBD isolate and botanical raw materials from Vetrux Biotechnology (Chuxiong), Yunnan. Volume-tiered supply from 1 kg samples to ton-scale annual agreements, with OEM/ODM services and DDP delivery worldwide.
+                CBD raw materials and botanical extracts from Vetrux Biotechnology (Chuxiong), Yunnan. B2B supply cooperation including standard supply, long-term supply, and project-based arrangements, with OEM/ODM services.
               </p>
               <p className="text-xs text-on-surface-variant/80 leading-relaxed mb-8 max-w-md">
-                Global demand for high-purity CBD isolate continues to grow across pharmaceutical, nutraceutical, and cosmetic applications. Vetrux also supplies wholesale <span className="font-semibold text-on-surface-variant">anthocyanins, steviol glycosides, hemp seed globulin</span>, and other botanical extracts. All cross-border shipments structured under <span className="font-semibold text-on-surface-variant">Incoterms 2020</span> with full export documentation. Buyer/importer is responsible for destination-country regulatory compliance.
+                Vetrux also supplies <span className="font-semibold text-on-surface-variant">anthocyanins, steviol glycosides, hemp seed globulin</span>, and other botanical extracts for pharmaceutical R&D, nutrition, food & beverage, and personal care applications. Destination country import compliance is the buyer/importer&apos;s responsibility.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
-                {['≥99.5% Purity', 'THC Non-Detect', 'FOB / CIF / DDP', 'ISO 9001 + GMP'].map((tag) => (
+                {['CBD Crystal', 'Botanical Extracts', 'OEM/ODM', 'Technical Support'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -119,13 +118,13 @@ export default function WholesaleCbdIsolateClient() {
       <section className="py-24 bg-surface">
         <div ref={tiersRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-12">
-            <SectionLabel>Volume Pricing</SectionLabel>
+            <SectionLabel>Cooperation Models</SectionLabel>
             <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-              Tiered Wholesale Pricing Structure
+              B2B Supply Cooperation
             </h2>
             <p className="text-sm text-on-surface-variant max-w-xl">
-              Pricing scales with commitment. All tiers include batch-specific COA documentation,
-              vacuum-sealed packaging, and dedicated account support.
+              Vetrux supports brand clients, channel partners, trading companies, and partners
+              with stable procurement needs through flexible cooperation arrangements.
             </p>
           </div>
 
@@ -152,9 +151,9 @@ export default function WholesaleCbdIsolateClient() {
 
           <div className="reveal-card mt-8">
             <p className="text-xs text-on-surface-variant">
-              Pricing reviewed quarterly against market benchmarks. Annual contracts lock in preferential rates.{' '}
-              <Link href="/blog/cbd-isolate-wholesale-pricing-cost-factors" className="text-primary underline">
-                Read our wholesale pricing analysis →
+              Contact us to discuss cooperation arrangements suited to your requirements.{' '}
+              <Link href="/inquiry" className="text-primary underline">
+                Submit an inquiry →
               </Link>
             </p>
           </div>
@@ -165,13 +164,12 @@ export default function WholesaleCbdIsolateClient() {
       <section className="py-24 bg-surface-container-low">
         <div ref={shippingRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-12">
-            <SectionLabel>Global Logistics</SectionLabel>
+            <SectionLabel>Packaging & Compliance</SectionLabel>
             <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-              Flexible Shipping Terms
+              Packaging, Documentation & Compliance
             </h2>
             <p className="text-sm text-on-surface-variant max-w-xl">
-              Choose the Incoterm that fits your logistics infrastructure. From turnkey DDP delivery
-              to cost-optimized FOB arrangements.
+              Standardized packaging and documentation support arranged according to order requirements.
             </p>
           </div>
 
@@ -189,9 +187,9 @@ export default function WholesaleCbdIsolateClient() {
 
           <div className="reveal-card mt-8">
             <p className="text-xs text-on-surface-variant">
-              Standard lead time: 10–14 business days from order confirmation. Air freight available for urgent orders.{' '}
-              <Link href="/blog/thc-free-cbd-isolate-sourcing-guide-europe" className="text-primary underline">
-                EU sourcing guide →
+              Specific logistics and documentation arrangements depend on actual order terms.{' '}
+              <Link href="/inquiry" className="text-primary underline">
+                Contact us →
               </Link>
             </p>
           </div>

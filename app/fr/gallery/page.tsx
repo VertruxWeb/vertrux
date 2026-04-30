@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import FrGalleryPageClient from '@/components/pages/FrGalleryPageClient';
 
 export const metadata: Metadata = {
-  title: 'Galerie | Documentation visuelle des installations | Vetrux CBD',
-  description: 'Explorez la chaine d'approvisionnement integree de Vetrux: culture en haute altitude du Yunnan, extraction industrielle, isolat de CBD pharmaceutique.',
-  keywords: 'installation fabrication CBD, photos installation extraction CBD, laboratoire CBD, base culture chanvre',
+  title: 'Galerie | Site de production et base de culture | Vetrux CBD',
+  description: 'Apercu visuel du site de production et de la base de culture Vetrux CBD a Chuxiong, Yunnan.',
+  keywords: 'galerie installation CBD, photos equipement extraction, base culture chanvre',
   alternates: {
     canonical: 'https://www.vetrux.tech/fr/gallery',
     languages: {
@@ -15,17 +15,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Galerie',
-    description: 'Explorez la chaine d'approvisionnement integree de Vetrux: culture en haute altitude du Yunnan, extraction industrielle, isolat de CBD pharmaceutique.',
+    title: 'Galerie | Vetrux CBD',
+    description: 'Apercu visuel du site de production et de la base de culture Vetrux CBD a Chuxiong, Yunnan.',
     url: 'https://www.vetrux.tech/fr/gallery',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/images/hero/facility-hero.webp' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Galerie',
-    description: 'Explorez la chaine d'approvisionnement integree de Vetrux: culture en haute altitude du Yunnan, extraction industrielle, isolat de CBD pharmaceutique.',
+    title: 'Galerie | Vetrux CBD',
+    description: 'Apercu visuel du site de production et de la base de culture Vetrux CBD a Chuxiong, Yunnan.',
   },
 };
 

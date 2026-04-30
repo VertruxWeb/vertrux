@@ -12,28 +12,28 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const capabilities = [
-  { icon: Leaf, title: 'Yunnan Hemp Cultivation Base', desc: 'Proprietary hemp cultivation in Yunnan Province — high-altitude, UV-rich growing conditions producing biomass with consistently high CBD content and low THC expression.' },
-  { icon: Factory, title: 'Industrial-Scale Extraction', desc: '20 extraction tanks at 6 m³ each — large-scale supercritical CO₂ extraction capacity. Solvent-free process producing clean crude with minimal post-processing burden.' },
-  { icon: FlaskConical, title: 'Chromatographic Purification', desc: '26 preparative chromatography columns (700 L each) plus 10 concentrators for precise cannabinoid separation. Multi-stage crystallization achieving ≥99.5% CBD purity.' },
-  { icon: CheckCircle, title: 'HPLC Quality Control Lab', desc: 'Dedicated in-house HPLC laboratory for full analytical panel testing. Siemens automation system ensures process consistency. Every batch verified before release.' },
-  { icon: Globe, title: 'Global Export Infrastructure', desc: 'FOB Kunming/Chuxiong, CIF, and DDP shipping terms. Full export documentation and customs support. Buyer/importer responsible for destination-country regulatory compliance.' },
-  { icon: Truck, title: 'Flexible Packaging & OEM/ODM', desc: '5 kg PE bags, 5 kg aluminum foil bags, export cartons (465×285×295 mm). OEM/ODM services, private-label packaging, and contract manufacturing available.' },
+  { icon: Leaf, title: 'Cultivation & Breeding Center', desc: 'Cultivation and breeding center in Chuxiong, Yunnan Province. Standardized, traceable cultivation system focused on quality consistency.' },
+  { icon: Factory, title: 'Extraction Facility', desc: '20 extraction tanks, 26 chromatography columns, and 10 concentrators — professional extraction and processing equipment for CBD and botanical extracts.' },
+  { icon: FlaskConical, title: 'Analytical Capability', desc: 'In-house HPLC analytical system (Thermo Dionex UltiMate 3000) with Siemens automation control supporting quality management.' },
+  { icon: CheckCircle, title: 'OEM/ODM Services', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
+  { icon: Globe, title: 'Technical Support', desc: 'Cultivation management, extraction process optimization, cost control, and cannabinoid extraction consulting services.' },
+  { icon: Truck, title: 'Packaging', desc: '5 kg PE bags (27×60cm), 5 kg aluminum foil bags (35×50cm), export cartons (465×285×295 mm), plastic pallets with shrink wrap.' },
 ];
 
 const differentiators = [
-  { metric: '≥99.5%', label: 'CBD Purity', detail: 'HPLC verified, batch-specific COA' },
-  { metric: 'ND', label: 'THC Content', detail: 'Non-detect by GC-MS' },
-  { metric: '20×6m³', label: 'Extraction Tanks', detail: '20 tanks, industrial-scale CO₂' },
-  { metric: '26×700L', label: 'Chromatography', detail: '26 preparative columns' },
-  { metric: '10', label: 'Concentrators', detail: 'Post-extraction processing' },
-  { metric: 'Siemens', label: 'Automation', detail: 'Integrated process control' },
+  { metric: '20', label: 'Extraction Tanks', detail: 'Processing equipment' },
+  { metric: '26', label: 'Chromatography Columns', detail: 'Separation & purification' },
+  { metric: '10', label: 'Concentrators', detail: 'Extract concentration' },
+  { metric: 'HPLC', label: 'Analytical System', detail: 'Thermo UltiMate 3000' },
+  { metric: 'Siemens', label: 'Automation', detail: 'HMI process control' },
+  { metric: '4', label: 'Product Lines', detail: 'CBD + botanical extracts' },
 ];
 
 const markets = [
-  { region: 'European Union', detail: 'FOB, CIF, and DDP delivery to major EU ports. General compliance documentation provided; buyer/importer responsible for Novel Food and destination-country regulatory requirements.' },
-  { region: 'United Kingdom', detail: 'FOB, CIF, and DDP to UK ports. Export documentation and COA provided; buyer/importer responsible for FSA Novel Food and UK-specific compliance.' },
-  { region: 'North America', detail: 'FOB and CIF terms available. Batch documentation and COA provided; buyer/importer responsible for FDA and destination-country regulatory compliance.' },
-  { region: 'APAC', detail: 'FOB and CIF shipping to Asia-Pacific markets. Full export documentation provided; buyer/importer responsible for all destination-country regulatory requirements and import permits.' },
+  { region: 'B2B Cooperation', detail: 'Vetrux supports brand clients, channel partners, trading companies, and partners with stable procurement needs through standard supply, long-term supply, and project-based cooperation.' },
+  { region: 'OEM/ODM', detail: 'Raw material support, formulation development, production, packaging design, and finished product delivery — supporting clients in product development and market launch.' },
+  { region: 'Technical Support', detail: 'Cultivation management, yield and content optimization, extraction process optimization, cost control, and cannabinoid extraction consulting.' },
+  { region: 'Compliance Note', detail: 'Destination country import compliance — including permits, licenses, and regulatory approvals — is the buyer/importer responsibility. Documentation arranged per order terms.' },
 ];
 
 export default function CbdIsolateManufacturerClient() {
@@ -89,10 +89,10 @@ export default function CbdIsolateManufacturerClient() {
                 <span className="text-primary">Manufacturer</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Vetrux Biotechnology (Chuxiong) is a CBD isolate manufacturer in Yunnan, China — operating 20 extraction tanks (6 m³), 26 chromatography columns (700 L), and a dedicated HPLC quality control lab with Siemens automation. Supplying B2B buyers globally with ≥99.5% purity CBD isolate, OEM/ODM services, and botanical extracts.
+                Vetrux Biotechnology (Chuxiong) Co., Ltd. is based in Yunnan, China — equipped with 20 extraction tanks, 26 chromatography columns, 10 concentrators, and HPLC analytical capability with Siemens automation. Providing CBD raw materials, OEM/ODM services, technical support, and botanical extracts.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
-                {['Seed-to-Isolate', 'CO₂ Extraction', 'cGMP Facility', 'Global Export'].map((tag) => (
+                {['CBD Raw Materials', 'OEM/ODM', 'Technical Support', 'Botanical Extracts'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -140,9 +140,9 @@ export default function CbdIsolateManufacturerClient() {
 
           <div className="reveal-card mt-8">
             <p className="text-xs text-on-surface-variant">
-              Learn about our extraction technology:{' '}
-              <Link href="/blog/co2-vs-ethanol-extraction-comparison" className="text-primary underline">
-                CO₂ vs ethanol extraction comparison →
+              Learn more about our products:{' '}
+              <Link href="/products/cbd-isolate" className="text-primary underline">
+                View product information →
               </Link>
             </p>
           </div>
@@ -181,9 +181,9 @@ export default function CbdIsolateManufacturerClient() {
       <section className="py-24 bg-surface">
         <div ref={marketsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-12">
-            <SectionLabel>Markets Served</SectionLabel>
+            <SectionLabel>Business Scope</SectionLabel>
             <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-4">
-              Global B2B Supply
+              Cooperation & Services
             </h2>
           </div>
 
@@ -201,10 +201,10 @@ export default function CbdIsolateManufacturerClient() {
 
           <div className="reveal-card mt-12 text-center">
             <Link href="/inquiry" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white text-xs font-bold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300">
-              Request Manufacturer Documentation <ArrowRight size={16} />
+              Contact Us <ArrowRight size={16} />
             </Link>
             <p className="text-xs text-on-surface-variant mt-4">
-              Facility certifications, batch COAs, and audit access available to qualified buyers.
+              Supporting documentation may be provided according to order requirements.
             </p>
           </div>
         </div>

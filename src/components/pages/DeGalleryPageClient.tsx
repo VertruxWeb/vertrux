@@ -13,13 +13,13 @@ const sectors = [
     id: 'S01',
     label: 'Sektor 01 — Architektonische Exzellenz',
     title: 'Hauptcampus & Infrastruktur',
-    description: 'Unser GMP-konformer Industriepark in Yunnan beherbergt Extraktion, Raffination und Qualitätskontrolle unter einem Dach — speziell für vollständige vertikale Integration gebaut.',
+    description: 'Unser Industriepark in Yunnan beherbergt Extraktion, Raffination und Qualitätskontrolle unter einem Dach — speziell für integrierte Produktion gebaut.',
     images: [
       { src: '/images/gallery/campus-aerial.png', alt: 'Luftaufnahme des Vetrux-Industriecampus mit umliegenden Bergen', span: 'col-span-1 row-span-2' },
       { src: '/images/gallery/campus-buildings.webp', alt: 'Campusgebäude mit gepflegten Grünanlagen', span: 'col-span-1' },
       { src: '/images/gallery/processing-workshop.webp', alt: 'Moderne Verarbeitungswerkstatt von außen', span: 'col-span-1' },
     ],
-    stat: { label: 'Anlagenfläche', value: '30.000 m²' },
+    stat: { label: 'Anlagenstandort', value: 'Chuxiong, Yunnan' },
     eco: '8 Produktionsgebäude',
   },
   {
@@ -34,14 +34,14 @@ const sectors = [
       { src: '/images/planting/flowering-greenhouse.jpg', alt: 'Blühender Hanf in kontrollierter Gewächshausumgebung', span: 'col-span-1' },
       { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Nahaufnahme einer blühenden Hanfblüte', span: 'col-span-1' },
     ],
-    stat: { label: 'Anbaufläche', value: '5.000+ Acres' },
+    stat: { label: 'Anbauregion', value: 'Yunnan-Hochebene' },
     eco: 'Yunnan-Höhe 1.800 m+',
   },
   {
     id: 'S03',
     label: 'Sektor 03 — Technische Präzision',
     title: 'Extraktion & Raffination',
-    description: 'Industrielle Ethanolextraktion kombiniert mit mehrstufiger Chromatographie und Molekulardestillation — liefert pharmazeutische Cannabinoid-Isolate in großem Maßstab.',
+    description: 'Industrielle Ethanolextraktion kombiniert mit mehrstufiger Chromatographie und Molekulardestillation — liefert hochreine Cannabinoid-Isolate in großem Maßstab.',
     images: [
       { src: '/images/equipment/extraction-tanks.jpg', alt: 'Edelstahl-Extraktionstank-Reihe', span: 'col-span-1' },
       { src: '/images/equipment/chromatography-upper.jpg', alt: 'Oberer Abschnitt der Chromatographiesäule', span: 'col-span-1' },
@@ -57,15 +57,15 @@ const sectors = [
     id: 'S04',
     label: 'Sektor 04 — Produkt & Qualität',
     title: 'Produkt & Labor',
-    description: 'Jede Charge durchläuft strenge HPLC- und GC-MS-Tests — vom kristallinen CBD-Isolat bis zur Endverpackung — und gewährleistet ≥99,5% Reinheit mit nicht nachweisbarem THC.',
+    description: 'Jede Charge durchläuft strenge HPLC- und GC-MS-Tests — vom kristallinen CBD-Isolat bis zur Endverpackung — mit vollständiger Chargendokumentation.',
     images: [
       { src: '/images/products/cbd-crystal-closeup.jpg', alt: 'Nahaufnahme von hochreinem kristallinem CBD-Isolat', span: 'col-span-1' },
       { src: '/images/products/cbd-crystal-lab.jpg', alt: 'CBD-Kristall im Laborumfeld', span: 'col-span-1' },
       { src: '/images/products/cbd-packaging-foil.jpg', alt: 'CBD-Isolat in versiegelter Folienverpackung', span: 'col-span-1' },
       { src: '/images/products/cbd-shipping-box.jpg', alt: 'Produktversandkarton exportbereit', span: 'col-span-1' },
     ],
-    stat: { label: 'CBD-Reinheit', value: '≥99,5%' },
-    eco: 'THC: NN (Nicht nachweisbar)',
+    stat: { label: 'Qualitätsprüfung', value: 'HPLC-verifiziert' },
+    eco: 'COA pro Charge',
   },
 ];
 
@@ -130,11 +130,11 @@ export default function DeGalleryPageClient() {
             <h1 className="text-5xl md:text-7xl font-extrabold text-on-background tracking-tighter leading-[0.95] max-w-3xl">
               Vertikale Integration.
               <br />
-              <span className="text-primary">Vom Saatgut zur Lösung.</span>
+              <span className="text-primary">Visuell dokumentiert.</span>
             </h1>
             <p className="mt-6 text-sm text-on-surface-variant leading-relaxed max-w-xl">
               Entdecken Sie unsere vollständig integrierte Lieferkette — von den Höhenanbaubasen in Yunnan
-              über industrielle Extraktion und Chromatographie bis hin zu pharmazeutischem CBD-Isolat.
+              über industrielle Extraktion und Chromatographie bis hin zu hochreinem CBD-Isolat.
             </p>
           </div>
         </div>

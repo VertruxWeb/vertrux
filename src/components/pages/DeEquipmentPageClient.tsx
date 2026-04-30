@@ -20,7 +20,7 @@ const equipment = [
     specs: [
       { label: 'Volumen', value: '6.000 L' },
       { label: 'Anzahl', value: '20 Sätze' },
-      { label: 'Material', value: 'SUS316L Edelstahl' },
+      { label: 'Material', value: 'Edelstahl' },
       { label: 'Funktion', value: 'Multifunktions-Extraktion' },
     ],
     desc: 'Zwanzig industrielle 6m³ Multifunktions-Extraktionstanks bilden den Kern unserer Extraktionslinie und ermöglichen die Hochvolumenverarbeitung von Hanfbiomasse mit präziser Temperatur- und Lösungsmittelkontrolle.',
@@ -71,7 +71,7 @@ const equipment = [
       { label: 'Anzahl', value: '10 Sätze' },
       { label: 'Funktion', value: 'Ethanol-Rückgewinnungslagerung' },
     ],
-    desc: 'Zehn 5m³ Lagertanks bieten sichere, explosionsgeschützte Aufbewahrung für rückgewonnenes Ethanol und gewährleisten eine kontinuierliche Lösungsmittelversorgung der Extraktionslinie bei voller Sicherheitskonformität.',
+    desc: 'Zehn 5m³ Lagertanks bieten sichere Aufbewahrung für rückgewonnenes Ethanol und gewährleisten eine kontinuierliche Lösungsmittelversorgung der Extraktionslinie.',
   },
   {
     id: '06',
@@ -87,15 +87,15 @@ const equipment = [
   },
   {
     id: '07',
-    name: 'Explosionsgeschütztes Automatisierungssystem',
+    name: 'Automatisierungssystem',
     model: 'Siemens HMI',
     image: '/images/equipment/automation-control.jpg',
     specs: [
       { label: 'Marke', value: 'Siemens HMI' },
       { label: 'Funktion', value: 'Prozessüberwachung & Steuerung' },
-      { label: 'Sicherheit', value: 'Explosionsschutz-zertifiziert' },
+      { label: 'Konfiguration', value: 'Industrielle Automatisierung' },
     ],
-    desc: 'Ein Siemens HMI-basiertes Automatisierungssystem überwacht und steuert die gesamte Produktionslinie in Echtzeit, mit Explosionsschutzzertifizierung für sicheren Betrieb in lösungsmittelreichen Umgebungen.',
+    desc: 'Ein Siemens HMI-basiertes Automatisierungssystem überwacht und steuert die gesamte Produktionslinie in Echtzeit, konfiguriert für den Betrieb in industriellen Extraktionsumgebungen.',
   },
   {
     id: '08',
@@ -106,18 +106,18 @@ const equipment = [
       { label: 'Funktion', value: 'Automatische Schlackenentfernung' },
       { label: 'Integration', value: 'Vollautomatisiert' },
     ],
-    desc: 'Das automatische Rückstandsaustragsystem entfernt verbrauchte Biomasse aus den Extraktionstanks ohne manuellen Eingriff, verbessert den Durchsatz und erhält Reinraumbedingungen während der gesamten Produktion.',
+    desc: 'Das automatische Rückstandsaustragsystem entfernt verbrauchte Biomasse aus den Extraktionstanks ohne manuellen Eingriff, verbessert den Durchsatz und erhält saubere Bedingungen während der gesamten Produktion.',
   },
 ];
 
 const specsTable = [
-  { name: '6m³ Multifunktions-Extraktionstanks', model: '×20 Sätze', function: 'Multifunktions-Extraktion', cgmp: 'SUS316L / CIP/SIP' },
-  { name: '700L Chromatographiesäulen', model: '×26 Säulen', function: 'Cannabinoid-Trennung & Reinigung', cgmp: 'GMP-konform' },
+  { name: '6m³ Multifunktions-Extraktionstanks', model: '×20 Sätze', function: 'Multifunktions-Extraktion', cgmp: 'Edelstahl-Konstruktion' },
+  { name: '700L Chromatographiesäulen', model: '×26 Säulen', function: 'Cannabinoid-Trennung & Reinigung', cgmp: 'Industriestandard' },
   { name: '2000L Ein-/Doppeleffekt-Konzentratoren', model: '×10 Sätze', function: 'Extraktkonzentration', cgmp: 'Vakuumbetrieb' },
-  { name: '1000-Typ Lösungsmittelrückgewinnungsturm', model: '×2 Sätze', function: 'Lösungsmittelrückgewinnung & Recycling', cgmp: 'Explosionsgeschützt' },
-  { name: '5m³ Ethanol-Rückgewinnungstanks', model: '×10 Sätze', function: 'Ethanol-Rückgewinnungslagerung', cgmp: 'Sicherheitszertifiziert' },
+  { name: '1000-Typ Lösungsmittelrückgewinnungsturm', model: '×2 Sätze', function: 'Lösungsmittelrückgewinnung & Recycling', cgmp: 'Industriekonfiguration' },
+  { name: '5m³ Ethanol-Rückgewinnungstanks', model: '×10 Sätze', function: 'Ethanol-Rückgewinnungslagerung', cgmp: 'Sichere Lagerung' },
   { name: 'HPLC-Analysesystem', model: 'UltiMate 3000', function: 'Qualitätskontrollanalyse', cgmp: 'Thermo Scientific' },
-  { name: 'Explosionsgeschützte Automatisierungssteuerung', model: 'Siemens HMI', function: 'Prozessüberwachung & Steuerung', cgmp: 'Ex-Schutz-zertifiziert' },
+  { name: 'Automatisierungssteuerung', model: 'Siemens HMI', function: 'Prozessüberwachung & Steuerung', cgmp: 'Industrielle Automatisierung' },
   { name: 'Automatisches Rückstandsaustragsystem', model: 'Integriert', function: 'Automatische Schlackenentfernung', cgmp: 'Vollautomatisiert' },
 ];
 
@@ -168,10 +168,10 @@ export default function DeEquipmentPageClient() {
                 <span className="text-primary">Extraktionsanlage</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Unsere industrielle CBD-Extraktions- und Reinigungsanlage in Chuxiong, Yunnan betreibt über 80 Hauptausrüstungseinheiten in den Bereichen Extraktion, Chromatographie, Konzentration und Qualitätskontrolle — mit vollständiger Seed-to-Isolate-Fähigkeit unter voller GMP-Konformität.
+                Unsere industrielle CBD-Extraktions- und Reinigungsanlage in Chuxiong, Yunnan betreibt Hauptausrüstungseinheiten in den Bereichen Extraktion, Chromatographie, Konzentration und Qualitätskontrolle — mit vollständiger Automatisierungssteuerung.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Industriemaßstab', 'GMP-Standard', 'Vollautomatisierung', 'Seed-to-Isolate'].map((tag) => (
+                {['Industriemaßstab', 'Ausrüstungskonfiguration', 'Vollautomatisierung', 'Integrierte Produktion'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -183,26 +183,26 @@ export default function DeEquipmentPageClient() {
               <img src="/images/equipment/chromatography-column-700L.webp" alt="Industrielle Extraktionsanlage" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Anlagenumfang</p>
-                <p className="text-sm font-bold text-white">Chuxiong, Yunnan · 80+ Ausrüstungseinheiten</p>
+                <p className="text-sm font-bold text-white">Chuxiong, Yunnan · Industrielle Konfiguration</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── cGMP STANDARDS SECTION ─────────────────────────────────────── */}
+      {/* ── EQUIPMENT STANDARDS SECTION ─────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
         <div ref={cgmpRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             <div className="reveal-card lg:col-span-8 bg-surface-container-lowest p-10">
               <SectionLabel>Fertigungsstandards</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">cGMP-Fertigungsstandards</h2>
+              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">Anlagenkonfiguration & Standards</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { label: 'Konstruktionsmaterial', value: 'Durchgehend SUS316L Edelstahl' },
-                  { label: 'Reinigungsprotokoll', value: 'CIP/SIP integriertes Reinigungssystem' },
-                  { label: 'Sicherheitssteuerung', value: 'Explosionsgeschützte Automatisierung (Siemens)' },
-                  { label: 'Umgebung', value: 'Reinraum-Produktionsanlage' },
+                  { label: 'Konstruktionsmaterial', value: 'Edelstahl-Konstruktion' },
+                  { label: 'Reinigungsprotokoll', value: 'Integriertes Reinigungssystem' },
+                  { label: 'Sicherheitssteuerung', value: 'Industrielle Automatisierung (Siemens)' },
+                  { label: 'Umgebung', value: 'Kontrollierte Produktionsanlage' },
                   { label: 'Chargenprotokolle', value: 'Vollständiges Chargenrückverfolgungssystem' },
                   { label: 'Prozesssteuerung', value: 'Echtzeit-HMI-Überwachung' },
                 ].map((item) => (
@@ -219,12 +219,12 @@ export default function DeEquipmentPageClient() {
 
             <div className="reveal-card lg:col-span-4 bg-primary p-10 flex flex-col justify-between">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Zertifizierung</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Dokumentation</p>
                 <p className="text-3xl font-extrabold text-white tracking-tighter leading-tight mb-4">
-                  cGMP-konforme<br />Produktionsanlage
+                  Industriell konfigurierte<br />Produktionsanlage
                 </p>
                 <p className="text-xs text-white/60 leading-relaxed">
-                  Unsere Anlage in Chuxiong arbeitet nach cGMP-Standards mit SUS316L-Konstruktion, CIP/SIP-Reinigung, explosionsgeschützten Steuerungen und vollständiger Chargenrückverfolgbarkeit über alle Produktionsstufen.
+                  Unsere Anlage in Chuxiong arbeitet mit Edelstahl-Konstruktion, integrierten Reinigungssystemen, industrieller Automatisierung und vollständiger Chargenrückverfolgbarkeit über alle Produktionsstufen.
                 </p>
               </div>
               <Link href="/de/inquiry" className="mt-8 inline-flex items-center gap-2 px-5 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
@@ -285,7 +285,7 @@ export default function DeEquipmentPageClient() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b-2 border-primary/30">
-                  {['Ausrüstungsname', 'Modellbereich', 'Prozessfunktion', 'cGMP-Standard'].map((col) => (
+                  {['Ausrüstungsname', 'Modellbereich', 'Prozessfunktion', 'Konfiguration'].map((col) => (
                     <th key={col} className="text-left text-xs font-semibold tracking-widest uppercase text-on-surface-variant pb-4 pr-8">{col}</th>
                   ))}
                 </tr>

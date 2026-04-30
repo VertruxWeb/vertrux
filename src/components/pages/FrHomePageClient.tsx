@@ -81,9 +81,9 @@ export default function FrHomePageClient() {
             </h1>
 
             <p className="hero-animate text-base md:text-lg text-white/70 leading-relaxed max-w-xl mb-10">
-              Vetrux — une marque de 蔚萃生物 — fournit de l&apos;isolat de CBD de qualité pharmaceutique
-              par extraction à l&apos;éthanol et purification chromatographique depuis notre site de Chuxiong, Yunnan.
-              Services OEM/ODM, conseil technique et approvisionnement en gros pour partenaires B2B internationaux.
+              VETRUX — une marque de 蔚萃生物 — fournit des matières premières CBD et des solutions
+              d&apos;extraits botaniques depuis notre base de Chuxiong, Yunnan. Services OEM/ODM, support technique
+              et approvisionnement flexible pour partenaires B2B.
             </p>
 
             <div className="hero-animate flex flex-wrap gap-4">
@@ -102,10 +102,10 @@ export default function FrHomePageClient() {
 
           <div className="hero-animate flex flex-wrap gap-6 mt-16 pt-8 border-t border-white/10">
             {[
-              { value: '20+', label: 'Ensembles d\'Extraction' },
+              { value: '20', label: 'Cuves d\'Extraction' },
               { value: '26', label: 'Colonnes de Chromatographie' },
-              { value: '99,5%', label: 'Pureté CBD' },
-              { value: '5+', label: 'Années d\'Expérience' },
+              { value: '10', label: 'Concentrateurs' },
+              { value: '4', label: 'Gammes de Produits' },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-bold text-white tracking-tighter">{stat.value}</p>
@@ -121,21 +121,21 @@ export default function FrHomePageClient() {
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Contexte du Marché</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Marque</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Le marché européen du CBD devrait atteindre <span className="text-on-surface font-semibold">3,2 milliards d&apos;euros d&apos;ici 2027</span>, porté par les applications pharmaceutiques, nutraceutiques et cosmétiques. <a href="https://prohibitionpartners.com" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant/60 text-xs underline underline-offset-2">(Prohibition Partners, Rapport Européen sur le CBD)</a>
+                VETRUX est la marque de produits CBD de <span className="text-on-surface font-semibold">蔚萃生物科技（楚雄）有限公司</span>, spécialisée dans la gestion qualité et le développement de produits d&apos;origine végétale depuis le Yunnan, Chine.
               </p>
             </div>
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Science de l&apos;Extraction</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Équipements</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Vetrux utilise l&apos;<span className="text-on-surface font-semibold">extraction à l&apos;éthanol combinée à une purification chromatographique</span> avec 26 colonnes industrielles (700L chacune). Ce processus multi-étapes — extraction, séparation chromatographique, concentration et cristallisation — atteint une pureté CBD ≥99,5% tout en préservant l&apos;intégrité moléculaire.
+                Vetrux exploite une installation d&apos;extraction professionnelle équipée de <span className="text-on-surface font-semibold">20 cuves d&apos;extraction, 26 colonnes de chromatographie et 10 concentrateurs</span>, complétée par des systèmes analytiques HPLC et un contrôle automatisé Siemens.
               </p>
             </div>
             <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Profil Fabricant</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Localisation</p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Depuis notre base de production à <span className="text-on-surface font-semibold">Chuxiong, province du Yunnan</span>, Vetrux Biotechnology contrôle l&apos;ensemble de la chaîne de production — du traitement de la biomasse de chanvre à l&apos;extraction à l&apos;éthanol, la purification chromatographique et la cristallisation finale jusqu&apos;à la libération des lots et l&apos;emballage d&apos;exportation.
+                Basée à <span className="text-on-surface font-semibold">Chuxiong, province du Yunnan</span>, Vetrux Biotechnology exploite un centre de culture et de sélection ainsi que des installations professionnelles d&apos;extraction et de traitement, soutenant une production standardisée et traçable.
               </p>
             </div>
           </div>
@@ -178,9 +178,9 @@ export default function FrHomePageClient() {
 
               <div className="grid grid-cols-1 gap-4">
                 {[
-                  { icon: FlaskConical, title: 'Extraction & Purification à l\'Éthanol', desc: 'Extraction industrielle à l\'éthanol suivie d\'une purification chromatographique sur 26 colonnes pour une pureté CBD ≥99,5%.' },
-                  { icon: Award, title: 'OEM/ODM & Conseil Technique', desc: 'Fabrication sur mesure, support de formulation et conseil technique pour les produits CBD et extraits botaniques.' },
-                  { icon: Layers, title: 'Raffinage Multi-Étapes', desc: 'Séparation chromatographique, concentration, cristallisation et contrôle qualité par HPLC sur chaque lot.' },
+                  { icon: FlaskConical, title: 'Extraction & Traitement', desc: 'Installation d\'extraction professionnelle avec 20 cuves, 26 colonnes de chromatographie et 10 concentrateurs pour le traitement du CBD et des extraits botaniques.' },
+                  { icon: Award, title: 'OEM/ODM & Support Technique', desc: 'Support matières premières, développement de formulations, production, conception d\'emballage et livraison de produits finis.' },
+                  { icon: Layers, title: 'Extraits Botaniques', desc: 'Cristal de CBD, anthocyanes, glycosides de stéviol et globuline de graines de chanvre pour des applications diversifiées.' },
                 ].map((feat) => (
                   <div key={feat.title} className="reveal-card flex gap-4 p-5 bg-surface-container-low hover:bg-surface-container transition-colors duration-200">
                     <div className="flex-shrink-0 w-10 h-10 bg-primary-fixed flex items-center justify-center">
@@ -205,7 +205,7 @@ export default function FrHomePageClient() {
             <div className="reveal-card lg:col-span-8 relative overflow-hidden">
               <Image
                 src="/images/products/cbd-crystal-closeup.jpg"
-                alt="Isolat de CBD Pureté 99,5%"
+                alt="Isolat de CBD cristal"
                 width={1200}
                 height={580}
                 sizes="(max-width: 1024px) 100vw, 66vw"
@@ -225,8 +225,8 @@ export default function FrHomePageClient() {
               <div className="reveal-card bg-primary p-8 flex-1 flex flex-col justify-between">
                 <div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Données Techniques</p>
-                  <p className="text-2xl font-extrabold text-white tracking-tighter leading-tight mb-2">Certificat d&apos;Analyse Disponible</p>
-                  <p className="text-xs text-white/70 leading-relaxed">La documentation par lot et les informations produit peuvent être consultées lors de discussions B2B qualifiées.</p>
+                  <p className="text-2xl font-extrabold text-white tracking-tighter leading-tight mb-2">Support Documentaire</p>
+                  <p className="text-xs text-white/70 leading-relaxed">Les documents d&apos;accompagnement incluant COA, FDS et rapports d&apos;essai peuvent être fournis selon les exigences de commande.</p>
                 </div>
                 <Link href="/fr/inquiry" className="mt-6 inline-flex items-center gap-2 px-4 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
                   <Download size={14} />
@@ -236,10 +236,10 @@ export default function FrHomePageClient() {
 
               <div className="reveal-card bg-surface-container-lowest p-8 flex-1">
                 <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">Spécifications Clés</p>
-                <SpecRow label="Pureté CBD (HPLC)" value="≥ 99,5%" />
-                <SpecRow label="Teneur en THC" value="ND (Non Détecté)" />
-                <SpecRow label="Apparence" value="Cristallin Blanc" />
-                <SpecRow label="Résidus de Solvants" value="&lt; 10 PPM" isLast />
+                <SpecRow label="Produit" value="Cristal de CBD" />
+                <SpecRow label="Numéro CAS" value="13956-29-1" />
+                <SpecRow label="Code SH" value="2907299020" />
+                <SpecRow label="Emballage" value="Sacs PE / Aluminium 5 kg" isLast />
                 <Link href="/fr/products/cbd-isolate" className="mt-6 inline-flex items-center gap-1 text-xs font-semibold tracking-wider uppercase text-primary hover:text-primary-container transition-colors duration-200">
                   Spécifications Complètes <ArrowRight size={14} />
                 </Link>
@@ -254,10 +254,10 @@ export default function FrHomePageClient() {
         <div ref={trustRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
             {[
-              { label: 'Qualité', sub: 'Tests HPLC · Pureté ≥99,5%', href: '/fr/quality-assurance' },
-              { label: 'Vente en Gros', sub: 'CBD & Extraits Botaniques en Vrac', href: '/fr/wholesale-cbd-isolate' },
-              { label: 'Profil Fabricant', sub: 'Base de Production Chuxiong, Yunnan', href: '/fr/cbd-isolate-manufacturer' },
-              { label: 'Demande Mondiale', sub: 'inquiry@vetrux.tech', href: '/fr/inquiry' },
+              { label: 'Gestion Qualité', sub: 'Capacité de Tests HPLC', href: '/fr/quality-assurance' },
+              { label: 'Approvisionnement B2B', sub: 'CBD & Extraits Botaniques', href: '/fr/wholesale-cbd-isolate' },
+              { label: 'Profil Entreprise', sub: 'Chuxiong, Yunnan', href: '/fr/cbd-isolate-manufacturer' },
+              { label: 'Demande', sub: 'inquiry@vetrux.tech', href: '/fr/inquiry' },
             ].map((cert) => (
               <Link key={cert.label} href={cert.href} className="reveal-card py-6 border-t-2 border-primary-fixed hover:border-primary transition-colors duration-200 block">
                 <p className="text-lg font-extrabold text-on-background tracking-tighter">{cert.label}</p>
@@ -279,7 +279,7 @@ export default function FrHomePageClient() {
             {[
               {
                 q: 'Qu\'est-ce que l\'isolat de CBD et en quoi diffère-t-il du CBD à spectre complet ?',
-                a: 'L\'isolat de CBD est la forme la plus pure de cannabidiol — une poudre cristalline blanche contenant ≥99,5% de CBD (CAS : 13956-29-1, Code SH : 2907299020) dont tous les autres cannabinoïdes, terpènes et composés végétaux ont été éliminés. Contrairement au CBD à spectre complet qui conserve le THC et d\'autres cannabinoïdes, l\'isolat de CBD est sans THC détectable (ND), ce qui le rend idéal pour les formulations pharmaceutiques et nutraceutiques nécessitant un dosage précis et une conformité réglementaire.',
+                a: 'L\'isolat de CBD est la forme la plus pure de cannabidiol — une poudre cristalline blanche (CAS : 13956-29-1, Code SH : 2907299020) dont tous les autres cannabinoïdes, terpènes et composés végétaux ont été éliminés. Contrairement au CBD à spectre complet qui conserve d\'autres cannabinoïdes, l\'isolat de CBD est adapté aux formulations nécessitant un dosage précis et une conformité réglementaire.',
               },
               {
                 q: 'Quels services Vetrux propose-t-il au-delà de l\'isolat de CBD ?',
@@ -290,12 +290,12 @@ export default function FrHomePageClient() {
                 a: 'Vetrux propose l\'isolat de CBD en sachets PE de 5 kg (27×60 cm), sachets aluminium de 5 kg (35×50 cm) et cartons d\'exportation (465×285×295 mm). Un conditionnement personnalisé est disponible via nos services OEM/ODM. Tarifs dégressifs pour les commandes en gros — contactez sales@vetrux.tech.',
               },
               {
-                q: 'Comment Vetrux garantit-il la pureté du CBD et la conformité sans THC ?',
-                a: 'Chaque lot est soumis à des tests HPLC pour confirmer une pureté CBD ≥99,5% et un statut THC non détecté (ND). Notre processus d\'extraction à l\'éthanol et de purification chromatographique sur 26 colonnes assure une qualité constante. Une documentation complète incluant le COA, le certificat d\'origine et la FDS est fournie avec chaque expédition.',
+                q: 'Comment Vetrux gère-t-il la qualité du CBD ?',
+                a: 'Chaque lot est soumis à des tests HPLC pour confirmer la qualité du CBD. Notre processus d\'extraction et de purification chromatographique sur 26 colonnes assure une qualité constante. Une documentation complète incluant le COA, le certificat d\'origine et la FDS est fournie avec chaque expédition.',
               },
               {
                 q: 'Où se situe Vetrux et quelles conditions de livraison sont disponibles ?',
-                a: 'Vetrux Biotechnology est basée à Chuxiong, province du Yunnan, Chine. Nous proposons des livraisons FOB Kunming, CIF et DDP vers des destinations mondiales. Le délai standard est de 10 à 14 jours ouvrables à compter de la confirmation de commande. Toutes les expéditions incluent le COA spécifique au lot, le certificat d\'origine et la fiche de données de sécurité. Contactez inquiry@vetrux.tech pour les détails logistiques.',
+                a: 'Vetrux Biotechnology est basée à Chuxiong, province du Yunnan, Chine. Les conditions de livraison et les délais sont discutés au cas par cas selon les exigences de commande. Toutes les expéditions incluent le COA spécifique au lot, le certificat d\'origine et la fiche de données de sécurité. Contactez inquiry@vetrux.tech pour les détails logistiques.',
               },
             ].map((faq) => (
               <div key={faq.q} className="bg-surface p-6">
@@ -311,7 +311,7 @@ export default function FrHomePageClient() {
             <ul className="flex flex-col gap-1.5 text-xs text-on-surface-variant/60">
               <li><a href="https://www.who.int/docs/default-source/controlled-substances/whocbdreportmay2018-2.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">Comité OMS d&apos;experts sur la pharmacodépendance — Rapport d&apos;examen critique du Cannabidiol (CBD) (2018)</a></li>
               <li><a href="https://food.ec.europa.eu/safety/novel-food/legislation_en" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">Règlement Novel Food de l&apos;UE (UE) 2015/2283 — Commission Européenne</a></li>
-              <li><a href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO 9001:2015 — Systèmes de Management de la Qualité</a></li>
+              <li><a href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO 9001:2015 — Systèmes de management de la qualité (référence)</a></li>
               <li><a href="https://www.iso.org/standard/39883.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ISO/IEC 17025 — Exigences Générales pour les Laboratoires d&apos;Essais et d&apos;Étalonnage</a></li>
               <li><a href="https://www.ich.org/page/quality-guidelines" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">ICH Q3C — Impuretés : Directive sur les Solvants Résiduels</a></li>
             </ul>

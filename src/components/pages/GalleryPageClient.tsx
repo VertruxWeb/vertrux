@@ -13,20 +13,20 @@ const sectors = [
     id: 'S01',
     label: 'Sector 01 — Architectural Excellence',
     title: 'Main Campus & Infrastructure',
-    description: 'Our GMP-compliant industrial park in Yunnan houses extraction, refinement, and quality-control operations under one roof — purpose-built for full vertical integration.',
+    description: 'Our production site in Yunnan houses extraction, processing, and quality-control equipment — supporting CBD and botanical extract operations.',
     images: [
       { src: '/images/gallery/campus-aerial.png', alt: 'Aerial view of Vetrux industrial campus with surrounding mountains', span: 'col-span-1 row-span-2' },
       { src: '/images/gallery/campus-buildings.webp', alt: 'Campus buildings with landscaped grounds', span: 'col-span-1' },
       { src: '/images/gallery/processing-workshop.webp', alt: 'Modern processing workshop exterior', span: 'col-span-1' },
     ],
-    stat: { label: 'Facility Area', value: '30,000 m²' },
-    eco: '8 Production Buildings',
+    stat: { label: 'Location', value: 'Chuxiong, Yunnan' },
+    eco: 'Production Site',
   },
   {
     id: 'S02',
     label: 'Sector 02 — Raw Material Purity',
     title: 'Planting Base & Cultivation',
-    description: 'High-altitude hemp cultivation across Yunnan province — from seedling propagation through flowering — ensures consistent cannabinoid profiles and full traceability.',
+    description: 'Cultivation and breeding center in Yunnan province — from seed selection through growing management — supporting standardized and traceable raw material production.',
     images: [
       { src: '/images/gallery/cultivation-field.jpg', alt: 'Hemp field under hoop-house frame structures', span: 'col-span-2 row-span-2' },
       { src: '/images/gallery/cultivation-base-wide.jpg', alt: 'Wide view of cultivation base with mountain backdrop', span: 'col-span-1' },
@@ -34,14 +34,14 @@ const sectors = [
       { src: '/images/planting/flowering-greenhouse.jpg', alt: 'Flowering hemp in controlled greenhouse environment', span: 'col-span-1' },
       { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Close-up of flowering hemp cola', span: 'col-span-1' },
     ],
-    stat: { label: 'Cultivation Area', value: '5,000+ Acres' },
-    eco: 'Yunnan Altitude 1,800 m+',
+    stat: { label: 'Cultivation', value: 'Chuxiong Base' },
+    eco: 'Yunnan Province',
   },
   {
     id: 'S03',
     label: 'Sector 03 — Technical Precision',
     title: 'Extraction & Refinement',
-    description: 'Industrial-scale ethanol extraction paired with multi-stage chromatography and molecular distillation — delivering pharma-grade cannabinoid isolates at volume.',
+    description: 'Professional extraction facility equipped with extraction tanks, chromatography columns, concentrators, and analytical systems for CBD and botanical extract processing.',
     images: [
       { src: '/images/equipment/extraction-tanks.jpg', alt: 'Stainless steel extraction tank array', span: 'col-span-1' },
       { src: '/images/equipment/chromatography-upper.jpg', alt: 'Chromatography column upper section', span: 'col-span-1' },
@@ -57,15 +57,15 @@ const sectors = [
     id: 'S04',
     label: 'Sector 04 — Product & Quality',
     title: 'Product & Laboratory',
-    description: 'Every batch undergoes rigorous HPLC and GC-MS testing — from crystalline CBD isolate through final packaging — ensuring ≥99.5% purity with non-detectable THC.',
+    description: 'In-house HPLC analytical capability supports quality management. Product documentation may be provided according to order requirements.',
     images: [
       { src: '/images/products/cbd-crystal-closeup.jpg', alt: 'Close-up of high-purity CBD crystalline isolate', span: 'col-span-1' },
       { src: '/images/products/cbd-crystal-lab.jpg', alt: 'CBD crystal in laboratory setting', span: 'col-span-1' },
       { src: '/images/products/cbd-packaging-foil.jpg', alt: 'CBD isolate in sealed foil packaging', span: 'col-span-1' },
       { src: '/images/products/cbd-shipping-box.jpg', alt: 'Product shipping box ready for export', span: 'col-span-1' },
     ],
-    stat: { label: 'CBD Purity', value: '≥99.5%' },
-    eco: 'THC: ND (Non-Detectable)',
+    stat: { label: 'Product', value: 'CBD Crystal' },
+    eco: 'CAS: 13956-29-1',
   },
 ];
 
@@ -133,8 +133,8 @@ export default function GalleryPageClient() {
               <span className="text-primary">From Seed to Solution.</span>
             </h1>
             <p className="mt-6 text-sm text-on-surface-variant leading-relaxed max-w-xl">
-              Explore our fully integrated supply chain — from high-altitude Yunnan cultivation
-              bases through industrial extraction and chromatography to pharma-grade CBD isolate.
+              Visual overview of our Chuxiong, Yunnan operations — from cultivation base
+              through extraction facility to product and packaging.
             </p>
           </div>
         </div>

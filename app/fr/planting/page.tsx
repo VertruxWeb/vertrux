@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import FrPlantingPageClient from '@/components/pages/FrPlantingPageClient';
 
 export const metadata: Metadata = {
-  title: 'Culture & Selection | Culture de chanvre Chuxiong, Yunnan | Vetrux CBD',
-  description: 'Vetrux exploite son propre centre de culture et de selection a Chuxiong, Yunnan. Tracabilite complete de la semence a l'isolat de CBD.',
-  keywords: 'culture chanvre Yunnan, culture CBD chanvre, integration verticale CBD, tracabilite semence isolat',
+  title: 'Centre de culture et de selection | Systeme de culture standardise | Vetrux CBD',
+  description: 'Vetrux exploite un centre de culture et de selection a Chuxiong, Yunnan. Systeme de culture standardise et tracable.',
+  keywords: 'culture chanvre Yunnan, culture CBD chanvre, systeme culture standardise, selection semences, tracabilite',
   alternates: {
     canonical: 'https://www.vetrux.tech/fr/planting',
     languages: {
@@ -15,17 +15,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Culture & Selection',
-    description: 'Vetrux exploite son propre centre de culture et de selection a Chuxiong, Yunnan. Tracabilite complete de la semence a l'isolat de CBD.',
+    title: 'Centre de culture et de selection | Vetrux CBD',
+    description: 'Systeme de culture standardise et tracable a Chuxiong, Yunnan.',
     url: 'https://www.vetrux.tech/fr/planting',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/images/planting/flowering-cola-closeup.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Culture & Selection',
-    description: 'Vetrux exploite son propre centre de culture et de selection a Chuxiong, Yunnan. Tracabilite complete de la semence a l'isolat de CBD.',
+    title: 'Centre de culture et de selection | Vetrux CBD',
+    description: 'Systeme de culture standardise et tracable a Chuxiong, Yunnan.',
   },
 };
 

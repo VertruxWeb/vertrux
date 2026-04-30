@@ -11,10 +11,10 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: '[X] ha', label: 'Surface de culture' },
-  { value: '26', label: 'Colonnes de chromatographie' },
-  { value: '[X]M+', label: 'Capacité de propagation annuelle' },
-  { value: '1 800m+', label: 'Avantage altitude Yunnan' },
+  { value: 'Yunnan', label: 'Base de culture' },
+  { value: 'Chuxiong', label: 'Centre de sélection' },
+  { value: 'Standardisé', label: 'Système de culture' },
+  { value: 'Traçable', label: 'Chaîne d\'approvisionnement' },
 ];
 
 const zones = [
@@ -31,10 +31,10 @@ const zones = [
       { src: '/images/planting/propagation-greenhouse.jpg', alt: 'Zone de propagation en serre à grande échelle' },
     ],
     specs: [
-      { label: 'Méthode de propagation', value: 'Boutures clonales + Semences' },
-      { label: 'Environnement de culture', value: 'Serre contrôlée' },
-      { label: 'Criblage génétique', value: 'Sélection de cultivars riches en CBD' },
-      { label: 'Taux d\'enracinement', value: '≥ 95%' },
+      { label: 'Orientation', value: 'Sélection des semences & propagation' },
+      { label: 'Environnement', value: 'Pépinière' },
+      { label: 'Approche', value: 'Sélection de cultivars orientée qualité' },
+      { label: 'Système', value: 'Processus standardisé' },
     ],
     icon: Leaf,
   },
@@ -49,10 +49,10 @@ const zones = [
       { src: '/images/planting/vegetative-canopy.jpg', alt: 'Canopée dense de chanvre vert en phase végétative' },
     ],
     specs: [
-      { label: 'Méthode de culture', value: 'Serre + Lumière naturelle' },
-      { label: 'Altitude', value: '1 800m+ (Plateau du Yunnan)' },
-      { label: 'Source d\'eau', value: 'Irrigation par source de montagne' },
-      { label: 'Politique d\'intrants', value: 'Zéro pesticide synthétique' },
+      { label: 'Méthode de culture', value: 'Culture en serre' },
+      { label: 'Localisation', value: 'Province du Yunnan' },
+      { label: 'Gestion', value: 'Conditions de culture contrôlées' },
+      { label: 'Approche', value: 'Culture standardisée' },
     ],
     icon: Sun,
   },
@@ -61,7 +61,7 @@ const zones = [
     tag: 'Zone 03 — Floraison & Récolte',
     title: 'Floraison mature & développement des trichomes',
     description:
-      'Pendant la phase de floraison, l\'exposition UV intense du Yunnan favorise un développement exceptionnel des trichomes et des cannabinoïdes. Nos agronomes surveillent la maturité des trichomes et la teneur en CBD pour déterminer le moment optimal de récolte, maximisant le rendement en cannabinoïdes tout en respectant les seuils de THC. Les inflorescences denses et résineuses sont récoltées à la main et transférées vers le séchage et le traitement contrôlés.',
+      'Pendant la phase de floraison, la gestion de la culture se concentre sur le suivi du développement des plantes et la détermination du moment de récolte approprié. Le matériel récolté est transféré vers un séchage et un traitement contrôlés pour soutenir l\'extraction en aval.',
     images: [
       { src: '/images/planting/flowering-greenhouse.jpg', alt: 'Serre de chanvre en fin de floraison' },
       { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Gros plan d\'un bourgeon de chanvre CBD avec trichomes' },
@@ -70,10 +70,10 @@ const zones = [
       { src: '/images/planting/flowering-pistils.jpg', alt: 'Chanvre en floraison avec pistils blancs' },
     ],
     specs: [
-      { label: 'Surveillance des trichomes', value: 'Analyse visuelle + labo quotidienne' },
-      { label: 'Méthode de récolte', value: 'Récolte manuelle au pic de CBD' },
-      { label: 'Avantage UV', value: 'Exposition UV en haute altitude' },
-      { label: 'Processus de séchage', value: 'Séchage contrôlé basse température' },
+      { label: 'Surveillance', value: 'Suivi des stades de croissance' },
+      { label: 'Récolte', value: 'Calendrier de récolte géré' },
+      { label: 'Avantage localisation', value: 'Conditions de culture du Yunnan' },
+      { label: 'Post-récolte', value: 'Processus de séchage contrôlé' },
     ],
     icon: Thermometer,
   },
@@ -89,10 +89,10 @@ const galleryImages = [
 ];
 
 const traceabilityItems = [
-  { icon: Shield, label: 'Intégration semence-à-isolat', desc: 'Vetrux contrôle chaque étape, de la sélection des semences et de la culture à l\'extraction et l\'isolation — intégration verticale complète au sein d\'une seule chaîne d\'approvisionnement.' },
-  { icon: Droplets, label: 'Système de culture standardisé', desc: 'Des procédures opérationnelles standard régissent chaque phase de notre processus de culture : propagation, transplantation, gestion des nutriments, floraison et calendrier de récolte sont tous standardisés sur notre base de Chuxiong.' },
-  { icon: Leaf, label: 'Chaîne d\'approvisionnement traçable', desc: 'Chaque lot de biomasse est traçable depuis la zone de serre spécifique et la date de récolte jusqu\'au numéro de lot final d\'isolat de CBD et au certificat d\'analyse.' },
-  { icon: CheckCircle, label: 'Documentation des lots & certificat d\'analyse', desc: 'Les dossiers de lots complets, les rapports de laboratoires tiers et les certificats d\'analyse sont disponibles pour chaque cycle de production sur demande B2B qualifiée.' },
+  { icon: Shield, label: 'Coordination culture & traitement', desc: 'Vetrux coordonne les activités de culture et d\'extraction depuis sa base de Chuxiong, soutenant la cohérence tout au long du processus de production.' },
+  { icon: Droplets, label: 'Système de culture standardisé', desc: 'La gestion de la culture suit des processus standardisés couvrant la propagation, les conditions de culture et le calendrier de récolte sur la base de Chuxiong.' },
+  { icon: Leaf, label: 'Système de culture traçable', desc: 'Le système de culture est conçu pour soutenir la traçabilité de la plantation jusqu\'au transfert du matériel pour le traitement d\'extraction.' },
+  { icon: CheckCircle, label: 'Support documentaire', desc: 'La documentation d\'accompagnement incluant COA, FDS et rapports d\'essai peut être fournie selon les exigences de commande et la disponibilité réelle des lots.' },
 ];
 
 export default function FrPlantingPageClient() {
@@ -172,12 +172,11 @@ export default function FrPlantingPageClient() {
                 <span className="text-primary">Traçable jusqu&apos;à la source.</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Vetrux exploite son propre centre de culture et de sélection à Chuxiong, province du Yunnan —
-                où le terrain en altitude et l&apos;exposition UV intense créent des conditions idéales pour
-                le chanvre riche en CBD aux profils exceptionnels de cannabinoïdes et de terpènes.
+                Vetrux exploite un centre de culture et de sélection à Chuxiong, province du Yunnan,
+                axé sur une culture standardisée et traçable pour soutenir une qualité constante des matières premières.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Haute altitude Yunnan', 'Culture riche en UV', 'Semence-à-isolat', 'Verticalement intégré'].map((tag) => (
+                {['Province du Yunnan', 'Culture standardisée', 'Orienté qualité', 'Système traçable'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -223,18 +222,16 @@ export default function FrPlantingPageClient() {
             </div>
             <div className="reveal-card lg:col-span-7 space-y-5 pt-2">
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Chez Vetrux, l&apos;intégration verticale n&apos;est pas un mot à la mode — c&apos;est notre modèle opérationnel. En contrôlant
-                la culture, la sélection et l&apos;extraction sous un même toit, nous éliminons les incertitudes de la chaîne d&apos;approvisionnement
-                et livrons des profils de cannabinoïdes cohérents lot après lot.
+                Chez Vetrux, la gestion de la culture commence par une sélection de semences orientée qualité et suit
+                des processus standardisés conçus pour soutenir une qualité constante des matières premières.
               </p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Notre base de Chuxiong se situe sur le plateau du Yunnan à plus de 1 800 mètres, où le rayonnement UV
-                naturellement intense et l&apos;air pur de montagne favorisent un développement supérieur des trichomes et une
-                accumulation de cannabinoïdes — des avantages qu&apos;aucune installation intérieure ne peut reproduire.
+                La base de Chuxiong dans la province du Yunnan offre des conditions de culture favorables pour
+                le chanvre, soutenant la production de matières premières pour l&apos;extraction en aval.
               </p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                De la sélection propriétaire de cultivars riches en CBD à la purification chromatographique à 26 colonnes,
-                chaque maillon de notre chaîne semence-à-isolat est optimisé pour la pureté, la puissance et la traçabilité.
+                De la sélection des cultivars à la gestion de la culture et au transfert du matériel vers l&apos;extraction,
+                le système est conçu autour de la standardisation et de la traçabilité.
               </p>
             </div>
           </div>

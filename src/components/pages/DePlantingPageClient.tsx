@@ -11,10 +11,10 @@ import SectionLabel from '@/components/atoms/SectionLabel';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: '[X] ha', label: 'Anbaufläche' },
-  { value: '26', label: 'Chromatographiesäulen' },
-  { value: '[X]M+', label: 'Jährliche Vermehrungskapazität' },
-  { value: '1.800m+', label: 'Höhenvorteil Yunnan' },
+  { value: 'Yunnan', label: 'Standort der Anbaubasis' },
+  { value: 'Chuxiong', label: 'Zuchtzentrum' },
+  { value: 'Standardisiert', label: 'Anbausystem' },
+  { value: 'Rückverfolgbar', label: 'Lieferkette' },
 ];
 
 const zones = [
@@ -89,7 +89,7 @@ const galleryImages = [
 ];
 
 const traceabilityItems = [
-  { icon: Shield, label: 'Saatgut-bis-Isolat-Integration', desc: 'Vetrux kontrolliert jeden Schritt von der Saatgutauswahl und dem Anbau über die Extraktion bis zur Isolation — vollständige vertikale Integration in einer Lieferkette.' },
+  { icon: Shield, label: 'Integrierte Produktion', desc: 'Vetrux kontrolliert jeden Schritt von der Saatgutauswahl und dem Anbau über die Extraktion bis zur Isolation — vollständige vertikale Integration in einer Lieferkette.' },
   { icon: Droplets, label: 'Standardisiertes Anbausystem', desc: 'SOPs regeln jede Phase unseres Anbauprozesses: Vermehrung, Umpflanzung, Nährstoffmanagement, Blüte und Erntezeitpunkt sind an unserer Chuxiong-Basis vollständig standardisiert.' },
   { icon: Leaf, label: 'Rückverfolgbare Lieferkette', desc: 'Jede Charge Biomasse ist rückverfolgbar — von der spezifischen Gewächshauszone und dem Erntedatum bis zur endgültigen CBD-Isolat-Chargennummer und dem Analysezertifikat.' },
   { icon: CheckCircle, label: 'Chargendokumentation & Analysezertifikat', desc: 'Vollständige Chargenprotokolle, Laborberichte von Drittanbietern und Analysezertifikate sind für jeden Produktionslauf auf qualifizierte B2B-Anfrage verfügbar.' },
@@ -177,7 +177,7 @@ export default function DePlantingPageClient() {
                 CBD-reichen Hanf mit außergewöhnlichen Cannabinoid- und Terpenprofilen schaffen.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Yunnan-Höhenlage', 'UV-reicher Anbau', 'Saatgut-bis-Isolat', 'Vertikal integriert'].map((tag) => (
+                {['Yunnan-Höhenlage', 'UV-reicher Anbau', 'Standardisierter Anbau', 'Vertikal integriert'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -234,7 +234,7 @@ export default function DePlantingPageClient() {
               </p>
               <p className="text-sm text-on-surface-variant leading-relaxed">
                 Von der proprietären Auswahl CBD-reicher Sorten bis zur chromatographischen Reinigung mit 26 Säulen
-                ist jedes Glied unserer Saatgut-bis-Isolat-Kette auf Reinheit, Potenz und Rückverfolgbarkeit optimiert.
+                ist jedes Glied unserer integrierten Produktionskette auf Reinheit, Potenz und Rückverfolgbarkeit optimiert.
               </p>
             </div>
           </div>
@@ -323,8 +323,8 @@ export default function DePlantingPageClient() {
             <div className="reveal-card lg:col-span-4">
               <SectionLabel light>Vollständige Rückverfolgbarkeit</SectionLabel>
               <h2 className="text-4xl font-extrabold text-white tracking-tighter leading-tight mt-4">
-                Saatgut-bis-Isolat
-                <br />Vertikale Integration
+                Vollständig integrierte
+                <br />Lieferkette
               </h2>
               <p className="mt-5 text-sm text-white/50 leading-relaxed">
                 Vetrux&apos; vertikal integriertes Modell bedeutet, dass jedes Gramm CBD-Isolat auf eine bestimmte

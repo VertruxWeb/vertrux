@@ -13,20 +13,20 @@ const sectors = [
     id: 'S01',
     label: 'Secteur 01 — Excellence architecturale',
     title: 'Campus principal & Infrastructure',
-    description: 'Notre parc industriel conforme aux BPF au Yunnan abrite les opérations d\'extraction, de raffinage et de contrôle qualité sous un même toit — conçu spécifiquement pour une intégration verticale complète.',
+    description: 'Notre site de production au Yunnan abrite les équipements d\'extraction, de traitement et de contrôle qualité — soutenant les opérations de CBD et d\'extraits botaniques.',
     images: [
       { src: '/images/gallery/campus-aerial.png', alt: 'Vue aérienne du campus industriel Vetrux avec montagnes environnantes', span: 'col-span-1 row-span-2' },
       { src: '/images/gallery/campus-buildings.webp', alt: 'Bâtiments du campus avec espaces verts aménagés', span: 'col-span-1' },
       { src: '/images/gallery/processing-workshop.webp', alt: 'Extérieur de l\'atelier de traitement moderne', span: 'col-span-1' },
     ],
-    stat: { label: 'Surface des installations', value: '30 000 m²' },
-    eco: '8 Bâtiments de production',
+    stat: { label: 'Localisation', value: 'Chuxiong, Yunnan' },
+    eco: 'Site de production',
   },
   {
     id: 'S02',
     label: 'Secteur 02 — Pureté des matières premières',
     title: 'Base de culture & Cultivation',
-    description: 'Culture de chanvre en haute altitude à travers la province du Yunnan — de la propagation des semis à la floraison — garantissant des profils de cannabinoïdes cohérents et une traçabilité complète.',
+    description: 'Centre de culture et de sélection dans la province du Yunnan — de la sélection des semences à la gestion de la culture — soutenant une production de matières premières standardisée et traçable.',
     images: [
       { src: '/images/gallery/cultivation-field.jpg', alt: 'Champ de chanvre sous structures de serres tunnel', span: 'col-span-2 row-span-2' },
       { src: '/images/gallery/cultivation-base-wide.jpg', alt: 'Vue large de la base de culture avec toile de fond montagneuse', span: 'col-span-1' },
@@ -34,14 +34,14 @@ const sectors = [
       { src: '/images/planting/flowering-greenhouse.jpg', alt: 'Chanvre en floraison dans un environnement de serre contrôlé', span: 'col-span-1' },
       { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Gros plan d\'une inflorescence de chanvre en floraison', span: 'col-span-1' },
     ],
-    stat: { label: 'Surface de culture', value: '5 000+ Acres' },
-    eco: 'Altitude Yunnan 1 800 m+',
+    stat: { label: 'Culture', value: 'Base de Chuxiong' },
+    eco: 'Province du Yunnan',
   },
   {
     id: 'S03',
     label: 'Secteur 03 — Précision technique',
     title: 'Extraction & Raffinage',
-    description: 'Extraction industrielle à l\'éthanol associée à une chromatographie multi-étapes et une distillation moléculaire — livrant des isolats de cannabinoïdes de qualité pharmaceutique en volume.',
+    description: 'Installation d\'extraction professionnelle équipée de cuves d\'extraction, colonnes de chromatographie, concentrateurs et systèmes analytiques pour le traitement du CBD et des extraits botaniques.',
     images: [
       { src: '/images/equipment/extraction-tanks.jpg', alt: 'Rangée de cuves d\'extraction en acier inoxydable', span: 'col-span-1' },
       { src: '/images/equipment/chromatography-upper.jpg', alt: 'Section supérieure de la colonne de chromatographie', span: 'col-span-1' },
@@ -57,15 +57,15 @@ const sectors = [
     id: 'S04',
     label: 'Secteur 04 — Produit & Qualité',
     title: 'Produit & Laboratoire',
-    description: 'Chaque lot subit des tests rigoureux HPLC et GC-MS — de l\'isolat de CBD cristallin jusqu\'à l\'emballage final — garantissant une pureté ≥99,5% avec un THC non détectable.',
+    description: 'Capacité analytique HPLC en interne pour la gestion qualité. La documentation produit peut être fournie selon les exigences de commande.',
     images: [
       { src: '/images/products/cbd-crystal-closeup.jpg', alt: 'Gros plan d\'isolat de CBD cristallin de haute pureté', span: 'col-span-1' },
       { src: '/images/products/cbd-crystal-lab.jpg', alt: 'Cristal de CBD en environnement de laboratoire', span: 'col-span-1' },
       { src: '/images/products/cbd-packaging-foil.jpg', alt: 'Isolat de CBD en emballage aluminium scellé', span: 'col-span-1' },
       { src: '/images/products/cbd-shipping-box.jpg', alt: 'Carton d\'expédition produit prêt pour l\'export', span: 'col-span-1' },
     ],
-    stat: { label: 'Pureté CBD', value: '≥99,5%' },
-    eco: 'THC : ND (Non détectable)',
+    stat: { label: 'Produit', value: 'Cristal de CBD' },
+    eco: 'CAS : 13956-29-1',
   },
 ];
 
@@ -133,8 +133,8 @@ export default function FrGalleryPageClient() {
               <span className="text-primary">De la semence à la solution.</span>
             </h1>
             <p className="mt-6 text-sm text-on-surface-variant leading-relaxed max-w-xl">
-              Explorez notre chaîne d&apos;approvisionnement entièrement intégrée — des bases de culture en haute altitude du Yunnan
-              à travers l&apos;extraction industrielle et la chromatographie jusqu&apos;à l&apos;isolat de CBD de qualité pharmaceutique.
+              Aperçu visuel de nos opérations à Chuxiong, Yunnan — de la base de culture
+              à l&apos;installation d&apos;extraction jusqu&apos;au produit et à l&apos;emballage.
             </p>
           </div>
         </div>

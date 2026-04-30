@@ -20,7 +20,7 @@ const equipment = [
     specs: [
       { label: 'Volume', value: '6 000 L' },
       { label: 'Quantité', value: '20 ensembles' },
-      { label: 'Matériau', value: 'Acier inoxydable SUS316L' },
+      { label: 'Type', value: 'Multifonction' },
       { label: 'Fonction', value: 'Extraction multifonction' },
     ],
     desc: 'Vingt cuves d\'extraction multifonctions industrielles de 6m³ constituent le cœur de notre ligne d\'extraction, permettant le traitement à haut volume de biomasse de chanvre avec un contrôle précis de la température et des solvants.',
@@ -71,7 +71,7 @@ const equipment = [
       { label: 'Quantité', value: '10 ensembles' },
       { label: 'Fonction', value: 'Stockage de récupération d\'éthanol' },
     ],
-    desc: 'Dix cuves de stockage de 5m³ offrent un confinement sûr et antidéflagrant pour l\'éthanol récupéré, assurant un approvisionnement continu en solvant de la ligne d\'extraction en pleine conformité de sécurité.',
+    desc: 'Dix cuves de stockage de 5m³ offrent un confinement sûr pour l\'éthanol récupéré, assurant un approvisionnement continu en solvant de la ligne d\'extraction.',
   },
   {
     id: '06',
@@ -87,15 +87,15 @@ const equipment = [
   },
   {
     id: '07',
-    name: 'Système de contrôle automatisé antidéflagrant',
+    name: 'Système de contrôle automatisé',
     model: 'Siemens HMI',
     image: '/images/equipment/automation-control.jpg',
     specs: [
       { label: 'Marque', value: 'Siemens HMI' },
       { label: 'Fonction', value: 'Surveillance & contrôle des processus' },
-      { label: 'Sécurité', value: 'Certifié antidéflagrant' },
+      { label: 'Sécurité', value: 'Classé pour environnement de production' },
     ],
-    desc: 'Un système de contrôle automatisé basé sur Siemens HMI surveille et gère l\'ensemble de la ligne de production en temps réel, avec certification antidéflagrante pour un fonctionnement sûr dans les environnements riches en solvants.',
+    desc: 'Un système de contrôle automatisé basé sur Siemens HMI surveille et gère l\'ensemble de la ligne de production en temps réel.',
   },
   {
     id: '08',
@@ -106,19 +106,19 @@ const equipment = [
       { label: 'Fonction', value: 'Élimination automatique des résidus' },
       { label: 'Intégration', value: 'Entièrement automatisé' },
     ],
-    desc: 'Le système d\'évacuation automatique des résidus élimine la biomasse usagée des cuves d\'extraction sans intervention manuelle, améliorant le débit et maintenant les conditions de salle blanche tout au long de la production.',
+    desc: 'Le système d\'évacuation automatique des résidus élimine la biomasse usagée des cuves d\'extraction sans intervention manuelle, améliorant le débit tout au long de la production.',
   },
 ];
 
 const specsTable = [
-  { name: 'Cuves d\'extraction multifonctions 6m³', model: '×20 ensembles', function: 'Extraction multifonction', cgmp: 'SUS316L / CIP/SIP' },
-  { name: 'Colonnes de chromatographie 700L', model: '×26 colonnes', function: 'Séparation & purification des cannabinoïdes', cgmp: 'Conforme GMP' },
-  { name: 'Concentrateurs simple/double effet 2000L', model: '×10 ensembles', function: 'Concentration d\'extrait', cgmp: 'Fonctionnement sous vide' },
-  { name: 'Tour de récupération de solvant type 1000', model: '×2 ensembles', function: 'Récupération & recyclage de solvant', cgmp: 'Antidéflagrant' },
-  { name: 'Cuves de stockage d\'éthanol 5m³', model: '×10 ensembles', function: 'Stockage de récupération d\'éthanol', cgmp: 'Certifié sécurité' },
+  { name: 'Cuves d\'extraction multifonctions 6m³', model: '×20 ensembles', function: 'Extraction multifonction', cgmp: '—' },
+  { name: 'Colonnes de chromatographie 700L', model: '×26 colonnes', function: 'Séparation & purification', cgmp: '—' },
+  { name: 'Concentrateurs simple/double effet 2000L', model: '×10 ensembles', function: 'Concentration d\'extrait', cgmp: '—' },
+  { name: 'Tour de récupération de solvant type 1000', model: '×2 ensembles', function: 'Récupération & recyclage de solvant', cgmp: '—' },
+  { name: 'Cuves de stockage d\'éthanol 5m³', model: '×10 ensembles', function: 'Stockage de récupération d\'éthanol', cgmp: '—' },
   { name: 'Système analytique HPLC', model: 'UltiMate 3000', function: 'Analyse de contrôle qualité', cgmp: 'Thermo Scientific' },
-  { name: 'Contrôle automatisé antidéflagrant', model: 'Siemens HMI', function: 'Surveillance & contrôle des processus', cgmp: 'Certifié Ex' },
-  { name: 'Système d\'évacuation automatique des résidus', model: 'Intégré', function: 'Élimination automatique des résidus', cgmp: 'Entièrement automatisé' },
+  { name: 'Contrôle automatisé', model: 'Siemens HMI', function: 'Surveillance & contrôle des processus', cgmp: '—' },
+  { name: 'Système d\'évacuation automatique des résidus', model: 'Intégré', function: 'Élimination automatique des résidus', cgmp: '—' },
 ];
 
 export default function FrEquipmentPageClient() {
@@ -168,10 +168,10 @@ export default function FrEquipmentPageClient() {
                 <span className="text-primary">d&apos;extraction industrielle</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Notre installation industrielle d&apos;extraction et de purification de CBD à Chuxiong, Yunnan exploite plus de 80 unités d&apos;équipement principales couvrant l&apos;extraction, la chromatographie, la concentration et le contrôle qualité — offrant une capacité complète de la graine à l&apos;isolat sous pleine conformité GMP.
+                Notre installation de Chuxiong, Yunnan est équipée de cuves d&apos;extraction, colonnes de chromatographie, concentrateurs et systèmes analytiques — soutenant le traitement du CBD et des extraits botaniques.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Échelle industrielle', 'Standard GMP', 'Automatisation complète', 'Graine-à-Isolat'].map((tag) => (
+                {['Extraction', 'Chromatographie', 'Concentration', 'Automatisation'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -183,28 +183,28 @@ export default function FrEquipmentPageClient() {
               <img src="/images/equipment/chromatography-column-700L.webp" alt="Installation d'extraction industrielle" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
                 <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Échelle de l&apos;installation</p>
-                <p className="text-sm font-bold text-white">Chuxiong, Yunnan · 80+ unités d&apos;équipement</p>
+                <p className="text-sm font-bold text-white">Chuxiong, Yunnan</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── cGMP STANDARDS SECTION ─────────────────────────────────────── */}
+      {/* ── FACILITY OVERVIEW SECTION ──────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
         <div ref={cgmpRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             <div className="reveal-card lg:col-span-8 bg-surface-container-lowest p-10">
-              <SectionLabel>Normes de fabrication</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">Normes de fabrication cGMP</h2>
+              <SectionLabel>Vue d&apos;ensemble de l&apos;installation</SectionLabel>
+              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">Configuration des équipements</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { label: 'Matériau de construction', value: 'Acier inoxydable SUS316L intégral' },
-                  { label: 'Protocole de nettoyage', value: 'Système de nettoyage CIP/SIP intégré' },
-                  { label: 'Contrôles de sécurité', value: 'Automatisation antidéflagrante (Siemens)' },
-                  { label: 'Environnement', value: 'Installation de production en salle blanche' },
-                  { label: 'Registres de lots', value: 'Système complet de traçabilité des lots' },
-                  { label: 'Contrôle des processus', value: 'Surveillance HMI en temps réel' },
+                  { label: 'Extraction', value: '20 cuves d\'extraction' },
+                  { label: 'Chromatographie', value: '26 colonnes de chromatographie' },
+                  { label: 'Concentration', value: '10 concentrateurs' },
+                  { label: 'Analytique', value: 'HPLC (Thermo UltiMate 3000)' },
+                  { label: 'Automatisation', value: 'Système de contrôle Siemens HMI' },
+                  { label: 'Récupération', value: 'Récupération & stockage de solvant' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
                     <CheckCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
@@ -219,17 +219,17 @@ export default function FrEquipmentPageClient() {
 
             <div className="reveal-card lg:col-span-4 bg-primary p-10 flex flex-col justify-between">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Certification</p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Localisation</p>
                 <p className="text-3xl font-extrabold text-white tracking-tighter leading-tight mb-4">
-                  Installation de<br />production conforme cGMP
+                  Chuxiong, Yunnan<br />Installation de production
                 </p>
                 <p className="text-xs text-white/60 leading-relaxed">
-                  Notre installation de Chuxiong fonctionne selon les normes cGMP avec construction SUS316L, nettoyage CIP/SIP, contrôles antidéflagrants et traçabilité complète des lots à toutes les étapes de production.
+                  Installation professionnelle d&apos;extraction et de traitement soutenant la production de matières premières CBD et le traitement d&apos;extraits botaniques.
                 </p>
               </div>
               <Link href="/fr/inquiry" className="mt-8 inline-flex items-center gap-2 px-5 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
                 <Download size={14} />
-                Demander la documentation de l&apos;installation
+                Nous contacter
               </Link>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function FrEquipmentPageClient() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b-2 border-primary/30">
-                  {['Nom de l\'équipement', 'Gamme de modèles', 'Fonction du processus', 'Standard cGMP'].map((col) => (
+                  {['Nom de l\'équipement', 'Gamme de modèles', 'Fonction du processus', 'Notes'].map((col) => (
                     <th key={col} className="text-left text-xs font-semibold tracking-widest uppercase text-on-surface-variant pb-4 pr-8">{col}</th>
                   ))}
                 </tr>

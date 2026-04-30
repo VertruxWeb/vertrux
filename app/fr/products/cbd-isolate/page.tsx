@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import FrProductPageClient from '@/components/pages/FrProductPageClient';
 
 export const metadata: Metadata = {
-  title: 'Isolat de CBD >=99,5% Purete | Cannabidiol Pharmaceutique | Vetrux CBD',
-  description: 'Isolat de CBD de qualite pharmaceutique avec >=99,5% de purete (HPLC), THC non detecte. CAS 13956-29-1, SH 2907299020. Produit au Yunnan selon les normes cGMP.',
-  keywords: 'isolat CBD purete, isolat CBD pharmaceutique, isolat CBD sans THC, isolat CBD gros, isolat CBD Europe',
+  title: 'Cristal CBD | Apercu produit | Vetrux CBD',
+  description: 'Cristal CBD (CAS 13956-29-1, SH 2907299020). Conditionnement: sacs PE 5 kg, sacs aluminium 5 kg, cartons export. Documentation selon les exigences de commande.',
+  keywords: 'cristal CBD, matiere premiere CBD, CAS 13956-29-1, conditionnement CBD, fournisseur CBD',
   alternates: {
     canonical: 'https://www.vetrux.tech/fr/products/cbd-isolate',
     languages: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Isolat de CBD >=99,5% Purete',
-    description: 'Isolat de CBD de qualite pharmaceutique avec >=99,5% de purete (HPLC), THC non detecte. CAS 13956-29-1, SH 2907299020. Produit au Yunnan selon les normes cGMP.',
+    title: 'Cristal CBD | Vetrux CBD',
+    description: 'Cristal CBD (CAS 13956-29-1, SH 2907299020). Documentation selon les exigences de commande.',
     url: 'https://www.vetrux.tech/fr/products/cbd-isolate',
     locale: 'fr_FR',
     type: 'website',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Isolat de CBD >=99,5% Purete',
-    description: 'Isolat de CBD de qualite pharmaceutique avec >=99,5% de purete (HPLC), THC non detecte. CAS 13956-29-1, SH 2907299020. Produit au Yunnan selon les normes cGMP.',
+    title: 'Cristal CBD | Vetrux CBD',
+    description: 'Cristal CBD (CAS 13956-29-1, SH 2907299020). Documentation selon les exigences de commande.',
   },
 };
 
