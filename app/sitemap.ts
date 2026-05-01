@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { articles } from '@/content/articles'
+import { gallerySlugs } from '@/lib/gallery'
 
 const BASE_URL = 'https://www.vetrux.tech'
 
@@ -19,10 +20,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/de`,                        lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/fr`,                        lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/gallery`,                   lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/process`,    lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/de/process`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/fr/process`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/about`,                     lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/privacy-policy`,            lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE_URL}/terms-of-service`,          lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
   ]
+
+  // Gallery sector subpages — EN/DE/FR variants (12 routes).
+  const gallerySectorRoutes: MetadataRoute.Sitemap = gallerySlugs.flatMap((slug) => [
+    { url: `${BASE_URL}/gallery/${slug}`,    lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/de/gallery/${slug}`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/fr/gallery/${slug}`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+  ])
 
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${BASE_URL}/blog/${article.slug}`,
@@ -31,5 +42,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticRoutes, ...articleRoutes]
+  return [...staticRoutes, ...gallerySectorRoutes, ...articleRoutes]
 }

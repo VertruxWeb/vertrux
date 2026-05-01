@@ -1,148 +1,99 @@
 'use client'
 
-import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SectionLabel from '@/components/atoms/SectionLabel';
+import { useRef } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
+import SectionLabel from '@/components/atoms/SectionLabel'
+import { useReveal } from '@/hooks/useReveal'
+import { gallerySectors, galleryIndexStrings, type Locale } from '@/lib/gallery'
 
-gsap.registerPlugin(ScrollTrigger);
-
-const sectors = [
-  {
-    id: 'S01',
-    label: 'Sector 01 — Architectural Excellence',
-    title: 'Main Campus & Infrastructure',
-    description: 'Our production site in Yunnan houses extraction, processing, and quality-control equipment — supporting CBD and botanical extract operations.',
-    images: [
-      { src: '/images/gallery/campus-aerial.png', alt: 'Aerial view of Vetrux industrial campus with surrounding mountains', span: 'col-span-1 row-span-2' },
-      { src: '/images/gallery/campus-buildings.webp', alt: 'Campus buildings with landscaped grounds', span: 'col-span-1' },
-      { src: '/images/gallery/processing-workshop.webp', alt: 'Modern processing workshop exterior', span: 'col-span-1' },
-    ],
-    stat: { label: 'Location', value: 'Chuxiong, Yunnan' },
-    eco: 'Production Site',
-  },
-  {
-    id: 'S02',
-    label: 'Sector 02 — Raw Material Purity',
-    title: 'Planting Base & Cultivation',
-    description: 'Cultivation and breeding center in Yunnan province — from seed selection through growing management — supporting standardized and traceable raw material production.',
-    images: [
-      { src: '/images/gallery/cultivation-field.jpg', alt: 'Hemp field under hoop-house frame structures', span: 'col-span-2 row-span-2' },
-      { src: '/images/gallery/cultivation-base-wide.jpg', alt: 'Wide view of cultivation base with mountain backdrop', span: 'col-span-1' },
-      { src: '/images/gallery/cultivation-base-rows.jpg', alt: 'Rows of tall hemp plants in greenhouse frames', span: 'col-span-1' },
-      { src: '/images/planting/flowering-greenhouse.jpg', alt: 'Flowering hemp in controlled greenhouse environment', span: 'col-span-1' },
-      { src: '/images/planting/flowering-cola-closeup.jpg', alt: 'Close-up of flowering hemp cola', span: 'col-span-1' },
-    ],
-    stat: { label: 'Cultivation', value: 'Chuxiong Base' },
-    eco: 'Yunnan Province',
-  },
-  {
-    id: 'S03',
-    label: 'Sector 03 — Technical Precision',
-    title: 'Extraction & Refinement',
-    description: 'Professional extraction facility equipped with extraction tanks, chromatography columns, concentrators, and analytical systems for CBD and botanical extract processing.',
-    images: [
-      { src: '/images/equipment/extraction-tanks.jpg', alt: 'Stainless steel extraction tank array', span: 'col-span-1' },
-      { src: '/images/equipment/chromatography-upper.jpg', alt: 'Chromatography column upper section', span: 'col-span-1' },
-      { src: '/images/equipment/concentrator-system.jpg', alt: 'Industrial concentrator system', span: 'col-span-1' },
-      { src: '/images/equipment/hplc-system.jpg', alt: 'HPLC analytical system for quality control', span: 'col-span-1' },
-      { src: '/images/equipment/automation-control.jpg', alt: 'Automated process control panel', span: 'col-span-1' },
-      { src: '/images/equipment/solvent-recovery-tower.jpg', alt: 'Solvent recovery tower', span: 'col-span-1' },
-    ],
-    stat: { label: 'Extraction Tanks', value: '20 Units' },
-    eco: '26 Chromatography Columns',
-  },
-  {
-    id: 'S04',
-    label: 'Sector 04 — Product & Quality',
-    title: 'Product & Laboratory',
-    description: 'In-house HPLC analytical capability supports quality management. Product documentation may be provided according to order requirements.',
-    images: [
-      { src: '/images/products/cbd-crystal-closeup.jpg', alt: 'Close-up of high-purity CBD crystalline isolate', span: 'col-span-1' },
-      { src: '/images/products/cbd-crystal-lab.jpg', alt: 'CBD isolate in laboratory setting', span: 'col-span-1' },
-      { src: '/images/products/cbd-packaging-foil.jpg', alt: 'CBD isolate in sealed foil packaging', span: 'col-span-1' },
-      { src: '/images/products/cbd-shipping-box.jpg', alt: 'Product shipping box ready for export', span: 'col-span-1' },
-    ],
-    stat: { label: 'Product', value: 'CBD Isolate' },
-    eco: 'Purity: ≥99.9%',
-  },
-];
-
-function SectorSection({ sector, idx }: { sector: typeof sectors[0]; idx: number }) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    if (!sectionRef.current) return;
-    const items = sectionRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
-    });
-  }, { scope: sectionRef });
-
-  return (
-    <section className={`py-24 ${idx % 2 === 1 ? 'bg-surface-container-low' : 'bg-surface'}`}>
-      <div ref={sectionRef} className="max-w-container mx-auto px-6 lg:px-12">
-        <div className="reveal-card flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
-          <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-3">{sector.label}</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-on-background tracking-tighter leading-tight">{sector.title}</h2>
-            <p className="mt-4 text-sm text-on-surface-variant leading-relaxed max-w-lg">{sector.description}</p>
-          </div>
-          <div className="reveal-card flex-shrink-0 bg-primary p-6 min-w-[180px]">
-            <p className="text-xs tracking-widest uppercase text-white/60 mb-1">{sector.stat.label}</p>
-            <p className="text-2xl font-extrabold text-white tracking-tighter">{sector.stat.value}</p>
-            <p className="text-xs text-white/50 tracking-wider uppercase mt-2">{sector.eco}</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {sector.images.map((img, i) => (
-            <div key={i} className="reveal-card overflow-hidden group">
-              <img src={img.src} alt={img.alt} className="w-full h-56 object-cover group-hover:scale-[1.03] transition-transform duration-500" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+interface GalleryPageClientProps {
+  locale?: Locale
 }
 
-export default function GalleryPageClient() {
-  const heroRef = useRef<HTMLDivElement>(null);
+export default function GalleryPageClient({ locale = 'en' }: GalleryPageClientProps) {
+  const heroRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
 
-  useGSAP(() => {
-    if (!heroRef.current) return;
-    const items = heroRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: heroRef.current, start: 'top 80%' },
-    });
-  }, { scope: heroRef });
+  useReveal(heroRef, { y: 40, stagger: 0.1, start: 'top 80%' })
+  useReveal(cardsRef, { y: 50, stagger: 0.12, start: 'top 80%' })
+
+  const t = galleryIndexStrings[locale]
+  const langPrefix = locale === 'en' ? '' : `/${locale}`
 
   return (
     <div className="bg-surface">
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
         <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
-            <SectionLabel>Visual Documentation</SectionLabel>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-on-background tracking-tighter leading-[0.95] max-w-3xl">
-              Vertical Integration.
+            <SectionLabel>{t.eyebrow}</SectionLabel>
+            <h1 className="text-5xl md:text-7xl font-serif font-medium text-on-background tracking-tight leading-[1.0] max-w-3xl">
+              {t.titleLine1}
               <br />
-              <span className="text-primary">From Seed to Solution.</span>
+              <span className="italic text-primary">{t.titleLine2}</span>
             </h1>
-            <p className="mt-6 text-sm text-on-surface-variant leading-relaxed max-w-xl">
-              Visual overview of our Chuxiong, Yunnan operations — from cultivation base
-              through extraction facility to product and packaging.
+            <p className="mt-6 text-[15px] text-on-surface-variant leading-relaxed max-w-xl">
+              {t.intro}
             </p>
           </div>
         </div>
       </section>
 
-      {sectors.map((sector, idx) => (
-        <SectorSection key={sector.id} sector={sector} idx={idx} />
-      ))}
+      {/* ── 4-SECTOR CARD GRID ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-24 bg-surface">
+        <div ref={cardsRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {gallerySectors.map((sector) => {
+              const c = sector.content[locale]
+              return (
+                <Link
+                  key={sector.slug}
+                  href={`${langPrefix}/gallery/${sector.slug}`}
+                  aria-label={`${c.title} — ${c.cta}`}
+                  className="reveal-card group relative flex flex-col bg-surface-high border border-outline-variant/30 hover:border-accent transition-all duration-200 ease-industrial focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+                >
+                  {/* Cover image */}
+                  <div className="relative w-full aspect-[4/3] overflow-hidden bg-surface-ink">
+                    <Image
+                      src={sector.cover.src}
+                      alt={sector.cover.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-ink/55 via-transparent to-transparent" />
+                    <span className="absolute top-3 left-3 inline-flex items-center px-2 py-0.5 bg-accent text-white text-[10px] font-semibold tracking-[0.25em] uppercase rounded-sm">
+                      {sector.code}
+                    </span>
+                    <span className="absolute bottom-3 right-3 text-[10px] tracking-[0.2em] uppercase text-white/80 bg-surface-ink/60 backdrop-blur-sm px-2 py-1 rounded-sm">
+                      {sector.images.length} {t.imagesCountSuffix}
+                    </span>
+                  </div>
+
+                  {/* Copy */}
+                  <div className="flex flex-col flex-1 p-6 border-l-2 border-transparent group-hover:border-accent transition-colors duration-200">
+                    <h3 className="font-serif text-lg text-on-background tracking-tight leading-snug">
+                      {c.title}
+                    </h3>
+                    <p className="mt-2 text-[13px] text-on-surface-variant leading-relaxed flex-1">
+                      {c.cardBlurb}
+                    </p>
+                    <div className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.25em] uppercase text-accent">
+                      {c.cta}
+                      <ArrowRight
+                        size={12}
+                        className="transition-transform duration-200 group-hover:translate-x-1"
+                      />
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
