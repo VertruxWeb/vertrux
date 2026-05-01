@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import FrProductPageClient from '@/components/pages/FrProductPageClient';
 
 export const metadata: Metadata = {
-  title: 'Cristal CBD | Apercu produit | Vetrux CBD',
-  description: 'Cristal CBD (CAS 13956-29-1, SH 2907299020). Conditionnement: sacs PE 5 kg, sacs aluminium 5 kg, cartons export. Documentation selon les exigences de commande.',
-  keywords: 'cristal CBD, matiere premiere CBD, CAS 13956-29-1, conditionnement CBD, fournisseur CBD',
+  title: 'Isolat CBD | Apercu produit | Vetrux CBD',
+  description: 'Isolat CBD avec une pureté ≥99,9%. Conditionnement: sacs PE 5 kg, sacs aluminium 5 kg, cartons export. Documentation selon les exigences de commande.',
+  keywords: 'isolat CBD, matiere premiere CBD, conditionnement CBD, fournisseur CBD',
   alternates: {
     canonical: 'https://www.vetrux.tech/fr/products/cbd-isolate',
     languages: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Cristal CBD | Vetrux CBD',
-    description: 'Cristal CBD (CAS 13956-29-1, SH 2907299020). Documentation selon les exigences de commande.',
+    title: 'Isolat CBD | Vetrux CBD',
+    description: 'Isolat CBD avec une pureté ≥99,9%. Documentation selon les exigences de commande.',
     url: 'https://www.vetrux.tech/fr/products/cbd-isolate',
     locale: 'fr_FR',
     type: 'website',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cristal CBD | Vetrux CBD',
-    description: 'Cristal CBD (CAS 13956-29-1, SH 2907299020). Documentation selon les exigences de commande.',
+    title: 'Isolat CBD | Vetrux CBD',
+    description: 'Isolat CBD avec une pureté ≥99,9%. Documentation selon les exigences de commande.',
   },
 };
 

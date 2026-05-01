@@ -14,9 +14,9 @@ import SpecRow from '@/components/molecules/SpecRow';
 gsap.registerPlugin(ScrollTrigger);
 
 const technicalMetrics = [
-  { label: 'Numéro CAS', value: '13956-29-1', status: 'Cannabidiol' },
-  { label: 'Code SH', value: '2907299020', status: 'Classification export' },
-  { label: 'Produit', value: 'Cristal de CBD', status: 'Isolat' },
+  { label: 'Produit', value: 'Isolat CBD', status: 'Isolat de Cannabidiol' },
+  { label: 'Pureté', value: '≥99,9%', status: 'THC non détecté (ND)' },
+  { label: 'Produit', value: 'Isolat de CBD', status: 'Isolat' },
   { label: 'Analyse', value: 'HPLC', status: 'Par lot' },
   { label: 'Apparence', value: 'Cristallin blanc', status: 'Poudre' },
   { label: 'Formule moléculaire', value: 'C₂₁H₃₀O₂', status: 'PM 314,46 g/mol' },
@@ -102,16 +102,16 @@ export default function FrProductPageClient() {
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
                 Isolat de CBD
                 <br />
-                <span className="text-primary">Cristal de CBD</span>
+                <span className="text-primary">Isolat de CBD</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Isolat de CBD (CAS 13956-29-1, SH 2907299020), poudre cristalline blanche. Produit à partir de chanvre industriel du Yunnan. Nous fournissons également des anthocyanes, des glycosides de stéviol et de la globuline de graines de chanvre pour la R&D, la nutrition, l&apos;alimentation et les boissons, et les soins personnels.
+                Isolat CBD avec une pureté ≥99,9%, poudre cristalline blanche. Produit à partir de chanvre industriel du Yunnan. Nous fournissons également des anthocyanes, des glycosides de stéviol et de la globuline de graines de chanvre pour la R&D, la nutrition, l&apos;alimentation et les boissons, et les soins personnels.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  'Cristal de CBD',
-                  'CAS 13956-29-1',
+                  'Isolat de CBD',
+                  '≥99,9% Pureté',
                   'Anthocyanes',
                   'Glycosides de stéviol',
                   'Globuline de chanvre',
@@ -136,8 +136,8 @@ export default function FrProductPageClient() {
             <div className="reveal-card relative">
               <Image src="/images/products/cbd-crystal-closeup.jpg" alt="Isolat de CBD poudre cristalline blanche" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
-                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">CAS 13956-29-1</p>
-                <p className="text-sm font-bold text-white">Code SH : 2907299020</p>
+                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Isolat CBD</p>
+                <p className="text-sm font-bold text-white">Pureté : ≥99,9%</p>
               </div>
             </div>
           </div>
@@ -190,7 +190,6 @@ export default function FrProductPageClient() {
               <div>
                 <SpecRow label="Nom du produit" value="Isolat de CBD" />
                 <SpecRow label="Nom chimique" value="Cannabidiol (CBD)" />
-                <SpecRow label="Numéro CAS" value="13956-29-1" />
                 <SpecRow label="Formule moléculaire" value="C₂₁H₃₀O₂" />
                 <SpecRow label="Masse moléculaire" value="314,46 g/mol" />
                 <SpecRow label="Analyse" value="HPLC (par lot)" />

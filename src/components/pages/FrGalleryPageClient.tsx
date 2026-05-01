@@ -60,12 +60,12 @@ const sectors = [
     description: 'Capacité analytique HPLC en interne pour la gestion qualité. La documentation produit peut être fournie selon les exigences de commande.',
     images: [
       { src: '/images/products/cbd-crystal-closeup.jpg', alt: 'Gros plan d\'isolat de CBD cristallin de haute pureté', span: 'col-span-1' },
-      { src: '/images/products/cbd-crystal-lab.jpg', alt: 'Cristal de CBD en environnement de laboratoire', span: 'col-span-1' },
+      { src: '/images/products/cbd-crystal-lab.jpg', alt: 'Isolat de CBD en environnement de laboratoire', span: 'col-span-1' },
       { src: '/images/products/cbd-packaging-foil.jpg', alt: 'Isolat de CBD en emballage aluminium scellé', span: 'col-span-1' },
       { src: '/images/products/cbd-shipping-box.jpg', alt: 'Carton d\'expédition produit prêt pour l\'export', span: 'col-span-1' },
     ],
-    stat: { label: 'Produit', value: 'Cristal de CBD' },
-    eco: 'CAS : 13956-29-1',
+    stat: { label: 'Produit', value: 'Isolat de CBD' },
+    eco: 'Pureté : ≥99,9%',
   },
 ];
 

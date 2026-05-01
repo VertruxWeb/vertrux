@@ -205,7 +205,7 @@ export default function DeHomePageClient() {
             <div className="reveal-card lg:col-span-8 relative overflow-hidden">
               <Image
                 src="/images/products/cbd-crystal-closeup.jpg"
-                alt="CBD-Isolat Kristall Nahaufnahme"
+                alt="CBD-Isolat Nahaufnahme"
                 width={1200}
                 height={580}
                 sizes="(max-width: 1024px) 100vw, 66vw"
@@ -279,7 +279,7 @@ export default function DeHomePageClient() {
             {[
               {
                 q: 'Was ist CBD-Isolat und wie unterscheidet es sich von Vollspektrum-CBD?',
-                a: 'CBD-Isolat ist eine hochreine Form von Cannabidiol — ein weißes kristallines Pulver (CAS: 13956-29-1, HS-Code: 2907299020), bei dem andere Cannabinoide, Terpene und Pflanzenverbindungen entfernt wurden. Im Gegensatz zu Vollspektrum-CBD, das mehrere Cannabinoide enthält, ist CBD-Isolat auf einen einzelnen Wirkstoff fokussiert, was es für Formulierungen mit präziser Dosierung geeignet macht. Reinheitsspezifikationen sind in der Chargendokumentation verfügbar.',
+                a: 'CBD-Isolat ist eine hochreine Form von Cannabidiol — ein weißes kristallines Pulver mit ≥99,9% Reinheit, bei dem andere Cannabinoide, Terpene und Pflanzenverbindungen entfernt wurden. Im Gegensatz zu Vollspektrum-CBD, das mehrere Cannabinoide enthält, ist CBD-Isolat auf einen einzelnen Wirkstoff fokussiert, was es für Formulierungen mit präziser Dosierung geeignet macht. Reinheitsspezifikationen sind in der Chargendokumentation verfügbar.',
               },
               {
                 q: 'Welche Dienstleistungen bietet Vetrux über CBD-Isolat hinaus an?',

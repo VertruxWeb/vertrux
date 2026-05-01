@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd. CBD raw material sales, OEM/ODM services, technical support, and botanical extract solutions.',
   keywords:
-    'CBD raw materials, CBD crystal, OEM ODM CBD, botanical extracts, CBD supplier, Vetrux CBD, Yunnan',
+    'CBD raw materials, CBD isolate, OEM ODM CBD, botanical extracts, CBD supplier, Vetrux CBD, Yunnan',
   authors: [{ name: 'Vetrux CBD' }],
   robots: { index: true, follow: true },
   openGraph: {

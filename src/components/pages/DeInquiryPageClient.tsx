@@ -112,7 +112,7 @@ export default function DeInquiryPageClient() {
                 <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">Leistungsspektrum</p>
                 <div className="space-y-4">
                   {[
-                    { cert: 'CBD-Rohstoffe', desc: 'CBD-Kristall (CAS 13956-29-1)' },
+                    { cert: 'CBD-Rohstoffe', desc: 'CBD-Isolat, ≥99,9% Reinheit' },
                     { cert: 'OEM/ODM-Dienstleistungen', desc: 'Von der Formulierung zum Endprodukt' },
                     { cert: 'Technische Unterstützung', desc: 'Anbau- & Extraktionsexpertise' },
                     { cert: 'Botanische Extrakte', desc: 'Anthocyane, Steviolglykoside, Hanfsamenprotein' },

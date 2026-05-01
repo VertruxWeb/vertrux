@@ -112,7 +112,7 @@ export default function FrInquiryPageClient() {
                 <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-6">Capacités de Service</p>
                 <div className="space-y-4">
                   {[
-                    { cert: 'Matières Premières CBD', desc: 'Cristal CBD (CAS 13956-29-1)' },
+                    { cert: 'Matières Premières CBD', desc: 'Isolat CBD, pureté ≥99,9%' },
                     { cert: 'Services OEM/ODM', desc: 'De la formulation au produit fini' },
                     { cert: 'Support Technique', desc: 'Expertise en culture & extraction' },
                     { cert: 'Extraits Botaniques', desc: 'Anthocyanes, glycosides de stéviol, globuline de chanvre' },

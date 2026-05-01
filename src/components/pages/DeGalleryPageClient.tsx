@@ -60,7 +60,7 @@ const sectors = [
     description: 'Jede Charge durchläuft strenge HPLC- und GC-MS-Tests — vom kristallinen CBD-Isolat bis zur Endverpackung — mit vollständiger Chargendokumentation.',
     images: [
       { src: '/images/products/cbd-crystal-closeup.jpg', alt: 'Nahaufnahme von hochreinem kristallinem CBD-Isolat', span: 'col-span-1' },
-      { src: '/images/products/cbd-crystal-lab.jpg', alt: 'CBD-Kristall im Laborumfeld', span: 'col-span-1' },
+      { src: '/images/products/cbd-crystal-lab.jpg', alt: 'CBD-Isolat im Laborumfeld', span: 'col-span-1' },
       { src: '/images/products/cbd-packaging-foil.jpg', alt: 'CBD-Isolat in versiegelter Folienverpackung', span: 'col-span-1' },
       { src: '/images/products/cbd-shipping-box.jpg', alt: 'Produktversandkarton exportbereit', span: 'col-span-1' },
     ],

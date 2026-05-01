@@ -60,12 +60,12 @@ const sectors = [
     description: 'In-house HPLC analytical capability supports quality management. Product documentation may be provided according to order requirements.',
     images: [
       { src: '/images/products/cbd-crystal-closeup.jpg', alt: 'Close-up of high-purity CBD crystalline isolate', span: 'col-span-1' },
-      { src: '/images/products/cbd-crystal-lab.jpg', alt: 'CBD crystal in laboratory setting', span: 'col-span-1' },
+      { src: '/images/products/cbd-crystal-lab.jpg', alt: 'CBD isolate in laboratory setting', span: 'col-span-1' },
       { src: '/images/products/cbd-packaging-foil.jpg', alt: 'CBD isolate in sealed foil packaging', span: 'col-span-1' },
       { src: '/images/products/cbd-shipping-box.jpg', alt: 'Product shipping box ready for export', span: 'col-span-1' },
     ],
-    stat: { label: 'Product', value: 'CBD Crystal' },
-    eco: 'CAS: 13956-29-1',
+    stat: { label: 'Product', value: 'CBD Isolate' },
+    eco: 'Purity: ≥99.9%',
   },
 ];
 

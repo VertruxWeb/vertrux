@@ -14,8 +14,8 @@ import SpecRow from '@/components/molecules/SpecRow';
 gsap.registerPlugin(ScrollTrigger);
 
 const technicalMetrics = [
-  { label: 'CAS Number', value: '13956-29-1', status: 'Cannabidiol' },
-  { label: 'HS Code', value: '2907299020', status: 'Export Classification' },
+  { label: 'Product', value: 'CBD Isolate', status: 'Cannabidiol Isolate' },
+  { label: 'Purity', value: '≥99.9%', status: 'THC Non-Detect (ND)' },
   { label: 'Inner Packaging', value: '5 kg/bag', status: 'PE or Aluminum Foil' },
   { label: 'Outer Packaging', value: '465×285×295mm', status: 'Export Carton' },
 ];
@@ -101,16 +101,16 @@ export default function ProductPageClient() {
                 <span className="text-primary">99.9% Purity</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                CBD crystal (CAS 13956-29-1, HS 2907299020). We also supply anthocyanins, steviol glycosides, and hemp seed globulin for pharmaceutical R&D, nutrition, food & beverage, and personal care applications.
+                CBD isolate with ≥99.9% purity. We also supply anthocyanins, steviol glycosides, and hemp seed globulin for pharmaceutical R&D, nutrition, food & beverage, and personal care applications.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  'CBD Crystal',
+                  'CBD Isolate',
                   'Anthocyanins',
                   'Steviol Glycosides',
                   'Hemp Seed Globulin',
-                  'CAS 13956-29-1',
+                  '≥99.9% Purity',
                 ].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
@@ -132,8 +132,8 @@ export default function ProductPageClient() {
             <div className="reveal-card relative">
               <Image src="/images/products/cbd-crystal-closeup.jpg" alt="CBD Isolate 99.9% purity white crystalline powder" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
-                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">CAS 13956-29-1</p>
-                <p className="text-sm font-bold text-white">HS Code: 2907299020</p>
+                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">CBD Isolate</p>
+                <p className="text-sm font-bold text-white">Purity: ≥99.9%</p>
               </div>
             </div>
           </div>
@@ -180,9 +180,8 @@ export default function ProductPageClient() {
               <SectionLabel>Product Specifications</SectionLabel>
               <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">Full Product Spec Sheet</h2>
               <div>
-                <SpecRow label="Product Name" value="CBD Crystal" />
-                <SpecRow label="CAS Number" value="13956-29-1" />
-                <SpecRow label="HS Code" value="2907299020" />
+                <SpecRow label="Product Name" value="CBD Isolate" />
+                <SpecRow label="Purity" value="≥99.9% (THC Non-Detect)" />
                 <SpecRow label="Packaging (Inner)" value="PE bags 5kg/bag (27×60cm, food grade) or Aluminum foil bags 5kg/bag (35×50cm, food grade)" />
                 <SpecRow label="Packaging (Outer)" value="Export cartons 465×285×295mm, 2 bags per carton" />
                 <SpecRow label="Palletization" value="Plastic pallets with shrink wrap" isLast />
@@ -227,7 +226,7 @@ export default function ProductPageClient() {
           <div className="reveal-card flex flex-wrap items-center gap-4 mb-12">
             <SectionLabel className="mb-0">Quality & Product Lines</SectionLabel>
             <div className="flex gap-3">
-              {['CBD Crystal', 'Botanical Extracts', 'OEM/ODM'].map((cert) => (
+              {['CBD Isolate', 'Botanical Extracts', 'OEM/ODM'].map((cert) => (
                 <span key={cert} className="px-3 py-1 bg-primary-fixed text-primary text-xs font-bold tracking-wider uppercase rounded-full">
                   {cert}
                 </span>

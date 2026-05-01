@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       'VETRUX ist die CBD-Produktmarke von 蔚萃生物科技（楚雄）有限公司. CBD-Rohstoffverkauf, OEM/ODM-Dienstleistungen, technische Unterstützung und botanische Extraktlösungen aus Yunnan, China.',
     keywords:
-      'CBD Rohstoffe, CBD Kristall, OEM ODM CBD, botanische Extrakte, CBD Lieferant, Vetrux CBD, Yunnan',
+      'CBD Rohstoffe, CBD Isolat, OEM ODM CBD, botanische Extrakte, CBD Lieferant, Vetrux CBD, Yunnan',
     alternates: {
       canonical: `${baseUrl}/de`,
       languages: {

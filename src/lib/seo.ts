@@ -44,9 +44,9 @@ const organizationJsonLd = {
 const productJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'CBD Crystal',
+  name: 'CBD Isolate',
   description:
-    'CBD crystal (CAS 13956-29-1, HS 2907299020). Available in 5 kg PE bags and 5 kg aluminum foil bags, packed in export cartons. Supporting documentation provided according to order requirements.',
+    'CBD isolate with ≥99.9% purity. Available in 5 kg PE bags and 5 kg aluminum foil bags, packed in export cartons. Supporting documentation provided according to order requirements.',
   brand: { '@type': 'Brand', name: 'Vetrux CBD' },
   manufacturer: {
     '@type': 'Organization',
@@ -55,8 +55,6 @@ const productJsonLd = {
   },
   category: 'CBD Raw Materials',
   additionalProperty: [
-    { '@type': 'PropertyValue', name: 'CAS Number', value: '13956-29-1' },
-    { '@type': 'PropertyValue', name: 'HS Code', value: '2907299020' },
     { '@type': 'PropertyValue', name: 'Packaging', value: '5 kg PE bags / 5 kg Aluminum Foil bags / Export Cartons' },
   ],
   offers: {
@@ -77,18 +75,18 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     image: defaultImage,
     type: 'website',
     keywords:
-      'CBD raw materials, CBD crystal, OEM ODM CBD, botanical extracts, CBD supplier, Vetrux CBD, Yunnan',
+      'CBD raw materials, CBD isolate, OEM ODM CBD, botanical extracts, CBD supplier, Vetrux CBD, Yunnan',
     jsonLd: [organizationJsonLd, productJsonLd],
   },
   '/products/cbd-isolate': {
-    title: 'CBD Crystal | Product Overview — Vetrux CBD',
+    title: 'CBD Isolate | Product Overview — Vetrux CBD',
     description:
-      'CBD crystal (CAS 13956-29-1, HS 2907299020). Packaging: 5 kg PE bags, 5 kg aluminum foil bags, export cartons. Supporting documentation available according to order requirements.',
+      'CBD isolate with ≥99.9% purity. Packaging: 5 kg PE bags, 5 kg aluminum foil bags, export cartons. Supporting documentation available according to order requirements.',
     canonicalPath: '/products/cbd-isolate',
     image: '/images/products/cbd-crystal-closeup.jpg',
     type: 'website',
     keywords:
-      'CBD crystal, CBD isolate, CAS 13956-29-1, CBD raw material, bulk CBD, CBD packaging',
+      'CBD isolate, CBD raw material, bulk CBD, CBD packaging',
     jsonLd: [productJsonLd],
   },
   '/equipment': {

@@ -14,8 +14,8 @@ import SpecRow from '@/components/molecules/SpecRow';
 gsap.registerPlugin(ScrollTrigger);
 
 const technicalMetrics = [
-  { label: 'CAS-Nummer', value: '13956-29-1', status: 'Cannabidiol' },
-  { label: 'HS-Code', value: '2907299020', status: 'Exportklassifikation' },
+  { label: 'Produkt', value: 'CBD-Isolat', status: 'Cannabidiol-Isolat' },
+  { label: 'Reinheit', value: '≥99,9%', status: 'THC nicht nachweisbar (ND)' },
   { label: 'CBD-Reinheit (HPLC)', value: 'Siehe COA', status: 'Chargenspezifisch' },
   { label: 'THC-Gehalt', value: 'Siehe COA', status: 'Chargenspezifisch' },
   { label: 'Erscheinungsbild', value: 'Weiß kristallin', status: 'Pulver' },
@@ -102,10 +102,10 @@ export default function DeProductPageClient() {
               <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
                 CBD-Isolat
                 <br />
-                <span className="text-primary">Hochreines CBD-Kristall</span>
+                <span className="text-primary">Hochreines CBD-Isolat</span>
               </h1>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                CBD-Isolat (CAS 13956-29-1, HS 2907299020), weißes kristallines Pulver. Hergestellt aus Yunnan-Industriehanf mittels Ethanol-Extraktion und chromatographischer Reinigung. Wir liefern auch Anthocyane, Steviolglykoside und Hanfsamen-Globulin für F&E, Ernährung, Lebensmittel & Getränke sowie Körperpflege.
+                CBD-Isolat mit ≥99,9% Reinheit, weißes kristallines Pulver. Hergestellt aus Yunnan-Industriehanf mittels Ethanol-Extraktion und chromatographischer Reinigung. Wir liefern auch Anthocyane, Steviolglykoside und Hanfsamen-Globulin für F&E, Ernährung, Lebensmittel & Getränke sowie Körperpflege.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -136,8 +136,8 @@ export default function DeProductPageClient() {
             <div className="reveal-card relative">
               <Image src="/images/products/cbd-crystal-closeup.jpg" alt="CBD-Isolat weißes kristallines Pulver" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
               <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
-                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">CAS 13956-29-1</p>
-                <p className="text-sm font-bold text-white">HS-Code: 2907299020</p>
+                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">CBD-Isolat</p>
+                <p className="text-sm font-bold text-white">Reinheit: ≥99,9%</p>
               </div>
             </div>
           </div>
@@ -190,7 +190,6 @@ export default function DeProductPageClient() {
               <div>
                 <SpecRow label="Produktname" value="CBD-Isolat" />
                 <SpecRow label="Chemische Bezeichnung" value="Cannabidiol (CBD)" />
-                <SpecRow label="CAS-Nummer" value="13956-29-1" />
                 <SpecRow label="Summenformel" value="C₂₁H₃₀O₂" />
                 <SpecRow label="Molekulargewicht" value="314,46 g/mol" />
                 <SpecRow label="Reinheit (HPLC)" value="Siehe Chargen-COA" />

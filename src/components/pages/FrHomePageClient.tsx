@@ -180,7 +180,7 @@ export default function FrHomePageClient() {
                 {[
                   { icon: FlaskConical, title: 'Extraction & Traitement', desc: 'Installation d\'extraction professionnelle avec 20 cuves, 26 colonnes de chromatographie et 10 concentrateurs pour le traitement du CBD et des extraits botaniques.' },
                   { icon: Award, title: 'OEM/ODM & Support Technique', desc: 'Support matières premières, développement de formulations, production, conception d\'emballage et livraison de produits finis.' },
-                  { icon: Layers, title: 'Extraits Botaniques', desc: 'Cristal de CBD, anthocyanes, glycosides de stéviol et globuline de graines de chanvre pour des applications diversifiées.' },
+                  { icon: Layers, title: 'Extraits Botaniques', desc: 'Isolat de CBD, anthocyanes, glycosides de stéviol et globuline de graines de chanvre pour des applications diversifiées.' },
                 ].map((feat) => (
                   <div key={feat.title} className="reveal-card flex gap-4 p-5 bg-surface-container-low hover:bg-surface-container transition-colors duration-200">
                     <div className="flex-shrink-0 w-10 h-10 bg-primary-fixed flex items-center justify-center">
@@ -205,7 +205,7 @@ export default function FrHomePageClient() {
             <div className="reveal-card lg:col-span-8 relative overflow-hidden">
               <Image
                 src="/images/products/cbd-crystal-closeup.jpg"
-                alt="Isolat de CBD cristal"
+                alt="Isolat de CBD"
                 width={1200}
                 height={580}
                 sizes="(max-width: 1024px) 100vw, 66vw"
@@ -236,9 +236,7 @@ export default function FrHomePageClient() {
 
               <div className="reveal-card bg-surface-container-lowest p-8 flex-1">
                 <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">Spécifications Clés</p>
-                <SpecRow label="Produit" value="Cristal de CBD" />
-                <SpecRow label="Numéro CAS" value="13956-29-1" />
-                <SpecRow label="Code SH" value="2907299020" />
+                <SpecRow label="Produit" value="Isolat de CBD" />
                 <SpecRow label="Emballage" value="Sacs PE / Aluminium 5 kg" isLast />
                 <Link href="/fr/products/cbd-isolate" className="mt-6 inline-flex items-center gap-1 text-xs font-semibold tracking-wider uppercase text-primary hover:text-primary-container transition-colors duration-200">
                   Spécifications Complètes <ArrowRight size={14} />
@@ -279,7 +277,7 @@ export default function FrHomePageClient() {
             {[
               {
                 q: 'Qu\'est-ce que l\'isolat de CBD et en quoi diffère-t-il du CBD à spectre complet ?',
-                a: 'L\'isolat de CBD est la forme la plus pure de cannabidiol — une poudre cristalline blanche (CAS : 13956-29-1, Code SH : 2907299020) dont tous les autres cannabinoïdes, terpènes et composés végétaux ont été éliminés. Contrairement au CBD à spectre complet qui conserve d\'autres cannabinoïdes, l\'isolat de CBD est adapté aux formulations nécessitant un dosage précis et une conformité réglementaire.',
+                a: 'L\'isolat de CBD est la forme la plus pure de cannabidiol — une poudre cristalline blanche avec une pureté ≥99,9% dont tous les autres cannabinoïdes, terpènes et composés végétaux ont été éliminés. Contrairement au CBD à spectre complet qui conserve d\'autres cannabinoïdes, l\'isolat de CBD est adapté aux formulations nécessitant un dosage précis et une conformité réglementaire.',
               },
               {
                 q: 'Quels services Vetrux propose-t-il au-delà de l\'isolat de CBD ?',

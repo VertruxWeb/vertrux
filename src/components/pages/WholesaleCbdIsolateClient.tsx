@@ -25,7 +25,7 @@ const shippingTerms = [
 ];
 
 const whyWholesale = [
-  { title: 'CBD Raw Materials', desc: 'CBD crystal (CAS 13956-29-1, HS 2907299020) from our Chuxiong, Yunnan facility.' },
+  { title: 'CBD Raw Materials', desc: 'CBD isolate with ≥99.9% purity from our Chuxiong, Yunnan facility.' },
   { title: 'Equipment Configuration', desc: '20 extraction tanks, 26 chromatography columns, 10 concentrators, HPLC analytical system, and automation control.' },
   { title: 'OEM/ODM Services', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
   { title: 'Technical Support', desc: 'Cultivation management, extraction process optimization, cost control, and cannabinoid extraction consulting.' },
@@ -92,7 +92,7 @@ export default function WholesaleCbdIsolateClient() {
                 Vetrux also supplies <span className="font-semibold text-on-surface-variant">anthocyanins, steviol glycosides, hemp seed globulin</span>, and other botanical extracts for pharmaceutical R&D, nutrition, food & beverage, and personal care applications. Destination country import compliance is the buyer/importer&apos;s responsibility.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
-                {['CBD Crystal', 'Botanical Extracts', 'OEM/ODM', 'Technical Support'].map((tag) => (
+                {['CBD Isolate', 'Botanical Extracts', 'OEM/ODM', 'Technical Support'].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
