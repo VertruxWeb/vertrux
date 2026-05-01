@@ -21,18 +21,26 @@ export default function AboutPage() {
       )}
       <div className="bg-surface min-h-screen">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 py-20">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-on-background tracking-tighter leading-tight mb-6">
-            About Vetrux CBD
+          <h1 className="text-4xl md:text-5xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-6">
+            About <span className="italic text-primary">VETRUX</span>
           </h1>
-          <p className="text-sm text-on-surface-variant leading-relaxed max-w-2xl mb-16">
-            VETRUX is the international brand of 蔚萃生物科技（楚雄）有限公司 (Vetrux Biotechnology (Chuxiong) Co., Ltd.), a vertically integrated CBD isolate manufacturer and botanical extract supplier based in Chuxiong, Yunnan Province, China. We specialize in CBD raw material sales, OEM/ODM services, technical consulting, and other botanical extracts including anthocyanins, steviol glycosides, and hemp seed globulin.
+          <p className="text-[15px] text-on-surface-variant leading-relaxed max-w-2xl mb-16">
+            VETRUX is the international brand operated by Vetrux Biotechnology (Chuxiong) Co., Ltd.
+            (&ldquo;the Company&rdquo;), a vertically integrated CBD isolate manufacturer based in
+            Chuxiong, Yunnan Province, China. The Company specializes in CBD raw material sales,
+            OEM/ODM services, and technical consulting.
           </p>
 
           {/* Company Overview */}
           <section className="mb-16">
-            <h2 className="text-2xl font-extrabold text-on-background tracking-tighter mb-4">Our Mission</h2>
-            <p className="text-sm text-on-surface-variant leading-relaxed mb-4">
-              Through rigorous quality management, standardized hemp cultivation, and professional extraction processes, we deliver reliable CBD products and botanical extract solutions to partners worldwide. Our vertically integrated model — from seed selection to finished product — ensures full traceability, consistent quality, and competitive pricing. We also provide OEM/ODM services and technical consulting to help our clients develop and scale their own product lines.
+            <h2 className="text-2xl font-serif font-medium text-on-background tracking-tight mb-4">Our Mission</h2>
+            <p className="text-[15px] text-on-surface-variant leading-relaxed mb-4">
+              Through rigorous quality management, standardized hemp cultivation, and professional
+              extraction processes, VETRUX delivers reliable CBD raw materials to partners worldwide.
+              Our vertically integrated model — from seed selection to finished product — ensures
+              full traceability, consistent quality, and competitive pricing. We also provide OEM/ODM
+              services and technical consulting to help our clients develop and scale their own
+              product lines.
             </p>
           </section>
 
@@ -49,7 +57,7 @@ export default function AboutPage() {
               <div className="bg-surface-container-low p-6">
                 <h3 className="text-sm font-bold text-on-background mb-2">Extraction &amp; Purification</h3>
                 <p className="text-xs text-on-surface-variant leading-relaxed">
-                  Professional extraction facility equipped with 20 extraction tanks, 26 chromatography columns, 10 concentrators, and automated production systems. Capable of processing CBD isolate as well as other botanical extracts including anthocyanins, steviol glycosides, and hemp seed globulin.
+                  Professional extraction facility equipped with 20 extraction tanks, 26 chromatography columns, 10 concentrators, and automated production systems, dedicated to CBD isolate production.
                 </p>
               </div>
               <div className="bg-surface-container-low p-6">
@@ -92,11 +100,11 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Core Business</dt>
-                  <dd className="text-on-background">CBD raw material sales, OEM/ODM, technical consulting, botanical extracts</dd>
+                  <dd className="text-on-background">CBD raw material sales, OEM/ODM, technical consulting</dd>
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Products</dt>
-                  <dd className="text-on-background">CBD Isolate, Anthocyanins, Steviol Glycosides, Hemp Seed Globulin</dd>
+                  <dd className="text-on-background">CBD Isolate</dd>
                 </div>
                 <div>
                   <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Equipment</dt>

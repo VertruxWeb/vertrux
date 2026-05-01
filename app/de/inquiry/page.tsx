@@ -3,7 +3,7 @@ import DeInquiryPageClient from '@/components/pages/DeInquiryPageClient';
 
 export const metadata: Metadata = {
   title: 'Anfrage | B2B Grosshandel CBD-Isolat | Vetrux CBD',
-  description: 'B2B-Grosshandelsanfrage fuer CBD-Rohstoffe, OEM/ODM-Dienstleistungen und botanische Extrakte von Vetrux CBD.',
+  description: 'B2B-Grosshandelsanfrage fuer CBD-Rohstoffe und OEM/ODM-Dienstleistungen von Vetrux CBD.',
   keywords: 'CBD Isolat Grosshandelsanfrage, CBD Isolat Angebot, B2B CBD Lieferant Kontakt',
   alternates: {
     canonical: 'https://www.vetrux.tech/de/inquiry',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Anfrage',
-    description: 'B2B-Grosshandelsanfrage fuer CBD-Rohstoffe, OEM/ODM-Dienstleistungen und botanische Extrakte von Vetrux CBD.',
+    description: 'B2B-Grosshandelsanfrage fuer CBD-Rohstoffe und OEM/ODM-Dienstleistungen von Vetrux CBD.',
     url: 'https://www.vetrux.tech/de/inquiry',
     locale: 'de_DE',
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Anfrage',
-    description: 'B2B-Grosshandelsanfrage fuer CBD-Rohstoffe, OEM/ODM-Dienstleistungen und botanische Extrakte von Vetrux CBD.',
+    description: 'B2B-Grosshandelsanfrage fuer CBD-Rohstoffe und OEM/ODM-Dienstleistungen von Vetrux CBD.',
   },
 };
 

@@ -1,15 +1,14 @@
 'use client'
 
 import { useRef } from 'react';
-import { CheckCircle, Download } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Badge from '@/components/atoms/Badge';
+import Button from '@/components/atoms/Button';
 import SectionLabel from '@/components/atoms/SectionLabel';
-
-gsap.registerPlugin(ScrollTrigger);
+import KpiRow from '@/components/molecules/KpiRow';
+import { useReveal } from '@/hooks/useReveal';
 
 const equipment = [
   {
@@ -118,53 +117,41 @@ const specsTable = [
   { name: 'Automatisches Rückstandsaustragsystem', model: 'Integriert', function: 'Automatische Schlackenentfernung', cgmp: 'Vollautomatisiert' },
 ];
 
+const facilityKpis = [
+  { value: '20', label: 'Extraktionstanks', sub: '6 m³ Multifunktion' },
+  { value: '26', label: 'Chromatographiesäulen', sub: 'Gradientenelution' },
+  { value: '10', label: 'Konzentratoren', sub: '2.000 L Ein-/Doppeleffekt' },
+  { value: 'HPLC', label: 'Hauseigene Analytik', sub: 'Cannabinoid-Profilierung' },
+];
+
 export default function DeEquipmentPageClient() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const kpiRef = useRef<HTMLDivElement>(null);
   const cgmpRef = useRef<HTMLDivElement>(null);
   const showcaseRef = useRef<HTMLDivElement>(null);
   const tableRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    if (!cgmpRef.current) return;
-    const items = cgmpRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: cgmpRef.current, start: 'top 80%' },
-    });
-  }, { scope: cgmpRef });
-
-  useGSAP(() => {
-    if (!showcaseRef.current) return;
-    const items = showcaseRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
-      scrollTrigger: { trigger: showcaseRef.current, start: 'top 80%' },
-    });
-  }, { scope: showcaseRef });
-
-  useGSAP(() => {
-    if (!tableRef.current) return;
-    const items = tableRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out',
-      scrollTrigger: { trigger: tableRef.current, start: 'top 80%' },
-    });
-  }, { scope: tableRef });
+  useReveal(heroRef);
+  useReveal(kpiRef, { stagger: 0.08 });
+  useReveal(cgmpRef);
+  useReveal(showcaseRef, { stagger: 0.12 });
+  useReveal(tableRef, { stagger: 0.08 });
 
   return (
     <div className="bg-surface">
 
       {/* ── HERO ───────────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="reveal-card">
               <Badge variant="default" className="mb-6">Produktionsexzellenz</Badge>
-              <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
+              <h1 className="font-serif font-medium text-[clamp(2.4rem,5.5vw,4.5rem)] text-on-background tracking-tight leading-[1.0] mb-6">
                 Industrielle
                 <br />
-                <span className="text-primary">Extraktionsanlage</span>
+                <span className="italic text-primary">Extraktionsanlage</span>
               </h1>
-              <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
+              <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
                 Unsere industrielle CBD-Extraktions- und Reinigungsanlage in Chuxiong, Yunnan betreibt Hauptausrüstungseinheiten in den Bereichen Extraktion, Chromatographie, Konzentration und Qualitätskontrolle — mit vollständiger Automatisierungssteuerung.
               </p>
               <div className="flex flex-wrap gap-3">
@@ -176,13 +163,24 @@ export default function DeEquipmentPageClient() {
               </div>
             </div>
 
-            <div className="relative">
-              <img src="/images/equipment/chromatography-column-700L.webp" alt="Industrielle Extraktionsanlage" className="w-full h-[500px] object-cover" />
-              <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
-                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Anlagenumfang</p>
+            <div className="reveal-card relative">
+              <div className="relative w-full h-[500px] overflow-hidden">
+                <Image src="/images/equipment/chromatography-column-700L.webp" alt="Industrielle Extraktionsanlage" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
+              </div>
+              <div className="absolute bottom-6 right-6 bg-surface-ink/90 backdrop-blur p-4">
+                <p className="text-xs text-white/60 tracking-[0.35em] uppercase mb-1">Anlagenumfang</p>
                 <p className="text-sm font-bold text-white">Chuxiong, Yunnan · Industrielle Konfiguration</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FACILITY KPI ROW ───────────────────────────────────────────── */}
+      <section className="py-16 bg-surface">
+        <div ref={kpiRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card">
+            <KpiRow items={facilityKpis} tone="light" />
           </div>
         </div>
       </section>
@@ -191,9 +189,9 @@ export default function DeEquipmentPageClient() {
       <section className="py-24 bg-surface-container-low">
         <div ref={cgmpRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            <div className="reveal-card lg:col-span-8 bg-surface-container-lowest p-10">
+            <div className="reveal-card lg:col-span-8 bg-surface-container-lowest p-10 border-l-2 border-transparent hover:border-accent transition-colors duration-200">
               <SectionLabel>Fertigungsstandards</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-8">Anlagenkonfiguration & Standards</h2>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-8">Anlagenkonfiguration & Standards</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { label: 'Konstruktionsmaterial', value: 'Edelstahl-Konstruktion' },
@@ -204,9 +202,9 @@ export default function DeEquipmentPageClient() {
                   { label: 'Prozesssteuerung', value: 'Echtzeit-HMI-Überwachung' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
-                    <CheckCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
+                    <CheckCircle size={16} className="text-accent mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-xs text-on-surface-variant uppercase tracking-wider">{item.label}</p>
+                      <p className="text-xs text-accent uppercase tracking-[0.35em] font-semibold">{item.label}</p>
                       <p className="text-sm font-semibold text-on-surface mt-0.5">{item.value}</p>
                     </div>
                   </div>
@@ -216,17 +214,18 @@ export default function DeEquipmentPageClient() {
 
             <div className="reveal-card lg:col-span-4 bg-primary p-10 flex flex-col justify-between">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Dokumentation</p>
-                <p className="text-3xl font-extrabold text-white tracking-tighter leading-tight mb-4">
+                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-white/60 mb-4">Dokumentation</p>
+                <p className="font-serif text-3xl text-white tracking-tight leading-tight mb-4">
                   Industriell konfigurierte<br />Produktionsanlage
                 </p>
-                <p className="text-xs text-white/60 leading-relaxed">
+                <p className="text-[13px] text-white/60 leading-relaxed">
                   Unsere Anlage in Chuxiong arbeitet mit Edelstahl-Konstruktion, integrierten Reinigungssystemen, industrieller Automatisierung und vollständiger Chargenrückverfolgbarkeit über alle Produktionsstufen.
                 </p>
               </div>
-              <Link href="/de/inquiry" className="mt-8 inline-flex items-center gap-2 px-5 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
-                <Download size={14} />
-                Anlagendokumentation anfordern
+              <Link href="/de/inquiry" className="mt-8 inline-block">
+                <Button variant="accent" size="md" icon={ArrowRight}>
+                  Anlagendokumentation anfordern
+                </Button>
               </Link>
             </div>
           </div>
@@ -238,23 +237,23 @@ export default function DeEquipmentPageClient() {
         <div ref={showcaseRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
             <SectionLabel>Ausrüstungspräsentation</SectionLabel>
-            <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">Präzisionstechnik in jeder Phase</h2>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-16 max-w-xl">Präzisionstechnik in jeder Phase</h2>
           </div>
 
           <div className="space-y-24">
             {equipment.map((equip, idx) => (
               <div key={equip.id} className={`reveal-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                 <div className={`relative ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <img src={equip.image} alt={equip.name} className="w-full object-cover" />
+                  <Image src={equip.image} alt={equip.name} width={800} height={600} className="w-full h-auto object-cover" />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-on-background/80 text-white text-xs font-mono tracking-wider">#{equip.id}</span>
+                    <span className="px-3 py-1 bg-surface-ink/80 text-white text-xs font-mono tracking-wider">#{equip.id}</span>
                   </div>
                 </div>
 
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-3">Modell: {equip.model}</p>
-                  <h3 className="text-2xl md:text-3xl font-extrabold text-on-background tracking-tighter mb-4">{equip.name}</h3>
-                  <p className="text-sm text-on-surface-variant leading-relaxed mb-8">{equip.desc}</p>
+                  <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-3">Modell: {equip.model}</p>
+                  <h3 className="font-serif font-medium text-2xl md:text-3xl text-on-background tracking-tight leading-[1.05] mb-4">{equip.name}</h3>
+                  <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8">{equip.desc}</p>
                   <div className="space-y-0">
                     {equip.specs.map((spec, i) => (
                       <div key={spec.label} className={`flex justify-between items-center py-3 ${i < equip.specs.length - 1 ? 'border-b border-outline-variant/30' : ''}`}>
@@ -275,15 +274,15 @@ export default function DeEquipmentPageClient() {
         <div ref={tableRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
             <SectionLabel>Vollständige Spezifikationen</SectionLabel>
-            <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-12">Ausrüstungsübersichtstabelle</h2>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-12">Ausrüstungsübersichtstabelle</h2>
           </div>
 
           <div className="reveal-card overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-primary/30">
+                <tr className="border-b-2 border-accent/30">
                   {['Ausrüstungsname', 'Modellbereich', 'Prozessfunktion', 'Konfiguration'].map((col) => (
-                    <th key={col} className="text-left text-xs font-semibold tracking-widest uppercase text-on-surface-variant pb-4 pr-8">{col}</th>
+                    <th key={col} className="text-left text-xs font-semibold tracking-[0.35em] uppercase text-accent pb-4 pr-8">{col}</th>
                   ))}
                 </tr>
               </thead>
@@ -293,7 +292,7 @@ export default function DeEquipmentPageClient() {
                     <td className="py-5 pr-8 font-semibold text-on-surface">{row.name}</td>
                     <td className="py-5 pr-8 font-mono text-xs text-on-surface-variant">{row.model}</td>
                     <td className="py-5 pr-8 text-on-surface-variant">{row.function}</td>
-                    <td className="py-5 text-xs font-semibold text-primary">{row.cgmp}</td>
+                    <td className="py-5 text-xs font-semibold text-accent">{row.cgmp}</td>
                   </tr>
                 ))}
               </tbody>

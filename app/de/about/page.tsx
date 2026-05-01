@@ -4,7 +4,7 @@ import DeAboutPageClient from '@/components/pages/DeAboutPageClient';
 export const metadata: Metadata = {
   title: 'Ueber uns | CBD-Isolat-Hersteller Yunnan | Vetrux CBD',
   description: 'VETRUX ist die internationale Marke der Vetrux Biotechnology (Chuxiong) Co., Ltd. Vertikal integrierter CBD-Isolat-Hersteller in Yunnan, China.',
-  keywords: 'Vetrux CBD, CBD Hersteller China, CBD Isolat Hersteller Yunnan, botanische Extrakte Hersteller',
+  keywords: 'Vetrux CBD, CBD Hersteller China, CBD Isolat Hersteller Yunnan, CBD Rohstoff Lieferant',
   alternates: {
     canonical: 'https://www.vetrux.tech/de/about',
     languages: {

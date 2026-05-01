@@ -1,16 +1,14 @@
 'use client'
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { ArrowRight, Clock } from 'lucide-react';
 import Link from 'next/link';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Badge from '@/components/atoms/Badge';
+import Button from '@/components/atoms/Button';
 import SectionLabel from '@/components/atoms/SectionLabel';
 import type { Article } from '@/content/articles';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useReveal } from '@/hooks/useReveal';
 
 interface DeInsightsPageClientProps {
   articles: Article[];
@@ -23,23 +21,8 @@ export default function DeInsightsPageClient({ articles }: DeInsightsPageClientP
   const featured = articles[0];
   const gridArticles = articles.slice(1);
 
-  useGSAP(() => {
-    if (!heroRef.current) return;
-    const items = heroRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: heroRef.current, start: 'top 80%' },
-    });
-  }, { scope: heroRef });
-
-  useGSAP(() => {
-    if (!gridRef.current) return;
-    const items = gridRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: gridRef.current, start: 'top 80%' },
-    });
-  }, { scope: gridRef });
+  useReveal(heroRef, { y: 40, stagger: 0.1, start: 'top 80%' });
+  useReveal(gridRef, { y: 40, stagger: 0.1, start: 'top 80%' });
 
   if (!featured) return null;
 
@@ -55,21 +38,17 @@ export default function DeInsightsPageClient({ articles }: DeInsightsPageClientP
                 <Badge variant="default">{featured.category}</Badge>
                 <span className="text-xs text-on-surface-variant tracking-wider">{featured.date}</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-on-background tracking-tighter leading-tight mb-6">
-                Innovation in botanischer
+              <h1 className="text-4xl md:text-5xl font-serif font-medium text-on-background tracking-tight leading-[1.0] mb-6">
+                Innovation in CBD-
                 <br />
-                <span className="text-primary">Biotechnologie</span>
+                <span className="italic text-primary">Biotechnologie</span>
               </h1>
-              <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
+              <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
                 {featured.excerpt}
               </p>
               <div className="flex flex-wrap gap-4 items-center">
-                <Link
-                  href={`/de/blog/${featured.slug}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-xs font-bold tracking-widest uppercase rounded-md hover:bg-primary-container transition-all duration-300"
-                >
-                  Whitepaper lesen
-                  <ArrowRight size={14} />
+                <Link href={`/de/blog/${featured.slug}`}>
+                  <Button variant="accent" size="md" icon={ArrowRight}>Whitepaper lesen</Button>
                 </Link>
                 <span className="flex items-center gap-1.5 text-xs text-on-surface-variant">
                   <Clock size={12} />
@@ -78,14 +57,22 @@ export default function DeInsightsPageClient({ articles }: DeInsightsPageClientP
               </div>
             </div>
 
-            <Link href={`/de/blog/${featured.slug}`} className="reveal-card relative overflow-hidden block group">
-              <img
-                src={featured.image}
-                alt={featured.title}
-                className="w-full h-72 object-cover group-hover:scale-[1.02] transition-transform duration-500"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-on-background/60 to-transparent">
-                <span className="text-xs text-white/60 tracking-wider uppercase">
+            <Link
+              href={`/de/blog/${featured.slug}`}
+              className="reveal-card relative overflow-hidden block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+            >
+              <div className="relative w-full h-72 overflow-hidden">
+                <Image
+                  src={featured.image}
+                  alt={featured.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  priority
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-surface-ink/60 to-transparent">
+                <span className="text-xs text-white/60 tracking-[0.35em] uppercase">
                   Vetrux CBD Insights-Team
                 </span>
               </div>
@@ -99,7 +86,7 @@ export default function DeInsightsPageClient({ articles }: DeInsightsPageClientP
         <div ref={gridRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
             <SectionLabel>Neueste Beiträge</SectionLabel>
-            <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mb-12">
+            <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-12">
               Branchenanalyse & Forschung
             </h2>
           </div>
@@ -109,14 +96,16 @@ export default function DeInsightsPageClient({ articles }: DeInsightsPageClientP
               <Link
                 key={article.slug}
                 href={`/de/blog/${article.slug}`}
-                className={`reveal-card group cursor-pointer ${i === 0 ? 'md:col-span-2' : 'md:col-span-1'}`}
+                className={`reveal-card group cursor-pointer pb-4 border-b-2 border-transparent hover:border-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${i === 0 ? 'md:col-span-2' : 'md:col-span-1'}`}
               >
                 <article>
-                  <div className="overflow-hidden mb-4">
-                    <img
+                  <div className="overflow-hidden mb-4 relative w-full h-48 md:h-56">
+                    <Image
                       src={article.image}
                       alt={article.title}
-                      className="w-full h-48 md:h-56 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                     />
                   </div>
                   <div className="flex items-center gap-3 mb-3">
@@ -129,13 +118,13 @@ export default function DeInsightsPageClient({ articles }: DeInsightsPageClientP
                     </span>
                     <span className="text-xs text-on-surface-variant">{article.date}</span>
                   </div>
-                  <h3 className="text-lg font-extrabold text-on-background tracking-tighter leading-snug mb-2 group-hover:text-primary transition-colors duration-200">
+                  <h3 className="text-lg font-serif font-medium text-on-background tracking-tight leading-snug mb-2 group-hover:text-accent transition-colors duration-200">
                     {article.title}
                   </h3>
                   <p className="text-xs text-on-surface-variant leading-relaxed mb-4">
                     {article.excerpt}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-xs font-bold tracking-wider uppercase text-primary group-hover:translate-x-1 transition-transform duration-200">
+                  <span className="inline-flex items-center gap-1 text-xs font-bold tracking-wider uppercase text-accent group-hover:translate-x-1 transition-transform duration-200">
                     Artikel lesen <ArrowRight size={12} />
                   </span>
                 </article>

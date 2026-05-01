@@ -16,11 +16,13 @@ const defaultImage = '/images/hero/facility-hero.webp';
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Vetrux CBD',
+  name: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.',
+  legalName: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.',
+  alternateName: ['VETRUX', 'Vetrux CBD', '蔚萃生物科技（楚雄）有限公司'],
   url: 'https://www.vetrux.tech',
   logo: 'https://www.vetrux.tech/favicon.svg',
   description:
-    'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd., focused on CBD raw material sales, OEM/ODM services, technical support, and botanical extract solutions. Based in Chuxiong, Yunnan, China.',
+    'Vetrux Biotechnology (Chuxiong) Co., Ltd. operates the VETRUX brand — a vertically integrated CBD raw material manufacturer based in Chuxiong, Yunnan, China. Services include CBD raw material sales, OEM/ODM, and technical support.',
   foundingDate: '2026',
   address: {
     '@type': 'PostalAddress',
@@ -34,7 +36,7 @@ const organizationJsonLd = {
     '@type': 'ContactPoint',
     contactType: 'sales',
     email: 'inquiry@vetrux.tech',
-    availableLanguage: ['English', 'Chinese'],
+    availableLanguage: ['English', 'German', 'French', 'Chinese'],
   },
   sameAs: [
     'https://www.vetrux.tech/about',
@@ -47,10 +49,10 @@ const productJsonLd = {
   name: 'CBD Isolate',
   description:
     'CBD isolate with ≥99.9% purity. Available in 5 kg PE bags and 5 kg aluminum foil bags, packed in export cartons. Supporting documentation provided according to order requirements.',
-  brand: { '@type': 'Brand', name: 'Vetrux CBD' },
+  brand: { '@type': 'Brand', name: 'VETRUX' },
   manufacturer: {
     '@type': 'Organization',
-    name: 'Vetrux CBD',
+    name: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.',
     url: 'https://www.vetrux.tech',
   },
   category: 'CBD Raw Materials',
@@ -61,21 +63,21 @@ const productJsonLd = {
     '@type': 'Offer',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
-    seller: { '@type': 'Organization', name: 'Vetrux CBD' },
+    seller: { '@type': 'Organization', name: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.' },
     url: 'https://www.vetrux.tech/inquiry',
   },
 };
 
 const staticPageSeo: Record<string, SeoMetadata> = {
   '/': {
-    title: 'CBD Raw Materials & Botanical Extracts | Vetrux CBD',
+    title: 'CBD Raw Materials | Vetrux CBD',
     description:
-      'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd., based in Yunnan, China. CBD raw material sales, OEM/ODM services, technical support, and botanical extract solutions.',
+      'VETRUX — the CBD raw material brand operated by Vetrux Biotechnology (Chuxiong) Co., Ltd., based in Yunnan, China. CBD raw material sales, OEM/ODM services, and technical support.',
     canonicalPath: '/',
     image: defaultImage,
     type: 'website',
     keywords:
-      'CBD raw materials, CBD isolate, OEM ODM CBD, botanical extracts, CBD supplier, Vetrux CBD, Yunnan',
+      'CBD raw materials, CBD isolate, OEM ODM CBD, CBD supplier, Vetrux CBD, Yunnan',
     jsonLd: [organizationJsonLd, productJsonLd],
   },
   '/products/cbd-isolate': {
@@ -132,21 +134,68 @@ const staticPageSeo: Record<string, SeoMetadata> = {
       },
     },
   },
+  '/gallery/campus': {
+    title: 'Main Campus & Infrastructure | Gallery — Vetrux CBD',
+    description:
+      'VETRUX industrial campus in Chuxiong, Yunnan — production, processing, and quality-control infrastructure under one roof.',
+    canonicalPath: '/gallery/campus',
+    image: '/images/gallery/campus-aerial.png',
+    type: 'website',
+    keywords: 'CBD facility campus, Vetrux Yunnan production site, CBD manufacturing infrastructure',
+  },
+  '/gallery/cultivation': {
+    title: 'Planting Base & Cultivation | Gallery — Vetrux CBD',
+    description:
+      'VETRUX cultivation base in Yunnan province — standardized hemp growing, breeding center, and full seed-to-harvest traceability.',
+    canonicalPath: '/gallery/cultivation',
+    image: '/images/gallery/cultivation-field.jpg',
+    type: 'website',
+    keywords: 'hemp cultivation base, Yunnan hemp farm, CBD raw material cultivation, traceable hemp growing',
+  },
+  '/gallery/extraction': {
+    title: 'Extraction & Refinement | Gallery — Vetrux CBD',
+    description:
+      'VETRUX extraction facility — 20 extraction tanks, 26 chromatography columns, 10 concentrators, and HPLC analytical systems.',
+    canonicalPath: '/gallery/extraction',
+    image: '/images/equipment/extraction-tanks.jpg',
+    type: 'website',
+    keywords: 'CBD extraction facility, chromatography columns, extraction tanks, HPLC system, CBD refinement',
+  },
+  '/gallery/products': {
+    title: 'Product & Laboratory | Gallery — Vetrux CBD',
+    description:
+      'VETRUX CBD isolate at ≥99.9% purity — laboratory verification, packaging, and export-ready presentation.',
+    canonicalPath: '/gallery/products',
+    image: '/images/products/cbd-crystal-closeup.jpg',
+    type: 'website',
+    keywords: 'CBD isolate product, CBD packaging, CBD laboratory, ≥99.9% purity CBD isolate',
+  },
+  '/process': {
+    title: 'From Seed to Isolate | Our Process — Vetrux CBD',
+    description:
+      'Six controlled phases from Yunma-13 cultivation to ≥99.9% pharmaceutical-grade CBD isolate. Traceable, verified, export-ready — manufactured by VETRUX in Chuxiong, Yunnan.',
+    canonicalPath: '/process',
+    image: '/images/process/growth-day-120-mature.jpg',
+    type: 'website',
+    keywords:
+      'CBD manufacturing process, seed to isolate, CBD extraction process, hemp cultivation Yunnan, CBD isolate production',
+    jsonLd: [organizationJsonLd],
+  },
   '/inquiry': {
     title: 'B2B Inquiry | CBD Raw Materials & OEM/ODM — Vetrux CBD',
     description:
-      'Contact Vetrux CBD for CBD raw material supply, OEM/ODM cooperation, technical support, and botanical extract inquiries.',
+      'Contact Vetrux CBD for CBD raw material supply, OEM/ODM cooperation, and technical support inquiries.',
     canonicalPath: '/inquiry',
     image: defaultImage,
     type: 'website',
     keywords:
-      'CBD inquiry, CBD raw material supply, OEM ODM CBD, botanical extract inquiry, B2B CBD contact',
+      'CBD inquiry, CBD raw material supply, OEM ODM CBD, B2B CBD contact',
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
       name: 'B2B Inquiry — Vetrux CBD',
       description:
-        'Contact Vetrux CBD for CBD raw material supply, OEM/ODM cooperation, technical support, and botanical extract inquiries.',
+        'Contact Vetrux CBD for CBD raw material supply, OEM/ODM cooperation, and technical support inquiries.',
       publisher: organizationJsonLd,
     },
   },
@@ -172,7 +221,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
   '/wholesale-cbd-isolate': {
     title: 'CBD Raw Material Supply | B2B Cooperation — Vetrux CBD',
     description:
-      'Vetrux CBD supplies CBD raw materials and botanical extracts for B2B cooperation. OEM/ODM services, technical support, and flexible supply arrangements.',
+      'Vetrux CBD supplies CBD raw materials for B2B cooperation. OEM/ODM services, technical support, and flexible supply arrangements.',
     canonicalPath: '/wholesale-cbd-isolate',
     image: '/images/products/cbd-packaging-foil.jpg',
     type: 'website',
@@ -192,20 +241,20 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     jsonLd: [organizationJsonLd],
   },
   '/cbd-isolate-manufacturer': {
-    title: 'Company Profile | CBD Raw Materials & Botanical Extracts — Vetrux CBD',
+    title: 'Company Profile | CBD Raw Materials — Vetrux CBD',
     description:
-      'Vetrux Biotechnology (Chuxiong) Co., Ltd. — CBD raw material sales, OEM/ODM services, technical support, and botanical extract solutions from Chuxiong, Yunnan.',
+      'Vetrux Biotechnology (Chuxiong) Co., Ltd. — CBD raw material sales, OEM/ODM services, and technical support from Chuxiong, Yunnan.',
     canonicalPath: '/cbd-isolate-manufacturer',
     image: '/images/hero/facility-hero.webp',
     type: 'website',
     keywords:
-      'CBD manufacturer China, CBD raw material supplier, Yunnan CBD, botanical extract manufacturer, OEM ODM CBD',
+      'CBD manufacturer China, CBD raw material supplier, Yunnan CBD, OEM ODM CBD',
     jsonLd: [organizationJsonLd, productJsonLd],
   },
   '/about': {
     title: 'About Vetrux CBD | Company Profile',
     description:
-      'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd. CBD raw material sales, OEM/ODM, technical support, and botanical extracts. Based in Chuxiong, Yunnan, China.',
+      'VETRUX — the CBD raw material brand operated by Vetrux Biotechnology (Chuxiong) Co., Ltd. CBD raw material sales, OEM/ODM, and technical support. Based in Chuxiong, Yunnan, China.',
     canonicalPath: '/about',
     image: '/images/hero/facility-hero.webp',
     type: 'website',
@@ -267,7 +316,7 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
             '@type': 'Organization',
             name: 'Vetrux CBD',
             url: 'https://www.vetrux.tech',
-            description: 'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd., focused on CBD raw materials, OEM/ODM, technical support, and botanical extracts.',
+            description: 'Editorial team at VETRUX — technical and regulatory analysis from Vetrux Biotechnology (Chuxiong) Co., Ltd., a vertically integrated CBD raw material manufacturer.',
           },
           publisher: {
             '@type': 'Organization',
@@ -286,9 +335,9 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
 
   return (
     staticPageSeo[pathname] ?? {
-      title: 'Vetrux CBD — CBD Raw Materials & Botanical Extracts',
+      title: 'Vetrux CBD — CBD Raw Materials',
       description:
-        'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd., based in Yunnan, China.',
+        'VETRUX — the CBD raw material brand operated by Vetrux Biotechnology (Chuxiong) Co., Ltd., based in Yunnan, China.',
       canonicalPath: pathname || '/',
       image: defaultImage,
       type: 'website',

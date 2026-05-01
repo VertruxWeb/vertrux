@@ -4,7 +4,7 @@ import DeInsightsPageClient from '@/components/pages/DeInsightsPageClient';
 
 export const metadata: Metadata = {
   title: 'Blog & Einblicke | CBD Branchenanalyse | Vetrux CBD',
-  description: 'Branchenanalysen, Forschungsergebnisse und Einblicke in botanische Biotechnologie von Vetrux CBD.',
+  description: 'Branchenanalysen, Forschungsergebnisse und Einblicke in CBD-Biotechnologie von Vetrux CBD.',
   keywords: 'CBD Extraktionstechnologie, CBD Compliance Standards, CBD Branchenanalyse, CBD Lieferkette',
   alternates: {
     canonical: 'https://www.vetrux.tech/de/blog',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Blog & Einblicke',
-    description: 'Branchenanalysen, Forschungsergebnisse und Einblicke in botanische Biotechnologie von Vetrux CBD.',
+    description: 'Branchenanalysen, Forschungsergebnisse und Einblicke in CBD-Biotechnologie von Vetrux CBD.',
     url: 'https://www.vetrux.tech/de/blog',
     locale: 'de_DE',
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Blog & Einblicke',
-    description: 'Branchenanalysen, Forschungsergebnisse und Einblicke in botanische Biotechnologie von Vetrux CBD.',
+    description: 'Branchenanalysen, Forschungsergebnisse und Einblicke in CBD-Biotechnologie von Vetrux CBD.',
   },
 };
 

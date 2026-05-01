@@ -1,14 +1,13 @@
 'use client'
 
 import { useRef } from 'react';
-import { Leaf, Thermometer, Droplets, Sun, Shield, CheckCircle } from 'lucide-react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, Leaf, Thermometer, Droplets, Sun, Shield, CheckCircle } from 'lucide-react';
 import Badge from '@/components/atoms/Badge';
+import Button from '@/components/atoms/Button';
 import SectionLabel from '@/components/atoms/SectionLabel';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useReveal } from '@/hooks/useReveal';
 
 const stats = [
   { value: 'Yunnan', label: 'Cultivation Base Location' },
@@ -96,6 +95,7 @@ const traceabilityItems = [
 ];
 
 export default function PlantingPageClient() {
+  const heroRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const zonesRef = useRef<HTMLDivElement>(null);
@@ -103,75 +103,32 @@ export default function PlantingPageClient() {
   const traceabilityRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    if (!statsRef.current) return;
-    const items = statsRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: statsRef.current, start: 'top 80%' },
-    });
-  }, { scope: statsRef });
-
-  useGSAP(() => {
-    if (!introRef.current) return;
-    const items = introRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: introRef.current, start: 'top 80%' },
-    });
-  }, { scope: introRef });
-
-  useGSAP(() => {
-    if (!zonesRef.current) return;
-    const items = zonesRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
-      scrollTrigger: { trigger: zonesRef.current, start: 'top 80%' },
-    });
-  }, { scope: zonesRef });
-
-  useGSAP(() => {
-    if (!galleryRef.current) return;
-    const items = galleryRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out',
-      scrollTrigger: { trigger: galleryRef.current, start: 'top 80%' },
-    });
-  }, { scope: galleryRef });
-
-  useGSAP(() => {
-    if (!traceabilityRef.current) return;
-    const items = traceabilityRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: traceabilityRef.current, start: 'top 80%' },
-    });
-  }, { scope: traceabilityRef });
-
-  useGSAP(() => {
-    if (!ctaRef.current) return;
-    const items = ctaRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: ctaRef.current, start: 'top 80%' },
-    });
-  }, { scope: ctaRef });
+  useReveal(heroRef);
+  useReveal(statsRef, { stagger: 0.1 });
+  useReveal(introRef, { stagger: 0.1 });
+  useReveal(zonesRef, { stagger: 0.12 });
+  useReveal(galleryRef, { stagger: 0.08 });
+  useReveal(traceabilityRef, { stagger: 0.1 });
+  useReveal(ctaRef, { stagger: 0.1 });
 
   return (
     <div className="bg-surface">
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+        <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="reveal-card">
               <Badge variant="default" className="mb-6">Cultivation & Breeding Center · Chuxiong, Yunnan</Badge>
-              <h1 className="text-5xl md:text-6xl font-extrabold text-on-background tracking-tighter leading-[0.95] mb-6">
+              <h1 className="font-serif font-medium text-[clamp(2.4rem,5.5vw,4.5rem)] text-on-background tracking-tight leading-[1.0] mb-6">
                 Grown at Altitude.
                 <br />
-                <span className="text-primary">Traced to the Source.</span>
+                <span className="italic text-primary">Traced to the Source.</span>
               </h1>
-              <p className="text-sm text-on-surface-variant leading-relaxed mb-8 max-w-md">
+              <p className="font-serif italic text-xl md:text-2xl text-on-surface-variant leading-snug max-w-2xl mb-6">
+                Standardized cultivation. Traceable lineage. Yunnan terroir.
+              </p>
+              <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
                 Vetrux operates a cultivation and breeding center in Chuxiong, Yunnan Province,
                 focused on standardized, traceable cultivation to support consistent raw material quality.
               </p>
@@ -184,10 +141,12 @@ export default function PlantingPageClient() {
               </div>
             </div>
 
-            <div className="relative">
-              <img src="/images/planting/vegetative-growth.jpg" alt="Vetrux cultivation base greenhouse in Chuxiong, Yunnan" className="w-full h-[500px] object-cover" />
-              <div className="absolute bottom-6 right-6 bg-on-background/90 backdrop-blur p-4">
-                <p className="text-xs text-white/50 tracking-widest uppercase mb-1">Cultivation & Breeding Center</p>
+            <div className="reveal-card relative">
+              <div className="relative w-full h-[500px] overflow-hidden">
+                <Image src="/images/planting/vegetative-growth.jpg" alt="Vetrux cultivation base greenhouse in Chuxiong, Yunnan" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" priority />
+              </div>
+              <div className="absolute bottom-6 right-6 bg-surface-ink/90 backdrop-blur p-4">
+                <p className="text-xs text-white/60 tracking-[0.35em] uppercase mb-1">Cultivation & Breeding Center</p>
                 <p className="text-sm font-bold text-white">Chuxiong, Yunnan Province</p>
               </div>
             </div>
@@ -201,8 +160,8 @@ export default function PlantingPageClient() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((s) => (
               <div key={s.label} className="reveal-card text-center lg:text-left">
-                <p className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">{s.value}</p>
-                <p className="text-xs font-semibold tracking-widest uppercase text-white/50 mt-1">{s.label}</p>
+                <p className="font-serif font-medium text-3xl md:text-4xl text-white tracking-tight leading-tight">{s.value}</p>
+                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-white/60 mt-2">{s.label}</p>
               </div>
             ))}
           </div>
@@ -215,21 +174,22 @@ export default function PlantingPageClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="reveal-card lg:col-span-5">
               <SectionLabel>Why Vertical Integration Matters</SectionLabel>
-              <h2 className="text-4xl font-extrabold text-on-background tracking-tighter leading-tight mt-4">
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mt-4">
                 The Best Extracts Begin
-                <br />in the Field.
+                <br />
+                <span className="italic text-primary">in the Field.</span>
               </h2>
             </div>
             <div className="reveal-card lg:col-span-7 space-y-5 pt-2">
-              <p className="text-sm text-on-surface-variant leading-relaxed">
+              <p className="text-[15px] text-on-surface-variant leading-relaxed">
                 At Vetrux, cultivation management starts with quality-oriented seed selection and follows
                 standardized processes designed to support consistent raw material quality.
               </p>
-              <p className="text-sm text-on-surface-variant leading-relaxed">
+              <p className="text-[15px] text-on-surface-variant leading-relaxed">
                 The Chuxiong base in Yunnan Province provides favorable growing conditions for hemp
                 cultivation, supporting the production of raw materials for downstream extraction.
               </p>
-              <p className="text-sm text-on-surface-variant leading-relaxed">
+              <p className="text-[15px] text-on-surface-variant leading-relaxed">
                 From cultivar selection through cultivation management and material handoff to extraction,
                 the system is designed around standardization and traceability.
               </p>
@@ -243,7 +203,7 @@ export default function PlantingPageClient() {
         <div ref={zonesRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
             <SectionLabel>Growing Zones</SectionLabel>
-            <h2 className="text-4xl font-extrabold text-on-background tracking-tighter mb-16 max-w-xl">Three Zones. One Controlled Process.</h2>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-16 max-w-xl">Three Zones. One Controlled Process.</h2>
           </div>
 
           <div className="space-y-28">
@@ -254,8 +214,8 @@ export default function PlantingPageClient() {
                 <div key={zone.id} className="reveal-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div className={`grid grid-cols-2 gap-3 ${isReversed ? 'lg:order-2' : ''}`}>
                     {zone.images.map((img, i) => (
-                      <div key={i} className="overflow-hidden">
-                        <img src={img.src} alt={img.alt} className="w-full h-52 object-cover hover:scale-[1.03] transition-transform duration-500" />
+                      <div key={i} className="overflow-hidden relative h-52">
+                        <Image src={img.src} alt={img.alt} fill sizes="(max-width:1024px) 50vw, 33vw" className="object-cover hover:scale-[1.03] transition-transform duration-500" />
                       </div>
                     ))}
                     <div className="col-span-2 flex items-center gap-3 mt-1">
@@ -266,13 +226,13 @@ export default function PlantingPageClient() {
 
                   <div className={isReversed ? 'lg:order-1' : ''}>
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-2 bg-primary/10 rounded">
+                      <div className="p-2 bg-primary-fixed rounded">
                         <Icon size={16} className="text-primary" />
                       </div>
-                      <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant">{zone.tag}</p>
+                      <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent">{zone.tag}</p>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-on-background tracking-tighter mb-4">{zone.title}</h3>
-                    <p className="text-sm text-on-surface-variant leading-relaxed mb-8">{zone.description}</p>
+                    <h3 className="font-serif font-medium text-2xl md:text-3xl text-on-background tracking-tight leading-[1.05] mb-4">{zone.title}</h3>
+                    <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8">{zone.description}</p>
 
                     <div className="space-y-0">
                       {zone.specs.map((spec, i) => (
@@ -296,9 +256,9 @@ export default function PlantingPageClient() {
           <div className="reveal-card flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
             <div>
               <SectionLabel>Field Documentation</SectionLabel>
-              <h2 className="text-3xl font-extrabold text-on-background tracking-tighter mt-3">Inside the Chuxiong Cultivation Base</h2>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mt-3">Inside the Chuxiong Cultivation Base</h2>
             </div>
-            <p className="text-sm text-on-surface-variant max-w-sm leading-relaxed">
+            <p className="text-[15px] text-on-surface-variant max-w-sm leading-relaxed">
               Real photos from our Yunnan cultivation and breeding center — from seedling propagation through flowering and harvest.
             </p>
           </div>
@@ -306,7 +266,9 @@ export default function PlantingPageClient() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {galleryImages.map((img, i) => (
               <div key={i} className={`reveal-card overflow-hidden group ${i === 0 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''}`}>
-                <img src={img.src} alt={img.alt} className={`w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03] ${i === 0 ? 'h-full min-h-[320px]' : 'h-48'}`} />
+                <div className={`relative w-full ${i === 0 ? 'h-full min-h-[320px]' : 'h-48'}`}>
+                  <Image src={img.src} alt={img.alt} fill sizes="(max-width:768px) 50vw, 33vw" className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]" />
+                </div>
               </div>
             ))}
           </div>
@@ -314,17 +276,18 @@ export default function PlantingPageClient() {
       </section>
 
       {/* ── TRACEABILITY BLOCK ─────────────────────────────────────────── */}
-      <section className="py-24 bg-on-background">
+      <section className="py-24 bg-surface-ink">
         <div ref={traceabilityRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="reveal-card lg:col-span-4">
               <SectionLabel light>Full Traceability</SectionLabel>
-              <h2 className="text-4xl font-extrabold text-white tracking-tighter leading-tight mt-4">
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-white tracking-tight leading-[1.05] mt-4">
                 Seed-to-Isolate
-                <br />Vertical Integration
+                <br />
+                <span className="italic text-primary-fixed">Vertical Integration</span>
               </h2>
-              <p className="mt-5 text-sm text-white/50 leading-relaxed">
-                Vetrux's vertically integrated model means every gram of CBD isolate traces back to a specific
+              <p className="mt-5 text-[15px] text-white/60 leading-relaxed">
+                Vetrux&apos;s vertically integrated model means every gram of CBD isolate traces back to a specific
                 greenhouse zone, harvest batch, and extraction run at our Chuxiong facility. No middlemen,
                 no blind spots — just a fully traceable, standardized supply chain.
               </p>
@@ -334,10 +297,10 @@ export default function PlantingPageClient() {
               {traceabilityItems.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.label} className="reveal-card bg-white/5 p-6 hover:bg-white/10 transition-colors duration-300">
+                  <div key={item.label} className="reveal-card bg-white/5 p-6 border-l-2 border-transparent hover:border-accent hover:bg-white/10 transition-colors duration-200">
                     <div className="flex items-center gap-3 mb-3">
                       <Icon size={16} className="text-primary-fixed" />
-                      <p className="text-xs font-semibold tracking-widest uppercase text-white/60">{item.label}</p>
+                      <p className="text-xs font-semibold tracking-[0.35em] uppercase text-white/60">{item.label}</p>
                     </div>
                     <p className="text-sm text-white/80 leading-relaxed">{item.desc}</p>
                   </div>
@@ -354,21 +317,26 @@ export default function PlantingPageClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="reveal-card lg:col-span-8">
               <SectionLabel>Wholesale Inquiry</SectionLabel>
-              <h2 className="text-4xl font-extrabold text-on-background tracking-tighter leading-tight mt-3">
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mt-3">
                 Source Directly From
-                <br />the Grower.
+                <br />
+                <span className="italic text-primary">the Grower.</span>
               </h2>
-              <p className="mt-4 text-sm text-on-surface-variant leading-relaxed max-w-lg">
+              <p className="mt-4 text-[15px] text-on-surface-variant leading-relaxed max-w-lg">
                 Skip the commodity middlemen. Talk to our team about bulk biomass supply, white-label isolate, or custom extraction contracts — all backed by our vertically integrated supply chain.
               </p>
             </div>
             <div className="reveal-card lg:col-span-4 flex flex-col gap-3">
-              <a href="/inquiry" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-xs font-bold tracking-widest uppercase hover:bg-primary-container transition-all duration-300">
-                Request a Quote
-              </a>
-              <a href="/products/cbd-isolate" className="inline-flex items-center justify-center px-8 py-4 border border-outline-variant/40 text-on-surface text-xs font-bold tracking-widest uppercase hover:bg-surface-container transition-all duration-300">
-                View Product Specs
-              </a>
+              <Link href="/inquiry">
+                <Button variant="accent" size="lg" icon={ArrowRight}>
+                  Request a Quote
+                </Button>
+              </Link>
+              <Link href="/products/cbd-isolate">
+                <Button variant="secondary" size="lg" icon={ArrowRight}>
+                  View Product Specs
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

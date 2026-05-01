@@ -1,317 +1,448 @@
 'use client'
 
 import { useRef } from 'react';
-import { ArrowRight, Download, FlaskConical, Award, Layers } from 'lucide-react';
+import {
+  ArrowRight,
+  FlaskConical,
+  Layers,
+  Cpu,
+  Mail,
+  MapPin,
+  Building2,
+  ShieldCheck,
+  Microscope,
+  CheckCircle2,
+  Award,
+} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Badge from '@/components/atoms/Badge';
 import Button from '@/components/atoms/Button';
-import SectionLabel from '@/components/atoms/SectionLabel';
-import SpecRow from '@/components/molecules/SpecRow';
-
-gsap.registerPlugin(ScrollTrigger);
+import TrustBar from '@/components/molecules/TrustBar';
+import KpiRow from '@/components/molecules/KpiRow';
+import { useReveal, useRevealTimeline } from '@/hooks/useReveal';
 
 export default function DeHomePageClient() {
-  const heroContentRef = useRef<HTMLDivElement>(null);
-  const featureCardsRef = useRef<HTMLDivElement>(null);
-  const bentoRef = useRef<HTMLDivElement>(null);
-  const trustRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const scopeRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    if (!heroContentRef.current) return;
-    const targets = heroContentRef.current.querySelectorAll('.hero-animate');
-    gsap.from(targets, {
-      y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+  // Hero choreographed timeline (respects reduced-motion)
+  useRevealTimeline(heroRef, ({ reduced, gsap }) => {
+    if (reduced || !heroRef.current) return;
+    const tl = gsap.timeline();
+    tl.from('.hero-line', {
+      y: 80,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.12,
+      ease: 'power4.out',
     });
-  }, { scope: heroContentRef });
+    tl.from(
+      '.hero-fade',
+      { y: 20, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out' },
+      '-=0.4',
+    );
+    tl.from(
+      '.hero-stat',
+      { y: 20, opacity: 0, duration: 0.6, stagger: 0.08, ease: 'power3.out' },
+      '-=0.3',
+    );
+  });
 
-  useGSAP(() => {
-    if (!featureCardsRef.current) return;
-    const cards = featureCardsRef.current.querySelectorAll('.reveal-card');
-    gsap.from(cards, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: featureCardsRef.current, start: 'top 80%' },
-    });
-  }, { scope: featureCardsRef });
-
-  useGSAP(() => {
-    if (!bentoRef.current) return;
-    const items = bentoRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: bentoRef.current, start: 'top 80%' },
-    });
-  }, { scope: bentoRef });
-
-  useGSAP(() => {
-    if (!trustRef.current) return;
-    const items = trustRef.current.querySelectorAll('.reveal-card');
-    gsap.from(items, {
-      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: trustRef.current, start: 'top 80%' },
-    });
-  }, { scope: trustRef });
+  useReveal(scopeRef, { y: 50, stagger: 0.15, start: 'top 75%' });
+  useReveal(contactRef, { y: 40, stagger: 0.1, start: 'top 80%' });
 
   return (
     <div className="bg-surface">
 
-      {/* ── HERO SECTION ────────────────────────────────────────────────── */}
-      <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-on-background">
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
+      <section
+        ref={heroRef}
+        className="relative min-h-screen flex items-center overflow-hidden bg-surface-ink"
+      >
         <Image
           src="/images/hero/facility-hero.webp"
-          alt="Vetrux Biotechnology CBD-Extraktionsanlage in Chuxiong, Yunnan"
+          alt="VETRUX CBD-Extraktionsanlage in Chuxiong, Yunnan"
           fill
           priority
           sizes="100vw"
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-ink/40 via-surface-ink/70 to-surface-ink" />
 
-        <div ref={heroContentRef} className="relative z-10 max-w-container mx-auto px-6 lg:px-12 pb-20 pt-32">
-          <div className="max-w-3xl">
-            <div className="hero-animate">
-              <Badge variant="glass" className="mb-6">Vetrux Biotechnology · Chuxiong, Yunnan</Badge>
+        <div className="relative z-10 max-w-container mx-auto px-6 lg:px-12 w-full">
+          <div className="max-w-4xl">
+            <div className="overflow-hidden mb-3">
+              <p className="hero-line inline-flex items-center gap-2 text-xs font-semibold tracking-[0.35em] uppercase text-primary-fixed/80">
+                <ShieldCheck size={14} className="text-accent" strokeWidth={1.6} />
+                VETRUX · Yunnan, China
+              </p>
             </div>
 
-            <h1 className="hero-animate text-5xl md:text-7xl font-extrabold text-white tracking-tighter leading-[0.95] mb-6">
-              CBD-Rohstoffe<br />& Pflanzenextrakte
-            </h1>
+            <div className="overflow-hidden">
+              <h1 className="hero-line font-serif text-[clamp(2.6rem,6.5vw,5.5rem)] font-medium text-white tracking-tight leading-[0.96] mb-2">
+                Vom Saatgut
+              </h1>
+            </div>
+            <div className="overflow-hidden">
+              <h1 className="hero-line font-serif text-[clamp(2.6rem,6.5vw,5.5rem)] font-medium tracking-tight leading-[0.96] mb-8 italic">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-stone-100 to-stone-300">
+                  zum Isolat.
+                </span>
+              </h1>
+            </div>
 
-            <p className="hero-animate text-base md:text-lg text-white/70 leading-relaxed max-w-xl mb-10">
-              Vetrux — eine Marke der 蔚萃生物 — liefert CBD-Isolat durch
-              Ethanol-Extraktion und chromatographische Reinigung aus unserer Produktionsstätte in Chuxiong, Yunnan.
-              OEM/ODM-Dienstleistungen, technische Beratung und Großhandelsversorgung für globale B2B-Partner.
+            <p className="hero-fade text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mb-10">
+              Ein vertikal integrierter CBD-Rohstoffpartner — vom Anbau in Yunnan über die
+              hauseigene HPLC-Verifizierung bis zur exportfertigen Verpackung, alles aus einer Hand.
             </p>
 
-            <div className="hero-animate flex flex-wrap gap-4">
-              <Link href="/de/equipment">
-                <Button variant="primary" size="lg" icon={ArrowRight}>
-                  Anlage entdecken
+            <div className="hero-fade flex flex-wrap gap-4 mb-12">
+              <Link href="/de/inquiry">
+                <Button variant="accent" size="lg" icon={ArrowRight}>
+                  Kontakt aufnehmen
                 </Button>
               </Link>
               <Link href="/de/products/cbd-isolate">
                 <Button variant="glass" size="lg">
-                  Technische Daten
+                  Produkte ansehen
                 </Button>
               </Link>
             </div>
+
+            <div className="hero-fade inline-flex items-center gap-2 px-3 py-1.5 border border-white/15 bg-white/5 backdrop-blur-sm rounded-sm mb-8">
+              <Award size={12} className="text-accent" strokeWidth={1.8} />
+              <span className="text-[10px] tracking-[0.2em] uppercase text-white/70">
+                Verifizierter Hersteller · Yunnan, CN · ISO Qualitätsprozess
+              </span>
+            </div>
           </div>
 
-          <div className="hero-animate flex flex-wrap gap-6 mt-16 pt-8 border-t border-white/10">
+          <div className="flex flex-wrap gap-x-12 gap-y-6 pt-8 border-t border-white/10 divide-x divide-white/10">
             {[
-              { value: '20+', label: 'Extraktionsanlagen' },
-              { value: '26', label: 'Chromatographiesäulen' },
-              { value: 'HPLC', label: 'Qualitätsprüfung' },
-              { value: '5+', label: 'Jahre Erfahrung' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-2xl font-bold text-white tracking-tighter">{stat.value}</p>
-                <p className="text-xs text-white/50 tracking-widest uppercase mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── INDUSTRY CONTEXT ────────────────────────────────────────────── */}
-      <section className="py-12 bg-surface-container-low border-b border-outline-variant/20">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Marktkontext</p>
-              <p className="text-sm text-on-surface-variant leading-relaxed">
-                Der europäische CBD-Markt wird voraussichtlich bis 2027 <span className="text-on-surface font-semibold">3,2 Milliarden Euro erreichen</span>, angetrieben durch Gesundheits-, Ernährungs- und Kosmetikanwendungen. <a href="https://prohibitionpartners.com" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant/60 text-xs underline underline-offset-2">(Prohibition Partners, European CBD Report)</a>
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Extraktionswissenschaft</p>
-              <p className="text-sm text-on-surface-variant leading-relaxed">
-                Vetrux setzt <span className="text-on-surface font-semibold">Ethanol-Extraktion in Kombination mit chromatographischer Reinigung</span> unter Verwendung von 26 industriellen Chromatographiesäulen ein. Dieser mehrstufige Prozess — Extraktion, chromatographische Trennung, Konzentration und Kristallisation — ist auf konsistente Produktqualität ausgelegt.
-              </p>
-            </div>
-            <div>
-              <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-2">Herstellerprofil</p>
-              <p className="text-sm text-on-surface-variant leading-relaxed">
-                Von unserer Produktionsbasis in <span className="text-on-surface font-semibold">Chuxiong, Provinz Yunnan</span> aus kontrolliert Vetrux Biotechnology die gesamte Produktionskette — von der Hanfbiomasse-Verarbeitung über Ethanol-Extraktion, chromatographische Reinigung und abschließende Kristallisation bis hin zur Chargenfreigabe und Exportverpackung.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── INDUSTRIAL SCALE SECTION ────────────────────────────────────── */}
-      <section className="py-24 bg-surface">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative reveal-card">
-              <Image
-                src="/images/equipment/extraction-tanks.jpg"
-                alt="20 Sätze 6m³ industrielle Extraktionstanks in der Vetrux-Anlage"
-                width={800}
-                height={520}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="w-full h-[520px] object-cover"
-              />
-              <div className="absolute bottom-6 left-6 bg-primary text-white px-5 py-3">
-                <p className="text-xs tracking-widest uppercase font-semibold text-white/70">Kapazität</p>
-                <p className="text-2xl font-extrabold tracking-tighter">20× 6m³ Extraktionstanks</p>
-              </div>
-            </div>
-
-            <div ref={featureCardsRef}>
-              <div className="reveal-card">
-                <SectionLabel>Industrieller Maßstab</SectionLabel>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-on-background tracking-tighter leading-tight mb-6">
-                  Industrielle Infrastruktur
-                  <br />
-                  <span className="text-primary">Präzisionsgesteuert</span>
-                </h2>
-                <p className="text-sm text-on-surface-variant leading-relaxed mb-10 max-w-md">
-                  Unsere Anlage in Chuxiong umfasst 20 Sätze 6m³-Extraktionstanks, 26 Chromatographiesäulen
-                  und 10 Konzentratoren — unterstützt durch Lösungsmittel-Rückgewinnungstürme, Ethanol-Lagerung
-                  und HPLC-Analysesysteme mit vollständiger Automatisierungssteuerung.
+              { value: '≥99,9%', label: 'Isolat-Reinheit' },
+              { value: 'THC ND', label: 'Nicht nachweisbar' },
+              { value: '20', label: 'Extraktionstanks' },
+              { value: 'Yunnan', label: 'Ursprung & Anbau' },
+            ].map((stat, i) => (
+              <div key={stat.label} className={`hero-stat ${i === 0 ? '' : 'pl-8'}`}>
+                <p className="font-serif text-2xl md:text-3xl font-semibold text-white tracking-tighter">
+                  {stat.value}
+                </p>
+                <p className="text-[10px] text-white/60 tracking-widest uppercase mt-1">
+                  {stat.label}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className="grid grid-cols-1 gap-4">
-                {[
-                  { icon: FlaskConical, title: 'Ethanol-Extraktion & Reinigung', desc: 'Industrielle Ethanol-Extraktion gefolgt von 26-Säulen-Chromatographie-Reinigung für hochreines CBD-Isolat.' },
-                  { icon: Award, title: 'OEM/ODM & Technische Beratung', desc: 'Auftragsfertigung, Formulierungsunterstützung und technische Beratung für CBD- und Pflanzenextrakt-Produkte.' },
-                  { icon: Layers, title: 'Mehrstufige Veredelung', desc: 'Chromatographische Trennung, Konzentration, Kristallisation und HPLC-verifizierte Chargenprüfung.' },
-                ].map((feat) => (
-                  <div key={feat.title} className="reveal-card flex gap-4 p-5 bg-surface-container-low hover:bg-surface-container transition-colors duration-200">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary-fixed flex items-center justify-center">
-                      <feat.icon size={20} className="text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-on-surface mb-1">{feat.title}</p>
-                      <p className="text-xs text-on-surface-variant leading-relaxed">{feat.desc}</p>
-                    </div>
+      {/* ── TRUST BAR ────────────────────────────────────────────────────── */}
+      <TrustBar
+        items={[
+          { icon: FlaskConical, label: '20 Extraktionstanks' },
+          { icon: Layers, label: '26 Chromatographie-Säulen' },
+          { icon: Microscope, label: 'HPLC im Haus' },
+          { icon: ShieldCheck, label: 'ISO Qualitätsprozess' },
+          { icon: CheckCircle2, label: 'OEM / ODM' },
+          { icon: Award, label: 'Anbau bis Verpackung' },
+        ]}
+      />
+
+      {/* ── BUSINESS SCOPE ───────────────────────────────────────────────── */}
+      <section className="py-28 bg-surface-ink">
+        <div ref={scopeRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card mb-16">
+            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-primary-fixed/80 mb-4">
+              Geschäftsfelder
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium text-white tracking-tight leading-[1.05] max-w-3xl">
+              End-to-End-Kompetenzen,<br />
+              <span className="italic text-primary-fixed">auf Ihre Anforderungen zugeschnitten</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* CBD Raw Material Sales */}
+            <div className="reveal-card group relative overflow-hidden flex flex-col">
+              <div className="relative h-56 overflow-hidden flex-shrink-0">
+                <Image
+                  src="/images/products/cbd-crystal-closeup.jpg"
+                  alt="CBD-Isolat Rohstoff"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover object-[center_40%] group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-ink to-transparent" />
+              </div>
+              <div className="bg-inverse-surface p-8 flex flex-col flex-1 border-l-2 border-transparent group-hover:border-accent transition-colors duration-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 bg-primary-fixed/20 flex items-center justify-center flex-shrink-0">
+                    <FlaskConical size={16} className="text-primary-fixed" strokeWidth={1.5} />
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CBD ISOLATE BENTO SECTION ───────────────────────────────────── */}
-      <section className="py-24 bg-surface-container-low">
-        <div ref={bentoRef} className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-            <div className="reveal-card lg:col-span-8 relative overflow-hidden">
-              <Image
-                src="/images/products/cbd-crystal-closeup.jpg"
-                alt="CBD-Isolat Nahaufnahme"
-                width={1200}
-                height={580}
-                sizes="(max-width: 1024px) 100vw, 66vw"
-                className="w-full h-[580px] object-cover object-[center_40%]"
-              />
-              <div className="absolute top-6 left-6">
-                <Badge variant="default">Reinheitsfokus</Badge>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-48 p-8 bg-gradient-to-t from-on-background/90 via-on-background/40 to-transparent flex items-end">
-                <h2 className="text-4xl font-extrabold text-white tracking-tighter leading-tight">
-                  Produktübersicht<br />CBD-Isolat
-                </h2>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 flex flex-col gap-4">
-              <div className="reveal-card bg-primary p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-white/60 mb-4">Technische Daten</p>
-                  <p className="text-2xl font-extrabold text-white tracking-tighter leading-tight mb-2">Analysezertifikat verfügbar</p>
-                  <p className="text-xs text-white/70 leading-relaxed">Chargendokumentation und Produktinformationen können im Rahmen qualifizierter B2B-Gespräche eingesehen werden.</p>
+                  <h3 className="font-serif text-xl text-white tracking-tight">CBD-Rohstoffvertrieb</h3>
                 </div>
-                <Link href="/de/inquiry" className="mt-6 inline-flex items-center gap-2 px-4 py-3 bg-white text-primary text-xs font-bold tracking-widest uppercase hover:bg-primary-fixed transition-colors duration-200">
-                  <Download size={14} />
-                  Dokumentation anfordern
+                <p className="text-[15px] text-inverse-on-surface/70 leading-relaxed mb-6 flex-1">
+                  Belieferung von Markenkunden, Vertriebspartnern und Handelsunternehmen mit stabiler
+                  CBD-Versorgung. Standardlieferung, langfristige Verträge und maßgeschneiderte
+                  Kooperationsmodelle verfügbar.
+                </p>
+                <Link
+                  href="/de/wholesale-cbd-isolate"
+                  className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-fixed hover:text-accent transition-colors duration-200 mt-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                >
+                  Versorgung entdecken <ArrowRight size={14} />
                 </Link>
               </div>
+            </div>
 
-              <div className="reveal-card bg-surface-container-lowest p-8 flex-1">
-                <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">Wichtige Spezifikationen</p>
-                <SpecRow label="Reinheitsprüfung" value="HPLC-verifiziert" />
-                <SpecRow label="Dokumentation" value="COA pro Charge verfügbar" />
-                <SpecRow label="Erscheinungsbild" value="Weißes Kristallin" />
-                <SpecRow label="Lösungsmittelrückstände" value="&lt; 10 PPM" isLast />
-                <Link href="/de/products/cbd-isolate" className="mt-6 inline-flex items-center gap-1 text-xs font-semibold tracking-wider uppercase text-primary hover:text-primary-container transition-colors duration-200">
-                  Vollständige Spezifikationen <ArrowRight size={14} />
+            {/* OEM/ODM Services */}
+            <div className="reveal-card group relative overflow-hidden flex flex-col">
+              <div className="relative h-56 overflow-hidden flex-shrink-0">
+                <Image
+                  src="/images/equipment/extraction-vessel-6m3.webp"
+                  alt="Industrielle Extraktionsanlage für OEM/ODM-Produktion"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-ink to-transparent" />
+              </div>
+              <div className="bg-inverse-surface p-8 flex flex-col flex-1 border-l-2 border-transparent group-hover:border-accent transition-colors duration-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 bg-primary-fixed/20 flex items-center justify-center flex-shrink-0">
+                    <Layers size={16} className="text-primary-fixed" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-serif text-xl text-white tracking-tight">OEM / ODM Dienstleistungen</h3>
+                </div>
+                <p className="text-[15px] text-inverse-on-surface/70 leading-relaxed mb-6 flex-1">
+                  Vollständige Prozessbegleitung von Rohstoffbeschaffung und Formulierungsentwicklung
+                  über Produktion und Verpackungsdesign bis hin zur Fertigprodukt-Lieferung für Ihre Marke.
+                </p>
+                <Link
+                  href="/de/inquiry"
+                  className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-fixed hover:text-accent transition-colors duration-200 mt-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                >
+                  Projekt starten <ArrowRight size={14} />
                 </Link>
+              </div>
+            </div>
+
+            {/* Technical Output */}
+            <div className="reveal-card group relative overflow-hidden flex flex-col">
+              <div className="relative h-56 overflow-hidden flex-shrink-0">
+                <Image
+                  src="/images/equipment/hplc-system.jpg"
+                  alt="HPLC-Analysesystem für Qualitätskontrolle"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-ink to-transparent" />
+              </div>
+              <div className="bg-inverse-surface p-8 flex flex-col flex-1 border-l-2 border-transparent group-hover:border-accent transition-colors duration-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 bg-primary-fixed/20 flex items-center justify-center flex-shrink-0">
+                    <Cpu size={16} className="text-primary-fixed" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-serif text-xl text-white tracking-tight">Technische Dienstleistungen</h3>
+                </div>
+                <p className="text-[15px] text-inverse-on-surface/70 leading-relaxed mb-6 flex-1">
+                  Anbaumanagement, Ertragsoptimierung, Verfeinerung der Extraktionsprozesse,
+                  Kostenkontrolle und Beratung zur Cannabinoid-Reinigung.
+                </p>
+                <Link
+                  href="/de/inquiry"
+                  className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-fixed hover:text-accent transition-colors duration-200 mt-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                >
+                  Jetzt anfragen <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* KPI Row strip on dark scope */}
+          <div className="reveal-card mt-16 border-t border-white/10 pt-10">
+            <KpiRow
+              tone="dark"
+              items={[
+                { value: '≥99,9%', label: 'Isolat-Reinheit', sub: 'HPLC verifiziert' },
+                { value: '120.000 L', label: 'Extraktionskapazität', sub: '20 × 6m³ Tanks' },
+                { value: '24 h', label: 'Antwortzeit', sub: 'Geschäftliche Anfrage' },
+                { value: 'EN · DE · FR', label: 'Sprachen', sub: 'B2B Sales-Team' },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── BRAND STATEMENT ──────────────────────────────────────────────── */}
+      <section className="py-28 bg-surface-low">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-5">
+              <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
+                Über Vetrux
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl font-medium text-on-background tracking-tight leading-[1.05] mb-8">
+                Qualität verankert in<br />
+                <span className="italic text-primary">jedem Schritt des Prozesses</span>
+              </h2>
+
+              <blockquote className="border-l-2 border-accent pl-5 italic font-serif text-lg text-on-surface leading-relaxed mb-8">
+                &ldquo;Wir behandeln jedes Kilo Isolat so, als würde es unter unserem eigenen Namen
+                versendet. Rückverfolgbarkeit ist kein Etikett — sie ist die Arbeitsweise des Teams.&rdquo;
+                <footer className="not-italic mt-3 text-xs tracking-widest uppercase text-on-surface-variant font-sans">
+                  — Qualitätsleitung, VETRUX
+                </footer>
+              </blockquote>
+
+              <p className="text-[15px] text-on-surface-variant leading-relaxed mb-4">
+                VETRUX baut auf einer klaren Überzeugung — dass pharmazeutische Konsistenz
+                bereits auf dem Feld beginnt, nicht erst in der Abfüllung. Jede Charge wird
+                im eigenen Haus angebaut, extrahiert und verifiziert — das Datenblatt in Ihren
+                Händen ist dasselbe, an dem unser Team gemessen wird.
+              </p>
+              <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8">
+                Vom Anbau über die Chromatographie bis zur Exportverpackung — VETRUX liefert
+                eine einzige, verantwortliche Lieferlinie für B2B-Partner.
+              </p>
+              <Link href="/de/about">
+                <Button variant="outline" size="md" icon={ArrowRight}>
+                  Unternehmensprofil
+                </Button>
+              </Link>
+            </div>
+
+            <div className="lg:col-span-7 grid grid-cols-2 gap-3">
+              <div className="relative h-72 overflow-hidden">
+                <Image
+                  src="/images/gallery/campus-buildings.webp"
+                  alt="Vetrux-Campus und Anlagen"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 30vw"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="relative h-72 overflow-hidden">
+                <Image
+                  src="/images/planting/flowering-greenhouse.jpg"
+                  alt="Vetrux Anbau-Gewächshaus"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 30vw"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="relative h-48 col-span-2 overflow-hidden">
+                <Image
+                  src="/images/gallery/cultivation-base-wide.jpg"
+                  alt="Panoramaansicht der Vetrux Anbaubasis"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── TRUST SIGNALS / CERTIFICATIONS ─────────────────────────────── */}
-      <section className="py-16 bg-surface">
-        <div ref={trustRef} className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
-            {[
-              { label: 'Qualitätsfokus', sub: 'HPLC-Prüfung · Chargendokumentation', href: '/de/quality-assurance' },
-              { label: 'Großhandel', sub: 'CBD & Pflanzenextrakte im Großhandel', href: '/de/wholesale-cbd-isolate' },
-              { label: 'Herstellerprofil', sub: 'Produktionsbasis Chuxiong, Yunnan', href: '/de/cbd-isolate-manufacturer' },
-              { label: 'Globale Anfrage', sub: 'inquiry@vetrux.tech', href: '/de/inquiry' },
-            ].map((cert) => (
-              <Link key={cert.label} href={cert.href} className="reveal-card py-6 border-t-2 border-primary-fixed hover:border-primary transition-colors duration-200 block">
-                <p className="text-lg font-extrabold text-on-background tracking-tighter">{cert.label}</p>
-                <p className="text-xs text-on-surface-variant tracking-wider uppercase mt-1">{cert.sub}</p>
-              </Link>
-            ))}
+      {/* ── CONTACT ──────────────────────────────────────────────────────── */}
+      <section className="py-28 bg-surface-container-low">
+        <div ref={contactRef} className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card mb-16">
+            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
+              Kontakt
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium text-on-background tracking-tight leading-[1.05] max-w-2xl">
+              Lassen Sie uns über<br />
+              <span className="italic text-primary">Ihre Anforderungen sprechen</span>
+            </h2>
           </div>
-        </div>
-      </section>
 
-      {/* ── FAQ SECTION ────────────────────────────────────────────────── */}
-      <section className="py-24 bg-surface-container-low">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <SectionLabel>Häufig gestellte Fragen</SectionLabel>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-on-background tracking-tighter leading-tight mb-12">
-            Was Einkäufer uns fragen
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                q: 'Was ist CBD-Isolat und wie unterscheidet es sich von Vollspektrum-CBD?',
-                a: 'CBD-Isolat ist eine hochreine Form von Cannabidiol — ein weißes kristallines Pulver mit ≥99,9% Reinheit, bei dem andere Cannabinoide, Terpene und Pflanzenverbindungen entfernt wurden. Im Gegensatz zu Vollspektrum-CBD, das mehrere Cannabinoide enthält, ist CBD-Isolat auf einen einzelnen Wirkstoff fokussiert, was es für Formulierungen mit präziser Dosierung geeignet macht. Reinheitsspezifikationen sind in der Chargendokumentation verfügbar.',
-              },
-              {
-                q: 'Welche Dienstleistungen bietet Vetrux über CBD-Isolat hinaus an?',
-                a: 'Neben dem Verkauf von CBD-Rohstoffen bietet Vetrux OEM/ODM-Auftragsfertigung, technische Beratung und weitere pflanzliche Extrakte wie Anthocyane, Steviolglykoside und Hanfsamen-Globulin an. Kontaktieren Sie sales@vetrux.tech für OEM/ODM-Anfragen oder inquiry@vetrux.tech für allgemeine Produktinformationen.',
-              },
-              {
-                q: 'Welche Verpackungsoptionen gibt es für CBD-Isolat?',
-                a: 'Vetrux bietet CBD-Isolat in 5 kg PE-Beuteln (27×60 cm), 5 kg Aluminiumfolienbeuteln (35×50 cm) und Exportkartons (465×285×295 mm) an. Individuelle Verpackungen sind über unsere OEM/ODM-Dienstleistungen verfügbar. Mengenrabatte für Großbestellungen — kontaktieren Sie sales@vetrux.tech.',
-              },
-              {
-                q: 'Wie gewährleistet Vetrux die CBD-Qualität?',
-                a: 'Jede Charge wird mittels HPLC getestet und dokumentiert. Unser Ethanol-Extraktions- und 26-Säulen-Chromatographie-Reinigungsverfahren ist auf gleichbleibende Qualität ausgelegt. Vollständige Dokumentation einschließlich COA, Ursprungszeugnis und SDS wird mit jeder Lieferung bereitgestellt. Spezifische Reinheitswerte sind in der Chargendokumentation enthalten.',
-              },
-              {
-                q: 'Wo befindet sich Vetrux und welche Versandbedingungen sind verfügbar?',
-                a: 'Vetrux Biotechnology hat seinen Sitz in Chuxiong, Provinz Yunnan, China. Versandbedingungen und Lieferzeiten werden pro Auftrag besprochen. Alle Sendungen enthalten chargenspezifisches COA, Ursprungszeugnis und Sicherheitsdatenblatt. Kontaktieren Sie inquiry@vetrux.tech für Logistikdetails.',
-              },
-            ].map((faq) => (
-              <div key={faq.q} className="bg-surface p-6">
-                <h3 className="text-sm font-bold text-on-background mb-3">{faq.q}</h3>
-                <p className="text-xs text-on-surface-variant leading-relaxed">{faq.a}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="reveal-card bg-surface-container-lowest p-8 flex flex-col border border-outline-variant/30">
+              <div className="w-11 h-11 bg-accent-soft flex items-center justify-center mb-6">
+                <Mail size={20} className="text-accent" strokeWidth={1.5} />
               </div>
-            ))}
+              <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">
+                E-Mail
+              </p>
+              <div className="space-y-3 mt-auto">
+                <div>
+                  <p className="text-[10px] tracking-widest uppercase text-on-surface-muted mb-1">
+                    Allgemeine Anfrage
+                  </p>
+                  <a
+                    href="mailto:inquiry@vetrux.tech"
+                    className="text-[15px] font-semibold text-on-background hover:text-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                  >
+                    inquiry@vetrux.tech
+                  </a>
+                </div>
+                <div>
+                  <p className="text-[10px] tracking-widest uppercase text-on-surface-muted mb-1">
+                    Vertrieb &amp; OEM/ODM
+                  </p>
+                  <a
+                    href="mailto:sales@vetrux.tech"
+                    className="text-[15px] font-semibold text-on-background hover:text-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                  >
+                    sales@vetrux.tech
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="reveal-card bg-surface-container-lowest p-8 flex flex-col border border-outline-variant/30">
+              <div className="w-11 h-11 bg-accent-soft flex items-center justify-center mb-6">
+                <Building2 size={20} className="text-accent" strokeWidth={1.5} />
+              </div>
+              <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">
+                Unternehmen
+              </p>
+              <div className="space-y-2 mt-auto">
+                <p className="text-[15px] font-semibold text-on-background">
+                  Vetrux Biotechnology (Chuxiong) Co., Ltd.
+                </p>
+                <p className="text-xs text-on-surface-variant leading-relaxed">
+                  蔚萃生物科技（楚雄）有限公司
+                </p>
+              </div>
+            </div>
+
+            <div className="reveal-card bg-surface-container-lowest p-8 flex flex-col border border-outline-variant/30">
+              <div className="w-11 h-11 bg-accent-soft flex items-center justify-center mb-6">
+                <MapPin size={20} className="text-accent" strokeWidth={1.5} />
+              </div>
+              <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">
+                Standort
+              </p>
+              <div className="space-y-2 mt-auto">
+                <p className="text-[15px] text-on-background leading-relaxed">
+                  Seedling Base, Tapu Second Group,<br />
+                  Chuxiong City, Provinz Yunnan,<br />
+                  675000, China
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Referenzen */}
-          <div className="mt-12 pt-8 border-t border-outline-variant/20">
-            <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/40 mb-3">Referenzen &amp; Standards</p>
-            <ul className="flex flex-col gap-1.5 text-xs text-on-surface-variant/60">
-              <li><a href="https://www.who.int/docs/default-source/controlled-substances/whocbdreportmay2018-2.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">WHO-Sachverständigenausschuss für Drogenabhängigkeit — Cannabidiol (CBD) Prüfbericht (2018)</a></li>
-              <li><a href="https://food.ec.europa.eu/safety/novel-food/legislation_en" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-on-surface-variant">EU-Verordnung über neuartige Lebensmittel (EU) 2015/2283 — Europäische Kommission</a></li>
-            </ul>
+          <div className="reveal-card mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-primary p-8 md:p-10 border-l-4 border-accent">
+            <div>
+              <p className="font-serif text-2xl md:text-3xl font-medium text-white tracking-tight leading-tight">
+                Bereit für ein Gespräch?
+              </p>
+              <p className="text-[15px] text-white/70 mt-2">
+                Erzählen Sie uns von Ihrem Projekt — wir antworten innerhalb von 24 Stunden.
+              </p>
+            </div>
+            <Link href="/de/inquiry" className="flex-shrink-0">
+              <Button variant="accent" size="lg" icon={ArrowRight}>
+                Anfrage senden
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

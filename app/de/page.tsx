@@ -5,11 +5,11 @@ import DeHomePageClient from '@/components/pages/DeHomePageClient';
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = getBaseUrl();
   return {
-    title: 'CBD-Rohstoffe & Botanische Extrakte — Vetrux CBD',
+    title: 'CBD-Rohstoffe | Vetrux CBD',
     description:
-      'VETRUX ist die CBD-Produktmarke von 蔚萃生物科技（楚雄）有限公司. CBD-Rohstoffverkauf, OEM/ODM-Dienstleistungen, technische Unterstützung und botanische Extraktlösungen aus Yunnan, China.',
+      'VETRUX — die CBD-Rohstoffmarke der Vetrux Biotechnology (Chuxiong) Co., Ltd. CBD-Rohstoffverkauf, OEM/ODM-Dienstleistungen und technische Unterstützung aus Yunnan, China.',
     keywords:
-      'CBD Rohstoffe, CBD Isolat, OEM ODM CBD, botanische Extrakte, CBD Lieferant, Vetrux CBD, Yunnan',
+      'CBD Rohstoffe, CBD Isolat, OEM ODM CBD, CBD Lieferant, Vetrux CBD, Yunnan',
     alternates: {
       canonical: `${baseUrl}/de`,
       languages: {
@@ -20,16 +20,16 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: 'CBD-Rohstoffe & Botanische Extrakte — Vetrux CBD',
-      description: 'VETRUX — CBD-Rohstoffe, OEM/ODM, technische Unterstützung und botanische Extrakte aus Yunnan, China.',
+      title: 'CBD-Rohstoffe | Vetrux CBD',
+      description: 'VETRUX — CBD-Rohstoffe, OEM/ODM und technische Unterstützung aus Yunnan, China.',
       url: `${baseUrl}/de`,
       locale: 'de_DE',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'CBD-Rohstoffe & Botanische Extrakte — Vetrux CBD',
-      description: 'VETRUX — CBD-Rohstoffe, OEM/ODM, technische Unterstützung und botanische Extrakte aus Yunnan, China.',
+      title: 'CBD-Rohstoffe | Vetrux CBD',
+      description: 'VETRUX — CBD-Rohstoffe, OEM/ODM und technische Unterstützung aus Yunnan, China.',
     },
   };
 }

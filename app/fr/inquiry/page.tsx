@@ -3,7 +3,7 @@ import FrInquiryPageClient from '@/components/pages/FrInquiryPageClient';
 
 export const metadata: Metadata = {
   title: 'Demande | B2B Gros Isolat de CBD | Vetrux CBD',
-  description: 'Soumettez une demande B2B de gros pour les matieres premieres CBD, services OEM/ODM et extraits botaniques de Vetrux CBD.',
+  description: 'Soumettez une demande B2B de gros pour les matieres premieres CBD et services OEM/ODM de Vetrux CBD.',
   keywords: 'demande isolat CBD gros, devis isolat CBD, prix gros isolat CBD, contact fournisseur CBD B2B',
   alternates: {
     canonical: 'https://www.vetrux.tech/fr/inquiry',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Demande',
-    description: 'Soumettez une demande B2B de gros pour les matieres premieres CBD, services OEM/ODM et extraits botaniques de Vetrux CBD.',
+    description: 'Soumettez une demande B2B de gros pour les matieres premieres CBD et services OEM/ODM de Vetrux CBD.',
     url: 'https://www.vetrux.tech/fr/inquiry',
     locale: 'fr_FR',
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Demande',
-    description: 'Soumettez une demande B2B de gros pour les matieres premieres CBD, services OEM/ODM et extraits botaniques de Vetrux CBD.',
+    description: 'Soumettez une demande B2B de gros pour les matieres premieres CBD et services OEM/ODM de Vetrux CBD.',
   },
 };
 
