@@ -4,6 +4,7 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 export interface Article {
   slug: string;
@@ -16,7 +17,40 @@ export interface Article {
   size?: 'normal' | 'large';
 }
 
-const articlesDir = path.join(process.cwd(), 'src/content/articles')
+// Resolve the articles directory resiliently regardless of the invoking cwd.
+// Priority: 1) next to this module file, 2) project cwd, 3) vetrux-prefixed cwd.
+function resolveArticlesDir(): string {
+  const candidates: string[] = []
+  try {
+    // In ESM this would be import.meta.url; under CJS transpile __dirname works.
+    // Keep both to be safe across Next.js runtimes.
+    const here = typeof __dirname !== 'undefined'
+      ? __dirname
+      : path.dirname(fileURLToPath(import.meta.url))
+    candidates.push(here)
+  } catch {
+    // ignore
+  }
+  candidates.push(
+    path.join(process.cwd(), 'src/content/articles'),
+    path.join(process.cwd(), 'vetrux/src/content/articles'),
+  )
+  for (const dir of candidates) {
+    try {
+      if (fs.existsSync(dir) && fs.statSync(dir).isDirectory()) {
+        // Verify it looks like the articles dir by probing a known file.
+        const probe = path.join(dir, 'cbd-isolate-vs-distillate-formulation-guide.md')
+        if (fs.existsSync(probe)) return dir
+      }
+    } catch {
+      // try next
+    }
+  }
+  // Last-resort fallback — let the readFileSync throw a clearer error.
+  return path.join(process.cwd(), 'src/content/articles')
+}
+
+const articlesDir = resolveArticlesDir()
 
 // ── Article order + size overrides ───────────────────────────────────────────
 const fileOrder: Array<{ filename: string; size?: 'normal' | 'large' }> = [

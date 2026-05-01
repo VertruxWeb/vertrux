@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Manrope } from 'next/font/google'
+import { Manrope, Newsreader } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/organisms/Navbar'
@@ -13,6 +13,14 @@ const manrope = Manrope({
   display: 'swap',
 })
 
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-newsreader',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.vetrux.tech'),
   title: {
@@ -20,9 +28,9 @@ export const metadata: Metadata = {
     template: '%s — Vetrux CBD',
   },
   description:
-    'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd. CBD raw material sales, OEM/ODM services, technical support, and botanical extract solutions.',
+    'VETRUX — the CBD raw material brand operated by Vetrux Biotechnology (Chuxiong) Co., Ltd. CBD raw material sales, OEM/ODM services, and technical support.',
   keywords:
-    'CBD raw materials, CBD isolate, OEM ODM CBD, botanical extracts, CBD supplier, Vetrux CBD, Yunnan',
+    'CBD raw materials, CBD isolate, OEM ODM CBD, CBD supplier, Vetrux CBD, Yunnan',
   authors: [{ name: 'Vetrux CBD' }],
   robots: { index: true, follow: true },
   openGraph: {
@@ -51,13 +59,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={manrope.variable}>
+    <html lang="en" className={`${manrope.variable} ${newsreader.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
       <body className="min-h-screen flex flex-col bg-surface font-sans">
+        <a href="#main" className="skip-link">Skip to main content</a>
         <Navbar />
-        <main className="flex-1 pt-12">
+        <main id="main" className="flex-1 pt-16">
           <Breadcrumb />
           {children}
         </main>

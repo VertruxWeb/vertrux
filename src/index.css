@@ -1,10 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+/* src/index.css
+ * Legacy fallback stylesheet (Vite era). Active stylesheet for Next.js is
+ * `vetrux/app/globals.css`. Keep this file in sync so dev tooling that still
+ * references it produces identical output.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --brand-forest: #154212;
+    --brand-forest-deep: #0E2C0D;
+    --brand-sage: #BCF0AE;
+
+    --accent-brass: #B7892A;
+    --accent-brass-hover: #976F1F;
+    --accent-amber-soft: #F4E9C9;
+
+    --surface-default: #FAF8F3;
+    --surface-low: #F2EEE6;
+    --surface-high: #FFFFFF;
+    --surface-ink: #14160F;
+
+    --text-primary: #14160F;
+    --text-secondary: #3F4339;
+    --text-muted: #6E715F;
+  }
+
   html {
     font-family: 'Manrope', sans-serif;
     scroll-behavior: smooth;
@@ -12,8 +37,8 @@
 
   body {
     margin: 0;
-    background-color: #f8f9ff;
-    color: #0b1c30;
+    background-color: var(--surface-default);
+    color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -21,45 +46,56 @@
   * {
     box-sizing: border-box;
   }
+
+  *:focus-visible {
+    outline: 2px solid var(--accent-brass);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
-  /* Container utility */
   .container-wide {
     @apply max-w-container mx-auto px-6 lg:px-12;
   }
 
-  /* Section label - uppercase tracking chip */
   .section-label {
     @apply text-xs font-semibold tracking-widest uppercase text-on-surface-variant;
   }
 
-  /* Glass card effect */
   .glass-card {
     @apply backdrop-blur-xl bg-white/10 border border-white/20;
   }
 
-  /* Input field - minimal bottom-border style */
   .input-minimal {
-    @apply w-full bg-transparent border-0 border-b border-outline/30 pb-3 pt-1
-           text-on-surface placeholder-on-surface-variant/50
-           focus:outline-none focus:border-primary focus:border-b-2
+    @apply w-full bg-transparent border-0 border-b border-outline/40 pb-3 pt-1
+           text-on-surface placeholder-on-surface-variant/60
+           focus:outline-none focus:border-accent focus:border-b-2
            transition-all duration-200;
   }
 
-  /* Select field */
   .select-minimal {
-    @apply w-full bg-transparent border-0 border-b border-outline/30 pb-3 pt-1
+    @apply w-full bg-transparent border-0 border-b border-outline/40 pb-3 pt-1
            text-on-surface appearance-none
-           focus:outline-none focus:border-primary focus:border-b-2
+           focus:outline-none focus:border-accent focus:border-b-2
            transition-all duration-200;
   }
 
-  /* Textarea field */
   .textarea-minimal {
-    @apply w-full bg-transparent border-0 border-b border-outline/30 pb-3 pt-1
-           text-on-surface placeholder-on-surface-variant/50 resize-none
-           focus:outline-none focus:border-primary focus:border-b-2
+    @apply w-full bg-transparent border-0 border-b border-outline/40 pb-3 pt-1
+           text-on-surface placeholder-on-surface-variant/60 resize-none
+           focus:outline-none focus:border-accent focus:border-b-2
            transition-all duration-200;
   }
 }

@@ -3,6 +3,7 @@
 // src/components/organisms/Footer.tsx
 // Site footer with brand, nav links, and copyright — language-aware
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -25,19 +26,20 @@ const footerLinks = [
     ],
   },
   {
-    heading: 'Company',
+    heading: 'Process',
     links: [
-      { label: 'About Vetrux', href: '/about' },
-      { label: 'Manufacturer Profile', href: '/cbd-isolate-manufacturer' },
+      { label: 'From Seed to Isolate', href: '/process' },
+      { label: 'Cultivation', href: '/planting' },
+      { label: 'Extraction', href: '/equipment' },
       { label: 'Quality Assurance', href: '/quality-assurance' },
-      { label: 'Equipment', href: '/equipment' },
-      { label: 'Planting Base', href: '/planting' },
-      { label: 'Gallery', href: '/gallery' },
+      { label: 'Facility Gallery', href: '/gallery' },
     ],
   },
   {
-    heading: 'Resources',
+    heading: 'Company',
     links: [
+      { label: 'About VETRUX', href: '/about' },
+      { label: 'Manufacturer Profile', href: '/cbd-isolate-manufacturer' },
       { label: 'Blog & Insights', href: '/blog' },
       { label: 'Contact & Inquiry', href: '/inquiry' },
       { label: 'Privacy Policy', href: '/privacy-policy' },
@@ -56,16 +58,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand block */}
           <div className="md:col-span-1">
-            <div className="overflow-hidden h-10 mb-4">
-              <img
+            <div className="mb-4">
+              <Image
                 src="/logo.svg"
                 alt="Vetrux CBD"
-                className="h-32 w-auto"
-                style={{ marginTop: '-52px' }}
+                width={319}
+                height={64}
+                className="h-16 w-auto brightness-0 invert"
+                priority
               />
             </div>
             <p className="text-xs text-inverse-on-surface/60 leading-relaxed">
-              Vertically integrated CBD isolate manufacturer and botanical extract supplier. From seed selection to finished product delivery.
+              Vertically integrated CBD isolate manufacturer. From seed selection to finished product delivery.
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
               <span className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full tracking-wider uppercase">
@@ -75,7 +79,7 @@ export default function Footer() {
                 OEM/ODM
               </span>
               <span className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full tracking-wider uppercase">
-                Botanical Extracts
+                Technical Services
               </span>
             </div>
           </div>
