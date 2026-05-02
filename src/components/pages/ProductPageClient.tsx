@@ -112,10 +112,6 @@ export default function ProductPageClient() {
 
             <div className="reveal-card relative">
               <Image src="/images/products/cbd-crystal-closeup.jpg" alt="CBD Isolate 99.9% purity white crystalline powder" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
-              <div className="absolute bottom-6 right-6 bg-surface-ink/90 backdrop-blur p-4">
-                <p className="text-xs text-white/60 tracking-[0.35em] uppercase mb-1">CBD Isolate</p>
-                <p className="text-sm font-bold text-white">Purity: ≥99.9%</p>
-              </div>
             </div>
           </div>
         </div>
