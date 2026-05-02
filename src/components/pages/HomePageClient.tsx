@@ -12,7 +12,6 @@ import {
   ShieldCheck,
   Microscope,
   CheckCircle2,
-  Award,
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -20,6 +19,29 @@ import Button from '@/components/atoms/Button';
 import TrustBar from '@/components/molecules/TrustBar';
 import KpiRow from '@/components/molecules/KpiRow';
 import { useReveal, useRevealTimeline } from '@/hooks/useReveal';
+
+const homepageAnswers = [
+  {
+    question: 'What does Vetrux manufacture?',
+    answer:
+      'Vetrux manufactures bulk CBD isolate and related CBD raw material solutions for qualified B2B discussions, supported by cultivation, extraction, purification, quality-control, and packaging workflows in Yunnan, China.',
+  },
+  {
+    question: 'Who does Vetrux serve?',
+    answer:
+      'Vetrux serves B2B buyers, brand owners, trading companies, channel partners, and formulation teams that need bulk CBD isolate, OEM/ODM support, documentation support, and recurring supply discussions.',
+  },
+  {
+    question: 'What documents can buyers request?',
+    answer:
+      'Buyers can request COA, SDS, test reports, product information, commercial invoice, packing list, and export paperwork support. Availability depends on actual batch, order terms, and verification results.',
+  },
+  {
+    question: 'Where is Vetrux based?',
+    answer:
+      'Vetrux Biotechnology (Chuxiong) Co., Ltd. is based in Chuxiong, Yunnan, China, with CBD raw material operations connected to local cultivation, processing, quality-control, and packaging workflows.',
+  },
+];
 
 export default function HomePageClient() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -80,60 +102,32 @@ export default function HomePageClient() {
             </div>
 
             <div className="overflow-hidden">
-              <h1 className="hero-line font-serif text-[clamp(2.6rem,6.5vw,5.5rem)] font-medium text-white tracking-tight leading-[0.96] mb-2">
+              <h1 className="hero-line font-serif text-[clamp(2.6rem,6.5vw,5.5rem)] font-medium text-white tracking-tight leading-[0.96] mb-8">
                 From Seed
-              </h1>
-            </div>
-            <div className="overflow-hidden">
-              <h1 className="hero-line font-serif text-[clamp(2.6rem,6.5vw,5.5rem)] font-medium tracking-tight leading-[0.96] mb-8 italic">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-stone-100 to-stone-300">
-                  to Isolate.
+                <br />
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-stone-100 to-stone-300">
+                  to Isolate
                 </span>
               </h1>
             </div>
 
             <p className="hero-fade text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mb-10">
-              A vertically integrated CBD raw material partner — from Yunnan cultivation
-              through in-house HPLC verification to export-ready packaging, all under one roof.
+              Bulk CBD isolate for B2B buyers, with OEM/ODM support, export-ready
+              documentation, and in-house quality-control workflows from Yunnan, China.
             </p>
 
             <div className="hero-fade flex flex-wrap gap-4 mb-12">
               <Link href="/inquiry">
                 <Button variant="accent" size="lg" icon={ArrowRight}>
-                  Get in Touch
+                  Request COA / Spec Sheet
                 </Button>
               </Link>
-              <Link href="/products/cbd-isolate">
+              <Link href="/inquiry">
                 <Button variant="glass" size="lg">
-                  View Products
+                  Get Bulk Quote
                 </Button>
               </Link>
             </div>
-
-            <div className="hero-fade inline-flex items-center gap-2 px-3 py-1.5 border border-white/15 bg-white/5 backdrop-blur-sm rounded-sm mb-8">
-              <Award size={12} className="text-accent" strokeWidth={1.8} />
-              <span className="text-[10px] tracking-[0.2em] uppercase text-white/70">
-                Verified Manufacturer · Yunnan, CN · ISO Quality Process
-              </span>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-x-12 gap-y-6 pt-8 border-t border-white/10 divide-x divide-white/10">
-            {[
-              { value: '≥99.9%', label: 'Isolate Purity' },
-              { value: 'THC ND', label: 'Non-detect' },
-              { value: '20', label: 'Extraction Tanks' },
-              { value: 'Yunnan', label: 'Origin & Cultivation' },
-            ].map((stat, i) => (
-              <div key={stat.label} className={`hero-stat ${i === 0 ? '' : 'pl-8'}`}>
-                <p className="font-serif text-2xl md:text-3xl font-semibold text-white tracking-tighter">
-                  {stat.value}
-                </p>
-                <p className="text-[10px] text-white/60 tracking-widest uppercase mt-1">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -141,14 +135,37 @@ export default function HomePageClient() {
       {/* ── TRUST BAR ────────────────────────────────────────────────────── */}
       <TrustBar
         items={[
-          { icon: FlaskConical, label: '20 Extraction Tanks' },
-          { icon: Layers, label: '26 Chromatography Columns' },
-          { icon: Microscope, label: 'HPLC In-house' },
-          { icon: ShieldCheck, label: 'ISO Quality Process' },
-          { icon: CheckCircle2, label: 'OEM / ODM' },
-          { icon: Award, label: 'Cultivation to Pack' },
+          { icon: Microscope, label: 'In-house HPLC' },
+          { icon: FlaskConical, label: 'COA / SDS support' },
+          { icon: Layers, label: '5 kg bulk packaging' },
+          { icon: CheckCircle2, label: 'OEM/ODM available' },
+          { icon: ShieldCheck, label: 'Export paperwork support' },
         ]}
       />
+
+      {/* ── GEO ANSWERS ─────────────────────────────────────────────────── */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mb-10">
+            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
+              Buyer Answers
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-on-background tracking-tight leading-[1.05]">
+              Bulk CBD isolate sourcing answers
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {homepageAnswers.map((item) => (
+              <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
+                <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
+                  {item.question}
+                </h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── BUSINESS SCOPE ───────────────────────────────────────────────── */}
       <section className="py-28 bg-surface-ink">
@@ -266,10 +283,10 @@ export default function HomePageClient() {
             <KpiRow
               tone="dark"
               items={[
-                { value: '≥99.9%', label: 'Isolate Purity', sub: 'HPLC verified' },
-                { value: '120,000 L', label: 'Extraction Capacity', sub: '20 × 6m³ tanks' },
-                { value: '24 h', label: 'Reply Window', sub: 'Business inquiry' },
-                { value: 'EN · DE · FR', label: 'Languages', sub: 'B2B sales team' },
+                { value: 'HPLC', label: 'Analytical Capability', sub: 'Quality-control support' },
+                { value: 'COA/SDS', label: 'Documentation', sub: 'By order requirements' },
+                { value: '5 kg', label: 'Bulk Packaging', sub: 'PE or aluminum-foil bags' },
+                { value: 'OEM/ODM', label: 'Cooperation', sub: 'B2B project support' },
               ]}
             />
           </div>
@@ -298,10 +315,10 @@ export default function HomePageClient() {
               </blockquote>
 
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-4">
-                VETRUX is built on a single conviction — that pharmaceutical-grade
-                consistency starts in the field, not at the bottling line. Every batch is
-                cultivated, extracted, and verified in-house, so the spec sheet you receive
-                is the same one our team measures against.
+                VETRUX is built on a single conviction — that consistent batch review
+                starts in the field, not at the bottling line. Cultivation, extraction,
+                and in-house quality-control workflows are connected so buyer discussions
+                can reference the same product and documentation context.
               </p>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8">
                 From cultivation to chromatography to export packaging, VETRUX delivers
@@ -434,7 +451,7 @@ export default function HomePageClient() {
                 Ready to start a conversation?
               </p>
               <p className="text-[15px] text-white/70 mt-2">
-                Tell us about your project — we&apos;ll respond within 24 hours.
+                Tell us about your project and our B2B team will review the details.
               </p>
             </div>
             <Link href="/inquiry" className="flex-shrink-0">

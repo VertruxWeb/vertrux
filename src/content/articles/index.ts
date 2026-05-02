@@ -54,18 +54,22 @@ const articlesDir = resolveArticlesDir()
 
 // ── Article order + size overrides ───────────────────────────────────────────
 const fileOrder: Array<{ filename: string; size?: 'normal' | 'large' }> = [
-  // BOFU articles (industry knowledge, kept with Vetrux self-references to be cleaned separately)
   { filename: 'cbd-isolate-vs-distillate-formulation-guide.md',   size: 'large' },
   { filename: 'how-to-read-cbd-certificate-of-analysis.md',       size: 'normal' },
   { filename: 'thc-free-cbd-isolate-sourcing-guide-europe.md',    size: 'normal' },
   { filename: 'cbd-isolate-wholesale-pricing-cost-factors.md',    size: 'normal' },
-  // MOFU articles
-  { filename: 'eu-novel-food-regulation-cbd-importers-guide.md',  size: 'large' },
   { filename: 'cbd-supplier-due-diligence-checklist.md',          size: 'normal' },
+  { filename: 'cbd-isolate-packaging-storage-shelf-life-guide.md', size: 'large' },
+  { filename: 'eu-novel-food-regulation-cbd-importers-guide.md',  size: 'large' },
   { filename: 'cgmp-cbd-manufacturing-quality-guide.md',          size: 'normal' },
-  // TOFU articles
+  { filename: 'supercritical-co2-extraction-explained.md',        size: 'normal' },
   { filename: 'what-is-cbd-isolate-complete-guide.md',            size: 'large' },
   { filename: 'european-cbd-market-outlook-2026.md',              size: 'normal' },
+  { filename: 'apac-cbd-market-outlook-2025.md',                  size: 'normal' },
+  { filename: 'botanical-biotechnology-innovation-whitepaper.md',  size: 'normal' },
+  { filename: 'co2-vs-ethanol-extraction-comparison.md',          size: 'normal' },
+  { filename: 'esg-decarbonizing-cannabis-supply-chain.md',       size: 'normal' },
+  { filename: 'global-cbd-extraction-standards-2024.md',          size: 'normal' },
 ]
 
 // ── Frontmatter parser ────────────────────────────────────────────────────────

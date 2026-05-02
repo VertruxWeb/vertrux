@@ -35,9 +35,32 @@ const downloadableDocuments = [
   },
   {
     title: 'CBD Isolate Test Report (COA)',
-    desc: 'Third-party laboratory analysis report for CBD content, purity, and compliance testing.',
+    desc: 'Laboratory analysis report for CBD isolate quality review. Batch-specific interpretation depends on actual batch, order terms, and verification results.',
     href: '/documents/vetrux-cbd-test-report.pdf',
     format: 'PDF',
+  },
+];
+
+const qualityAnswers = [
+  {
+    question: 'What documents can Vetrux provide?',
+    answer:
+      'Vetrux can provide COA, SDS, test reports, product information, commercial invoice, packing list, and shipment documents according to order requirements and actual batch availability.',
+  },
+  {
+    question: 'How does Vetrux test CBD isolate quality?',
+    answer:
+      'Vetrux uses in-house HPLC analytical capability to support CBD isolate quality-control review. Additional batch-specific documents depend on actual batch, order terms, and verification results.',
+  },
+  {
+    question: 'What is tested in-house vs batch-specific?',
+    answer:
+      'In-house HPLC supports analytical review during quality-control workflows. Batch-specific COA, SDS, test reports, and shipment documents depend on the actual batch, order terms, and verification results.',
+  },
+  {
+    question: 'Who is responsible for import compliance?',
+    answer:
+      "Destination-country import compliance, including permits, licenses, approvals, labels, customs declarations, and regulatory review, is the buyer/importer's responsibility.",
   },
 ];
 
@@ -62,14 +85,14 @@ export default function QualityAssuranceClient() {
             <div className="reveal-card">
               <Badge variant="default" className="mb-6">Quality Management</Badge>
               <h1 className="text-5xl md:text-6xl font-serif font-medium text-on-background tracking-tight leading-[1.0] mb-6">
-                Quality
+                CBD Isolate
                 <br />
-                <span className="italic text-primary">Management</span>
+                <span className="italic text-primary">Quality Assurance</span>
               </h1>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-6 max-w-md">
-                VETRUX focuses on consistency in raw materials, process, and delivery.
-                Our Chuxiong facility is equipped with HPLC analytical capability
-                to support quality management activities.
+                VETRUX supports CBD isolate quality review with in-house HPLC analytical
+                capability, COA/SDS support, test reports, batch documents, and shipment
+                documentation arranged according to order terms.
               </p>
               <p className="text-xs text-on-surface-variant/80 leading-relaxed mb-8 max-w-md">
                 Supporting documentation including COA, SDS, test reports, and other shipment documents
@@ -85,7 +108,7 @@ export default function QualityAssuranceClient() {
               </div>
               <div className="flex flex-wrap gap-4">
                 <Link href="/inquiry">
-                  <Button variant="accent" size="lg" icon={ArrowRight}>Contact Us</Button>
+                  <Button variant="accent" size="lg" icon={ArrowRight}>Request Batch Documents</Button>
                 </Link>
                 <Link href="/products/cbd-isolate">
                   <Button variant="outline" size="lg">View Products</Button>
@@ -107,7 +130,7 @@ export default function QualityAssuranceClient() {
           <div className="reveal-card mb-12">
             <SectionLabel>Documentation</SectionLabel>
             <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-4">
-              Documentation & Compliance Support
+              CBD isolate COA, SDS and batch documents
             </h2>
             <p className="text-[15px] text-on-surface-variant max-w-xl">
               Vetrux can provide supporting documentation according to order requirements.
@@ -137,13 +160,36 @@ export default function QualityAssuranceClient() {
         </div>
       </section>
 
-      {/* ── QA APPROACH ──────────────────────────────────────────────── */}
+      {/* ── GEO ANSWERS ───────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card mb-12">
+            <SectionLabel>Buyer Answers</SectionLabel>
+            <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05]">
+              CBD isolate quality assurance answers
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {qualityAnswers.map((item) => (
+              <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
+                <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
+                  {item.question}
+                </h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── QA APPROACH ──────────────────────────────────────────────── */}
+      <section className="py-24 bg-surface">
         <div ref={processRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-12">
             <SectionLabel>Approach</SectionLabel>
             <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-4">
-              Quality Management Approach
+              HPLC-supported quality management approach
             </h2>
           </div>
 
@@ -177,7 +223,7 @@ export default function QualityAssuranceClient() {
       </section>
 
       {/* ── DOWNLOADS ─────────────────────────────────────────────── */}
-      <section className="py-24 bg-surface">
+      <section className="py-24 bg-surface-container-low">
         <div ref={certsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-6">
             <SectionLabel>Downloads</SectionLabel>
@@ -185,8 +231,8 @@ export default function QualityAssuranceClient() {
               Downloadable Documents
             </h2>
             <p className="text-[15px] text-on-surface-variant max-w-xl">
-              Product documentation for reference. Batch-specific documents are provided with each order.
-              Additional certifications and regulatory documents are available upon request.
+              Product documentation for reference. Batch-specific documentation depends on actual batch,
+              order terms, and verification results.
             </p>
           </div>
 
@@ -215,7 +261,7 @@ export default function QualityAssuranceClient() {
 
           <div className="reveal-card mt-8">
             <p className="text-xs text-on-surface-variant">
-              For additional documentation, certifications, or certified translations, contact <a href="mailto:inquiry@vetrux.tech" className="text-accent underline">inquiry@vetrux.tech</a>.
+              For additional documentation requests, contact <a href="mailto:inquiry@vetrux.tech" className="text-accent underline">inquiry@vetrux.tech</a>.
             </p>
           </div>
         </div>

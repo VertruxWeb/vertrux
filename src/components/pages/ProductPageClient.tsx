@@ -13,7 +13,7 @@ import { useReveal } from '@/hooks/useReveal';
 
 const technicalMetrics = [
   { label: 'Product', value: 'CBD Isolate', status: 'Cannabidiol Isolate' },
-  { label: 'Purity', value: '≥99.9%', status: 'THC Non-Detect (ND)' },
+  { label: 'Quality Review', value: 'HPLC', status: 'In-house analytical capability' },
   { label: 'Inner Packaging', value: '5 kg/bag', status: 'PE or Aluminum Foil' },
   { label: 'Outer Packaging', value: '465×285×295mm', status: 'Export Carton' },
 ];
@@ -50,6 +50,29 @@ const qualityCards = [
   },
 ];
 
+const productAnswers = [
+  {
+    question: 'What is Vetrux CBD isolate?',
+    answer:
+      'Vetrux CBD isolate is a crystalline CBD raw material supplied for qualified B2B discussions, with product information, packaging details, and documentation support available by order requirements.',
+  },
+  {
+    question: 'What packaging formats are available?',
+    answer:
+      'Available packaging includes 5 kg PE bags or 5 kg aluminum-foil bags packed in export cartons. Palletization with shrink wrap may be arranged according to order requirements.',
+  },
+  {
+    question: 'What documents can be requested?',
+    answer:
+      'Buyers can request COA, SDS, test reports, product information, commercial invoice, packing list, and shipment documents. Batch-specific availability depends on actual batch, order terms, and verification results.',
+  },
+  {
+    question: 'Who is responsible for import compliance?',
+    answer:
+      "Destination-country import compliance, including permits, licenses, approvals, labels, and customs declarations, is the buyer/importer's responsibility. Vetrux can provide documentation support by order terms.",
+  },
+];
+
 export default function ProductPageClient() {
   const heroRef = useRef<HTMLDivElement>(null);
   const metricsRef = useRef<HTMLDivElement>(null);
@@ -75,11 +98,12 @@ export default function ProductPageClient() {
               <h1 className="font-serif font-medium text-[clamp(2.4rem,5.5vw,4.5rem)] text-on-background tracking-tight leading-[1.0] mb-6">
                 CBD Isolate
                 <br />
-                <span className="italic text-primary">99.9% Purity</span>
+                <span className="italic text-primary">Specifications</span>
               </h1>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Pharmaceutical-grade CBD isolate at ≥99.9% purity, with traceable cultivation,
-                in-house HPLC verification, and export-ready packaging for B2B partners.
+                CBD isolate product information for qualified bulk buyers, with in-house HPLC
+                analytical capability, packaging details, COA/SDS request options, and
+                export-ready packaging support.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -88,7 +112,7 @@ export default function ProductPageClient() {
                   'Anthocyanins',
                   'Steviol Glycosides',
                   'Hemp Seed Globulin',
-                  '≥99.9% Purity',
+                  'COA / SDS Request',
                 ].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
@@ -99,19 +123,19 @@ export default function ProductPageClient() {
               <div className="flex flex-wrap gap-4">
                 <Link href="/inquiry">
                   <Button variant="accent" size="lg" icon={ArrowRight}>
-                    Wholesale Inquiry
+                    Request Spec Sheet
                   </Button>
                 </Link>
                 <Link href="/inquiry">
                   <Button variant="secondary" size="lg" icon={Download} iconPosition="left">
-                    Request Product Documentation
+                    Request COA
                   </Button>
                 </Link>
               </div>
             </div>
 
             <div className="reveal-card relative">
-              <Image src="/images/products/cbd-crystal-closeup.jpg" alt="CBD Isolate 99.9% purity white crystalline powder" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
+              <Image src="/images/products/cbd-crystal-closeup.jpg" alt="Bulk CBD isolate — white crystalline powder sample" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
             </div>
           </div>
         </div>
@@ -123,7 +147,7 @@ export default function ProductPageClient() {
           <div className="reveal-card">
             <SectionLabel>Technical Analysis</SectionLabel>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-4">
-              Product Information
+              CBD isolate product information and documentation
             </h2>
             <p className="text-[15px] text-on-surface-variant mb-12 max-w-xl">
               Supporting documentation including COA, SDS, test reports, and other shipment documents may be provided according to order requirements. Specific documentation availability depends on actual batch, order terms, and verification results.
@@ -143,9 +167,31 @@ export default function ProductPageClient() {
           <div className="reveal-card">
             <Link href="/inquiry">
               <Button variant="accent" size="md" icon={Download} iconPosition="left">
-                Request Product Information
+                Request Spec Sheet
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── GEO ANSWERS ─────────────────────────────────────────────────── */}
+      <section className="py-24 bg-surface-container-low">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mb-10">
+            <SectionLabel>Buyer Answers</SectionLabel>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05]">
+              CBD isolate specification answers
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {productAnswers.map((item) => (
+              <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
+                <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
+                  {item.question}
+                </h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -174,7 +220,7 @@ export default function ProductPageClient() {
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-8">Full Product Spec Sheet</h2>
               <div>
                 <SpecRow label="Product Name" value="CBD Isolate" />
-                <SpecRow label="Purity" value="≥99.9% (THC Non-Detect)" />
+                <SpecRow label="Quality Review" value="In-house HPLC analytical capability; batch-specific documentation depends on actual batch, order terms, and verification results" />
                 <SpecRow label="Packaging (Inner)" value="PE bags 5kg/bag (27×60cm, food grade) or Aluminum foil bags 5kg/bag (35×50cm, food grade)" />
                 <SpecRow label="Packaging (Outer)" value="Export cartons 465×285×295mm, 2 bags per carton" />
                 <SpecRow label="Palletization" value="Plastic pallets with shrink wrap" isLast />

@@ -23,11 +23,34 @@ const shippingTerms = [
 ];
 
 const whyWholesale = [
-  { title: 'CBD Raw Materials', desc: 'CBD isolate with ≥99.9% purity from our Chuxiong, Yunnan facility.' },
-  { title: 'Equipment Configuration', desc: '20 extraction tanks, 26 chromatography columns, 10 concentrators, HPLC analytical system, and automation control.' },
+  { title: 'Bulk CBD Isolate', desc: 'CBD isolate supply discussions for qualified B2B buyers from our Chuxiong, Yunnan operation.' },
+  { title: 'Facility Workflow', desc: 'Cultivation, extraction, purification, quality-control, packaging, and documentation workflows for CBD raw materials.' },
   { title: 'OEM/ODM Services', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
   { title: 'Technical Support', desc: 'Cultivation management, extraction process optimization, cost control, and cannabinoid extraction consulting.' },
   { title: 'Standardized Packaging', desc: '5 kg PE bags (27×60cm), 5 kg aluminum foil bags (35×50cm), export cartons (465×285×295mm), plastic pallets.' },
+];
+
+const wholesaleAnswers = [
+  {
+    question: 'Can B2B buyers request bulk CBD isolate?',
+    answer:
+      'Yes. Qualified B2B buyers can request bulk CBD isolate discussions, product information, packaging details, documentation support, and quote review through the Vetrux inquiry process.',
+  },
+  {
+    question: 'What cooperation models are available?',
+    answer:
+      'Vetrux supports standard supply, long-term supply discussions, project-based cooperation, and OEM/ODM services for brand clients, channel partners, trading companies, and recurring procurement teams.',
+  },
+  {
+    question: 'What packaging is used for bulk orders?',
+    answer:
+      'Bulk orders can use 5 kg PE bags or 5 kg aluminum-foil bags in export cartons, with palletization and shrink wrap arranged according to order requirements.',
+  },
+  {
+    question: 'What should buyers prepare before requesting a quote?',
+    answer:
+      'Buyers should prepare target quantity, packaging needs, document requirements, intended application, destination market, delivery timeline, and importer compliance responsibilities before requesting a quote.',
+  },
 ];
 
 export default function WholesaleCbdIsolateClient() {
@@ -56,7 +79,9 @@ export default function WholesaleCbdIsolateClient() {
                 <span className="italic text-primary">CBD Isolate</span>
               </h1>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-6 max-w-md">
-                CBD raw materials from VETRUX, manufactured in Chuxiong, Yunnan. B2B supply cooperation including standard supply, long-term supply, and project-based arrangements, with OEM/ODM services.
+                Bulk and wholesale CBD isolate supply for B2B buyers, with recurring
+                procurement discussions, 5 kg packaging options, documentation support,
+                quote review, and OEM/ODM cooperation from VETRUX in Chuxiong, Yunnan.
               </p>
               <p className="text-xs text-on-surface-variant/80 leading-relaxed mb-8 max-w-md">
                 Destination country import compliance is the buyer/importer&apos;s responsibility.
@@ -70,7 +95,7 @@ export default function WholesaleCbdIsolateClient() {
               </div>
               <div className="flex flex-wrap gap-4">
                 <Link href="/inquiry">
-                  <Button variant="accent" size="lg" icon={ArrowRight}>Request Wholesale Quote</Button>
+                  <Button variant="accent" size="lg" icon={ArrowRight}>Get Bulk Quote</Button>
                 </Link>
                 <Link href="/products/cbd-isolate">
                   <Button variant="outline" size="lg">View Product Specs</Button>
@@ -92,7 +117,7 @@ export default function WholesaleCbdIsolateClient() {
           <div className="reveal-card mb-12">
             <SectionLabel>Cooperation Models</SectionLabel>
             <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-4">
-              B2B Supply Cooperation
+              Wholesale CBD isolate supply cooperation
             </h2>
             <p className="text-[15px] text-on-surface-variant max-w-xl">
               Vetrux supports brand clients, channel partners, trading companies, and partners
@@ -136,8 +161,31 @@ export default function WholesaleCbdIsolateClient() {
         </div>
       </section>
 
-      {/* ── SHIPPING TERMS ────────────────────────────────────────────── */}
+      {/* ── GEO ANSWERS ───────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card mb-12">
+            <SectionLabel>Buyer Answers</SectionLabel>
+            <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05]">
+              Bulk CBD isolate buyer answers
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {wholesaleAnswers.map((item) => (
+              <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
+                <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
+                  {item.question}
+                </h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SHIPPING TERMS ────────────────────────────────────────────── */}
+      <section className="py-24 bg-surface">
         <div ref={shippingRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-12">
             <SectionLabel>Packaging & Compliance</SectionLabel>
@@ -177,7 +225,7 @@ export default function WholesaleCbdIsolateClient() {
       </section>
 
       {/* ── WHY VETRUX ────────────────────────────────────────────────── */}
-      <section className="py-24 bg-surface">
+      <section className="py-24 bg-surface-container-low">
         <div ref={whyRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-12">
             <SectionLabel>Why Vetrux</SectionLabel>

@@ -12,6 +12,17 @@ export interface SeoMetadata {
 }
 
 const defaultImage = '/images/hero/facility-hero.webp';
+const siteUrl = 'https://www.vetrux.tech';
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface BreadcrumbItem {
+  name: string;
+  path: string;
+}
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -48,48 +59,224 @@ const productJsonLd = {
   '@type': 'Product',
   name: 'CBD Isolate',
   description:
-    'CBD isolate with ≥99.9% purity. Available in 5 kg PE bags and 5 kg aluminum foil bags, packed in export cartons. Supporting documentation provided according to order requirements.',
+    'Crystalline CBD raw material supplied for qualified B2B discussions, with product information, packaging details, and documentation support available by order requirements.',
   brand: { '@type': 'Brand', name: 'VETRUX' },
   manufacturer: {
     '@type': 'Organization',
     name: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.',
-    url: 'https://www.vetrux.tech',
+    url: siteUrl,
   },
   category: 'CBD Raw Materials',
   additionalProperty: [
     { '@type': 'PropertyValue', name: 'Packaging', value: '5 kg PE bags / 5 kg Aluminum Foil bags / Export Cartons' },
+    { '@type': 'PropertyValue', name: 'Documentation', value: 'COA, SDS, test reports, and shipment documents may be provided according to order requirements and actual batch availability.' },
   ],
   offers: {
     '@type': 'Offer',
     priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
     seller: { '@type': 'Organization', name: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.' },
-    url: 'https://www.vetrux.tech/inquiry',
+    url: `${siteUrl}/inquiry`,
   },
 };
 
+export function buildFaqJsonLd(items: FaqItem[]): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: `${siteUrl}${item.path}`,
+    })),
+  };
+}
+
+function buildWebPageJsonLd(path: string, name: string, description: string): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name,
+    description,
+    url: `${siteUrl}${path}`,
+    publisher: organizationJsonLd,
+  };
+}
+
+const homepageFaqJsonLd = buildFaqJsonLd([
+  {
+    question: 'What does Vetrux manufacture?',
+    answer:
+      'Vetrux manufactures bulk CBD isolate and related CBD raw material solutions for qualified B2B discussions, supported by cultivation, extraction, purification, quality-control, and packaging workflows in Yunnan, China.',
+  },
+  {
+    question: 'Who does Vetrux serve?',
+    answer:
+      'Vetrux serves B2B buyers, brand owners, trading companies, channel partners, and formulation teams that need bulk CBD isolate, OEM/ODM support, documentation support, and recurring supply discussions.',
+  },
+  {
+    question: 'What documents can buyers request?',
+    answer:
+      'Buyers can request COA, SDS, test reports, product information, commercial invoice, packing list, and export paperwork support. Availability depends on actual batch, order terms, and verification results.',
+  },
+  {
+    question: 'Where is Vetrux based?',
+    answer:
+      'Vetrux Biotechnology (Chuxiong) Co., Ltd. is based in Chuxiong, Yunnan, China, with CBD raw material operations connected to local cultivation, processing, quality-control, and packaging workflows.',
+  },
+]);
+
+const productFaqJsonLd = buildFaqJsonLd([
+  {
+    question: 'What is Vetrux CBD isolate?',
+    answer:
+      'Vetrux CBD isolate is a crystalline CBD raw material supplied for qualified B2B discussions, with product information, packaging details, and documentation support available by order requirements.',
+  },
+  {
+    question: 'What packaging formats are available?',
+    answer:
+      'Available packaging includes 5 kg PE bags or 5 kg aluminum-foil bags packed in export cartons. Palletization with shrink wrap may be arranged according to order requirements.',
+  },
+  {
+    question: 'What documents can be requested?',
+    answer:
+      'Buyers can request COA, SDS, test reports, product information, commercial invoice, packing list, and shipment documents. Batch-specific availability depends on actual batch, order terms, and verification results.',
+  },
+  {
+    question: 'Who is responsible for import compliance?',
+    answer:
+      "Destination-country import compliance, including permits, licenses, approvals, labels, and customs declarations, is the buyer/importer's responsibility. Vetrux can provide documentation support by order terms.",
+  },
+]);
+
+const manufacturerFaqJsonLd = buildFaqJsonLd([
+  {
+    question: 'Is Vetrux a CBD isolate manufacturer?',
+    answer:
+      'Yes. Vetrux Biotechnology (Chuxiong) Co., Ltd. is a China-based CBD isolate manufacturer supporting qualified B2B buyers with bulk CBD isolate, OEM/ODM cooperation, packaging, and documentation support.',
+  },
+  {
+    question: 'What manufacturing capabilities does Vetrux operate?',
+    answer:
+      'Vetrux operates connected cultivation, extraction, purification, concentration, quality-control, and packaging workflows for CBD raw materials in Chuxiong, Yunnan, China.',
+  },
+  {
+    question: 'Does Vetrux support OEM/ODM?',
+    answer:
+      'Yes. Vetrux supports OEM/ODM cooperation covering raw material support, formulation discussions, production coordination, packaging design, and finished product delivery according to project requirements.',
+  },
+  {
+    question: 'What quality-control capabilities are available?',
+    answer:
+      'Vetrux has in-house HPLC analytical capability for quality-control support. Batch-specific documents depend on actual batch, order terms, and verification results.',
+  },
+]);
+
+const wholesaleFaqJsonLd = buildFaqJsonLd([
+  {
+    question: 'Can B2B buyers request bulk CBD isolate?',
+    answer:
+      'Yes. Qualified B2B buyers can request bulk CBD isolate discussions, product information, packaging details, documentation support, and quote review through the Vetrux inquiry process.',
+  },
+  {
+    question: 'What cooperation models are available?',
+    answer:
+      'Vetrux supports standard supply, long-term supply discussions, project-based cooperation, and OEM/ODM services for brand clients, channel partners, trading companies, and recurring procurement teams.',
+  },
+  {
+    question: 'What packaging is used for bulk orders?',
+    answer:
+      'Bulk orders can use 5 kg PE bags or 5 kg aluminum-foil bags in export cartons, with palletization and shrink wrap arranged according to order requirements.',
+  },
+  {
+    question: 'What should buyers prepare before requesting a quote?',
+    answer:
+      'Buyers should prepare target quantity, packaging needs, document requirements, intended application, destination market, delivery timeline, and importer compliance responsibilities before requesting a quote.',
+  },
+]);
+
+const qualityFaqJsonLd = buildFaqJsonLd([
+  {
+    question: 'What documents can Vetrux provide?',
+    answer:
+      'Vetrux can provide COA, SDS, test reports, product information, commercial invoice, packing list, and shipment documents according to order requirements and actual batch availability.',
+  },
+  {
+    question: 'How does Vetrux test CBD isolate quality?',
+    answer:
+      'Vetrux uses in-house HPLC analytical capability to support CBD isolate quality-control review. Additional batch-specific documents depend on actual batch, order terms, and verification results.',
+  },
+  {
+    question: 'What is tested in-house vs batch-specific?',
+    answer:
+      'In-house HPLC supports analytical review during quality-control workflows. Batch-specific COA, SDS, test reports, and shipment documents depend on the actual batch, order terms, and verification results.',
+  },
+  {
+    question: 'Who is responsible for import compliance?',
+    answer:
+      "Destination-country import compliance, including permits, licenses, approvals, labels, customs declarations, and regulatory review, is the buyer/importer's responsibility.",
+  },
+]);
+
 const staticPageSeo: Record<string, SeoMetadata> = {
   '/': {
-    title: 'CBD Raw Materials | Vetrux CBD',
+    title: 'CBD Isolate Manufacturer in China | Bulk B2B Supplier | Vetrux',
     description:
-      'VETRUX — the CBD raw material brand operated by Vetrux Biotechnology (Chuxiong) Co., Ltd., based in Yunnan, China. CBD raw material sales, OEM/ODM services, and technical support.',
+      'Vetrux supplies bulk CBD isolate for B2B buyers from Yunnan, China, with OEM/ODM support, in-house quality control, and buyer documentation support.',
     canonicalPath: '/',
     image: defaultImage,
     type: 'website',
     keywords:
-      'CBD raw materials, CBD isolate, OEM ODM CBD, CBD supplier, Vetrux CBD, Yunnan',
-    jsonLd: [organizationJsonLd, productJsonLd],
+      'CBD isolate manufacturer China, bulk CBD isolate supplier, B2B CBD isolate, CBD isolate OEM ODM, Vetrux CBD, Yunnan',
+    jsonLd: [
+      organizationJsonLd,
+      buildWebPageJsonLd(
+        '/',
+        'CBD Isolate Manufacturer in China | Bulk B2B Supplier | Vetrux',
+        'Vetrux supplies bulk CBD isolate for B2B buyers from Yunnan, China, with OEM/ODM support, in-house quality control, and buyer documentation support.',
+      ),
+      homepageFaqJsonLd,
+      buildBreadcrumbJsonLd([{ name: 'Home', path: '/' }]),
+    ],
   },
   '/products/cbd-isolate': {
-    title: 'CBD Isolate | Product Overview — Vetrux CBD',
+    title: 'CBD Isolate Specifications | Bulk CBD Isolate | Vetrux',
     description:
-      'CBD isolate with ≥99.9% purity. Packaging: 5 kg PE bags, 5 kg aluminum foil bags, export cartons. Supporting documentation available according to order requirements.',
+      'CBD isolate product information, packaging formats, documentation support, and B2B inquiry options for qualified bulk buyers.',
     canonicalPath: '/products/cbd-isolate',
     image: '/images/products/cbd-crystal-closeup.jpg',
     type: 'website',
     keywords:
-      'CBD isolate, CBD raw material, bulk CBD, CBD packaging',
-    jsonLd: [productJsonLd],
+      'CBD isolate specifications, bulk CBD isolate, CBD isolate packaging, CBD isolate COA, CBD isolate SDS',
+    jsonLd: [
+      organizationJsonLd,
+      productJsonLd,
+      buildWebPageJsonLd(
+        '/products/cbd-isolate',
+        'CBD Isolate Specifications | Bulk CBD Isolate | Vetrux',
+        'CBD isolate product information, packaging formats, documentation support, and B2B inquiry options for qualified bulk buyers.',
+      ),
+      productFaqJsonLd,
+      buildBreadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'CBD Isolate', path: '/products/cbd-isolate' },
+      ]),
+    ],
   },
   '/equipment': {
     title: 'Equipment Configuration | Extraction & Processing Facility — Vetrux CBD',
@@ -164,16 +351,16 @@ const staticPageSeo: Record<string, SeoMetadata> = {
   '/gallery/products': {
     title: 'Product & Laboratory | Gallery — Vetrux CBD',
     description:
-      'VETRUX CBD isolate at ≥99.9% purity — laboratory verification, packaging, and export-ready presentation.',
+      'VETRUX CBD isolate visuals — laboratory review, packaging, and export-ready presentation.',
     canonicalPath: '/gallery/products',
     image: '/images/products/cbd-crystal-closeup.jpg',
     type: 'website',
-    keywords: 'CBD isolate product, CBD packaging, CBD laboratory, ≥99.9% purity CBD isolate',
+    keywords: 'CBD isolate product, CBD packaging, CBD laboratory, CBD isolate visuals',
   },
   '/process': {
     title: 'From Seed to Isolate | Our Process — Vetrux CBD',
     description:
-      'Six controlled phases from Yunma-13 cultivation to ≥99.9% pharmaceutical-grade CBD isolate. Traceable, verified, export-ready — manufactured by VETRUX in Chuxiong, Yunnan.',
+      'Controlled phases from Yunma-13 cultivation to CBD isolate workflows, with cultivation, extraction, purification, quality-control, and packaging support in Chuxiong, Yunnan.',
     canonicalPath: '/process',
     image: '/images/process/growth-day-120-mature.jpg',
     type: 'website',
@@ -219,37 +406,73 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     },
   },
   '/wholesale-cbd-isolate': {
-    title: 'CBD Raw Material Supply | B2B Cooperation — Vetrux CBD',
+    title: 'Bulk CBD Isolate Supplier | Wholesale CBD Isolate | Vetrux',
     description:
-      'Vetrux CBD supplies CBD raw materials for B2B cooperation. OEM/ODM services, technical support, and flexible supply arrangements.',
+      'Wholesale CBD isolate supply for B2B buyers, with 5 kg packaging, documentation support, and OEM/ODM cooperation from Vetrux in China.',
     canonicalPath: '/wholesale-cbd-isolate',
     image: '/images/products/cbd-packaging-foil.jpg',
     type: 'website',
     keywords:
-      'wholesale CBD, bulk CBD supply, CBD raw material, B2B CBD cooperation, CBD OEM ODM',
-    jsonLd: [productJsonLd],
+      'bulk CBD isolate supplier, wholesale CBD isolate, B2B CBD isolate, CBD isolate quote, CBD OEM ODM',
+    jsonLd: [
+      organizationJsonLd,
+      buildWebPageJsonLd(
+        '/wholesale-cbd-isolate',
+        'Bulk CBD Isolate Supplier | Wholesale CBD Isolate | Vetrux',
+        'Wholesale CBD isolate supply for B2B buyers, with 5 kg packaging, documentation support, and OEM/ODM cooperation from Vetrux in China.',
+      ),
+      wholesaleFaqJsonLd,
+      buildBreadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Wholesale CBD Isolate', path: '/wholesale-cbd-isolate' },
+      ]),
+    ],
   },
   '/quality-assurance': {
-    title: 'Quality Management & Documentation Support — Vetrux CBD',
+    title: 'CBD Isolate COA, SDS & Quality Assurance | Vetrux',
     description:
-      'Vetrux quality management approach: in-house HPLC testing capability, documentation support including COA, SDS, and test reports available according to order requirements.',
+      'Learn how Vetrux supports CBD isolate quality review with in-house HPLC analytical capability, COA/SDS support, test reports, and shipment documentation by order terms.',
     canonicalPath: '/quality-assurance',
-    image: '/images/equipment/chromatography-column-700L.webp',
+    image: '/images/equipment/hplc-system.jpg',
     type: 'website',
     keywords:
-      'CBD quality management, CBD documentation, COA, SDS, HPLC testing, quality control',
-    jsonLd: [organizationJsonLd],
+      'CBD isolate COA, CBD isolate SDS, CBD quality assurance, HPLC analytical capability, CBD batch documents',
+    jsonLd: [
+      organizationJsonLd,
+      buildWebPageJsonLd(
+        '/quality-assurance',
+        'CBD Isolate COA, SDS & Quality Assurance | Vetrux',
+        'Learn how Vetrux supports CBD isolate quality review with in-house HPLC analytical capability, COA/SDS support, test reports, and shipment documentation by order terms.',
+      ),
+      qualityFaqJsonLd,
+      buildBreadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'Quality Assurance', path: '/quality-assurance' },
+      ]),
+    ],
   },
   '/cbd-isolate-manufacturer': {
-    title: 'Company Profile | CBD Raw Materials — Vetrux CBD',
+    title: 'CBD Isolate Manufacturer in China | Vetrux',
     description:
-      'Vetrux Biotechnology (Chuxiong) Co., Ltd. — CBD raw material sales, OEM/ODM services, and technical support from Chuxiong, Yunnan.',
+      'Vetrux supplies bulk CBD isolate for B2B buyers from Yunnan, China, with in-house analytical capability, OEM/ODM support, and buyer documentation support.',
     canonicalPath: '/cbd-isolate-manufacturer',
-    image: '/images/hero/facility-hero.webp',
+    image: '/images/gallery/campus-aerial.png',
     type: 'website',
     keywords:
-      'CBD manufacturer China, CBD raw material supplier, Yunnan CBD, OEM ODM CBD',
-    jsonLd: [organizationJsonLd, productJsonLd],
+      'CBD isolate manufacturer China, CBD manufacturer Yunnan, bulk CBD isolate manufacturer, CBD isolate OEM ODM',
+    jsonLd: [
+      organizationJsonLd,
+      buildWebPageJsonLd(
+        '/cbd-isolate-manufacturer',
+        'CBD Isolate Manufacturer in China | Vetrux',
+        'Vetrux supplies bulk CBD isolate for B2B buyers from Yunnan, China, with in-house analytical capability, OEM/ODM support, and buyer documentation support.',
+      ),
+      manufacturerFaqJsonLd,
+      buildBreadcrumbJsonLd([
+        { name: 'Home', path: '/' },
+        { name: 'CBD Isolate Manufacturer', path: '/cbd-isolate-manufacturer' },
+      ]),
+    ],
   },
   '/about': {
     title: 'About Vetrux CBD | Company Profile',
@@ -304,31 +527,38 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
         canonicalPath: `/blog/${article.slug}`,
         image: article.image || defaultImage,
         type: 'article',
-        jsonLd: {
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          headline: article.title,
-          description: article.excerpt,
-          image: article.image || defaultImage,
-          datePublished: article.date,
-          dateModified: article.date,
-          author: {
-            '@type': 'Organization',
-            name: 'Vetrux CBD',
-            url: 'https://www.vetrux.tech',
-            description: 'Editorial team at VETRUX — technical and regulatory analysis from Vetrux Biotechnology (Chuxiong) Co., Ltd., a vertically integrated CBD raw material manufacturer.',
+        jsonLd: [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: article.title,
+            description: article.excerpt,
+            image: article.image || defaultImage,
+            datePublished: article.date,
+            dateModified: article.date,
+            author: {
+              '@type': 'Organization',
+              name: 'Vetrux CBD',
+              url: siteUrl,
+              description: 'Editorial team at VETRUX — technical and regulatory analysis from Vetrux Biotechnology (Chuxiong) Co., Ltd., a vertically integrated CBD raw material manufacturer.',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Vetrux CBD',
+              url: siteUrl,
+              logo: `${siteUrl}/favicon.svg`,
+            },
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `${siteUrl}/blog/${article.slug}`,
+            },
           },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Vetrux CBD',
-            url: 'https://www.vetrux.tech',
-            logo: 'https://www.vetrux.tech/favicon.svg',
-          },
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': `https://www.vetrux.tech/blog/${article.slug}`,
-          },
-        },
+          buildBreadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: article.title, path: `/blog/${article.slug}` },
+          ]),
+        ],
       };
     }
   }
@@ -345,6 +575,35 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
   );
 }
 
+const localizedRoutePaths = new Set([
+  '/',
+  '/products/cbd-isolate',
+  '/inquiry',
+  '/equipment',
+  '/planting',
+  '/process',
+  '/gallery',
+  '/about',
+  '/blog',
+]);
+
+function buildAlternates(baseUrl: string, canonicalPath: string): Metadata['alternates'] {
+  const alternates: NonNullable<Metadata['alternates']> = {
+    canonical: `${baseUrl}${canonicalPath}`,
+  };
+
+  if (localizedRoutePaths.has(canonicalPath)) {
+    alternates.languages = {
+      en: `${baseUrl}${canonicalPath}`,
+      de: `${baseUrl}/de${canonicalPath === '/' ? '' : canonicalPath}`,
+      fr: `${baseUrl}/fr${canonicalPath === '/' ? '' : canonicalPath}`,
+      'x-default': `${baseUrl}${canonicalPath}`,
+    };
+  }
+
+  return alternates;
+}
+
 export function buildMetadata(pathname: string): Metadata {
   const seo = getSeoMetadata(pathname);
   const baseUrl = getBaseUrl();
@@ -353,7 +612,7 @@ export function buildMetadata(pathname: string): Metadata {
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords,
-    alternates: { canonical: `${baseUrl}${seo.canonicalPath}` },
+    alternates: buildAlternates(baseUrl, seo.canonicalPath),
     openGraph: {
       title: seo.title,
       description: seo.description,

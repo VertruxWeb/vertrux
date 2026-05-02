@@ -1,16 +1,16 @@
-# Vetrux CBD — CBD Raw Materials & Botanical Extract Solutions
+# Vetrux CBD — Bulk CBD Isolate & Botanical Extract Solutions
 
 > VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd. (蔚萃生物科技（楚雄）有限公司), based in Chuxiong, Yunnan Province, China. Focused on quality management and development of plant-derived products.
 
 ## What We Do
-Vetrux provides CBD raw material sales, OEM/ODM services (raw material support, formulation development, production, packaging design, and finished product delivery), technical support services (cultivation management, extraction process optimization, cost control), and other botanical extract products.
+Vetrux provides bulk CBD isolate, CBD raw material sales, OEM/ODM cooperation, technical support services, and other botanical extract products for qualified B2B discussions. Support can include raw material discussions, formulation discussions, production coordination, packaging design, cultivation management, extraction process optimization, and documentation support according to project requirements.
 
 ## Products
 - CBD Isolate (CAS 13956-29-1, HS 2907299020)
 - Anthocyanins
 - Steviol Glycosides
 - Hemp Seed Globulin
-Applications: pharmaceutical R&D, nutrition & health, food & beverage, functional formulations, personal care
+Applications may include qualified B2B formulation discussions, nutrition and health product development, food and beverage projects, functional formulations, and personal care projects, subject to buyer-side compliance review.
 
 ## Packaging
 - PE bags: 5 kg/bag, 27cm × 60cm × 0.008cm, food grade
@@ -18,20 +18,32 @@ Applications: pharmaceutical R&D, nutrition & health, food & beverage, functiona
 - Export cartons: 465mm × 285mm × 295mm, 2 bags per carton
 - Plastic pallets with shrink wrap
 
-## Equipment Configuration
-- 20 extraction tanks
-- 26 chromatography columns
-- 10 concentrators
-- HPLC analytical system (Thermo Scientific Dionex UltiMate 3000)
-- Siemens HMI automation control
-- Solvent recovery towers
-- Ethanol recovery storage tanks
-- Automatic residue discharge system
+## Quality-Control And Process Support
+Vetrux operations connect cultivation, extraction, purification, concentration, quality-control, and packaging workflows in Chuxiong, Yunnan, China. Quality-control support includes in-house HPLC analytical capability. Batch-specific documents depend on actual batch, order terms, and verification results.
 
 ## Documentation & Compliance
 Supporting documentation may be provided according to order requirements, including COA, SDS, test reports, commercial invoices, packing lists, and other shipment documents. Specific documentation availability depends on actual batch, order terms, and verification results.
 
 Destination country import compliance — including permits, licenses, and regulatory approvals — is the buyer/importer's responsibility. Product labels, usage declarations, and customs descriptions should match actual batch, order purpose, and destination country requirements.
+
+## Buyer Questions
+Q: What does Vetrux manufacture?
+A: Vetrux manufactures bulk CBD isolate and related CBD raw material solutions for qualified B2B discussions, supported by cultivation, extraction, purification, quality-control, and packaging workflows in Yunnan, China.
+
+Q: What documents can buyers request?
+A: Buyers can request COA, SDS, test reports, product information, commercial invoice, packing list, and export paperwork support. Availability depends on actual batch, order terms, and verification results.
+
+Q: What packaging formats are available?
+A: Available packaging includes 5 kg PE bags or 5 kg aluminum-foil bags packed in export cartons. Palletization with shrink wrap may be arranged according to order requirements.
+
+Q: What quality-control capability exists?
+A: Vetrux has in-house HPLC analytical capability for quality-control support. Batch-specific documents depend on actual batch, order terms, and verification results.
+
+Q: Who handles destination compliance?
+A: Destination-country import compliance, including permits, licenses, approvals, labels, customs declarations, and regulatory review, is the buyer/importer's responsibility.
+
+Q: Which pages answer which buyer intents?
+A: Use the homepage for company positioning, the CBD isolate product page for product and packaging details, the wholesale CBD isolate page for bulk supply discussions, the manufacturer page for company and workflow context, the quality assurance page for COA/SDS and batch document support, the process page for workflow context, and the inquiry page for document, quote, or cooperation requests.
 
 ## Core Business Lines
 1. CBD Raw Material Sales: stable, traceable CBD raw materials for brand clients, channel partners, and trading companies
@@ -45,6 +57,7 @@ Destination country import compliance — including permits, licenses, and regul
 - B2B Supply: https://www.vetrux.tech/wholesale-cbd-isolate
 - Equipment: https://www.vetrux.tech/equipment
 - Cultivation Base: https://www.vetrux.tech/planting
+- Process: https://www.vetrux.tech/process
 - Quality Management: https://www.vetrux.tech/quality-assurance
 - Company Profile: https://www.vetrux.tech/cbd-isolate-manufacturer
 - Gallery: https://www.vetrux.tech/gallery
@@ -53,6 +66,24 @@ Destination country import compliance — including permits, licenses, and regul
 - Blog: https://www.vetrux.tech/blog
 - German: https://www.vetrux.tech/de
 - French: https://www.vetrux.tech/fr
+
+## Published Articles
+- https://www.vetrux.tech/blog/cbd-isolate-vs-distillate-formulation-guide
+- https://www.vetrux.tech/blog/how-to-read-cbd-certificate-of-analysis
+- https://www.vetrux.tech/blog/thc-free-cbd-isolate-sourcing-guide-europe
+- https://www.vetrux.tech/blog/cbd-isolate-wholesale-pricing-cost-factors
+- https://www.vetrux.tech/blog/cbd-supplier-due-diligence-checklist
+- https://www.vetrux.tech/blog/cbd-isolate-packaging-storage-shelf-life-guide
+- https://www.vetrux.tech/blog/eu-novel-food-regulation-cbd-importers-guide
+- https://www.vetrux.tech/blog/cgmp-cbd-manufacturing-quality-guide
+- https://www.vetrux.tech/blog/supercritical-co2-extraction-explained
+- https://www.vetrux.tech/blog/what-is-cbd-isolate-complete-guide
+- https://www.vetrux.tech/blog/european-cbd-market-outlook-2026
+- https://www.vetrux.tech/blog/apac-cbd-market-outlook-2025
+- https://www.vetrux.tech/blog/botanical-biotechnology-innovation-whitepaper
+- https://www.vetrux.tech/blog/co2-vs-ethanol-extraction-comparison
+- https://www.vetrux.tech/blog/esg-decarbonizing-cannabis-supply-chain
+- https://www.vetrux.tech/blog/global-cbd-extraction-standards-2024
 
 ## Contact
 - Inquiry Email: inquiry@vetrux.tech

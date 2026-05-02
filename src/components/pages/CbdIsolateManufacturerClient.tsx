@@ -11,7 +11,7 @@ import { useReveal } from '@/hooks/useReveal';
 
 const capabilities = [
   { icon: Leaf, title: 'Cultivation & Breeding Center', desc: 'Cultivation and breeding center in Chuxiong, Yunnan Province. Standardized, traceable cultivation system focused on quality consistency.' },
-  { icon: Factory, title: 'Extraction Facility', desc: '20 extraction tanks, 26 chromatography columns, and 10 concentrators — professional extraction and processing equipment for CBD raw materials.' },
+  { icon: Factory, title: 'Extraction Facility', desc: 'Professional extraction, purification, concentration, and processing equipment for CBD raw material workflows.' },
   { icon: FlaskConical, title: 'Analytical Capability', desc: 'In-house HPLC analytical system with automation control supporting quality management.' },
   { icon: CheckCircle, title: 'OEM/ODM Services', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
   { icon: Globe, title: 'Technical Support', desc: 'Cultivation management, extraction process optimization, cost control, and cannabinoid extraction consulting services.' },
@@ -19,12 +19,12 @@ const capabilities = [
 ];
 
 const differentiators = [
-  { metric: '20', label: 'Extraction Tanks', detail: 'Processing equipment' },
-  { metric: '26', label: 'Chromatography Columns', detail: 'Separation & purification' },
-  { metric: '10', label: 'Concentrators', detail: 'Extract concentration' },
+  { metric: 'Field', label: 'Cultivation', detail: 'Yunnan sourcing workflow' },
+  { metric: 'Extract', label: 'Processing', detail: 'CBD raw material workflows' },
+  { metric: 'Purify', label: 'Separation', detail: 'Chromatography workflow' },
   { metric: 'HPLC', label: 'Analytical System', detail: 'Quality control analysis' },
-  { metric: '—', label: 'Automation', detail: 'Explosion-proof control' },
-  { metric: '3', label: 'Service Lines', detail: 'CBD isolate, OEM/ODM, technical services' },
+  { metric: 'Pack', label: 'Packaging', detail: '5 kg bulk formats' },
+  { metric: 'OEM/ODM', label: 'Services', detail: 'Project cooperation support' },
 ];
 
 const markets = [
@@ -32,6 +32,29 @@ const markets = [
   { region: 'OEM/ODM', detail: 'Raw material support, formulation development, production, packaging design, and finished product delivery — supporting clients in product development and market launch.' },
   { region: 'Technical Support', detail: 'Cultivation management, yield and content optimization, extraction process optimization, cost control, and cannabinoid extraction consulting.' },
   { region: 'Compliance Note', detail: 'Destination country import compliance — including permits, licenses, and regulatory approvals — is the buyer/importer responsibility. Documentation arranged per order terms.' },
+];
+
+const manufacturerAnswers = [
+  {
+    question: 'Is Vetrux a CBD isolate manufacturer?',
+    answer:
+      'Yes. Vetrux Biotechnology (Chuxiong) Co., Ltd. is a China-based CBD isolate manufacturer supporting qualified B2B buyers with bulk CBD isolate, OEM/ODM cooperation, packaging, and documentation support.',
+  },
+  {
+    question: 'What manufacturing capabilities does Vetrux operate?',
+    answer:
+      'Vetrux operates connected cultivation, extraction, purification, concentration, quality-control, and packaging workflows for CBD raw materials in Chuxiong, Yunnan, China.',
+  },
+  {
+    question: 'Does Vetrux support OEM/ODM?',
+    answer:
+      'Yes. Vetrux supports OEM/ODM cooperation covering raw material support, formulation discussions, production coordination, packaging design, and finished product delivery according to project requirements.',
+  },
+  {
+    question: 'What quality-control capabilities are available?',
+    answer:
+      'Vetrux has in-house HPLC analytical capability for quality-control support. Batch-specific documents depend on actual batch, order terms, and verification results.',
+  },
 ];
 
 export default function CbdIsolateManufacturerClient() {
@@ -60,7 +83,10 @@ export default function CbdIsolateManufacturerClient() {
                 <span className="italic text-primary">Manufacturer</span>
               </h1>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Vetrux Biotechnology (Chuxiong) Co., Ltd. (&ldquo;VETRUX&rdquo;) is based in Yunnan, China — equipped with 20 extraction tanks, 26 chromatography columns, 10 concentrators, and HPLC analytical capability with automation control. VETRUX provides CBD raw materials, OEM/ODM services, and technical support.
+                Vetrux Biotechnology (Chuxiong) Co., Ltd. (&ldquo;VETRUX&rdquo;) is a CBD isolate
+                manufacturer in Yunnan, China, with connected cultivation, extraction,
+                purification, in-house HPLC analytical capability, OEM/ODM support, and
+                B2B documentation support.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {['CBD Raw Materials', 'OEM/ODM', 'Technical Support'].map((tag) => (
@@ -93,11 +119,11 @@ export default function CbdIsolateManufacturerClient() {
           <div className="reveal-card mb-12">
             <SectionLabel>Manufacturing Capabilities</SectionLabel>
             <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-4">
-              End-to-End Production Infrastructure
+              China CBD isolate manufacturer with vertical integration
             </h2>
             <p className="text-[15px] text-on-surface-variant max-w-xl">
-              Full vertical integration from hemp cultivation to finished isolate — eliminating
-              supply chain intermediaries and ensuring complete batch traceability.
+              Vertical workflows connect hemp cultivation, extraction, purification, quality-control,
+              packaging, OEM/ODM support, and documentation discussions for B2B buyers.
             </p>
           </div>
 
@@ -126,13 +152,36 @@ export default function CbdIsolateManufacturerClient() {
         </div>
       </section>
 
-      {/* ── KEY METRICS ───────────────────────────────────────────────── */}
+      {/* ── GEO ANSWERS ───────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="reveal-card mb-12">
+            <SectionLabel>Buyer Answers</SectionLabel>
+            <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05]">
+              CBD isolate manufacturer answers
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {manufacturerAnswers.map((item) => (
+              <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
+                <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
+                  {item.question}
+                </h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── KEY METRICS ───────────────────────────────────────────────── */}
+      <section className="py-24 bg-surface">
         <div ref={metricsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-12">
             <SectionLabel>Key Specifications</SectionLabel>
             <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-4">
-              Production at a Glance
+              Manufacturing capabilities at a glance
             </h2>
           </div>
 
@@ -155,7 +204,7 @@ export default function CbdIsolateManufacturerClient() {
       </section>
 
       {/* ── MARKETS SERVED ────────────────────────────────────────────── */}
-      <section className="py-24 bg-surface">
+      <section className="py-24 bg-surface-container-low">
         <div ref={marketsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-12">
             <SectionLabel>Business Scope</SectionLabel>
