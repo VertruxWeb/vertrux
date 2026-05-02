@@ -16,6 +16,8 @@ export interface ProcessPhaseContent {
   eyebrow: string
   title: string
   description: string
+  /** Detailed sub-steps for the flowchart layout */
+  detailedSteps?: { title: string; text: string }[]
   /** CTA text, e.g. "Full cultivation details →" */
   deepDiveLabel: string
   /** link to deep-dive page (without language prefix — prefix is applied in the client) */
@@ -69,24 +71,33 @@ export const processPhases: ProcessPhase[] = [
       en: {
         eyebrow: 'Phase 01 · Seed & Nursery',
         title: 'Cultivar Selection & Propagation',
-        description:
-          'We use Yunma-13, a government-approved cultivar with THC < 0.3%. Two propagation methods: seed-based (99% germination in proprietary substrate) and cutting-based (100% female plants from selected mother stock). Our proprietary substrate outperforms market alternatives in root development.',
+        description: 'Industry-leading seed and cutting propagation techniques ensuring up to 99% survival rate and 100% female plants for cutting propagation.',
+        detailedSteps: [
+          { title: '1. Seed Propagation', text: 'Selection of approved Yunma-13 seeds (THC < 0.3%). Seeds are sun-dried and coated before planting to prevent pests. Cultivated in plug trays using our proprietary substrate, achieving a 99% emergence rate.' },
+          { title: '2. Cutting Propagation', text: 'Selected high-content, ideal-phenotype plants serve as mother stock. Cuttings are pruned, inserted, and rooted in our proprietary substrate, guaranteeing 100% female plants with superior root development compared to market substrates.' }
+        ],
         deepDiveLabel: 'Full cultivation details',
         deepDiveHref: '/planting',
       },
       de: {
         eyebrow: 'Phase 01 · Saatgut & Anzucht',
         title: 'Sortenauswahl & Vermehrung',
-        description:
-          'Wir arbeiten mit Yunma-13, einer staatlich zugelassenen Sorte mit THC < 0,3%. Zwei Vermehrungsmethoden: samenbasiert (99% Keimrate in unserem eigenen Substrat) und stecklingsbasiert (100% weibliche Pflanzen aus ausgewählten Mutterpflanzen). Unser proprietäres Substrat übertrifft handelsübliche Alternativen in der Wurzelentwicklung.',
+        description: 'Branchenführende Samen- und Stecklingsvermehrungstechniken, die eine Überlebensrate von bis zu 99% und 100% weibliche Pflanzen bei der Stecklingsvermehrung gewährleisten.',
+        detailedSteps: [
+          { title: '1. Samenvermehrung', text: 'Auswahl von zugelassenen Yunma-13 Samen (THC < 0,3%). Die Samen werden vor dem Pflanzen sonnengetrocknet und beschichtet, um Schädlinge zu vermeiden. Die Anzucht in Multitopfplatten mit unserem speziellen Substrat erreicht eine Keimrate von 99%.' },
+          { title: '2. Stecklingsvermehrung', text: 'Ausgewählte Pflanzen mit hohem Wirkstoffgehalt und idealem Phänotyp dienen als Mutterpflanzen. Stecklinge werden geschnitten, gesteckt und in unserem proprietären Substrat verwurzelt. Dies garantiert 100% weibliche Pflanzen mit überlegener Wurzelentwicklung im Vergleich zu handelsüblichen Substraten.' }
+        ],
         deepDiveLabel: 'Alle Anbaudetails',
         deepDiveHref: '/planting',
       },
       fr: {
         eyebrow: 'Phase 01 · Semence & Pépinière',
         title: 'Sélection de cultivar & propagation',
-        description:
-          'Nous utilisons Yunma-13, un cultivar agréé par les autorités avec un taux de THC < 0,3%. Deux méthodes de propagation : par semis (99% de germination dans notre substrat exclusif) et par bouturage (100% de plantes femelles issues de pieds-mères sélectionnés). Notre substrat propriétaire surpasse les alternatives du marché en matière de développement racinaire.',
+        description: 'Techniques de propagation par graines et boutures à la pointe de l\'industrie, garantissant un taux de survie allant jusqu\'à 99% et 100% de plantes femelles pour le bouturage.',
+        detailedSteps: [
+          { title: '1. Propagation par semis', text: 'Sélection de graines Yunma-13 approuvées (THC < 0,3%). Les graines sont séchées au soleil et enrobées avant la plantation pour prévenir les parasites. Cultivées en plateaux alvéolés avec notre substrat exclusif, avec un taux de levée de 99%.' },
+          { title: '2. Propagation par bouturage', text: 'Des plantes sélectionnées pour leur teneur élevée et leur phénotype idéal servent de pieds-mères. Les boutures sont taillées, insérées et enracinées dans notre substrat exclusif, garantissant 100% de plantes femelles avec un développement racinaire supérieur à celui des substrats du marché.' }
+        ],
         deepDiveLabel: 'Tous les détails de culture',
         deepDiveHref: '/planting',
       },
@@ -105,29 +116,40 @@ export const processPhases: ProcessPhase[] = [
     images: [
       '/images/process/land-tillage.jpg',
       '/images/process/irrigation-system.jpg',
+      '/images/process/transplant-field.jpg',
+      '/images/process/transplant-field-2.jpg',
     ],
     content: {
       en: {
         eyebrow: 'Phase 02 · Field Preparation',
         title: 'Land & Irrigation Setup',
-        description:
-          'Precision tillage with controlled row spacing. Drip irrigation systems ensure uniform water delivery across varied terrain — critical for consistent cannabinoid profiles.',
+        description: 'Based on years of industrial hemp cultivation management experience, we have established strict standards for land preparation and water/fertilizer systems.',
+        detailedSteps: [
+          { title: '1. Tillage & Ridging', text: 'Land is carefully tilled and ridged with precise row and plant spacing control, customized according to the planting schedule and specific soil conditions.' },
+          { title: '2. Irrigation System', text: 'Advanced irrigation networks are installed to guarantee uniform water distribution, accommodating and optimizing across various complex terrains.' }
+        ],
         deepDiveLabel: 'View cultivation base',
         deepDiveHref: '/planting',
       },
       de: {
         eyebrow: 'Phase 02 · Feldvorbereitung',
         title: 'Boden- und Bewässerungsaufbau',
-        description:
-          'Präzisionsbodenbearbeitung mit kontrollierten Reihenabständen. Tropfbewässerungssysteme sorgen für eine gleichmäßige Wasserversorgung in wechselndem Gelände — entscheidend für konstante Cannabinoid-Profile.',
+        description: 'Basierend auf jahrelanger Erfahrung im Anbau von Nutzhanf haben wir strenge Standards für die Bodenbearbeitung sowie Wasser- und Düngesysteme etabliert.',
+        detailedSteps: [
+          { title: '1. Bodenbearbeitung & Dammkultur', text: 'Das Land wird sorgfältig gepflügt und in Dämmen angelegt, wobei der Reihen- und Pflanzenabstand präzise kontrolliert und auf den Pflanzplan und die spezifischen Bodenbedingungen abgestimmt wird.' },
+          { title: '2. Bewässerungssystem', text: 'Fortschrittliche Bewässerungsnetzwerke werden installiert, um eine gleichmäßige Wasserverteilung zu gewährleisten und sich an verschiedene komplexe Geländestrukturen anzupassen.' }
+        ],
         deepDiveLabel: 'Anbaustandort ansehen',
         deepDiveHref: '/planting',
       },
       fr: {
         eyebrow: 'Phase 02 · Préparation du champ',
         title: 'Préparation du sol & irrigation',
-        description:
-          'Travail du sol de précision avec des espacements de rang maîtrisés. Le système d’irrigation au goutte-à-goutte garantit une distribution d’eau uniforme sur des terrains variés — essentiel pour des profils cannabinoïdes constants.',
+        description: 'Forts de plusieurs années d\'expérience dans la gestion de la culture du chanvre industriel, nous avons établi des normes strictes pour la préparation des terres et les systèmes d\'eau et d\'engrais.',
+        detailedSteps: [
+          { title: '1. Labourage et buttage', text: 'La terre est soigneusement labourée et buttée avec un contrôle précis de l\'espacement des rangs et des plants, personnalisé en fonction du calendrier de plantation et des conditions spécifiques du sol.' },
+          { title: '2. Système d\'irrigation', text: 'Des réseaux d\'irrigation avancés sont installés pour garantir une distribution uniforme de l\'eau, s\'adaptant et optimisant la culture sur divers terrains complexes.' }
+        ],
         deepDiveLabel: 'Voir le site de culture',
         deepDiveHref: '/planting',
       },
@@ -139,31 +161,46 @@ export const processPhases: ProcessPhase[] = [
     id: '03',
     slug: 'growth',
     images: [
-      '/images/process/transplant-field.jpg',
-      '/images/process/transplant-field-2.jpg',
+      '/images/process/growth-day-01-post-transplant.jpg',
+      '/images/process/growth-day-10.jpg',
+      '/images/process/growth-day-20.jpg',
+      '/images/process/growth-day-30.jpg',
+      '/images/process/growth-day-45.jpg',
+      '/images/process/growth-day-65.jpg',
+      '/images/process/growth-day-100.jpg',
+      '/images/process/growth-day-120-mature.jpg',
     ],
     content: {
       en: {
         eyebrow: 'Phase 03 · Growth Cycle',
         title: '120-Day Field Journey',
-        description:
-          'From transplant to harvest-ready maturity in 120 days. Density-adjusted planting, weekly field monitoring, and precise harvest timing ensure optimal CBD concentration with THC well below the 0.3% threshold.',
+        description: 'The entire cycle spans approximately 3 to 10 months. We strictly comply with national regulations ensuring THC remains below 0.3%.',
+        detailedSteps: [
+          { title: '1. Transplanting', text: 'Planting density is carefully adjusted based on different regions and precise planting times.' },
+          { title: '2. Field Management', text: 'Growth progress is monitored consistently across key milestones (10, 20, 30, 45, 65, 100 days) until optimal maturity at 120 days.' }
+        ],
         deepDiveLabel: 'Detailed zone breakdown',
         deepDiveHref: '/planting',
       },
       de: {
         eyebrow: 'Phase 03 · Wachstumszyklus',
         title: '120 Tage auf dem Feld',
-        description:
-          'Von der Pflanzung bis zur Erntereife in 120 Tagen. Dichtegeregelte Pflanzung, wöchentliches Feldmonitoring und präzise Erntezeitpunkte sichern eine optimale CBD-Konzentration bei THC deutlich unterhalb der 0,3%-Grenze.',
+        description: 'Der gesamte Zyklus dauert etwa 3 bis 10 Monate. Wir halten uns strikt an nationale Vorschriften, um sicherzustellen, dass der THC-Gehalt unter 0,3% bleibt.',
+        detailedSteps: [
+          { title: '1. Umpflanzen', text: 'Die Pflanzdichte wird sorgfältig an die verschiedenen Regionen und den genauen Pflanzzeitpunkt angepasst.' },
+          { title: '2. Feldmanagement', text: 'Der Wachstumsfortschritt wird konsequent an wichtigen Meilensteinen (10, 20, 30, 45, 65, 100 Tage) bis zur optimalen Reife bei 120 Tagen überwacht.' }
+        ],
         deepDiveLabel: 'Detaillierte Zonenübersicht',
         deepDiveHref: '/planting',
       },
       fr: {
         eyebrow: 'Phase 03 · Cycle de croissance',
         title: 'Parcours de 120 jours au champ',
-        description:
-          'De la transplantation à la maturité de récolte en 120 jours. Densité de plantation ajustée, surveillance hebdomadaire et moment de récolte précis garantissent une concentration optimale en CBD, avec un THC bien en deçà du seuil de 0,3%.',
+        description: 'Le cycle entier s\'étend de 3 à 10 mois. Nous respectons strictement les réglementations nationales pour garantir que le THC reste inférieur à 0,3%.',
+        detailedSteps: [
+          { title: '1. Transplantation', text: 'La densité de plantation est soigneusement ajustée en fonction des différentes régions et du moment précis de la plantation.' },
+          { title: '2. Gestion du champ', text: 'Les progrès de la croissance sont suivis de manière constante lors des étapes clés (10, 20, 30, 45, 65, 100 jours) jusqu\'à la maturité optimale à 120 jours.' }
+        ],
         deepDiveLabel: 'Détails par zone',
         deepDiveHref: '/planting',
       },
@@ -220,24 +257,33 @@ export const processPhases: ProcessPhase[] = [
       en: {
         eyebrow: 'Phase 04 · Harvest & Drying',
         title: 'Harvest at Peak Potency',
-        description:
-          'Harvested at optimal maturity and air-dried under controlled conditions to preserve cannabinoid integrity. Flower and leaf material is separated and prepared for extraction.',
+        description: 'Harvested at optimal maturity and air-dried under controlled conditions to preserve cannabinoid integrity. Flower and leaf material is separated and prepared for extraction.',
+        detailedSteps: [
+          { title: 'Harvesting', text: 'Mature plants are carefully harvested at peak CBD potency levels.' },
+          { title: 'Drying & Separation', text: 'Biomass is air-dried in controlled environments. Flower and leaf materials are then separated from the stalks and prepared for the extraction phase.' }
+        ],
         deepDiveLabel: 'View cultivation base',
         deepDiveHref: '/planting',
       },
       de: {
         eyebrow: 'Phase 04 · Ernte & Trocknung',
         title: 'Ernte bei maximalem Wirkstoffgehalt',
-        description:
-          'Geerntet bei optimaler Reife und unter kontrollierten Bedingungen luftgetrocknet, um die Integrität der Cannabinoide zu bewahren. Blüten- und Blattmaterial wird getrennt und für die Extraktion vorbereitet.',
+        description: 'Geerntet bei optimaler Reife und unter kontrollierten Bedingungen luftgetrocknet, um die Integrität der Cannabinoide zu bewahren. Blüten- und Blattmaterial wird getrennt und für die Extraktion vorbereitet.',
+        detailedSteps: [
+          { title: 'Ernte', text: 'Reife Pflanzen werden zum Zeitpunkt des höchsten CBD-Gehalts sorgfältig geerntet.' },
+          { title: 'Trocknung & Trennung', text: 'Die Biomasse wird unter kontrollierten Bedingungen luftgetrocknet. Blüten- und Blattmaterial wird dann von den Stängeln getrennt und für die Extraktionsphase vorbereitet.' }
+        ],
         deepDiveLabel: 'Anbaustandort ansehen',
         deepDiveHref: '/planting',
       },
       fr: {
         eyebrow: 'Phase 04 · Récolte & Séchage',
         title: 'Récolte au pic de puissance',
-        description:
-          'Récoltée à maturité optimale et séchée à l’air sous conditions contrôlées afin de préserver l’intégrité des cannabinoïdes. La fleur et le feuillage sont séparés puis préparés pour l’extraction.',
+        description: 'Récoltée à maturité optimale et séchée à l’air sous conditions contrôlées afin de préserver l’intégrité des cannabinoïdes. La fleur et le feuillage sont séparés puis préparés pour l’extraction.',
+        detailedSteps: [
+          { title: 'Récolte', text: 'Les plantes matures sont soigneusement récoltées à leur niveau maximal de CBD.' },
+          { title: 'Séchage & Séparation', text: 'La biomasse est séchée à l\'air dans des environnements contrôlés. Les fleurs et les feuilles sont ensuite séparées des tiges et préparées pour la phase d\'extraction.' }
+        ],
         deepDiveLabel: 'Voir le site de culture',
         deepDiveHref: '/planting',
       },
@@ -250,32 +296,47 @@ export const processPhases: ProcessPhase[] = [
     slug: 'extraction',
     images: [
       '/images/process/pretreatment-biomass.jpg',
-      '/images/equipment/extraction-tanks.jpg',
-      '/images/equipment/concentrator-2000l.jpg',
-      '/images/equipment/chromatography-upper.jpg',
+      '/images/process/extraction-tanks.jpg',
+      '/images/process/concentrator-2000l.jpg',
+      '/images/process/chromatography-upper.jpg',
     ],
     content: {
       en: {
         eyebrow: 'Phase 05 · Extraction & Purification',
         title: 'From Biomass to ≥99.9% Isolate',
-        description:
-          'Five sub-stages: (1) Biomass dried and ground to optimal particle size. (2) 60% ethanol reflux extraction — 3 passes × 2 hours × 7× solvent ratio. (3) Vacuum concentration at 50–60°C recovers ethanol. (4) Winterization removes waxes; column chromatography (HPD resin, 26 columns) isolates CBD via gradient elution. (5) Crystallization yields ≥99.9% pure CBD isolate.',
+        description: 'Our core extraction process relies on advanced ethanol extraction and rigorous column chromatography to achieve industry-leading purity.',
+        detailedSteps: [
+          { title: '1. Raw Material Pre-treatment', text: 'Dried flower and leaf material is finely crushed to the optimal particle size for extraction.' },
+          { title: '2. Ethanol Extraction', text: '60% ethanol is utilized at a 7x solvent ratio for reflux extraction. This process is repeated 3 times, with each pass lasting 2 hours.' },
+          { title: '3. Separation & Concentration', text: 'Biomass residue is filtered out. The liquid is then subjected to vacuum concentration at 50-60°C to recover the ethanol, yielding a potent crude extract.' },
+          { title: '4. Purification & Refining', text: 'Crude extracts containing pigments and lipids undergo deep purification: Dewaxing via low-temperature resting and filtration; Column Chromatography utilizing macroporous adsorption resin (HPD series) with gradient ethanol elution to specifically isolate CBD; and finally, Crystallization in a specific solvent system to obtain >99% pure CBD.' }
+        ],
         deepDiveLabel: 'Full equipment specifications',
         deepDiveHref: '/equipment',
       },
       de: {
         eyebrow: 'Phase 05 · Extraktion & Aufreinigung',
         title: 'Von der Biomasse zum ≥99,9%-Isolat',
-        description:
-          'Fünf Teilschritte: (1) Biomasse wird getrocknet und auf optimale Partikelgröße gemahlen. (2) Rückfluss-Extraktion mit 60% Ethanol — 3 Durchgänge × 2 Stunden × 7-faches Lösungsmittelverhältnis. (3) Vakuumkonzentration bei 50–60°C führt das Ethanol zurück. (4) Winterisierung entfernt Wachse; die Säulenchromatographie (HPD-Harz, 26 Säulen) isoliert CBD mittels Gradientenelution. (5) Kristallisation liefert reines CBD-Isolat mit ≥99,9%.',
+        description: 'Unser Kernextraktionsprozess stützt sich auf fortschrittliche Ethanolextraktion und strenge Säulenchromatographie, um eine branchenführende Reinheit zu erreichen.',
+        detailedSteps: [
+          { title: '1. Vorbehandlung des Rohmaterials', text: 'Getrocknetes Blüten- und Blattmaterial wird fein gemahlen, um die optimale Partikelgröße für die Extraktion zu erreichen.' },
+          { title: '2. Ethanolextraktion', text: '60%iges Ethanol wird in einem 7-fachen Lösungsmittelverhältnis für die Rückflussextraktion verwendet. Dieser Prozess wird 3-mal wiederholt, wobei jeder Durchgang 2 Stunden dauert.' },
+          { title: '3. Trennung & Konzentration', text: 'Biomassereste werden herausgefiltert. Die Flüssigkeit wird dann bei 50-60°C vakuumkonzentriert, um das Ethanol zurückzugewinnen, was einen starken Rohextrakt ergibt.' },
+          { title: '4. Aufreinigung & Raffination', text: 'Rohextrakte, die Pigmente und Lipide enthalten, durchlaufen eine Tiefenaufreinigung: Entwachsung durch Ruhen bei niedrigen Temperaturen und Filtration; Säulenchromatographie unter Verwendung von makroporösem Adsorptionsharz (HPD-Serie) mit gradueller Ethanolelution zur spezifischen Isolierung von CBD; und schließlich Kristallisation in einem speziellen Lösungsmittelsystem, um >99% reines CBD zu erhalten.' }
+        ],
         deepDiveLabel: 'Vollständige Anlagenspezifikationen',
         deepDiveHref: '/equipment',
       },
       fr: {
         eyebrow: 'Phase 05 · Extraction & Purification',
         title: 'De la biomasse à un isolat ≥99,9%',
-        description:
-          'Cinq sous-étapes : (1) la biomasse est séchée et broyée à la granulométrie optimale. (2) Extraction par reflux à l’éthanol 60% — 3 passages × 2 heures × ratio solvant 7×. (3) Concentration sous vide à 50–60°C pour récupérer l’éthanol. (4) Winterisation pour éliminer les cires ; chromatographie sur colonnes (résine HPD, 26 colonnes) pour isoler le CBD par élution en gradient. (5) Cristallisation produisant un isolat de CBD pur à ≥99,9%.',
+        description: 'Notre processus d\'extraction principal repose sur une extraction avancée à l\'éthanol et une chromatographie sur colonne rigoureuse pour atteindre une pureté de premier plan.',
+        detailedSteps: [
+          { title: '1. Prétraitement de la matière première', text: 'Le matériel de feuilles et de fleurs séchées est finement broyé jusqu\'à obtenir la granulométrie optimale pour l\'extraction.' },
+          { title: '2. Extraction à l\'éthanol', text: 'L\'éthanol à 60% est utilisé à un ratio de solvant de 7x pour l\'extraction à reflux. Ce processus est répété 3 fois, chaque passage durant 2 heures.' },
+          { title: '3. Séparation et concentration', text: 'Les résidus de biomasse sont filtrés. Le liquide est ensuite soumis à une concentration sous vide à 50-60°C pour récupérer l\'éthanol, produisant un extrait brut puissant.' },
+          { title: '4. Purification et raffinage', text: 'Les extraits bruts contenant des pigments et des lipides subissent une purification profonde : Déparaffinage par repos à basse température et filtration ; Chromatographie sur colonne utilisant une résine d\'adsorption macroporeuse (série HPD) avec élution à l\'éthanol en gradient pour isoler spécifiquement le CBD ; et enfin, Cristallisation dans un système de solvant spécifique pour obtenir du CBD pur à >99%.' }
+        ],
         deepDiveLabel: 'Spécifications complètes des équipements',
         deepDiveHref: '/equipment',
       },
@@ -292,33 +353,39 @@ export const processPhases: ProcessPhase[] = [
     id: '06',
     slug: 'qc-packaging',
     images: [
-      '/images/equipment/hplc-system.jpg',
-      '/images/products/cbd-crystal-closeup.jpg',
-      '/images/products/cbd-packaging-foil.jpg',
-      '/images/products/cbd-shipping-box.jpg',
+      '/images/process/hplc-system.jpg',
     ],
     content: {
       en: {
         eyebrow: 'Phase 06 · QC & Packaging',
         title: 'Verified, Sealed, Export-Ready',
-        description:
-          'Every batch undergoes in-house HPLC cannabinoid profiling and potency analysis before release. Product is packaged in 5 kg PE bags or aluminum foil bags, sealed in export cartons with full batch documentation (COA, SDS available per order requirements).',
+        description: 'Every batch undergoes rigorous quality control to ensure pharmaceutical-grade consistency and safety.',
+        detailedSteps: [
+          { title: 'Testing Equipment', text: 'We utilize High-Performance Liquid Chromatography (HPLC) testing equipment in-house for precise cannabinoid profiling and potency analysis.' },
+          { title: 'Packaging', text: 'Product is securely packaged in 5 kg PE bags or aluminum foil bags, then sealed in export cartons accompanied by full batch documentation (COA, SDS available per order requirements).' }
+        ],
         deepDiveLabel: 'Quality assurance details',
         deepDiveHref: '/quality-assurance',
       },
       de: {
         eyebrow: 'Phase 06 · QC & Verpackung',
         title: 'Geprüft, versiegelt, exportbereit',
-        description:
-          'Jede Charge durchläuft vor der Freigabe eine hauseigene HPLC-Cannabinoid-Profilierung und Wirkstoffanalyse. Das Produkt wird in 5-kg-PE-Beuteln oder Aluminium-Folienbeuteln abgefüllt und in Exportkartons versiegelt — einschließlich vollständiger Chargendokumentation (CoA, SDS auf Anfrage).',
+        description: 'Jede Charge durchläuft eine strenge Qualitätskontrolle, um Konsistenz und Sicherheit auf pharmazeutischem Niveau zu gewährleisten.',
+        detailedSteps: [
+          { title: 'Prüfgeräte', text: 'Wir nutzen im eigenen Haus Hochleistungsflüssigkeitschromatographie (HPLC) Prüfgeräte für präzise Cannabinoid-Profilierung und Wirkstoffanalysen.' },
+          { title: 'Verpackung', text: 'Das Produkt wird sicher in 5-kg-PE-Beuteln oder Aluminiumfolienbeuteln verpackt und dann in Exportkartons versiegelt, begleitet von der vollständigen Chargendokumentation (COA, Sicherheitsdatenblatt je nach Bestellanforderung verfügbar).' }
+        ],
         deepDiveLabel: 'Details zur Qualitätssicherung',
         deepDiveHref: '/quality-assurance',
       },
       fr: {
         eyebrow: 'Phase 06 · QC & Conditionnement',
         title: 'Vérifié, scellé, prêt à exporter',
-        description:
-          'Chaque lot fait l’objet d’un profil cannabinoïde et d’une analyse de puissance HPLC en interne avant libération. Le produit est conditionné en sacs PE de 5 kg ou en sachets aluminium, scellé dans des cartons d’export avec la documentation complète du lot (COA, FDS selon les exigences de la commande).',
+        description: 'Chaque lot subit un contrôle qualité rigoureux pour garantir une constance et une sécurité de qualité pharmaceutique.',
+        detailedSteps: [
+          { title: 'Équipement de test', text: 'Nous utilisons en interne des équipements de test de Chromatographie en Phase Liquide à Haute Performance (HPLC) pour un profilage précis des cannabinoïdes et une analyse de la puissance.' },
+          { title: 'Emballage', text: 'Le produit est solidement emballé dans des sacs en PE de 5 kg ou des sacs en papier d\'aluminium, puis scellé dans des cartons d\'exportation accompagnés de la documentation complète du lot (COA, FDS disponibles selon les exigences de la commande).' }
+        ],
         deepDiveLabel: 'Détails de l’assurance qualité',
         deepDiveHref: '/quality-assurance',
       },
@@ -330,10 +397,6 @@ export const processPhases: ProcessPhase[] = [
     },
   },
 ]
-
-// ─────────────────────────────────────────────────────────────────────────────
-//  Hero strings
-// ─────────────────────────────────────────────────────────────────────────────
 
 export const processHeroStrings: Record<
   Locale,
