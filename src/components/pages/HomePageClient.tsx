@@ -1,5 +1,7 @@
 'use client'
 
+import type { Locale } from '@/i18n/locales';
+import { homePageStrings } from '@/content/pages/home.content';
 import { useRef, useState } from 'react';
 import {
   ArrowRight,
@@ -21,30 +23,9 @@ import TrustBar from '@/components/molecules/TrustBar';
 import KpiRow from '@/components/molecules/KpiRow';
 import { useReveal, useRevealTimeline } from '@/hooks/useReveal';
 
-const homepageAnswers = [
-  {
-    question: 'What does Vetrux manufacture?',
-    answer:
-      'Vetrux manufactures bulk CBD isolate and related CBD raw material solutions for qualified B2B discussions, supported by cultivation, extraction, purification, quality-control, and packaging workflows in Yunnan, China.',
-  },
-  {
-    question: 'Who does Vetrux serve?',
-    answer:
-      'Vetrux serves B2B buyers, brand owners, trading companies, channel partners, and formulation teams that need bulk CBD isolate, OEM/ODM support, documentation support, and recurring supply discussions.',
-  },
-  {
-    question: 'What documents can buyers request?',
-    answer:
-      'Buyers can request COA, SDS, test reports, product information, commercial invoice, packing list, and export paperwork support. Availability depends on actual batch, order terms, and verification results.',
-  },
-  {
-    question: 'Where is Vetrux based?',
-    answer:
-      'Vetrux Biotechnology (Chuxiong) Co., Ltd. is based in Chuxiong, Yunnan, China, with CBD raw material operations connected to local cultivation, processing, quality-control, and packaging workflows.',
-  },
-];
-
-export default function HomePageClient() {
+export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
+  const t = homePageStrings[locale];
+  const langPrefix = locale === 'en' ? '' : `/${locale}`;
   const heroRef = useRef<HTMLDivElement>(null);
   const scopeRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -99,32 +80,31 @@ export default function HomePageClient() {
             <div className="overflow-hidden mb-3">
               <p className="hero-line inline-flex items-center gap-2 text-xs font-semibold tracking-[0.35em] uppercase text-primary-fixed/80">
                 <ShieldCheck size={14} className="text-accent" strokeWidth={1.6} />
-                VETRUX · Yunnan, China
+                {t.heroEyebrow}
               </p>
             </div>
 
             <div className="overflow-hidden">
               <h1 className="hero-line font-serif text-[clamp(2.6rem,6.5vw,5.5rem)] font-medium text-white tracking-tight leading-[0.96] mb-8">
-                From Seed
+                {t.heroTitle1}
                 <br />
                 <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-stone-100 to-stone-300">
-                  to Isolate
+                  {t.heroTitle2}
                 </span>
               </h1>
             </div>
 
             <p className="hero-fade text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mb-10">
-              Bulk CBD isolate for B2B buyers, with OEM/ODM support, export-ready
-              documentation, and in-house quality-control workflows from Yunnan, China.
+              {t.heroBody}
             </p>
 
             <div className="hero-fade flex flex-wrap gap-4 mb-12">
               <Button variant="accent" size="lg" icon={ArrowRight} onClick={() => setIsDocumentModalOpen(true)}>
-                Request COA / Spec Sheet
+                {t.requestCoa}
               </Button>
-              <Link href="/inquiry">
+              <Link href={`${langPrefix}/inquiry`}>
                 <Button variant="glass" size="lg">
-                  Get Bulk Quote
+                  {t.getBulkQuote}
                 </Button>
               </Link>
             </div>
@@ -135,11 +115,11 @@ export default function HomePageClient() {
       {/* ── TRUST BAR ────────────────────────────────────────────────────── */}
       <TrustBar
         items={[
-          { icon: Microscope, label: 'In-house HPLC' },
-          { icon: FlaskConical, label: 'COA / SDS support' },
-          { icon: Layers, label: '5 kg bulk packaging' },
-          { icon: CheckCircle2, label: 'OEM/ODM available' },
-          { icon: ShieldCheck, label: 'Export paperwork support' },
+          { icon: Microscope, label: t.trustHplc },
+          { icon: FlaskConical, label: t.trustCoa },
+          { icon: Layers, label: t.trustPackaging },
+          { icon: CheckCircle2, label: t.trustOem },
+          { icon: ShieldCheck, label: t.trustExport },
         ]}
       />
 
@@ -148,14 +128,14 @@ export default function HomePageClient() {
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-10">
             <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
-              Buyer Answers
+              {t.buyerAnswersEyebrow}
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-medium text-on-background tracking-tight leading-[1.05]">
-              Bulk CBD isolate sourcing answers
+              {t.buyerAnswersTitle}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {homepageAnswers.map((item) => (
+            {t.qa.map((item) => (
               <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
                 <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
                   {item.question}
@@ -172,11 +152,11 @@ export default function HomePageClient() {
         <div ref={scopeRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-16">
             <p className="text-xs font-semibold tracking-[0.35em] uppercase text-primary-fixed/80 mb-4">
-              Business Scope
+              {t.scopeEyebrow}
             </p>
             <h2 className="font-serif text-4xl md:text-5xl font-medium text-white tracking-tight leading-[1.05] max-w-3xl">
-              End-to-end capabilities,<br />
-              <span className="italic text-primary-fixed">tailored to your needs</span>
+              {t.scopeTitle1}<br />
+              <span className="italic text-primary-fixed">{t.scopeTitle2}</span>
             </h2>
           </div>
 
@@ -198,17 +178,16 @@ export default function HomePageClient() {
                   <div className="w-8 h-8 bg-primary-fixed/20 flex items-center justify-center flex-shrink-0">
                     <FlaskConical size={16} className="text-primary-fixed" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-serif text-xl text-white tracking-tight">CBD Raw Material Sales</h3>
+                  <h3 className="font-serif text-xl text-white tracking-tight">{t.rawMaterialTitle}</h3>
                 </div>
                 <p className="text-[15px] text-inverse-on-surface/70 leading-relaxed mb-6 flex-1">
-                  Serving brand clients, channel partners, and trading companies with stable CBD supply.
-                  Standard supply, long-term agreements, and directed cooperation models available.
+                  {t.rawMaterialBody}
                 </p>
                 <Link
-                  href="/wholesale-cbd-isolate"
+                  href={`${langPrefix}/wholesale-cbd-isolate`}
                   className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-fixed hover:text-accent transition-colors duration-200 mt-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
                 >
-                  Explore Supply <ArrowRight size={14} />
+                  {t.rawMaterialCta} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
@@ -230,17 +209,16 @@ export default function HomePageClient() {
                   <div className="w-8 h-8 bg-primary-fixed/20 flex items-center justify-center flex-shrink-0">
                     <Layers size={16} className="text-primary-fixed" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-serif text-xl text-white tracking-tight">OEM / ODM Services</h3>
+                  <h3 className="font-serif text-xl text-white tracking-tight">{t.oemTitle}</h3>
                 </div>
                 <p className="text-[15px] text-inverse-on-surface/70 leading-relaxed mb-6 flex-1">
-                  Full-process support from raw material sourcing and formulation development to
-                  production, packaging design, and finished product delivery for your brand.
+                  {t.oemBody}
                 </p>
                 <Link
-                  href="/inquiry"
+                  href={`${langPrefix}/inquiry`}
                   className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-fixed hover:text-accent transition-colors duration-200 mt-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
                 >
-                  Start a Project <ArrowRight size={14} />
+                  {t.oemCta} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
@@ -262,17 +240,16 @@ export default function HomePageClient() {
                   <div className="w-8 h-8 bg-primary-fixed/20 flex items-center justify-center flex-shrink-0">
                     <Cpu size={16} className="text-primary-fixed" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-serif text-xl text-white tracking-tight">Technical Services</h3>
+                  <h3 className="font-serif text-xl text-white tracking-tight">{t.techTitle}</h3>
                 </div>
                 <p className="text-[15px] text-inverse-on-surface/70 leading-relaxed mb-6 flex-1">
-                  Cultivation management, yield optimization, extraction process refinement,
-                  cost control, and cannabinoid purification consulting.
+                  {t.techBody}
                 </p>
                 <Link
-                  href="/inquiry"
+                  href={`${langPrefix}/inquiry`}
                   className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary-fixed hover:text-accent transition-colors duration-200 mt-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
                 >
-                  Inquire Now <ArrowRight size={14} />
+                  {t.techCta} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
@@ -283,10 +260,10 @@ export default function HomePageClient() {
             <KpiRow
               tone="dark"
               items={[
-                { value: 'HPLC', label: 'Analytical Capability', sub: 'Quality-control support' },
-                { value: 'COA/SDS', label: 'Documentation', sub: 'By order requirements' },
-                { value: '5 kg', label: 'Bulk Packaging', sub: 'PE or aluminum-foil bags' },
-                { value: 'OEM/ODM', label: 'Cooperation', sub: 'B2B project support' },
+                { value: t.kpiAnalytical.value, label: t.kpiAnalytical.label, sub: t.kpiAnalytical.sub },
+                { value: t.kpiDocumentation.value, label: t.kpiDocumentation.label, sub: t.kpiDocumentation.sub },
+                { value: t.kpiPackaging.value, label: t.kpiPackaging.label, sub: t.kpiPackaging.sub },
+                { value: t.kpiCooperation.value, label: t.kpiCooperation.label, sub: t.kpiCooperation.sub },
               ]}
             />
           </div>
@@ -299,34 +276,29 @@ export default function HomePageClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5">
               <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
-                About Vetrux
+                {t.aboutEyebrow}
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-medium text-on-background tracking-tight leading-[1.05] mb-8">
-                Quality rooted in<br />
-                <span className="italic text-primary">every step of the process</span>
+                {t.aboutTitle1}<br />
+                <span className="italic text-primary">{t.aboutTitle2}</span>
               </h2>
 
               <blockquote className="border-l-2 border-accent pl-5 italic font-serif text-lg text-on-surface leading-relaxed mb-8">
-                &ldquo;We treat every kilo of isolate as if it ships under our own name.
-                Traceability is not a label — it&rsquo;s how the team works.&rdquo;
+                &ldquo;{t.aboutQuote}&rdquo;
                 <footer className="not-italic mt-3 text-xs tracking-widest uppercase text-on-surface-variant font-sans">
-                  — Quality Lead, VETRUX
+                  {t.aboutQuoteAttribution}
                 </footer>
               </blockquote>
 
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-4">
-                VETRUX is built on a single conviction — that consistent batch review
-                starts in the field, not at the bottling line. Cultivation, extraction,
-                and in-house quality-control workflows are connected so buyer discussions
-                can reference the same product and documentation context.
+                {t.aboutPara1}
               </p>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8">
-                From cultivation to chromatography to export packaging, VETRUX delivers
-                a single accountable supply line for B2B partners.
+                {t.aboutPara2}
               </p>
-              <Link href="/about">
+              <Link href={`${langPrefix}/about`}>
                 <Button variant="outline" size="md" icon={ArrowRight}>
-                  Company Profile
+                  {t.companyProfile}
                 </Button>
               </Link>
             </div>
@@ -369,11 +341,11 @@ export default function HomePageClient() {
         <div ref={contactRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-16">
             <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
-              Contact
+              {t.contactEyebrow}
             </p>
             <h2 className="font-serif text-4xl md:text-5xl font-medium text-on-background tracking-tight leading-[1.05] max-w-2xl">
-              Let&apos;s discuss<br />
-              <span className="italic text-primary">your requirements</span>
+              {t.contactTitle1}<br />
+              <span className="italic text-primary">{t.contactTitle2}</span>
             </h2>
           </div>
 
@@ -383,12 +355,12 @@ export default function HomePageClient() {
                 <Mail size={20} className="text-accent" strokeWidth={1.5} />
               </div>
               <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">
-                Email Us
+                {t.emailUs}
               </p>
               <div className="space-y-3 mt-auto">
                 <div>
                   <p className="text-[10px] tracking-widest uppercase text-on-surface-muted mb-1">
-                    General Inquiry
+                    {t.generalInquiry}
                   </p>
                   <a
                     href="mailto:inquiry@vetrux.tech"
@@ -399,7 +371,7 @@ export default function HomePageClient() {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-widest uppercase text-on-surface-muted mb-1">
-                    Sales &amp; OEM/ODM
+                    {t.salesOem}
                   </p>
                   <a
                     href="mailto:sales@vetrux.tech"
@@ -416,7 +388,7 @@ export default function HomePageClient() {
                 <Building2 size={20} className="text-accent" strokeWidth={1.5} />
               </div>
               <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">
-                Company
+                {t.company}
               </p>
               <div className="space-y-2 mt-auto">
                 <p className="text-[15px] font-semibold text-on-background">
@@ -433,7 +405,7 @@ export default function HomePageClient() {
                 <MapPin size={20} className="text-accent" strokeWidth={1.5} />
               </div>
               <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-4">
-                Location
+                {t.location}
               </p>
               <div className="space-y-2 mt-auto">
                 <p className="text-[15px] text-on-background leading-relaxed">
@@ -447,15 +419,15 @@ export default function HomePageClient() {
           <div className="reveal-card mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-primary p-8 md:p-10 border-l-4 border-accent">
             <div>
               <p className="font-serif text-2xl md:text-3xl font-medium text-white tracking-tight leading-tight">
-                Ready to start a conversation?
+                {t.ctaTitle}
               </p>
               <p className="text-[15px] text-white/70 mt-2">
-                Tell us about your project and our B2B team will review the details.
+                {t.ctaBody}
               </p>
             </div>
-            <Link href="/inquiry" className="flex-shrink-0">
+            <Link href={`${langPrefix}/inquiry`} className="flex-shrink-0">
               <Button variant="accent" size="lg" icon={ArrowRight}>
-                Send Inquiry
+                {t.sendInquiry}
               </Button>
             </Link>
           </div>
@@ -468,6 +440,7 @@ export default function HomePageClient() {
         defaultDocumentType="both"
         sourcePage="/"
         productInterest="CBD Isolate"
+        locale={locale}
       />
 
     </div>

@@ -27,6 +27,26 @@ const finalCtaStrings: Record<Locale, { title: string; subtitle: string }> = {
     title: 'Prêt à tracer votre prochain lot ?',
     subtitle: 'Parlez-nous de votre projet — nous répondons sous 24 heures.',
   },
+  es: {
+    title: '¿Listo para rastrear su próximo lote?',
+    subtitle: 'Cuéntenos sobre su proyecto — responderemos en un plazo de 24 horas.',
+  },
+  it: {
+    title: 'Pronti a tracciare il vostro prossimo lotto?',
+    subtitle: 'Parlateci del vostro progetto — risponderemo entro 24 ore.',
+  },
+  pt: {
+    title: 'Pronto para rastrear seu próximo lote?',
+    subtitle: 'Conte-nos sobre seu projeto — responderemos em até 24 horas.',
+  },
+  ja: {
+    title: '次のバッチのトレースをご検討ですか？',
+    subtitle: 'プロジェクトについてお聞かせください — 24時間以内にご返答いたします。',
+  },
+  fi: {
+    title: 'Valmis jäljittämään seuraavan eränne?',
+    subtitle: 'Kerro projektistasi — vastaamme 24 tunnin kuluessa.',
+  },
 }
 
 interface ProcessPageClientProps {

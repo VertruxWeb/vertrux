@@ -1,5 +1,6 @@
 'use client'
 
+import type { Locale } from '@/i18n/locales';
 import { useRef } from 'react';
 import Image from 'next/image';
 import { ArrowRight, CheckCircle, Download } from 'lucide-react';
@@ -9,6 +10,7 @@ import Button from '@/components/atoms/Button';
 import SectionLabel from '@/components/atoms/SectionLabel';
 import KpiRow from '@/components/molecules/KpiRow';
 import { useReveal } from '@/hooks/useReveal';
+import { equipmentPageStrings } from '@/content/pages/equipment.content';
 
 const equipment = [
   {
@@ -117,14 +119,9 @@ const specsTable = [
   { name: 'Automatic Residue Discharge System', model: 'Integrated', function: 'Automatic Slag Removal', cgmp: '—' },
 ];
 
-const facilityKpis = [
-  { value: '20', label: 'Extraction Tanks', sub: '6 m³ multi-function' },
-  { value: '26', label: 'Chromatography Columns', sub: 'Gradient elution' },
-  { value: '10', label: 'Concentrators', sub: '2 000 L single/double-effect' },
-  { value: 'HPLC', label: 'In-house Analytics', sub: 'Cannabinoid profiling' },
-];
-
-export default function EquipmentPageClient() {
+export default function EquipmentPageClient({ locale = 'en' }: { locale?: Locale }) {
+  const t = equipmentPageStrings[locale];
+  const langPrefix = locale === 'en' ? '' : `/${locale}`;
   const heroRef = useRef<HTMLDivElement>(null);
   const kpiRef = useRef<HTMLDivElement>(null);
   const cgmpRef = useRef<HTMLDivElement>(null);
@@ -145,17 +142,17 @@ export default function EquipmentPageClient() {
         <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="reveal-card">
-              <Badge variant="default" className="mb-6">Production Excellence</Badge>
+              <Badge variant="default" className="mb-6">{t.badge}</Badge>
               <h1 className="font-serif font-medium text-[clamp(2.4rem,5.5vw,4.5rem)] text-on-background tracking-tight leading-[1.0] mb-6">
-                Industrial-Grade
+                {t.heroTitle1}
                 <br />
-                <span className="italic text-primary">Extraction Facility</span>
+                <span className="italic text-primary">{t.heroTitle2}</span>
               </h1>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Our Chuxiong, Yunnan facility is equipped with extraction tanks, chromatography columns, concentrators, and analytical systems — supporting CBD raw material production.
+                {t.heroBody}
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Extraction', 'Chromatography', 'Concentration', 'Automation'].map((tag) => (
+                {t.tags.map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -168,7 +165,7 @@ export default function EquipmentPageClient() {
                 <Image src="/images/equipment/chromatography-column-700L.webp" alt="Industrial extraction facility" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
               </div>
               <div className="absolute bottom-6 right-6 bg-surface-ink/90 backdrop-blur p-4">
-                <p className="text-xs text-white/60 tracking-[0.35em] uppercase mb-1">Facility Scale</p>
+                <p className="text-xs text-white/60 tracking-[0.35em] uppercase mb-1">{t.facilityScale}</p>
                 <p className="text-sm font-bold text-white">Chuxiong, Yunnan</p>
               </div>
             </div>
@@ -180,7 +177,7 @@ export default function EquipmentPageClient() {
       <section className="py-16 bg-surface">
         <div ref={kpiRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
-            <KpiRow items={facilityKpis} tone="light" />
+            <KpiRow items={t.kpis} tone="light" />
           </div>
         </div>
       </section>
@@ -190,8 +187,8 @@ export default function EquipmentPageClient() {
         <div ref={cgmpRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             <div className="reveal-card lg:col-span-8 bg-surface-container-lowest p-10 border-l-2 border-transparent hover:border-accent transition-colors duration-200">
-              <SectionLabel>Facility Overview</SectionLabel>
-              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-8">Equipment Configuration</h2>
+              <SectionLabel>{t.facilityOverview}</SectionLabel>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-8">{t.equipmentConfig}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { label: 'Extraction', value: '20 Extraction Tanks' },
@@ -214,17 +211,17 @@ export default function EquipmentPageClient() {
 
             <div className="reveal-card lg:col-span-4 bg-primary p-10 flex flex-col justify-between">
               <div>
-                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-white/60 mb-4">Location</p>
+                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-white/60 mb-4">{t.locationLabel}</p>
                 <p className="font-serif text-3xl text-white tracking-tight leading-tight mb-4">
                   Chuxiong, Yunnan<br />Production Facility
                 </p>
                 <p className="text-[13px] text-white/60 leading-relaxed">
-                  Professional extraction and processing facility supporting CBD raw material production.
+                  {t.locationBody}
                 </p>
               </div>
-              <Link href="/inquiry" className="mt-8 inline-block">
+              <Link href={`${langPrefix}/inquiry`} className="mt-8 inline-block">
                 <Button variant="accent" size="md" icon={ArrowRight}>
-                  Contact Us
+                  {t.contactUs}
                 </Button>
               </Link>
             </div>
@@ -236,8 +233,8 @@ export default function EquipmentPageClient() {
       <section className="py-24 bg-surface">
         <div ref={showcaseRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
-            <SectionLabel>Equipment Showcase</SectionLabel>
-            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-16 max-w-xl">Precision-Engineered at Every Stage</h2>
+            <SectionLabel>{t.showcaseSection}</SectionLabel>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-16 max-w-xl">{t.showcaseTitle}</h2>
           </div>
 
           <div className="space-y-24">
@@ -251,7 +248,7 @@ export default function EquipmentPageClient() {
                 </div>
 
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-3">Model: {equip.model}</p>
+                  <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-3">{t.modelPrefix} {equip.model}</p>
                   <h3 className="font-serif font-medium text-2xl md:text-3xl text-on-background tracking-tight leading-[1.05] mb-4">{equip.name}</h3>
                   <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8">{equip.desc}</p>
                   <div className="space-y-0">
@@ -273,15 +270,15 @@ export default function EquipmentPageClient() {
       <section className="py-24 bg-surface-container-low">
         <div ref={tableRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
-            <SectionLabel>Full Specifications</SectionLabel>
-            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-12">Equipment Overview Table</h2>
+            <SectionLabel>{t.specsSection}</SectionLabel>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-12">{t.specsTitle}</h2>
           </div>
 
           <div className="reveal-card overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b-2 border-accent/30">
-                  {['Equipment Name', 'Model Range', 'Process Function', 'Notes'].map((col) => (
+                  {t.tableHeaders.map((col) => (
                     <th key={col} className="text-left text-xs font-semibold tracking-[0.35em] uppercase text-accent pb-4 pr-8">{col}</th>
                   ))}
                 </tr>

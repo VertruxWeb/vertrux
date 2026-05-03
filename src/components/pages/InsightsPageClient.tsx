@@ -1,5 +1,6 @@
 'use client'
 
+import type { Locale } from '@/i18n/locales';
 import { useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import {
@@ -14,10 +15,12 @@ import {
 import Link from 'next/link';
 import SectionLabel from '@/components/atoms/SectionLabel';
 import type { Article } from '@/content/articles';
+import { insightsContent } from '@/content/pages/insights.content';
 import { useReveal } from '@/hooks/useReveal';
 
 interface InsightsPageClientProps {
   articles: Article[];
+  locale?: Locale;
 }
 
 type SortOption = 'newest' | 'oldest' | 'title-asc' | 'read-time';
@@ -34,7 +37,9 @@ function getReadTimeValue(readTime: string): number {
   return match ? Number(match[0]) : 0;
 }
 
-export default function InsightsPageClient({ articles }: InsightsPageClientProps) {
+export default function InsightsPageClient({ articles, locale = 'en' }: InsightsPageClientProps) {
+  const t = insightsContent[locale];
+  const langPrefix = locale === 'en' ? '' : `/${locale}`;
   const pageRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState('');
@@ -110,13 +115,12 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
       <section className="border-b border-outline-variant/70 bg-surface-container-low py-16 md:py-20">
         <div ref={pageRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card max-w-3xl">
-            <SectionLabel>Insights Library</SectionLabel>
+            <SectionLabel>{t.heroEyebrow}</SectionLabel>
             <h1 className="text-4xl md:text-5xl font-serif font-medium text-on-background leading-[1.0] mb-5">
-              CBD industry analysis, sourcing guides, and quality research
+              {t.heroTitle}
             </h1>
             <p className="text-[15px] md:text-base text-on-surface-variant leading-relaxed max-w-2xl">
-              Browse practical references for B2B buyers evaluating CBD isolate suppliers,
-              extraction standards, compliance requirements, and market trends.
+              {t.heroBody}
             </p>
           </div>
         </div>
@@ -127,14 +131,14 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
           <div className="reveal-card mb-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <SectionLabel className="mb-3">All Posts</SectionLabel>
+                <SectionLabel className="mb-3">{t.allPostsLabel}</SectionLabel>
                 <h2 className="text-3xl font-serif font-medium text-on-background leading-[1.05]">
-                  Research archive
+                  {t.archiveTitle}
                 </h2>
               </div>
 
               <p className="text-xs font-semibold uppercase tracking-widest text-on-surface-muted">
-                Showing {resultStart}-{resultEnd} of {filteredArticles.length} articles
+                {t.showingText} {resultStart}-{resultEnd} {t.ofText} {filteredArticles.length} {t.articlesText}
               </p>
             </div>
 
@@ -149,7 +153,7 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
                   type="search"
                   value={query}
                   onChange={(event) => handleQueryChange(event.target.value)}
-                  placeholder="Search by topic, category, or date"
+                  placeholder={t.searchPlaceholder}
                   className="h-12 w-full border border-outline-variant bg-surface-high pl-11 pr-11 text-sm text-on-surface placeholder:text-on-surface-muted/70 transition-colors duration-200 focus:border-accent focus:outline-none"
                 />
                 {query && (
@@ -175,10 +179,10 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
                   onChange={(event) => handleSortChange(event.target.value as SortOption)}
                   className="h-12 w-full appearance-none border border-outline-variant bg-surface-high pl-11 pr-8 text-xs font-semibold uppercase tracking-wider text-on-surface transition-colors duration-200 focus:border-accent focus:outline-none"
                 >
-                  <option value="newest">Newest first</option>
-                  <option value="oldest">Oldest first</option>
-                  <option value="title-asc">Title A-Z</option>
-                  <option value="read-time">Longest read</option>
+                  <option value="newest">{t.sortNewest}</option>
+                  <option value="oldest">{t.sortOldest}</option>
+                  <option value="title-asc">{t.sortTitleAz}</option>
+                  <option value="read-time">{t.sortLongest}</option>
                 </select>
               </label>
 
@@ -191,7 +195,7 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
                 >
                   {pageSizeOptions.map((option) => (
                     <option key={option} value={option}>
-                      {option} per page
+                      {option} {t.perPage}
                     </option>
                   ))}
                 </select>
@@ -204,7 +208,7 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
               {paginatedArticles.map((article) => (
                 <Link
                   key={article.slug}
-                  href={`/blog/${article.slug}`}
+                  href={`${langPrefix}/blog/${article.slug}`}
                   className="reveal-card group block border-b-2 border-transparent pb-5 transition-colors duration-200 hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
                 >
                   <article className="flex h-full flex-col">
@@ -234,7 +238,7 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
                       {article.excerpt}
                     </p>
                     <span className="mt-auto inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-accent transition-transform duration-200 group-hover:translate-x-1">
-                      Read Article <ArrowRight size={12} />
+                      {t.readArticle} <ArrowRight size={12} />
                     </span>
                   </article>
                 </Link>
@@ -243,24 +247,24 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
           ) : (
             <div className="reveal-card border border-outline-variant bg-surface-container-low px-6 py-12 text-center">
               <h3 className="mb-2 text-2xl font-serif font-medium text-on-background">
-                No articles found
+                {t.noArticlesTitle}
               </h3>
               <p className="mx-auto mb-6 max-w-lg text-sm leading-relaxed text-on-surface-variant">
-                Try a different keyword or clear the search field to return to the full archive.
+                {t.noArticlesBody}
               </p>
               <button
                 type="button"
                 onClick={() => handleQueryChange('')}
                 className="inline-flex items-center justify-center bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-colors duration-200 hover:bg-primary-container"
               >
-                Clear search
+                {t.clearSearch}
               </button>
             </div>
           )}
 
           <div className="mt-12 flex flex-col gap-4 border-t border-outline-variant/70 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs font-semibold uppercase tracking-widest text-on-surface-muted">
-              Page {safeCurrentPage} of {totalPages}
+              {t.pageLabel} {safeCurrentPage} {t.ofText} {totalPages}
             </p>
             <div className="flex flex-wrap items-center gap-2">
               <button
@@ -270,7 +274,7 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
                 className="inline-flex h-10 items-center justify-center gap-2 border border-outline-variant bg-surface-high px-4 text-xs font-semibold uppercase tracking-wider text-on-surface transition-colors duration-200 hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <ChevronLeft size={14} />
-                Previous
+                {t.previousBtn}
               </button>
 
               {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
@@ -295,7 +299,7 @@ export default function InsightsPageClient({ articles }: InsightsPageClientProps
                 disabled={safeCurrentPage === totalPages}
                 className="inline-flex h-10 items-center justify-center gap-2 border border-outline-variant bg-surface-high px-4 text-xs font-semibold uppercase tracking-wider text-on-surface transition-colors duration-200 hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-40"
               >
-                Next
+                {t.nextBtn}
                 <ChevronRight size={14} />
               </button>
             </div>

@@ -1,13 +1,16 @@
 'use client'
 
+import type { Locale } from '@/i18n/locales';
 import { useRef } from 'react';
 import { Mail, MapPin } from 'lucide-react';
 import Badge from '@/components/atoms/Badge';
 import SectionLabel from '@/components/atoms/SectionLabel';
 import InquiryForm from '@/components/molecules/InquiryForm';
 import { useReveal } from '@/hooks/useReveal';
+import { inquiryPageStrings } from '@/content/pages/inquiry.content';
 
-export default function InquiryPageClient() {
+export default function InquiryPageClient({ locale = 'en' }: { locale?: Locale }) {
+  const t = inquiryPageStrings[locale];
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -19,15 +22,14 @@ export default function InquiryPageClient() {
       <section className="py-24 bg-surface-container-low">
         <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
-            <Badge variant="default" className="mb-6">Direct B2B Channels</Badge>
+            <Badge variant="default" className="mb-6">{t.badge}</Badge>
             <h1 className="text-5xl md:text-6xl font-serif font-medium text-on-background tracking-tight leading-[1.0] max-w-3xl mb-6">
-              Strategic Partnership
+              {t.titleLine1}
               <br />
-              <span className="italic text-primary">Inquiry</span>
+              <span className="italic text-primary">{t.titleLine2}</span>
             </h1>
             <p className="text-[15px] text-on-surface-variant leading-relaxed max-w-xl">
-              Connect with our global distribution network. Whether you require bulk isolate,
-              custom formulations, or private-label solutions — our B2B team is ready.
+              {t.intro}
             </p>
           </div>
         </div>
@@ -37,21 +39,21 @@ export default function InquiryPageClient() {
         <div ref={contentRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="reveal-card lg:col-span-8">
-              <SectionLabel>Wholesale Request</SectionLabel>
-              <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-10">Submit Your Inquiry</h2>
-              <InquiryForm />
+              <SectionLabel>{t.sectionLabel}</SectionLabel>
+              <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-10">{t.formHeading}</h2>
+              <InquiryForm locale={locale} />
             </div>
 
             <div className="lg:col-span-4 space-y-8">
               <div className="reveal-card bg-surface-container-low p-8 border-l-2 border-transparent hover:border-accent transition-colors duration-200">
-                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-6">B2B Support</p>
+                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-6">{t.sidebarEyebrow}</p>
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-fixed flex items-center justify-center mt-0.5">
                       <Mail size={14} className="text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Sales Email</p>
+                      <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">{t.salesEmail}</p>
                       <p className="text-[15px] font-semibold text-on-surface">sales@vetrux.tech</p>
                     </div>
                   </div>
@@ -60,7 +62,7 @@ export default function InquiryPageClient() {
                       <Mail size={14} className="text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Email</p>
+                      <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">{t.email}</p>
                       <p className="text-[15px] font-semibold text-on-surface">inquiry@vetrux.tech</p>
                     </div>
                   </div>
@@ -69,7 +71,7 @@ export default function InquiryPageClient() {
                       <MapPin size={14} className="text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Headquarters</p>
+                      <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">{t.headquarters}</p>
                       <p className="text-[15px] font-semibold text-on-surface leading-relaxed">
                         Chuxiong, Yunnan Province, China
                       </p>
@@ -90,12 +92,12 @@ export default function InquiryPageClient() {
               </div>
 
               <div className="reveal-card bg-primary p-8 border-l-4 border-accent">
-                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-primary-fixed/90 mb-6">Service Capabilities</p>
+                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-primary-fixed/90 mb-6">{t.serviceCapabilities}</p>
                 <div className="space-y-4">
                   {[
-                    { cert: 'CBD Raw Materials', desc: 'CBD isolate, ≥99.9% purity' },
-                    { cert: 'OEM/ODM Services', desc: 'Formulation to finished product' },
-                    { cert: 'Technical Support', desc: 'Cultivation & extraction expertise' },
+                    { cert: t.cbdRawMaterials, desc: t.cbdRawMaterialsDesc },
+                    { cert: t.oemOdmServices, desc: t.oemOdmServicesDesc },
+                    { cert: t.technicalSupport, desc: t.technicalSupportDesc },
                   ].map((item) => (
                     <div key={item.cert} className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">
                       <span className="text-xs font-bold text-white">{item.cert}</span>

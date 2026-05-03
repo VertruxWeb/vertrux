@@ -64,8 +64,84 @@ A: Use the homepage for company positioning, the CBD isolate product page for pr
 - About: https://www.vetrux.tech/about
 - B2B Inquiry: https://www.vetrux.tech/inquiry
 - Blog: https://www.vetrux.tech/blog
-- German: https://www.vetrux.tech/de
-- French: https://www.vetrux.tech/fr
+
+## Localized Pages
+### German (de)
+- https://www.vetrux.tech/de
+- https://www.vetrux.tech/de/products/cbd-isolate
+- https://www.vetrux.tech/de/inquiry
+- https://www.vetrux.tech/de/equipment
+- https://www.vetrux.tech/de/planting
+- https://www.vetrux.tech/de/process
+- https://www.vetrux.tech/de/gallery
+- https://www.vetrux.tech/de/about
+- https://www.vetrux.tech/de/blog
+
+### French (fr)
+- https://www.vetrux.tech/fr
+- https://www.vetrux.tech/fr/products/cbd-isolate
+- https://www.vetrux.tech/fr/inquiry
+- https://www.vetrux.tech/fr/equipment
+- https://www.vetrux.tech/fr/planting
+- https://www.vetrux.tech/fr/process
+- https://www.vetrux.tech/fr/gallery
+- https://www.vetrux.tech/fr/about
+- https://www.vetrux.tech/fr/blog
+
+### Spanish (es)
+- https://www.vetrux.tech/es
+- https://www.vetrux.tech/es/products/cbd-isolate
+- https://www.vetrux.tech/es/inquiry
+- https://www.vetrux.tech/es/equipment
+- https://www.vetrux.tech/es/planting
+- https://www.vetrux.tech/es/process
+- https://www.vetrux.tech/es/gallery
+- https://www.vetrux.tech/es/about
+- https://www.vetrux.tech/es/blog
+
+### Italian (it)
+- https://www.vetrux.tech/it
+- https://www.vetrux.tech/it/products/cbd-isolate
+- https://www.vetrux.tech/it/inquiry
+- https://www.vetrux.tech/it/equipment
+- https://www.vetrux.tech/it/planting
+- https://www.vetrux.tech/it/process
+- https://www.vetrux.tech/it/gallery
+- https://www.vetrux.tech/it/about
+- https://www.vetrux.tech/it/blog
+
+### Portuguese (pt)
+- https://www.vetrux.tech/pt
+- https://www.vetrux.tech/pt/products/cbd-isolate
+- https://www.vetrux.tech/pt/inquiry
+- https://www.vetrux.tech/pt/equipment
+- https://www.vetrux.tech/pt/planting
+- https://www.vetrux.tech/pt/process
+- https://www.vetrux.tech/pt/gallery
+- https://www.vetrux.tech/pt/about
+- https://www.vetrux.tech/pt/blog
+
+### Japanese (ja)
+- https://www.vetrux.tech/ja
+- https://www.vetrux.tech/ja/products/cbd-isolate
+- https://www.vetrux.tech/ja/inquiry
+- https://www.vetrux.tech/ja/equipment
+- https://www.vetrux.tech/ja/planting
+- https://www.vetrux.tech/ja/process
+- https://www.vetrux.tech/ja/gallery
+- https://www.vetrux.tech/ja/about
+- https://www.vetrux.tech/ja/blog
+
+### Finnish (fi)
+- https://www.vetrux.tech/fi
+- https://www.vetrux.tech/fi/products/cbd-isolate
+- https://www.vetrux.tech/fi/inquiry
+- https://www.vetrux.tech/fi/equipment
+- https://www.vetrux.tech/fi/planting
+- https://www.vetrux.tech/fi/process
+- https://www.vetrux.tech/fi/gallery
+- https://www.vetrux.tech/fi/about
+- https://www.vetrux.tech/fi/blog
 
 ## Published Articles
 - https://www.vetrux.tech/blog/cbd-isolate-vs-distillate-formulation-guide

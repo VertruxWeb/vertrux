@@ -1,13 +1,12 @@
 'use client'
 
-// src/components/organisms/Footer.tsx
-// Site footer with brand, nav links, and copyright — language-aware
-
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { footerStrings } from '@/content/pages/footer.content'
+import type { Locale } from '@/i18n/locales'
 
-const supportedLangPrefixes = ['/de', '/fr']
+const supportedLangPrefixes = ['/de', '/fr', '/es', '/it', '/pt', '/ja', '/fi']
 
 function detectLangPrefix(pathname: string): string {
   for (const prefix of supportedLangPrefixes) {
@@ -16,47 +15,53 @@ function detectLangPrefix(pathname: string): string {
   return ''
 }
 
-const footerLinks = [
-  {
-    heading: 'Products',
-    links: [
-      { label: 'CBD Isolate Overview', href: '/products/cbd-isolate' },
-      { label: 'Wholesale CBD Isolate', href: '/wholesale-cbd-isolate' },
-      { label: 'Wholesale Inquiry', href: '/inquiry' },
-    ],
-  },
-  {
-    heading: 'Process',
-    links: [
-      { label: 'From Seed to Isolate', href: '/process' },
-      { label: 'Cultivation', href: '/planting' },
-      { label: 'Extraction', href: '/equipment' },
-      { label: 'Quality Assurance', href: '/quality-assurance' },
-      { label: 'Facility Gallery', href: '/gallery' },
-    ],
-  },
-  {
-    heading: 'Company',
-    links: [
-      { label: 'About VETRUX', href: '/about' },
-      { label: 'Manufacturer Profile', href: '/cbd-isolate-manufacturer' },
-      { label: 'Blog & Insights', href: '/blog' },
-      { label: 'Contact & Inquiry', href: '/inquiry' },
-      { label: 'Privacy Policy', href: '/privacy-policy' },
-      { label: 'Terms of Service', href: '/terms-of-service' },
-    ],
-  },
-]
+function detectLocale(langPrefix: string): Locale {
+  if (!langPrefix) return 'en'
+  return langPrefix.slice(1) as Locale
+}
 
 export default function Footer() {
   const pathname = usePathname()
   const langPrefix = detectLangPrefix(pathname)
+  const locale = detectLocale(langPrefix)
+  const t = footerStrings[locale]
+
+  const footerLinks = [
+    {
+      heading: t.colProducts,
+      links: [
+        { label: t.cbdIsolateOverview, href: '/products/cbd-isolate' },
+        { label: t.wholesaleCbdIsolate, href: '/wholesale-cbd-isolate' },
+        { label: t.wholesaleInquiry, href: '/inquiry' },
+      ],
+    },
+    {
+      heading: t.colProcess,
+      links: [
+        { label: t.seedToIsolate, href: '/process' },
+        { label: t.cultivation, href: '/planting' },
+        { label: t.extraction, href: '/equipment' },
+        { label: t.qualityAssurance, href: '/quality-assurance' },
+        { label: t.facilityGallery, href: '/gallery' },
+      ],
+    },
+    {
+      heading: t.colCompany,
+      links: [
+        { label: t.aboutVetrux, href: '/about' },
+        { label: t.manufacturerProfile, href: '/cbd-isolate-manufacturer' },
+        { label: t.blogInsights, href: '/blog' },
+        { label: t.contactInquiry, href: '/inquiry' },
+        { label: t.privacyPolicy, href: '/privacy-policy' },
+        { label: t.termsOfService, href: '/terms-of-service' },
+      ],
+    },
+  ]
 
   return (
     <footer className="bg-inverse-surface text-inverse-on-surface">
       <div className="max-w-container mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand block */}
           <div className="md:col-span-1">
             <div className="mb-4">
               <Image
@@ -69,7 +74,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-xs text-inverse-on-surface/60 leading-relaxed">
-              Vertically integrated CBD isolate manufacturer. From seed selection to finished product delivery.
+              {t.tagline}
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
               <span className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full tracking-wider uppercase">
@@ -84,7 +89,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Nav columns */}
           {footerLinks.map((col) => (
             <div key={col.heading}>
               <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-4">
@@ -106,7 +110,6 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="text-xs text-inverse-on-surface/60 leading-relaxed">
@@ -120,10 +123,9 @@ export default function Footer() {
                 </a>
               </p>
               <p>Phone: +86 13518730530</p>
-
             </div>
             <p className="text-xs text-inverse-on-surface/40">
-              © {new Date().getFullYear()} Vetrux CBD. All rights reserved.
+              © {new Date().getFullYear()} Vetrux CBD. {t.allRightsReserved}
             </p>
           </div>
         </div>

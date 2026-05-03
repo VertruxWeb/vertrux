@@ -1,7 +1,8 @@
 // src/lib/gallery.ts
 // Single source of truth for the Gallery sector pages (3 locales × 4 sectors).
 
-export type Locale = 'en' | 'de' | 'fr'
+import type { Locale } from '@/i18n/locales'
+export type { Locale }
 
 export type GalleryImage = { src: string; alt: string }
 
@@ -82,6 +83,61 @@ const sectors: GallerySector[] = [
         statSub: 'Site de production',
         cta: 'Entrer dans le Secteur',
       },
+      es: {
+        label: 'Sector 01 — Excelencia Arquitectónica',
+        title: 'Campus Principal e Infraestructura',
+        description:
+          'Nuestro sitio de producción en Yunnan alberga equipos de extracción, procesamiento y control de calidad — respaldando las operaciones de materias primas CBD.',
+        cardBlurb: 'Campus industrial en Chuxiong, Yunnan — producción, procesamiento y control de calidad bajo un mismo techo.',
+        statLabel: 'Ubicación',
+        statValue: 'Chuxiong, Yunnan',
+        statSub: 'Sitio de Producción',
+        cta: 'Entrar al Sector',
+      },
+      it: {
+        label: 'Settore 01 — Eccellenza Architettonica',
+        title: 'Campus Principale e Infrastruttura',
+        description:
+          'Il nostro sito di produzione nello Yunnan ospita attrezzature di estrazione, lavorazione e controllo qualità — a supporto delle operazioni sulle materie prime CBD.',
+        cardBlurb: 'Campus industriale a Chuxiong, Yunnan — produzione, lavorazione e controllo qualità sotto un unico tetto.',
+        statLabel: 'Ubicazione',
+        statValue: 'Chuxiong, Yunnan',
+        statSub: 'Sito di Produzione',
+        cta: 'Entra nel Settore',
+      },
+      pt: {
+        label: 'Setor 01 — Excelência Arquitetônica',
+        title: 'Campus Principal e Infraestrutura',
+        description:
+          'Nosso local de produção em Yunnan abriga equipamentos de extração, processamento e controle de qualidade — apoiando as operações de matérias-primas CBD.',
+        cardBlurb: 'Campus industrial em Chuxiong, Yunnan — produção, processamento e controle de qualidade sob o mesmo teto.',
+        statLabel: 'Localização',
+        statValue: 'Chuxiong, Yunnan',
+        statSub: 'Local de Produção',
+        cta: 'Entrar no Setor',
+      },
+      ja: {
+        label: 'セクター 01 — 建築の卓越性',
+        title: 'メインキャンパス・インフラ',
+        description:
+          'Yunnanの生産拠点には、抽出、加工、品質管理設備を備え、CBD原料の一貫した生産体制を支えています。',
+        cardBlurb: 'Chuxiong, Yunnanの産業キャンパス — 生産、加工、品質管理を一拠点に集約。',
+        statLabel: '所在地',
+        statValue: 'Chuxiong, Yunnan',
+        statSub: '生産拠点',
+        cta: 'セクターを見る',
+      },
+      fi: {
+        label: 'Sektori 01 — Arkkitehtoninen erinomaisuus',
+        title: 'Pääkampus ja infrastruktuuri',
+        description:
+          'Tuotantolaitoksemme Yunnanissa sisältää uutto-, käsittely- ja laadunvalvontalaitteet — tukien CBD-raaka-aineiden tuotantoa.',
+        cardBlurb: 'Teollisuuskampus Chuxiongissa, Yunnanissa — tuotanto, käsittely ja laadunvalvonta saman katon alla.',
+        statLabel: 'Sijainti',
+        statValue: 'Chuxiong, Yunnan',
+        statSub: 'Tuotantolaitos',
+        cta: 'Siirry sektoriin',
+      },
     },
   },
 
@@ -130,6 +186,61 @@ const sectors: GallerySector[] = [
         statValue: 'Base de Chuxiong',
         statSub: 'Province du Yunnan',
         cta: 'Entrer dans le Secteur',
+      },
+      es: {
+        label: 'Sector 02 — Pureza de Materia Prima',
+        title: 'Base de Plantación y Cultivo',
+        description:
+          'Centro de cultivo y mejora en la provincia de Yunnan — desde la selección de semillas hasta la gestión del cultivo — respaldando una producción de materias primas estandarizada y trazable.',
+        cardBlurb: 'Base de cultivo en Yunnan — cultivo estandarizado y trazabilidad completa de semilla a cosecha.',
+        statLabel: 'Cultivo',
+        statValue: 'Base Chuxiong',
+        statSub: 'Provincia de Yunnan',
+        cta: 'Entrar al Sector',
+      },
+      it: {
+        label: 'Settore 02 — Purezza delle Materie Prime',
+        title: 'Base di Coltivazione',
+        description:
+          'Centro di coltivazione e selezione nella provincia dello Yunnan — dalla selezione dei semi alla gestione della coltivazione — a supporto di una produzione di materie prime standardizzata e tracciabile.',
+        cardBlurb: 'Base di coltivazione nello Yunnan — coltivazione standardizzata e tracciabilità completa dal seme al raccolto.',
+        statLabel: 'Coltivazione',
+        statValue: 'Base Chuxiong',
+        statSub: 'Provincia dello Yunnan',
+        cta: 'Entra nel Settore',
+      },
+      pt: {
+        label: 'Setor 02 — Pureza da Matéria-Prima',
+        title: 'Base de Plantio e Cultivo',
+        description:
+          'Centro de cultivo e melhoramento na província de Yunnan — da seleção de sementes à gestão do cultivo — apoiando uma produção de matérias-primas padronizada e rastreável.',
+        cardBlurb: 'Base de cultivo em Yunnan — cultivo padronizado e rastreabilidade completa da semente à colheita.',
+        statLabel: 'Cultivo',
+        statValue: 'Base Chuxiong',
+        statSub: 'Província de Yunnan',
+        cta: 'Entrar no Setor',
+      },
+      ja: {
+        label: 'セクター 02 — 原料の純度',
+        title: '栽培基地',
+        description:
+          'Yunnan省の栽培・育種センター — 種子選定から栽培管理まで — 標準化されたトレーサブルな原料生産を支えています。',
+        cardBlurb: 'Yunnan栽培基地 — 標準化された栽培と種子から収穫までの完全なトレーサビリティ。',
+        statLabel: '栽培',
+        statValue: 'Chuxiong基地',
+        statSub: 'Yunnan省',
+        cta: 'セクターを見る',
+      },
+      fi: {
+        label: 'Sektori 02 — Raaka-aineen puhtaus',
+        title: 'Viljelyalue ja kasvatus',
+        description:
+          'Viljely- ja jalostuskeskus Yunnanin maakunnassa — siementen valinnasta kasvatuksen hallintaan — tukien standardoitua ja jäljitettävää raaka-ainetuotantoa.',
+        cardBlurb: 'Yunnanin viljelyalue — standardoitu kasvatus ja täydellinen jäljitettävyys siemenestä satoon.',
+        statLabel: 'Viljely',
+        statValue: 'Chuxiongin alue',
+        statSub: 'Yunnanin maakunta',
+        cta: 'Siirry sektoriin',
       },
     },
   },
@@ -181,6 +292,61 @@ const sectors: GallerySector[] = [
         statSub: '26 Colonnes de chromatographie',
         cta: 'Entrer dans le Secteur',
       },
+      es: {
+        label: 'Sector 03 — Precisión Técnica',
+        title: 'Extracción y Refinamiento',
+        description:
+          'Instalación de extracción profesional equipada con tanques de extracción, columnas de cromatografía, concentradores y sistemas analíticos para el procesamiento de CBD.',
+        cardBlurb: '20 tanques de extracción, 26 columnas de cromatografía, HPLC interno — proceso completo bajo un mismo techo.',
+        statLabel: 'Tanques de Extracción',
+        statValue: '20 Unidades',
+        statSub: '26 Columnas de Cromatografía',
+        cta: 'Entrar al Sector',
+      },
+      it: {
+        label: 'Settore 03 — Precisione Tecnica',
+        title: 'Estrazione e Raffinazione',
+        description:
+          'Impianto di estrazione professionale dotato di serbatoi di estrazione, colonne cromatografiche, concentratori e sistemi analitici per la lavorazione del CBD.',
+        cardBlurb: '20 serbatoi di estrazione, 26 colonne cromatografiche, HPLC interno — processo completo sotto un unico tetto.',
+        statLabel: 'Serbatoi di Estrazione',
+        statValue: '20 Unità',
+        statSub: '26 Colonne Cromatografiche',
+        cta: 'Entra nel Settore',
+      },
+      pt: {
+        label: 'Setor 03 — Precisão Técnica',
+        title: 'Extração e Refinamento',
+        description:
+          'Instalação de extração profissional equipada com tanques de extração, colunas de cromatografia, concentradores e sistemas analíticos para o processamento de CBD.',
+        cardBlurb: '20 tanques de extração, 26 colunas de cromatografia, HPLC interno — processo completo sob o mesmo teto.',
+        statLabel: 'Tanques de Extração',
+        statValue: '20 Unidades',
+        statSub: '26 Colunas de Cromatografia',
+        cta: 'Entrar no Setor',
+      },
+      ja: {
+        label: 'セクター 03 — 技術的精密さ',
+        title: '抽出・精製',
+        description:
+          '抽出タンク、クロマトグラフィーカラム、濃縮器、分析システムを備えた専門的なCBD加工施設です。',
+        cardBlurb: '抽出タンク20基、クロマトグラフィーカラム26本、自社HPLC — 全工程を一拠点で完結。',
+        statLabel: '抽出タンク',
+        statValue: '20基',
+        statSub: 'クロマトグラフィーカラム26本',
+        cta: 'セクターを見る',
+      },
+      fi: {
+        label: 'Sektori 03 — Tekninen tarkkuus',
+        title: 'Uutto ja jalostus',
+        description:
+          'Ammattimainen uuttolaitos, joka on varustettu uuttosäiliöillä, kromatografiakolumneilla, konsentraattoreilla ja analyysijärjestelmillä CBD:n käsittelyyn.',
+        cardBlurb: '20 uuttosäiliötä, 26 kromatografiakolumnia, oma HPLC — koko prosessi saman katon alla.',
+        statLabel: 'Uuttosäiliöt',
+        statValue: '20 yksikköä',
+        statSub: '26 kromatografiakolumnia',
+        cta: 'Siirry sektoriin',
+      },
     },
   },
 
@@ -219,15 +385,70 @@ const sectors: GallerySector[] = [
         cta: 'Bereich Betreten',
       },
       fr: {
-        label: 'Secteur 04 — Produit & Qualité',
-        title: 'Produit & Laboratoire',
+        label: "Secteur 04 — Produit & Qualit\u00e9",
+        title: "Produit & Laboratoire",
         description:
-          "Capacité analytique HPLC en interne pour la gestion qualité. La documentation produit peut être fournie selon les exigences de commande.",
-        cardBlurb: 'Isolat CBD ≥99,9 % de pureté — vérifié, conditionné et prêt à l’export.',
+          "Capacit\u00e9 analytique HPLC en interne pour la gestion qualit\u00e9. La documentation produit peut \u00eatre fournie selon les exigences de commande.",
+        cardBlurb: "Isolat CBD \u226599,9 % de puret\u00e9 — v\u00e9rifi\u00e9, conditionn\u00e9 et pr\u00eat \u00e0 l'export.",
         statLabel: 'Produit',
         statValue: 'Isolat de CBD',
-        statSub: 'Pureté : ≥99,9%',
+        statSub: "Puret\u00e9 : \u226599,9%",
         cta: 'Entrer dans le Secteur',
+      },
+      es: {
+        label: 'Sector 04 — Producto y Calidad',
+        title: 'Producto y Laboratorio',
+        description:
+          'La capacidad analítica HPLC interna respalda la gestión de calidad. La documentación del producto puede proporcionarse según los requisitos del pedido.',
+        cardBlurb: 'CBD isolate con pureza ≥99,9% — verificado, empaquetado y listo para exportación.',
+        statLabel: 'Producto',
+        statValue: 'CBD Isolate',
+        statSub: 'Pureza: ≥99,9%',
+        cta: 'Entrar al Sector',
+      },
+      it: {
+        label: 'Settore 04 — Prodotto e Qualità',
+        title: 'Prodotto e Laboratorio',
+        description:
+          "La capacità analitica HPLC interna supporta la gestione della qualità. La documentazione del prodotto può essere fornita in base ai requisiti dell'ordine.",
+        cardBlurb: "CBD isolate con purezza ≥99,9% — verificato, confezionato e pronto per l'esportazione.",
+        statLabel: 'Prodotto',
+        statValue: 'CBD Isolate',
+        statSub: 'Purezza: ≥99,9%',
+        cta: 'Entra nel Settore',
+      },
+      pt: {
+        label: 'Setor 04 — Produto e Qualidade',
+        title: 'Produto e Laboratório',
+        description:
+          'A capacidade analítica HPLC interna apoia a gestão de qualidade. A documentação do produto pode ser fornecida conforme os requisitos do pedido.',
+        cardBlurb: 'CBD isolate com pureza ≥99,9% — verificado, embalado e pronto para exportação.',
+        statLabel: 'Produto',
+        statValue: 'CBD Isolate',
+        statSub: 'Pureza: ≥99,9%',
+        cta: 'Entrar no Setor',
+      },
+      ja: {
+        label: 'セクター 04 — 製品・品質',
+        title: '製品・ラボラトリー',
+        description:
+          '自社HPLC分析能力が品質管理を支えています。製品ドキュメントは注文要件に応じてご提供可能です。',
+        cardBlurb: '純度≥99.9%のCBDアイソレート — 検証済み、包装済み、輸出対応。',
+        statLabel: '製品',
+        statValue: 'CBD Isolate',
+        statSub: '純度: ≥99.9%',
+        cta: 'セクターを見る',
+      },
+      fi: {
+        label: 'Sektori 04 — Tuote ja laatu',
+        title: 'Tuote ja laboratorio',
+        description:
+          'Sisäinen HPLC-analytiikkakapasiteetti tukee laadunhallintaa. Tuotedokumentaatio voidaan toimittaa tilausvaatimusten mukaisesti.',
+        cardBlurb: 'CBD-isolaatti, puhtaus ≥99,9 % — varmennettu, pakattu ja vientivalmis.',
+        statLabel: 'Tuote',
+        statValue: 'CBD Isolate',
+        statSub: 'Puhtaus: ≥99,9 %',
+        cta: 'Siirry sektoriin',
       },
     },
   },
@@ -280,8 +501,48 @@ export const galleryIndexStrings: Record<Locale, {
     titleLine1: 'Intégration verticale.',
     titleLine2: 'De la graine à la solution.',
     intro:
-      'Aperçu visuel de nos installations à Chuxiong, Yunnan — de la base de culture à l’installation d’extraction, en passant par le produit et le conditionnement.',
+      "Aper\u00e7u visuel de nos installations \u00e0 Chuxiong, Yunnan — de la base de culture \u00e0 l'installation d'extraction, en passant par le produit et le conditionnement.",
     imagesCountSuffix: 'images',
+  },
+  es: {
+    eyebrow: 'Documentación Visual',
+    titleLine1: 'Integración Vertical.',
+    titleLine2: 'De la Semilla a la Solución.',
+    intro:
+      'Vista visual de nuestras operaciones en Chuxiong, Yunnan — desde la base de cultivo hasta la instalación de extracción, producto y embalaje.',
+    imagesCountSuffix: 'imágenes',
+  },
+  it: {
+    eyebrow: 'Documentazione Visiva',
+    titleLine1: 'Integrazione Verticale.',
+    titleLine2: 'Dal Seme alla Soluzione.',
+    intro:
+      "Panoramica visiva delle nostre operazioni a Chuxiong, Yunnan — dalla base di coltivazione all'impianto di estrazione, prodotto e confezionamento.",
+    imagesCountSuffix: 'immagini',
+  },
+  pt: {
+    eyebrow: 'Documentação Visual',
+    titleLine1: 'Integração Vertical.',
+    titleLine2: 'Da Semente à Solução.',
+    intro:
+      'Visão geral visual das nossas operações em Chuxiong, Yunnan — da base de cultivo à instalação de extração, produto e embalagem.',
+    imagesCountSuffix: 'imagens',
+  },
+  ja: {
+    eyebrow: 'ビジュアルドキュメンテーション',
+    titleLine1: '垂直統合。',
+    titleLine2: '種子からソリューションへ。',
+    intro:
+      'Chuxiong, Yunnanにおける当社の事業概要 — 栽培基地から抽出施設、製品、包装までをご覧いただけます。',
+    imagesCountSuffix: '枚',
+  },
+  fi: {
+    eyebrow: 'Visuaalinen dokumentaatio',
+    titleLine1: 'Vertikaalinen integraatio.',
+    titleLine2: 'Siemenestä ratkaisuun.',
+    intro:
+      'Visuaalinen katsaus toimintoihimme Chuxiongissa, Yunnanissa — viljelyalueelta uuttolaitoksen kautta tuotteeseen ja pakkaukseen.',
+    imagesCountSuffix: 'kuvaa',
   },
 }
 
@@ -294,4 +555,9 @@ export const sectorNavStrings: Record<Locale, {
   en: { previous: 'Previous', next: 'Next', backToOverview: 'All Sectors' },
   de: { previous: 'Vorherig', next: 'Nächster', backToOverview: 'Alle Bereiche' },
   fr: { previous: 'Précédent', next: 'Suivant', backToOverview: 'Tous les secteurs' },
+  es: { previous: 'Anterior', next: 'Siguiente', backToOverview: 'Todos los Sectores' },
+  it: { previous: 'Precedente', next: 'Successivo', backToOverview: 'Tutti i Settori' },
+  pt: { previous: 'Anterior', next: 'Próximo', backToOverview: 'Todos os Setores' },
+  ja: { previous: '前へ', next: '次へ', backToOverview: '全セクター一覧' },
+  fi: { previous: 'Edellinen', next: 'Seuraava', backToOverview: 'Kaikki sektorit' },
 }

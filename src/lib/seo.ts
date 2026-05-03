@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { articles } from '../content/articles';
+import { locales, localeMeta, localizePath, isLocalizedRoute, type Locale } from '@/i18n/locales';
+import { getPageSeo } from '@/content/pages/seo.content';
 
 export interface SeoMetadata {
   title: string;
@@ -45,7 +47,7 @@ const organizationJsonLd = {
     '@type': 'ContactPoint',
     contactType: 'sales',
     email: 'inquiry@vetrux.tech',
-    availableLanguage: ['English', 'German', 'French', 'Chinese'],
+    availableLanguage: ['English', 'German', 'French', 'Spanish', 'Italian', 'Portuguese', 'Japanese', 'Finnish', 'Chinese'],
   },
   sameAs: [
     'https://www.vetrux.tech/about',
@@ -583,45 +585,58 @@ const localizedRoutePaths = new Set([
   '/gallery',
   '/about',
   '/blog',
+  '/gallery/campus',
+  '/gallery/cultivation',
+  '/gallery/extraction',
+  '/gallery/products',
 ]);
 
-function buildAlternates(baseUrl: string, canonicalPath: string): Metadata['alternates'] {
+function buildAlternates(baseUrl: string, canonicalPath: string, locale: Locale = 'en'): Metadata['alternates'] {
+  const localizedCanonical = localizePath(canonicalPath, locale);
   const alternates: NonNullable<Metadata['alternates']> = {
-    canonical: `${baseUrl}${canonicalPath}`,
+    canonical: `${baseUrl}${localizedCanonical}`,
   };
 
   if (localizedRoutePaths.has(canonicalPath)) {
-    alternates.languages = {
-      en: `${baseUrl}${canonicalPath}`,
-      de: `${baseUrl}/de${canonicalPath === '/' ? '' : canonicalPath}`,
-      fr: `${baseUrl}/fr${canonicalPath === '/' ? '' : canonicalPath}`,
-      'x-default': `${baseUrl}${canonicalPath}`,
-    };
+    const languages: Record<string, string> = {};
+    for (const loc of locales) {
+      languages[localeMeta[loc].hreflang] = `${baseUrl}${localizePath(canonicalPath, loc)}`;
+    }
+    languages['x-default'] = `${baseUrl}${canonicalPath}`;
+    alternates.languages = languages;
   }
 
   return alternates;
 }
 
-export function buildMetadata(pathname: string): Metadata {
+export function buildMetadata(pathname: string, locale: Locale = 'en'): Metadata {
   const seo = getSeoMetadata(pathname);
   const baseUrl = getBaseUrl();
   const imageUrl = seo.image ? `${baseUrl}${seo.image}` : undefined;
+  const localizedCanonical = localizePath(seo.canonicalPath, locale);
+
+  const localizedSeo = getPageSeo(pathname, locale);
+  const title = locale !== 'en' ? localizedSeo.title : seo.title;
+  const description = locale !== 'en' ? localizedSeo.description : seo.description;
+  const keywords = locale !== 'en' ? (localizedSeo.keywords ?? seo.keywords) : seo.keywords;
+
   return {
-    title: seo.title,
-    description: seo.description,
-    keywords: seo.keywords,
-    alternates: buildAlternates(baseUrl, seo.canonicalPath),
+    title,
+    description,
+    keywords,
+    alternates: buildAlternates(baseUrl, seo.canonicalPath, locale),
     openGraph: {
-      title: seo.title,
-      description: seo.description,
-      url: `${baseUrl}${seo.canonicalPath}`,
+      title,
+      description,
+      url: `${baseUrl}${localizedCanonical}`,
+      locale: localeMeta[locale].ogLocale,
       images: imageUrl ? [{ url: imageUrl }] : undefined,
       type: seo.type === 'article' ? 'article' : 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: seo.title,
-      description: seo.description,
+      title,
+      description,
       images: imageUrl ? [imageUrl] : undefined,
     },
   };

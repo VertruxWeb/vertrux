@@ -1,46 +1,66 @@
 import type { MetadataRoute } from 'next'
 import { articles } from '@/content/articles'
 import { gallerySlugs } from '@/lib/gallery'
+import { locales, localeMeta, localizePath, localizedRoutes, localizedGallerySectors, englishOnlyRoutes } from '@/i18n/locales'
 
 const BASE_URL = 'https://www.vetrux.tech'
+
+function buildAlternates(path: string): Record<string, string> {
+  const languages: Record<string, string> = {}
+  for (const locale of locales) {
+    languages[localeMeta[locale].hreflang] = `${BASE_URL}${localizePath(path, locale)}`
+  }
+  return languages
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const today = new Date().toISOString().split('T')[0]
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/`,                          lastModified: today, changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${BASE_URL}/products/cbd-isolate`,      lastModified: today, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/wholesale-cbd-isolate`,     lastModified: today, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/quality-assurance`,         lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/cbd-isolate-manufacturer`,  lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/inquiry`,                   lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/equipment`,                 lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/planting`,                  lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/blog`,                      lastModified: today, changeFrequency: 'weekly',  priority: 0.7 },
-    { url: `${BASE_URL}/de`,                        lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/fr`,                        lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/gallery`,                   lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/process`,    lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/de/process`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/fr/process`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/about`,                     lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/privacy-policy`,            lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${BASE_URL}/terms-of-service`,          lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
-  ]
+  const localizedStaticRoutes: MetadataRoute.Sitemap = localizedRoutes.flatMap((path) => {
+    const priority = path === '/' ? 1.0 : path === '/products/cbd-isolate' ? 0.9 : 0.7
+    const changeFrequency = path === '/' || path === '/blog' ? 'weekly' : 'monthly'
+    const alternates = { languages: buildAlternates(path) }
 
-  // Gallery sector subpages — EN/DE/FR variants (12 routes).
-  const gallerySectorRoutes: MetadataRoute.Sitemap = gallerySlugs.flatMap((slug) => [
-    { url: `${BASE_URL}/gallery/${slug}`,    lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/de/gallery/${slug}`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE_URL}/fr/gallery/${slug}`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-  ])
+    return locales.map((locale) => ({
+      url: `${BASE_URL}${localizePath(path, locale)}`,
+      lastModified: today,
+      changeFrequency: changeFrequency as 'weekly' | 'monthly',
+      priority: locale === 'en' ? priority : priority - 0.1,
+      alternates,
+    }))
+  })
+
+  const gallerySectorRoutes: MetadataRoute.Sitemap = gallerySlugs.flatMap((slug) => {
+    const path = `/gallery/${slug}`
+    const alternates = { languages: buildAlternates(path) }
+
+    return locales.map((locale) => ({
+      url: `${BASE_URL}${localizePath(path, locale)}`,
+      lastModified: today,
+      changeFrequency: 'monthly' as const,
+      priority: locale === 'en' ? 0.6 : 0.5,
+      alternates,
+    }))
+  })
+
+  const englishOnlyStaticRoutes: MetadataRoute.Sitemap = englishOnlyRoutes.map((path) => ({
+    url: `${BASE_URL}${path}`,
+    lastModified: today,
+    changeFrequency: path === '/privacy-policy' || path === '/terms-of-service' ? 'yearly' as const : 'monthly' as const,
+    priority: path === '/wholesale-cbd-isolate' ? 0.9 : path === '/quality-assurance' || path === '/cbd-isolate-manufacturer' ? 0.8 : 0.3,
+  }))
 
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${BASE_URL}/blog/${article.slug}`,
     lastModified: new Date(article.date),
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))
 
-  return [...staticRoutes, ...gallerySectorRoutes, ...articleRoutes]
+  return [
+    ...localizedStaticRoutes,
+    ...gallerySectorRoutes,
+    ...englishOnlyStaticRoutes,
+    ...articleRoutes,
+  ]
 }

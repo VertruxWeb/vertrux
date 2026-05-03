@@ -1,13 +1,12 @@
 'use client'
 
-// src/components/organisms/Navbar.tsx
-// Fixed top navigation bar with dropdown menus, mobile hamburger + language switcher
-
 import { useState, useRef, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Globe, ChevronDown } from 'lucide-react'
+import { navbarStrings } from '@/content/pages/navbar.content'
+import type { Locale } from '@/i18n/locales'
 
 type NavItem = {
   label: string
@@ -15,38 +14,44 @@ type NavItem = {
   children?: { label: string; href: string }[]
 }
 
-const navLinks: NavItem[] = [
-  { label: 'Home', href: '/' },
-  { label: 'Products', href: '/products/cbd-isolate' },
-  {
-    label: 'Process',
-    children: [
-      { label: 'From Seed to Isolate', href: '/process' },
-      { label: 'Cultivation', href: '/planting' },
-      { label: 'Extraction', href: '/equipment' },
-      { label: 'Quality Assurance', href: '/quality-assurance' },
-    ],
-  },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Blog', href: '/blog' },
-  {
-    label: 'About',
-    children: [
-      { label: 'Company', href: '/about' },
-      { label: 'Manufacturer Profile', href: '/cbd-isolate-manufacturer' },
-    ],
-  },
-]
+function buildNavLinks(t: typeof navbarStrings.en): NavItem[] {
+  return [
+    { label: t.home, href: '/' },
+    { label: t.products, href: '/products/cbd-isolate' },
+    {
+      label: t.process,
+      children: [
+        { label: t.processChildren.seedToIsolate, href: '/process' },
+        { label: t.processChildren.cultivation, href: '/planting' },
+        { label: t.processChildren.extraction, href: '/equipment' },
+        { label: t.processChildren.qualityAssurance, href: '/quality-assurance' },
+      ],
+    },
+    { label: t.gallery, href: '/gallery' },
+    { label: t.blog, href: '/blog' },
+    {
+      label: t.about,
+      children: [
+        { label: t.aboutChildren.company, href: '/about' },
+        { label: t.aboutChildren.manufacturer, href: '/cbd-isolate-manufacturer' },
+      ],
+    },
+  ]
+}
 
 const languages = [
   { code: 'en', label: 'English', flag: '/flags/en.svg', href: '/' },
   { code: 'de', label: 'Deutsch', flag: '/flags/de.svg', href: '/de' },
   { code: 'fr', label: 'Français', flag: '/flags/fr.svg', href: '/fr' },
+  { code: 'es', label: 'Español', flag: '/flags/es.svg', href: '/es' },
+  { code: 'it', label: 'Italiano', flag: '/flags/it.svg', href: '/it' },
+  { code: 'pt', label: 'Português', flag: '/flags/pt.svg', href: '/pt' },
+  { code: 'ja', label: '日本語', flag: '/flags/ja.svg', href: '/ja' },
+  { code: 'fi', label: 'Suomi', flag: '/flags/fi.svg', href: '/fi' },
 ]
 
-const supportedLangPrefixes = ['/de', '/fr']
+const supportedLangPrefixes = ['/de', '/fr', '/es', '/it', '/pt', '/ja', '/fi']
 
-/** Detect language prefix from pathname */
 function detectLangPrefix(pathname: string): string {
   for (const prefix of supportedLangPrefixes) {
     if (pathname === prefix || pathname.startsWith(prefix + '/')) {
@@ -56,7 +61,11 @@ function detectLangPrefix(pathname: string): string {
   return ''
 }
 
-/** Add language prefix to a href */
+function detectLocale(langPrefix: string): Locale {
+  if (!langPrefix) return 'en'
+  return langPrefix.slice(1) as Locale
+}
+
 function localizeHref(href: string, langPrefix: string): string {
   if (!langPrefix) return href
   if (href === '/') return langPrefix
@@ -165,6 +174,9 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const langPrefix = useMemo(() => detectLangPrefix(pathname), [pathname])
+  const locale = useMemo(() => detectLocale(langPrefix), [langPrefix])
+  const t = navbarStrings[locale]
+  const navLinks = useMemo(() => buildNavLinks(t), [t])
 
   const currentLang =
     languages.find((l) => l.code !== 'en' && pathname.startsWith(l.href)) ||
@@ -172,7 +184,6 @@ export default function Navbar() {
 
   const homePath = localizeHref('/', langPrefix)
 
-  // Build language switcher hrefs: switch language but keep the same sub-path
   const stripPrefix = (p: string) => {
     for (const prefix of supportedLangPrefixes) {
       if (p === prefix) return '/'
@@ -182,7 +193,6 @@ export default function Navbar() {
   }
   const basePath = stripPrefix(pathname)
 
-  // Close dropdown on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -200,7 +210,6 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-lg border-b border-outline-variant/20">
       <nav className="max-w-container mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
-        {/* Brand */}
         <Link
           href={homePath}
           className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm"
@@ -216,7 +225,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((item) => {
             if (item.children) {
@@ -248,9 +256,7 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Desktop CTA area */}
         <div className="hidden lg:flex items-center gap-4">
-          {/* Language Switcher */}
           <div ref={langRef} className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
@@ -295,11 +301,10 @@ export default function Navbar() {
             href={localizeHref('/inquiry', langPrefix)}
             className="inline-flex items-center px-4 py-2 bg-accent text-white text-xs font-semibold tracking-widest uppercase rounded-md hover:bg-accent-hover transition-all duration-200 ease-industrial whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
           >
-            Contact Us
+            {t.contactUs}
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="lg:hidden p-2 text-on-surface min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -310,7 +315,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-surface-container-lowest border-t border-outline-variant/20 px-6 py-6">
           <ul className="flex flex-col gap-2">
@@ -388,14 +392,14 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center px-4 py-2 bg-accent text-white text-xs font-semibold tracking-widest uppercase rounded-md hover:bg-accent-hover transition-all duration-200 mt-2"
               >
-                Contact Us
+                {t.contactUs}
               </Link>
             </li>
             <li className="pt-2 border-t border-outline-variant/20 mt-2">
               <p className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-2">
-                Language
+                {t.language}
               </p>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 {languages.map((lang) => {
                   const langHref =
                     lang.code === 'en'

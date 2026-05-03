@@ -1,5 +1,6 @@
 'use client'
 
+import type { Locale } from '@/i18n/locales';
 import { useRef, useState } from 'react';
 import { ArrowRight, Download, CheckCircle, Microscope, TestTube, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
@@ -12,21 +13,7 @@ import SpecRow from '@/components/molecules/SpecRow';
 import ProcessSteps from '@/components/molecules/ProcessSteps';
 import { useReveal } from '@/hooks/useReveal';
 import type { DocumentRequestDocumentType } from '@/lib/documentRequest';
-
-const technicalMetrics = [
-  { label: 'Product', value: 'CBD Isolate', status: 'Cannabidiol Isolate' },
-  { label: 'Quality Review', value: 'HPLC', status: 'In-house analytical capability' },
-  { label: 'Inner Packaging', value: '5 kg/bag', status: 'PE or Aluminum Foil' },
-  { label: 'Outer Packaging', value: '465×285×295mm', status: 'Export Carton' },
-];
-
-const processSteps = [
-  { title: 'Cultivation', desc: 'Yunnan-grown industrial hemp from our Chuxiong cultivation base, under standardized growing protocols.' },
-  { title: 'Extraction', desc: 'Ethanol extraction in 6m³ multi-function tanks under controlled temperature and solvent conditions.' },
-  { title: 'Purification', desc: 'Industrial-scale chromatography isolates cannabidiol from the crude extract via gradient elution.' },
-  { title: 'QC', desc: 'In-house HPLC cannabinoid profiling and per-batch verification before release.' },
-  { title: 'Packaging', desc: 'Food-grade PE or aluminum-foil bags inside export cartons, palletized with shrink wrap.' },
-];
+import { productPageStrings } from '@/content/pages/product.content';
 
 const qualityCards = [
   {
@@ -52,30 +39,9 @@ const qualityCards = [
   },
 ];
 
-const productAnswers = [
-  {
-    question: 'What is Vetrux CBD isolate?',
-    answer:
-      'Vetrux CBD isolate is a crystalline CBD raw material supplied for qualified B2B discussions, with product information, packaging details, and documentation support available by order requirements.',
-  },
-  {
-    question: 'What packaging formats are available?',
-    answer:
-      'Available packaging includes 5 kg PE bags or 5 kg aluminum-foil bags packed in export cartons. Palletization with shrink wrap may be arranged according to order requirements.',
-  },
-  {
-    question: 'What documents can be requested?',
-    answer:
-      'Buyers can request COA, SDS, test reports, product information, commercial invoice, packing list, and shipment documents. Batch-specific availability depends on actual batch, order terms, and verification results.',
-  },
-  {
-    question: 'Who is responsible for import compliance?',
-    answer:
-      "Destination-country import compliance, including permits, licenses, approvals, labels, and customs declarations, is the buyer/importer's responsibility. Vetrux can provide documentation support by order terms.",
-  },
-];
-
-export default function ProductPageClient() {
+export default function ProductPageClient({ locale = 'en' }: { locale?: Locale }) {
+  const t = productPageStrings[locale];
+  const langPrefix = locale === 'en' ? '' : `/${locale}`;
   const heroRef = useRef<HTMLDivElement>(null);
   const metricsRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
@@ -103,16 +69,14 @@ export default function ProductPageClient() {
         <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="reveal-card">
-              <Badge variant="default" className="mb-6">CBD Raw Materials</Badge>
+              <Badge variant="default" className="mb-6">{t.badge}</Badge>
               <h1 className="font-serif font-medium text-[clamp(2.4rem,5.5vw,4.5rem)] text-on-background tracking-tight leading-[1.0] mb-6">
-                CBD Isolate
+                {t.heroTitle1}
                 <br />
-                <span className="italic text-primary">Specifications</span>
+                <span className="italic text-primary">{t.heroTitle2}</span>
               </h1>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                CBD isolate product information for qualified bulk buyers, with in-house HPLC
-                analytical capability, packaging details, COA/SDS request options, and
-                export-ready packaging support.
+                {t.heroBody}
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -131,10 +95,10 @@ export default function ProductPageClient() {
 
               <div className="flex flex-wrap gap-4">
                 <Button variant="accent" size="lg" icon={ArrowRight} onClick={() => openDocumentModal('both')}>
-                  Request Spec Sheet
+                  {t.requestSpecSheet}
                 </Button>
                 <Button variant="secondary" size="lg" icon={Download} iconPosition="left" onClick={() => openDocumentModal('COA')}>
-                  Request COA
+                  {t.requestCoa}
                 </Button>
               </div>
             </div>
@@ -150,17 +114,17 @@ export default function ProductPageClient() {
       <section className="py-24 bg-surface">
         <div ref={metricsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
-            <SectionLabel>Technical Analysis</SectionLabel>
+            <SectionLabel>{t.techSection}</SectionLabel>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-4">
-              CBD isolate product information and documentation
+              {t.techTitle}
             </h2>
             <p className="text-[15px] text-on-surface-variant mb-12 max-w-xl">
-              Supporting documentation including COA, SDS, test reports, and other shipment documents may be provided according to order requirements. Specific documentation availability depends on actual batch, order terms, and verification results.
+              {t.techBody}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {technicalMetrics.map((metric) => (
+            {t.metrics.map((metric) => (
               <div key={metric.label} className="reveal-card bg-surface-container-lowest p-6 border-l-2 border-transparent hover:border-accent transition-colors duration-200">
                 <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-1">{metric.label}</p>
                 <p className="text-2xl font-extrabold text-on-surface tracking-tighter mb-1">{metric.value}</p>
@@ -171,7 +135,7 @@ export default function ProductPageClient() {
 
           <div className="reveal-card">
             <Button variant="accent" size="md" icon={Download} iconPosition="left" onClick={() => openDocumentModal('both')}>
-              Request Spec Sheet
+              {t.requestSpecSheet}
             </Button>
           </div>
         </div>
@@ -181,13 +145,13 @@ export default function ProductPageClient() {
       <section className="py-24 bg-surface-container-low">
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-10">
-            <SectionLabel>Buyer Answers</SectionLabel>
+            <SectionLabel>{t.buyerSection}</SectionLabel>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05]">
-              CBD isolate specification answers
+              {t.buyerTitle}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {productAnswers.map((item) => (
+            {t.qa.map((item) => (
               <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
                 <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
                   {item.question}
@@ -203,13 +167,13 @@ export default function ProductPageClient() {
       <section className="py-24 bg-surface-container-low">
         <div ref={processRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-10">
-            <SectionLabel>From Field to Finished Isolate</SectionLabel>
+            <SectionLabel>{t.processSection}</SectionLabel>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] max-w-xl">
-              A controlled, traceable production chain.
+              {t.processTitle}
             </h2>
           </div>
           <div className="reveal-card">
-            <ProcessSteps steps={processSteps} />
+            <ProcessSteps steps={t.steps} />
           </div>
         </div>
       </section>
@@ -219,35 +183,27 @@ export default function ProductPageClient() {
         <div ref={specsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="reveal-card">
-              <SectionLabel>Product Specifications</SectionLabel>
-              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-8">Full Product Spec Sheet</h2>
+              <SectionLabel>{t.specSection}</SectionLabel>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-8">{t.specTitle}</h2>
               <div>
-                <SpecRow label="Product Name" value="CBD Isolate" />
-                <SpecRow label="Quality Review" value="In-house HPLC analytical capability; batch-specific documentation depends on actual batch, order terms, and verification results" />
-                <SpecRow label="Packaging (Inner)" value="PE bags 5kg/bag (27×60cm, food grade) or Aluminum foil bags 5kg/bag (35×50cm, food grade)" />
-                <SpecRow label="Packaging (Outer)" value="Export cartons 465×285×295mm, 2 bags per carton" />
-                <SpecRow label="Palletization" value="Plastic pallets with shrink wrap" isLast />
+                {t.specs.map((spec, i) => (
+                  <SpecRow key={spec.label} label={spec.label} value={spec.value} isLast={i === t.specs.length - 1} />
+                ))}
               </div>
             </div>
 
             <div className="reveal-card">
-              <SectionLabel>Compliance & Documentation</SectionLabel>
-              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-6">Batch Documentation & Export Compliance</h2>
+              <SectionLabel>{t.complianceSection}</SectionLabel>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-6">{t.complianceTitle}</h2>
               <div className="mb-6 p-4 bg-surface-container border-l-2 border-accent">
-                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-1">Export & Import Notice</p>
+                <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-1">{t.exportNotice}</p>
                 <p className="text-[13px] text-on-surface-variant leading-relaxed">
-                  For products requiring export permits or international verification, the export process may involve compliance confirmation from destination country authorities. Destination country import compliance — including permits, licenses, and regulatory approvals — is the{' '}
-                  <span className="font-semibold text-on-surface">buyer/importer&apos;s responsibility</span>. Documentation is arranged according to actual order requirements.
+                  {t.exportBody}{' '}
+                  <span className="font-semibold text-on-surface">{t.buyerResponsibility}</span>.
                 </p>
               </div>
               <div className="space-y-4">
-                {[
-                  { standard: 'Certificate of Analysis (COA)', detail: 'May be provided according to order requirements' },
-                  { standard: 'Safety Data Sheet (SDS)', detail: 'May be provided according to order requirements' },
-                  { standard: 'Test Reports', detail: 'May be provided according to order requirements' },
-                  { standard: 'Commercial Invoice', detail: 'Provided per shipment' },
-                  { standard: 'Packing List', detail: 'Provided per shipment' },
-                ].map((item) => (
+                {t.compliance.map((item) => (
                   <div key={item.standard} className="flex items-start gap-3 py-3 border-b border-outline-variant/20 last:border-0">
                     <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
                     <div>
@@ -266,7 +222,7 @@ export default function ProductPageClient() {
       <section className="py-24 bg-surface-container-low">
         <div ref={qualityRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card flex flex-wrap items-center gap-4 mb-12">
-            <SectionLabel className="mb-0">Quality & Product Lines</SectionLabel>
+            <SectionLabel className="mb-0">{t.qualitySection}</SectionLabel>
             <div className="flex gap-3">
               {['CBD Isolate', 'OEM/ODM', 'Technical Services'].map((cert) => (
                 <span key={cert} className="px-3 py-1 bg-primary-fixed text-primary text-xs font-bold tracking-wider uppercase rounded-full">
@@ -277,25 +233,25 @@ export default function ProductPageClient() {
           </div>
 
           <h2 className="reveal-card font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-12 max-w-xl">
-            CBD Isolate for Global B2B Supply
+            {t.qualityTitle}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {qualityCards.map((card) => (
+            {qualityCards.map((card, idx) => (
               <div key={card.title} className={`reveal-card ${card.bg} p-8 ${card.bg === 'bg-primary' ? '' : 'border-l-2 border-transparent hover:border-accent transition-colors duration-200'}`}>
                 {card.image && (
                   <div className="relative w-full h-40 mb-6">
-                    <Image src={card.image} alt={card.title} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover" />
+                    <Image src={card.image} alt={t.cards[idx].title} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover" />
                   </div>
                 )}
                 <div className={`w-10 h-10 flex items-center justify-center mb-4 ${card.bg === 'bg-primary' ? 'bg-white/10' : 'bg-primary-fixed'}`}>
                   <card.icon size={20} className={card.bg === 'bg-primary' ? 'text-white' : 'text-primary'} />
                 </div>
                 <p className={`font-serif text-lg leading-snug mb-3 ${card.bg === 'bg-primary' ? 'text-white' : 'text-on-surface'}`}>
-                  {card.title}
+                  {t.cards[idx].title}
                 </p>
                 <p className={`text-[13px] leading-relaxed ${card.bg === 'bg-primary' ? 'text-white/70' : 'text-on-surface-variant'}`}>
-                  {card.desc}
+                  {t.cards[idx].desc}
                 </p>
               </div>
             ))}
@@ -303,16 +259,16 @@ export default function ProductPageClient() {
 
           {/* Internal links to related pages */}
           <div className="reveal-card mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Link href="/quality-assurance" className="p-4 bg-surface-container-lowest hover:bg-surface-container border-l-2 border-transparent hover:border-accent transition-colors text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
-              <p className="text-xs font-bold text-accent tracking-[0.25em] uppercase">Quality Assurance →</p>
-              <p className="text-[13px] text-on-surface-variant mt-1">Documentation & testing details</p>
+            <Link href={`${langPrefix}/quality-assurance`} className="p-4 bg-surface-container-lowest hover:bg-surface-container border-l-2 border-transparent hover:border-accent transition-colors text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
+              <p className="text-xs font-bold text-accent tracking-[0.25em] uppercase">{t.qualityAssuranceLink}</p>
+              <p className="text-[13px] text-on-surface-variant mt-1">{t.qualityAssuranceSub}</p>
             </Link>
-            <Link href="/wholesale-cbd-isolate" className="p-4 bg-surface-container-lowest hover:bg-surface-container border-l-2 border-transparent hover:border-accent transition-colors text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
-              <p className="text-xs font-bold text-accent tracking-[0.25em] uppercase">Wholesale Inquiry →</p>
-              <p className="text-[13px] text-on-surface-variant mt-1">Volume pricing & export terms</p>
+            <Link href={`${langPrefix}/wholesale-cbd-isolate`} className="p-4 bg-surface-container-lowest hover:bg-surface-container border-l-2 border-transparent hover:border-accent transition-colors text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
+              <p className="text-xs font-bold text-accent tracking-[0.25em] uppercase">{t.wholesaleLink}</p>
+              <p className="text-[13px] text-on-surface-variant mt-1">{t.wholesaleSub}</p>
             </Link>
-            <Link href="/inquiry" className="p-4 bg-surface-container-lowest hover:bg-surface-container border-l-2 border-transparent hover:border-accent transition-colors text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
-              <p className="text-xs font-bold text-accent tracking-[0.25em] uppercase">Contact Sales →</p>
+            <Link href={`${langPrefix}/inquiry`} className="p-4 bg-surface-container-lowest hover:bg-surface-container border-l-2 border-transparent hover:border-accent transition-colors text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
+              <p className="text-xs font-bold text-accent tracking-[0.25em] uppercase">{t.contactSalesLink}</p>
               <p className="text-[13px] text-on-surface-variant mt-1">inquiry@vetrux.tech</p>
             </Link>
           </div>
@@ -325,6 +281,7 @@ export default function ProductPageClient() {
         defaultDocumentType={documentModalType}
         sourcePage="/products/cbd-isolate"
         productInterest="CBD Isolate"
+        locale={locale}
       />
 
     </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import type { Locale } from '@/i18n/locales';
 import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,13 +9,7 @@ import Badge from '@/components/atoms/Badge';
 import Button from '@/components/atoms/Button';
 import SectionLabel from '@/components/atoms/SectionLabel';
 import { useReveal } from '@/hooks/useReveal';
-
-const stats = [
-  { value: 'Yunnan', label: 'Cultivation Base Location' },
-  { value: 'Chuxiong', label: 'Breeding Center' },
-  { value: 'Standardized', label: 'Cultivation System' },
-  { value: 'Traceable', label: 'Supply Chain' },
-];
+import { plantingPageStrings } from '@/content/pages/planting.content';
 
 const zones = [
   {
@@ -94,7 +89,9 @@ const traceabilityItems = [
   { icon: CheckCircle, label: 'Documentation Support', desc: 'Supporting documentation including COA, SDS, and test reports may be provided according to order requirements and actual batch availability.' },
 ];
 
-export default function PlantingPageClient() {
+export default function PlantingPageClient({ locale = 'en' }: { locale?: Locale }) {
+  const t = plantingPageStrings[locale];
+  const langPrefix = locale === 'en' ? '' : `/${locale}`;
   const heroRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
@@ -119,21 +116,20 @@ export default function PlantingPageClient() {
         <div ref={heroRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="reveal-card">
-              <Badge variant="default" className="mb-6">Cultivation & Breeding Center · Chuxiong, Yunnan</Badge>
+              <Badge variant="default" className="mb-6">{t.badge}</Badge>
               <h1 className="font-serif font-medium text-[clamp(2.4rem,5.5vw,4.5rem)] text-on-background tracking-tight leading-[1.0] mb-6">
-                Grown at Altitude.
+                {t.heroTitle1}
                 <br />
-                <span className="italic text-primary">Traced to the Source.</span>
+                <span className="italic text-primary">{t.heroTitle2}</span>
               </h1>
               <p className="font-serif italic text-xl md:text-2xl text-on-surface-variant leading-snug max-w-2xl mb-6">
-                Standardized cultivation. Traceable lineage. Yunnan terroir.
+                {t.heroSubtitle}
               </p>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Vetrux operates a cultivation and breeding center in Chuxiong, Yunnan Province,
-                focused on standardized, traceable cultivation to support consistent raw material quality.
+                {t.heroBody}
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Yunnan Province', 'Standardized Cultivation', 'Quality-Oriented', 'Traceable System'].map((tag) => (
+                {t.tags.map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
                   </span>
@@ -146,8 +142,8 @@ export default function PlantingPageClient() {
                 <Image src="/images/planting/vegetative-growth.jpg" alt="Vetrux cultivation base greenhouse in Chuxiong, Yunnan" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" priority />
               </div>
               <div className="absolute bottom-6 right-6 bg-surface-ink/90 backdrop-blur p-4">
-                <p className="text-xs text-white/60 tracking-[0.35em] uppercase mb-1">Cultivation & Breeding Center</p>
-                <p className="text-sm font-bold text-white">Chuxiong, Yunnan Province</p>
+                <p className="text-xs text-white/60 tracking-[0.35em] uppercase mb-1">{t.overlayTitle}</p>
+                <p className="text-sm font-bold text-white">{t.overlayLocation}</p>
               </div>
             </div>
           </div>
@@ -158,7 +154,7 @@ export default function PlantingPageClient() {
       <section className="bg-primary py-10">
         <div ref={statsRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((s) => (
+            {t.stats.map((s) => (
               <div key={s.label} className="reveal-card text-center lg:text-left">
                 <p className="font-serif font-medium text-3xl md:text-4xl text-white tracking-tight leading-tight">{s.value}</p>
                 <p className="text-xs font-semibold tracking-[0.35em] uppercase text-white/60 mt-2">{s.label}</p>
@@ -173,25 +169,22 @@ export default function PlantingPageClient() {
         <div ref={introRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="reveal-card lg:col-span-5">
-              <SectionLabel>Why Vertical Integration Matters</SectionLabel>
+              <SectionLabel>{t.introSection}</SectionLabel>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mt-4">
-                The Best Extracts Begin
+                {t.introTitle1}
                 <br />
-                <span className="italic text-primary">in the Field.</span>
+                <span className="italic text-primary">{t.introTitle2}</span>
               </h2>
             </div>
             <div className="reveal-card lg:col-span-7 space-y-5 pt-2">
               <p className="text-[15px] text-on-surface-variant leading-relaxed">
-                At Vetrux, cultivation management starts with quality-oriented seed selection and follows
-                standardized processes designed to support consistent raw material quality.
+                {t.introPara1}
               </p>
               <p className="text-[15px] text-on-surface-variant leading-relaxed">
-                The Chuxiong base in Yunnan Province provides favorable growing conditions for hemp
-                cultivation, supporting the production of raw materials for downstream extraction.
+                {t.introPara2}
               </p>
               <p className="text-[15px] text-on-surface-variant leading-relaxed">
-                From cultivar selection through cultivation management and material handoff to extraction,
-                the system is designed around standardization and traceability.
+                {t.introPara3}
               </p>
             </div>
           </div>
@@ -202,8 +195,8 @@ export default function PlantingPageClient() {
       <section className="py-24 bg-surface">
         <div ref={zonesRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card">
-            <SectionLabel>Growing Zones</SectionLabel>
-            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-16 max-w-xl">Three Zones. One Controlled Process.</h2>
+            <SectionLabel>{t.zonesSection}</SectionLabel>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-16 max-w-xl">{t.zonesTitle}</h2>
           </div>
 
           <div className="space-y-28">
@@ -255,11 +248,11 @@ export default function PlantingPageClient() {
         <div ref={galleryRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
             <div>
-              <SectionLabel>Field Documentation</SectionLabel>
-              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mt-3">Inside the Chuxiong Cultivation Base</h2>
+              <SectionLabel>{t.gallerySection}</SectionLabel>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mt-3">{t.galleryTitle}</h2>
             </div>
             <p className="text-[15px] text-on-surface-variant max-w-sm leading-relaxed">
-              Real photos from our Yunnan cultivation and breeding center — from seedling propagation through flowering and harvest.
+              {t.galleryCaption}
             </p>
           </div>
 
@@ -280,16 +273,14 @@ export default function PlantingPageClient() {
         <div ref={traceabilityRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="reveal-card lg:col-span-4">
-              <SectionLabel light>Full Traceability</SectionLabel>
+              <SectionLabel light>{t.traceSection}</SectionLabel>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-white tracking-tight leading-[1.05] mt-4">
-                Seed-to-Isolate
+                {t.traceTitle1}
                 <br />
-                <span className="italic text-primary-fixed">Vertical Integration</span>
+                <span className="italic text-primary-fixed">{t.traceTitle2}</span>
               </h2>
               <p className="mt-5 text-[15px] text-white/60 leading-relaxed">
-                Vetrux&apos;s vertically integrated model means every gram of CBD isolate traces back to a specific
-                greenhouse zone, harvest batch, and extraction run at our Chuxiong facility. No middlemen,
-                no blind spots — just a fully traceable, standardized supply chain.
+                {t.traceBody}
               </p>
             </div>
 
@@ -316,25 +307,25 @@ export default function PlantingPageClient() {
         <div ref={ctaRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="reveal-card lg:col-span-8">
-              <SectionLabel>Wholesale Inquiry</SectionLabel>
+              <SectionLabel>{t.ctaSection}</SectionLabel>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mt-3">
-                Source Directly From
+                {t.ctaTitle1}
                 <br />
-                <span className="italic text-primary">the Grower.</span>
+                <span className="italic text-primary">{t.ctaTitle2}</span>
               </h2>
               <p className="mt-4 text-[15px] text-on-surface-variant leading-relaxed max-w-lg">
-                Skip the commodity middlemen. Talk to our team about bulk biomass supply, white-label isolate, or custom extraction contracts — all backed by our vertically integrated supply chain.
+                {t.ctaBody}
               </p>
             </div>
             <div className="reveal-card lg:col-span-4 flex flex-col gap-3">
-              <Link href="/inquiry">
+              <Link href={`${langPrefix}/inquiry`}>
                 <Button variant="accent" size="lg" icon={ArrowRight}>
-                  Request a Quote
+                  {t.requestQuote}
                 </Button>
               </Link>
               <Link href="/products/cbd-isolate">
                 <Button variant="secondary" size="lg" icon={ArrowRight}>
-                  View Product Specs
+                  {t.viewSpecs}
                 </Button>
               </Link>
             </div>

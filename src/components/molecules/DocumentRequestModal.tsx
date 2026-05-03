@@ -10,6 +10,7 @@ import type {
   DocumentRequestDocumentType,
   DocumentRequestPayload,
 } from '@/lib/documentRequest';
+import type { Locale } from '@/i18n/locales';
 
 declare global {
   interface Window {
@@ -35,15 +36,248 @@ interface DocumentRequestModalProps {
   defaultDocumentType?: DocumentRequestDocumentType;
   sourcePage: string;
   productInterest?: string;
+  locale?: Locale;
 }
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+interface ModalStrings {
+  eyebrow: string;
+  getLabel: string;
+  coaAndSds: string;
+  introText: string;
+  successTitle: string;
+  successBody: string;
+  refLabel: string;
+  closeBtn: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  turnstileReady: string;
+  turnstileLoading: string;
+  turnstileNotConfigured: string;
+  validationNameEmail: string;
+  validationEmail: string;
+  validationTurnstileNotConfigured: string;
+  validationTurnstile: string;
+  turnstileFailed: string;
+  genericError: string;
+  securityNote: string;
+  sending: string;
+  getDocuments: string;
+}
 
-const documentTypeLabels: Record<DocumentRequestDocumentType, string> = {
-  COA: 'COA',
-  SDS: 'SDS',
-  both: 'COA and SDS',
+const modalStrings: Record<Locale, ModalStrings> = {
+  en: {
+    eyebrow: 'Quality documents',
+    getLabel: 'Get',
+    coaAndSds: 'COA and SDS',
+    introText: 'Leave your name and email. The requested document access will appear after submission.',
+    successTitle: 'Document access is ready',
+    successBody: 'Your request was sent to the Vetrux team. Use the links below for the reference documents.',
+    refLabel: 'Ref',
+    closeBtn: 'Close',
+    nameLabel: 'Name',
+    namePlaceholder: 'Your name',
+    emailLabel: 'Business email',
+    emailPlaceholder: 'name@company.com',
+    turnstileReady: 'Human verification is ready.',
+    turnstileLoading: 'Loading human verification...',
+    turnstileNotConfigured: 'Human verification is not configured.',
+    validationNameEmail: 'Please add your name and email.',
+    validationEmail: 'Please enter a valid email address.',
+    validationTurnstileNotConfigured: 'Human verification is not configured.',
+    validationTurnstile: 'Please complete the human verification.',
+    turnstileFailed: 'Human verification failed. Please try again.',
+    genericError: 'Unable to request documents right now.',
+    securityNote: 'We will use this to send document context and follow up if needed.',
+    sending: 'Sending',
+    getDocuments: 'Get Documents',
+  },
+  de: {
+    eyebrow: 'Qualitätsdokumente',
+    getLabel: 'Anfordern',
+    coaAndSds: 'COA und SDS',
+    introText: 'Geben Sie Ihren Namen und Ihre E-Mail-Adresse an. Der Dokumentenzugang wird nach dem Absenden angezeigt.',
+    successTitle: 'Dokumentenzugang bereit',
+    successBody: 'Ihre Anfrage wurde an das Vetrux-Team übermittelt. Verwenden Sie die nachstehenden Links für die Referenzdokumente.',
+    refLabel: 'Ref',
+    closeBtn: 'Schließen',
+    nameLabel: 'Name',
+    namePlaceholder: 'Ihr Name',
+    emailLabel: 'Geschäftliche E-Mail',
+    emailPlaceholder: 'name@unternehmen.com',
+    turnstileReady: 'Menschliche Verifizierung ist bereit.',
+    turnstileLoading: 'Menschliche Verifizierung wird geladen...',
+    turnstileNotConfigured: 'Menschliche Verifizierung ist nicht konfiguriert.',
+    validationNameEmail: 'Bitte geben Sie Ihren Namen und Ihre E-Mail-Adresse an.',
+    validationEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+    validationTurnstileNotConfigured: 'Menschliche Verifizierung ist nicht konfiguriert.',
+    validationTurnstile: 'Bitte schließen Sie die menschliche Verifizierung ab.',
+    turnstileFailed: 'Menschliche Verifizierung fehlgeschlagen. Bitte versuchen Sie es erneut.',
+    genericError: 'Dokumente können derzeit nicht angefordert werden.',
+    securityNote: 'Wir verwenden diese Angaben, um Dokumenteninformationen zu senden und bei Bedarf nachzufassen.',
+    sending: 'Wird gesendet',
+    getDocuments: 'Dokumente anfordern',
+  },
+  fr: {
+    eyebrow: 'Documents qualité',
+    getLabel: 'Obtenir',
+    coaAndSds: 'COA et SDS',
+    introText: "Indiquez votre nom et votre adresse e-mail. L'accès au document demandé apparaîtra après soumission.",
+    successTitle: 'Accès aux documents prêt',
+    successBody: "Votre demande a été transmise à l'équipe Vetrux. Utilisez les liens ci-dessous pour accéder aux documents de référence.",
+    refLabel: 'Réf',
+    closeBtn: 'Fermer',
+    nameLabel: 'Nom',
+    namePlaceholder: 'Votre nom',
+    emailLabel: 'E-mail professionnel',
+    emailPlaceholder: 'nom@entreprise.com',
+    turnstileReady: 'La vérification humaine est prête.',
+    turnstileLoading: 'Chargement de la vérification humaine...',
+    turnstileNotConfigured: "La vérification humaine n'est pas configurée.",
+    validationNameEmail: 'Veuillez indiquer votre nom et votre adresse e-mail.',
+    validationEmail: 'Veuillez saisir une adresse e-mail valide.',
+    validationTurnstileNotConfigured: "La vérification humaine n'est pas configurée.",
+    validationTurnstile: 'Veuillez compléter la vérification humaine.',
+    turnstileFailed: 'La vérification humaine a échoué. Veuillez réessayer.',
+    genericError: 'Impossible de demander des documents pour le moment.',
+    securityNote: 'Nous utiliserons ces informations pour envoyer le contexte du document et assurer un suivi si nécessaire.',
+    sending: 'Envoi en cours',
+    getDocuments: 'Obtenir les documents',
+  },
+  es: {
+    eyebrow: 'Documentos de calidad',
+    getLabel: 'Obtener',
+    coaAndSds: 'COA y SDS',
+    introText: 'Indique su nombre y correo electrónico. El acceso al documento solicitado aparecerá tras el envío.',
+    successTitle: 'Acceso a documentos listo',
+    successBody: 'Su solicitud fue enviada al equipo de Vetrux. Utilice los enlaces a continuación para acceder a los documentos de referencia.',
+    refLabel: 'Ref',
+    closeBtn: 'Cerrar',
+    nameLabel: 'Nombre',
+    namePlaceholder: 'Su nombre',
+    emailLabel: 'Correo empresarial',
+    emailPlaceholder: 'nombre@empresa.com',
+    turnstileReady: 'La verificación humana está lista.',
+    turnstileLoading: 'Cargando verificación humana...',
+    turnstileNotConfigured: 'La verificación humana no está configurada.',
+    validationNameEmail: 'Por favor, indique su nombre y correo electrónico.',
+    validationEmail: 'Por favor, introduzca una dirección de correo electrónico válida.',
+    validationTurnstileNotConfigured: 'La verificación humana no está configurada.',
+    validationTurnstile: 'Por favor, complete la verificación humana.',
+    turnstileFailed: 'La verificación humana ha fallado. Por favor, inténtelo de nuevo.',
+    genericError: 'No es posible solicitar documentos en este momento.',
+    securityNote: 'Utilizaremos esta información para enviar el contexto del documento y hacer seguimiento si es necesario.',
+    sending: 'Enviando',
+    getDocuments: 'Obtener documentos',
+  },
+  it: {
+    eyebrow: 'Documenti di qualità',
+    getLabel: 'Richiedi',
+    coaAndSds: 'COA e SDS',
+    introText: "Inserisca il suo nome e indirizzo e-mail. L'accesso al documento richiesto sarà disponibile dopo l'invio.",
+    successTitle: 'Accesso ai documenti pronto',
+    successBody: 'La sua richiesta è stata inviata al team Vetrux. Utilizzi i link sottostanti per accedere ai documenti di riferimento.',
+    refLabel: 'Rif',
+    closeBtn: 'Chiudi',
+    nameLabel: 'Nome',
+    namePlaceholder: 'Il suo nome',
+    emailLabel: 'E-mail aziendale',
+    emailPlaceholder: 'nome@azienda.com',
+    turnstileReady: 'La verifica umana è pronta.',
+    turnstileLoading: 'Caricamento verifica umana...',
+    turnstileNotConfigured: 'La verifica umana non è configurata.',
+    validationNameEmail: 'Si prega di inserire nome e indirizzo e-mail.',
+    validationEmail: 'Si prega di inserire un indirizzo e-mail valido.',
+    validationTurnstileNotConfigured: 'La verifica umana non è configurata.',
+    validationTurnstile: 'Si prega di completare la verifica umana.',
+    turnstileFailed: 'Verifica umana non riuscita. Si prega di riprovare.',
+    genericError: 'Impossibile richiedere documenti al momento.',
+    securityNote: 'Utilizzeremo queste informazioni per inviare il contesto del documento e per eventuali follow-up.',
+    sending: 'Invio in corso',
+    getDocuments: 'Richiedi documenti',
+  },
+  pt: {
+    eyebrow: 'Documentos de qualidade',
+    getLabel: 'Obter',
+    coaAndSds: 'COA e SDS',
+    introText: 'Indique o seu nome e endereço de e-mail. O acesso ao documento solicitado será apresentado após o envio.',
+    successTitle: 'Acesso aos documentos pronto',
+    successBody: 'O seu pedido foi enviado para a equipa Vetrux. Utilize os links abaixo para aceder aos documentos de referência.',
+    refLabel: 'Ref',
+    closeBtn: 'Fechar',
+    nameLabel: 'Nome',
+    namePlaceholder: 'O seu nome',
+    emailLabel: 'E-mail empresarial',
+    emailPlaceholder: 'nome@empresa.com',
+    turnstileReady: 'A verificação humana está pronta.',
+    turnstileLoading: 'A carregar verificação humana...',
+    turnstileNotConfigured: 'A verificação humana não está configurada.',
+    validationNameEmail: 'Por favor, indique o seu nome e endereço de e-mail.',
+    validationEmail: 'Por favor, introduza um endereço de e-mail válido.',
+    validationTurnstileNotConfigured: 'A verificação humana não está configurada.',
+    validationTurnstile: 'Por favor, conclua a verificação humana.',
+    turnstileFailed: 'A verificação humana falhou. Por favor, tente novamente.',
+    genericError: 'Não é possível solicitar documentos neste momento.',
+    securityNote: 'Utilizaremos estas informações para enviar o contexto do documento e para acompanhamento, se necessário.',
+    sending: 'A enviar',
+    getDocuments: 'Obter documentos',
+  },
+  ja: {
+    eyebrow: '品質書類',
+    getLabel: '取得する',
+    coaAndSds: 'COA および SDS',
+    introText: 'お名前とメールアドレスをご入力ください。送信後、ご要望の書類へのアクセスが表示されます。',
+    successTitle: '書類へのアクセスが準備できました',
+    successBody: 'ご依頼はVetruxチームに送信されました。以下のリンクから参照書類をご利用ください。',
+    refLabel: '参照番号',
+    closeBtn: '閉じる',
+    nameLabel: 'お名前',
+    namePlaceholder: 'お名前をご入力ください',
+    emailLabel: 'ビジネスメール',
+    emailPlaceholder: 'name@company.com',
+    turnstileReady: '本人確認の準備が完了しました。',
+    turnstileLoading: '本人確認を読み込んでいます...',
+    turnstileNotConfigured: '本人確認が設定されていません。',
+    validationNameEmail: 'お名前とメールアドレスをご入力ください。',
+    validationEmail: '有効なメールアドレスをご入力ください。',
+    validationTurnstileNotConfigured: '本人確認が設定されていません。',
+    validationTurnstile: '本人確認を完了してください。',
+    turnstileFailed: '本人確認に失敗しました。もう一度お試しください。',
+    genericError: '現在、書類のリクエストができません。',
+    securityNote: 'この情報は書類の送付および必要に応じたフォローアップに使用いたします。',
+    sending: '送信中',
+    getDocuments: '書類を取得する',
+  },
+  fi: {
+    eyebrow: 'Laatuasiakirjat',
+    getLabel: 'Pyydä',
+    coaAndSds: 'COA ja SDS',
+    introText: 'Syötä nimesi ja sähköpostiosoitteesi. Pyydettyjen asiakirjojen käyttöoikeus näkyy lähetyksen jälkeen.',
+    successTitle: 'Asiakirjojen käyttöoikeus on valmis',
+    successBody: 'Pyyntönne on lähetetty Vetrux-tiimille. Käyttäkää alla olevia linkkejä viiteasiakirjoihin.',
+    refLabel: 'Viite',
+    closeBtn: 'Sulje',
+    nameLabel: 'Nimi',
+    namePlaceholder: 'Nimenne',
+    emailLabel: 'Yrityssähköposti',
+    emailPlaceholder: 'nimi@yritys.com',
+    turnstileReady: 'Henkilöllisyyden varmennus on valmis.',
+    turnstileLoading: 'Ladataan henkilöllisyyden varmennusta...',
+    turnstileNotConfigured: 'Henkilöllisyyden varmennusta ei ole määritetty.',
+    validationNameEmail: 'Lisätkää nimenne ja sähköpostiosoitteenne.',
+    validationEmail: 'Syöttäkää kelvollinen sähköpostiosoite.',
+    validationTurnstileNotConfigured: 'Henkilöllisyyden varmennusta ei ole määritetty.',
+    validationTurnstile: 'Suorittakaa henkilöllisyyden varmennus loppuun.',
+    turnstileFailed: 'Henkilöllisyyden varmennus epäonnistui. Yrittäkää uudelleen.',
+    genericError: 'Asiakirjoja ei voi pyytää juuri nyt.',
+    securityNote: 'Käytämme näitä tietoja asiakirjakontekstin lähettämiseen ja tarvittaessa jatkotoimenpiteisiin.',
+    sending: 'Lähetetään',
+    getDocuments: 'Pyydä asiakirjoja',
+  },
 };
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const initialForm = (
   defaultDocumentType: DocumentRequestDocumentType,
@@ -66,7 +300,14 @@ export default function DocumentRequestModal({
   defaultDocumentType = 'both',
   sourcePage,
   productInterest = 'CBD Isolate',
+  locale = 'en',
 }: DocumentRequestModalProps) {
+  const t = modalStrings[locale];
+  const documentTypeLabels: Record<DocumentRequestDocumentType, string> = {
+    COA: 'COA',
+    SDS: 'SDS',
+    both: t.coaAndSds,
+  };
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() ?? '';
   const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
   const turnstileWidgetIdRef = useRef<string | null>(null);
@@ -158,7 +399,7 @@ export default function DocumentRequestModal({
         },
         'error-callback': () => {
           setForm((currentForm) => ({ ...currentForm, turnstileToken: '' }));
-          setErrorMessage('Human verification failed. Please try again.');
+          setErrorMessage(t.turnstileFailed);
         },
       });
       setIsTurnstileReady(true);
@@ -188,22 +429,22 @@ export default function DocumentRequestModal({
   const validate = (): boolean => {
     setFieldError('');
     if (!form.name.trim() || !form.email.trim()) {
-      setFieldError('Please add your name and email.');
+      setFieldError(t.validationNameEmail);
       return false;
     }
 
     if (!EMAIL_RE.test(form.email)) {
-      setFieldError('Please enter a valid email address.');
+      setFieldError(t.validationEmail);
       return false;
     }
 
     if (!turnstileSiteKey) {
-      setFieldError('Human verification is not configured.');
+      setFieldError(t.validationTurnstileNotConfigured);
       return false;
     }
 
     if (!form.turnstileToken) {
-      setFieldError('Please complete the human verification.');
+      setFieldError(t.validationTurnstile);
       return false;
     }
 
@@ -224,7 +465,7 @@ export default function DocumentRequestModal({
       setReferenceId(response.referenceId ?? '');
       setDownloadLinks(response.downloadLinks ?? []);
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : 'Unable to request documents right now.');
+      setErrorMessage(error instanceof Error ? error.message : t.genericError);
       resetTurnstile();
     } finally {
       setIsSubmitting(false);
@@ -265,16 +506,16 @@ export default function DocumentRequestModal({
           </div>
 
           <p className="text-xs font-semibold tracking-[0.28em] uppercase text-accent mb-3">
-            Quality documents
+            {t.eyebrow}
           </p>
           <h2
             id="document-request-title"
             className="font-serif text-3xl md:text-4xl font-medium text-on-background tracking-tight leading-[1.05] mb-3"
           >
-            Get {documentLabel}
+            {t.getLabel} {documentLabel}
           </h2>
           <p className="text-sm leading-relaxed text-on-surface-variant mb-6">
-            Leave your name and email. The requested document access will appear after submission.
+            {t.introText}
           </p>
 
           {hasAccess ? (
@@ -284,17 +525,17 @@ export default function DocumentRequestModal({
                   <CheckCircle2 size={18} />
                 </span>
                 <p className="font-serif text-2xl font-medium text-on-background">
-                  Document access is ready
+                  {t.successTitle}
                 </p>
               </div>
               <p className="text-sm text-on-surface-variant leading-relaxed mb-5">
-                Your request was sent to the Vetrux team. Use the links below for the reference documents.
+                {t.successBody}
               </p>
 
               {referenceId ? (
                 <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-accent-soft">
                   <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-accent-hover">
-                    Ref
+                    {t.refLabel}
                   </span>
                   <span className="text-[12px] font-semibold tracking-wider text-accent-hover">
                     {referenceId}
@@ -320,7 +561,7 @@ export default function DocumentRequestModal({
               </div>
 
               <Button type="button" variant="outline" size="md" onClick={onClose}>
-                Close
+                {t.closeBtn}
               </Button>
             </div>
           ) : (
@@ -337,14 +578,14 @@ export default function DocumentRequestModal({
 
               <div>
                 <label htmlFor="document-request-name" className="block text-xs font-semibold tracking-wider mb-2 text-on-surface">
-                  Name <span className="text-accent">*</span>
+                  {t.nameLabel} <span className="text-accent">*</span>
                 </label>
                 <input
                   id="document-request-name"
                   type="text"
                   required
                   autoComplete="name"
-                  placeholder="Your name"
+                  placeholder={t.namePlaceholder}
                   className="input-minimal"
                   value={form.name}
                   onChange={(event) => setForm({ ...form, name: event.target.value })}
@@ -353,14 +594,14 @@ export default function DocumentRequestModal({
 
               <div>
                 <label htmlFor="document-request-email" className="block text-xs font-semibold tracking-wider mb-2 text-on-surface">
-                  Business email <span className="text-accent">*</span>
+                  {t.emailLabel} <span className="text-accent">*</span>
                 </label>
                 <input
                   id="document-request-email"
                   type="email"
                   required
                   autoComplete="email"
-                  placeholder="name@company.com"
+                  placeholder={t.emailPlaceholder}
                   className="input-minimal"
                   value={form.email}
                   onChange={(event) => setForm({ ...form, email: event.target.value })}
@@ -372,9 +613,9 @@ export default function DocumentRequestModal({
                 <p className="text-xs text-on-surface-variant leading-relaxed">
                   {turnstileSiteKey
                     ? isTurnstileReady
-                      ? 'Human verification is ready.'
-                      : 'Loading human verification...'
-                    : 'Human verification is not configured.'}
+                      ? t.turnstileReady
+                      : t.turnstileLoading
+                    : t.turnstileNotConfigured}
                 </p>
               </div>
 
@@ -387,7 +628,7 @@ export default function DocumentRequestModal({
               <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
                 <div className="flex items-start gap-2 text-[11px] leading-relaxed text-on-surface-variant max-w-xs">
                   <ShieldCheck size={13} className="mt-0.5 shrink-0" />
-                  <span>We will use this to send document context and follow up if needed.</span>
+                  <span>{t.securityNote}</span>
                 </div>
                 <Button
                   type="submit"
@@ -397,7 +638,7 @@ export default function DocumentRequestModal({
                   loading={isSubmitting}
                   disabled={!turnstileSiteKey}
                 >
-                  {isSubmitting ? 'Sending' : 'Get Documents'}
+                  {isSubmitting ? t.sending : t.getDocuments}
                 </Button>
               </div>
             </form>
