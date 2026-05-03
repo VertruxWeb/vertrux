@@ -23,6 +23,7 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.vetrux.tech'),
+  applicationName: 'Vetrux CBD',
   title: {
     default: 'Wholesale CBD Isolate Supplier | Bulk CBD Isolate Manufacturer — Vetrux CBD',
     template: '%s — Vetrux CBD',
@@ -32,6 +33,10 @@ export const metadata: Metadata = {
   keywords:
     'CBD raw materials, CBD isolate, OEM ODM CBD, CBD supplier, Vetrux CBD, Yunnan',
   authors: [{ name: 'Vetrux CBD' }],
+  icons: {
+    icon: [{ url: '/logo.png', type: 'image/png', sizes: '1254x1254' }],
+    apple: [{ url: '/logo.png', type: 'image/png', sizes: '1254x1254' }],
+  },
   robots: { index: true, follow: true },
   openGraph: {
     siteName: 'Vetrux CBD',
@@ -60,9 +65,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${manrope.variable} ${newsreader.variable}`}>
-      <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      </head>
       <body className="min-h-screen flex flex-col bg-surface font-sans">
         <a href="#main" className="skip-link">Skip to main content</a>
         <Navbar />

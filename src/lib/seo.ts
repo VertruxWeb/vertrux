@@ -15,6 +15,8 @@ export interface SeoMetadata {
 
 const defaultImage = '/images/hero/facility-hero.webp';
 const siteUrl = 'https://www.vetrux.tech';
+const siteName = 'Vetrux CBD';
+const siteLogo = `${siteUrl}/logo.png`;
 
 interface FaqItem {
   question: string;
@@ -33,7 +35,7 @@ const organizationJsonLd = {
   legalName: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.',
   alternateName: ['VETRUX', 'Vetrux CBD', '蔚萃生物科技（楚雄）有限公司'],
   url: 'https://www.vetrux.tech',
-  logo: 'https://www.vetrux.tech/favicon.svg',
+  logo: siteLogo,
   description:
     'Vetrux Biotechnology (Chuxiong) Co., Ltd. operates the VETRUX brand — a vertically integrated CBD raw material manufacturer based in Chuxiong, Yunnan, China. Services include CBD raw material sales, OEM/ODM, and technical support.',
   foundingDate: '2026',
@@ -52,6 +54,15 @@ const organizationJsonLd = {
   sameAs: [
     'https://www.vetrux.tech/about',
   ],
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteName,
+  alternateName: 'VETRUX',
+  url: siteUrl,
+  publisher: organizationJsonLd,
 };
 
 const productJsonLd = {
@@ -244,6 +255,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     keywords:
       'CBD isolate manufacturer China, bulk CBD isolate supplier, B2B CBD isolate, CBD isolate OEM ODM, Vetrux CBD, Yunnan',
     jsonLd: [
+      websiteJsonLd,
       organizationJsonLd,
       buildWebPageJsonLd(
         '/',
@@ -538,15 +550,15 @@ export function getSeoMetadata(pathname: string): SeoMetadata {
             dateModified: article.date,
             author: {
               '@type': 'Organization',
-              name: 'Vetrux CBD',
+              name: siteName,
               url: siteUrl,
               description: 'Editorial team at VETRUX — technical and regulatory analysis from Vetrux Biotechnology (Chuxiong) Co., Ltd., a vertically integrated CBD raw material manufacturer.',
             },
             publisher: {
               '@type': 'Organization',
-              name: 'Vetrux CBD',
+              name: siteName,
               url: siteUrl,
-              logo: `${siteUrl}/favicon.svg`,
+              logo: siteLogo,
             },
             mainEntityOfPage: {
               '@type': 'WebPage',
@@ -626,6 +638,7 @@ export function buildMetadata(pathname: string, locale: Locale = 'en'): Metadata
     keywords,
     alternates: buildAlternates(baseUrl, seo.canonicalPath, locale),
     openGraph: {
+      siteName,
       title,
       description,
       url: `${baseUrl}${localizedCanonical}`,
