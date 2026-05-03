@@ -30,3 +30,4 @@ tsconfig.tsbuildinfo
 
 docs
 .playwright-mcp
+CLAUDE.md
