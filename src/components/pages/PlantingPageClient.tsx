@@ -260,7 +260,7 @@ export default function PlantingPageClient({ locale = 'en' }: { locale?: Locale 
             {galleryImages.map((img, i) => (
               <div key={i} className={`reveal-card overflow-hidden group ${i === 0 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''}`}>
                 <div className={`relative w-full ${i === 0 ? 'h-full min-h-[320px]' : 'h-48'}`}>
-                  <Image src={img.src} alt={img.alt} fill sizes="(max-width:768px) 50vw, 33vw" className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]" />
+                  <Image src={img.src} alt={img.alt} fill sizes="(max-width:768px) 50vw, 33vw" className="object-cover transition-all duration-500 group-hover:scale-[1.03]" />
                 </div>
               </div>
             ))}
