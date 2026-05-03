@@ -54,6 +54,7 @@ const articlesDir = resolveArticlesDir()
 
 // ── Article order + size overrides ───────────────────────────────────────────
 const fileOrder: Array<{ filename: string; size?: 'normal' | 'large' }> = [
+  { filename: 'cbd-isolate-import-documentation-checklist.md',     size: 'large' },
   { filename: 'cbd-isolate-vs-distillate-formulation-guide.md',   size: 'large' },
   { filename: 'how-to-read-cbd-certificate-of-analysis.md',       size: 'normal' },
   { filename: 'thc-free-cbd-isolate-sourcing-guide-europe.md',    size: 'normal' },
