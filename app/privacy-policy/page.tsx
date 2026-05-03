@@ -28,8 +28,8 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-lg font-bold text-on-background tracking-tight mb-3">2. Data Controller</h2>
             <p>
-              The data controller responsible for your personal data is 蔚萃生物科技（楚雄）有限公司, located at
-              云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室. For privacy-related inquiries, contact us at{' '}
+              The data controller responsible for your personal data is 蔚萃生物科技（楚雄）有限公司, based in
+              Chuxiong, Yunnan Province, China. For privacy-related inquiries, contact us at{' '}
               <a href="mailto:postmaster@vetrux.tech" className="text-primary underline underline-offset-2">
                 postmaster@vetrux.tech
               </a>.
@@ -116,7 +116,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="mt-2">
               蔚萃生物科技（楚雄）有限公司<br />
-              云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室<br />
+              Chuxiong, Yunnan Province, China<br />
               Phone: +86 13518730530
             </p>
           </section>

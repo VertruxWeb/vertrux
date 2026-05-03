@@ -71,7 +71,7 @@ export default function InquiryPageClient() {
                     <div>
                       <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Headquarters</p>
                       <p className="text-[15px] font-semibold text-on-surface leading-relaxed">
-                        Office in Seedling Base, Tapu Second Group,<br />Chuxiong City, Yunnan Province, 675000, China
+                        Chuxiong, Yunnan Province, China
                       </p>
                     </div>
                   </div>

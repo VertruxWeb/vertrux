@@ -71,7 +71,7 @@ export default function DeInquiryPageClient() {
                     <div>
                       <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Hauptsitz</p>
                       <p className="text-[15px] font-semibold text-on-surface leading-relaxed">
-                        Büro in Seedling Base, Tapu Second Group,<br />Chuxiong City, Yunnan Province, 675000, China
+                        Chuxiong, Provinz Yunnan, China
                       </p>
                     </div>
                   </div>

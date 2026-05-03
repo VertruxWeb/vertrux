@@ -37,10 +37,8 @@ const organizationJsonLd = {
   foundingDate: '2026',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Office in Seedling Base, Tapu Second Group',
     addressLocality: 'Chuxiong',
     addressRegion: 'Yunnan Province',
-    postalCode: '675000',
     addressCountry: 'CN',
   },
   contactPoint: {

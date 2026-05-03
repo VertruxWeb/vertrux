@@ -423,9 +423,8 @@ export default function FrHomePageClient() {
               </p>
               <div className="space-y-2 mt-auto">
                 <p className="text-[15px] text-on-background leading-relaxed">
-                  Seedling Base, Tapu Second Group,<br />
-                  Chuxiong City, Province du Yunnan,<br />
-                  675000, Chine
+                  Chuxiong, province du Yunnan,<br />
+                  Chine
                 </p>
               </div>
             </div>

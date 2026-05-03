@@ -80,8 +80,8 @@ export default function FrAboutPageClient() {
                 <dd className="text-on-background">蔚萃生物科技（楚雄）有限公司</dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-1">Adresse enregistrée</dt>
-                <dd className="text-on-background break-words">云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室</dd>
+                <dt className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-1">Localisation</dt>
+                <dd className="text-on-background">Chuxiong, province du Yunnan, Chine</dd>
               </div>
               <div>
                 <dt className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-1">Activité principale</dt>

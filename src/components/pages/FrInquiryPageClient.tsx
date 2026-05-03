@@ -71,7 +71,7 @@ export default function FrInquiryPageClient() {
                     <div>
                       <p className="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Siège Social</p>
                       <p className="text-[15px] font-semibold text-on-surface leading-relaxed">
-                        Bureau à Seedling Base, Tapu Second Group,<br />Chuxiong City, Yunnan Province, 675000, Chine
+                        Chuxiong, province du Yunnan, Chine
                       </p>
                     </div>
                   </div>

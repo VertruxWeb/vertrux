@@ -421,9 +421,8 @@ export default function DeHomePageClient() {
               </p>
               <div className="space-y-2 mt-auto">
                 <p className="text-[15px] text-on-background leading-relaxed">
-                  Seedling Base, Tapu Second Group,<br />
-                  Chuxiong City, Provinz Yunnan,<br />
-                  675000, China
+                  Chuxiong, Provinz Yunnan,<br />
+                  China
                 </p>
               </div>
             </div>

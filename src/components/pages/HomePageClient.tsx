@@ -437,9 +437,8 @@ export default function HomePageClient() {
               </p>
               <div className="space-y-2 mt-auto">
                 <p className="text-[15px] text-on-background leading-relaxed">
-                  Seedling Base, Tapu Second Group,<br />
-                  Chuxiong City, Yunnan Province,<br />
-                  675000, China
+                  Chuxiong, Yunnan Province,<br />
+                  China
                 </p>
               </div>
             </div>

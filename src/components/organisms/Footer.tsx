@@ -112,9 +112,7 @@ export default function Footer() {
             <div className="text-xs text-inverse-on-surface/60 leading-relaxed">
               <p className="font-semibold text-inverse-on-surface/80 mb-1">Vetrux CBD</p>
               <p className="text-inverse-on-surface/50">Operated by 蔚萃生物科技（楚雄）有限公司</p>
-              <p>云南省楚雄彝族自治州楚雄市</p>
-              <p>彝海街道办事处富民社区居民委员会</p>
-              <p>塔普二组育苗基地院内办公室</p>
+              <p>Chuxiong, Yunnan Province, China</p>
               <p>
                 Email:{' '}
                 <a href="mailto:inquiry@vetrux.tech" className="text-inverse-on-surface/80 hover:text-white transition-colors">
