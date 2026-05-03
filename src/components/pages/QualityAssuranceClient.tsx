@@ -1,13 +1,15 @@
 'use client'
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { ArrowRight, Shield, FileCheck, Microscope, FlaskConical, Download } from 'lucide-react';
 import Link from 'next/link';
 import Badge from '@/components/atoms/Badge';
 import Button from '@/components/atoms/Button';
+import DocumentRequestModal from '@/components/molecules/DocumentRequestModal';
 import SectionLabel from '@/components/atoms/SectionLabel';
 import { useReveal } from '@/hooks/useReveal';
+import type { DocumentRequestDocumentType } from '@/lib/documentRequest';
 
 const documentationItems = [
   { icon: Microscope, title: 'HPLC Analytical Capability', detail: 'In-house HPLC system for analytical testing support.' },
@@ -30,13 +32,13 @@ const downloadableDocuments = [
   {
     title: 'GHS Safety Data Sheet (SDS)',
     desc: 'GHS SDS Report for CBD Isolate — hazard classification, handling, storage, and transport information.',
-    href: '/documents/vetrux-cbd-isolate-sds-report.pdf',
+    documentType: 'SDS' as const,
     format: 'PDF',
   },
   {
     title: 'CBD Isolate Test Report (COA)',
     desc: 'Laboratory analysis report for CBD isolate quality review. Batch-specific interpretation depends on actual batch, order terms, and verification results.',
-    href: '/documents/vetrux-cbd-test-report.pdf',
+    documentType: 'COA' as const,
     format: 'PDF',
   },
 ];
@@ -69,11 +71,18 @@ export default function QualityAssuranceClient() {
   const docsRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
   const certsRef = useRef<HTMLDivElement>(null);
+  const [documentModalType, setDocumentModalType] = useState<DocumentRequestDocumentType>('both');
+  const [isDocumentModalOpen, setIsDocumentModalOpen] = useState(false);
 
   useReveal(heroRef, { y: 40, stagger: 0.1, start: 'top 80%' });
   useReveal(docsRef, { y: 40, stagger: 0.08, start: 'top 80%' });
   useReveal(processRef, { y: 40, stagger: 0.1, start: 'top 80%' });
   useReveal(certsRef, { y: 40, stagger: 0.08, start: 'top 80%' });
+
+  const openDocumentModal = (documentType: DocumentRequestDocumentType) => {
+    setDocumentModalType(documentType);
+    setIsDocumentModalOpen(true);
+  };
 
   return (
     <div className="bg-surface">
@@ -107,9 +116,9 @@ export default function QualityAssuranceClient() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-4">
-                <Link href="/inquiry">
-                  <Button variant="accent" size="lg" icon={ArrowRight}>Request Batch Documents</Button>
-                </Link>
+                <Button variant="accent" size="lg" icon={ArrowRight} onClick={() => openDocumentModal('both')}>
+                  Request Batch Documents
+                </Button>
                 <Link href="/products/cbd-isolate">
                   <Button variant="outline" size="lg">View Products</Button>
                 </Link>
@@ -238,12 +247,11 @@ export default function QualityAssuranceClient() {
 
           <div className="space-y-3">
             {downloadableDocuments.map((doc) => (
-              <a
+              <button
                 key={doc.title}
-                href={doc.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="reveal-card flex items-center justify-between gap-6 bg-surface-container-lowest p-6 group hover:bg-surface-container border-l-2 border-transparent hover:border-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+                type="button"
+                onClick={() => openDocumentModal(doc.documentType)}
+                className="reveal-card w-full text-left flex items-center justify-between gap-6 bg-surface-container-lowest p-6 group hover:bg-surface-container border-l-2 border-transparent hover:border-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
               >
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-extrabold text-on-surface tracking-tighter mb-1">{doc.title}</p>
@@ -255,7 +263,7 @@ export default function QualityAssuranceClient() {
                     <Download size={16} />
                   </div>
                 </div>
-              </a>
+              </button>
             ))}
           </div>
 
@@ -266,6 +274,14 @@ export default function QualityAssuranceClient() {
           </div>
         </div>
       </section>
+
+      <DocumentRequestModal
+        isOpen={isDocumentModalOpen}
+        onClose={() => setIsDocumentModalOpen(false)}
+        defaultDocumentType={documentModalType}
+        sourcePage="/quality-assurance"
+        productInterest="CBD Isolate"
+      />
 
     </div>
   );

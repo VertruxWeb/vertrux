@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {
   ArrowRight,
   FlaskConical,
@@ -16,6 +16,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/atoms/Button';
+import DocumentRequestModal from '@/components/molecules/DocumentRequestModal';
 import TrustBar from '@/components/molecules/TrustBar';
 import KpiRow from '@/components/molecules/KpiRow';
 import { useReveal, useRevealTimeline } from '@/hooks/useReveal';
@@ -47,6 +48,7 @@ export default function HomePageClient() {
   const heroRef = useRef<HTMLDivElement>(null);
   const scopeRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const [isDocumentModalOpen, setIsDocumentModalOpen] = useState(false);
 
   // Hero choreographed timeline (respects reduced-motion)
   useRevealTimeline(heroRef, ({ reduced, gsap }) => {
@@ -117,11 +119,9 @@ export default function HomePageClient() {
             </p>
 
             <div className="hero-fade flex flex-wrap gap-4 mb-12">
-              <Link href="/inquiry">
-                <Button variant="accent" size="lg" icon={ArrowRight}>
-                  Request COA / Spec Sheet
-                </Button>
-              </Link>
+              <Button variant="accent" size="lg" icon={ArrowRight} onClick={() => setIsDocumentModalOpen(true)}>
+                Request COA / Spec Sheet
+              </Button>
               <Link href="/inquiry">
                 <Button variant="glass" size="lg">
                   Get Bulk Quote
@@ -462,6 +462,14 @@ export default function HomePageClient() {
           </div>
         </div>
       </section>
+
+      <DocumentRequestModal
+        isOpen={isDocumentModalOpen}
+        onClose={() => setIsDocumentModalOpen(false)}
+        defaultDocumentType="both"
+        sourcePage="/"
+        productInterest="CBD Isolate"
+      />
 
     </div>
   );

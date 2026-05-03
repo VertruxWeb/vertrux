@@ -1,15 +1,17 @@
 'use client'
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { ArrowRight, Download, CheckCircle, Microscope, TestTube, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Badge from '@/components/atoms/Badge';
 import Button from '@/components/atoms/Button';
+import DocumentRequestModal from '@/components/molecules/DocumentRequestModal';
 import SectionLabel from '@/components/atoms/SectionLabel';
 import SpecRow from '@/components/molecules/SpecRow';
 import ProcessSteps from '@/components/molecules/ProcessSteps';
 import { useReveal } from '@/hooks/useReveal';
+import type { DocumentRequestDocumentType } from '@/lib/documentRequest';
 
 const technicalMetrics = [
   { label: 'Product', value: 'CBD Isolate', status: 'Cannabidiol Isolate' },
@@ -79,12 +81,19 @@ export default function ProductPageClient() {
   const processRef = useRef<HTMLDivElement>(null);
   const specsRef = useRef<HTMLDivElement>(null);
   const qualityRef = useRef<HTMLDivElement>(null);
+  const [documentModalType, setDocumentModalType] = useState<DocumentRequestDocumentType>('both');
+  const [isDocumentModalOpen, setIsDocumentModalOpen] = useState(false);
 
   useReveal(heroRef);
   useReveal(metricsRef, { stagger: 0.08 });
   useReveal(processRef, { stagger: 0.08 });
   useReveal(specsRef);
   useReveal(qualityRef);
+
+  const openDocumentModal = (documentType: DocumentRequestDocumentType) => {
+    setDocumentModalType(documentType);
+    setIsDocumentModalOpen(true);
+  };
 
   return (
     <div className="bg-surface">
@@ -121,16 +130,12 @@ export default function ProductPageClient() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link href="/inquiry">
-                  <Button variant="accent" size="lg" icon={ArrowRight}>
-                    Request Spec Sheet
-                  </Button>
-                </Link>
-                <Link href="/inquiry">
-                  <Button variant="secondary" size="lg" icon={Download} iconPosition="left">
-                    Request COA
-                  </Button>
-                </Link>
+                <Button variant="accent" size="lg" icon={ArrowRight} onClick={() => openDocumentModal('both')}>
+                  Request Spec Sheet
+                </Button>
+                <Button variant="secondary" size="lg" icon={Download} iconPosition="left" onClick={() => openDocumentModal('COA')}>
+                  Request COA
+                </Button>
               </div>
             </div>
 
@@ -165,11 +170,9 @@ export default function ProductPageClient() {
           </div>
 
           <div className="reveal-card">
-            <Link href="/inquiry">
-              <Button variant="accent" size="md" icon={Download} iconPosition="left">
-                Request Spec Sheet
-              </Button>
-            </Link>
+            <Button variant="accent" size="md" icon={Download} iconPosition="left" onClick={() => openDocumentModal('both')}>
+              Request Spec Sheet
+            </Button>
           </div>
         </div>
       </section>
@@ -315,6 +318,14 @@ export default function ProductPageClient() {
           </div>
         </div>
       </section>
+
+      <DocumentRequestModal
+        isOpen={isDocumentModalOpen}
+        onClose={() => setIsDocumentModalOpen(false)}
+        defaultDocumentType={documentModalType}
+        sourcePage="/products/cbd-isolate"
+        productInterest="CBD Isolate"
+      />
 
     </div>
   );

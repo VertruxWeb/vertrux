@@ -75,61 +75,6 @@ export default function AboutPage() {
             </div>
           </section>
 
-
-
-          {/* Company Facts */}
-          <section className="mb-16">
-            <h2 className="text-2xl font-extrabold text-on-background tracking-tighter mb-4">Company Profile</h2>
-            <div className="bg-surface-container-low p-6">
-              <dl className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Brand</dt>
-                  <dd className="text-on-background">VETRUX</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">English Name</dt>
-                  <dd className="text-on-background">Vetrux Biotechnology (Chuxiong) Co., Ltd.</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Chinese Name</dt>
-                  <dd className="text-on-background">蔚萃生物科技（楚雄）有限公司</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Registered Address</dt>
-                  <dd className="text-on-background break-words">云南省楚雄彝族自治州楚雄市彝海街道办事处富民社区居民委员会塔普二组育苗基地院内办公室</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Core Business</dt>
-                  <dd className="text-on-background">CBD raw material sales, OEM/ODM, technical consulting</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Products</dt>
-                  <dd className="text-on-background">CBD Isolate</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Equipment</dt>
-                  <dd className="text-on-background">20 extraction tanks, 26 chromatography columns, 10 concentrators, HPLC, automation</dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Inquiry Email</dt>
-                  <dd>
-                    <a href="mailto:inquiry@vetrux.tech" className="text-primary underline underline-offset-2">
-                      inquiry@vetrux.tech
-                    </a>
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-xs font-semibold tracking-widest uppercase text-on-surface-variant/60 mb-1">Sales Email</dt>
-                  <dd>
-                    <a href="mailto:sales@vetrux.tech" className="text-primary underline underline-offset-2">
-                      sales@vetrux.tech
-                    </a>
-                  </dd>
-                </div>
-
-              </dl>
-            </div>
-          </section>
         </div>
       </div>
     </>
