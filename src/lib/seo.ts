@@ -69,6 +69,7 @@ const productJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: 'CBD Isolate',
+  image: `${siteUrl}/images/products/cbd-crystal-closeup.jpg`,
   description:
     'Crystalline CBD raw material supplied for qualified B2B discussions, with product information, packaging details, and documentation support available by order requirements.',
   brand: { '@type': 'Brand', name: 'VETRUX' },
@@ -85,6 +86,7 @@ const productJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
     seller: { '@type': 'Organization', name: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.' },
     url: `${siteUrl}/inquiry`,
   },
