@@ -25,12 +25,16 @@ import { ChevronRight } from 'lucide-react'
  *   Contact (CTA)            → /inquiry  (root, hidden)
  */
 
-type Crumb = { label: string; href?: string }
+type Crumb = { label: string; href?: string; itemHref: string }
+
+const siteUrl = 'https://www.vetrux.tech'
 
 interface CategoryDef {
   label: string
   /** href the category label links to, or null if it is a non-route dropdown label */
   href: string | null
+  /** URL path used only for structured data when the visible category is not linked */
+  structuredPath?: string
   /** child routes belonging to this category */
   children: Record<string, string>
 }
@@ -71,6 +75,7 @@ const categories: CategoryDef[] = [
   {
     label: 'About',
     href: null,
+    structuredPath: '/about',
     children: {
       '/about': 'Company',
       '/cbd-isolate-manufacturer': 'Manufacturer Profile',
@@ -132,11 +137,16 @@ export default function Breadcrumb() {
   const { category, selfLabel } = found
 
   const crumbs: Crumb[] = []
+  const categoryPath = category.href ?? category.structuredPath
   crumbs.push({
     label: category.label,
     href: category.href ? langPrefix + category.href : undefined,
+    itemHref: `${siteUrl}${langPrefix}${categoryPath ?? normalized}`,
   })
-  crumbs.push({ label: selfLabel })
+  crumbs.push({
+    label: selfLabel,
+    itemHref: `${siteUrl}${pathname}`,
+  })
 
   return (
     <nav
@@ -158,6 +168,7 @@ export default function Breadcrumb() {
               itemScope
               itemType="https://schema.org/ListItem"
             >
+              <link itemProp="item" href={crumb.itemHref} />
               {isLast ? (
                 <span className="font-semibold text-on-surface" itemProp="name">
                   {crumb.label}
@@ -168,7 +179,6 @@ export default function Breadcrumb() {
                     <Link
                       href={crumb.href}
                       className="hover:text-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm"
-                      itemProp="item"
                     >
                       <span itemProp="name">{crumb.label}</span>
                     </Link>
