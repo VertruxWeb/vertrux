@@ -10,24 +10,29 @@ export type TrustItem = {
 
 interface TrustBarProps {
   items: TrustItem[]
-  /** Variant: light strip (default) or dark for image-overlay sections */
+  /** Variant: light strip (default), dark for image-overlay sections, hero for inside hero */
   tone?: 'light' | 'dark'
+  variant?: 'default' | 'hero'
   className?: string
 }
 
-export default function TrustBar({ items, tone = 'light', className = '' }: TrustBarProps) {
-  const sectionTone =
-    tone === 'dark'
+export default function TrustBar({ items, tone = 'light', variant = 'default', className = '' }: TrustBarProps) {
+  const isHero = variant === 'hero'
+
+  const sectionTone = isHero
+    ? 'border-t border-white/10 text-white/70'
+    : tone === 'dark'
       ? 'border-y border-white/10 bg-surface-ink text-white/80'
       : 'border-y border-outline-variant/30 bg-surface-low text-on-surface-variant'
-  const iconTone = tone === 'dark' ? 'text-accent' : 'text-primary'
+
+  const iconTone = isHero ? 'text-accent' : tone === 'dark' ? 'text-accent' : 'text-primary'
 
   return (
     <section
       className={`${sectionTone} ${className}`}
       aria-label="Verified capabilities and credentials"
     >
-      <div className="container-wide flex flex-wrap items-center justify-between gap-x-10 gap-y-4 py-5">
+      <div className={`flex flex-wrap items-center ${isHero ? 'justify-start gap-x-8' : 'container-wide justify-between gap-x-10'} gap-y-4 py-5`}>
         {items.map((item) => {
           const Icon = item.icon
           return (

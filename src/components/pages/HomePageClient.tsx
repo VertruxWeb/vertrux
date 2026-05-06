@@ -63,7 +63,7 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="relative min-h-screen flex items-center overflow-hidden bg-surface-ink"
+        className="relative min-h-[90vh] flex items-center overflow-hidden bg-surface-ink"
       >
         <Image
           src="/images/hero/facility-hero.webp"
@@ -71,9 +71,9 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
           fill
           priority
           sizes="100vw"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-ink/40 via-surface-ink/70 to-surface-ink" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface-ink/30 to-surface-ink/80" />
 
         <div className="relative z-10 max-w-container mx-auto px-6 lg:px-12 w-full">
           <div className="max-w-4xl">
@@ -109,19 +109,21 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
               </Link>
             </div>
           </div>
+
+          <div className="hero-stat">
+            <TrustBar
+              items={[
+                { icon: Microscope, label: t.trustHplc },
+                { icon: FlaskConical, label: t.trustCoa },
+                { icon: Layers, label: t.trustPackaging },
+                { icon: CheckCircle2, label: t.trustOem },
+                { icon: ShieldCheck, label: t.trustExport },
+              ]}
+              variant="hero"
+            />
+          </div>
         </div>
       </section>
-
-      {/* ── TRUST BAR ────────────────────────────────────────────────────── */}
-      <TrustBar
-        items={[
-          { icon: Microscope, label: t.trustHplc },
-          { icon: FlaskConical, label: t.trustCoa },
-          { icon: Layers, label: t.trustPackaging },
-          { icon: CheckCircle2, label: t.trustOem },
-          { icon: ShieldCheck, label: t.trustExport },
-        ]}
-      />
 
       {/* ── GEO ANSWERS ─────────────────────────────────────────────────── */}
       <section className="py-20 bg-surface">
