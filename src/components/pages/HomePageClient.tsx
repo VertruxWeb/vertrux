@@ -125,30 +125,6 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
         </div>
       </section>
 
-      {/* ── GEO ANSWERS ─────────────────────────────────────────────────── */}
-      <section className="py-20 bg-surface">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-10">
-            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
-              {t.buyerAnswersEyebrow}
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-on-background tracking-tight leading-[1.05]">
-              {t.buyerAnswersTitle}
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {t.qa.map((item) => (
-              <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
-                <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
-                  {item.question}
-                </h3>
-                <p className="text-sm text-on-surface-variant leading-relaxed">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── BUSINESS SCOPE ───────────────────────────────────────────────── */}
       <section className="py-28 bg-surface-ink">
         <div ref={scopeRef} className="max-w-container mx-auto px-6 lg:px-12">
@@ -268,6 +244,30 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
                 { value: t.kpiCooperation.value, label: t.kpiCooperation.label, sub: t.kpiCooperation.sub },
               ]}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ── GEO ANSWERS ─────────────────────────────────────────────────── */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mb-10">
+            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
+              {t.buyerAnswersEyebrow}
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-on-background tracking-tight leading-[1.05]">
+              {t.buyerAnswersTitle}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {t.qa.map((item) => (
+              <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
+                <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
+                  {item.question}
+                </h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
