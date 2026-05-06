@@ -126,15 +126,15 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
       </section>
 
       {/* ── BUSINESS SCOPE ───────────────────────────────────────────────── */}
-      <section className="py-28 bg-surface-ink">
+      <section className="py-28 bg-surface">
         <div ref={scopeRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card mb-16">
-            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-primary-fixed/80 mb-4">
+            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
               {t.scopeEyebrow}
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium text-white tracking-tight leading-[1.05] max-w-3xl">
+            <h2 className="font-serif text-4xl md:text-5xl font-medium text-on-background tracking-tight leading-[1.05] max-w-3xl">
               {t.scopeTitle1}<br />
-              <span className="italic text-primary-fixed">{t.scopeTitle2}</span>
+              <span className="italic text-primary">{t.scopeTitle2}</span>
             </h2>
           </div>
 
@@ -233,10 +233,9 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
             </div>
           </div>
 
-          {/* KPI Row strip on dark scope */}
-          <div className="reveal-card mt-16 border-t border-white/10 pt-10">
+          {/* KPI Row strip */}
+          <div className="reveal-card mt-16 border-t border-outline-variant/30 pt-10">
             <KpiRow
-              tone="dark"
               items={[
                 { value: t.kpiAnalytical.value, label: t.kpiAnalytical.label, sub: t.kpiAnalytical.sub },
                 { value: t.kpiDocumentation.value, label: t.kpiDocumentation.label, sub: t.kpiDocumentation.sub },
@@ -249,23 +248,23 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
       </section>
 
       {/* ── GEO ANSWERS ─────────────────────────────────────────────────── */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-surface-ink">
         <div className="max-w-container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-10">
-            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-4">
+            <p className="text-xs font-semibold tracking-[0.35em] uppercase text-primary-fixed/80 mb-4">
               {t.buyerAnswersEyebrow}
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-on-background tracking-tight leading-[1.05]">
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-white tracking-tight leading-[1.05]">
               {t.buyerAnswersTitle}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {t.qa.map((item) => (
-              <div key={item.question} className="bg-surface-container-lowest p-6 border-l-2 border-accent">
-                <h3 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
+              <div key={item.question} className="bg-white/5 p-6 border-l-2 border-accent">
+                <h3 className="text-sm font-extrabold text-white tracking-tighter mb-2">
                   {item.question}
                 </h3>
-                <p className="text-sm text-on-surface-variant leading-relaxed">{item.answer}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>
