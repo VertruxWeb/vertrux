@@ -53,6 +53,11 @@ export const metadata: Metadata = {
       'en': 'https://www.vetrux.tech',
       'de': 'https://www.vetrux.tech/de',
       'fr': 'https://www.vetrux.tech/fr',
+      'es': 'https://www.vetrux.tech/es',
+      'it': 'https://www.vetrux.tech/it',
+      'pt': 'https://www.vetrux.tech/pt',
+      'ja': 'https://www.vetrux.tech/ja',
+      'fi': 'https://www.vetrux.tech/fi',
       'x-default': 'https://www.vetrux.tech',
     },
   },
@@ -62,10 +67,44 @@ export const metadata: Metadata = {
   },
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Vetrux CBD',
+  legalName: 'Vetrux Biotechnology (Chuxiong) Co., Ltd.',
+  url: 'https://www.vetrux.tech',
+  logo: 'https://www.vetrux.tech/logo.png',
+  description: 'Vertically integrated CBD isolate manufacturer. From seed selection to finished product delivery.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Chuxiong',
+    addressRegion: 'Yunnan',
+    addressCountry: 'CN',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'inquiry@vetrux.tech',
+    telephone: '+86-13518730530',
+    contactType: 'sales',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/%E8%90%83-%E8%94%9A-994421408/',
+    'https://x.com/VetruxCBD',
+    'https://www.facebook.com/profile.php?id=61589338740056',
+    'https://www.youtube.com/channel/UCTppL8lRF6EieMGZWwTq4aw',
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${manrope.variable} ${newsreader.variable}`}>
       <body className="min-h-screen flex flex-col bg-surface font-sans">
+        <Script
+          id="organization-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <a href="#main" className="skip-link">Skip to main content</a>
         <Navbar />
         <main id="main" className="flex-1 pt-16">

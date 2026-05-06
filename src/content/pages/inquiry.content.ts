@@ -11,6 +11,7 @@ export interface InquiryPageStrings {
   salesEmail: string;
   email: string;
   headquarters: string;
+  followUs: string;
   serviceCapabilities: string;
   cbdRawMaterials: string;
   cbdRawMaterialsDesc: string;
@@ -26,6 +27,7 @@ export const inquiryPageStrings: Record<Locale, InquiryPageStrings> = {
     intro: 'Connect with our global distribution network. Whether you require bulk isolate, custom formulations, or private-label solutions — our B2B team is ready.',
     sectionLabel: 'Wholesale Request', formHeading: 'Submit Your Inquiry',
     sidebarEyebrow: 'B2B Support', salesEmail: 'Sales Email', email: 'Email', headquarters: 'Headquarters',
+    followUs: 'Follow Us',
     serviceCapabilities: 'Service Capabilities',
     cbdRawMaterials: 'CBD Raw Materials', cbdRawMaterialsDesc: 'CBD isolate, ≥99.9% purity',
     oemOdmServices: 'OEM/ODM Services', oemOdmServicesDesc: 'Formulation to finished product',
@@ -36,6 +38,7 @@ export const inquiryPageStrings: Record<Locale, InquiryPageStrings> = {
     intro: 'Verbinden Sie sich mit unserem globalen Vertriebsnetzwerk. Ob Bulk-Isolat, individuelle Formulierungen oder Eigenmarken-Lösungen — unser B2B-Team steht bereit.',
     sectionLabel: 'Großhandelsanfrage', formHeading: 'Anfrage einreichen',
     sidebarEyebrow: 'B2B-Support', salesEmail: 'Vertriebs-E-Mail', email: 'E-Mail', headquarters: 'Hauptsitz',
+    followUs: 'Folgen Sie uns',
     serviceCapabilities: 'Leistungsspektrum',
     cbdRawMaterials: 'CBD-Rohstoffe', cbdRawMaterialsDesc: 'CBD-Isolat, Reinheit ≥99,9%',
     oemOdmServices: 'OEM/ODM-Dienstleistungen', oemOdmServicesDesc: 'Von der Formulierung zum Endprodukt',
@@ -46,6 +49,7 @@ export const inquiryPageStrings: Record<Locale, InquiryPageStrings> = {
     intro: "Connectez-vous à notre réseau de distribution mondial. Que vous ayez besoin d'isolat en vrac, de formulations personnalisées ou de solutions en marque blanche — notre équipe B2B est prête.",
     sectionLabel: 'Demande de gros', formHeading: 'Soumettre votre demande',
     sidebarEyebrow: 'Support B2B', salesEmail: 'E-mail commercial', email: 'E-mail', headquarters: 'Siège social',
+    followUs: 'Suivez-nous',
     serviceCapabilities: 'Capacités de service',
     cbdRawMaterials: 'Matières premières CBD', cbdRawMaterialsDesc: 'Isolat CBD, pureté ≥99,9%',
     oemOdmServices: 'Services OEM/ODM', oemOdmServicesDesc: 'De la formulation au produit fini',
@@ -56,6 +60,7 @@ export const inquiryPageStrings: Record<Locale, InquiryPageStrings> = {
     intro: 'Conéctese con nuestra red de distribución global. Ya sea que necesite aislado a granel, formulaciones personalizadas o soluciones de marca privada — nuestro equipo B2B está listo.',
     sectionLabel: 'Solicitud mayorista', formHeading: 'Envíe su consulta',
     sidebarEyebrow: 'Soporte B2B', salesEmail: 'Email de ventas', email: 'Email', headquarters: 'Sede central',
+    followUs: 'Síguenos',
     serviceCapabilities: 'Capacidades de servicio',
     cbdRawMaterials: 'Materias primas CBD', cbdRawMaterialsDesc: 'CBD isolate, pureza ≥99,9%',
     oemOdmServices: 'Servicios OEM/ODM', oemOdmServicesDesc: 'De la formulación al producto terminado',
@@ -66,6 +71,7 @@ export const inquiryPageStrings: Record<Locale, InquiryPageStrings> = {
     intro: "Collegatevi alla nostra rete di distribuzione globale. Che necessitiate di isolato all'ingrosso, formulazioni personalizzate o soluzioni a marchio privato — il nostro team B2B è pronto.",
     sectionLabel: 'Richiesta ingrosso', formHeading: 'Inviate la vostra richiesta',
     sidebarEyebrow: 'Supporto B2B', salesEmail: 'Email commerciale', email: 'Email', headquarters: 'Sede centrale',
+    followUs: 'Seguici',
     serviceCapabilities: 'Capacità di servizio',
     cbdRawMaterials: 'Materie prime CBD', cbdRawMaterialsDesc: 'CBD isolate, purezza ≥99,9%',
     oemOdmServices: 'Servizi OEM/ODM', oemOdmServicesDesc: 'Dalla formulazione al prodotto finito',
@@ -76,6 +82,7 @@ export const inquiryPageStrings: Record<Locale, InquiryPageStrings> = {
     intro: 'Conecte-se à nossa rede de distribuição global. Seja para isolado a granel, formulações personalizadas ou soluções de marca própria — nossa equipe B2B está pronta.',
     sectionLabel: 'Solicitação atacado', formHeading: 'Envie sua consulta',
     sidebarEyebrow: 'Suporte B2B', salesEmail: 'Email de vendas', email: 'Email', headquarters: 'Sede',
+    followUs: 'Siga-nos',
     serviceCapabilities: 'Capacidades de serviço',
     cbdRawMaterials: 'Matérias-primas CBD', cbdRawMaterialsDesc: 'CBD isolate, pureza ≥99,9%',
     oemOdmServices: 'Serviços OEM/ODM', oemOdmServicesDesc: 'Da formulação ao produto acabado',
@@ -86,6 +93,7 @@ export const inquiryPageStrings: Record<Locale, InquiryPageStrings> = {
     intro: '当社のグローバル流通ネットワークにお問い合わせください。バルクアイソレート、カスタム処方、プライベートラベルソリューションなど、B2Bチームが対応いたします。',
     sectionLabel: '卸売リクエスト', formHeading: 'お問い合わせを送信',
     sidebarEyebrow: 'B2Bサポート', salesEmail: '営業メール', email: 'メール', headquarters: '本社所在地',
+    followUs: 'フォローする',
     serviceCapabilities: 'サービス内容',
     cbdRawMaterials: 'CBD原料', cbdRawMaterialsDesc: 'CBDアイソレート、純度≥99.9%',
     oemOdmServices: 'OEM/ODMサービス', oemOdmServicesDesc: '処方から完成品まで',
@@ -96,6 +104,7 @@ export const inquiryPageStrings: Record<Locale, InquiryPageStrings> = {
     intro: 'Yhdistä maailmanlaajuiseen jakeluverkostoomme. Tarvitsetpa tukkuerän isolaattia, räätälöityjä formulaatioita tai private label -ratkaisuja — B2B-tiimimme on valmiina.',
     sectionLabel: 'Tukkutiedustelu', formHeading: 'Lähetä tiedustelusi',
     sidebarEyebrow: 'B2B-tuki', salesEmail: 'Myyntisähköposti', email: 'Sähköposti', headquarters: 'Pääkonttori',
+    followUs: 'Seuraa meitä',
     serviceCapabilities: 'Palveluvalmiudet',
     cbdRawMaterials: 'CBD-raaka-aineet', cbdRawMaterialsDesc: 'CBD-isolaatti, puhtaus ≥99,9 %',
     oemOdmServices: 'OEM/ODM-palvelut', oemOdmServicesDesc: 'Formulaatiosta valmiiseen tuotteeseen',
