@@ -119,12 +119,9 @@ function findCategoryForPath(normalizedPath: string): {
 export default function Breadcrumb() {
   const pathname = usePathname()
 
-  // Strip /de or /fr language prefix.
-  const langPrefix = pathname.startsWith('/de/') || pathname === '/de'
-    ? '/de'
-    : pathname.startsWith('/fr/') || pathname === '/fr'
-      ? '/fr'
-      : ''
+  // Strip locale prefix (/de, /fr, /es, /it, /pt, /ja, /fi).
+  const localeMatch = pathname.match(/^\/(de|fr|es|it|pt|ja|fi)(\/|$)/)
+  const langPrefix = localeMatch ? `/${localeMatch[1]}` : ''
   const normalized = langPrefix ? pathname.slice(langPrefix.length) || '/' : pathname
 
   // Hide on: home roots, top-level nav roots, orphan routes.
