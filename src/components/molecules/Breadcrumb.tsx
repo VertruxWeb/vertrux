@@ -83,15 +83,22 @@ const categories: CategoryDef[] = [
   },
 ]
 
-/** Routes that are "roots" in the site IA — breadcrumb is hidden at these. */
-const rootRoutes = new Set<string>([
-  '/',
-  '/inquiry',
-  ...categories.filter((c) => c.href).map((c) => c.href as string),
-])
+/** Routes where breadcrumb is hidden — only the homepage. */
+const rootRoutes = new Set<string>(['/'])
 
 /** Routes that are deliberately orphaned (footer-linked legal pages). */
 const orphanRoutes = new Set<string>(['/privacy-policy', '/terms-of-service'])
+
+/** Top-level nav pages — shown as "Home > Self" */
+const topLevelPages: Record<string, string> = {
+  '/products/cbd-isolate': 'CBD Isolate',
+  '/process': 'Process',
+  '/gallery': 'Gallery',
+  '/blog': 'Blog',
+  '/inquiry': 'Inquiry',
+  '/planting': 'Cultivation',
+  '/equipment': 'Equipment',
+}
 
 function findCategoryForPath(normalizedPath: string): {
   category: CategoryDef
@@ -124,26 +131,43 @@ export default function Breadcrumb() {
   const langPrefix = localeMatch ? `/${localeMatch[1]}` : ''
   const normalized = langPrefix ? pathname.slice(langPrefix.length) || '/' : pathname
 
-  // Hide on: home roots, top-level nav roots, orphan routes.
+  // Hide on: homepage, orphan routes.
   if (rootRoutes.has(normalized)) return null
   if (orphanRoutes.has(normalized)) return null
 
-  const found = findCategoryForPath(normalized)
-  if (!found) return null
-
-  const { category, selfLabel } = found
-
   const crumbs: Crumb[] = []
-  const categoryPath = category.href ?? category.structuredPath
-  crumbs.push({
-    label: category.label,
-    href: category.href ? langPrefix + category.href : undefined,
-    itemHref: `${siteUrl}${langPrefix}${categoryPath ?? normalized}`,
-  })
-  crumbs.push({
-    label: selfLabel,
-    itemHref: `${siteUrl}${pathname}`,
-  })
+
+  // Check if it's a top-level page (Home > Self)
+  const topLevel = topLevelPages[normalized]
+  const found = findCategoryForPath(normalized)
+
+  if (topLevel && !found) {
+    // Top-level nav page: Home > Self
+    crumbs.push({
+      label: 'Home',
+      href: langPrefix || '/',
+      itemHref: `${siteUrl}${langPrefix || '/'}`,
+    })
+    crumbs.push({
+      label: topLevel,
+      itemHref: `${siteUrl}${pathname}`,
+    })
+  } else if (found) {
+    // Sub-page: Category > Self
+    const { category, selfLabel } = found
+    const categoryPath = category.href ?? category.structuredPath
+    crumbs.push({
+      label: category.label,
+      href: category.href ? langPrefix + category.href : undefined,
+      itemHref: `${siteUrl}${langPrefix}${categoryPath ?? normalized}`,
+    })
+    crumbs.push({
+      label: selfLabel,
+      itemHref: `${siteUrl}${pathname}`,
+    })
+  } else {
+    return null
+  }
 
   return (
     <nav
