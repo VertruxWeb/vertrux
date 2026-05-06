@@ -84,7 +84,6 @@ const organizationJsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'inquiry@vetrux.tech',
-    telephone: '+86-13518730530',
     contactType: 'sales',
   },
   sameAs: [

@@ -116,8 +116,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="mt-2">
               蔚萃生物科技（楚雄）有限公司<br />
-              Chuxiong, Yunnan Province, China<br />
-              Phone: +86 13518730530
+              Chuxiong, Yunnan Province, China
             </p>
           </section>
         </div>

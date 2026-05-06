@@ -122,7 +122,6 @@ export default function Footer() {
                   inquiry@vetrux.tech
                 </a>
               </p>
-              <p>Phone: +86 13518730530</p>
               <div className="flex items-center gap-3 mt-4">
                 <a
                   href="https://www.linkedin.com/in/%E8%90%83-%E8%94%9A-994421408/"
