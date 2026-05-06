@@ -69,7 +69,7 @@ export default function Footer() {
                 alt="Vetrux CBD"
                 width={319}
                 height={64}
-                className="h-16 w-auto brightness-0 invert"
+                className="h-16 w-auto invert"
                 priority
               />
             </div>
