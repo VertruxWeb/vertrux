@@ -2,19 +2,37 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
-import { ArrowRight, Factory, Leaf, FlaskConical, Globe, CheckCircle, Truck } from 'lucide-react';
+import { ArrowRight, Factory, Leaf, FlaskConical, Globe, CheckCircle, Truck, PackageCheck, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import Badge from '@/components/atoms/Badge';
 import Button from '@/components/atoms/Button';
 import SectionLabel from '@/components/atoms/SectionLabel';
 import { useReveal } from '@/hooks/useReveal';
 
+const priorityServices = [
+  {
+    icon: Globe,
+    title: 'B2B Cooperation',
+    desc: 'CBD raw material sales cooperation for brand clients, channel partners, trading companies, and stable procurement partners. Standard supply, long-term supply, and directed cooperation models are available.',
+  },
+  {
+    icon: PackageCheck,
+    title: 'OEM/ODM',
+    desc: 'Raw material support, formulation development, production manufacturing, packaging design, and finished product delivery for CBD product development and launch.',
+  },
+  {
+    icon: Wrench,
+    title: 'Technical Support',
+    desc: 'Cultivation management, yield and content control, extraction process optimization, cost control, product content and residue control, and cannabinoid extraction process consulting.',
+  },
+];
+
 const capabilities = [
   { icon: Leaf, title: 'Cultivation & Breeding Center', desc: 'Cultivation and breeding center in Chuxiong, Yunnan Province. Standardized, traceable cultivation system focused on quality consistency.' },
   { icon: Factory, title: 'Extraction Facility', desc: 'Professional extraction, purification, concentration, and processing equipment for CBD raw material workflows.' },
   { icon: FlaskConical, title: 'Analytical Capability', desc: 'In-house HPLC analytical system with automation control supporting quality management.' },
-  { icon: CheckCircle, title: 'OEM/ODM Services', desc: 'Raw material support, formulation development, production, packaging design, and finished product delivery.' },
-  { icon: Globe, title: 'Technical Support', desc: 'Cultivation management, extraction process optimization, cost control, and cannabinoid extraction consulting services.' },
+  { icon: CheckCircle, title: 'Quality Documents', desc: 'COA, SDS, test report, commercial invoice, packing list, and shipment document support according to actual batch and order terms.' },
+  { icon: Globe, title: 'Export Discussions', desc: 'Support for export document preparation and destination-market document review discussions with qualified B2B buyers.' },
   { icon: Truck, title: 'Packaging', desc: '5 kg PE bags (27×60cm), 5 kg aluminum foil bags (35×50cm), export cartons (465×285×295 mm), plastic pallets with shrink wrap.' },
 ];
 
@@ -28,10 +46,8 @@ const differentiators = [
 ];
 
 const markets = [
-  { region: 'B2B Cooperation', detail: 'Vetrux supports brand clients, channel partners, trading companies, and partners with stable procurement needs through standard supply, long-term supply, and project-based cooperation.' },
-  { region: 'OEM/ODM', detail: 'Raw material support, formulation development, production, packaging design, and finished product delivery — supporting clients in product development and market launch.' },
-  { region: 'Technical Support', detail: 'Cultivation management, yield and content optimization, extraction process optimization, cost control, and cannabinoid extraction consulting.' },
   { region: 'Compliance Note', detail: 'Destination country import compliance — including permits, licenses, and regulatory approvals — is the buyer/importer responsibility. Documentation arranged per order terms.' },
+  { region: 'Label & Use Notes', detail: 'Product labels, use statements, and customs descriptions should match actual batch, order use, and destination requirements. Special label or declaration fields should be confirmed before ordering.' },
 ];
 
 const manufacturerAnswers = [
@@ -83,10 +99,10 @@ export default function CbdIsolateManufacturerClient() {
                 <span className="italic text-primary">Manufacturer</span>
               </h1>
               <p className="text-[15px] text-on-surface-variant leading-relaxed mb-8 max-w-md">
-                Vetrux Biotechnology (Chuxiong) Co., Ltd. (&ldquo;VETRUX&rdquo;) is a CBD isolate
-                manufacturer in Yunnan, China, with connected cultivation, extraction,
-                purification, in-house HPLC analytical capability, OEM/ODM support, and
-                B2B documentation support.
+                Vetrux Biotechnology (Chuxiong) Co., Ltd. operates the VETRUX CBD product brand,
+                connecting industrial hemp breeding and cultivation, extraction process R&D,
+                product processing, B2B sales, OEM/ODM services, technical support, and
+                buyer documentation discussions from Yunnan, China.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {['CBD Raw Materials', 'OEM/ODM', 'Technical Support'].map((tag) => (
@@ -104,11 +120,28 @@ export default function CbdIsolateManufacturerClient() {
                 </Link>
               </div>
             </div>
-            <div className="reveal-card">
+              <div className="reveal-card">
               <div className="relative w-full h-[500px] overflow-hidden">
-                <Image src="/images/gallery/campus-buildings.webp" alt="VETRUX CBD isolate manufacturing facility campus" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
+                <Image src="/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg" alt="VETRUX CBD isolate extraction manufacturing facility in Yunnan" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
               </div>
             </div>
+          </div>
+
+          <div className="reveal-card mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {priorityServices.map((service) => (
+              <div
+                key={service.title}
+                className="bg-surface-container-lowest p-6 border-l-2 border-accent"
+              >
+                <service.icon size={20} className="text-primary mb-4" />
+                <h2 className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">
+                  {service.title}
+                </h2>
+                <p className="text-xs text-on-surface-variant leading-relaxed">
+                  {service.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -209,7 +242,7 @@ export default function CbdIsolateManufacturerClient() {
           <div className="reveal-card mb-12">
             <SectionLabel>Business Scope</SectionLabel>
             <h2 className="text-3xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-4">
-              Cooperation & Services
+              Compliance & Order Notes
             </h2>
           </div>
 

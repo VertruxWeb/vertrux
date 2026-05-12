@@ -13,7 +13,7 @@ export interface SeoMetadata {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const defaultImage = '/images/hero/facility-hero.webp';
+const defaultImage = '/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg';
 const siteUrl = 'https://www.vetrux.tech';
 const siteName = 'Vetrux CBD';
 const siteLogo = `${siteUrl}/logo.png`;
@@ -69,7 +69,7 @@ const productJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: 'CBD Isolate',
-  image: `${siteUrl}/images/products/cbd-crystal-closeup.jpg`,
+  image: `${siteUrl}/images/vetrux_images/cbd-isolate-crystals-white-powder.jpg`,
   description:
     'Crystalline CBD raw material supplied for qualified B2B discussions, with product information, packaging details, and documentation support available by order requirements.',
   brand: { '@type': 'Brand', name: 'VETRUX' },
@@ -80,6 +80,10 @@ const productJsonLd = {
   },
   category: 'CBD Raw Materials',
   additionalProperty: [
+    { '@type': 'PropertyValue', name: 'CBD Content', value: '99.95% reference value; confirm by batch-specific COA' },
+    { '@type': 'PropertyValue', name: 'THC Content', value: '<0.05%; batch-specific verification applies' },
+    { '@type': 'PropertyValue', name: 'CAS Number', value: '13956-29-1' },
+    { '@type': 'PropertyValue', name: 'HS Code', value: '2907299020' },
     { '@type': 'PropertyValue', name: 'Packaging', value: '5 kg PE bags / 5 kg Aluminum Foil bags / Export Cartons' },
     { '@type': 'PropertyValue', name: 'Documentation', value: 'COA, SDS, test reports, and shipment documents may be provided according to order requirements and actual batch availability.' },
   ],
@@ -273,7 +277,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     description:
       'CBD isolate product information, packaging formats, documentation support, and B2B inquiry options for qualified bulk buyers.',
     canonicalPath: '/products/cbd-isolate',
-    image: '/images/products/cbd-crystal-closeup.jpg',
+    image: '/images/vetrux_images/cbd-isolate-crystals-white-powder.jpg',
     type: 'website',
     keywords:
       'CBD isolate specifications, bulk CBD isolate, CBD isolate packaging, CBD isolate COA, CBD isolate SDS',
@@ -376,7 +380,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     description:
       'Controlled phases from Yunma-13 cultivation to CBD isolate workflows, with cultivation, extraction, purification, quality-control, and packaging support in Chuxiong, Yunnan.',
     canonicalPath: '/process',
-    image: '/images/process/growth-day-120-mature.jpg',
+    image: '/images/vetrux_images/hemp-growth-day-120-mature-field-1.jpg',
     type: 'website',
     keywords:
       'CBD manufacturing process, seed to isolate, CBD extraction process, hemp cultivation Yunnan, CBD isolate production',
@@ -424,7 +428,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     description:
       'Wholesale CBD isolate supply for B2B buyers, with 5 kg packaging, documentation support, and OEM/ODM cooperation from Vetrux in China.',
     canonicalPath: '/wholesale-cbd-isolate',
-    image: '/images/products/cbd-packaging-foil.jpg',
+    image: '/images/vetrux_images/cbd-isolate-5kg-foil-bag-packaging.jpg',
     type: 'website',
     keywords:
       'bulk CBD isolate supplier, wholesale CBD isolate, B2B CBD isolate, CBD isolate quote, CBD OEM ODM',
@@ -447,7 +451,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     description:
       'Learn how Vetrux supports CBD isolate quality review with in-house HPLC analytical capability, COA/SDS support, test reports, and shipment documentation by order terms.',
     canonicalPath: '/quality-assurance',
-    image: '/images/equipment/hplc-system.jpg',
+    image: '/images/vetrux_images/cbd-isolate-hplc-quality-control-system.jpg',
     type: 'website',
     keywords:
       'CBD isolate COA, CBD isolate SDS, CBD quality assurance, HPLC analytical capability, CBD batch documents',
@@ -470,7 +474,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     description:
       'Vetrux supplies bulk CBD isolate for B2B buyers from Yunnan, China, with in-house analytical capability, OEM/ODM support, and buyer documentation support.',
     canonicalPath: '/cbd-isolate-manufacturer',
-    image: '/images/gallery/campus-aerial.png',
+    image: '/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg',
     type: 'website',
     keywords:
       'CBD isolate manufacturer China, CBD manufacturer Yunnan, bulk CBD isolate manufacturer, CBD isolate OEM ODM',
@@ -493,7 +497,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     description:
       'VETRUX — the CBD raw material brand operated by Vetrux Biotechnology (Chuxiong) Co., Ltd. CBD raw material sales, OEM/ODM, and technical support. Based in Chuxiong, Yunnan, China.',
     canonicalPath: '/about',
-    image: '/images/hero/facility-hero.webp',
+    image: '/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg',
     type: 'website',
     keywords:
       'about Vetrux CBD, Vetrux Biotechnology, Chuxiong Yunnan, CBD brand',
@@ -504,7 +508,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     description:
       'Privacy Policy for Vetrux CBD website. Learn how we collect, use, and protect your personal data when you visit our site or submit a B2B inquiry.',
     canonicalPath: '/privacy-policy',
-    image: '/images/hero/facility-hero.webp',
+    image: '/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg',
     type: 'website',
   },
   '/terms-of-service': {
@@ -512,7 +516,7 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     description:
       'Terms of Service for the Vetrux CBD website.',
     canonicalPath: '/terms-of-service',
-    image: '/images/hero/facility-hero.webp',
+    image: '/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg',
     type: 'website',
   },
 };

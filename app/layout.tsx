@@ -42,11 +42,11 @@ export const metadata: Metadata = {
     siteName: 'Vetrux CBD',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/images/hero/facility-hero.webp' }],
+    images: [{ url: '/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/images/hero/facility-hero.webp'],
+    images: ['/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg'],
   },
   alternates: {
     languages: {

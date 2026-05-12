@@ -32,6 +32,8 @@ export interface ProductPageStrings {
   steps: { title: string; desc: string }[];
   qa: { question: string; answer: string }[];
   specs: { label: string; value: string }[];
+  packaging: { label: string; value: string }[];
+  documents: { title: string; desc: string; image: string; alt: string }[];
   compliance: { standard: string; detail: string }[];
   cards: { title: string; desc: string }[];
 }
@@ -39,7 +41,7 @@ export interface ProductPageStrings {
 const en: ProductPageStrings = {
   badge: 'CBD Raw Materials',
   heroTitle1: 'CBD Isolate', heroTitle2: 'Specifications',
-  heroBody: 'CBD isolate product information for qualified bulk buyers, with in-house HPLC analytical capability, packaging details, COA/SDS request options, and export-ready packaging support.',
+  heroBody: 'CBD isolate product information for qualified bulk buyers: 99.95% CBD content reference, THC <0.05%, 5 kg bulk packaging, CAS 13956-29-1, HS Code 2907299020, COA/SDS request options, and export-ready packaging support.',
   requestSpecSheet: 'Request Spec Sheet', requestCoa: 'Request COA',
   techSection: 'Technical Analysis', techTitle: 'CBD isolate product information and documentation',
   techBody: 'Supporting documentation including COA, SDS, test reports, and other shipment documents may be provided according to order requirements. Specific documentation availability depends on actual batch, order terms, and verification results.',
@@ -56,9 +58,10 @@ const en: ProductPageStrings = {
   contactSalesLink: 'Contact Sales →',
   metrics: [
     { label: 'Product', value: 'CBD Isolate', status: 'Cannabidiol Isolate' },
-    { label: 'Quality Review', value: 'HPLC', status: 'In-house analytical capability' },
+    { label: 'CBD Content', value: '99.95%', status: 'Reference value; confirm by batch COA' },
+    { label: 'THC Content', value: '<0.05%', status: 'Batch-specific verification' },
     { label: 'Inner Packaging', value: '5 kg/bag', status: 'PE or Aluminum Foil' },
-    { label: 'Outer Packaging', value: '465×285×295mm', status: 'Export Carton' },
+    { label: 'CAS / HS Code', value: '13956-29-1', status: 'HS Code 2907299020' },
   ],
   steps: [
     { title: 'Cultivation', desc: 'Yunnan-grown industrial hemp from our Chuxiong cultivation base, under standardized growing protocols.' },
@@ -68,17 +71,49 @@ const en: ProductPageStrings = {
     { title: 'Packaging', desc: 'Food-grade PE or aluminum-foil bags inside export cartons, palletized with shrink wrap.' },
   ],
   qa: [
-    { question: 'What is Vetrux CBD isolate?', answer: 'Vetrux CBD isolate is a crystalline CBD raw material supplied for qualified B2B discussions, with product information, packaging details, and documentation support available by order requirements.' },
+    { question: 'What is Vetrux CBD isolate?', answer: 'Vetrux CBD isolate is a crystalline CBD raw material supplied for qualified B2B discussions. Product information includes a 99.95% CBD content reference, THC <0.05%, CAS 13956-29-1, HS Code 2907299020, packaging details, and documentation support by order requirements.' },
     { question: 'What packaging formats are available?', answer: 'Available packaging includes 5 kg PE bags or 5 kg aluminum-foil bags packed in export cartons. Palletization with shrink wrap may be arranged according to order requirements.' },
     { question: 'What documents can be requested?', answer: 'Buyers can request COA, SDS, test reports, product information, commercial invoice, packing list, and shipment documents. Batch-specific availability depends on actual batch, order terms, and verification results.' },
     { question: 'Who is responsible for import compliance?', answer: "Destination-country import compliance, including permits, licenses, approvals, labels, and customs declarations, is the buyer/importer's responsibility. Vetrux can provide documentation support by order terms." },
   ],
   specs: [
     { label: 'Product Name', value: 'CBD Isolate' },
+    { label: 'CBD Content', value: '99.95% reference value; final value should be confirmed by batch-specific COA' },
+    { label: 'THC Content', value: '<0.05%; batch-specific verification applies' },
+    { label: 'CAS Number', value: '13956-29-1' },
+    { label: 'HS Code', value: '2907299020' },
+    { label: 'Standard Specification', value: '5 kg/bag' },
     { label: 'Quality Review', value: 'In-house HPLC analytical capability; batch-specific documentation depends on actual batch, order terms, and verification results' },
     { label: 'Packaging (Inner)', value: 'PE bags 5kg/bag (27×60cm, food grade) or Aluminum foil bags 5kg/bag (35×50cm, food grade)' },
     { label: 'Packaging (Outer)', value: 'Export cartons 465×285×295mm, 2 bags per carton' },
     { label: 'Palletization', value: 'Plastic pallets with shrink wrap' },
+    { label: 'Shelf Life', value: 'Shelf-life and storage conditions are confirmed according to actual batch documentation and order terms' },
+  ],
+  packaging: [
+    { label: 'PE Bag', value: '5 kg/bag, 27 cm × 60 cm × 0.008 cm, food grade' },
+    { label: 'Aluminum Foil Bag', value: '5 kg/bag, 35 cm × 50 cm, food grade' },
+    { label: 'Export Carton', value: '465 mm × 285 mm × 295 mm, 2 bags/carton' },
+    { label: 'Palletizing', value: 'Cartons on plastic pallets, fixed with wide bands and outer shrink wrap' },
+  ],
+  documents: [
+    {
+      title: 'COA Test Report',
+      desc: 'CBD isolate certificate of analysis preview. Full documents are provided according to batch, order terms, and verification results.',
+      image: '/images/vetrux_images/cbd-isolate-coa-certificate-page-1.png',
+      alt: 'CBD isolate COA certificate of analysis preview page',
+    },
+    {
+      title: 'Air Transport Safety Report',
+      desc: 'Air transport documentation preview for cannabidiol shipment discussion and document review.',
+      image: '/images/vetrux_images/cbd-isolate-air-transport-safety-report-page-1.png',
+      alt: 'CBD isolate air transport safety report preview page',
+    },
+    {
+      title: 'SDS Safety Data Sheet',
+      desc: 'Safety Data Sheet preview for CBD isolate material handling and shipment documentation support.',
+      image: '/images/vetrux_images/cbd-isolate-sds-safety-data-sheet-page-1.png',
+      alt: 'CBD isolate SDS safety data sheet preview page',
+    },
   ],
   compliance: [
     { standard: 'Certificate of Analysis (COA)', detail: 'May be provided according to order requirements' },

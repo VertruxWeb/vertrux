@@ -66,7 +66,7 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
         className="relative min-h-[90vh] flex items-center overflow-hidden bg-surface-ink"
       >
         <Image
-          src="/images/hero/facility-hero.webp"
+          src="/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg"
           alt="VETRUX CBD extraction facility in Chuxiong, Yunnan"
           fill
           priority
@@ -143,7 +143,7 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
             <div className="reveal-card group relative overflow-hidden flex flex-col">
               <div className="relative h-56 overflow-hidden flex-shrink-0">
                 <Image
-                  src="/images/products/cbd-crystal-closeup.jpg"
+                  src="/images/vetrux_images/cbd-isolate-crystals-white-powder.jpg"
                   alt="CBD isolate raw material"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
@@ -174,8 +174,8 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
             <div className="reveal-card group relative overflow-hidden flex flex-col">
               <div className="relative h-56 overflow-hidden flex-shrink-0">
                 <Image
-                  src="/images/equipment/extraction-vessel-6m3.webp"
-                  alt="Industrial extraction equipment for OEM/ODM production"
+                  src="/images/vetrux_images/cbd-isolate-5kg-foil-bag-packaging.jpg"
+                  alt="CBD isolate bulk packaging for OEM and ODM projects"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -205,7 +205,7 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
             <div className="reveal-card group relative overflow-hidden flex flex-col">
               <div className="relative h-56 overflow-hidden flex-shrink-0">
                 <Image
-                  src="/images/equipment/hplc-system.jpg"
+                  src="/images/vetrux_images/cbd-isolate-hplc-quality-control-system.jpg"
                   alt="HPLC analytical system for quality control"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
@@ -307,8 +307,8 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
             <div className="lg:col-span-7 grid grid-cols-2 gap-3">
               <div className="relative h-72 overflow-hidden">
                 <Image
-                  src="/images/gallery/campus-buildings.webp"
-                  alt="Vetrux campus and facilities"
+                  src="/images/vetrux_images/industrial-hemp-plug-tray-nursery.jpg"
+                  alt="Vetrux industrial hemp seedling nursery center in Yunnan"
                   fill
                   sizes="(max-width: 1024px) 50vw, 30vw"
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -316,8 +316,8 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
               </div>
               <div className="relative h-72 overflow-hidden">
                 <Image
-                  src="/images/planting/flowering-greenhouse.jpg"
-                  alt="Vetrux cultivation greenhouse"
+                  src="/images/vetrux_images/cbd-purification-chromatography-columns.jpg"
+                  alt="Vetrux CBD purification chromatography columns"
                   fill
                   sizes="(max-width: 1024px) 50vw, 30vw"
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -325,8 +325,8 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
               </div>
               <div className="relative h-48 col-span-2 overflow-hidden">
                 <Image
-                  src="/images/gallery/cultivation-base-wide.jpg"
-                  alt="Vetrux cultivation base panoramic view"
+                  src="/images/vetrux_images/hemp-growth-day-120-mature-field-1.jpg"
+                  alt="Vetrux standardized industrial hemp cultivation base at maturity"
                   fill
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -410,8 +410,8 @@ export default function HomePageClient({ locale = 'en' }: { locale?: Locale }) {
               </p>
               <div className="space-y-2 mt-auto">
                 <p className="text-[15px] text-on-background leading-relaxed">
-                  Chuxiong, Yunnan Province,<br />
-                  China
+                  Office in Seedling Base, Tapu Second Group,<br />
+                  Chuxiong City, Yunnan Province, 675000, China
                 </p>
               </div>
             </div>

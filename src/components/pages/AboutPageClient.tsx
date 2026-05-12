@@ -1,6 +1,8 @@
 'use client'
 
 import type { Locale } from '@/i18n/locales';
+import Image from 'next/image';
+import { Beaker, Factory, Leaf, Microscope, ShieldCheck, Sprout } from 'lucide-react';
 
 interface AboutPageClientProps {
   locale?: Locale;
@@ -11,9 +13,9 @@ const content: Record<string, Record<string, string>> = {
     eyebrow: 'About Us',
     title: 'About',
     titleAccent: 'VETRUX',
-    intro: 'VETRUX is the international brand operated by Vetrux Biotechnology (Chuxiong) Co., Ltd. (\u201cthe Company\u201d), a vertically integrated CBD isolate manufacturer based in Chuxiong, Yunnan Province, China. The Company specializes in CBD raw material sales, OEM/ODM services, and technical consulting.',
+    intro: 'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd., built for plant-derived product quality management, traceable cultivation, professional extraction, stable delivery, and B2B cooperation.',
     missionTitle: 'Our Mission',
-    missionText: 'Through rigorous quality management, standardized hemp cultivation, and professional extraction processes, VETRUX delivers reliable CBD raw materials to partners worldwide. Our vertically integrated model \u2014 from seed selection to finished product \u2014 ensures full traceability, consistent quality, and competitive pricing. We also provide OEM/ODM services and technical consulting to help our clients develop and scale their own product lines.',
+    missionText: 'Vetrux Biotechnology is a vertically integrated industrial hemp enterprise formed by coordinated business entities: Lvzhitian supports seed breeding, large-scale cultivation, and cultivation technology promotion; Zhike supports extraction process R&D and production operations; Kangbeite supports product processing and manufacturing; and Vetrux supports business platform development and product sales.',
     viTitle: 'Vertical Integration',
     cultivationTitle: 'Hemp Cultivation',
     cultivationText: 'Standardized cultivation base in Chuxiong, Yunnan Province, with controlled growing conditions and full seed-to-harvest traceability. Yunnan is one of China\u2019s premier regions for industrial hemp cultivation.',
@@ -293,6 +295,37 @@ function getContent(locale: string): Record<string, string> {
   return content[locale] ?? content.en;
 }
 
+const certifications = [
+  {
+    title: 'Industrial Hemp Processing License',
+    image: '/images/vetrux_images/industrial-hemp-processing-license-vetrux.jpg',
+    alt: 'Vetrux industrial hemp processing license certificate',
+  },
+  {
+    title: 'Precursor Chemical Production Filing',
+    image: '/images/vetrux_images/precursor-chemical-production-filing-certificate.jpg',
+    alt: 'Vetrux precursor chemical production filing certificate',
+  },
+  {
+    title: 'FDA Registration Certificate',
+    image: '/images/vetrux_images/vetrux-fda-registration-certificate.png',
+    alt: 'Vetrux FDA registration certificate',
+  },
+];
+
+const resourceMetrics = [
+  { icon: Microscope, value: 'Expert', label: 'Technical support from agricultural academy specialists and domestic / international scientists' },
+  { icon: Sprout, value: '300 mu', label: 'Self-developed seedling and nursery center' },
+  { icon: Leaf, value: '4,000 mu', label: 'Standardized industrial hemp cultivation base' },
+  { icon: Factory, value: '1,000 tons', label: 'Annual raw material capacity' },
+];
+
+const capacityMetrics = [
+  { icon: Beaker, value: '10+ tons', label: 'Annual CBD output capacity' },
+  { icon: ShieldCheck, value: '99.9%+', label: 'CBD isolate purity target supported by purification workflows' },
+  { icon: Factory, value: 'Class 10,000', label: 'Clean facility and molecular-level process capability' },
+];
+
 export default function AboutPageClient({ locale = 'en' }: AboutPageClientProps) {
   const t = getContent(locale);
 
@@ -312,6 +345,56 @@ export default function AboutPageClient({ locale = 'en' }: AboutPageClientProps)
           <p className="text-[15px] text-on-surface-variant leading-relaxed mb-4">
             {t.missionText}
           </p>
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-2xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-6">Certificates & Licenses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {certifications.map((cert) => (
+              <figure key={cert.title} className="bg-surface-container-low p-3 border border-outline-variant/30">
+                <div className="relative aspect-[3/4] bg-white overflow-hidden">
+                  <Image
+                    src={cert.image}
+                    alt={cert.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="pt-3 text-xs font-semibold tracking-wider uppercase text-on-surface-variant">
+                  {cert.title}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-3">Resource & Scale</p>
+          <h2 className="text-2xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-6">Industrial hemp resource and scale</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {resourceMetrics.map((metric) => (
+              <div key={metric.value} className="bg-surface-container-low p-6 border-l-2 border-transparent hover:border-accent transition-colors duration-200">
+                <metric.icon size={18} className="text-primary mb-4" />
+                <p className="text-2xl font-serif font-semibold text-primary tracking-tight mb-2">{metric.value}</p>
+                <p className="text-xs text-on-surface-variant leading-relaxed">{metric.label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <p className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-3">R&D & Capacity</p>
+          <h2 className="text-2xl font-serif font-medium text-on-background tracking-tight leading-[1.05] mb-6">R&D, clean facilities, and CBD capacity</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {capacityMetrics.map((metric) => (
+              <div key={metric.value} className="bg-primary p-6 border-l-2 border-accent">
+                <metric.icon size={18} className="text-primary-fixed mb-4" />
+                <p className="text-2xl font-serif font-semibold text-white tracking-tight mb-2">{metric.value}</p>
+                <p className="text-xs text-white/70 leading-relaxed">{metric.label}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="mb-16">
@@ -354,7 +437,7 @@ export default function AboutPageClient({ locale = 'en' }: AboutPageClientProps)
               </div>
               <div>
                 <dt className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-1">{t.locationLabel}</dt>
-                <dd className="text-on-background">{t.location}</dd>
+                <dd className="text-on-background">Office in Seedling Base, Tapu Second Group, Chuxiong City, Chuxiong Yi Autonomous Prefecture, Yunnan Province, 675000, China</dd>
               </div>
               <div>
                 <dt className="text-xs font-semibold tracking-[0.35em] uppercase text-accent mb-1">{t.coreLabel}</dt>

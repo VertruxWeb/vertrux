@@ -64,7 +64,7 @@ export const homePageStrings: Record<Locale, HomePageStrings> = {
     heroEyebrow: 'VETRUX · Yunnan, China',
     heroTitle1: 'From Seed',
     heroTitle2: 'to Isolate',
-    heroBody: 'Bulk CBD isolate for B2B buyers, with OEM/ODM support, export-ready documentation, and in-house quality-control workflows from Yunnan, China.',
+    heroBody: 'VETRUX is the CBD product brand of Vetrux Biotechnology (Chuxiong) Co., Ltd., supporting bulk CBD isolate supply, OEM/ODM services, technical support, traceable cultivation, professional extraction, and B2B documentation discussions from Yunnan, China.',
     requestCoa: 'Request COA / Spec Sheet',
     getBulkQuote: 'Get Bulk Quote',
     trustHplc: 'In-house HPLC',
@@ -77,7 +77,7 @@ export const homePageStrings: Record<Locale, HomePageStrings> = {
     qa: [
       {
         question: 'What does Vetrux manufacture?',
-        answer: 'Vetrux manufactures bulk CBD isolate and related CBD raw material solutions for qualified B2B discussions, supported by cultivation, extraction, purification, quality-control, and packaging workflows in Yunnan, China.',
+        answer: 'Vetrux supplies bulk CBD isolate and related CBD raw material solutions for qualified B2B discussions, supported by coordinated seed breeding, cultivation, extraction process R&D, product processing, quality-control, packaging, and sales workflows in Yunnan, China.',
       },
       {
         question: 'Who does Vetrux serve?',
@@ -111,10 +111,10 @@ export const homePageStrings: Record<Locale, HomePageStrings> = {
     aboutEyebrow: 'About Vetrux',
     aboutTitle1: 'Quality rooted in',
     aboutTitle2: 'every step of the process',
-    aboutQuote: 'We treat every kilo of isolate as if it ships under our own name. Traceability is not a label \u2014 it\u2019s how the team works.',
+    aboutQuote: 'From seed selection to extraction and delivery, our work is built around traceability, quality consistency, and stable B2B supply.',
     aboutQuoteAttribution: '— Quality Lead, VETRUX',
-    aboutPara1: 'VETRUX is built on a single conviction \u2014 that consistent batch review starts in the field, not at the bottling line. Cultivation, extraction, and in-house quality-control workflows are connected so buyer discussions can reference the same product and documentation context.',
-    aboutPara2: 'From cultivation to chromatography to export packaging, VETRUX delivers a single accountable supply line for B2B partners.',
+    aboutPara1: 'Vetrux Biotechnology is a full-chain industrial hemp enterprise coordinated across seed breeding, large-scale cultivation, cultivation technology promotion, extraction process R&D, production operations, product processing, business platform development, and product sales.',
+    aboutPara2: 'VETRUX focuses on reliable CBD products and plant extract solutions by linking standardized cultivation, professional extraction, purity control, stable packaging, and order-based documentation support.',
     companyProfile: 'Company Profile',
     contactEyebrow: 'Contact',
     contactTitle1: "Let's discuss",

@@ -2,7 +2,7 @@
 
 import type { Locale } from '@/i18n/locales';
 import { useRef, useState } from 'react';
-import { ArrowRight, Download, CheckCircle, Microscope, TestTube, TrendingUp } from 'lucide-react';
+import { ArrowRight, Download, CheckCircle, Microscope, TestTube, TrendingUp, PackageCheck, FileText } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Badge from '@/components/atoms/Badge';
@@ -21,7 +21,7 @@ const qualityCards = [
     title: 'Quality Management',
     desc: 'In-house HPLC analytical capability. Documentation support available according to order requirements.',
     bg: 'bg-surface-container-low',
-    image: '/images/products/cbd-crystal-lab.jpg',
+    image: '/images/vetrux_images/cbd-isolate-hplc-quality-control-system.jpg',
   },
   {
     icon: TestTube,
@@ -35,7 +35,30 @@ const qualityCards = [
     title: 'Export-Ready Packaging',
     desc: 'PE bags 5kg (27×60cm) and aluminum foil bags 5kg (35×50cm), food-grade. Export cartons 465×285×295mm, 2 bags per carton. Plastic pallets with shrink wrap for secure transit.',
     bg: 'bg-surface-container-low',
-    image: '/images/products/cbd-packaging-foil.jpg',
+    image: '/images/vetrux_images/cbd-isolate-5kg-foil-bag-packaging.jpg',
+  },
+];
+
+const productImages = [
+  {
+    src: '/images/vetrux_images/cbd-isolate-crystals-white-powder.jpg',
+    alt: 'CBD isolate white crystalline powder for bulk B2B supply',
+    label: 'CBD isolate crystals',
+  },
+  {
+    src: '/images/vetrux_images/bulk-cbd-isolate-crystal-powder-closeup.jpg',
+    alt: 'Bulk CBD isolate crystal powder closeup',
+    label: 'Bulk crystal closeup',
+  },
+  {
+    src: '/images/vetrux_images/cbd-isolate-export-carton-packing.jpg',
+    alt: 'CBD isolate export carton packing for international shipment',
+    label: 'Export carton packing',
+  },
+  {
+    src: '/images/vetrux_images/cbd-isolate-5kg-foil-bag-packaging.jpg',
+    alt: 'CBD isolate 5 kg aluminum foil bag packaging',
+    label: '5 kg foil bag',
   },
 ];
 
@@ -82,10 +105,11 @@ export default function ProductPageClient({ locale = 'en' }: { locale?: Locale }
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
                   'CBD Isolate',
-                  'Anthocyanins',
-                  'Steviol Glycosides',
-                  'Hemp Seed Globulin',
-                  'COA / SDS Request',
+                  '99.95% CBD',
+                  'THC < 0.05%',
+                  '5 kg/bag',
+                  'CAS 13956-29-1',
+                  'HS Code 2907299020',
                 ].map((tag) => (
                   <span key={tag} className="px-3 py-1.5 bg-surface-container text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
                     {tag}
@@ -104,8 +128,42 @@ export default function ProductPageClient({ locale = 'en' }: { locale?: Locale }
             </div>
 
             <div className="reveal-card relative">
-              <Image src="/images/products/cbd-crystal-closeup.jpg" alt="Bulk CBD isolate — white crystalline powder sample" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
+              <Image src="/images/vetrux_images/bulk-cbd-isolate-crystal-powder-closeup.jpg" alt="Bulk CBD isolate white crystalline powder sample for B2B buyers" width={800} height={500} priority sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-[500px] object-cover" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRODUCT PHOTOS ─────────────────────────────────────────────── */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="mb-10">
+            <SectionLabel>Product Photos</SectionLabel>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-4">
+              CBD isolate product and export packaging
+            </h2>
+            <p className="text-[15px] text-on-surface-variant max-w-xl">
+              Product visuals from the current page material: CBD crystal powder, 5 kg bag packaging, and export carton packing for bulk orders.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {productImages.map((item) => (
+              <figure key={item.src} className="bg-surface-container-lowest border border-outline-variant/30">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <figcaption className="px-4 py-3 text-xs font-semibold tracking-wider uppercase text-on-surface-variant">
+                  {item.label}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -218,8 +276,96 @@ export default function ProductPageClient({ locale = 'en' }: { locale?: Locale }
         </div>
       </section>
 
-      {/* ── QUALITY ASSURANCE BENTO ─────────────────────────────────────── */}
+      {/* ── PACKAGING & DOCUMENTS ──────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
+        <div className="max-w-container mx-auto px-6 lg:px-12">
+          <div className="mb-16">
+            <div className="max-w-2xl mb-8">
+              <SectionLabel>Packaging</SectionLabel>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mb-6">
+                Bulk packing flow for export orders
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-6 items-stretch">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {t.packaging.map((item) => (
+                  <div
+                    key={item.label}
+                    className="min-h-36 bg-surface-container-lowest p-6 border-l-2 border-transparent hover:border-accent transition-colors duration-200"
+                  >
+                    <PackageCheck size={18} className="text-accent mb-4" />
+                    <p className="text-sm font-extrabold text-on-surface tracking-tighter mb-2">{item.label}</p>
+                    <p className="text-[13px] text-on-surface-variant leading-relaxed">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+
+              <figure className="bg-surface-container-lowest border border-outline-variant/30 overflow-hidden">
+                <div className="relative h-full min-h-[360px]">
+                  <Image
+                    src="/images/vetrux_images/cbd-isolate-export-carton-packing.jpg"
+                    alt="CBD isolate export carton packing with 5 kg bags"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="px-5 py-4 text-xs font-semibold tracking-wider uppercase text-on-surface-variant">
+                  2 bags per export carton, palletized with outer shrink wrap
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+              <div className="max-w-2xl">
+                <SectionLabel>Technical & Quality Files</SectionLabel>
+                <h2 className="font-serif font-medium text-3xl md:text-4xl text-on-background tracking-tight leading-[1.05] mt-3">
+                  COA, air transport, and SDS previews
+                </h2>
+              </div>
+              <Button variant="accent" size="md" icon={Download} iconPosition="left" onClick={() => openDocumentModal('both')}>
+                {t.requestSpecSheet}
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {t.documents.map((doc) => (
+                <article
+                  key={doc.title}
+                  className="bg-surface-container-lowest border border-outline-variant/30 overflow-hidden flex flex-col min-h-[560px]"
+                >
+                  <div className="relative h-[360px] bg-white border-b border-outline-variant/20">
+                    <Image
+                      src={doc.image}
+                      alt={doc.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-contain p-4"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-2 mb-3">
+                      <FileText size={16} className="text-accent flex-shrink-0" />
+                      <h3 className="text-sm font-extrabold text-on-surface tracking-tighter">
+                        {doc.title}
+                      </h3>
+                    </div>
+                    <p className="text-xs text-on-surface-variant leading-relaxed">
+                      {doc.desc}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── QUALITY ASSURANCE BENTO ─────────────────────────────────────── */}
+      <section className="py-24 bg-surface">
         <div ref={qualityRef} className="max-w-container mx-auto px-6 lg:px-12">
           <div className="reveal-card flex flex-wrap items-center gap-4 mb-12">
             <SectionLabel className="mb-0">{t.qualitySection}</SectionLabel>
