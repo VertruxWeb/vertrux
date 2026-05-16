@@ -105,7 +105,7 @@ export default function ProductPageClient({ locale = 'en' }: { locale?: Locale }
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
                   'CBD Isolate',
-                  '99.95% CBD',
+                  '99%+ CBD',
                   'THC < 0.05%',
                   '5 kg/bag',
                   'CAS 13956-29-1',

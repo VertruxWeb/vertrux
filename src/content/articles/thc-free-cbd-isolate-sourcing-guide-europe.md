@@ -58,10 +58,10 @@ Any supplier quoting a THC limit of "below 0.2%" for finished isolate is applyin
 
 Pharmaceutical- and nutraceutical-grade CBD isolate for the EU market should meet the following minimum specifications:
 
-- **CBD purity:** ≥99.5% by HPLC
+- **CBD purity:** 99%+ by HPLC
 - **CAS number:** 13956-29-1 (cannabidiol)
 - **THC content:** Non-detect (ND) by GC-MS, LOQ ≤10 ppm
-- **Total cannabinoids:** ≥99.5% (CBD as primary cannabinoid)
+- **Total cannabinoids:** 99%+ (CBD as primary cannabinoid)
 - **Residual solvents:** Within ICH Q3C Class 3 limits (or ND for CO₂-extracted product)
 - **Heavy metals:** Compliant with EU maximum limits (Pb <3 ppm, Cd <1 ppm, As <1 ppm, Hg <0.1 ppm per EC No 1881/2006 and relevant pharmacopoeial standards)
 - **Pesticide residues:** ND or within EU MRL limits per Regulation (EC) No 396/2005
@@ -83,7 +83,7 @@ The following table provides a structured framework for qualifying CBD isolate s
 
 | Evaluation Criterion | Minimum Requirement | Preferred Standard |
 |---|---|---|
-| CBD purity specification | ≥99.0% by HPLC | ≥99.5% by HPLC |
+| CBD purity specification | 99%+ by HPLC | 99%+ by HPLC |
 | THC specification | ND by GC-MS | ND by GC-MS, LOQ ≤10 ppm |
 | Third-party COA | ISO/IEC 17025-accredited lab | Accredited EU or internationally recognised lab |
 | Batch traceability | Batch number to biomass lot | Full chain of custody documentation |
@@ -138,7 +138,7 @@ CBD isolate for B2B import should be packaged in food-grade, hermetically sealed
 
 ## Working with Vetrux: What EU Buyers Should Know
 
-Vetrux CBD manufactures CBD isolate (CAS 13956-29-1) at ≥99.5% purity using supercritical CO₂ extraction from certified hemp biomass. All production batches are tested for THC by GC-MS (result: ND), with third-party COAs from ISO/IEC 17025-accredited laboratories provided as standard.
+Vetrux CBD manufactures CBD isolate (CAS 13956-29-1) at 99%+ purity using supercritical CO₂ extraction from certified hemp biomass. All production batches are tested for THC by GC-MS (result: ND), with third-party COAs from ISO/IEC 17025-accredited laboratories provided as standard.
 
 Our quality system operates under ISO 9001:2015 and HACCP frameworks, with GMP-aligned manufacturing practices. We maintain full batch traceability from biomass sourcing through final isolate packaging, and our technical team can provide compositional data and process documentation in formats compatible with EFSA Novel Food dossier requirements.
 
@@ -172,4 +172,4 @@ If you are ready to qualify a supplier or request samples and technical document
 
 ---
 
-*Vetrux CBD supplies pharmaceutical- and nutraceutical-grade CBD isolate (CAS 13956-29-1, ≥99.5% purity, THC ND by GC-MS) to B2B customers in Europe and globally. Technical documentation, sample requests, and pricing inquiries are handled directly by our export team.*
+*Vetrux CBD supplies pharmaceutical- and nutraceutical-grade CBD isolate (CAS 13956-29-1, 99%+ purity, THC ND by GC-MS) to B2B customers in Europe and globally. Technical documentation, sample requests, and pricing inquiries are handled directly by our export team.*

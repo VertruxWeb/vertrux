@@ -38,7 +38,7 @@ Vetrux, a Yunnan-based CBD isolate manufacturer, holds ISO 9001, GMP, and HACCP 
 
 The Certificate of Analysis is the primary quality document for any batch of CBD isolate. A credible COA should include:
 
-- CBD purity (expressed as a percentage; ≥99.5% is the benchmark for pharmaceutical-grade isolate)
+- CBD purity (expressed as a percentage; 99%+ is the benchmark for pharmaceutical-grade isolate)
 - THC content (must be below the legal threshold for your target market — typically <0.2% in the EU, <0.3% in the US, or non-detectable for THC-free specifications)
 - Residual solvents panel
 - Heavy metals panel (lead, arsenic, cadmium, mercury)
@@ -133,7 +133,7 @@ A supplier that is technically excellent but operationally unreliable — slow t
 
 ## How Vetrux Addresses These Due Diligence Requirements
 
-Vetrux is a Yunnan-based manufacturer of CBD isolate with ≥99.5% purity and a THC-free specification. The facility operates under ISO 9001, GMP, and HACCP certifications, with third-party testing conducted by ISO/IEC 17025-accredited laboratories. Batch-level COAs are available for every shipment, and the quality team is available to support customer audits — remote or on-site — as part of the supplier qualification process.
+Vetrux is a Yunnan-based manufacturer of CBD isolate with 99%+ purity and a THC-free specification. The facility operates under ISO 9001, GMP, and HACCP certifications, with third-party testing conducted by ISO/IEC 17025-accredited laboratories. Batch-level COAs are available for every shipment, and the quality team is available to support customer audits — remote or on-site — as part of the supplier qualification process.
 
 For procurement teams working through the checklist above, Vetrux can provide documentation packages covering points 1 through 9 as part of the initial qualification process.
 
@@ -143,7 +143,7 @@ For procurement teams working through the checklist above, Vetrux can provide do
 
 **What is the minimum acceptable purity for pharmaceutical-grade CBD isolate?**
 
-The industry benchmark for pharmaceutical-grade CBD isolate is ≥99.5% CBD by HPLC. Below this threshold, the material is typically classified as broad-spectrum or technical-grade isolate and may not meet the specifications required for pharmaceutical or premium nutraceutical applications. Always confirm the testing method and the laboratory's accreditation status when evaluating purity claims.
+The industry benchmark for pharmaceutical-grade CBD isolate is 99%+ CBD by HPLC. Below this threshold, the material is typically classified as broad-spectrum or technical-grade isolate and may not meet the specifications required for pharmaceutical or premium nutraceutical applications. Always confirm the testing method and the laboratory's accreditation status when evaluating purity claims.
 
 **How do I verify that a supplier's certifications are genuine?**
 

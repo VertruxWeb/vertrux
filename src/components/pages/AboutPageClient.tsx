@@ -322,7 +322,7 @@ const resourceMetrics = [
 
 const capacityMetrics = [
   { icon: Beaker, value: '10+ tons', label: 'Annual CBD output capacity' },
-  { icon: ShieldCheck, value: '99.9%+', label: 'CBD isolate purity target supported by purification workflows' },
+  { icon: ShieldCheck, value: '99%+', label: 'CBD isolate purity target supported by purification workflows' },
   { icon: Factory, value: 'Class 10,000', label: 'Clean facility and molecular-level process capability' },
 ];
 

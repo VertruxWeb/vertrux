@@ -65,9 +65,9 @@ Not all CBD isolate is equal. Purity grade is the single most important specific
 |---|---|---|---|
 | Standard | 95–98% | Trace CBC, CBG, CBN possible | General nutraceuticals, topicals |
 | High Purity | 99%+ | Below detection limits | Pharmaceuticals, regulated food products, precision dosing |
-| Pharmaceutical | 99.5%+ | Non-detectable; full residual solvent panel | Drug formulations, clinical applications |
+| Pharmaceutical | 99%+ | Non-detectable; full residual solvent panel | Drug formulations, clinical applications |
 
-For most B2B applications — supplements, cosmetics, food and beverage — 99%+ isolate is the practical standard. Pharmaceutical-grade material (99.5%+) is required when working within drug regulatory frameworks or when your downstream customers demand it.
+For most B2B applications — supplements, cosmetics, food and beverage — 99%+ isolate is the practical standard. Pharmaceutical-grade material (99%+) is required when working within drug regulatory frameworks or when your downstream customers demand it.
 
 The difference in price between grades is real but often smaller than buyers expect. The bigger cost driver is usually the COA package and the supplier's quality system, not the extra 0.5% purity.
 

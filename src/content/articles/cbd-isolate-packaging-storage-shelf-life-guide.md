@@ -8,7 +8,7 @@ readTime: "8 min"
 image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&auto=format&fit=crop"
 ---
 
-For B2B buyers sourcing pharmaceutical-grade cannabidiol, understanding how to properly store and handle [CBD isolate](/products/cbd-isolate) is just as important as the purity specification on the certificate of analysis. A ≥99.5% pure crystalline powder can degrade significantly if exposed to the wrong conditions during transit, warehousing, or production staging — costing you yield, compliance, and money.
+For B2B buyers sourcing pharmaceutical-grade cannabidiol, understanding how to properly store and handle [CBD isolate](/products/cbd-isolate) is just as important as the purity specification on the certificate of analysis. A 99%+ pure crystalline powder can degrade significantly if exposed to the wrong conditions during transit, warehousing, or production staging — costing you yield, compliance, and money.
 
 This guide covers everything procurement managers, formulators, and quality assurance teams need to know about CBD isolate packaging formats, storage requirements, and shelf life management, grounded in ICH Q1A stability testing standards, USP storage guidelines, and WHO stability guidance.
 
@@ -82,7 +82,7 @@ Vetrux CBD isolate carries a documented 24-month shelf life from the date of man
 
 Key stability endpoints monitored:
 
-- **CBD assay (HPLC):** Must remain ≥99.5% of labeled potency throughout the shelf life period
+- **CBD assay (HPLC):** Must remain 99%+ of labeled potency throughout the shelf life period
 - **Appearance:** Crystalline white to off-white powder; no discoloration, clumping, or liquefaction
 - **Water content (Karl Fischer):** ≤0.5% w/w
 - **Residual solvents (GC-FID):** Within ICH Q3C Class 2 limits

@@ -54,7 +54,7 @@ Short-path molecular distillation is the step that converts supercritical extrac
 
 ## Crystallization: From Chemistry to Engineering
 
-CBD isolate production—achieving ≥99% CBD purity in solid crystalline form—is accomplished through a process borrowed from pharmaceutical API manufacturing: recrystallization from solvent. The phase behavior of CBD in common solvents (pentane, heptane, and in some facilities, ethanol) is well-characterized; CBD crystallizes selectively as the solution is cooled from saturation temperature to crystallization temperature, while the remaining impurities (minor cannabinoids, residual pigments, waxes) remain in the liquid mother liquor.
+CBD isolate production—achieving 99%+ CBD purity in solid crystalline form—is accomplished through a process borrowed from pharmaceutical API manufacturing: recrystallization from solvent. The phase behavior of CBD in common solvents (pentane, heptane, and in some facilities, ethanol) is well-characterized; CBD crystallizes selectively as the solution is cooled from saturation temperature to crystallization temperature, while the remaining impurities (minor cannabinoids, residual pigments, waxes) remain in the liquid mother liquor.
 
 **Critical engineering considerations:**
 

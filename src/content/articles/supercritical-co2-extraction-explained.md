@@ -50,7 +50,7 @@ One of the practical advantages of CO₂ extraction is that the CO₂ itself is 
 
 ### 6. Post-Processing
 
-The crude extract coming off a CO₂ extractor still contains waxes, lipids, and minor cannabinoids. For [CBD isolate](/products/cbd-isolate) production, the crude goes through winterization (to remove waxes), distillation (to concentrate CBD), and finally crystallization (to produce the >99% pure isolate powder). The cleaner the crude from extraction, the less intensive the downstream processing needs to be.
+The crude extract coming off a CO₂ extractor still contains waxes, lipids, and minor cannabinoids. For [CBD isolate](/products/cbd-isolate) production, the crude goes through winterization (to remove waxes), distillation (to concentrate CBD), and finally crystallization (to produce the 99%+ pure isolate powder). The cleaner the crude from extraction, the less intensive the downstream processing needs to be.
 
 ---
 
@@ -113,7 +113,7 @@ For a deeper look at how these methods compare in practice, see our article on [
 
 The extraction method sets the ceiling on what's achievable downstream. Here's how CO₂ extraction specifically affects the final isolate:
 
-**Purity:** CO₂ crude typically comes in at higher CBD concentration than ethanol crude because the process is more selective. Less contamination going in means less work to get to >99% purity coming out.
+**Purity:** CO₂ crude typically comes in at higher CBD concentration than ethanol crude because the process is more selective. Less contamination going in means less work to get to 99%+ purity coming out.
 
 **Color:** CO₂ extraction at controlled conditions co-extracts significantly less chlorophyll than ethanol, which is a broad-spectrum solvent that pulls everything water-soluble and lipid-soluble indiscriminately. Less chlorophyll in the crude means less color remediation needed, and a whiter final isolate powder.
 

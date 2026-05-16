@@ -74,7 +74,7 @@ EFSA's 2022 assessment of CBD identified several areas of concern, including eff
 ### Compositional Data
 
 - Full characterisation of the CBD isolate, including purity (expressed as percentage of CBD), residual cannabinoid profile (including THC, CBN, CBG, and others), residual solvents, heavy metals, pesticide residues, and microbiological contaminants.
-- For high-purity isolates such as those produced by Vetrux (≥99.5% CBD purity, THC-free), the compositional profile is relatively straightforward to document. The absence of detectable THC simplifies the toxicological assessment considerably.
+- For high-purity isolates such as those produced by Vetrux (99%+ CBD purity, THC-free), the compositional profile is relatively straightforward to document. The absence of detectable THC simplifies the toxicological assessment considerably.
 
 ### Production Process
 
@@ -112,7 +112,7 @@ The EU does not currently have a harmonised maximum residue level (MRL) for THC 
 
 For importers, the practical implication is clear: sourcing CBD isolate with a verified THC-free specification is the lowest-risk approach. A product with no detectable THC eliminates the need to model THC intake across consumer groups and removes a significant source of regulatory uncertainty.
 
-This is one reason why the purity specification matters so much in B2B procurement. Vetrux's CBD isolate, produced at ≥99.5% purity with a THC-free certificate of analysis, is specifically designed to meet the documentation requirements that European regulatory dossiers demand.
+This is one reason why the purity specification matters so much in B2B procurement. Vetrux's CBD isolate, produced at 99%+ purity with a THC-free certificate of analysis, is specifically designed to meet the documentation requirements that European regulatory dossiers demand.
 
 ---
 
@@ -206,7 +206,7 @@ No. The novel food framework applies specifically to foods and food ingredients 
 
 **Q: What purity level should I specify when sourcing CBD isolate for a novel food application?**
 
-EFSA's assessment framework requires detailed compositional characterisation of the novel food. For CBD isolate, a higher purity specification simplifies the toxicological assessment by reducing the number of co-occurring cannabinoids and other compounds that must be characterised and assessed for safety. A specification of ≥99.5% CBD purity, with a THC-free certificate of analysis and full residual cannabinoid profiling, is the standard that serious applicants are working to. It also reduces the risk of THC-related regulatory complications at the member state level.
+EFSA's assessment framework requires detailed compositional characterisation of the novel food. For CBD isolate, a higher purity specification simplifies the toxicological assessment by reducing the number of co-occurring cannabinoids and other compounds that must be characterised and assessed for safety. A specification of 99%+ CBD purity, with a THC-free certificate of analysis and full residual cannabinoid profiling, is the standard that serious applicants are working to. It also reduces the risk of THC-related regulatory complications at the member state level.
 
 ---
 

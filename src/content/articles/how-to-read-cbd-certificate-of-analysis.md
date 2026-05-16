@@ -51,7 +51,7 @@ Before you read a single analytical result, verify the laboratory's credentials.
 
 This is the section most buyers look at first, and for good reason. For CBD isolate, the cannabinoid panel should confirm:
 
-**CBD purity:** Pharmaceutical-grade isolate should test at ≥99.5% CBD by weight. This is the industry benchmark for B2B ingredient supply. Anything below 99% warrants scrutiny — it may indicate incomplete purification or the presence of other cannabinoids that could affect your formulation or regulatory status.
+**CBD purity:** Pharmaceutical-grade isolate should test at 99%+ CBD by weight. This is the industry benchmark for B2B ingredient supply. Anything below 99% warrants scrutiny — it may indicate incomplete purification or the presence of other cannabinoids that could affect your formulation or regulatory status.
 
 **THC:** Should read ND (non-detect) or <LOQ (below the limit of quantification). For most markets, the analytical method should achieve a detection limit of ≤1 ppm THC. In Japan and several other APAC markets, non-detect is a hard regulatory requirement, not a preference.
 
@@ -137,7 +137,7 @@ Use this checklist when evaluating any CBD isolate COA from a prospective suppli
 |---|---|---|
 | 1 | Lab accreditation | ISO/IEC 17025 certificate number present and verifiable |
 | 2 | Sample traceability | Batch number matches shipment; chain of custody documented |
-| 3 | CBD purity | ≥99.5% by HPLC |
+| 3 | CBD purity | 99%+ by HPLC |
 | 4 | THC | ND or <1 ppm by HPLC |
 | 5 | Full cannabinoid panel | All minor cannabinoids ND or trace |
 | 6 | Residual solvents | Total <10 PPM; individual solvents identified by GC-MS; ICH Q3C compliant |
@@ -154,7 +154,7 @@ Use this checklist when evaluating any CBD isolate COA from a prospective suppli
 
 Suppliers who operate at pharmaceutical-grade standards make COA documentation a transparent, accessible part of the procurement process — not something you have to chase.
 
-Vetrux, a Yunnan-based CBD isolate manufacturer, provides batch-specific COAs from ISO/IEC 17025-accredited third-party laboratories for every production lot. Each COA covers the full panel described above: cannabinoid profile by HPLC (≥99.5% CBD, THC ND), residual solvents by GC-MS (<10 PPM total), heavy metals by ICP-MS (USP <232> compliant), and microbial limits per USP <61> and <62>.
+Vetrux, a Yunnan-based CBD isolate manufacturer, provides batch-specific COAs from ISO/IEC 17025-accredited third-party laboratories for every production lot. Each COA covers the full panel described above: cannabinoid profile by HPLC (99%+ CBD, THC ND), residual solvents by GC-MS (<10 PPM total), heavy metals by ICP-MS (USP <232> compliant), and microbial limits per USP <61> and <62>.
 
 For procurement teams qualifying new suppliers, Vetrux also provides historical COA archives and method validation documentation on request — a level of analytical transparency that reflects the company's positioning as a B2B ingredient supplier to pharmaceutical and nutraceutical manufacturers.
 
@@ -183,7 +183,7 @@ Supplier-provided COAs from accredited third-party labs are the standard startin
 
 **Q: What is the difference between a COA and a specification sheet?**
 
-A specification sheet defines the quality parameters a product is required to meet (e.g., "CBD purity: ≥99.5%"). A COA is the analytical record demonstrating that a specific batch actually meets those parameters. Both documents are necessary: the specification sheet establishes the standard; the COA proves conformance for each lot. Never accept a specification sheet as a substitute for a batch-specific COA.
+A specification sheet defines the quality parameters a product is required to meet (e.g., "CBD purity: 99%+"). A COA is the analytical record demonstrating that a specific batch actually meets those parameters. Both documents are necessary: the specification sheet establishes the standard; the COA proves conformance for each lot. Never accept a specification sheet as a substitute for a batch-specific COA.
 
 **Q: How often should a supplier issue new COAs?**
 

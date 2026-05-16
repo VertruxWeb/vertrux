@@ -80,7 +80,7 @@ const productJsonLd = {
   },
   category: 'CBD Raw Materials',
   additionalProperty: [
-    { '@type': 'PropertyValue', name: 'CBD Content', value: '99.95% reference value; confirm by batch-specific COA' },
+    { '@type': 'PropertyValue', name: 'CBD Content', value: '99%+ reference value; confirm by batch-specific COA' },
     { '@type': 'PropertyValue', name: 'THC Content', value: '<0.05%; batch-specific verification applies' },
     { '@type': 'PropertyValue', name: 'CAS Number', value: '13956-29-1' },
     { '@type': 'PropertyValue', name: 'HS Code', value: '2907299020' },

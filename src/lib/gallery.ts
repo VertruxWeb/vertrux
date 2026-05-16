@@ -367,10 +367,10 @@ const sectors: GallerySector[] = [
         title: 'Product & Laboratory',
         description:
           'In-house HPLC analytical capability supports quality management. Product documentation may be provided according to order requirements.',
-        cardBlurb: '≥99.9% purity CBD isolate — verified, packaged, and export-ready.',
+        cardBlurb: '99%+ purity CBD isolate — verified, packaged, and export-ready.',
         statLabel: 'Product',
         statValue: 'CBD Isolate',
-        statSub: 'Purity: ≥99.9%',
+        statSub: 'Purity: 99%+',
         cta: 'Enter Sector',
       },
       de: {
@@ -378,10 +378,10 @@ const sectors: GallerySector[] = [
         title: 'Produkt & Labor',
         description:
           'Hauseigene HPLC-Analytik unterstützt das Qualitätsmanagement. Produktdokumentation kann je nach Bestellanforderungen bereitgestellt werden.',
-        cardBlurb: 'CBD-Isolat ≥99,9 % Reinheit — verifiziert, verpackt und exportbereit.',
+        cardBlurb: 'CBD-Isolat 99%+ Reinheit — verifiziert, verpackt und exportbereit.',
         statLabel: 'Produkt',
         statValue: 'CBD-Isolat',
-        statSub: 'Reinheit: ≥99,9 %',
+        statSub: 'Reinheit: 99%+',
         cta: 'Bereich Betreten',
       },
       fr: {
@@ -389,10 +389,10 @@ const sectors: GallerySector[] = [
         title: "Produit & Laboratoire",
         description:
           "Capacit\u00e9 analytique HPLC en interne pour la gestion qualit\u00e9. La documentation produit peut \u00eatre fournie selon les exigences de commande.",
-        cardBlurb: "Isolat CBD \u226599,9 % de puret\u00e9 — v\u00e9rifi\u00e9, conditionn\u00e9 et pr\u00eat \u00e0 l'export.",
+        cardBlurb: "Isolat CBD 99%+ de puret\u00e9 — v\u00e9rifi\u00e9, conditionn\u00e9 et pr\u00eat \u00e0 l'export.",
         statLabel: 'Produit',
         statValue: 'Isolat de CBD',
-        statSub: "Puret\u00e9 : \u226599,9%",
+        statSub: "Puret\u00e9 : 99%+",
         cta: 'Entrer dans le Secteur',
       },
       es: {
@@ -400,10 +400,10 @@ const sectors: GallerySector[] = [
         title: 'Producto y Laboratorio',
         description:
           'La capacidad analítica HPLC interna respalda la gestión de calidad. La documentación del producto puede proporcionarse según los requisitos del pedido.',
-        cardBlurb: 'CBD isolate con pureza ≥99,9% — verificado, empaquetado y listo para exportación.',
+        cardBlurb: 'CBD isolate con pureza 99%+ — verificado, empaquetado y listo para exportación.',
         statLabel: 'Producto',
         statValue: 'CBD Isolate',
-        statSub: 'Pureza: ≥99,9%',
+        statSub: 'Pureza: 99%+',
         cta: 'Entrar al Sector',
       },
       it: {
@@ -411,10 +411,10 @@ const sectors: GallerySector[] = [
         title: 'Prodotto e Laboratorio',
         description:
           "La capacità analitica HPLC interna supporta la gestione della qualità. La documentazione del prodotto può essere fornita in base ai requisiti dell'ordine.",
-        cardBlurb: "CBD isolate con purezza ≥99,9% — verificato, confezionato e pronto per l'esportazione.",
+        cardBlurb: "CBD isolate con purezza 99%+ — verificato, confezionato e pronto per l'esportazione.",
         statLabel: 'Prodotto',
         statValue: 'CBD Isolate',
-        statSub: 'Purezza: ≥99,9%',
+        statSub: 'Purezza: 99%+',
         cta: 'Entra nel Settore',
       },
       pt: {
@@ -422,10 +422,10 @@ const sectors: GallerySector[] = [
         title: 'Produto e Laboratório',
         description:
           'A capacidade analítica HPLC interna apoia a gestão de qualidade. A documentação do produto pode ser fornecida conforme os requisitos do pedido.',
-        cardBlurb: 'CBD isolate com pureza ≥99,9% — verificado, embalado e pronto para exportação.',
+        cardBlurb: 'CBD isolate com pureza 99%+ — verificado, embalado e pronto para exportação.',
         statLabel: 'Produto',
         statValue: 'CBD Isolate',
-        statSub: 'Pureza: ≥99,9%',
+        statSub: 'Pureza: 99%+',
         cta: 'Entrar no Setor',
       },
       ja: {
@@ -433,10 +433,10 @@ const sectors: GallerySector[] = [
         title: '製品・ラボラトリー',
         description:
           '自社HPLC分析能力が品質管理を支えています。製品ドキュメントは注文要件に応じてご提供可能です。',
-        cardBlurb: '純度≥99.9%のCBDアイソレート — 検証済み、包装済み、輸出対応。',
+        cardBlurb: '純度99%+のCBDアイソレート — 検証済み、包装済み、輸出対応。',
         statLabel: '製品',
         statValue: 'CBD Isolate',
-        statSub: '純度: ≥99.9%',
+        statSub: '純度: 99%+',
         cta: 'セクターを見る',
       },
       fi: {
@@ -444,10 +444,10 @@ const sectors: GallerySector[] = [
         title: 'Tuote ja laboratorio',
         description:
           'Sisäinen HPLC-analytiikkakapasiteetti tukee laadunhallintaa. Tuotedokumentaatio voidaan toimittaa tilausvaatimusten mukaisesti.',
-        cardBlurb: 'CBD-isolaatti, puhtaus ≥99,9 % — varmennettu, pakattu ja vientivalmis.',
+        cardBlurb: 'CBD-isolaatti, puhtaus 99%+ — varmennettu, pakattu ja vientivalmis.',
         statLabel: 'Tuote',
         statValue: 'CBD Isolate',
-        statSub: 'Puhtaus: ≥99,9 %',
+        statSub: 'Puhtaus: 99%+',
         cta: 'Siirry sektoriin',
       },
     },

@@ -28,7 +28,7 @@ Current wholesale price ranges for CBD isolate (FOB origin, minimum 1 kg):
 
 - **95–97% purity (commercial grade):** $400–$650/kg
 - **99%+ purity (pharmaceutical/food grade):** $700–$1,100/kg
-- **99.9%+ purity (USP-grade, full CoA documentation):** $1,100–$1,600/kg
+- **99%+ purity (USP-grade, full CoA documentation):** $1,100–$1,600/kg
 
 These ranges reflect the global market. Chinese-origin isolate from Yunnan and other hemp-producing provinces typically prices 15–25% below European-origin material at equivalent purity, reflecting lower labor and biomass costs — while maintaining comparable analytical specifications when sourced from GMP-certified manufacturers.
 
@@ -111,7 +111,7 @@ Buyers who require:
 |---|---|---|---|
 | Biomass quality/origin | High-CBD cultivar, low cost region | Low-CBD cultivar, high cost region | $80–$200 |
 | Extraction method | Ethanol (cold), high throughput | CO₂, lower throughput | $30–$80 |
-| Purity specification | 95% commercial grade | 99.9% USP grade | $250–$600 |
+| Purity specification | 95% commercial grade | 99%+ USP grade | $250–$600 |
 | Order volume | 500 kg+ contract | 1–5 kg spot | $200–$400 |
 | Documentation level | Basic CoA only | Full pharma documentation stack | $30–$80 |
 | Incoterm (Europe) | FOB Kunming | DDP Rotterdam | $60–$140 |

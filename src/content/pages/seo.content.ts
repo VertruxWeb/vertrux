@@ -107,12 +107,12 @@ export const pageSeoContent: SeoContentMap = {
     },
     de: {
       title: 'Vom Saatgut zum Isolat | Unser Prozess — Vetrux CBD',
-      description: 'Sechs kontrollierte Phasen — vom Yunma-13 Anbau bis zum ≥99,9 % pharmazeutischen CBD-Isolat. VETRUX, Chuxiong, Yunnan.',
+      description: 'Sechs kontrollierte Phasen — vom Yunma-13 Anbau bis zum 99%+ pharmazeutischen CBD-Isolat. VETRUX, Chuxiong, Yunnan.',
       keywords: 'CBD Herstellung, CBD Prozess, CBD Extraktion, CBD Anbau Yunnan, CBD Isolat Produktion',
     },
     fr: {
       title: "De la Graine à l'Isolat | Notre Procédé — Vetrux CBD",
-      description: "Six phases contrôlées — de la culture Yunma-13 à l'isolat CBD pharmaceutique ≥99,9 %. VETRUX, Chuxiong, Yunnan.",
+      description: "Six phases contrôlées — de la culture Yunma-13 à l'isolat CBD pharmaceutique 99%+. VETRUX, Chuxiong, Yunnan.",
       keywords: 'fabrication CBD, procédé CBD, extraction CBD, culture CBD Yunnan, production isolat CBD',
     },
     es: {

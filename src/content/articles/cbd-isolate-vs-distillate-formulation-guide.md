@@ -33,7 +33,7 @@ The result is a white crystalline powder or solid with the following defining ch
 - **CAS number:** 13956-29-1
 - **Molecular formula:** C₂₁H₃₀O₂
 - **Molecular weight:** 314.46 g/mol
-- **Purity specification:** ≥99.5% CBD by HPLC
+- **Purity specification:** 99%+ CBD by HPLC
 - **THC content:** Non-detect (below the limit of quantification, typically <0.01%)
 - **Appearance:** White to off-white crystalline powder
 - **Solubility:** Lipophilic; soluble in ethanol, MCT oil, and most carrier oils; poorly soluble in water without emulsification
@@ -61,7 +61,7 @@ Full-spectrum distillate retains THC up to the legal limit of the source jurisdi
 
 | Parameter | CBD Isolate | CBD Distillate |
 |---|---|---|
-| CBD purity | ≥99.5% | 70–90% |
+| CBD purity | 99%+ | 70–90% |
 | THC content | Non-detect (<0.01%) | 0.01–0.3% (broad-spectrum) / up to legal limit (full-spectrum) |
 | Minor cannabinoids | None | Present (CBG, CBN, CBC, CBDV) |
 | Terpenes | None | Present (variable) |
@@ -107,7 +107,7 @@ Regulatory status varies significantly across APAC. Japan prohibits CBD products
 
 CBD isolate is the only commercially viable input for pharmaceutical API applications. The reasons are straightforward:
 
-1. **Defined chemical entity:** Regulatory submissions require a single active ingredient with a defined molecular structure, CAS number, and pharmacopeial-grade purity specification. CBD isolate (CAS 13956-29-1, ≥99.5% purity) meets this requirement. Distillate does not.
+1. **Defined chemical entity:** Regulatory submissions require a single active ingredient with a defined molecular structure, CAS number, and pharmacopeial-grade purity specification. CBD isolate (CAS 13956-29-1, 99%+ purity) meets this requirement. Distillate does not.
 2. **THC non-detect:** Drug products cannot contain controlled substances at detectable levels without specific scheduling and DEA registration (in the US context). Non-detect THC in isolate eliminates this compliance burden.
 3. **Batch consistency:** Pharmaceutical manufacturing requires reproducible API specifications across batches. Isolate's crystalline form and high purity deliver tighter batch-to-batch variation than distillate.
 4. **USP alignment:** The USP has published reference standards for cannabidiol, and pharmaceutical buyers routinely specify USP-grade or equivalent purity for API procurement.
@@ -161,7 +161,7 @@ For formulators with long production lead times or extended distribution chains,
 
 ### Dosing Precision
 
-Because isolate is ≥99.5% CBD by weight, dose calculation is straightforward: 100 mg of isolate delivers approximately 99.5 mg of CBD. Distillate at 80% CBD delivers 80 mg CBD per 100 mg of material, with the remaining 20% comprising minor cannabinoids, terpenes, and other compounds that contribute to the total dose but are not CBD.
+Because isolate is 99%+ CBD by weight, dose calculation is straightforward: 100 mg of isolate delivers at least 99 mg of CBD. Distillate at 80% CBD delivers 80 mg CBD per 100 mg of material, with the remaining 20% comprising minor cannabinoids, terpenes, and other compounds that contribute to the total dose but are not CBD.
 
 For pharmaceutical and clinical applications where precise CBD dosing is required, isolate's known composition is a significant operational advantage.
 
@@ -200,7 +200,7 @@ The choice between CBD isolate and CBD distillate reduces to four primary decisi
 - Cost per gram of CBD is the primary procurement driver
 - The formulation can accommodate the sensory profile of distillate
 
-For most regulated B2B applications — pharmaceutical, clinical, and premium cosmetic — CBD isolate at ≥99.5% purity is the appropriate specification. The regulatory simplicity, dosing precision, and stability advantages outweigh the cost premium in applications where compliance risk is material.
+For most regulated B2B applications — pharmaceutical, clinical, and premium cosmetic — CBD isolate at 99%+ purity is the appropriate specification. The regulatory simplicity, dosing precision, and stability advantages outweigh the cost premium in applications where compliance risk is material.
 
 ---
 
@@ -216,7 +216,7 @@ Both CBD isolate and CBD distillate derived from hemp are subject to EU Novel Fo
 
 **Q: What purity specification should pharmaceutical buyers require for CBD isolate?**
 
-The industry standard for pharmaceutical-grade CBD isolate is ≥99.5% CBD by HPLC, with THC at non-detect levels (typically defined as <0.01% or below the limit of quantification of the analytical method). Residual solvents should meet ICH Q3C Class 3 limits at minimum, with many pharmaceutical buyers specifying tighter internal limits (e.g., ≤500 ppm ethanol if ethanol is used in processing). Heavy metals should meet USP <232> limits for oral drug products or EU Pharmacopoeia equivalent. Suppliers like Vetrux CBD provide isolate meeting these specifications with batch-level third-party COA documentation from ISO/IEC 17025-accredited laboratories.
+The industry standard for pharmaceutical-grade CBD isolate is 99%+ CBD by HPLC, with THC at non-detect levels (typically defined as <0.01% or below the limit of quantification of the analytical method). Residual solvents should meet ICH Q3C Class 3 limits at minimum, with many pharmaceutical buyers specifying tighter internal limits (e.g., ≤500 ppm ethanol if ethanol is used in processing). Heavy metals should meet USP <232> limits for oral drug products or EU Pharmacopoeia equivalent. Suppliers like Vetrux CBD provide isolate meeting these specifications with batch-level third-party COA documentation from ISO/IEC 17025-accredited laboratories.
 
 ---
 

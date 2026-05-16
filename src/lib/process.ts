@@ -585,118 +585,118 @@ export const processPhases: ProcessPhase[] = [
     content: {
       en: {
         eyebrow: 'Phase 05 · Extraction & Purification',
-        title: 'From Biomass to ≥99.9% Isolate',
+        title: 'From Biomass to 99%+ Isolate',
         description: 'Our core extraction process relies on advanced ethanol extraction and rigorous column chromatography to achieve industry-leading purity.',
         detailedSteps: [
           { title: '1. Raw Material Pre-treatment', text: 'Dried flower and leaf material is finely crushed to the optimal particle size for extraction.' },
           { title: '2. Ethanol Extraction', text: '60% ethanol is utilized at a 7x solvent ratio for reflux extraction. This process is repeated 3 times, with each pass lasting 2 hours.' },
           { title: '3. Separation & Concentration', text: 'Biomass residue is filtered out. The liquid is then subjected to vacuum concentration at 50-60°C to recover the ethanol, yielding a potent crude extract.' },
-          { title: '4. Purification & Refining', text: 'Crude extracts containing pigments and lipids undergo deep purification: Dewaxing via low-temperature resting and filtration; Column Chromatography utilizing macroporous adsorption resin (HPD series) with gradient ethanol elution to specifically isolate CBD; and finally, Crystallization in a specific solvent system to obtain >99% pure CBD.' }
+          { title: '4. Purification & Refining', text: 'Crude extracts containing pigments and lipids undergo deep purification: Dewaxing via low-temperature resting and filtration; Column Chromatography utilizing macroporous adsorption resin (HPD series) with gradient ethanol elution to specifically isolate CBD; and finally, Crystallization in a specific solvent system to obtain 99%+ pure CBD.' }
         ],
         deepDiveLabel: 'Full equipment specifications',
         deepDiveHref: '/equipment',
       },
       de: {
         eyebrow: 'Phase 05 · Extraktion & Aufreinigung',
-        title: 'Von der Biomasse zum ≥99,9%-Isolat',
+        title: 'Von der Biomasse zum 99%+-Isolat',
         description: 'Unser Kernextraktionsprozess stützt sich auf fortschrittliche Ethanolextraktion und strenge Säulenchromatographie, um eine branchenführende Reinheit zu erreichen.',
         detailedSteps: [
           { title: '1. Vorbehandlung des Rohmaterials', text: 'Getrocknetes Blüten- und Blattmaterial wird fein gemahlen, um die optimale Partikelgröße für die Extraktion zu erreichen.' },
           { title: '2. Ethanolextraktion', text: '60%iges Ethanol wird in einem 7-fachen Lösungsmittelverhältnis für die Rückflussextraktion verwendet. Dieser Prozess wird 3-mal wiederholt, wobei jeder Durchgang 2 Stunden dauert.' },
           { title: '3. Trennung & Konzentration', text: 'Biomassereste werden herausgefiltert. Die Flüssigkeit wird dann bei 50-60°C vakuumkonzentriert, um das Ethanol zurückzugewinnen, was einen starken Rohextrakt ergibt.' },
-          { title: '4. Aufreinigung & Raffination', text: 'Rohextrakte, die Pigmente und Lipide enthalten, durchlaufen eine Tiefenaufreinigung: Entwachsung durch Ruhen bei niedrigen Temperaturen und Filtration; Säulenchromatographie unter Verwendung von makroporösem Adsorptionsharz (HPD-Serie) mit gradueller Ethanolelution zur spezifischen Isolierung von CBD; und schließlich Kristallisation in einem speziellen Lösungsmittelsystem, um >99% reines CBD zu erhalten.' }
+          { title: '4. Aufreinigung & Raffination', text: 'Rohextrakte, die Pigmente und Lipide enthalten, durchlaufen eine Tiefenaufreinigung: Entwachsung durch Ruhen bei niedrigen Temperaturen und Filtration; Säulenchromatographie unter Verwendung von makroporösem Adsorptionsharz (HPD-Serie) mit gradueller Ethanolelution zur spezifischen Isolierung von CBD; und schließlich Kristallisation in einem speziellen Lösungsmittelsystem, um 99%+ reines CBD zu erhalten.' }
         ],
         deepDiveLabel: 'Vollständige Anlagenspezifikationen',
         deepDiveHref: '/equipment',
       },
       fr: {
         eyebrow: 'Phase 05 · Extraction & Purification',
-        title: 'De la biomasse à un isolat ≥99,9%',
+        title: 'De la biomasse à un isolat 99%+',
         description: 'Notre processus d\'extraction principal repose sur une extraction avancée à l\'éthanol et une chromatographie sur colonne rigoureuse pour atteindre une pureté de premier plan.',
         detailedSteps: [
           { title: '1. Prétraitement de la matière première', text: 'Le matériel de feuilles et de fleurs séchées est finement broyé jusqu\'à obtenir la granulométrie optimale pour l\'extraction.' },
           { title: '2. Extraction à l\'éthanol', text: 'L\'éthanol à 60% est utilisé à un ratio de solvant de 7x pour l\'extraction à reflux. Ce processus est répété 3 fois, chaque passage durant 2 heures.' },
           { title: '3. Séparation et concentration', text: 'Les résidus de biomasse sont filtrés. Le liquide est ensuite soumis à une concentration sous vide à 50-60°C pour récupérer l\'éthanol, produisant un extrait brut puissant.' },
-          { title: '4. Purification et raffinage', text: 'Les extraits bruts contenant des pigments et des lipides subissent une purification profonde : Déparaffinage par repos à basse température et filtration ; Chromatographie sur colonne utilisant une résine d\'adsorption macroporeuse (série HPD) avec élution à l\'éthanol en gradient pour isoler spécifiquement le CBD ; et enfin, Cristallisation dans un système de solvant spécifique pour obtenir du CBD pur à >99%.' }
+          { title: '4. Purification et raffinage', text: 'Les extraits bruts contenant des pigments et des lipides subissent une purification profonde : Déparaffinage par repos à basse température et filtration ; Chromatographie sur colonne utilisant une résine d\'adsorption macroporeuse (série HPD) avec élution à l\'éthanol en gradient pour isoler spécifiquement le CBD ; et enfin, Cristallisation dans un système de solvant spécifique pour obtenir du CBD pur à 99%+.' }
         ],
         deepDiveLabel: 'Spécifications complètes des équipements',
         deepDiveHref: '/equipment',
       },
       es: {
         eyebrow: 'Fase 05 · Extracción y Purificación',
-        title: 'De la Biomasa al Aislado ≥99,9%',
+        title: 'De la Biomasa al Aislado 99%+',
         description: 'Nuestro proceso de extracción principal se basa en la extracción avanzada con etanol y una rigurosa cromatografía en columna para alcanzar una pureza líder en la industria.',
         detailedSteps: [
           { title: '1. Pretratamiento de Materia Prima', text: 'El material seco de flores y hojas se tritura finamente hasta el tamaño de partícula óptimo para la extracción.' },
           { title: '2. Extracción con Etanol', text: 'Se utiliza etanol al 60% en una proporción de solvente de 7x para la extracción por reflujo. Este proceso se repite 3 veces, con cada pasada de 2 horas de duración.' },
           { title: '3. Separación y Concentración', text: 'Los residuos de biomasa se filtran. El líquido se somete a concentración al vacío a 50-60°C para recuperar el etanol, obteniendo un extracto crudo concentrado.' },
-          { title: '4. Purificación y Refinamiento', text: 'Los extractos crudos que contienen pigmentos y lípidos se someten a una purificación profunda: desparafinado mediante reposo a baja temperatura y filtración; cromatografía en columna con resina de adsorción macroporosa (serie HPD) con elución gradiente de etanol para aislar específicamente el CBD; y finalmente, cristalización en un sistema de solvente específico para obtener CBD con pureza >99%.' }
+          { title: '4. Purificación y Refinamiento', text: 'Los extractos crudos que contienen pigmentos y lípidos se someten a una purificación profunda: desparafinado mediante reposo a baja temperatura y filtración; cromatografía en columna con resina de adsorción macroporosa (serie HPD) con elución gradiente de etanol para aislar específicamente el CBD; y finalmente, cristalización en un sistema de solvente específico para obtener CBD con pureza 99%+.' }
         ],
         deepDiveLabel: 'Especificaciones completas de equipos',
         deepDiveHref: '/equipment',
       },
       it: {
         eyebrow: 'Fase 05 · Estrazione e Purificazione',
-        title: 'Dalla Biomassa all\'Isolato ≥99,9%',
+        title: 'Dalla Biomassa all\'Isolato 99%+',
         description: 'Il nostro processo di estrazione principale si basa sull\'estrazione avanzata con etanolo e una rigorosa cromatografia su colonna per raggiungere una purezza leader nel settore.',
         detailedSteps: [
           { title: '1. Pretrattamento della Materia Prima', text: 'Il materiale essiccato di fiori e foglie viene finemente macinato fino alla granulometria ottimale per l\'estrazione.' },
           { title: '2. Estrazione con Etanolo', text: 'L\'etanolo al 60% viene utilizzato con un rapporto solvente di 7x per l\'estrazione a riflusso. Il processo viene ripetuto 3 volte, con ogni passaggio della durata di 2 ore.' },
           { title: '3. Separazione e Concentrazione', text: 'I residui di biomassa vengono filtrati. Il liquido viene quindi sottoposto a concentrazione sotto vuoto a 50-60°C per recuperare l\'etanolo, ottenendo un estratto grezzo concentrato.' },
-          { title: '4. Purificazione e Raffinazione', text: 'Gli estratti grezzi contenenti pigmenti e lipidi vengono sottoposti a purificazione profonda: decerazione mediante riposo a bassa temperatura e filtrazione; cromatografia su colonna con resina di adsorbimento macroporosa (serie HPD) con eluizione a gradiente di etanolo per isolare specificamente il CBD; e infine, cristallizzazione in un sistema solvente specifico per ottenere CBD con purezza >99%.' }
+          { title: '4. Purificazione e Raffinazione', text: 'Gli estratti grezzi contenenti pigmenti e lipidi vengono sottoposti a purificazione profonda: decerazione mediante riposo a bassa temperatura e filtrazione; cromatografia su colonna con resina di adsorbimento macroporosa (serie HPD) con eluizione a gradiente di etanolo per isolare specificamente il CBD; e infine, cristallizzazione in un sistema solvente specifico per ottenere CBD con purezza 99%+.' }
         ],
         deepDiveLabel: 'Specifiche complete delle attrezzature',
         deepDiveHref: '/equipment',
       },
       pt: {
         eyebrow: 'Fase 05 · Extração e Purificação',
-        title: 'Da Biomassa ao Isolado ≥99,9%',
+        title: 'Da Biomassa ao Isolado 99%+',
         description: 'Nosso processo de extração principal baseia-se na extração avançada com etanol e cromatografia em coluna rigorosa para alcançar pureza líder na indústria.',
         detailedSteps: [
           { title: '1. Pré-tratamento da Matéria-Prima', text: 'O material seco de flores e folhas é finamente triturado até o tamanho de partícula ideal para a extração.' },
           { title: '2. Extração com Etanol', text: 'Etanol a 60% é utilizado em uma proporção de solvente de 7x para extração por refluxo. O processo é repetido 3 vezes, com cada passagem durando 2 horas.' },
           { title: '3. Separação e Concentração', text: 'Os resíduos de biomassa são filtrados. O líquido é então submetido à concentração a vácuo a 50-60°C para recuperar o etanol, produzindo um extrato bruto concentrado.' },
-          { title: '4. Purificação e Refinamento', text: 'Os extratos brutos contendo pigmentos e lipídios passam por purificação profunda: desparafinação por repouso a baixa temperatura e filtração; cromatografia em coluna com resina de adsorção macroporosa (série HPD) com eluição gradiente de etanol para isolar especificamente o CBD; e finalmente, cristalização em um sistema de solvente específico para obter CBD com pureza >99%.' }
+          { title: '4. Purificação e Refinamento', text: 'Os extratos brutos contendo pigmentos e lipídios passam por purificação profunda: desparafinação por repouso a baixa temperatura e filtração; cromatografia em coluna com resina de adsorção macroporosa (série HPD) com eluição gradiente de etanol para isolar especificamente o CBD; e finalmente, cristalização em um sistema de solvente específico para obter CBD com pureza 99%+.' }
         ],
         deepDiveLabel: 'Especificações completas dos equipamentos',
         deepDiveHref: '/equipment',
       },
       ja: {
         eyebrow: 'フェーズ 05 · 抽出・精製',
-        title: 'バイオマスから純度≥99.9%のアイソレートへ',
+        title: 'バイオマスから純度99%+のアイソレートへ',
         description: '当社の中核的な抽出プロセスは、先進的なエタノール抽出と厳密なカラムクロマトグラフィーに基づき、業界をリードする純度を実現しています。',
         detailedSteps: [
           { title: '1. 原料前処理', text: '乾燥した花と葉の素材を、抽出に最適な粒度まで微粉砕します。' },
           { title: '2. エタノール抽出', text: '60%エタノールを7倍の溶媒比で還流抽出に使用します。このプロセスを3回繰り返し、各回2時間行います。' },
           { title: '3. 分離・濃縮', text: 'バイオマス残渣をろ過します。液体を50-60°Cで真空濃縮してエタノールを回収し、濃縮粗抽出物を得ます。' },
-          { title: '4. 精製・結晶化', text: '色素や脂質を含む粗抽出物を深度精製します：低温静置とろ過による脱ろう、マクロポーラス吸着樹脂（HPDシリーズ）によるカラムクロマトグラフィーでエタノールグラジエント溶出によりCBDを選択的に分離、最後に特定の溶媒系での結晶化により純度>99%のCBDを取得します。' }
+          { title: '4. 精製・結晶化', text: '色素や脂質を含む粗抽出物を深度精製します：低温静置とろ過による脱ろう、マクロポーラス吸着樹脂（HPDシリーズ）によるカラムクロマトグラフィーでエタノールグラジエント溶出によりCBDを選択的に分離、最後に特定の溶媒系での結晶化により純度99%+のCBDを取得します。' }
         ],
         deepDiveLabel: '設備仕様の詳細',
         deepDiveHref: '/equipment',
       },
       fi: {
         eyebrow: 'Vaihe 05 · Uutto ja puhdistus',
-        title: 'Biomassasta ≥99,9 %:n isolaattiin',
+        title: 'Biomassasta 99%+:n isolaattiin',
         description: 'Ydinuuttoprosessimme perustuu edistyneeseen etanoliuuttoon ja tiukkaan kolonnkromatografiaan alan johtavan puhtauden saavuttamiseksi.',
         detailedSteps: [
           { title: '1. Raaka-aineen esikäsittely', text: 'Kuivattu kukka- ja lehtimateriaali jauhetaan hienoksi optimaaliseen partikkelikokoon uuttoa varten.' },
           { title: '2. Etanoliuutto', text: '60-prosenttista etanolia käytetään 7-kertaisella liuotinsuhteella refluksiuuttoon. Prosessi toistetaan 3 kertaa, kukin kesto 2 tuntia.' },
           { title: '3. Erotus ja konsentrointi', text: 'Biomassajäännös suodatetaan. Neste konsentroidaan tyhjiössä 50–60 °C:ssa etanolin talteenottamiseksi, jolloin saadaan väkevä raakaute.' },
-          { title: '4. Puhdistus ja jalostus', text: 'Pigmenttejä ja lipidejä sisältävät raakauutteet käyvät läpi syväpuhdistuksen: vahanpoisto matalassa lämpötilassa lepuuttamalla ja suodattamalla; kolonnkromatografia makrohuokoisella adsorptiohartsilla (HPD-sarja) gradienttietanolieluutiolla CBD:n eristämiseksi; ja lopuksi kiteytys tietyssä liuotinjärjestelmässä >99 %:n puhtauden CBD:n saamiseksi.' }
+          { title: '4. Puhdistus ja jalostus', text: 'Pigmenttejä ja lipidejä sisältävät raakauutteet käyvät läpi syväpuhdistuksen: vahanpoisto matalassa lämpötilassa lepuuttamalla ja suodattamalla; kolonnkromatografia makrohuokoisella adsorptiohartsilla (HPD-sarja) gradienttietanolieluutiolla CBD:n eristämiseksi; ja lopuksi kiteytys tietyssä liuotinjärjestelmässä 99%+ puhtauden CBD:n saamiseksi.' }
         ],
         deepDiveLabel: 'Laitteiden täydelliset tekniset tiedot',
         deepDiveHref: '/equipment',
       },
     },
     badges: {
-      en: ['3-Pass Extraction', '26 Chromatography Columns', '≥99.9% Purity'],
-      de: ['3-fache Extraktion', '26 Chromatographiesäulen', '≥99,9% Reinheit'],
-      fr: ['Extraction en 3 passes', '26 colonnes de chromatographie', 'Pureté ≥99,9%'],
-      es: ['Extracción en 3 Pasadas', '26 Columnas de Cromatografía', 'Pureza ≥99,9%'],
-      it: ['Estrazione in 3 Passaggi', '26 Colonne Cromatografiche', 'Purezza ≥99,9%'],
-      pt: ['Extração em 3 Passagens', '26 Colunas de Cromatografia', 'Pureza ≥99,9%'],
-      ja: ['3回抽出', 'クロマトグラフィーカラム26本', '純度≥99.9%'],
-      fi: ['3-kertainen uutto', '26 kromatografiakolumnia', 'Puhtaus ≥99,9 %'],
+      en: ['3-Pass Extraction', '26 Chromatography Columns', '99%+ Purity'],
+      de: ['3-fache Extraktion', '26 Chromatographiesäulen', '99%+ Reinheit'],
+      fr: ['Extraction en 3 passes', '26 colonnes de chromatographie', 'Pureté 99%+'],
+      es: ['Extracción en 3 Pasadas', '26 Columnas de Cromatografía', 'Pureza 99%+'],
+      it: ['Estrazione in 3 Passaggi', '26 Colonne Cromatografiche', 'Purezza 99%+'],
+      pt: ['Extração em 3 Passagens', '26 Colunas de Cromatografia', 'Pureza 99%+'],
+      ja: ['3回抽出', 'クロマトグラフィーカラム26本', '純度99%+'],
+      fi: ['3-kertainen uutto', '26 kromatografiakolumnia', 'Puhtaus 99%+'],
     },
   },
 
@@ -826,10 +826,10 @@ export const processHeroStrings: Record<
     titleLine1: 'From Seed',
     titleLine2: 'to Isolate.',
     subtitle:
-      'Six phases. One traceable chain. Every batch cultivated, extracted, and verified in Yunnan — from government-approved Yunma-13 cultivars to ≥99.9% pharmaceutical-grade CBD isolate.',
+      'Six phases. One traceable chain. Every batch cultivated, extracted, and verified in Yunnan — from government-approved Yunma-13 cultivars to 99%+ pharmaceutical-grade CBD isolate.',
     kpis: [
       { value: '120 d', label: 'Growth Cycle' },
-      { value: '≥99.9%', label: 'Final Purity' },
+      { value: '99%+', label: 'Final Purity' },
       { value: 'HPLC', label: 'Batch Verified' },
       { value: '6', label: 'Controlled Phases' },
     ],
@@ -840,10 +840,10 @@ export const processHeroStrings: Record<
     titleLine1: 'Vom Samen',
     titleLine2: 'zum Isolat.',
     subtitle:
-      'Sechs Phasen. Eine rückverfolgbare Kette. Jede Charge wird in Yunnan angebaut, extrahiert und geprüft — von staatlich zugelassenen Yunma-13-Sorten bis zum CBD-Isolat in ≥99,9%iger pharmazeutischer Qualität.',
+      'Sechs Phasen. Eine rückverfolgbare Kette. Jede Charge wird in Yunnan angebaut, extrahiert und geprüft — von staatlich zugelassenen Yunma-13-Sorten bis zum CBD-Isolat in 99%+iger pharmazeutischer Qualität.',
     kpis: [
       { value: '120 d', label: 'Wachstumszyklus' },
-      { value: '≥99,9%', label: 'Endreinheit' },
+      { value: '99%+', label: 'Endreinheit' },
       { value: 'HPLC', label: 'Chargengeprüft' },
       { value: '6', label: 'Kontrollierte Phasen' },
     ],
@@ -854,10 +854,10 @@ export const processHeroStrings: Record<
     titleLine1: 'De la graine',
     titleLine2: "à l'isolat.",
     subtitle:
-      "Six phases. Une chaîne traçable. Chaque lot est cultivé, extrait et vérifié au Yunnan — depuis les cultivars Yunma-13 agréés jusqu'à un isolat de CBD de qualité pharmaceutique ≥99,9%.",
+      "Six phases. Une chaîne traçable. Chaque lot est cultivé, extrait et vérifié au Yunnan — depuis les cultivars Yunma-13 agréés jusqu'à un isolat de CBD de qualité pharmaceutique 99%+.",
     kpis: [
       { value: '120 j', label: 'Cycle de croissance' },
-      { value: '≥99,9%', label: 'Pureté finale' },
+      { value: '99%+', label: 'Pureté finale' },
       { value: 'HPLC', label: 'Lot vérifié' },
       { value: '6', label: 'Phases contrôlées' },
     ],
@@ -868,10 +868,10 @@ export const processHeroStrings: Record<
     titleLine1: 'De la Semilla',
     titleLine2: 'al Aislado.',
     subtitle:
-      'Seis fases. Una cadena trazable. Cada lote cultivado, extraído y verificado en Yunnan — desde cultivares Yunma-13 aprobados por el gobierno hasta CBD isolate de grado farmacéutico con pureza ≥99,9%.',
+      'Seis fases. Una cadena trazable. Cada lote cultivado, extraído y verificado en Yunnan — desde cultivares Yunma-13 aprobados por el gobierno hasta CBD isolate de grado farmacéutico con pureza 99%+.',
     kpis: [
       { value: '120 d', label: 'Ciclo de Crecimiento' },
-      { value: '≥99,9%', label: 'Pureza Final' },
+      { value: '99%+', label: 'Pureza Final' },
       { value: 'HPLC', label: 'Lote Verificado' },
       { value: '6', label: 'Fases Controladas' },
     ],
@@ -882,10 +882,10 @@ export const processHeroStrings: Record<
     titleLine1: 'Dal Seme',
     titleLine2: "all'Isolato.",
     subtitle:
-      'Sei fasi. Una catena tracciabile. Ogni lotto coltivato, estratto e verificato nello Yunnan — dai cultivar Yunma-13 approvati dal governo al CBD isolate di grado farmaceutico con purezza ≥99,9%.',
+      'Sei fasi. Una catena tracciabile. Ogni lotto coltivato, estratto e verificato nello Yunnan — dai cultivar Yunma-13 approvati dal governo al CBD isolate di grado farmaceutico con purezza 99%+.',
     kpis: [
       { value: '120 g', label: 'Ciclo di Crescita' },
-      { value: '≥99,9%', label: 'Purezza Finale' },
+      { value: '99%+', label: 'Purezza Finale' },
       { value: 'HPLC', label: 'Lotto Verificato' },
       { value: '6', label: 'Fasi Controllate' },
     ],
@@ -896,10 +896,10 @@ export const processHeroStrings: Record<
     titleLine1: 'Da Semente',
     titleLine2: 'ao Isolado.',
     subtitle:
-      'Seis fases. Uma cadeia rastreável. Cada lote cultivado, extraído e verificado em Yunnan — desde cultivares Yunma-13 aprovados pelo governo até CBD isolate de grau farmacêutico com pureza ≥99,9%.',
+      'Seis fases. Uma cadeia rastreável. Cada lote cultivado, extraído e verificado em Yunnan — desde cultivares Yunma-13 aprovados pelo governo até CBD isolate de grau farmacêutico com pureza 99%+.',
     kpis: [
       { value: '120 d', label: 'Ciclo de Crescimento' },
-      { value: '≥99,9%', label: 'Pureza Final' },
+      { value: '99%+', label: 'Pureza Final' },
       { value: 'HPLC', label: 'Lote Verificado' },
       { value: '6', label: 'Fases Controladas' },
     ],
@@ -910,10 +910,10 @@ export const processHeroStrings: Record<
     titleLine1: '種子から',
     titleLine2: 'アイソレートへ。',
     subtitle:
-      '6つのフェーズ。1つのトレーサブルチェーン。すべてのバッチをYunnanで栽培・抽出・検証 — 政府認可のYunma-13品種から純度≥99.9%の医薬品グレードCBDアイソレートまで。',
+      '6つのフェーズ。1つのトレーサブルチェーン。すべてのバッチをYunnanで栽培・抽出・検証 — 政府認可のYunma-13品種から純度99%+の医薬品グレードCBDアイソレートまで。',
     kpis: [
       { value: '120日', label: '成長サイクル' },
-      { value: '≥99.9%', label: '最終純度' },
+      { value: '99%+', label: '最終純度' },
       { value: 'HPLC', label: 'バッチ検証' },
       { value: '6', label: '管理フェーズ' },
     ],
@@ -924,10 +924,10 @@ export const processHeroStrings: Record<
     titleLine1: 'Siemenestä',
     titleLine2: 'isolaattiin.',
     subtitle:
-      'Kuusi vaihetta. Yksi jäljitettävä ketju. Jokainen erä viljellään, uutetaan ja varmennetaan Yunnanissa — hallituksen hyväksymistä Yunma-13-lajikkeista ≥99,9 %:n lääketeollisuuden tason CBD-isolaattiin.',
+      'Kuusi vaihetta. Yksi jäljitettävä ketju. Jokainen erä viljellään, uutetaan ja varmennetaan Yunnanissa — hallituksen hyväksymistä Yunma-13-lajikkeista 99%+:n lääketeollisuuden tason CBD-isolaattiin.',
     kpis: [
       { value: '120 pv', label: 'Kasvusykli' },
-      { value: '≥99,9 %', label: 'Loppupuhtaus' },
+      { value: '99%+', label: 'Loppupuhtaus' },
       { value: 'HPLC', label: 'Erä varmennettu' },
       { value: '6', label: 'Hallitut vaiheet' },
     ],

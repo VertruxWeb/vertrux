@@ -38,7 +38,7 @@ The purity achievable at each extraction stage differs significantly between met
 | Water-soluble Impurities | Negligible | 1–5% |
 | Terpene Retention | 2–8% (tunable) | &lt;1% |
 
-After full refinement to isolate grade (≥99% CBD), both methods can achieve comparable final purity. The difference emerges in the refinement burden: CO₂ crude requires fewer downstream processing steps, while ethanol crude requires more extensive remediation of co-extracted impurities.
+After full refinement to isolate grade (99%+ CBD), both methods can achieve comparable final purity. The difference emerges in the refinement burden: CO₂ crude requires fewer downstream processing steps, while ethanol crude requires more extensive remediation of co-extracted impurities.
 
 **Chlorophyll content** is particularly instructive. The dark green color of ethanol crude extracts is caused by chlorophyll co-extraction—a consequence of ethanol's broad polarity. While chlorophyll is removed during subsequent processing, the additional filtration and adsorption steps (activated carbon treatment is common) introduce:
 - Additional processing cost (~$8–15/kg CBD equivalent)
@@ -78,7 +78,7 @@ Terpene preservation is the one dimension where the comparison requires qualific
 
 **For full-spectrum and broad-spectrum products**, CO₂ extraction offers significant advantages. By operating at lower temperatures and adjusting pressure selectively, CO₂ systems can preserve terpene fractions that would be volatilized during ethanol processing. Select terpene-rich fractions can be captured in a separate low-pressure separator and recombined with the cannabinoid-rich fraction—producing "live resin" style full-spectrum extracts with authentic terpene profiles.
 
-**For CBD isolate** (≥99% pure CBD), terpene preservation is irrelevant. All terpenes are removed during crystallization. Both extraction methods produce equivalent isolate when terpene content is the metric.
+**For CBD isolate** (99%+ pure CBD), terpene preservation is irrelevant. All terpenes are removed during crystallization. Both extraction methods produce equivalent isolate when terpene content is the metric.
 
 For a supplier like Vetrux CBD operating at pharmaceutical-grade isolate specifications, CO₂ extraction's terpene advantage is most relevant to the broad-spectrum product line rather than the primary isolate grade product.
 
