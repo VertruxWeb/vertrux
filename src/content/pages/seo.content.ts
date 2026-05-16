@@ -399,6 +399,221 @@ export const pageSeoContent: SeoContentMap = {
       keywords: 'CBD-alan näkemykset, CBD-uuttoteknologia, CBD-vaatimustenmukaisuus, CBD-toimitusketju',
     },
   },
+
+  '/quality-assurance': {
+    en: {
+      title: 'CBD Isolate COA, SDS & Quality Assurance | Vetrux',
+      description: 'Learn how Vetrux supports CBD isolate quality review with in-house HPLC analytical capability, COA/SDS support, test reports, and shipment documentation by order terms.',
+      keywords: 'CBD isolate COA, CBD isolate SDS, CBD quality assurance, HPLC analytical capability, CBD batch documents',
+    },
+    de: {
+      title: 'CBD Isolat COA, SDS & Qualitätssicherung | Vetrux',
+      description: 'Erfahren Sie, wie Vetrux die Qualitätsprüfung von CBD Isolat mit interner HPLC-Analysekapazität unterstützt.',
+      keywords: 'CBD Isolat COA, CBD Isolat SDS, CBD Qualitätssicherung, HPLC Analysekapazität, CBD Chargendokumente',
+    },
+    fr: {
+      title: "COA, SDS et Assurance Qualité de l'Isolat de CBD | Vetrux",
+      description: "Découvrez comment Vetrux soutient l'examen de la qualité de l'isolat de CBD avec une capacité analytique HPLC interne.",
+      keywords: "COA isolat CBD, SDS isolat CBD, assurance qualité CBD, capacité analytique HPLC, documents de lot CBD",
+    },
+    es: {
+      title: 'COA, SDS y Garantía de Calidad del Aislado de CBD | Vetrux',
+      description: 'Descubra cómo Vetrux respalda la revisión de calidad del aislado de CBD con capacidad analítica HPLC interna.',
+      keywords: 'COA aislado CBD, SDS aislado CBD, garantía calidad CBD, capacidad analítica HPLC, documentos lote CBD',
+    },
+    it: {
+      title: "COA, SDS e Garanzia di Qualità dell'Isolato di CBD | Vetrux",
+      description: "Scoprite come Vetrux supporta la revisione della qualità dell'isolato di CBD con capacità analitica HPLC interna.",
+      keywords: "COA isolato CBD, SDS isolato CBD, garanzia qualità CBD, capacità analitica HPLC, documenti lotto CBD",
+    },
+    pt: {
+      title: 'COA, SDS e Garantia de Qualidade do Isolado de CBD | Vetrux',
+      description: 'Saiba como a Vetrux apoia a revisão da qualidade do isolado de CBD com capacidade analítica HPLC interna.',
+      keywords: 'COA isolado CBD, SDS isolado CBD, garantia qualidade CBD, capacidade analítica HPLC, documentos lote CBD',
+    },
+    ja: {
+      title: 'CBDアイソレート COA・SDS・品質保証 | Vetrux',
+      description: 'Vetruxが自社HPLC分析能力によりCBDアイソレートの品質レビューをどのようにサポートしているかをご覧いただけます。',
+      keywords: 'CBD アイソレート COA, CBD アイソレート SDS, CBD 品質保証, HPLC 分析能力, CBD バッチ文書',
+    },
+    fi: {
+      title: 'CBD-isolaatin COA, SDS ja laadunvarmistus | Vetrux',
+      description: 'Opi, miten Vetrux tukee CBD-isolaatin laadunarviointia sisäisellä HPLC-analyysikyvykkyydellä.',
+      keywords: 'CBD-isolaatin COA, CBD-isolaatin SDS, CBD-laadunvarmistus, HPLC-analyysikyvykkyys, CBD-eräasiakirjat',
+    },
+  },
+
+  '/wholesale-cbd-isolate': {
+    en: {
+      title: 'Bulk CBD Isolate Supplier | Wholesale CBD Isolate | Vetrux',
+      description: 'Wholesale CBD isolate supply for B2B buyers, with 5 kg packaging, documentation support, and OEM/ODM cooperation from Vetrux in China.',
+      keywords: 'bulk CBD isolate supplier, wholesale CBD isolate, B2B CBD isolate, CBD isolate quote, CBD OEM ODM',
+    },
+    de: {
+      title: 'CBD Isolat Großhandel Lieferant | Vetrux',
+      description: 'CBD Isolat Großhandelslieferung für B2B-Käufer, mit 5 kg Verpackung, Dokumentationssupport und OEM/ODM-Kooperation von Vetrux in China.',
+      keywords: 'CBD Isolat Großhandel Lieferant, CBD Isolat Großhandel, B2B CBD Isolat, CBD Isolat Angebot, CBD OEM ODM',
+    },
+    fr: {
+      title: "Fournisseur d'Isolat de CBD en Vrac | Isolat de CBD en Gros | Vetrux",
+      description: "Fourniture d'isolat de CBD en gros pour acheteurs B2B, avec emballage 5 kg, support documentaire et coopération OEM/ODM de Vetrux en Chine.",
+      keywords: "fournisseur isolat CBD vrac, isolat CBD gros, isolat CBD B2B, devis isolat CBD, CBD OEM ODM",
+    },
+    es: {
+      title: 'Proveedor de Aislado de CBD a Granel | Aislado de CBD al por Mayor | Vetrux',
+      description: 'Suministro de aislado de CBD al por mayor para compradores B2B, con embalaje de 5 kg, soporte documental y cooperación OEM/ODM de Vetrux en China.',
+      keywords: 'proveedor aislado CBD granel, aislado CBD mayorista, aislado CBD B2B, cotización aislado CBD, CBD OEM ODM',
+    },
+    it: {
+      title: "Fornitore di Isolato di CBD all'Ingrosso | Vetrux",
+      description: "Fornitura di isolato di CBD all'ingrosso per acquirenti B2B, con imballaggio da 5 kg, supporto documentale e cooperazione OEM/ODM di Vetrux in Cina.",
+      keywords: "fornitore isolato CBD ingrosso, isolato CBD ingrosso, isolato CBD B2B, preventivo isolato CBD, CBD OEM ODM",
+    },
+    pt: {
+      title: 'Fornecedor de Isolado de CBD a Granel | Isolado de CBD no Atacado | Vetrux',
+      description: 'Fornecimento de isolado de CBD no atacado para compradores B2B, com embalagem de 5 kg, suporte documental e cooperação OEM/ODM da Vetrux na China.',
+      keywords: 'fornecedor isolado CBD granel, isolado CBD atacado, isolado CBD B2B, cotação isolado CBD, CBD OEM ODM',
+    },
+    ja: {
+      title: 'バルクCBDアイソレート供給業者 | 卸売CBDアイソレート | Vetrux',
+      description: '中国Vetruxによる、5 kg包装、文書サポート、OEM/ODM協力を含むB2Bバイヤー向け卸売CBDアイソレート供給。',
+      keywords: 'バルクCBDアイソレート供給業者, 卸売CBDアイソレート, B2B CBDアイソレート, CBDアイソレート見積, CBD OEM ODM',
+    },
+    fi: {
+      title: 'CBD-isolaatin tukkutoimittaja | CBD-isolaatin tukkumyynti | Vetrux',
+      description: 'CBD-isolaatin tukkutoimitus B2B-ostajille, sisältäen 5 kg pakkauksen, dokumentaatiotuen ja OEM/ODM-yhteistyön Vetruxilta Kiinasta.',
+      keywords: 'CBD-isolaatin tukkutoimittaja, CBD-isolaatin tukkumyynti, B2B CBD-isolaatti, CBD-isolaatin tarjous, CBD OEM ODM',
+    },
+  },
+
+  '/cbd-isolate-manufacturer': {
+    en: {
+      title: 'CBD Isolate Manufacturer in China | Vetrux',
+      description: 'Vetrux supplies bulk CBD isolate for B2B buyers from Yunnan, China, with in-house analytical capability, OEM/ODM support, and buyer documentation support.',
+      keywords: 'CBD isolate manufacturer China, CBD manufacturer Yunnan, bulk CBD isolate manufacturer, CBD isolate OEM ODM',
+    },
+    de: {
+      title: 'CBD Isolat Hersteller in China | Vetrux',
+      description: 'Vetrux liefert CBD Isolat in großen Mengen für B2B-Käufer aus Yunnan, China, mit interner Analysekapazität, OEM/ODM-Support und Käuferdokumentationssupport.',
+      keywords: 'CBD Isolat Hersteller China, CBD Hersteller Yunnan, CBD Isolat Großhersteller, CBD Isolat OEM ODM',
+    },
+    fr: {
+      title: "Fabricant d'Isolat de CBD en Chine | Vetrux",
+      description: "Vetrux fournit de l'isolat de CBD en vrac pour les acheteurs B2B du Yunnan, Chine, avec capacité analytique interne, support OEM/ODM et support documentaire pour les acheteurs.",
+      keywords: "fabricant isolat CBD Chine, fabricant CBD Yunnan, fabricant isolat CBD vrac, isolat CBD OEM ODM",
+    },
+    es: {
+      title: 'Fabricante de Aislado de CBD en China | Vetrux',
+      description: 'Vetrux suministra aislado de CBD a granel para compradores B2B desde Yunnan, China, con capacidad analítica interna, soporte OEM/ODM y soporte documental para compradores.',
+      keywords: 'fabricante aislado CBD China, fabricante CBD Yunnan, fabricante aislado CBD granel, aislado CBD OEM ODM',
+    },
+    it: {
+      title: 'Produttore di Isolato di CBD in Cina | Vetrux',
+      description: "Vetrux fornisce isolato di CBD sfuso per acquirenti B2B dallo Yunnan, Cina, con capacità analitica interna, supporto OEM/ODM e supporto documentale per acquirenti.",
+      keywords: 'produttore isolato CBD Cina, produttore CBD Yunnan, produttore isolato CBD sfuso, isolato CBD OEM ODM',
+    },
+    pt: {
+      title: 'Fabricante de Isolado de CBD na China | Vetrux',
+      description: 'A Vetrux fornece isolado de CBD a granel para compradores B2B a partir de Yunnan, China, com capacidade analítica interna, suporte OEM/ODM e suporte documental para compradores.',
+      keywords: 'fabricante isolado CBD China, fabricante CBD Yunnan, fabricante isolado CBD granel, isolado CBD OEM ODM',
+    },
+    ja: {
+      title: '中国のCBDアイソレート製造メーカー | Vetrux',
+      description: 'Vetruxは中国Yunnan省より、自社分析能力、OEM/ODMサポート、購入者向け文書サポートを備えたB2Bバイヤー向けバルクCBDアイソレートを供給しています。',
+      keywords: 'CBD アイソレート メーカー 中国, CBD メーカー Yunnan, バルク CBD アイソレート メーカー, CBD アイソレート OEM ODM',
+    },
+    fi: {
+      title: 'CBD-isolaatin valmistaja Kiinassa | Vetrux',
+      description: 'Vetrux toimittaa CBD-isolaattia tukkuerissä B2B-ostajille Yunnanista, Kiinasta, sisäisellä analyysikyvykkyydellä, OEM/ODM-tuella ja ostajadokumentaatiotuella.',
+      keywords: 'CBD-isolaatin valmistaja Kiina, CBD-valmistaja Yunnan, CBD-isolaatin tukkuvalmistaja, CBD-isolaatti OEM ODM',
+    },
+  },
+
+  '/privacy-policy': {
+    en: {
+      title: 'Privacy Policy — Vetrux CBD',
+      description: 'Privacy Policy for Vetrux CBD website. Learn how we collect, use, and protect your personal data when you visit our site or submit a B2B inquiry.',
+      keywords: 'Vetrux privacy policy, CBD supplier privacy policy, data protection',
+    },
+    de: {
+      title: 'Datenschutzerklärung — Vetrux CBD',
+      description: 'Datenschutzerklärung für die Vetrux CBD Website. Erfahren Sie, wie wir Ihre personenbezogenen Daten erfassen, verwenden und schützen.',
+      keywords: 'Vetrux Datenschutzerklärung, CBD Lieferant Datenschutz, Datenschutz',
+    },
+    fr: {
+      title: 'Politique de Confidentialité — Vetrux CBD',
+      description: 'Politique de Confidentialité du site Vetrux CBD. Découvrez comment nous collectons, utilisons et protégeons vos données personnelles.',
+      keywords: 'politique confidentialité Vetrux, fournisseur CBD confidentialité, protection données',
+    },
+    es: {
+      title: 'Política de Privacidad — Vetrux CBD',
+      description: 'Política de Privacidad del sitio web Vetrux CBD. Conozca cómo recopilamos, usamos y protegemos sus datos personales.',
+      keywords: 'política privacidad Vetrux, proveedor CBD privacidad, protección datos',
+    },
+    it: {
+      title: 'Informativa sulla Privacy — Vetrux CBD',
+      description: 'Informativa sulla Privacy per il sito Vetrux CBD. Scoprite come raccogliamo, utilizziamo e proteggiamo i vostri dati personali.',
+      keywords: 'informativa privacy Vetrux, fornitore CBD privacy, protezione dati',
+    },
+    pt: {
+      title: 'Política de Privacidade — Vetrux CBD',
+      description: 'Política de Privacidade do site Vetrux CBD. Saiba como recolhemos, utilizamos e protegemos os seus dados pessoais.',
+      keywords: 'política privacidade Vetrux, fornecedor CBD privacidade, proteção dados',
+    },
+    ja: {
+      title: 'プライバシーポリシー — Vetrux CBD',
+      description: 'Vetrux CBDウェブサイトのプライバシーポリシーです。当社がお客様の個人データをどのように収集、使用、保護するかについてご説明します。',
+      keywords: 'Vetrux プライバシーポリシー, CBD サプライヤー プライバシー, データ保護',
+    },
+    fi: {
+      title: 'Tietosuojaseloste — Vetrux CBD',
+      description: 'Vetrux CBD -verkkosivuston tietosuojaseloste. Lue, miten keräämme, käytämme ja suojaamme henkilötietojasi.',
+      keywords: 'Vetrux tietosuojaseloste, CBD-toimittaja tietosuoja, tietosuoja',
+    },
+  },
+
+  '/terms-of-service': {
+    en: {
+      title: 'Terms of Service — Vetrux CBD',
+      description: 'Terms of Service for the Vetrux CBD website.',
+      keywords: 'Vetrux terms of service, CBD supplier terms, website terms',
+    },
+    de: {
+      title: 'Nutzungsbedingungen — Vetrux CBD',
+      description: 'Nutzungsbedingungen für die Vetrux CBD Website.',
+      keywords: 'Vetrux Nutzungsbedingungen, CBD Lieferant Bedingungen, Website Bedingungen',
+    },
+    fr: {
+      title: "Conditions d'Utilisation — Vetrux CBD",
+      description: "Conditions d'Utilisation du site web Vetrux CBD.",
+      keywords: "conditions utilisation Vetrux, conditions fournisseur CBD, conditions site web",
+    },
+    es: {
+      title: 'Términos de Servicio — Vetrux CBD',
+      description: 'Términos de Servicio del sitio web Vetrux CBD.',
+      keywords: 'términos servicio Vetrux, términos proveedor CBD, términos sitio web',
+    },
+    it: {
+      title: 'Termini di Servizio — Vetrux CBD',
+      description: 'Termini di Servizio per il sito Vetrux CBD.',
+      keywords: 'termini servizio Vetrux, termini fornitore CBD, termini sito web',
+    },
+    pt: {
+      title: 'Termos de Serviço — Vetrux CBD',
+      description: 'Termos de Serviço do site Vetrux CBD.',
+      keywords: 'termos serviço Vetrux, termos fornecedor CBD, termos site',
+    },
+    ja: {
+      title: '利用規約 — Vetrux CBD',
+      description: 'Vetrux CBDウェブサイトの利用規約です。',
+      keywords: 'Vetrux 利用規約, CBD サプライヤー 規約, ウェブサイト 規約',
+    },
+    fi: {
+      title: 'Käyttöehdot — Vetrux CBD',
+      description: 'Vetrux CBD -verkkosivuston käyttöehdot.',
+      keywords: 'Vetrux käyttöehdot, CBD-toimittaja ehdot, verkkosivuston ehdot',
+    },
+  },
 };
 
 export function getPageSeo(path: string, locale: Locale): PageSeoContent {

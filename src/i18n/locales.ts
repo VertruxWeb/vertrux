@@ -34,6 +34,11 @@ export const localizedRoutes = [
   '/gallery',
   '/about',
   '/blog',
+  '/quality-assurance',
+  '/wholesale-cbd-isolate',
+  '/cbd-isolate-manufacturer',
+  '/privacy-policy',
+  '/terms-of-service',
 ] as const;
 
 export type LocalizedRoute = (typeof localizedRoutes)[number];
@@ -47,13 +52,7 @@ export const localizedGallerySectors = [
 ] as const;
 
 /** English-only pages — no localized variants. */
-export const englishOnlyRoutes = [
-  '/privacy-policy',
-  '/terms-of-service',
-  '/quality-assurance',
-  '/wholesale-cbd-isolate',
-  '/cbd-isolate-manufacturer',
-] as const;
+export const englishOnlyRoutes = [] as const;
 
 export function getLocalePrefix(locale: Locale): string {
   return localeMeta[locale].prefix;

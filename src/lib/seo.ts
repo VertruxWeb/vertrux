@@ -510,6 +510,11 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     canonicalPath: '/privacy-policy',
     image: '/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg',
     type: 'website',
+    jsonLd: buildWebPageJsonLd(
+      '/privacy-policy',
+      'Privacy Policy — Vetrux CBD',
+      'Privacy Policy for Vetrux CBD website. Learn how we collect, use, and protect your personal data when you visit our site or submit a B2B inquiry.',
+    ),
   },
   '/terms-of-service': {
     title: 'Terms of Service — Vetrux CBD',
@@ -518,6 +523,11 @@ const staticPageSeo: Record<string, SeoMetadata> = {
     canonicalPath: '/terms-of-service',
     image: '/images/vetrux_images/cbd-ethanol-extraction-tank-6m3.jpg',
     type: 'website',
+    jsonLd: buildWebPageJsonLd(
+      '/terms-of-service',
+      'Terms of Service — Vetrux CBD',
+      'Terms of Service for the Vetrux CBD website.',
+    ),
   },
 };
 
@@ -607,6 +617,11 @@ const localizedRoutePaths = new Set([
   '/gallery/cultivation',
   '/gallery/extraction',
   '/gallery/products',
+  '/quality-assurance',
+  '/wholesale-cbd-isolate',
+  '/cbd-isolate-manufacturer',
+  '/privacy-policy',
+  '/terms-of-service',
 ]);
 
 function buildAlternates(baseUrl: string, canonicalPath: string, locale: Locale = 'en'): Metadata['alternates'] {

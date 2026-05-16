@@ -1,9 +1,11 @@
 import type { MetadataRoute } from 'next'
 import { articles } from '@/content/articles'
 import { gallerySlugs } from '@/lib/gallery'
-import { locales, localeMeta, localizePath, localizedRoutes, localizedGallerySectors, englishOnlyRoutes } from '@/i18n/locales'
+import { locales, localeMeta, localizePath, localizedRoutes } from '@/i18n/locales'
 
 const BASE_URL = 'https://www.vetrux.tech'
+
+const legalPages = new Set(['/privacy-policy', '/terms-of-service'])
 
 function buildAlternates(path: string): Record<string, string> {
   const languages: Record<string, string> = {}
@@ -13,19 +15,33 @@ function buildAlternates(path: string): Record<string, string> {
   return languages
 }
 
+function getRoutePriority(path: string): number {
+  if (path === '/') return 1.0
+  if (path === '/products/cbd-isolate' || path === '/wholesale-cbd-isolate') return 0.9
+  if (path === '/quality-assurance' || path === '/cbd-isolate-manufacturer') return 0.8
+  if (legalPages.has(path)) return 0.3
+  return 0.7
+}
+
+function getRouteChangeFrequency(path: string): 'weekly' | 'monthly' | 'yearly' {
+  if (path === '/' || path === '/blog') return 'weekly'
+  if (legalPages.has(path)) return 'yearly'
+  return 'monthly'
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const today = new Date().toISOString().split('T')[0]
 
   const localizedStaticRoutes: MetadataRoute.Sitemap = localizedRoutes.flatMap((path) => {
-    const priority = path === '/' ? 1.0 : path === '/products/cbd-isolate' ? 0.9 : 0.7
-    const changeFrequency = path === '/' || path === '/blog' ? 'weekly' : 'monthly'
+    const priority = getRoutePriority(path)
+    const changeFrequency = getRouteChangeFrequency(path)
     const alternates = { languages: buildAlternates(path) }
 
     return locales.map((locale) => ({
       url: `${BASE_URL}${localizePath(path, locale)}`,
       lastModified: today,
-      changeFrequency: changeFrequency as 'weekly' | 'monthly',
-      priority: locale === 'en' ? priority : priority - 0.1,
+      changeFrequency,
+      priority: locale === 'en' ? priority : Math.max(priority - 0.1, 0.2),
       alternates,
     }))
   })
@@ -43,13 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   })
 
-  const englishOnlyStaticRoutes: MetadataRoute.Sitemap = englishOnlyRoutes.map((path) => ({
-    url: `${BASE_URL}${path}`,
-    lastModified: today,
-    changeFrequency: path === '/privacy-policy' || path === '/terms-of-service' ? 'yearly' as const : 'monthly' as const,
-    priority: path === '/wholesale-cbd-isolate' ? 0.9 : path === '/quality-assurance' || path === '/cbd-isolate-manufacturer' ? 0.8 : 0.3,
-  }))
-
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${BASE_URL}/blog/${article.slug}`,
     lastModified: new Date(article.date),
@@ -60,7 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...localizedStaticRoutes,
     ...gallerySectorRoutes,
-    ...englishOnlyStaticRoutes,
     ...articleRoutes,
   ]
 }

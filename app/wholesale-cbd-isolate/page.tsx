@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { buildMetadata, getSeoMetadata } from '@/lib/seo';
+import { buildMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/atoms/JsonLd';
 import WholesaleCbdIsolateClient from '@/components/pages/WholesaleCbdIsolateClient';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -7,20 +8,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function WholesaleCbdIsolatePage() {
-  const seo = getSeoMetadata('/wholesale-cbd-isolate');
-  const jsonLd = seo.jsonLd;
-
   return (
     <>
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(Array.isArray(jsonLd) ? jsonLd : [jsonLd]),
-          }}
-        />
-      )}
-      <WholesaleCbdIsolateClient />
+      <JsonLd path="/wholesale-cbd-isolate" />
+      <WholesaleCbdIsolateClient locale="en" />
     </>
   );
 }

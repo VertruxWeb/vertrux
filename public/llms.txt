@@ -76,6 +76,11 @@ A: Use the homepage for company positioning, the CBD isolate product page for pr
 - https://www.vetrux.tech/de/gallery
 - https://www.vetrux.tech/de/about
 - https://www.vetrux.tech/de/blog
+- https://www.vetrux.tech/de/quality-assurance
+- https://www.vetrux.tech/de/wholesale-cbd-isolate
+- https://www.vetrux.tech/de/cbd-isolate-manufacturer
+- https://www.vetrux.tech/de/privacy-policy
+- https://www.vetrux.tech/de/terms-of-service
 
 ### French (fr)
 - https://www.vetrux.tech/fr
@@ -87,6 +92,11 @@ A: Use the homepage for company positioning, the CBD isolate product page for pr
 - https://www.vetrux.tech/fr/gallery
 - https://www.vetrux.tech/fr/about
 - https://www.vetrux.tech/fr/blog
+- https://www.vetrux.tech/fr/quality-assurance
+- https://www.vetrux.tech/fr/wholesale-cbd-isolate
+- https://www.vetrux.tech/fr/cbd-isolate-manufacturer
+- https://www.vetrux.tech/fr/privacy-policy
+- https://www.vetrux.tech/fr/terms-of-service
 
 ### Spanish (es)
 - https://www.vetrux.tech/es
@@ -98,6 +108,11 @@ A: Use the homepage for company positioning, the CBD isolate product page for pr
 - https://www.vetrux.tech/es/gallery
 - https://www.vetrux.tech/es/about
 - https://www.vetrux.tech/es/blog
+- https://www.vetrux.tech/es/quality-assurance
+- https://www.vetrux.tech/es/wholesale-cbd-isolate
+- https://www.vetrux.tech/es/cbd-isolate-manufacturer
+- https://www.vetrux.tech/es/privacy-policy
+- https://www.vetrux.tech/es/terms-of-service
 
 ### Italian (it)
 - https://www.vetrux.tech/it
@@ -109,6 +124,11 @@ A: Use the homepage for company positioning, the CBD isolate product page for pr
 - https://www.vetrux.tech/it/gallery
 - https://www.vetrux.tech/it/about
 - https://www.vetrux.tech/it/blog
+- https://www.vetrux.tech/it/quality-assurance
+- https://www.vetrux.tech/it/wholesale-cbd-isolate
+- https://www.vetrux.tech/it/cbd-isolate-manufacturer
+- https://www.vetrux.tech/it/privacy-policy
+- https://www.vetrux.tech/it/terms-of-service
 
 ### Portuguese (pt)
 - https://www.vetrux.tech/pt
@@ -120,6 +140,11 @@ A: Use the homepage for company positioning, the CBD isolate product page for pr
 - https://www.vetrux.tech/pt/gallery
 - https://www.vetrux.tech/pt/about
 - https://www.vetrux.tech/pt/blog
+- https://www.vetrux.tech/pt/quality-assurance
+- https://www.vetrux.tech/pt/wholesale-cbd-isolate
+- https://www.vetrux.tech/pt/cbd-isolate-manufacturer
+- https://www.vetrux.tech/pt/privacy-policy
+- https://www.vetrux.tech/pt/terms-of-service
 
 ### Japanese (ja)
 - https://www.vetrux.tech/ja
@@ -131,6 +156,11 @@ A: Use the homepage for company positioning, the CBD isolate product page for pr
 - https://www.vetrux.tech/ja/gallery
 - https://www.vetrux.tech/ja/about
 - https://www.vetrux.tech/ja/blog
+- https://www.vetrux.tech/ja/quality-assurance
+- https://www.vetrux.tech/ja/wholesale-cbd-isolate
+- https://www.vetrux.tech/ja/cbd-isolate-manufacturer
+- https://www.vetrux.tech/ja/privacy-policy
+- https://www.vetrux.tech/ja/terms-of-service
 
 ### Finnish (fi)
 - https://www.vetrux.tech/fi
@@ -142,6 +172,11 @@ A: Use the homepage for company positioning, the CBD isolate product page for pr
 - https://www.vetrux.tech/fi/gallery
 - https://www.vetrux.tech/fi/about
 - https://www.vetrux.tech/fi/blog
+- https://www.vetrux.tech/fi/quality-assurance
+- https://www.vetrux.tech/fi/wholesale-cbd-isolate
+- https://www.vetrux.tech/fi/cbd-isolate-manufacturer
+- https://www.vetrux.tech/fi/privacy-policy
+- https://www.vetrux.tech/fi/terms-of-service
 
 ## Published Articles
 - https://www.vetrux.tech/blog/cbd-isolate-import-documentation-checklist

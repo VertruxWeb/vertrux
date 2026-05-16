@@ -5,7 +5,7 @@ excerpt: "A practical guide for B2B procurement teams on interpreting CBD Certif
 category: "Quality Assurance"
 date: "2026-04-18"
 readTime: "9 min"
-image: "/images/products/product1.jpg"
+image: "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=800&q=80&auto=format&fit=crop"
 ---
 
 # How to Read a CBD Certificate of Analysis (COA): Buyer's Checklist

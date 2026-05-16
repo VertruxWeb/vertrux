@@ -4,7 +4,7 @@ category: Market Analysis
 date: April 2026
 readTime: 8 min
 excerpt: "An in-depth analysis of CBD isolate wholesale pricing for B2B buyers — covering raw material costs, extraction economics, purity premiums, volume discounts, and logistics factors that determine per-kilogram pricing in 2026."
-image: /images/equipment/extraction-vessel-6m3.webp
+image: "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?w=800&q=80&auto=format&fit=crop"
 slug: cbd-isolate-wholesale-pricing-cost-factors
 ---
 
